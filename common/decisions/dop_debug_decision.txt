@@ -1,0 +1,186 @@
+GNG_debug_category = {
+	GNG_dop_debug_load_lomitia = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+		}
+		available = {
+			always = no
+		}
+	}
+	GNG_dop_debug_load_opening = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			load_focus_tree = dop_opening_tree
+		}
+	}
+	GNG_dop_debug_show_all_gui_test = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		
+		complete_effect = {
+			set_country_flag = bfg_active
+			set_country_flag = lhc_active
+			set_country_flag = guang_dong_theater_visible
+		}
+	}
+	GNG_dop_debug_load_japtree = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			load_focus_tree = dop_warpp_tree
+			clr_country_flag = gng_chi_choiced
+		}
+	}
+	GNG_dop_debug_load_chitree = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			load_focus_tree = dop_warpp_tree
+			set_country_flag = gng_chi_choiced
+		}
+	}
+	GNG_dop_debug_load_peacetree = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			load_focus_tree = dop_peace_develop
+		}
+	}
+	GNG_dop_debug_pregaw = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			load_focus_tree = dop_pregaw_tree
+		}
+	}
+	GNG_dop_debug_remove_faction = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			JAP ={
+			remove_from_faction = chi
+			remove_from_faction = gng
+			remove_from_faction = yun}
+		}
+	}
+	GNG_dop_debug_add_seat_1 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+	set_temp_variable = { GNG_legco_faction_temp = 3 }
+	GNG_change_legco_seats = yes
+	set_temp_variable = { GNG_legco_seat_temp = 10 }
+	set_temp_variable = { GNG_legco_faction_temp = 6 }
+	GNG_change_legco_seats = yes
+}
+		}
+		GNG_dop_debug_add_seat_2 = {
+			allowed = {
+				original_tag = GNG
+			}
+			icon = GFX_decision_GNG_generic
+			visible = {
+			}
+			complete_effect = {
+				set_temp_variable = { GNG_legco_seat_temp = 10 }
+		set_temp_variable = { GNG_legco_faction_temp = 4 }
+		GNG_change_legco_seats = yes
+		set_temp_variable = { GNG_legco_seat_temp = 10 }
+		set_temp_variable = { GNG_legco_faction_temp = 5 }
+		GNG_change_legco_seats = yes
+	}
+			}
+			GNG_dop_debug_add_seat_3 = {
+				allowed = {
+					original_tag = GNG
+				}
+				icon = GFX_decision_GNG_generic
+				visible = {
+				}
+				complete_effect = {
+					set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 7 }
+			GNG_change_legco_seats = yes
+		}
+				}
+GNG_dop_debug_show_bfg_gui = {
+allowed = {
+	original_tag = GNG
+	
+}
+icon = GFX_decision_GNG_generic
+visible = {
+	is_ai = no
+}
+complete_effect = {
+	BFG_setup_influence = yes
+}
+}
+	}
+	bfg_gui_decision_category = {
+GNG_dop_debug_addchi = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		is_debug = yes
+	}
+	icon = GFX_decision_GNG_generic
+	complete_effect = {
+		BFG_increase_CHI_influence_high = yes
+}
+	}
+		GNG_dop_debug_addjap = {
+			allowed = {
+				original_tag = GNG
+			
+			}
+			visible = {
+				is_debug = yes
+			}
+			icon = GFX_decision_GNG_generic
+			complete_effect = {
+				BFG_increase_japan_influence_high = yes
+		}
+			}
+		}

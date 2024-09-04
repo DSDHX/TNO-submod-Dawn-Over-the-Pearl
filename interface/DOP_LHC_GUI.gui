@@ -1,0 +1,73 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GNG_LHC_GUI"
+		size = { width = 500 height = 450 }
+		iconType = {
+			name = "TNO_LHC_bg"
+			position = { x = 40 y = 7 }
+			spriteType = "GFX_GNG_LHC_GUI_bg"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_1"
+			position = { x = 64 y = 33 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_1"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_2"
+			position = { x = 166 y = 6 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_2"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_3"
+			position = { x = 253 y = 45 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_3"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_4"
+			position = { x = 360 y = 12 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_4"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_5"
+			position = { x = 64 y = 160 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_5"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_6"
+			position = { x = 187 y = 156 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_6"
+		}
+		iconType = {
+			name = "TNO_LHC_pic_7"
+			position = { x = 345 y = 167 }
+			spriteType = "GFX_GNG_LHC_GUI_pic_7"
+		}
+		instantTextboxType = {
+			name = "TNO_LHC_killer_pb_Desc"
+			position = { x = 165 y = 350 }
+			font = "aldrich_32_outline"
+			text = killer_active_tt
+			maxWidth = 482
+			maxHeight = 300
+			format = left
+		}
+		iconType = {
+			name = "TNO_LHC_killer_pb"
+			position = { x = 41 y = 401 }
+			spriteType = "GFX_ENG_TheKingsSpeech_SaferyBar_Itself"
+		}
+		iconType = {
+			name = "TNO_LHC_killer_bg"
+			position = { x = 40 y = 400 }
+			spriteType = "GFX_ENG_TheKingsSpeech_SafetyBar_Frame"
+			pdx_tooltip = killer_progress_tt
+		}
+		buttonType = {
+			name = "TNO_LHC_Infobtn"
+			quadTextureSprite = "GFX_ParliamentMechanic_InfoButton"
+			position = { x = 460 y = -10 }
+			pdx_tooltip = Lhc_desc_tt
+			pdx_tooltip_delayed = Lhc_desc_tt_delayed
+		}
+	}
+}

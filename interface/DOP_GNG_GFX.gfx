@@ -1,0 +1,43 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_Anarchy_GNG"
+		texturefile = "gfx/interface/DOP_Anarchy_GNG.dds"
+	}
+	spriteType = {
+		name = "GFX_Anarchy_GNG_jap"
+		texturefile = "gfx/interface/DOP_Anarchy_GNG_jap.dds"
+	}
+	spriteType = {
+		name = "GFX_Anarchy_GNG_chi"
+		texturefile = "gfx/interface/DOP_Anarchy_GNG_chi.png"
+	}
+	spriteType = {
+		name = "GFX_CountryClosing_picture_GNG_DOP_Demo_Ending"
+		texturefile = "gfx/interface/DOP_demo_ending.png"
+	}
+	spriteType = {
+		name = "GFX_frontend_DOP_logo"
+		texturefile = "gfx/interface/thumbnail.png"
+	}
+	spriteType = {
+		name = "GFX_frontend_DOP_logo"
+		texturefile = "gfx/interface/thumbnail.png"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_fronticons_dop"
+		#texturefile = "gfx/interface/backpic.dds"
+		texturefile = "gfx/interface/backpic.dds"
+		borderSize = { x=0 y= 0 }
+		size = {  x=934 y= 375 }
+		tilingCenter = no
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	spriteType = {
+		name = "GFX_frontend_DOP_backpic"
+		texturefile = "gfx/interface/backpic.dds"
+	}
+	spriteType = {
+		name = "GFX_GNG_Product_Decisions_GUI_Sony_74_STR6046A_product"
+		textureFile = "gfx/interface/SONY_74_STR6046A.dds"
+	}
+}

@@ -1,0 +1,11 @@
+﻿GNG_NORMAL_01 = {
+	name = "Guangdong Temp Defense Infantry Division"
+
+	for_countries = { GNG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d Temp Infantry"
+}

@@ -1,0 +1,36 @@
+scripted_gui = {
+	GNG_LHC_GUI = {
+		visible = {
+			has_country_flag = lhc_active
+		}
+		context_type = decision_category
+		window_name = "GNG_LHC_GUI"
+		triggers = {
+			TNO_LHC_pic_1_visible = {
+				check_variable = { GNG_LHC_cards_revealed_1 = 1 }
+			}
+			TNO_LHC_pic_2_visible = {
+				check_variable = { GNG_LHC_cards_revealed_2 = 1 }
+			}
+			TNO_LHC_pic_3_visible = {
+				check_variable = { GNG_LHC_cards_revealed_3 = 1 }
+			}
+			TNO_LHC_pic_4_visible = {
+				check_variable = { GNG_LHC_cards_revealed_4 = 1 }
+			}
+			TNO_LHC_pic_5_visible = {
+				check_variable = { GNG_LHC_cards_revealed_5 = 1 }
+			}
+			TNO_LHC_pic_6_visible = {
+				check_variable = { GNG_LHC_cards_revealed_6 = 1 }
+			}
+			TNO_LHC_pic_7_visible = {
+				check_variable = { GNG_LHC_cards_revealed_7 = 1 }
+			}
+		}
+		properties = {
+			TNO_LHC_killer_pb = {
+				frame = killer_prgess
+			}
+		}
+}}

@@ -1,0 +1,51 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GNG_BFG_GUI"
+		size = { width = 500 height = 450 }
+		origo = center
+		position = { x = 0 y = 0 }
+		
+		
+		
+		iconType = {
+			name = "TNO_BFG_jap"
+			position = { x = 10 y = 67 }
+			spriteType = "GFX_GNG_BFG_jap_bar"
+			alwaystransparent = yes
+		}
+		
+		
+		iconType = {
+			name = "TNO_BFG_chi"
+			position = { x = 10 y = 67 }
+			spriteType = "GFX_GNG_BFG_chi_bar"
+		}
+		iconType = {
+			name = "dividerchi"
+			spriteType = "GFX_GNG_chidivider"
+			position = { x = 40 y = 63 } 
+		}
+		iconType = {
+			name = "dividerjap"
+			spriteType = "GFX_GNG_japdivider"
+			position = { x = 40 y = 63 } 
+		}
+		iconType = {
+			name = "GNG_BFG_frontground"
+			spriteType = "GFX_GNG_BFG_frontground"
+			position = { x = 0 y = 63 } 
+		}
+		iconType = {
+			name = "TNO_BFG_background"
+			position = { x = 0 y = 60 }
+			spriteType = "GFX_GNG_fake_bg"
+		}
+		buttonType = {
+			name = "TNO_BFG_Infobtn"
+			quadTextureSprite = "GFX_ParliamentMechanic_InfoButton"
+			position = { x = 460 y = -10 }
+			pdx_tooltip = BFG_desc_tt
+			pdx_tooltip_delayed = BFG_desc_tt_delayed
+		}
+	}
+}

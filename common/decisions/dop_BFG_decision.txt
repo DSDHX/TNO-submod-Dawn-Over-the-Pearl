@@ -1,0 +1,658 @@
+lhc_gui_decision_category = {
+	GNG_killer_active = {
+		icon = GFX_decisionguangdong_IJA
+		activation = {
+			check_variable= { current_witness  > 0} 
+			has_country_flag = lhc_active
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		is_good = no
+		days_mission_timeout = 50
+		allowed = {
+			tag = GNG
+		}
+		timeout_effect = {
+			set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+			add_to_variable = { current_witness = -1 }
+			random_list = {
+				40 = {country_event = {id=dop_legco_hostage_crisis.24}}
+				40 = {country_event = {id=dop_legco_hostage_crisis.25}}
+				20 = {country_event = {id=dop_legco_hostage_crisis.26}}
+			}
+		}
+		days_remove = 1
+	}
+	GNG_lhc_countdown = {
+		icon = GFX_decisionguangdong_IJA
+		activation = {
+
+			has_country_flag = lhc_active
+		}
+		available = {
+			hidden_trigger = {
+				not = {has_country_flag = lhc_active}
+			}
+		}
+		is_good = no
+		days_mission_timeout = 180
+		allowed = {
+			tag = GNG
+		}
+		complete_effect = {}
+		timeout_effect = {
+			clr_country_flag = lhc_active
+			add_to_variable = {
+				winning_count = current_witness
+			}
+				if = {
+					limit = {
+						check_variable ={ winning_count > 6 }
+					}
+					country_event = dop_legco_hostage_crisis.50
+				}
+				else = {
+					country_event = dop_legco_hostage_crisis.51
+				}
+	}
+		}
+
+	
+	LHC_songzhiguang = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = {
+				flag = now_ding
+				
+				value = 1
+			}
+			country_event = 
+			{
+				id = dop_legco_hostage_crisis.28
+			}
+	}
+	}
+	LHC_rili = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = {
+				flag = now_ding
+				
+				value = 1
+			}
+			country_event = 
+			{
+				id = dop_legco_hostage_crisis.29
+			}
+	}
+	}
+	LHC_riben = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = {
+				flag = now_ding
+				
+				value = 1
+			}
+			country_event = 
+			{
+				id = dop_legco_hostage_crisis.30
+			}
+	}
+	}
+	LHC_weapon = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = {
+				flag = now_ding
+				
+				value = 1
+			}
+			country_event = 
+			{
+				id = dop_legco_hostage_crisis.27
+			}
+	}
+	}
+	LHC_zhujun = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = {
+				flag = now_ding
+				
+				value = 1
+			}
+			country_event = 
+			{
+				id = dop_legco_hostage_crisis.31
+			}
+	}
+	}
+	LHC_end = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			NOT = {
+				has_country_flag = now_ding
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			clr_country_flag = lhc_active
+			add_to_variable = {
+				winning_count = current_witness
+			}
+				if = {
+					limit = {
+						check_variable ={ winning_count > 6 }
+					}
+					country_event = dop_legco_hostage_crisis.50
+				}
+				else = {
+					country_event = dop_legco_hostage_crisis.51
+				}
+	}
+	}
+}
+bfg_gui_decision_category = {
+GNG_ken_effect_on_bfg = {
+	icon = GFX_decision_GNG_kenpeitai
+	activation = {
+		any_owned_state = { check_variable= {ken_spt>25}}
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}}
+	is_good = no
+	days_mission_timeout = 50
+	allowed = {
+		tag = GNG
+	}
+	cancel_trigger = {
+		all_owned_state = { check_variable= {ken_spt<25} }
+	} 
+	fixed_random_seed = no
+	timeout_effect = {
+		every_owned_state = { limit={check_variable= {ken_spt>25} }	BFG_increase_japan_influence_low = yes	}
+	}
+	days_remove = 1
+}
+GNG_tri_effect_on_bfg = {
+	icon = GFX_decision_GNG_triads
+	activation = {
+		any_owned_state = { check_variable= {tri_spt>25} }
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}
+	}
+	is_good = no
+	days_mission_timeout = 50
+	allowed = {
+		tag = GNG
+	}
+	cancel_trigger = {
+		all_owned_state = { check_variable= {tri_spt<25} }
+	} 
+	fixed_random_seed = no
+	timeout_effect = {
+		every_owned_state = {	limit={ check_variable= {tri_spt>25} }BFG_increase_CHI_influence_low = yes	}
+
+	}
+	days_remove = 1
+}
+GNG_yak_effect_on_bfg = {
+	icon = GFX_decision_GNG_yakuza
+	activation = {
+		any_owned_state = { check_variable= {yak_spt<25} }
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}
+	}
+	is_good = no
+	days_mission_timeout = 50
+	allowed = {
+		tag = GNG
+	}
+	cancel_trigger = {
+		all_owned_state = { check_variable= {yak_spt>25} }
+	} 
+	fixed_random_seed = no
+	timeout_effect = {
+		every_owned_state = {limit={ check_variable= {yak_spt<25} }BFG_increase_japan_influence_low =yes	}
+
+	}
+	days_remove = 1
+}
+GNG_chi_effect_on_bfg = {
+	icon = GFX_decision_GNG_chinese
+	activation = {
+		any_owned_state = { check_variable= {chi_app<70 }}
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}
+	}
+	is_good = no
+	days_mission_timeout = 50
+	allowed = {
+		tag = GNG
+	}
+	cancel_trigger = {
+		all_owned_state = { check_variable= {chi_app>70 }}
+	} 
+	fixed_random_seed = no
+	timeout_effect = {
+		every_owned_state = {limit={ check_variable= {chi_app<70 } }BFG_increase_CHI_influence_low = yes	}
+
+	}
+	days_remove = 1
+}
+GNG_jap_effect_on_bfg = {
+	icon = GFX_decision_GNG_japan
+	activation = {
+		any_owned_state = { check_variable= {jap_app<70} }
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}
+	}
+	is_good = no
+	days_mission_timeout = 50
+	allowed = {
+		tag = GNG
+	}
+	cancel_trigger = {
+		all_owned_state = { check_variable= {jap_app>70} }
+	} 
+	fixed_random_seed = no
+	timeout_effect = {
+		every_owned_state = {limit={ check_variable= {jap_app<70} }BFG_increase_japan_influence_low =yes	}
+
+	}
+	days_remove = 1
+	
+}
+GNG_bfg_countdown = {
+	icon = GFX_decision_GNG_suzuki
+	activation = {
+		has_country_flag = bfg_active
+	}
+	available = {
+		hidden_trigger = {
+			always = no
+		}}
+	is_good = no
+	days_mission_timeout = 180
+	allowed = {
+		tag = GNG
+	}
+	fixed_random_seed = no
+	timeout_effect = {
+	hidden_effect = {
+		if = {limit = {check_variable = { chi_inf_var > jap_inf_var }	}
+			country_event = dop_pregaw.11
+			set_country_flag = gng_chi_choiced
+			load_focus_tree = dop_warpp_tree
+	}
+		else_if = {limit = { check_variable = {chi_inf_var < jap_inf_var}	}
+			country_event = dop_pregaw.12
+			load_focus_tree = dop_warpp_tree
+	}
+		else = {
+			country_event = dop_pregaw.12
+			load_focus_tree = dop_warpp_tree
+		}
+		clr_country_flag = bfg_active
+	}
+	custom_effect_tooltip = bfg_end_effect
+}
+	days_remove = 1
+}
+BFG_CHI_gun = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = jap_indep_promise}
+	}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_chinese
+	custom_cost_text = decision_cost_2_5_japan_approval
+	custom_cost_trigger = {
+		check_variable = { GNG_Japan_Approval > 2.49 }
+	}
+	complete_effect = {
+		CHI ={ 
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 1000
+			target = GNG
+		}}
+		BFG_increase_CHI_influence_med = yes
+		set_temp_variable = {
+			GNG_approval_temp_var = -2.5
+		}
+		GNG_Japan_approval_change = yes
+}
+}
+BFG_CHI_support = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = jap_indep_promise}
+	}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_chinese
+	custom_cost_text = decision_cost_2_5_japan_approval
+	custom_cost_trigger = {
+		check_variable = { GNG_Japan_Approval > 2.49 }
+	}
+	complete_effect = {
+		CHI ={ 
+		send_equipment = {
+			equipment = support_equipment
+			amount = 500
+			target = GNG
+		}}
+		BFG_increase_CHI_influence_med = yes
+		set_temp_variable = {
+			GNG_approval_temp_var = -2.5
+		}
+		GNG_Japan_approval_change = yes
+}
+}
+BFG_CHI_artill = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = jap_indep_promise}
+	}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_chinese
+	custom_cost_text = decision_cost_2_5_japan_approval
+	custom_cost_trigger = {
+		check_variable = { GNG_Japan_Approval > 2.49 }
+	}
+	complete_effect = {
+		CHI ={ 
+		send_equipment = {
+			equipment = artillery_equipment
+			amount = 100
+			target = GNG
+		}}
+		BFG_increase_CHI_influence_med = yes
+		set_temp_variable = {
+			GNG_approval_temp_var = -2.5
+		}
+		GNG_Japan_approval_change = yes
+}
+}
+BFG_JAP_gun = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = chi_indep_promise}
+	}
+	custom_cost_text = decision_cost_2_5_china_approval
+		custom_cost_trigger = {
+			check_variable = { GNG_China_Opinion > 2.49 }
+		}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_japan
+	complete_effect = {
+		JAP ={ 
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 1000
+			target = GNG
+		}}
+		BFG_increase_japan_influence_med = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -2.5
+		}
+		GNG_China_opinion_Change = yes
+}
+}
+BFG_JAP_support = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = chi_indep_promise}
+	}
+	custom_cost_text = decision_cost_2_5_china_approval
+		custom_cost_trigger = {
+			check_variable = { GNG_China_Opinion > 2.49 }
+		}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_japan
+	complete_effect = {
+		JAP ={ 
+		send_equipment = {
+			equipment = support_equipment
+			amount = 500
+			target = GNG
+		}}
+		BFG_increase_japan_influence_med = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -2.5
+		}
+		GNG_China_opinion_Change = yes
+}
+}
+BFG_JAP_artill = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_support_exchange_weapon
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = chi_indep_promise}
+	}
+	custom_cost_text = decision_cost_2_5_china_approval
+		custom_cost_trigger = {
+			check_variable = { GNG_China_Opinion > 2.49 }
+		}
+	days_re_enable = 30
+	icon = GFX_decision_GNG_japan
+	complete_effect = {
+		JAP ={ 
+		send_equipment = {
+			equipment = artillery_equipment
+			amount = 100
+			target = GNG
+		}}
+		BFG_increase_japan_influence_med = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -2.5
+		}
+		GNG_China_opinion_Change = yes
+}
+}
+BFG_CHI_ask_indep_promise = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_indep_promise
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = jap_indep_promise}
+	}
+	custom_cost_text = decision_cost_30_japan_approval
+	custom_cost_trigger = {
+		check_variable = { GNG_Japan_Approval > 29.99 }
+	}
+	fire_only_once = yes
+	icon = GFX_decision_GNG_chinese
+	complete_effect = {
+		CHI ={ 
+			country_event = {id = dop_usage.1}
+		}
+		custom_effect_tooltip = chi_decision_lock_ttc
+		set_country_flag = chi_indep_promise
+		BFG_increase_CHI_influence_high = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -30
+		}
+		GNG_Japan_approval_change = yes
+}
+}
+BFG_JAP_ask_indep_promise = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_indep_promise
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = chi_indep_promise}
+	}
+	custom_cost_text = decision_cost_30_china_approval
+		custom_cost_trigger = {
+			check_variable = { GNG_China_Opinion > 29.99 }
+		}
+	fire_only_once = yes
+	icon = GFX_decision_GNG_japan
+	complete_effect = {
+		JAP ={ 
+			country_event = {id = dop_usage.1}
+		}
+		custom_effect_tooltip = jap_decision_lock_tt
+		set_country_flag = jap_indep_promise
+		BFG_increase_japan_influence_high = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -30
+		}
+		GNG_China_opinion_Change = yes
+}
+}
+BFG_CHI_ask_money = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_money_asking
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = jap_indep_promise}
+	}
+	custom_cost_text = decision_cost_2_5_japan_approval
+	custom_cost_trigger = {
+		check_variable = { GNG_Japan_Approval > 2.49 }
+	}
+	cost = 30
+	
+	days_re_enable = 30
+	icon = GFX_decision_GNG_chinese
+	complete_effect = {
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+		BFG_increase_CHI_influence_med = yes
+	
+		set_temp_variable = {
+			GNG_approval_temp_var = -2.5
+		}
+		GNG_Japan_approval_change = yes
+}
+}
+BFG_JAP_ask_money = {
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_money_asking
+		has_country_flag = bfg_active
+		NOT = {has_country_flag = chi_indep_promise}
+	}
+	custom_cost_text = decision_cost_2_5_china_approval
+		custom_cost_trigger = {
+			check_variable = { GNG_China_Opinion > 2.49 }
+		}
+	cost = 30
+	days_re_enable = 30
+	icon = GFX_decision_GNG_japan
+	complete_effect = {
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+		BFG_increase_japan_influence_med = yes
+		set_temp_variable = {
+			GNG_opinion_temp_var = -2.5
+		}
+		GNG_China_opinion_Change = yes
+}
+}
+}

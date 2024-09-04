@@ -1,0 +1,42 @@
+bfg_gui_decision_category = {
+	allowed = {
+		tag = GNG
+	}
+	visible = {
+		has_country_flag = bfg_active
+	}
+	icon = GFX_decision_category_generic_chess
+	scripted_gui = GNG_BFG_GUI
+	priority = 1000
+	visible_when_empty = yes
+}
+	
+lhc_gui_decision_category = {
+	allowed = {
+			tag = GNG
+	}
+	visible = {
+		has_country_flag = lhc_active
+	}
+	icon = GFX_decision_category_generic_investigate
+
+	scripted_gui = GNG_LHC_GUI
+	priority = 1300
+	visible_when_empty = yes
+	
+}
+
+	
+enchance_guangjing_decision_category = {
+	allowed = {
+			tag = GNG
+	}
+	visible = {
+		has_country_flag = gjqh_active
+	}
+	picture = GFX_decision_SCO_decision_paranoia
+	icon = GFX_decision_category_army_reform
+	priority = 1200
+	visible_when_empty = yes
+}
+	

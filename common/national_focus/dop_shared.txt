@@ -1,0 +1,1613 @@
+﻿
+focus_tree = {
+	id = dop_warpp_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_black_cloud_roming
+}
+focus_tree = {
+	id = dop_pregaw_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_nanjing_emergency_call
+}
+focus_tree = {
+	id = dop_peace_develop
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}	
+	}
+	default = no
+	shared_focus = GNG_new_develop_project
+}
+focus_tree = {
+	id = dop_opening_tree	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_Li_frightened
+}
+shared_focus = {
+		id = GNG_Li_frightened
+		icon = GFX_GNG_Li_frightened
+		cost = 3
+		x = 8
+		y = 0
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus Li_frightened"
+			country_event = {
+			id = dop_flavors.7
+		}
+			
+		}
+	}
+	shared_focus = {
+		id = GNG_New_defense_way
+		icon = GFX_GNG_New_defense_way
+		cost = 3
+		x = 0
+		y = 1
+		available = {
+			GNG_no_ordinance_in_legco = yes
+			}
+		relative_position_id = GNG_Li_frightened
+		prerequisite = {focus = GNG_Li_frightened}
+		completion_reward = {
+			country_event = {
+				id = dop_sar.4
+			}
+			
+			log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+			set_temp_variable = { GNG_legco_cheungkong_temp_support = 1.00 }
+			set_temp_variable = { GNG_legco_sony_temp_support = 1.00 }
+			set_temp_variable = { GNG_legco_matsushita_temp_support = 0.50 }
+			set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.40 }
+			set_temp_variable = { GNG_legco_hitachi_temp_support = 0.10 }
+			set_temp_variable = { GNG_temp_legco_id = 89 }
+			legco_introduce_ordinance = yes
+			TNO_improve_army_professionalism_low = yes
+			every_owned_state = {
+				set_temp_variable = { chi_app_temp = 0.3 }
+				GNG_chinese_app_change = yes
+				set_temp_variable = { zhu_app_temp = 0.3 }
+				GNG_zhujin_app_change = yes
+				set_temp_variable = { jap_app_temp = 0.3 }
+				GNG_japanese_app_change = yes
+				}
+			set_variable = {GNG_ndw_success_chance = 20}#standard
+			
+			}
+			
+		}
+		shared_focus = {
+			id = GNG_improve_train_method
+			icon = GFX_GNG_improve_train_method
+			cost = 3
+			x = 1
+			y = 1
+			relative_position_id = GNG_New_defense_way
+			prerequisite = {focus = GNG_New_defense_way}
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus Test_the_police"
+				country_event = {
+				id = dop_flavors.5
+				
+			}
+			TNO_improve_army_professionalism_high = yes
+				set_temp_variable = { temp_econ_spending_amount = 0.50 }
+				econ_spend_money_once_effect_raw_money = yes
+			}
+		}
+		shared_focus = {
+			id = GNG_update_weapon
+			icon = GFX_GNG_update_weapon
+			cost = 3
+			x = -1
+			y = 1
+			relative_position_id = GNG_New_defense_way
+			prerequisite = {focus = GNG_New_defense_way}
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName]: Focus Test_the_police"
+				country_event = {
+				id = dop_flavors.6
+				}
+				add_tech_bonus = {
+					name = infantry_weapons
+					bonus = 0.3
+					uses = 1
+					category = infantry_weapons
+				}
+				set_temp_variable = { temp_econ_spending_amount = 0.25 }
+				econ_spend_money_once_effect_raw_money = yes
+	
+			
+			}
+		}
+shared_focus = {
+		id = GNG_Test_the_police
+		icon = GFX_GNG_Test_the_police
+		cost = 3
+		x = 0
+		y = 2
+		relative_position_id = GNG_New_defense_way
+		prerequisite = {focus = GNG_update_weapon}
+		prerequisite = {focus = GNG_improve_train_method}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus Test_the_police"
+			country_event = {
+			id = dop_flavors.2
+		}
+		
+		}
+	}
+# shared_focus = {
+# 	id = GNG_Enhance_the_police
+# 	icon = GFX_OMS_enhanced_training_programs
+# 	cost = 3
+# 	x = 0
+# 	y = 1
+# 	relative_position_id = GNG_Test_the_police
+# 	prerequisite = {focus = GNG_Test_the_police}
+# 	available = {
+# 		GNG_no_ordinance_in_legco = yes
+# 		}
+# 	completion_reward = {
+# 		country_event= {
+# 		id = dop_flavors.3}
+# 		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+# 		set_temp_variable = { GNG_legco_cheungkong_temp_support = 1.00 }
+# 		set_temp_variable = { GNG_legco_sony_temp_support = 1.00 }
+# 		set_temp_variable = { GNG_legco_matsushita_temp_support = 1.00 }
+# 		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.70 }
+# 		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.30 }
+# 		set_temp_variable = { GNG_temp_legco_id = 89 }
+# 		legco_introduce_ordinance = yes
+# 		TNO_worsen_max_workhours_policy_effectiveness_low = yes
+# 		every_owned_state = {
+# 			set_temp_variable = { chi_app_temp = 0.75 }
+# 			GNG_chinese_app_change = yes
+# 			set_temp_variable = { zhu_app_temp = 0.5 }
+# 			GNG_zhujin_app_change = yes
+# 			set_temp_variable = { jap_app_temp = 0.5 }
+# 			GNG_japanese_app_change = yes
+# 			}
+# 		}
+# 	}
+	# shared_focus = {
+	# 	id = GNG_train_day_by_day
+	# 	icon = GFX_QIN_Training_Day_and_Night
+	# 	cost = 3
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = GNG_Enhance_the_police
+	# 	prerequisite = {focus = GNG_Enhance_the_police}
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus Test_the_police"
+	# 		country_event = {
+	# 		id = dop_flavors.4
+			
+	# 	}
+	# 	add_manpower = 10000
+	# 	}
+	# }
+
+
+
+	# shared_focus = {
+	# 	id = GNG_Long_way_back_home
+	# 	icon = GFX_CHI_The_Sphere_Relies_On_Us
+	# 	cost = 3
+	# 	x = 8
+	# 	y = 5
+	# 	available = {
+	# 		GNG_no_ordinance_in_legco = yes
+	# 	}
+	# 	completion_reward = {
+	# 		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+	# 		set_temp_variable = { GNG_legco_cheungkong_temp_support = 1.00 }
+	# 		set_temp_variable = { GNG_legco_sony_temp_support = 1.00 }
+	# 		set_temp_variable = { GNG_legco_matsushita_temp_support = 1.0 }
+	# 		set_temp_variable = { GNG_legco_fujitsu_temp_support = 1.00 }
+	# 		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+	# 		set_temp_variable = { GNG_temp_legco_id = 79 }
+	# 		legco_introduce_ordinance = yes
+	# 		TNO_worsen_max_workhours_policy_effectiveness_low = yes
+	# 		every_owned_state = {
+	# 			set_temp_variable = { chi_app_temp = 0.75 }
+	# 			GNG_chinese_app_change = yes
+	# 			set_temp_variable = { zhu_app_temp = 0.5 }
+	# 			GNG_zhujin_app_change = yes
+	# 			set_temp_variable = { jap_app_temp = 0.5 }
+	# 			GNG_japanese_app_change = yes
+	# 			}
+	# 		}
+	# 	}
+	# 	shared_focus = {
+	# 		id = GNG_We_are_Guangdong
+	# 		icon = GFX_GNG_within_the_sphere
+	# 		cost = 3
+	# 		x = 8
+	# 		y = 6
+	# 		relative_position_id = GNG_Test_the_police
+	# 		completion_reward = {
+	# 			log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+	# 			set_temp_variable = { GNG_legco_cheungkong_temp_support = 1.00 }
+	# 			set_temp_variable = { GNG_legco_sony_temp_support = 1.00 }
+	# 			set_temp_variable = { GNG_legco_matsushita_temp_support = 1.0 }
+	# 			set_temp_variable = { GNG_legco_fujitsu_temp_support = 1.00 }
+	# 			set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+	# 			set_temp_variable = { GNG_temp_legco_id = 80 }
+	# 			legco_introduce_ordinance = yes
+	# 			TNO_worsen_max_workhours_policy_effectiveness_low = yes
+	# 			every_owned_state = {
+	# 				set_temp_variable = { chi_app_temp = 0.75 }
+	# 				GNG_chinese_app_change = yes
+	# 				set_temp_variable = { zhu_app_temp = 0.5 }
+	# 				GNG_zhujin_app_change = yes
+	# 				set_temp_variable = { jap_app_temp = 0.5 }
+	# 				GNG_japanese_app_change = yes
+	# 				}
+	# 			}
+	# 		}
+	# shared_focus = {
+	# 	id = GNG_Special_police_ordinance
+	# 	icon = GFX_GNG_The_Guangdong_Modern_Police_Ordinance
+	# 	cost = 4.286
+	# 	x = 0
+	# 	y = 1
+	# 	relative_position_id = GNG_update_weapon
+	# 	prerequisite={focus = GNG_update_weapon}
+	# 	completion_reward = {
+	# 		effect_tooltip = {
+	# 			set_temp_variable = { GNG_temp_legco_id = 88 }
+	# 	custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+	# 		}
+	# 		log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+	# 	}
+	# 	select_effect = {
+	# 		set_temp_variable = { GNG_temp_legco_id = 88 }
+	# 	legco_ordinance_vote_start = yes
+	# 		hidden_effect = {
+	# 			country_event = {
+	# 				id = guangdong_sonyAmendment.1000
+	# 				days = 7
+	# 			}
+	# 			country_event = {
+	# 				id = guangdong_sonyAmendment.1001
+	# 				days = 14
+	# 			}
+	# 			country_event = {
+	# 				id = guangdong_sonyAmendment.1002
+	# 				days = 21
+	# 			}
+	# 		}
+			
+	# 		}
+			
+	# 	}
+		shared_focus = {
+			id = GNG_ctns_ordinance
+			icon = GFX_GNG_ctns_ordinance
+			cost = 4.286
+			x = 8
+			y = 6
+			relative_position_id = GNG_Test_the_police
+			available = {
+				GNG_no_ordinance_in_legco = yes
+				}
+			completion_reward = {
+				set_temp_variable = { GNG_temp_legco_id = 80 }
+		legco_ordinance_vote_start = yes
+					hidden_effect = {
+						country_event = {
+							id = guangdong_sonyAmendment.1000
+							days = 7
+						}
+						country_event = {
+							id = guangdong_sonyAmendment.1001
+							days = 14
+						}
+						country_event = {
+							id = guangdong_sonyAmendment.1002
+							days = 21
+						}
+					}	
+				}
+			}
+
+shared_focus = {
+	id = GNG_ask_chi
+	prerequisite=
+	{
+		focus = GNG_Test_the_police
+	}
+	icon = GFX_GNG_ask_chi
+	cost = 3
+	x = -3
+	y = 1
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		country_event = {
+			id = dop_flavors.8
+		}
+		set_temp_variable = { GNG_legco_amendment_id = 89.1 }
+			GNG_add_amendment_to_current = yes
+	}}
+shared_focus = {
+	id = GNG_ask_jap
+	prerequisite=
+	{
+		focus = GNG_Test_the_police
+	}
+	icon = GFX_GNG_ask_jap
+	cost = 3
+	x = -1
+	y = 1
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		country_event = {
+			id = dop_flavors.9
+		}
+		set_temp_variable = { GNG_legco_amendment_id = 89.2 }
+			GNG_add_amendment_to_current = yes
+	}}
+shared_focus = {
+	id = GNG_ask_self
+	prerequisite=
+	{
+		focus = GNG_Test_the_police
+	}
+	icon = GFX_GNG_ask_self
+	cost = 3
+	x = 1
+	y = 1
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		country_event = {
+			id = dop_flavors.11
+		}
+		set_temp_variable = { GNG_temp_votes_percentage = 1.00 }
+			set_temp_variable = { GNG_legco_faction = 4 }
+			GNG_legco_change_votes_percentage = yes
+		set_temp_variable = { GNG_legco_amendment_id = 89.3 }
+			GNG_add_amendment_to_current = yes
+	}}
+shared_focus = {
+	prerequisite=
+	{
+		focus = GNG_Test_the_police
+	}
+	id = GNG_ask_other
+	icon = GFX_GNG_ask_other
+	cost = 3
+	x = 3
+	y = 1
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		country_event = {
+			id = dop_flavors.12
+		}
+		set_temp_variable = { GNG_legco_amendment_id = 89.4 }
+			GNG_add_amendment_to_current = yes
+	}
+}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_ask_chi
+	}
+	prerequisite=
+	{	
+		focus = GNG_ask_jap
+	}
+	prerequisite=
+	{	
+		focus = GNG_ask_self
+	}
+	prerequisite=
+	{	
+		focus = GNG_ask_other
+	}
+	id = GNG_dangerous_try
+	icon = GFX_GNG_dangerous_try
+	cost = 3
+	x = 0
+	y = 2
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		country_event = dop_sar.5
+	}}
+# shared_focus = {
+# 	prerequisite=
+# 	{	
+# 		focus = GNG_dangerous_try
+# 	}
+# 	id = GNG_now_is_time
+# 	icon = GFX_GNG_now_is_time
+# 	cost = 3
+# 	x = 0
+# 	y = 3
+# 	relative_position_id = GNG_Test_the_police
+# 	completion_reward = {
+# 		if = {limit={ 
+# 			has_country_flag = lhc_active
+# 		}}
+# 		else = {
+# 		country_event = {
+# 			id = dop_legco_hostage_crisis.1
+# 		}}
+# 	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_dangerous_try
+	}
+	id = GNG_new_defnese_way_ordinance
+	icon = GFX_GNG_new_defnese_way_ordinance
+	cost = 4.286
+	x = 0
+	y = 3
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		effect_tooltip = {
+			set_temp_variable = { GNG_temp_legco_id = 89 }
+			custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+		}
+		log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+	}
+	select_effect = {
+		set_temp_variable = { GNG_temp_legco_id = 89 }
+		legco_ordinance_vote_start = yes
+		hidden_effect = {
+			country_event = {
+				id = dop_flavors.13
+				days = 10
+			}
+			country_event = {
+				id = guangdong_sonyAmendment.1000
+				days = 7
+			}
+			country_event = {
+				id = guangdong_sonyAmendment.1001
+				days = 14
+			}
+			country_event = {
+				id = guangdong_sonyAmendment.1002
+				days = 21
+			}
+		}
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_defnese_way_ordinance
+	}
+	allow_branch = {
+		NOT= {has_country_flag = sdw_failed}
+	}
+	available = {
+		has_country_flag = lhc_finished
+	}
+	id = GNG_sdw_passed
+	icon = GFX_GNG_sdw_passed
+	cost = 3
+	x = 0
+	y = 4
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		set_temp_variable = { v = 92 }
+GNG_add_uncategorised_law = yes
+		country_event = dop_legco_hostage_crisis.21
+		load_focus_tree = dop_peace_develop
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_defnese_way_ordinance
+	}
+	allow_branch = {
+		has_country_flag = sdw_failed
+	}
+	id = GNG_sdw_failed
+	icon = GFX_GNG_sdw_failed
+	cost = 3
+	x = 0
+	y = 4
+	relative_position_id = GNG_Test_the_police
+	completion_reward = {
+		load_focus_tree = dop_peace_develop
+	}}
+shared_focus = {
+	id = GNG_new_develop_project
+	icon = GFX_GNG_new_develop_project
+	cost = 3
+	x = 8
+	y = 0
+	completion_reward = {
+		set_temp_variable = { v = 91 }
+		GNG_add_uncategorised_law = yes
+		custom_effect_tooltip = ndp_tt
+		every_owned_state = {
+			set_temp_variable = { chi_app_temp = 0.5 }
+				GNG_chinese_app_change = yes
+				set_temp_variable = { zhu_app_temp = 0.5 }
+				GNG_zhujin_app_change = yes
+				set_temp_variable = { jap_app_temp = 0.5 }
+				GNG_japanese_app_change = yes
+		}
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_develop_project
+	}
+	id = GNG_teaching_first
+	icon = GFX_GNG_teaching_first
+	cost = 3
+	x = -8
+	y = 1
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 0.75 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 0.85 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.70 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.65 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+		set_temp_variable = { GNG_temp_legco_id = 82 }
+		legco_introduce_ordinance = yes
+		1438 = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+		}
+		593 = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+		}
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_teaching_first
+	}
+	id = GNG_rewrite_textbook
+	icon = GFX_GNG_rewrite_textbook
+	cost = 3
+	x = -9
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 82.1 }
+			GNG_add_amendment_to_current = yes
+			TNO_improve_education_policy_effectiveness_low = yes
+			every_owned_state = {
+				set_temp_variable = { chi_app_temp = 0.5 }
+				GNG_chinese_app_change = yes
+			}
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_rewrite_textbook
+	}
+	prerequisite=
+	{	
+		focus = GNG_poverty_help
+	}
+	id = GNG_compulsory_education_ordinance
+	icon = GFX_GNG_compulsory_education_ordinance
+	cost = 4.286
+	x = -8
+	y = 3
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		effect_tooltip = {
+			set_temp_variable = { GNG_temp_legco_id = 82 }
+		custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+		}
+		log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+	}
+	select_effect = {
+		set_temp_variable = { GNG_temp_legco_id = 82 }
+		legco_ordinance_vote_start = yes
+		}
+		
+		}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_teaching_first
+	}
+	id = GNG_poverty_help
+	icon = GFX_GNG_poverty_help
+	cost = 3
+	x = -7
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 82.2}
+			GNG_add_amendment_to_current = yes
+			every_owned_state = {
+				set_temp_variable = { chi_app_temp = 0.5 }
+				GNG_chinese_app_change = yes
+			}
+			set_temp_variable = { GNG_misc_costs_temp = 0.50 }
+			GNG_misc_costs_change = yes
+			TNO_improve_education_policy_effectiveness_low = yes
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_develop_project
+	}
+	id = GNG_advance_tools
+	icon = GFX_GNG_advance_tools
+	cost = 3
+	x = -4
+	y = 1
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 0.75 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 0.70 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.65 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.75 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.25 }
+		set_temp_variable = { GNG_temp_legco_id = 83 }
+		legco_introduce_ordinance = yes
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_advance_tools
+	}
+	id = GNG_japanese_tech
+	icon = GFX_GNG_japanese_tech
+	cost = 3
+	x = -5
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 83.2 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_approval_temp_var = 1.5 }
+			GNG_Japan_approval_change = yes
+			set_temp_variable = { GNG_misc_costs_temp = 0.25 }
+		GNG_misc_costs_change = yes
+			TNO_improve_trade_laws_policy_effectiveness_low = yes
+	}
+}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_advance_tools
+	}
+	id = GNG_chinese_tech
+	icon = GFX_GNG_chinese_tech
+	cost = 3
+	x = -3
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 83.1 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_opinion_temp_var = 1.5 }
+			GNG_China_opinion_Change = yes
+			set_temp_variable = { GNG_misc_costs_temp = 0.10 }
+		GNG_misc_costs_change = yes
+			TNO_improve_trade_laws_policy_effectiveness_low = yes
+	}}
+	shared_focus = {
+		prerequisite=
+		{	
+			focus = GNG_japanese_tech
+		}
+		prerequisite=
+		{	
+			focus = GNG_chinese_tech
+		}
+		id = GNG_prove_tools_import_ordinance
+		icon = GFX_GNG_prove_tools_import_ordinance
+		cost = 4.286
+		x = -4
+		y = 3
+		relative_position_id = GNG_new_develop_project
+		completion_reward = {
+			effect_tooltip = {
+				set_temp_variable = { GNG_temp_legco_id = 83 }
+		custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+		}
+		select_effect = {
+			set_temp_variable = { GNG_temp_legco_id = 83 }
+		legco_ordinance_vote_start = yes
+			hidden_effect = {
+				country_event = {
+					id = guangdong_sonyAmendment.1000
+					days = 7
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1001
+					days = 14
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1002
+					days = 21
+				}
+			}
+			}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_develop_project
+	}
+	id = GNG_improve_health_care
+	icon = GFX_GNG_improve_health_care
+	cost = 3
+	x = 0
+	y = 1
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 0.80 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 0.90 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.55 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.15 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+		set_temp_variable = { GNG_temp_legco_id = 84 }
+		legco_introduce_ordinance = yes
+		TNO_improve_health_care_policy_effectiveness_low = yes
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_improve_health_care
+	}
+	id = GNG_county_hospital
+	icon = GFX_GNG_county_hospital
+	cost = 3
+	x = -1
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 84.1 }
+			GNG_add_amendment_to_current = yes
+			every_owned_state = {
+				limit = {
+					GNG_is_pearl_river_delta_state = no
+				}
+				set_temp_variable = { chi_app_temp = 0.5 }
+				GNG_chinese_app_change = yes
+				add_building_construction = {
+					type = hospitals
+					level = 1
+					instant_build = yes
+				}
+			}
+		
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_improve_health_care
+	}
+	id = GNG_social_care
+	icon = GFX_GNG_social_care
+	cost = 3
+	x = 1
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 84.2 }
+			GNG_add_amendment_to_current = yes
+			every_owned_state = {
+				limit = {
+					GNG_is_pearl_river_delta_state = yes
+				}
+				set_temp_variable = { zhu_app_temp = 1.25 }
+				GNG_zhujin_app_change = yes
+				set_temp_variable = { jap_app_temp = 1.00 }
+				GNG_japanese_app_change = yes
+			}
+	}}
+	shared_focus = {
+		prerequisite=
+		{	
+			focus = GNG_social_care
+		}
+		prerequisite=
+		{	
+			focus = GNG_county_hospital
+		}
+		id = GNG_standard_health_insurance_ordinance
+		icon = GFX_GNG_standard_health_insurance_ordinance
+		cost = 4.286
+		x = 0
+		y = 3
+		relative_position_id = GNG_new_develop_project
+		completion_reward = {
+			effect_tooltip = {
+				set_temp_variable = { GNG_temp_legco_id = 84 }
+		custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+		}
+		select_effect = {
+			set_temp_variable = { GNG_temp_legco_id = 84 }
+		legco_ordinance_vote_start = yes
+			hidden_effect = {
+				country_event = {
+					id = guangdong_sonyAmendment.1000
+					days = 7
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1001
+					days = 14
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1002
+					days = 21
+				}
+			}
+			}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_develop_project
+	}
+	id = GNG_agriculture_growth
+	icon = GFX_GNG_agriculture_growth
+	cost = 3
+	x = 4
+	y = 1
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 0.70 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 0.85 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.65 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.10 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+		set_temp_variable = { GNG_temp_legco_id = 85 }
+		legco_introduce_ordinance = yes
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			set_temp_variable = { chi_app_temp = 0.5 }
+			GNG_chinese_app_change = yes
+		}
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_agriculture_growth
+	}
+	id = GNG_import_seeds
+	icon = GFX_GNG_import_seeds
+	cost = 3
+	x = 3
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 85.1 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			econ_spend_money_once_effect_raw_money = yes
+			TNO_improve_trade_laws_policy_effectiveness_low = yes
+	}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_agriculture_growth
+	}
+	id = GNG_tech_help_agri
+	icon = GFX_GNG_tech_help_agri
+	cost = 3
+	x = 5
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 85.2 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
+			econ_spend_money_once_effect_raw_money = yes
+			every_owned_state = {
+				limit = {
+					GNG_is_pearl_river_delta_state = no
+				}
+				set_temp_variable = { chi_app_temp = 0.5 }
+				GNG_chinese_app_change = yes
+				set_temp_variable = { gdp_growth_temp = 0.25 }
+		econ_gdp_growth_change = yes
+			}
+	}}
+	shared_focus = {
+		prerequisite=
+		{	
+			focus = GNG_tech_help_agri
+		}
+		prerequisite=
+		{	
+			focus = GNG_import_seeds
+		}
+		id = GNG_food_safe_ordinance
+		icon = GFX_GNG_food_safe_ordinance
+		cost = 4.286
+		x = 4
+		y = 3
+		relative_position_id = GNG_new_develop_project
+		completion_reward = {
+			effect_tooltip = {
+				set_temp_variable = { GNG_temp_legco_id = 85 }
+		custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+		}
+		select_effect = {
+			set_temp_variable = { GNG_temp_legco_id = 85 }
+		legco_ordinance_vote_start = yes
+			hidden_effect = {
+				country_event = {
+					id = guangdong_sonyAmendment.1000
+					days = 7
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1001
+					days = 14
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1002
+					days = 21
+				}
+			}
+			}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_new_develop_project
+	}
+	id = GNG_science_future
+	icon = GFX_GNG_science_future
+	cost = 3
+	x = 8
+	y = 1
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		log = "[GetDateText]: [Root.GetName]: Focus Enhance_the_police"
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 0.85 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 0.70 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.80 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.80 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.15 }
+		set_temp_variable = { GNG_temp_legco_id = 86 }
+		legco_introduce_ordinance = yes
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = yes
+			}
+			set_temp_variable = { jap_app_temp = 1.50 }
+			GNG_japanese_app_change = yes
+		}
+		}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_science_future
+	}
+	id = GNG_build_research_center
+	icon = GFX_GNG_build_research_center
+	cost = 3
+	x = 7
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 86.1 }
+			GNG_add_amendment_to_current = yes	
+			every_owned_state = {
+				limit = {
+					GNG_is_pearl_river_delta_state = yes
+				}
+				set_temp_variable = { jap_app_temp = 1.25 }
+				GNG_japanese_app_change = yes
+			}
+			set_temp_variable = { GNG_misc_costs_temp = 0.20 }
+		GNG_misc_costs_change = yes}
+			
+		}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_science_future
+	}
+	id = GNG_sponsor_new_tech
+	icon = GFX_GNG_sponsor_new_tech
+	cost = 3
+	x = 9
+	y = 2
+	relative_position_id = GNG_new_develop_project
+	completion_reward = {
+		set_temp_variable = { GNG_legco_amendment_id = 86.2 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_misc_costs_temp = 0.15 }
+		GNG_misc_costs_change = yes
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = yes
+			}
+			set_temp_variable = { zhu_app_temp = 1.50 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { jap_app_temp = 1.50 }
+			GNG_japanese_app_change = yes
+		}
+	}}
+	shared_focus = {
+		prerequisite=
+		{	
+			focus = GNG_build_research_center
+		}
+		prerequisite=
+		{	
+			focus = GNG_sponsor_new_tech
+		}
+		id = GNG_new_tech_develop_ordinance
+		icon = GFX_GNG_new_tech_develop_ordinance
+		cost = 4.286
+		x = 8
+		y = 3
+		relative_position_id = GNG_new_develop_project
+		completion_reward = {
+			effect_tooltip = {
+				set_temp_variable = { GNG_temp_legco_id = 86 }
+		custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+		}
+		select_effect = {
+			set_temp_variable = { GNG_temp_legco_id = 86 }
+		legco_ordinance_vote_start = yes
+			hidden_effect = {
+				country_event = {
+					id = guangdong_sonyAmendment.1000
+					days = 7
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1001
+					days = 14
+				}
+				country_event = {
+					id = guangdong_sonyAmendment.1002
+					days = 21
+				}
+			}
+			}}
+shared_focus = {
+	prerequisite=
+	{	
+		focus = GNG_compulsory_education_ordinance
+	}
+	prerequisite=
+	{	
+		focus = GNG_food_safe_ordinance
+	}
+	prerequisite=
+	{	
+		focus = GNG_standard_health_insurance_ordinance
+	}
+	prerequisite=
+	{	
+		focus = GNG_prove_tools_import_ordinance
+	}
+	prerequisite=
+	{	
+		focus = GNG_new_tech_develop_ordinance
+	}
+	id = GNG_fake_final
+	icon = GFX_GNG_fake_final
+	cost = 10
+	x = 0
+	y = 4
+	relative_position_id = GNG_new_develop_project
+	select_effect = {
+
+		country_event = {
+			id = dop_sar.11 
+			days = 3
+		}
+	}
+	completion_reward = {
+		custom_effect_tooltip = GNG_ndp_fakeend_tt
+		custom_effect_tooltip = GNG_fakeswitchfocustree
+	}}
+	
+	shared_focus = {
+		id = GNG_nanjing_emergency_call
+		icon = GFX_GNG_nanjing_emergency_call
+		cost = 3
+		x = 8
+		y = 0
+		completion_reward = {
+			BFG_setup_influence = yes
+	}}
+	shared_focus = {
+		id = GNG_silicon_tower_collasped
+		icon = GFX_GNG_silicon_tower_collasped
+		cost = 0.5
+		x = 1
+		y = 1
+		prerequisite = {focus = GNG_nanjing_emergency_call}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			BFG_increase_japan_influence_high = yes
+			add_war_support = -0.05
+			add_political_power = -75
+			country_event = dop_pregaw.1
+	}}
+	shared_focus = {
+		id = GNG_ground_lighting
+		icon = GFX_GNG_ground_lighting
+		cost = 0.5
+		x = -1
+		y = 1
+		prerequisite = {focus = GNG_nanjing_emergency_call}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.2
+			BFG_increase_CHI_influence_high = yes
+			add_stability = -0.05
+			set_temp_variable = { gdp_growth_temp = -1 }
+		econ_gdp_growth_change = yes
+	}}
+	shared_focus = {
+		id = GNG_keep_calm
+		icon = GFX_GNG_keep_calm
+		cost = 0.5
+		x = -1
+		y = 2
+		prerequisite = {focus = GNG_ground_lighting}
+		prerequisite = {focus = GNG_silicon_tower_collasped}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_stability = 0.01
+			add_political_power = 25
+			BFG_decrease_CHI_influence_low = yes
+			BFG_decrease_japan_influence_low = yes
+			country_event = dop_pregaw.3
+	}}
+	shared_focus = {
+		id = GNG_consider_the_situation
+		icon = GFX_GNG_consider_the_situation
+		cost = 0.5
+		x = 1
+		y = 2
+		prerequisite = {focus = GNG_ground_lighting}
+		prerequisite = {focus = GNG_silicon_tower_collasped}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.4
+			add_political_power = 25
+			TNO_worsen_political_parties_policy_effectiveness_low = yes
+	}}
+	shared_focus = {
+		id = GNG_get_control
+		icon = GFX_GNG_get_control
+		cost = 1
+		x = 0
+		y = 3
+		prerequisite = {focus = GNG_consider_the_situation}
+		prerequisite = {focus = GNG_keep_calm}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+		set_temp_variable = { GNG_legco_cheungkong_temp_support = 1.00 }
+		set_temp_variable = { GNG_legco_sony_temp_support = 1.00 }
+		set_temp_variable = { GNG_legco_matsushita_temp_support = 0.10 }
+		set_temp_variable = { GNG_legco_fujitsu_temp_support = 0.00 }
+		set_temp_variable = { GNG_legco_hitachi_temp_support = 0.00 }
+		set_temp_variable = { GNG_temp_legco_id = 87 }
+		legco_introduce_ordinance = yes
+	}}
+	shared_focus = {
+		id = GNG_guarantee_m
+		icon = GFX_GNG_guarantee_m
+		cost = 1
+		x = -2
+		y = 4
+		prerequisite = {focus = GNG_get_control}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.5
+			set_temp_variable = { GNG_legco_amendment_id = 87.1 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.60 }
+			set_temp_variable = { GNG_legco_faction = 4 }
+			GNG_legco_change_votes_percentage = yes
+	}}
+	shared_focus = {
+		id = GNG_bribe_ito
+		icon = GFX_GNG_bribe_ito
+		cost = 1
+		x = 0
+		y = 4
+		prerequisite = {focus = GNG_get_control}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.6
+			set_temp_variable = { GNG_legco_amendment_id = 87.2 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.30 }
+		set_temp_variable = { GNG_legco_faction = 5 }
+		GNG_legco_change_votes_percentage = yes
+	}}
+	shared_focus = {
+		id = GNG_coercion_hitachi
+		icon = GFX_GNG_coercion_hitachi
+		cost = 1
+		x = 2
+		y = 4
+		prerequisite = {focus = GNG_get_control}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.7
+			set_temp_variable = { GNG_legco_amendment_id = 87.3 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.15 }
+		set_temp_variable = { GNG_legco_faction = 7 }
+		GNG_legco_change_votes_percentage = yes
+	}}
+	shared_focus = {
+		id = GNG_apply_emergency_ordinance
+		icon = GFX_GNG_apply_emergency_ordinance
+		cost = 1.5
+		x = 0
+		y = 5
+		prerequisite = {
+
+		focus = GNG_coercion_hitachi
+		}
+		prerequisite = {
+		focus = GNG_bribe_ito
+		}
+		prerequisite = {
+		focus = GNG_guarantee_m
+	}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			effect_tooltip = {
+				set_temp_variable = { GNG_temp_legco_id = 87 }
+				custom_effect_tooltip = GNG_legco_bill_vote_when_selected_tooltip
+				custom_effect_tooltip = GNG_legco_special_10_days
+			}
+			log = "[GetDateText]: [Root.GetName]: Focus GNG_Special_police_ordinance"
+		}
+		select_effect = {
+			set_country_flag = GNG_legco_vote_days_special
+			if = {
+				limit = {
+					GNG = {
+						is_ai = yes
+					}
+				}
+				set_country_flag = GNG_AI_Guarantee_Pass
+			}
+			set_variable = { GNG_legco_vote_days = 10 }
+			set_temp_variable = { GNG_temp_legco_id = 87 }
+		legco_ordinance_vote_start = yes
+			}}
+	shared_focus = {
+		id = GNG_storm_center
+		icon = GFX_GNG_storm_center
+		cost = 1
+		x = -5
+		y = 6
+		prerequisite = {focus = GNG_apply_emergency_ordinance}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			custom_effect_tooltip = storm_center_tt
+			
+	}}
+	shared_focus = {
+		id = GNG_change_support_as_weapon
+		icon = GFX_GNG_change_support_as_weapon
+		cost = 1
+		x = -7
+		y = 7
+		prerequisite = {focus = GNG_storm_center}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			custom_effect_tooltip = sew_unlock_tt
+			set_country_flag = bfg_support_exchange_weapon
+	}}
+	shared_focus = {
+		id = GNG_calm_civil
+		icon = GFX_GNG_calm_civil
+		cost = 1
+		x = -3
+		y = 8
+		prerequisite = {focus = GNG_storm_center}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			country_event = dop_pregaw.8
+	}}
+	shared_focus = {
+		id = GNG_use_chi_emotion
+		icon = GFX_GNG_use_chi_emotion
+		cost = 1
+		x = -2
+		y = 9
+		prerequisite = {focus = GNG_calm_civil}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_stability = 0.1
+	}}
+	shared_focus = {
+		id = GNG_rise_money
+		icon = GFX_GNG_rise_money
+		cost = 1
+		x = -7
+		y = 8
+		prerequisite = {focus = GNG_change_support_as_weapon}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			set_country_flag = bfg_money_asking
+			custom_effect_tooltip = money_asking_unlock_tt
+	}}
+	shared_focus = {
+		id = GNG_use_jap_emotion
+		icon = GFX_GNG_use_jap_emotion
+		cost = 1
+		x = -4
+		y = 9
+		prerequisite = {focus = GNG_calm_civil}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_stability = 0.1
+	}}
+	shared_focus = {
+		id = GNG_ask_indepence
+		icon = GFX_GNG_ask_indepence
+		cost = 1
+		x = -7
+		y = 9
+		prerequisite = {focus = GNG_rise_money}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			set_country_flag = bfg_indep_promise
+			custom_effect_tooltip = indep_promise_unlock_tt
+	}}
+	shared_focus = {
+		id = GNG_social_military
+		icon = GFX_GNG_social_military
+		cost = 1
+		x = -5
+		y = 10
+		prerequisite = {focus = GNG_ask_indepence}
+		prerequisite = {focus = GNG_use_jap_emotion}
+		prerequisite = {focus = GNG_use_chi_emotion}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			TNO_improve_army_professionalism_high = yes
+			TNO_improve_training_policy_effectiveness_high = yes
+			tno_conscription_worsen = yes
+			set_temp_variable = { temp_econ_spending_amount = 1.50 }
+			econ_spend_money_once_effect_raw_money = yes
+	}}
+	shared_focus = {
+		id = GNG_observation_leave
+		icon = GFX_GNG_observation_leave
+		cost = 1
+		x = 5
+		y = 6
+		prerequisite = {focus = GNG_apply_emergency_ordinance}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			custom_effect_tooltip = observation_leave_tt
+			division_template = {
+				name = "Guangdong Temp Defense"
+				division_cap = 30
+				force_allow_recruiting = yes
+				division_names_group = GNG_NORMAL_01
+				priority = 0
+				template_counter = 0
+				regiments = {
+					light_infantry = { x = 0 y = 0 }
+					light_infantry = { x = 0 y = 1 }
+					light_infantry = { x = 0 y = 2 }
+					light_infantry = { x = 0 y = 3 }
+					light_infantry = { x = 0 y = 4 }
+					light_infantry = { x = 1 y = 0 }
+					light_infantry = { x = 1 y = 1 }
+					light_infantry = { x = 1 y = 2 }
+					light_infantry = { x = 1 y = 3 }
+					light_infantry = { x = 1 y = 4 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+	}}
+	shared_focus = {
+		id = GNG_develop_urge
+		icon = GFX_GNG_develop_urge
+		cost = 1
+		x = 7
+		y = 7
+		prerequisite = {focus = GNG_observation_leave}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 10000
+				producer = GNG
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 2000
+				producer = GNG
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.7 }
+			econ_spend_money_once_effect_raw_money = yes
+	}}
+	shared_focus = {
+		id = GNG_transfor_weapon
+		icon = GFX_GNG_transfor_weapon
+		cost = 1
+		x = 3
+		y = 7
+		prerequisite = {focus = GNG_observation_leave}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 100
+				producer = GNG
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 2000
+				producer = GNG
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 2000
+				producer = GNG
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.7 }
+			econ_spend_money_once_effect_raw_money = yes
+	}}
+	shared_focus = {
+		id = GNG_arms_built
+		icon = GFX_GNG_arms_built
+		cost = 1
+		x = 3
+		y = 9
+		prerequisite = {focus = GNG_transfor_weapon}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 1500
+				producer = GNG
+			}
+			add_equipment_to_stockpile = {
+				type = armored_car_equipment
+				amount = 700
+				producer = GNG
+			}
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment
+				amount = 2000
+				producer = GNG
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.7 }
+			econ_spend_money_once_effect_raw_money = yes
+	}}
+	shared_focus = {
+		id = GNG_recruitment
+		icon = GFX_GNG_recruitment
+		cost = 1
+		x = 7
+		y = 8
+		prerequisite = {focus = GNG_develop_urge}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			add_manpower = 300000
+			set_temp_variable = { temp_econ_spending_amount = 1.0 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_stability = -0.1
+	}}
+	shared_focus = {
+		id = GNG_cutback_traintime
+		icon = GFX_GNG_cutback_traintime
+		cost = 1
+		x = 8
+		y = 9
+		prerequisite = {focus = GNG_recruitment}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			tno_training_worsen = yes
+	}}
+	shared_focus = {
+		id = GNG_lower_standard
+		icon = GFX_GNG_lower_standard
+		cost = 1
+		x = 6
+		y = 9
+		prerequisite = {focus = GNG_recruitment}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			tno_conscription_worsen = yes
+	}}
+	shared_focus = {
+		id = GNG_build_barricade
+		icon = GFX_GNG_build_barricade
+		cost = 1
+		x = 5
+		y = 10
+		prerequisite = {focus = GNG_cutback_traintime}
+		prerequisite = {focus = GNG_lower_standard}
+		prerequisite = {focus = GNG_arms_built}
+		relative_position_id = GNG_nanjing_emergency_call
+		completion_reward = {
+			every_owned_state = {
+			add_building_construction = {
+				type = bunker
+				level = 5
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+				}
+			}
+			add_building_construction = {
+				type = coastal_bunker
+				level = 5
+				instant_build = yes
+				province = {
+					all_provinces = yes
+					limit_to_coastal = yes
+				}
+			}}
+			set_temp_variable = { temp_econ_spending_amount = 3.0 }
+			econ_spend_money_once_effect_raw_money = yes
+
+	}}
+	shared_focus = {
+		id = GNG_war_drum_roming
+		icon = GFX_GNG_war_drum_roming
+		cost = 1
+		x = 0
+		y = 11
+		relative_position_id = GNG_nanjing_emergency_call
+		prerequisite = {focus = GNG_social_military}
+		prerequisite = {focus = GNG_build_barricade}
+		completion_reward = {
+			custom_effect_tooltip = war_drum_roming_tt
+	}}
+	

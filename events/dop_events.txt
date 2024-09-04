@@ -1,0 +1,2459 @@
+add_namespace = dop_sar
+add_namespace = dop_pregaw
+add_namespace = dop_gaw
+add_namespace = dop_end
+add_namespace = dop_usage
+add_namespace = dop_legco_hostage_crisis
+add_namespace = dop_flavors #maybe…i think
+add_namespace = dop_test
+add_namespace = dop_nat
+add_namespace = dop_ndp
+add_namespace = GNG_Product_Cycle
+
+country_event = { #
+	id = dop_ndp.1
+	title = dop_ndp.1.t
+	desc = dop_ndp.1.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_ndp.1.a
+		GNG_ordinances_effects = yes
+	}
+}
+
+country_event = { #
+	id = dop_ndp.3
+	title = dop_ndp.3.t
+	desc = dop_ndp.3.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_ndp.3.a
+		GNG_ordinances_effects = yes
+	}
+}
+
+country_event = { #
+	id = dop_ndp.5
+	title = dop_ndp.5.t
+	desc = dop_ndp.5.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_ndp.5.a
+		GNG_ordinances_effects = yes
+	}
+}
+
+country_event = { #
+	id = dop_ndp.7
+	title = dop_ndp.7.t
+	desc = dop_ndp.7.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_ndp.7.a
+		GNG_ordinances_effects = yes
+	}
+}
+
+country_event = { #
+	id = dop_ndp.9
+	title = dop_ndp.9.t
+	desc = dop_ndp.9.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_ndp.9.a
+		GNG_ordinances_effects = yes
+	}
+}
+
+country_event = { #
+	id = dop_usage.1000
+	title = dop_usage.1000.t
+	desc = dop_usage.1000.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_usage.1000.a
+		remove_ideas = {
+			CHI_small_army
+			CHI_slave_of_the_samurai_0
+			CHI_slave_of_the_samurai_1
+			CHI_slave_of_the_samurai_2
+			CHI_slave_of_the_samurai_3
+			CHI_slave_of_the_samurai_4
+			CHI_surrounded_by_enemies
+			CHI_japans_breadbasket_0
+			CHI_japans_breadbasket_1
+			CHI_japans_breadbasket_2
+		}
+		tno_conscription_clear = yes
+		tno_trade_laws_clear = yes
+		tno_income_taxation_clear = yes
+		tno_women_clear = yes
+		tno_gender_rights_clear = yes
+		tno_security_clear = yes
+		add_ideas = {
+			tno_conscription_broadened_conscription
+			tno_trade_laws_closed_economy
+			tno_income_taxation_flat_taxes
+			tno_women_military_assistance
+			tno_gender_rights_women_in_the_workplace
+			tno_security_oppressive_police
+		}
+		drop_cosmetic_tag = yes
+			set_cosmetic_tag = YUN_NPA_China
+			JAP = {
+				end_puppet = CHI
+				end_puppet = GUX
+				end_puppet = SIC
+				end_puppet = SHX
+				remove_from_faction = CHI
+				remove_from_faction = GUX
+				remove_from_faction = YUN
+				remove_from_faction = SIC
+				remove_from_faction = SHX
+				remove_from_faction = MEN
+				add_to_faction = tib
+				TIB = {
+					add_ideas = Sphere_Fully_Dependent
+				}
+				remove_from_faction = GNG
+				GNG = {
+					remove_ideas = Sphere_Corporate_Dependency
+				}
+			}
+			YUN = {
+				annex_country = {
+					target = GUZ
+					transfer_troops = yes
+				}
+			}
+			CHI = {
+				set_politics = {
+					ruling_party = despotism
+				}
+				remove_ideas = Sphere_Core_Member
+				puppet = GUX
+				GUX = {
+					remove_ideas = Sphere_Chinese_Warlord
+				}
+				puppet = SIC
+				SIC = {
+					remove_ideas = Sphere_Chinese_Warlord
+				}
+				puppet = SHX
+				SHX = {
+					remove_ideas = Sphere_Chinese_Warlord
+				}
+				puppet = YUN
+				YUN = {
+					remove_ideas = Sphere_Chinese_Warlord
+				}
+				puppet = MEN
+				MEN = {
+					remove_ideas = Sphere_Chinese_Warlord
+					set_cosmetic_tag = MEN_CHI_gaw
+				}
+				
+				puppet = XIN
+				puppet = QIN
+				puppet = XIK
+				create_faction = CHI_THE_NATIONAL_LIBERATION_FRONT
+				add_to_faction = vic
+				transfer_state = 813
+				transfer_state = 812
+				transfer_state = 1022
+				transfer_state = 811
+				add_state_core = 591
+				add_state_core = 813
+				add_state_core = 812
+				add_state_core = 1022
+				add_state_core = 811
+				add_state_core = 810
+				add_state_core = 524
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+				load_oob = GNG_1962
+			}
+			set_global_flag = nukes_disabled
+			custom_effect_tooltip = TNO_ArcadeMode_DisableNuclearArsenals_tt
+			declare_war_on = {
+				target = JAP
+				type = annex_everything
+			}
+			set_global_flag = GAW_ongoing
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = WORLD.40001 days = 1 }
+			}
+	}
+}
+country_event = { #
+	id = dop_usage.2000
+	title = dop_usage.2000.t
+	desc = dop_usage.2000.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_usage.2000.a
+		set_temp_variable = { GNG_product_cycle_company_temp = 1 }
+			set_variable = { GNG_current_product_id = 60 }
+			GNG_new_product_cycle_start = yes
+	}
+}
+country_event = { #
+	id = GNG_Product_Cycle.48
+	title = GNG_Product_Cycle.48.t
+	desc = GNG_Product_Cycle.48.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = GNG_Product_Cycle.48.a
+		GNG_give_product_cycle_effects = yes
+	}
+}
+country_event = { #
+	id = dop_pregaw.1
+	title = dop_pregaw.1.t
+	desc = dop_pregaw.1.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.1.a
+		every_owned_state = {
+			set_temp_variable = { chi_app_temp = -8 }
+			GNG_chinese_app_change = yes
+		}
+		every_owned_state = {
+			set_temp_variable = { zhu_app_temp = -8 }
+			GNG_zhujin_app_change = yes
+		}
+		every_owned_state = {
+			set_temp_variable = { jap_app_temp = -8 }
+			GNG_japanese_app_change = yes
+		}
+	}
+}
+country_event = { #
+	id = dop_pregaw.2
+	title = dop_pregaw.2.t
+	desc = dop_pregaw.2.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.2.a
+		every_owned_state = {
+			set_temp_variable = { chi_pop_temp = -4 }
+			GNG_chinese_pop_change = yes
+		}
+		every_owned_state = {
+			set_temp_variable = { zhu_pop_temp = -4 }
+			GNG_zhujin_pop_change = yes
+		}
+		every_owned_state = {
+			set_temp_variable = { jap_pop_temp = -4 }
+			GNG_japanese_pop_change = yes
+		}
+	}
+}
+country_event = { #
+	id = dop_pregaw.3
+	title = dop_pregaw.3.t
+	desc = dop_pregaw.3.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.3.a
+		custom_effect_tooltip = disable_silicon_year
+		clr_country_flag = GNG_Product_Decisions_GUI_show
+		clr_country_flag = GNG_Economic_Graphs_Show
+		custom_effect_tooltip = disable_product_gui
+		add_stability = -0.2
+	}
+}
+country_event = { #
+	id = dop_pregaw.4
+	title = dop_pregaw.4.t
+	desc = dop_pregaw.4.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.4.a
+		custom_effect_tooltip = disable_guangdong_map
+		clr_country_flag = GNG_Google_Maps_Show
+		custom_effect_tooltip = corruption_make_nonsense
+		add_war_support = -0.2
+	}
+}
+country_event = { #
+	id = dop_pregaw.5
+	title = dop_pregaw.5.t
+	desc = dop_pregaw.5.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.5.a
+	}
+}
+country_event = { #
+	id = dop_pregaw.6
+	title = dop_pregaw.6.t
+	desc = dop_pregaw.6.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.6.a
+	}
+}
+country_event = { #
+	id = guangdong_sonyAmendment.1000
+	immediate = { log = "[GetDateText]: [Root.GetName]: event guangdong_sonyAmendment.12" }
+	title = guangdong_sonyAmendment.1000.t
+	desc = guangdong_sonyAmendment.1000.desc
+	picture = GFX_report_event_GNG_sony_logo_generic
+	trigger = {
+		GNG_current_ordinance_has_less_than_5_amendments = yes
+	}
+	timeout_days = 7
+	is_triggered_only = yes
+
+	option = { #
+		name = guangdong_sonyAmendment.1000.a
+		ai_chance = { factor = 1 }
+
+	}
+	option = { #
+		name = guangdong_sonyAmendment.1000.b
+		ai_chance = { factor = 1 }
+			set_temp_variable = { GNG_legco_amendment_id = 17.3 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.2 }
+			set_temp_variable = { GNG_legco_faction = 3 }
+			GNG_legco_change_votes_percentage = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.2 }
+			set_temp_variable = { GNG_legco_faction = 6 }
+			GNG_legco_change_votes_percentage = yes
+
+	}
+}
+
+country_event = { #
+	id = guangdong_sonyAmendment.1001
+	immediate = { log = "[GetDateText]: [Root.GetName]: event guangdong_sonyAmendment.13" }
+	title = guangdong_sonyAmendment.1001.t
+	desc = guangdong_sonyAmendment.1001.desc
+	picture = GFX_report_event_GNG_matsushita_7
+	trigger = {
+		GNG_current_ordinance_has_less_than_5_amendments = yes
+	}
+	timeout_days = 7
+	is_triggered_only = yes
+
+	option = { #
+		name = guangdong_sonyAmendment.1001.a
+		ai_chance = { factor = 1 }
+
+	}
+	option = { #
+		name = guangdong_sonyAmendment.1001.b
+			set_temp_variable = { GNG_legco_amendment_id = 18.4 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.25 }
+			set_temp_variable = { GNG_legco_faction = 4 }
+			GNG_legco_change_votes_percentage = yes
+			set_temp_variable = { GNG_corruption_temp_var = 4 }
+			GNG_Corruption_Change = yes
+			set_temp_variable = { GNG_RnD_temp_id = 2 }
+			set_temp_variable = { GNG_research_monthly_base_temp = 0.3 }
+			GNG_research_base_monthly_change = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.2 }
+			econ_spend_money_once_effect_raw_money = yes
+	}
+}
+
+country_event = { #
+	id = guangdong_sonyAmendment.1002
+	immediate = { log = "[GetDateText]: [Root.GetName]: event guangdong_sonyAmendment.14" }
+	title = guangdong_sonyAmendment.1002.t
+	desc = guangdong_sonyAmendment.1002.desc
+	picture = GFX_report_event_GNG_ibuka_generic_8
+	trigger = {
+		GNG_current_ordinance_has_less_than_5_amendments = yes
+	}
+	timeout_days = 7
+	is_triggered_only = yes
+
+	option = { #
+		name = guangdong_sonyAmendment.1002.a
+		ai_chance = { factor = 1 }
+
+	}
+	option = { #
+		name = guangdong_sonyAmendment.1002.b
+			set_temp_variable = { GNG_legco_amendment_id = 18.5 }
+			GNG_add_amendment_to_current = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.15 }
+			set_temp_variable = { GNG_legco_faction = 5 }
+			GNG_legco_change_votes_percentage = yes
+			set_temp_variable = { GNG_temp_votes_percentage = 0.15 }
+			set_temp_variable = { GNG_legco_faction = 7 }
+			GNG_legco_change_votes_percentage = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.3 }
+			econ_spend_money_once_effect_raw_money = yes
+			set_temp_variable = { GNG_corruption_temp_var = 5 }
+			GNG_Corruption_Change = yes
+	}
+}
+country_event = { #
+	id = dop_pregaw.7
+	title = dop_pregaw.7.t
+	desc = dop_pregaw.7.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.7.a
+	}
+}
+country_event = { #
+	id = dop_pregaw.8
+	title = dop_pregaw.8.t
+	desc = dop_pregaw.8.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.8.a
+
+	}
+}
+country_event = { #
+	id = dop_pregaw.9
+	title = dop_pregaw.9.t
+	desc = dop_pregaw.9.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.9.a
+		GNG_ordinances_effects = yes
+		hidden_effect = {
+			CHI = {
+				country_event = {
+				id = dop_usage.1000
+				days = 5
+				}
+			}
+		}
+	}
+}
+country_event = { 
+	id = dop_usage.1
+	title = dop_usage.1.t
+	desc = dop_usage.1.desc
+	picture = GFX_report_event_generic_crate_of_guns_2
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_usage.1.a
+}}
+country_event = { #
+	id = dop_pregaw.11
+	title = dop_pregaw.11.t
+	desc = dop_pregaw.11.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.11.a
+		hidden_effect = {
+			country_event = {
+				id = dop_pregaw.21
+				days = 10
+			}
+		}
+		custom_effect_tooltip = pregaw_11_tt
+		custom_effect_tooltip = GNG_fakeswitchfocustree
+		complete_national_focus = GNG_black_cloud_roming
+		GNG_kobayashi_masami = {
+			retire = yes
+		}
+		GNG_kayanomiya_tsunenorio = {
+			retire = yes
+		}
+		GNG_kuribayashi_tadamichi = {
+			retire = yes
+		}
+		GNG_watanabe_keitaro = {
+			retire = yes
+		}
+		GNG_murai_sumio = {
+			retire = yes
+		}
+		GNG_takashima_masuo = {
+			retire = yes
+		}
+		GNG_takeda_goro= {
+			retire = yes
+		}
+		GNG_nagano_shigeto= {
+			retire = yes
+		}
+		GNG_arisue_seizo= {
+			retire = yes
+		}
+	}
+}
+country_event = { #
+	id = dop_pregaw.12
+	title = dop_pregaw.12.t
+	desc = dop_pregaw.12.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.12.a
+		custom_effect_tooltip = pregaw_11_tt
+		custom_effect_tooltip = GNG_fakeswitchfocustree
+		complete_national_focus = GNG_black_cloud_roming
+	}
+}
+
+country_event = { #
+	id = dop_pregaw.13
+	title = dop_pregaw.13.t
+	desc = dop_pregaw.13.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	country_event = {
+		id = dop_legco_hostage_crisis.20
+		days = 30
+		
+	}
+		name = dop_pregaw.13.a
+		diplomatic_relation = {
+			country = CHI
+			relation = military_access
+			active = yes
+		}
+		CHI = {diplomatic_relation = {
+			country = GNG
+			relation = military_access
+			active = yes
+		}}
+		news_event = WORLD.40002
+		}
+}
+country_event = { #
+	id = dop_pregaw.14
+	title = dop_pregaw.14.t
+	desc = dop_pregaw.14.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.14.a
+		diplomatic_relation = {
+			country = JAP
+			relation = military_access
+			active = yes
+		}
+		JAP = {diplomatic_relation = {
+			country = GNG
+			relation = military_access
+			active = yes
+		}
+		news_event = WORLD.40003
+	}
+}
+}
+country_event = { #
+	id = dop_pregaw.15
+	title = dop_pregaw.15.t
+	desc = dop_pregaw.15.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.15.a
+		news_event = WORLD.40004
+		CHI = { add_to_faction = GNG }
+		JAP = { declare_war_on = {target = GNG 
+		type = annex_everything}}
+		country_event = dop_pregaw.17
+	}
+}
+
+country_event = { #
+	id = dop_pregaw.16
+	title = dop_pregaw.16.t
+	desc = dop_pregaw.16.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.16.a
+		news_event = WORLD.40005
+		JAP = { add_to_faction = GNG }
+		CHI = { declare_war_on = {target = GNG 
+		type = annex_everything}}
+	set_country_flag = dop_ending
+	TNO_Country_Closing_Screen_Show = yes
+	custom_effect_tooltip = dop_country_closing_tt
+	}
+}
+country_event = { #
+	id = dop_pregaw.17
+	title = dop_pregaw.17.t
+	desc = dop_pregaw.17.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.17.a
+	if = {
+		custom_effect_tooltip = final_yongye_no_tt
+		set_country_flag = gng_chi_choiced
+		limit = {has_country_flag = yongye_leave}
+		delete_unit_template_and_units = {
+			division_template = "Sensha Shidan - Armored Division"
+			disband = no #will refund equipment and manpower
+		}
+		
+		729 = {
+			create_unit = {
+				division = "name = \"107 'Nagi' Kikaika Shidan\" division_template = \"Sensha Shidan - Armored Division\" start_manpower_factor = 0.7"
+				owner = JAP
+				count = 1
+				allow_spawning_on_enemy_provs = yes
+				id = 123
+			}
+		}
+	}
+	else = {
+		custom_effect_tooltip = final_yongye_yes_tt
+		delete_unit_template_and_units = {
+			division_template = "Sensha Shidan - Armored Division"
+			disband = no #will refund equipment and manpower
+		}
+	JAP = {transfer_state = 729}
+	729 = {
+		create_unit = {
+			division = "name = \"107 'Nagi' Kikaika Shidan\" division_template = \"Sensha Shidan - Armored Division\" start_manpower_factor = 0.7"
+			owner = JAP
+			count = 1
+			allow_spawning_on_enemy_provs = yes
+			id = 123
+		}
+	}}
+	set_country_flag = dop_ending
+	TNO_Country_Closing_Screen_Show = yes
+	custom_effect_tooltip = dop_country_closing_tt
+}}
+
+country_event = { #
+	id = dop_pregaw.18
+	title = dop_pregaw.18.t
+	desc = dop_pregaw.18.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.18.a
+	}
+}
+country_event = { #
+	id = dop_pregaw.19
+	title = dop_pregaw.19.t
+	desc = dop_pregaw.19.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.19.a
+	}
+}
+country_event = { #
+	id = dop_pregaw.20
+	title = dop_pregaw.20.t
+	desc = dop_pregaw.20.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.20.a
+	}
+}
+country_event = { #
+	id = dop_pregaw.21
+	title = dop_pregaw.21.t
+	desc = dop_pregaw.21.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.21.a
+		custom_effect_tooltip = pregaw_21_tt
+		country_event = {
+			id = dop_pregaw.22
+			random_hours = 150
+		}
+		set_variable = { CCL_cong = 0 }
+	}
+}
+country_event = { #
+	id = dop_pregaw.22
+	title = dop_pregaw.22.t
+	desc = dop_pregaw.22.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	country_event = {
+		id = dop_pregaw.23
+		random_hours = 150
+	}
+		add_to_variable = { CCL_cong = 2 }
+		name = dop_pregaw.22.a
+		add_political_power = -50
+		set_temp_variable = { GNG_legco_seat_temp = -2 }
+		set_temp_variable = { GNG_legco_faction_temp = 3 }
+		GNG_change_legco_seats = yes
+		tno_minimum_wage_improve = yes
+		tno_max_workhours_improve = yes
+	}
+	option = { 
+		country_event = {
+			id = dop_pregaw.23
+			random_hours = 150
+		}
+		add_to_variable = { CCL_cong = 1 }
+		add_political_power = -50
+		tno_max_workhours_improve = yes
+		name = dop_pregaw.22.b
+	}
+	option = { #
+	country_event = {
+		id = dop_pregaw.23
+		random_hours = 150
+	}
+	add_to_variable = { CCL_cong = 1 }
+		add_political_power = -50
+		tno_minimum_wage_improve = yes
+		name = dop_pregaw.22.c
+	}
+	option = { #
+	country_event = {
+		id = dop_pregaw.23
+		random_hours = 150
+	}
+		name = dop_pregaw.22.d
+	}
+}
+country_event = { #
+	id = dop_pregaw.23
+	title = dop_pregaw.23.t
+	desc = dop_pregaw.23.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	country_event = {
+		id = dop_pregaw.24
+		random_hours = 150
+	}
+		add_to_variable = { CCL_cong = 2 }
+		name = dop_pregaw.23.a
+		add_political_power = -50
+		
+		
+		set_temp_variable = { GNG_legco_seat_temp = -2 }
+		set_temp_variable = { GNG_legco_faction_temp = 6 }
+		GNG_change_legco_seats = yes
+		tno_pensions_improve = yes
+		tno_health_care_improve = yes
+	}
+	option = { 
+		country_event = {
+			id = dop_pregaw.24
+			random_hours = 150
+		}
+		add_to_variable = { CCL_cong = 1 }
+		add_political_power = -50
+		tno_health_care_improve = yes
+		name = dop_pregaw.23.b
+	}
+	option = { #
+	country_event = {
+		id = dop_pregaw.24
+		random_hours = 150
+	}
+	add_to_variable = { CCL_cong = 1 }
+		add_political_power = -50
+		tno_pensions_improve = yes
+		name = dop_pregaw.23.c
+	}
+	option = { #
+	country_event = {
+		id = dop_pregaw.24
+		random_hours = 150
+	}
+		name = dop_pregaw.23.d
+	}
+}
+country_event = { #
+	id = dop_pregaw.24
+	title = dop_pregaw.24.t
+	desc = dop_pregaw.24.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	name = dop_pregaw.24.a
+	set_temp_variable = { GNG_legco_seat_temp = -2 }
+	set_temp_variable = { GNG_legco_faction_temp = 6 }
+	GNG_change_legco_seats = yes
+	set_temp_variable = { GNG_legco_seat_temp = -2 }
+	set_temp_variable = { GNG_legco_faction_temp = 3 }
+	GNG_change_legco_seats = yes
+	hidden_effect = {
+	if = {
+		limit = {
+			check_variable = { CCL_cong > 1.99 }
+		}
+		country_event = {
+			id = dop_pregaw.25
+			random_hours = 150
+		}
+		add_to_variable = {
+			CCL_cong = 2
+		}
+	}
+	else = {
+		country_event = {
+			id = dop_pregaw.26
+			random_hours = 150
+		}
+	}
+}
+}
+option = { #
+name = dop_pregaw.24.b
+hidden_effect = {
+if = {
+	limit = {
+		check_variable = { CCL_cong > 3.99 }
+	}
+	country_event = {
+		id = dop_pregaw.25
+		random_hours = 150
+	}
+}
+else = {
+	country_event = {
+		id = dop_pregaw.26
+		random_hours = 150
+	}
+}
+}
+}
+}
+country_event = { #
+	id = dop_pregaw.25
+	title = dop_pregaw.25.t
+	desc = dop_pregaw.25.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.25.a
+		if = {
+			limit = {
+				check_variable = { CCL_cong > 5.99 }
+			}
+			division_template = {
+				name = "CCL infantry"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 1 }
+					recon = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+				}
+				
+			}
+			1439 = {
+				create_unit = {
+					division = "name = \"Guangdong_CCL_Devision\" division_template = \"CCL infantry\" start_experience_factor=0.3"
+					owner = GNG
+					count = 4
+					id = 1439
+				}
+			 }
+		}
+		else_if = {
+			limit = {
+				check_variable = { CCL_cong > 4.99 }
+			}
+			division_template = {
+				name = "CCL infantry"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 1 }
+					recon = { x = 0 y = 2 }
+				}
+			}
+			1439 = {
+				create_unit = {
+					division = "name = \"Guangdong_CCL_Devision\" division_template = \"CCL infantry\" start_experience_factor=0.3"
+					owner = GNG
+					count = 4
+					id = 1439
+				}
+			 }
+		}
+		else = {
+			division_template = {
+				name = "CCL infantry"
+				regiments = {
+					light_infantry = { x = 0 y = 0 }
+					light_infantry = { x = 0 y = 1 }
+					light_infantry = { x = 0 y = 2 }
+					light_infantry = { x = 1 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+			1439 = {
+				create_unit = {
+					division = "name = \"Guangdong_CCL_Devision\" division_template = \"CCL infantry\" start_experience_factor=0.3"
+					owner = GNG
+					count = 4
+					id = 1439
+				}
+			 }
+		}
+	}
+}
+country_event = { #
+	id = dop_pregaw.26
+	title = dop_pregaw.26.t
+	desc = dop_pregaw.26.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.26.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.1
+	title = dop_legco_hostage_crisis.1.t
+	desc = dop_legco_hostage_crisis.1.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.1.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.2
+	title = dop_legco_hostage_crisis.2.t
+	desc = dop_legco_hostage_crisis.2.desc
+	picture = GFX_report_event_GNG_IJA_street_battle
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.2.a
+		country_event = {id = dop_legco_hostage_crisis.3
+		random_hours = 48}
+		custom_effect_tooltip = lhc_alarm_tt
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.3
+	title = dop_legco_hostage_crisis.3.t
+	desc = dop_legco_hostage_crisis.3.desc
+	picture = GFX_report_event_generic_firing_squad
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.3.a
+		hidden_effect = {
+		if = {
+			limit = {check_variable = { GNG_Japan_Approval > 75}}
+			country_event = {
+		id = dop_legco_hostage_crisis.4
+		random_hours = 48}
+		else = {country_event = {
+			id = dop_legco_hostage_crisis.5
+			random_hours = 48
+		}}}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.3.b
+		hidden_effect = {
+				country_event = {
+			id = dop_legco_hostage_crisis.9
+			random_hours = 48}}}
+	
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.4
+	title = dop_legco_hostage_crisis.4.t
+	desc = dop_legco_hostage_crisis.4.desc
+	picture = GFX_report_event_GNG_Takashima_Masuo_1
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.4.a
+		country_event = {
+			id = dop_legco_hostage_crisis.7
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.5
+	title = dop_legco_hostage_crisis.5.t
+	desc = dop_legco_hostage_crisis.5.desc
+	picture = GFX_report_event_GNG_Takashima_Masuo_2
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.5.a
+		if ={ limit = {
+			has_country_flag = senjiu_refuse
+		}
+		country_event = {
+			id = dop_legco_hostage_crisis.13
+			days = 1}}else={set_country_flag = gaodao_refuse
+		country_event = {
+			id = dop_legco_hostage_crisis.6
+			days = 1}}
+		
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.6
+	title = dop_legco_hostage_crisis.6.t
+	desc = dop_legco_hostage_crisis.6.desc
+	picture = GFX_report_event_GNG_Takashima_Masuo_1
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.6.a
+		country_event = {
+			id = dop_legco_hostage_crisis.9
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.7
+	title = dop_legco_hostage_crisis.7.t
+	desc = dop_legco_hostage_crisis.7.desc
+	picture = GFX_report_event_GNG_Takashima_Masuo_1
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.7.a
+		country_event = {
+			id = dop_legco_hostage_crisis.8
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.8
+	title = dop_legco_hostage_crisis.8.t
+	desc = dop_legco_hostage_crisis.8.desc
+	picture = GFX_report_event_IBR_iberian_wars_11
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.8.a
+		custom_effect_tooltip = lhc_deduce_2
+		set_variable = {current_witness = 3}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.9
+	title = dop_legco_hostage_crisis.9.t
+	desc = dop_legco_hostage_crisis.9.desc
+	picture = GFX_report_event_HIS_ua_tv
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.9.a
+		set_temp_variable = { temp_econ_spending_amount = 3 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.11
+			random_hours = 48
+		}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.9.b
+		set_temp_variable = { temp_econ_spending_amount = 1.8}
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		random_list = {
+			60 = {
+				country_event = {
+					id = dop_legco_hostage_crisis.10
+					random_hours = 48
+				}
+			}
+			40 = {
+				if ={ limit = {
+					has_country_flag = senjiu_refuse
+				}
+				country_event = {
+					id = dop_legco_hostage_crisis.13
+					days = 1}}else={set_country_flag = senjiu_refuse
+				country_event = {
+					id = dop_legco_hostage_crisis.10
+					days = 1}}
+			}
+		}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.9.c
+		hidden_effect = {
+			if ={ limit = {
+				has_country_flag = gaodao_refuse
+			}
+			country_event = {
+				id = dop_legco_hostage_crisis.13
+				days = 1}}
+				else={set_country_flag = senjiu_refuse
+			country_event = {
+				id = dop_legco_hostage_crisis.10
+				days = 1}}}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.10
+	title = dop_legco_hostage_crisis.10.t
+	desc = dop_legco_hostage_crisis.10.desc
+	picture = GFX_report_event_HIS_ua_tv
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	name = dop_legco_hostage_crisis.10.a
+	hidden_effect = {
+	if = {
+		limit = {check_variable = { GNG_Japan_Approval > 75}}
+		country_event = {
+	id = dop_legco_hostage_crisis.4
+	random_hours = 48}
+	else = {country_event = {
+		id = dop_legco_hostage_crisis.5
+		random_hours = 48
+	}}}}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.11
+	title = dop_legco_hostage_crisis.11.t
+	desc = dop_legco_hostage_crisis.11.desc
+	picture = GFX_report_event_GNG_Nagano_Shigeto_Generic_2
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.11.a
+		country_event = {
+			id = dop_legco_hostage_crisis.8
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.12
+	title = dop_legco_hostage_crisis.12.t
+	desc = dop_legco_hostage_crisis.12.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.12.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.13
+	title = dop_legco_hostage_crisis.13.t
+	desc = dop_legco_hostage_crisis.13.desc
+	picture = GFX_report_event_generic_money
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.13.a
+		country_event = {
+			id = dop_legco_hostage_crisis.14
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.14
+	title = dop_legco_hostage_crisis.14.t
+	desc = dop_legco_hostage_crisis.14.desc
+	picture = GFX_report_event_IBR_belem_brazil_hotel
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.14.a
+		set_temp_variable = { temp_econ_spending_amount = 4.35 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.22
+			random_hours = 48
+		}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.14.b
+		set_temp_variable = { temp_econ_spending_amount = 2.6 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		random_list = {
+			40 = {
+				country_event = {
+					id = dop_legco_hostage_crisis.22
+					random_hours = 48
+				}
+			}
+			60 = {
+				country_event = {
+					id = dop_legco_hostage_crisis.15
+					random_hours = 48
+				}
+			}
+		}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.14.c
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.15
+			random_hours = 48
+		}}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.15
+	title = dop_legco_hostage_crisis.15.t
+	desc = dop_legco_hostage_crisis.15.desc
+	picture = GFX_report_event_RUS_war_planning
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.15.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -1000
+		}
+		set_temp_variable = { temp_econ_spending_amount = 0.5 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.16
+			random_hours = 48
+		}
+		
+	}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.15.b
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -2000
+		}
+		set_temp_variable = { temp_econ_spending_amount =1 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		random_list = {
+			40 = {
+				country_event = {
+					id = dop_legco_hostage_crisis.17
+					random_hours = 48
+				}
+			}
+			60 = {
+				country_event = {
+					id = dop_legco_hostage_crisis.18
+					random_hours = 48
+				}
+			}
+		}}
+	}
+	option = { #
+		name = dop_legco_hostage_crisis.15.c
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -5000
+		}
+		set_temp_variable = { temp_econ_spending_amount = 2 }
+		econ_spend_money_once_effect_raw_money = yes
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.19
+			random_hours = 48
+		}}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.16
+	title = dop_legco_hostage_crisis.16.t
+	desc = dop_legco_hostage_crisis.16.desc
+	picture = GFX_report_event_IME_attack
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.16.a
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+			
+		}
+		every_owned_state = {
+			set_temp_variable = { zhu_app_temp = 1 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { chi_app_temp = 1 }
+			GNG_chinese_app_change = yes
+			set_temp_variable = { jap_app_temp = 1 }
+			GNG_japanese_app_change = yes
+		}
+		custom_effect_tooltip = lhc_deduce_1
+		set_variable = {current_witness = 2}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.17
+	title = dop_legco_hostage_crisis.17.t
+	desc = dop_legco_hostage_crisis.17.desc
+	picture = GFX_report_event_IME_attack
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.17.a
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+			
+		}
+		custom_effect_tooltip = lhc_deduce_1
+		set_variable = {current_witness = 2}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.18
+	title = dop_legco_hostage_crisis.18.t
+	desc = dop_legco_hostage_crisis.18.desc
+	picture = GFX_report_event_IME_attack
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.18.a
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+			
+		}
+		custom_effect_tooltip = lhc_deduce_2
+		set_variable = {current_witness = 3}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.19
+	title = dop_legco_hostage_crisis.19.t
+	desc = dop_legco_hostage_crisis.19.desc
+	picture = GFX_report_event_IME_attack
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.19.a
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+			
+		}
+		custom_effect_tooltip = lhc_deduce_3
+		set_variable = {current_witness = 5}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.20
+	title = dop_legco_hostage_crisis.20.t
+	desc = dop_legco_hostage_crisis.20.desc
+	picture = GFX_report_event_GNG_morita_future
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.20.a
+		custom_effect_tooltip = lhc_finished_tt
+		set_country_flag = lhc_finished
+		set_temp_variable = { GNG_legco_holding_value = 89 }
+		GNG_ordinances_effects = yes
+		}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.21
+	title = dop_legco_hostage_crisis.21.t
+	desc = dop_legco_hostage_crisis.21.desc
+	picture = GFX_report_event_GNG_morita_future
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.21.a
+		country_event = {
+			id = dop_legco_hostage_crisis.23
+			random_hours = 96
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.22
+	title = dop_legco_hostage_crisis.22.t
+	desc = dop_legco_hostage_crisis.22.desc
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.22.a
+		custom_effect_tooltip = lhc_deduce_3
+		set_variable = {current_witness = 5}
+		set_temp_variable = { current_witness_temp = current_witness }
+			multiply_temp_variable = { current_witness_temp = 20 }
+			set_variable = {killer_prgess = current_witness_temp}
+		country_event = {
+			id = dop_legco_hostage_crisis.20
+			random_hours = 48
+		}
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.23
+	title = dop_legco_hostage_crisis.23.t
+	desc = dop_legco_hostage_crisis.23.desc
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.23.a
+		custom_effect_tooltip = Lhc_enable_tt
+		set_country_flag = lhc_active
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.24
+	title = dop_legco_hostage_crisis.24.t
+	desc = dop_legco_hostage_crisis.24.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.24.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.25
+	title = dop_legco_hostage_crisis.25.t
+	desc = dop_legco_hostage_crisis.25.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.25.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.26
+	title = dop_legco_hostage_crisis.26.t
+	desc = dop_legco_hostage_crisis.26.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.26.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.27
+	title = dop_legco_hostage_crisis.27.t
+	desc = dop_legco_hostage_crisis.27.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.27.a
+		hidden_effect = {
+		country_event = {
+			id = dop_legco_hostage_crisis.32
+			days = 3
+		}
+	}
+		set_variable = { GNG_LHC_cards_revealed_1 = 1 }
+		add_to_variable = { winning_count = 2 }
+		custom_effect_tooltip = LHC_add
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.28
+	title = dop_legco_hostage_crisis.28.t
+	desc = dop_legco_hostage_crisis.28.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.38
+		days = 20
+		}
+	}
+		name = dop_legco_hostage_crisis.28.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.29
+	title = dop_legco_hostage_crisis.29.t
+	desc = dop_legco_hostage_crisis.29.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.39
+		days = 20
+		}
+	}
+		name = dop_legco_hostage_crisis.29.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.30
+	title = dop_legco_hostage_crisis.30.t
+	desc = dop_legco_hostage_crisis.30.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	
+		
+	
+	hidden_effect = {
+		country_event = {
+		id = dop_legco_hostage_crisis.40
+		days = 20
+		}
+	}
+		name = dop_legco_hostage_crisis.30.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.31
+	title = dop_legco_hostage_crisis.31.t
+	desc = dop_legco_hostage_crisis.31.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.41
+		days = 50
+		}
+	}
+		name = dop_legco_hostage_crisis.29.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.32
+	title = dop_legco_hostage_crisis.32.t
+	desc = dop_legco_hostage_crisis.32.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+		country_event = {
+		id = dop_legco_hostage_crisis.33
+		days = 3
+		}
+	}
+		name = dop_legco_hostage_crisis.32.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.33
+	title = dop_legco_hostage_crisis.33.t
+	desc = dop_legco_hostage_crisis.33.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.34
+		days = 3
+		}
+	}
+		name = dop_legco_hostage_crisis.33.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.34
+	title = dop_legco_hostage_crisis.34.t
+	desc = dop_legco_hostage_crisis.34.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.35
+		days = 3
+		}
+	}
+		name = dop_legco_hostage_crisis.34.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.35
+	title = dop_legco_hostage_crisis.35.t
+	desc = dop_legco_hostage_crisis.35.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.36
+		days = 3
+		}
+	}
+		name = dop_legco_hostage_crisis.35.a
+		set_variable = { GNG_LHC_cards_revealed_2 = 1 }
+		add_to_variable = { winning_count = 2 }
+		custom_effect_tooltip = LHC_add
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.36
+	title = dop_legco_hostage_crisis.36.t
+	desc = dop_legco_hostage_crisis.36.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	hidden_effect = {
+	country_event = {
+		id = dop_legco_hostage_crisis.37
+		days = 3
+		}
+	}
+		name = dop_legco_hostage_crisis.36.a
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.37
+	title = dop_legco_hostage_crisis.37.t
+	desc = dop_legco_hostage_crisis.37.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		clr_country_flag = now_ding
+		name = dop_legco_hostage_crisis.37.a
+		set_variable = { GNG_LHC_cards_revealed_5 = 1 }
+		add_to_variable = { winning_count = 2 }
+		custom_effect_tooltip = LHC_add
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.38
+	title = dop_legco_hostage_crisis.38.t
+	desc = dop_legco_hostage_crisis.38.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	clr_country_flag = now_ding
+		name = dop_legco_hostage_crisis.38.a
+		set_variable = { GNG_LHC_cards_revealed_7 = 1 }
+		add_to_variable = { winning_count = 1 }
+		custom_effect_tooltip = LHC_fail_2
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.39
+	title = dop_legco_hostage_crisis.39.t
+	desc = dop_legco_hostage_crisis.39.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	clr_country_flag = now_ding
+		name = dop_legco_hostage_crisis.39.a
+		set_variable = { GNG_LHC_cards_revealed_4 = 1 }
+		custom_effect_tooltip = LHC_fail
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.40
+	title = dop_legco_hostage_crisis.40.t
+	desc = dop_legco_hostage_crisis.40.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	clr_country_flag = now_ding
+		name = dop_legco_hostage_crisis.40.a
+		set_variable = { GNG_LHC_cards_revealed_6 = 1 }
+		add_to_variable = { winning_count = 1 }
+		custom_effect_tooltip = LHC_fail_2
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.41
+	title = dop_legco_hostage_crisis.41.t
+	desc = dop_legco_hostage_crisis.41.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+	clr_country_flag = now_ding
+		name = dop_legco_hostage_crisis.41.a
+		set_variable = { GNG_LHC_cards_revealed_3 = 1 }
+		add_to_variable = { winning_count = 0 }
+		custom_effect_tooltip = LHC_fail
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.50
+	title = dop_legco_hostage_crisis.50.t
+	desc = dop_legco_hostage_crisis.50.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.50.a
+		custom_effect_tooltip = LHC_win
+		set_country_flag = yongye_leave
+		remove_unit_leader = 12103
+		GNG_nagano_shigeto= {
+			retire = yes
+		}
+		
+	}
+}
+country_event = { #
+	id = dop_legco_hostage_crisis.51
+	title = dop_legco_hostage_crisis.51.t
+	desc = dop_legco_hostage_crisis.51.desc
+
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_legco_hostage_crisis.51.a
+		custom_effect_tooltip = LHC_lose
+		
+	}
+}
+country_event = { #
+	id = dop_sar.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.1" }
+	title = dop_sar.1.t
+	desc = dop_sar.1.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_sar.1.a
+	}
+}
+country_event = { #
+	id = dop_sar.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.2" }
+	title = dop_sar.2.t
+	desc = dop_sar.2.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_sar.2.a
+	}
+}
+country_event = { #
+	id = dop_flavors.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.3" }
+	title =  dop_flavors.1.t
+	desc =  dop_flavors.1.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+
+	is_triggered_only = no
+	trigger = {
+		tag = GNG
+		has_completed_focus = GNG_the_coming_storm
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	option = { #
+		name = dop_flavors.1.a
+		load_focus_tree = dop_opening_tree
+	}
+	
+}
+country_event = { #
+	id = dop_sar.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.4" }
+	title = dop_sar.4.t
+	desc = dop_sar.4.desc
+	picture = GFX_report_event_GNG_Omori_Kan_Generic_1
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_sar.4.a
+	}
+}
+country_event = { #
+	id = dop_sar.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.5" }
+	title = dop_sar.5.t
+	desc = dop_sar.5.desc
+	picture = GFX_report_event_GNG_police_fujitsu_militiamen
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_sar.5.a
+	}
+}
+country_event = { #
+	id = dop_sar.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+	title = dop_sar.6.t
+	desc = dop_sar.6.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_sar.6.a
+		load_focus_tree = dop_ndwtree
+	}
+}
+country_event = { #sdw_pass
+id = dop_sar.7
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.7.t
+desc = dop_sar.7.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_sar.7.a
+	custom_effect_tooltip = GNG_sdw_pass_tt
+	set_temp_variable = { v = 92 }
+	GNG_add_uncategorised_law = yes
+	load_focus_tree = dop_peace_develop
+	GNG_ordinances_effects = yes
+}
+}
+country_event = { #sdw_fail
+id = dop_sar.8
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.8.t
+desc = dop_sar.8.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_sar.8.a
+	custom_effect_tooltip = GNG_sdw_fail_tt
+	set_temp_variable = { GNG_legco_seat_temp = -3 }
+	set_temp_variable = { GNG_legco_faction_temp = 3 }
+	GNG_change_legco_seats = yes
+	set_country_flag = sdw_failed
+}
+}
+country_event = { #sdw_attack
+id = dop_sar.9
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.9.t
+desc = dop_sar.9.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_sar.9.a
+	custom_effect_tooltip = GNG_sdw_retray_tt
+	set_temp_variable = { GNG_legco_seat_temp = -10 }
+	set_temp_variable = { GNG_legco_faction_temp = 3 }
+	GNG_change_legco_seats = yes
+	set_temp_variable = { GNG_legco_seat_temp = -10 }
+	set_temp_variable = { GNG_legco_faction_temp = 6 }
+	GNG_change_legco_seats = yes
+	set_country_flag = sdw_failed
+}
+}
+country_event = { #sdw_safe
+id = dop_sar.10
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.10.t
+desc = dop_sar.10.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_sar.10.a
+
+}
+}
+country_event = { 
+id = dop_sar.11
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.11.t
+desc = dop_sar.11.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+option = { #
+	name = dop_sar.11.a
+	country_event = {
+		id = dop_sar.12
+		days = 2
+	}
+	hidden_effect = {
+		every_country = {
+			limit = { is_ai = no }
+			news_event = {
+				id = WORLD.40000
+				days = 1
+			}
+		}
+	}
+}
+}
+country_event = { 
+	id = dop_sar.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+	title = dop_sar.12.t
+	desc = dop_sar.12.desc
+	picture = GFX_report_event_GNG_morita_akio_10
+	
+	is_triggered_only = yes
+	
+	option = { #
+		name = dop_sar.12.a
+		country_event = {
+			id = dop_sar.13
+			days = 1
+		}
+	}
+	}
+	country_event = { 
+		id = dop_sar.13
+		immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+		title = dop_sar.13.t
+		desc = dop_sar.13.desc
+		picture = GFX_report_event_GNG_morita_akio_10
+		
+		is_triggered_only = yes
+		
+		option = { #
+			name = dop_sar.13.a
+			country_event = {
+				id = dop_sar.14
+				days = 2
+			}
+		}
+		}
+country_event = { 
+id = dop_sar.14
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.14.t
+desc = dop_sar.14.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+		option = { #
+		name = dop_sar.14.a
+		complete_national_focus = GNG_nanjing_emergency_call
+		hidden_effect = {load_focus_tree = dop_pregaw_tree}
+		custom_effect_tooltip = GNG_typ_broken_tt
+		hidden_effect={set_temp_variable = { v = 91.1 }
+		GNG_add_uncategorised_law = yes
+		set_temp_variable = { v = 91 }
+		GNG_remove_uncategorised_law= yes }
+		custom_effect_tooltip = GNG_fakeswitchfocustree
+		}
+}
+country_event = { #switchfocus_1
+id = dop_sar.12
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_sar.12.t
+desc = dop_sar.12.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+set_temp_variable = { v = 93 }
+GNG_add_uncategorised_law = yes
+	name = dop_sar.12.a
+	load_focus_tree = dop_ndwtree
+}}
+country_event = { #final
+id = dop_pregaw.10
+immediate = { log = "[GetDateText]: [Root.GetName]: event dop_sar.6" }
+title = dop_pregaw.10.t
+desc = dop_pregaw.10.desc
+picture = GFX_report_event_GNG_morita_akio_10
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_pregaw.10.a
+	set_country_flag = dop_ending
+	TNO_Country_Closing_Screen_Show = yes
+	custom_effect_tooltip = dop_country_closing_tt
+}}
+country_event = { 
+id = dop_flavors.1
+title = dop_flavors.1.t
+desc = dop_flavors.1.desc
+picture = GFX_report_event_generic_restaurant
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_flavors.1.a
+}}
+country_event = { 
+id = dop_flavors.2
+title = dop_flavors.2.t
+desc = dop_flavors.2.desc
+picture = GFX_report_event_GNG_police_fujitsu_militiamen
+
+is_triggered_only = yes
+
+
+option = { #
+name = dop_flavors.2.a
+country_event = {
+	id = dop_flavors.3
+	days = 5
+}
+}}
+country_event = { 
+id = dop_flavors.3
+title = dop_flavors.3.t
+desc = dop_flavors.3.desc
+picture = GFX_report_event_CHI_Chinese_Police
+
+is_triggered_only = yes
+
+
+option = { #
+name = dop_flavors.3.a
+country_event = {
+	id = dop_flavors.4
+	days = 5
+}
+}}
+country_event = { 
+id = dop_flavors.4
+title = dop_flavors.4.t
+desc = dop_flavors.4.desc
+picture = GFX_report_event_GNG_generic_HK_police_4
+
+is_triggered_only = yes
+
+
+option = { #
+	name = dop_flavors.4.a
+}}
+country_event = { 
+	id = dop_flavors.5
+	title = dop_flavors.5.t
+	desc = dop_flavors.5.desc
+	picture = GFX_report_event_generic_helicopter_2
+	
+	is_triggered_only = yes
+	
+	
+	option = { 
+		name = dop_flavors.5.a
+}}
+country_event = { 
+	id = dop_flavors.6
+	title = dop_flavors.6.t
+	desc = dop_flavors.6.desc
+	picture = GFX_report_event_generic_crate_of_guns_2
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		
+		name = dop_flavors.6.a
+}}
+country_event = { 
+	id = dop_flavors.7
+	title = dop_flavors.7.t
+	desc = dop_flavors.7.desc
+	picture = GFX_report_event_GNG_HK_generic_6
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.7.a
+}}
+country_event = { 
+	id = dop_flavors.8
+	title = dop_flavors.8.t
+	desc = dop_flavors.8.desc
+	picture = GFX_report_event_CHI_Nanjing_Palace
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.8.a
+}}
+country_event = { 
+	id = dop_flavors.9
+	title = dop_flavors.9.t
+	desc = dop_flavors.9.desc
+	picture = GFX_report_event_GNG_IJA_soldiers_generic
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+	country_event = {
+		id = dop_flavors.10
+		days = 5
+	}
+		name = dop_flavors.9.a
+}}
+country_event = { 
+	id = dop_flavors.10
+	title = dop_flavors.10.t
+	desc = dop_flavors.10.desc
+	picture = GFX_report_event_GNG_IJA_it_begins
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.10.a
+		JAP = {
+			TNO_worsen_army_professionalism_low = yes 
+		}
+}}
+country_event = { 
+	id = dop_flavors.11
+	title = dop_flavors.11.t
+	desc = dop_flavors.11.desc
+	picture = GFX_report_event_GNG_matsushita_2
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.11.a
+}}
+country_event = { 
+	id = dop_flavors.12
+	title = dop_flavors.12.t
+	desc = dop_flavors.12.desc
+	picture = GFX_report_event_GNG_stanley_ho_4
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.12.a
+}}
+country_event = { 
+	id = dop_flavors.13
+	title = dop_flavors.13.t
+	desc = dop_flavors.13.desc
+	picture = GFX_report_event_GNG_Nagano_Shigeto_Generic_1
+	
+	is_triggered_only = yes
+	
+	
+	option = { #
+		name = dop_flavors.13.a
+		country_event = {
+		 	id = dop_legco_hostage_crisis.1
+			days = 10
+		}
+}
+option = { #
+		name = dop_flavors.13.b
+		set_country_flag = lhc_finished
+		GNG_worsen_corruption_2 = yes
+		set_temp_variable = { temp_econ_spending_amount = 5.0 }
+		econ_spend_money_once_effect_raw_money = yes
+}}
+# country_event = { 
+# 	id = dop_flavors.14
+# 	title = dop_flavors.14.t
+# 	desc = dop_flavors.14.desc
+# 	picture = GFX_report_event_GNG_stanley_ho_4
+# 	is_triggered_only = yes
+	
+	
+# 	option = { #
+# 		name = dop_flavors.14.a
+# 		set_global_flag = TNO_GNG_SiliconDreamEnd
+# 		remove_ideas = {
+# 			GNG_between_two_worlds_dummy
+# 			GNG_corruption_asias_finest
+# 			GNG_corruption_passable
+# 			GNG_corruption_corrupt
+# 			GNG_corruption_the_finest_money_can_buy_dummy
+# 			GNG_kenpeitai_transitional_security_apparatus_dummy
+# 			GNG_kenpeitai_pervasive_kenpeitai_networks_dummy
+# 			GNG_fiscal_sound_dummy
+# 		}
+# 		add_ideas = GNG_Anarchy_dummy
+# }}

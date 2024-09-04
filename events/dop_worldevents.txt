@@ -1,0 +1,162 @@
+
+add_namespace = WORLD
+
+news_event = { #GAW
+	id = WORLD.40000
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.60001"}
+	title = WORLD.40000.t
+	desc = WORLD.40000.desc
+	picture = GFX_news_event_YUN_western_insurrection_GAW
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40000.a
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = USA
+				tag = JAP
+				tag = MAN
+				tag = GNG
+				tag = CHI
+			}
+		}	
+	}
+	option = {
+	name = WORLD.40000.b
+	trigger = {
+		or = {
+			tag = GER
+			tag = USA
+	}
+}
+	}
+	option = {
+		name = WORLD.40000.c
+		trigger = {
+			or = {
+				tag = JAP
+				tag = MAN
+			}
+		}
+	}
+	option = {
+		name = WORLD.40000.d
+		trigger = {
+				tag = CHI
+		}
+	}
+	option = {
+		name = WORLD.40000.e
+		trigger = {
+				tag = GNG
+		}
+	}
+}
+
+news_event = { #GAW
+	id = WORLD.40001
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.60001"}
+	title = WORLD.40001.t
+	desc = WORLD.40001.desc
+	picture = GFX_news_event_YUN_western_insurrection_GAW
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40001.a
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = USA
+				tag = JAP
+				tag = MAN
+				tag = GNG
+				tag = CHI
+			}
+		}	
+	}
+	option = {
+	name = WORLD.40001.b
+	trigger = {
+		or = {
+			tag = GER
+			tag = USA
+		}
+	}
+	}
+	option = {
+		name = WORLD.40001.c
+		trigger = {
+				tag = CHI
+		}
+	}
+	option = {
+		name = WORLD.40001.d
+		trigger = {
+			tag = JAP
+		}
+	}
+	option = {
+		name = WORLD.40001.e
+		trigger = {
+			or = {
+				tag = GNG
+				tag = MAN
+			}
+		}
+	}
+}
+news_event = { #GAW CHI 1
+	id = WORLD.40002
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.40002"}
+	title = WORLD.40002.t
+	desc = WORLD.40002.desc
+	picture = GFX_news_event_YUN_western_insurrection_victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40002.a
+	}
+}
+news_event = { #GAW JAP 1
+	id = WORLD.40003
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.40003"}
+	title = WORLD.40003.t
+	desc = WORLD.40003.desc
+	picture = GFX_news_event_PHI_14th_Army_victory
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40003.a
+	}
+}
+news_event = { #GAW CHI 2
+	id = WORLD.40004
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.40004"}
+	title = WORLD.40004.t
+	desc = WORLD.40004.desc
+	picture = GFX_news_event_SUR_suriname_coup
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40004.a
+	}
+}
+news_event = { #GAW JAP 2
+	id = WORLD.40005
+	immediate = {log = "[GetDateText]: [Root.GetName]: event WORLD.40004"}
+	title = WORLD.40005.t
+	desc = WORLD.40005.desc
+	picture = GFX_news_event_SUR_suriname_coup
+
+	is_triggered_only = yes
+
+	option = {
+		name = WORLD.40005.a
+	}
+}

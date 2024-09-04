@@ -1,0 +1,36 @@
+scripted_gui = {
+	GNG_BFG_GUI = {
+		visible = {
+			has_country_flag = bfg_active
+		}
+		context_type = decision_category
+		window_name = "GNG_BFG_GUI"
+		triggers = {
+			dividerjap_visible = {
+				NOT = {
+					check_variable = { jap_inf_var = 0 }
+					check_variable = { jap_inf_var = 100 }
+				}
+			}
+			dividerchi_visible = {
+				NOT = {
+					check_variable = { chi_inf_var = 0 }
+					check_variable = { chi_inf_var = 100 }
+				}
+			}
+		}
+		properties = {
+			TNO_BFG_jap = {
+				frame = jap_inf_var
+			}
+			TNO_BFG_chi = {
+				frame = chi_inf_var
+			}
+			dividerchi = {
+				x = GNG_chi_bar_x
+			}
+			dividerjap = {
+				x = GNG_jap_bar_x
+			}
+		}
+}}

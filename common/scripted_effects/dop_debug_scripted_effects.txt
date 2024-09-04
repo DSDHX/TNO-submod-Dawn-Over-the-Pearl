@@ -1,0 +1,6 @@
+add_guangjing_var = {
+	GNG = {
+		add_to_variable = { gjqh_var = gjqh_temp_var }
+	}
+	custom_effect_tooltip = update_gjqh_var
+}

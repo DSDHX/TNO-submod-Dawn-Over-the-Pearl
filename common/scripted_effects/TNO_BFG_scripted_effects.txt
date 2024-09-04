@@ -1,0 +1,174 @@
+
+BFG_recalculate_influence_chi = {
+	set_temp_variable = { inf_var_all = 0 }
+	add_to_temp_variable = { inf_var_all = chi_inf_var } 
+	add_to_temp_variable = { inf_var_all = jap_inf_var } 
+	if = {
+		limit = {
+			check_variable = {inf_var_all > 99.99}
+		}
+		subtract_from_temp_variable = { inf_var_all = 100 }
+		subtract_from_variable = { jap_inf_var = inf_var_all }
+	}
+	BFG_clamp_influences = yes
+}
+BFG_recalculate_influence_jap = {
+	set_temp_variable = { inf_var_all = 0 }
+	add_to_temp_variable = { inf_var_all = chi_inf_var } 
+	add_to_temp_variable = { inf_var_all = jap_inf_var } 
+	if = {
+		limit = {
+			check_variable = {inf_var_all > 99.99}
+		}
+		subtract_from_temp_variable = { inf_var_all = 100 }
+		subtract_from_variable = { chi_inf_var = inf_var_all }
+	}
+	BFG_clamp_influences = yes
+}
+BFG_setup_influence = {
+	GNG = {
+		set_variable = { chi_inf_var = 5 }
+		set_variable = { jap_inf_var = 15 }
+		set_country_flag = bfg_active
+		custom_effect_tooltip = GNG_sony_btfgng_start_tt
+		BFG_clamp_influences = yes
+	}
+}
+
+BFG_increase_japan_influence_low = {
+	GNG = {
+		add_to_variable = { jap_inf_var = 5 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_Japan_low_tt
+	}
+}
+
+BFG_increase_japan_influence_med = {
+	GNG = {
+		add_to_variable = { jap_inf_var = 10 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_Japan_mid_tt
+	}
+}
+
+BFG_increase_japan_influence_high = {
+	GNG = {
+		add_to_variable = { jap_inf_var = 25 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_Japan_high_tt
+	}
+}
+
+
+BFG_increase_CHI_influence_low = {
+	GNG = {
+		add_to_variable = { chi_inf_var = 5 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_CHI_low_tt
+	}
+}
+
+BFG_increase_CHI_influence_med = {
+	GNG = {
+		add_to_variable = { chi_inf_var = 10 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_CHI_mid_tt
+	}
+}
+
+BFG_increase_CHI_influence_high = {
+	GNG = {
+		add_to_variable = { chi_inf_var = 25 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_CHI_high_tt
+	}
+}
+BFG_decrease_japan_influence_low = {
+	GNG = {
+		add_to_variable = { jap_inf_var = -5 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_de_Japan_low_tt
+	}
+}
+
+BFG_decrease_japan_influence_med = {
+	GNG = {
+		add_to_variable = { jap_inf_var = -10 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_de_Japan_mid_tt
+	}
+}
+
+BFG_decrease_japan_influence_high = {
+	GNG = {
+		add_to_variable = { jap_inf_var = -25 }
+		BFG_recalculate_influence_jap = yes
+		custom_effect_tooltip = BFG_de_Japan_high_tt
+	}
+}
+
+
+BFG_decrease_CHI_influence_low = {
+	GNG = {
+		add_to_variable = { chi_inf_var = -5 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_de_CHI_low_tt
+	}
+}
+
+BFG_decrease_CHI_influence_med = {
+	GNG = {
+		add_to_variable = { chi_inf_var = -10 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_de_CHI_mid_tt
+	}
+}
+
+BFG_decrease_CHI_influence_high = {
+	GNG = {
+		add_to_variable = { chi_inf_var = -25 }
+		BFG_recalculate_influence_chi = yes
+		custom_effect_tooltip = BFG_de_CHI_high_tt
+	}
+}
+# This normalizes the variables
+BFG_clamp_influences = {
+	GNG = {
+		if = {
+			limit = { check_variable = { chi_inf_var < 0.01 } }
+			set_variable = { chi_inf_var = 0.1 }
+		}
+		if = {
+			limit = { check_variable = { jap_inf_var < 0.01 } }
+			set_variable = { jap_inf_var = 0.1 }
+		}
+		if = {
+			limit = { check_variable = { chi_inf_var > 100 } }
+			set_variable = { chi_inf_var = 100 }
+		}
+		if = {
+			limit = { check_variable = { jap_inf_var > 100 } }
+			set_variable = { jap_inf_var = 100 }
+		}
+		GNG_jap_add_takeover_progress = yes
+		GNG_chi_add_takeover_progress = yes
+	}
+}
+
+GNG_jap_add_takeover_progress = {
+	set_temp_variable = { jap_inf_minus = 100 }
+	subtract_from_temp_variable = { jap_inf_minus = jap_inf_var }
+	set_variable = { GNG_jap_bar_x = jap_inf_minus }
+	divide_variable = { GNG_jap_bar_x = 100 }
+	multiply_variable = { GNG_jap_bar_x = 491 }
+	add_to_variable = { GNG_jap_bar_x = -8 }
+	clamp_variable = { var = GNG_jap_bar_x min = 8 max = 464 }
+}
+
+GNG_chi_add_takeover_progress = {
+	set_variable = { GNG_chi_bar_x = chi_inf_var }
+	divide_variable = { GNG_chi_bar_x = 100 }
+	multiply_variable = { GNG_chi_bar_x = 491 }
+	add_to_variable = { GNG_chi_bar_x = -8 }
+	clamp_variable = { var = GNG_chi_bar_x min = 8 max = 464 }
+}

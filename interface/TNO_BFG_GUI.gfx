@@ -1,0 +1,44 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_GNG_BFG_GUI_bg"
+		texturefile = "gfx/interface/guangdong_gui/IJA_Takeover/gng_flag_shade.dds"
+	}
+	spriteType = {
+		name = "GFX_GNG_fake_bg"
+		texturefile = "gfx/interface/DOP_BFG/edgeground.dds"
+	}
+	spriteType = {
+		name = "GFX_GNG_chidivider"
+		texturefile = "gfx/interface/guangdong_gui/IJA_Takeover/divider.dds"
+	}
+	spriteType = {
+		name = "GFX_GNG_japdivider"
+		texturefile = "gfx/interface/guangdong_gui/IJA_Takeover/divider.dds"
+	}
+	progressbartype = {
+		name = "GFX_GNG_BFG_jap_bar"
+		texturefile1 = "gfx/interface/DOP_BFG/jap.png"
+		texturefile2 = "gfx/interface/DOP_BFG/gng.png"
+		size = { x = 470 y = 310 }
+		horizontal = yes
+		effectFile = gfx/FX/progress_reverse.lua
+	}
+	progressbartype = {
+		name = "GFX_GNG_BFG_chi_bar"
+		texturefile1 = "gfx/interface/DOP_BFG/chi.png"
+		texturefile2 = "gfx/interface/career_profile/tiled_transparent_bg.dds"
+		size = { x = 470 y = 310 }
+		horizontal = yes
+		effectFile = gfx/FX/progress.lua
+	}
+	progressbartype = {
+		name = "GFX_GNG_BFG_frontground"
+		texturefile1 = "gfx/interface/career_profile/tiled_transparent_bg.dds"
+		texturefile2 = "gfx/interface/career_profile/tiled_transparent_bg.dds"
+		size = { x = 491 y = 331 }
+		horizontal = yes
+		effectFile = gfx/FX/progress_reverse.lua
+	}
+
+
+}

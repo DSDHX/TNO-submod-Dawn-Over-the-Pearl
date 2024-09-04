@@ -1,0 +1,8 @@
+GNG_street_dummy = {
+	icon = GFX_idea_TAJ_Flooded_Streets
+	political_power_gain = street_pp_var
+	stability_factor = street_st_var
+	war_support_factor = street_ws_var
+	civilian_factory_use = street_cf_var
+	command_power_gain = street_cp_var
+		}

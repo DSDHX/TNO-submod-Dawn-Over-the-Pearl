@@ -1,0 +1,95 @@
+enchance_guangjing_decision_category = {
+	GNG_update_weapon = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_generic_supply
+		visible = {
+		}
+		days_re_enable = 30
+		custom_cost_trigger = {
+		}
+		custom_cost_text = decision_cost_300_million
+		complete_effect = {
+			set_temp_variable = { gjqh_temp_var = 5 } 
+			add_guangjing_var = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.30 }
+		econ_spend_money_once_effect_raw_money = yes
+		}
+	}
+	GNG_enhance_train = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {has_army_experience > 24}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+		}
+		days_re_enable = 30
+		custom_cost_trigger = {
+			has_army_experience > 24
+		}
+		custom_cost_text = decision_cost_25_army_xp
+		complete_effect = {
+			set_temp_variable = { gjqh_temp_var = 7 } 
+			add_guangjing_var = yes
+			army_experience = -25
+		}
+	}
+	GNG_exercise_start = {
+		allowed = {
+			original_tag = GNG
+		}
+		days_re_enable = 60
+		available ={
+			command_power > 24
+			has_equipment = {
+				infantry_equipment > 749
+			}
+		}
+		icon = GFX_decision_generic_guard
+		visible = {
+		}
+		custom_cost_trigger = {
+			command_power > 24
+			has_equipment = {
+				infantry_equipment > 749
+			}
+		}
+		custom_cost_text = decision_cost_25_cp_750_inf_eq
+		complete_effect = {
+			set_temp_variable = { gjqh_temp_var = 8 } 
+			add_guangjing_var = yes
+			add_command_power = -25
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -750
+			}
+		}
+	}
+	GNG_recruit_new_p = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_generic_military_hat
+		visible = {
+		}
+		days_re_enable = 60
+		available = {
+			has_political_power > 49
+			has_manpower > 499
+		}
+		custom_cost_trigger = {
+			has_political_power > 49
+			has_manpower > 499
+		}
+		custom_cost_text = decision_cost_50_pp_500_men
+		complete_effect = {
+			set_temp_variable = { gjqh_temp_var = 8 } 
+			add_guangjing_var = yes
+			add_political_power = -50
+			add_manpower = -500
+		}
+	}
+}
+	
