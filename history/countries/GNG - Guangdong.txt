@@ -3,7 +3,9 @@ oob = "GNG_1962"
 set_convoys = 125
 
 # Vacant
+
 recruit_character = GNG_Generic_Vacant
+
 
 recruit_character = GNG_suzuki_teiichi
 recruit_character = GNG_matsuzawa_takuji
