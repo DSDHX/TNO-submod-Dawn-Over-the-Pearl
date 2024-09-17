@@ -1,0 +1,136 @@
+scripted_gui = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	DOP_SCW_bar_display = {
+		window_name = "DOP_SCW_bar_display"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		visible = { check_variable = { selected_decision_tabs_id = 1 } }
+		ai_enabled = { always = no }
+		properties = {
+			scw_bar_1_o = {
+				frame = scw_USA_percentage
+			}
+			scw_bar_2_o = {
+				frame = scw_JAP_percentage
+			}
+			scw_bar_3_o = {
+				frame = scw_GER_percentage
+			}
+			scw_bar_4_o = {
+				frame = scw_ITA_percentage
+			}
+			scw_bar_5_o = {
+				frame = scw_GNG_percentage
+			}
+		}
+	}
+	DOP_SCW_base_container = {
+		window_name = "DOP_SCW_base_container"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+
+		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW } }
+		ai_enabled = { always = no }
+		dynamic_lists = {
+			decision_tabs = {
+				array = SCW_enabled_tabs
+				index = allowed_decision_tab
+				value = allowed_decision_tab_id
+				entry_container = DOP_Switch_between_decisions_tab
+			}
+		}
+		effects = {
+			decision_tab_icon_click = {
+				set_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
+				clear_array = SCW_the_gui_showing_now
+				add_to_array = { SCW_the_gui_showing_now = allowed_decision_tab_id }
+			}
+			tab_click = {
+				set_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
+				clear_array = SCW_the_gui_showing_now
+				add_to_array = { SCW_the_gui_showing_now = allowed_decision_tab_id }
+			}
+			production_btn_click = {
+				set_variable = { DOP_SCW_selected_page = 1 }
+			}
+			competitiveness_btn_click = {
+				set_variable = { DOP_SCW_selected_page = 2 }
+			}
+		}
+
+		triggers = {
+			decision_tab_icon_visible = {
+				if = {
+					limit = {
+						check_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
+					}
+					set_temp_variable = { fopo_button_tab_frame = 2 }
+				}
+				else = {
+					set_temp_variable = { fopo_button_tab_frame = 1 }
+				}
+			}
+			production_btn_visible = {
+				check_variable = {selected_decision_tabs_id = 1}
+			}
+			competitiveness_btn_visible = {
+				check_variable = {selected_decision_tabs_id = 1}
+			}
+			conflict_status_visible = {
+				always = yes
+			}
+			conflict_title_visible = {
+				NOT = {has_country_flag = DOP_SCW_off}
+			}
+			info_tab_visible = {
+				TNO_fopo_show_info_tab = yes
+			}
+		}
+
+		properties = {
+			tab_bg = {
+				frame = fopo_button_tab_frame
+			}
+			tab = {
+				frame = fopo_button_tab_frame
+			}
+			decision_tab_icon = {
+				image = "[Get_SCW_desicion_tab_icon]"
+			}
+		}
+		
+	}
+	DOP_SCW_disabled = {
+		window_name = "DOP_SCW_disabled"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			has_country_flag = DOP_SCW_off
+		}
+	}
+	DOP_SCW_generic_topbar = {
+		window_name = "DOP_SCW_generic_topbar"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			tag = GNG
+			NOT = {has_country_flag = DOP_SCW_off}
+		}
+
+		triggers = {
+			info_tab_visible = {
+				DOP_SCW_show_info_box = yes
+			}
+		}
+
+		properties = {
+			seal = {
+				image = "[Get_fopo_seal]"
+			}
+		}
+	}
+	
+}

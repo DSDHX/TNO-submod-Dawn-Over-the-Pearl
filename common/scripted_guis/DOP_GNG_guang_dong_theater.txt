@@ -1,0 +1,22 @@
+scripted_gui = {
+	GNG_guangdong_theater_GUI = {
+		visible = {
+			has_country_flag = guang_dong_theater_visible
+		}
+		context_type = decision_category
+		window_name = "GNG_guangdong_theater_GUI"
+		properties = {
+			japanese_attitude_progress_bar = {
+				frame = japanese_attitude_var
+			}
+			the_resistance_progress_bar = {
+				frame = the_resistance_var
+			}
+			the_current_show_icon = { 
+				image = "[DOPGNGTheCurrentShowIcon]" 
+			}
+		}
+		effects = {
+		}
+	}
+}

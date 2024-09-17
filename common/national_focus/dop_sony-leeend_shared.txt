@@ -1,0 +1,195 @@
+focus_tree = {
+	id = dop_sony_leeend_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_the_wind_is_gentle
+}
+
+shared_focus = {
+	id = GNG_the_wind_is_gentle
+	icon = GFX_GNG_the_wind_is_gentle
+	cost = 1
+	x = 0
+	y = 0
+    completion_reward = {
+		custom_effect_tooltip:GNG_the_wind_is_gentle_tt
+	}
+
+}
+
+shared_focus = {
+	id = GNG_the_forgotten
+	icon = GFX_GNG_the_forgotten
+	cost = 2
+	x = -3
+	y = 1.5
+	relative_position_id = GNG_the_wind_is_gentle
+	prerequisite = { 
+		focus = GNG_the_wind_is_gentle
+	}
+	completion_reward = {
+		custom_effect_tooltip:GNG_the_forgotten_tt
+	}
+}
+
+shared_focus = {
+	id = GNG_chinese_chief_secretary
+	icon = GFX_GNG_chinese_chief_secretary
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_the_forgotten
+	prerequisite = { 
+		focus = GNG_the_forgotten
+	}
+	completion_reward = {
+		custom_effect_tooltip:GNG_chinese_chief_secretary_tt
+	}
+}
+
+shared_focus = {
+	id = GNG_policy_address_system
+	icon =GFX_GNG_policy_address_system
+	cost = 2
+	x = -2
+	y = 1
+	relative_position_id = GNG_the_forgotten
+	prerequisite = { 
+		focus = GNG_the_forgotten
+	}
+	completion_reward = {
+		custom_effect_tooltip:GNG_policy_address_system_tt
+	}
+}
+
+shared_focus = {
+	id =GNG_disaster_response_department
+	icon =GFX_GNG_disaster_response_department
+	cost = 2
+	x = -4
+	y = 1
+	relative_position_id = GNG_the_forgotten
+	prerequisite = { 
+		focus = GNG_the_forgotten
+	
+	 {
+	  comcustom_effect_tooltip:GNG_disaster_response_department_tt
+	}
+}
+}
+
+shared_focus = {
+	id =GNG_feed_back_china
+	icon =GFX_GNG_feed_back_china
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_chinese_chief_secretary
+	prerequisite = { 
+		focus = GNG_chinese_chief_secretary
+		focus = GNG_disaster_response_department
+		focus=  GNG_policy_address_system
+	}
+	completion_reward = {
+		comcustom_effect_tooltip:GNG_feed_back_china_tt
+	}
+}
+
+Shared_focus = {
+	id = GNG_all_eyes_on 
+	icon =GFX_GNG_all-eyes_on
+	cost = 2
+	x = 3
+	y = 1.5
+	relative_position_id = GNG_the_wind_is_gentle
+	prerequisite = { 
+		focus = GNG_the_wind_is_gentle
+	}
+	completion_reward = {
+	    comcustom_effect_tooltip:GNG_all_eyes_on_tt
+	}
+}
+
+Shared_focus = {
+	id = GNG_cultural_affairs_bureau
+	icon =GFX_GNG_cultural_affairs_bureau
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_all_eyes_on
+	prerequisite = { 
+		focus = GNG_all_eyes_on
+	}
+	completion_reward = {
+		comcustom_effect_tooltip:GNG_cultural_affairs_bureau_tt
+	}
+}
+
+Shared_focus = {
+	id = GNG_gng_stocks_rejuvenation
+	icon =GFX_GNG_gng_stocks_rejuvenation
+	cost = 2
+	x = 2
+	y = 1
+	relative_position_id = GNG_all_eyes_on
+	prerequisite = { 
+		focus = GNG_all_eyes_on
+	}
+	completion_reward = {
+		comcustom_effect_tooltip:GNG_gng_stocks_rejuvenation_tt
+	}
+}
+
+Shared_focus = {
+	id = GNG_fill_with_laughter
+	icon =GFX_GNG_fill_with_laughter
+	cost = 2
+	x = 4
+	y = 1
+	relative_position_id = GNG_all_eyes_on
+	prerequisite = { 
+		focus = GNG_all_eyes_on
+	}
+	completion_reward = {
+		comcustom_effect_tooltip:GNG_fill_with_laughter_tt
+	}
+}
+Shared_focus = {
+	id = GNG_equal_competition
+	icon =GFX_GNG_equal_competitio
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_cultural_affairs_bureau
+	prerequisite = { 
+		focus = GNG_cultural_affairs_bureau
+		focus = GNG_gng_stocks_rejuvenation
+	    focus = GNG_fill_with_laughter
+	}  
+	completion_reward = {
+		comcustom_effect_tooltip:GNG_cultural_affairs_bureau_tt
+	}
+}
+
+Shared_focus = {
+	id = GNG_a_place_for_all
+	icon =o
+	cost = 2
+	x = 0
+	y = 5
+	relative_position_id = GNG_the_wind_is_gentle
+	prerequisite = { 
+		focus=GNG_equal_competition
+	    focus=GNG_feed_back_china
+	}  
+	completion_reward = {
+		comcustom_effect_tooltip: = GNG_a_place_for_all_tt
+	}
+}
+	

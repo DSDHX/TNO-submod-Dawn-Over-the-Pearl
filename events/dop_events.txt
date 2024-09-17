@@ -2457,3 +2457,185 @@ option = { #
 # 		}
 # 		add_ideas = GNG_Anarchy_dummy
 # }}
+
+country_event = {
+	id = dop_test.1
+	title = dop_test.1.t
+	desc = dop_test.1.desc
+    #title和desc皆为文本代码，需在本地化文件写文本#
+	
+	trigger = { check_variable = {the_current_show_var=2} }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	#picture = GFX_ChuXiye
+    
+	hidden = no
+
+	option = { 
+		name = dop_test.1.b
+	}
+}
+country_event = {
+	id = dop_test.2
+	title = dop_test.2.t
+	desc = dop_test.2.d
+	
+	trigger = { check_variable = {the_current_show_var=2} }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_dop_debug_ace_taffy
+    
+	hidden = no
+
+	option = { 
+		name = dop_test.2.a
+        load_focus_tree = dop_fake_tree_a
+	}
+}
+country_event = {
+	id = dop_nat.1 #《修订民族团结条例》
+	title = dop_nat.1.t
+	desc = dop_nat.1.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_dop_nat_1
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.1.a
+	}
+}
+
+country_event = {
+	id = dop_nat.2 #《修订民族融合条例》
+	title = dop_nat.2.t
+	desc = dop_nat.2.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_dop_nat_2
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.2.a
+	}
+}
+
+country_event = {
+	id = dop_nat.3 #休克疗法 
+	title = dop_nat.3.t
+	desc = dop_nat.3.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_GNG_morita_akio_16
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.3.a
+	}
+}
+
+country_event = {
+	id = dop_nat.4 #釜底抽薪 
+	title = dop_nat.4.t
+	desc = dop_nat.4.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_GNG_LKS_generic_5
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.4.a
+	}
+}
+
+country_event = {
+	id = dop_nat.5 #修订民族融合条例通过！ 
+	title = dop_nat.5.t
+	desc = dop_nat.5.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_GNG_morita_akio_14
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.5.a
+		custom_effect_tooltip = nat_5_tooltip
+		set_temp_variable = { v = 94.1 }
+		GNG_add_uncategorised_law = yes
+	}
+}
+
+country_event = {
+	id = dop_nat.6 #修订民族团结条例通过！ 
+	title = dop_nat.6.t
+	desc = dop_nat.6.d
+	
+	trigger = {  }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+    fire_only_once = yes
+
+	picture = GFX_report_event_GNG_morita_akio_14
+    
+	hidden = no
+
+	option = { 
+		name = dop_nat.6.a
+		custom_effect_tooltip = nat_6_tooltip
+		set_temp_variable = { v = 94 }
+		GNG_add_uncategorised_law = yes
+	}
+}

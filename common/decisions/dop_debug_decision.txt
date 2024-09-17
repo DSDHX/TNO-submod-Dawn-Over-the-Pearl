@@ -1,4 +1,51 @@
 GNG_debug_category = {
+	GNG_dop_debug_enable_BOP = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			GNG_BOP_Initalize = yes
+		}
+	}
+	GNG_dop_debug_enable_BOP_page_1 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			set_temp_variable = { decision_tabs_id = 1 }
+			DOP_add_tab = yes
+		}
+	}
+	GNG_dop_debug_enable_BOP_page_2 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			set_temp_variable = { decision_tabs_id = 2 }
+			DOP_add_tab = yes
+		}
+	}
+	GNG_dop_debug_enable_BOP_page_3 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			set_temp_variable = { decision_tabs_id = 3 }
+			DOP_add_tab = yes
+		}
+	}
 	GNG_dop_debug_load_lomitia = {
 		allowed = {
 			original_tag = GNG
@@ -8,9 +55,54 @@ GNG_debug_category = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_aftergawjap_tree
 		}
 		available = {
-			always = no
+
+		}
+	}
+	GNG_dop_debug_load_end1_lee = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sony_leeend_tree
+		}
+		available = {
+
+		}
+	}
+	GNG_dop_debug_load_end2_ibuka = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sony_ibukaend_tree
+		}
+		available = {
+
+		}
+	}
+	GNG_dop_debug_load_end3_hitachi = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sony_hitachiend_tree
+		}
+		available = {
 		}
 	}
 	GNG_dop_debug_load_opening = {

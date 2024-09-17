@@ -1,0 +1,5 @@
+DOP_GNG_guang_dong_theater_var = {
+	set_variable = { the_resistance_var = 10 }
+	set_variable = { japanese_attitude_var = 10 }
+	set_variable = { the_current_show_var = 1 }
+}
