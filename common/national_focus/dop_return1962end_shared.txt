@@ -1,0 +1,202 @@
+focus_tree = {
+	id = dop_sony_return1962_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_samurais_kirisute_gomen
+
+}
+
+shared_focus = {
+	id =GNG_samurais_kirisute_gomen
+	icon = GFX_GNG_GNG_samurais_kirisute_gomen
+	cost = 1
+	x = 0
+	y = 0
+    completion_reward = {
+	}
+}
+
+shared_focus = {
+	id =GNG_Aftermath_of_no-confidence_vote
+     icon =GFX_GNG_Aftermath_of_no-confidence_vote
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id =GNG_samurais_kirisute_gomen
+	prerequisite = { 
+		focus = GNG_samurais_kirisute_gomen
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id =GNG_industrial_restructing_and_antimonopoly_act
+    icon =GFX_GNG_industrial_restructing_and_antimonopoly_act
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id =GNG_Aftermath_of_no-confidence_vote
+	prerequisite = { 
+		focus = GNG_Aftermath_of_no-confidence_vote
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_tear_the_capital_and_trade_union
+    icon =GFX_GNG_tear_the_capital_and_trade_union
+	cost = 2
+	x = -5
+	y = 2
+	relative_position_id =GNG_industrial_restructing_and_antimonopoly_act
+	prerequisite = { 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_reduce_the_budget_of_product_cycle
+    icon =GFX_GNG_reduce_the_budget_of_product_cycle
+	cost = 2
+	x = -2
+	y = 2
+	relative_position_id =GNG_industrial_restructing_and_antimonopoly_act
+	prerequisite = { 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_deal_with_security_services
+    icon =GFX_GNG_deal_with_security_services
+	cost = 2
+	x = 2
+	y = 2
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	prerequisite = { 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_meet_up_with_new_Japanese_bureaucrats
+    icon =GFX_GNG_meet_up_with_new_Japanese_bureaucrats
+	cost = 2
+	x = 5
+	y = 2
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	prerequisite = { 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_adjust_the_economic_structure
+    icon =GFX_GNG_tear_the_capital_and_trade_union
+	cost = 2
+	x = 0
+	y = 2
+	relative_position_id =GNG_tear_the_capital_and_trade_union
+	prerequisite = { 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+ 
+shared_focus = {
+	id =GNG_contract_tycoon_s_political_power
+    icon =GFX_GNG_contract_tycoon_s_political_power
+	cost = 2
+	x = 0
+	y = 2
+	relative_position_id =GNG_reduce_the_budget_of_product_cycle
+	prerequisite = { 
+		focus = GNG_reduce_the_budget_of_product_cycle
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_call_of_IJA
+    icon =GFX_GNG_call_of_IJA
+	cost = 2
+	x = 0
+	y = 2
+	relative_position_id =GNG_deal_with_security_services
+	prerequisite = { 
+		focus = GNG_deal_with_security_services
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_draw_zhujin_over_to_our_side
+    icon =GFX_GNG_draw_zhujin_over_to_our_side
+	cost = 2
+	x = 0
+	y = 2
+	relative_position_id =GNG_meet_up_with_new_Japanese_bureaucrats
+	prerequisite = { 
+		focus = GNG_meet_up_with_new_Japanese_bureaucrats
+	}
+	completion_reward = {
+    
+	}
+ 
+}
+
+shared_focus = {
+	id =GNG_prison_of_enterprises
+    icon =GFX_GNG_prison_of_enterprises
+	cost = 2
+	x = 0
+	y = 6
+	relative_position_id =GNG_Aftermath_of_no-confidence_vote
+	prerequisite = { 
+		focus = GNG_call_of_IJA
+	    focus = GNG_draw_zhujin_over_to_our_side
+        focus = GNG_contract_tycoon_s_political_power
+        focus = GNG_adjust_the_economic_structure
+    }
+	completion_reward = {
+    
+	}
+ 
+}
+
