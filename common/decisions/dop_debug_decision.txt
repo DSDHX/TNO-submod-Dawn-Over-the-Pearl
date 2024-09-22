@@ -105,6 +105,21 @@ GNG_debug_category = {
 		available = {
 		}
 	}
+	GNG_dop_debug_load_end4_return1962 =
+	{
+		allowed = 
+		{
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = { }
+		complete_effect =
+		{
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sony_return1962_tree
+		}
+		available = { }
+	}
 	GNG_dop_debug_load_opening = {
 		allowed = {
 			original_tag = GNG
