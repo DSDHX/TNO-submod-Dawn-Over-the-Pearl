@@ -1,56 +1,74 @@
-focus_tree = {
+focus_tree =
+{
 	id = dop_sony_return1962_tree
-	country = {
+	country =
+	{
 		factor = 0
-		modifier = {
+		modifier =
+		{
 			add = 10
 			tag = GNG
 		}
 	}
 	default = no
 	shared_focus = GNG_samurais_kirisute_gomen
-
 }
 
-shared_focus = {
-	id =GNG_samurais_kirisute_gomen
+shared_focus =
+{
+	id = GNG_samurais_kirisute_gomen #武士的无礼讨
 	icon = GFX_GNG_GNG_samurais_kirisute_gomen
-	cost = 1
+	
 	x = 0
 	y = 0
-    completion_reward = {
+
+	cost = 1
+	
+    completion_reward =
+	{
+		#效果未填写
 	}
 }
 
-shared_focus = {
-	id =GNG_Aftermath_of_no-confidence_vote
-     icon =GFX_GNG_Aftermath_of_no-confidence_vote
-	cost = 2
+shared_focus =
+{
+	id = GNG_Aftermath_of_no-confidence_vote #不信任案的余波
+    icon = GFX_GNG_Aftermath_of_no-confidence_vote
+
+	relative_position_id = GNG_samurais_kirisute_gomen
 	x = 0
 	y = 1
-	relative_position_id =GNG_samurais_kirisute_gomen
-	prerequisite = { 
+
+	prerequisite =
+	{ 
 		focus = GNG_samurais_kirisute_gomen
 	}
-	completion_reward = {
-    
+	cost = 2
+	
+    completion_reward =
+	{
+		#效果未填写
 	}
 }
 
 shared_focus = {
-	id =GNG_industrial_restructing_and_antimonopoly_act
-    icon =GFX_GNG_industrial_restructing_and_antimonopoly_act
-	cost = 2
+	id = GNG_industrial_restructing_and_antimonopoly_act #产业重组与反垄断法
+    icon = GFX_GNG_industrial_restructing_and_antimonopoly_act
+	
+	relative_position_id = GNG_Aftermath_of_no-confidence_vote
 	x = 0
 	y = 1
-	relative_position_id =GNG_Aftermath_of_no-confidence_vote
-	prerequisite = { 
+
+	prerequisite =
+	{ 
 		focus = GNG_Aftermath_of_no-confidence_vote
 	}
-	completion_reward = {
-    
+	cost = 2
+	
+	completion_reward = 
+	{
+		#效果未填写
 	}
- 
 }
 
 shared_focus =
@@ -60,7 +78,7 @@ shared_focus =
 
 	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
 	x = -5
-	y = 2
+	y = 1
 
 	prerequisite = 
 	{ 
@@ -91,7 +109,7 @@ shared_focus =
 
 	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
 	x = -2
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -113,7 +131,7 @@ shared_focus =
 
 	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
 	x = 2
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -134,7 +152,7 @@ shared_focus =
 
 	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
 	x = 5
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -164,7 +182,7 @@ shared_focus =
 
 	relative_position_id = GNG_tear_the_capital_and_trade_union
 	x = 0
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -196,7 +214,7 @@ shared_focus =
 
 	relative_position_id = GNG_reduce_the_budget_of_product_cycle
 	x = 0
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -217,7 +235,7 @@ shared_focus =
 
 	relative_position_id =GNG_deal_with_security_services
 	x = 0
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -238,7 +256,7 @@ shared_focus =
 
 	relative_position_id = GNG_meet_up_with_new_Japanese_bureaucrats
 	x = 0
-	y = 2
+	y = 1
 
 	prerequisite =
 	{
@@ -263,7 +281,7 @@ shared_focus = {
 
 	relative_position_id = GNG_Aftermath_of_no-confidence_vote #?
 	x = 0
-	y = 6
+	y = 4
 
 	prerequisite =
 	{
