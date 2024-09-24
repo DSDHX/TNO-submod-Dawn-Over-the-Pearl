@@ -120,7 +120,6 @@ shared_focus =
 	completion_reward =
 	{
 		custom_effect_tooltip = GNG_equal_opportunities_DOP1962_tt
-		custom_effect_tooltip = GNG_investing_other_company_tt
 	}
 }
 
