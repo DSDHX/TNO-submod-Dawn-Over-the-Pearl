@@ -1,5 +1,4 @@
-﻿
-focus_tree = {
+﻿focus_tree = {
 	id = dop_warpp_tree
 	country = {
 		factor = 0

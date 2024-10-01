@@ -1,0 +1,308 @@
+focus_tree =
+{
+	id = dop_sony-japan_ending5_second_roit_tree
+	country =
+	{
+		factor = 0
+		modifier =
+		{
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_focus_state_of_guangdong_in_emergency
+}
+
+shared_focus =
+{
+	id = GNG_focus_state_of_guangdong_in_emergency #全国紧急状态
+	icon = GFX_GNG_focus_state_of_guangdong_in_emergency
+	
+	x = 0
+	y = 0
+
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_turned_side_focus-tt
+		#广东现状将转变为“军警管辖之国”
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_halt_unnecessary_spending #暂停非必要支出
+	icon = GFX_GNG_focus_halt_unnecessary_spending
+
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = -5
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_state_of_guangdong_in_emergency
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_econmize_focus-tt
+		#各类debuff待填充
+		every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = -2.5 }
+			GNG_japanese_app_change = yes
+			set_temp_variable = { zhu_app_temp = -2.5 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { chi_app_temp = -2.5 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_grasping_executive_authority #收拢企业权力
+	icon = GFX_GNG_focus_grasping_executive_authority
+
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = -2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_state_of_guangdong_in_emergency
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_all_for_profit_focus-tt
+		#立法会将无限期闭会
+		every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = -1.5 }
+			GNG_japanese_app_change = yes
+			set_temp_variable = { zhu_app_temp = -1.0 }
+			GNG_zhujin_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_normalize_curfew_policy #常态化宵禁
+	icon = GFX_GNG_focus_normalize_curfew_policy
+
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = 2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_state_of_guangdong_in_emergency
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_extraordinary_measures_focus-tt
+		#军事支出将增加0.250B
+		#所有地区警察控制+2.50％
+		every_owned_state =
+		{
+			set_temp_variable = { chi_app_temp = -1.25 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_erase_organized_crime #清剿暴力团伙
+	icon = GFX_GNG_focus_erase_organized_crime
+
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = 5
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_state_of_guangdong_in_emergency
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_ensure_stability_focus-tt
+		#农村地区警察控制+1.50％
+		#农村地区华人支持率-2.50％
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_personal_safety_of_the_japanese #日侨的生命
+	icon = GFX_GNG_focus_personal_safety_of_the_japanese
+
+	relative_position_id = GNG_focus_halt_unnecessary_spending
+	x = 1.5
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_halt_unnecessary_spending
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_grasping_executive_authority
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_life_first_focus-tt
+		every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = +2.5 }
+			GNG_japanese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_property_safety_of_the_zhujin #珠人的财产
+	icon = GFX_GNG_focus_property_safety_of_the_zhujin
+
+	relative_position_id = GNG_focus_grasping_executive_authority
+	x = 2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_grasping_executive_authority
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_normalize_curfew_policy
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_must_have_money_focus-tt
+		every_owned_state =
+		{
+			set_temp_variable = { zhu_app_temp = +1.5 }
+			GNG_zhujin_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_population_of_chinese #华人的人口
+	icon = GFX_GNG_focus_population_of_chinese
+
+	relative_position_id = GNG_focus_normalize_curfew_policy
+	x = 1.5
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_normalize_curfew_policy
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_erase_organized_crime
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_other_value_focus-tt
+		every_owned_state =
+		{
+			set_temp_variable = { chi_app_temp = +0.5 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_adults_forgetting_history #忘记历史的成年人……
+	icon = GFX_GNG_focus_adults_forgetting_histor
+
+	relative_position_id = GNG_focus_personal_safety_of_the_japanese
+	x = 1.8
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_personal_safety_of_the_japanese
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_property_safety_of_the_zhujin
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		#效果未填写
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_while_adolescence_losing_homeland #……与失去祖国的年轻人
+	icon = GFX_GNG_focus_while_adolescence_losing_homeland
+
+	relative_position_id = GNG_focus_property_safety_of_the_zhujin
+	x = 1.8
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_property_safety_of_the_zhujin
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_population_of_chinese
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		#我们的教育落实率将中幅提高。
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_is_order_prevails_in_guangdong #广东秩序井然？
+	icon = GFX_GNG_focus_is_order_prevails_in_guangdong
+
+	relative_position_id = GNG_focus_property_safety_of_the_zhujin
+	x = 0
+	y = 2
+
+	prerequisite =
+	{
+		focus = GNG_focus_adults_forgetting_history
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_while_adolescence_losing_homeland
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_stability_above_everthing_focus-tt
+	}
+}
