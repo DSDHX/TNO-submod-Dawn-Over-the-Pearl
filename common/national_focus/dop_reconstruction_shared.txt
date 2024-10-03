@@ -1,0 +1,178 @@
+focus_tree = {
+	id = dop_reconsturuction_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_everlasting_peace?
+}
+
+shared_focus = {
+	id = GNG_everlasting_peace?
+	icon = GNG_everlasting_peace?
+	cost = 1
+	x = 0
+	y = 0
+    completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = GNG_temporary_relief
+	icon =GFX_GNG_temporary_relief
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_everlasting_peace?
+	prerequisite = { 
+		focus =  GNG_everlasting_peace?
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id = GNG_our_erstwhile_master
+	icon =GFX_GNG_our_erstwhile_master
+	cost = 2
+	x = -6
+	y = 1
+	relative_position_id = GNG_temporary_relief
+	prerequisite = { 
+    	focus = GNG_temporary_relief
+	completion_reward = {
+    }
+	}
+}
+
+shared_focus = {
+	id = GNG_our_erstwhile_master
+	icon =GFX_GNG_our_erstwhile_master
+	cost = 2
+	x = -6
+	y = 1
+	relative_position_id = GNG_temporary_relief
+	prerequisite = { 
+    	focus = GNG_temporary_relief
+	
+    completion_reward = {
+    }
+	}
+}
+
+shared_focus = {
+	id = GNG_hoea
+	icon = GFX_GNG_hoea
+    x = -2
+	y = 1
+	cost = 2
+    relative_position_id =GNG_our_erstwhile_master
+    prerequisite = {
+		focus = GNG_our_erstwhile_master
+	}
+	mutually_exclusive = {
+		focus = GNG_requesting_urgent_financial_allocation
+	}
+	completion_reward = {
+	
+    }
+}
+
+shared_focus = {
+	id = GNG_requesting_urgent_financial_allocation
+	icon = GFX_GNG_requesting_urgent_financial_allocation
+    x = 2
+	y = 1
+	cost = 2
+    relative_position_id =GNG_our_erstwhile_master
+    prerequisite = {
+		focus = GNG_our_erstwhile_master
+	}
+	mutually_exclusive = {
+		focus = GNG_hoea
+	}
+	completion_reward = {
+	
+    }
+}
+
+shared_focus = {
+	id = GNG_too_in_ea
+	icon =GFX_too_in_ea
+	cost = 2
+	x = 0
+	y = 2
+	relative_position_id = GNG_our_erstwhile_master
+	prerequisite = { 
+    	focus = GNG_requesting_urgent_financial_allocation
+	    focus = GNG_hoea
+        completion_reward = {
+    }
+	}
+}
+
+shared_focus = {
+	id = GNG_a_foothold
+	icon =GFX_GNG_a_foothold
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_temporary_relief
+	prerequisite = { 
+		focus =  GNG_temporary_relief
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id = GNG_retrieve_the_cable  
+	icon =GFX_GNG_retrieve_the_cable 
+	cost = 2
+	x = -1.5
+	y = 1
+	relative_position_id = GNG_a_foothold
+	prerequisite = { 
+		focus =  GNG_a_foothold
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id = GNG_retrieve_the_cable  
+	icon =GFX_GNG_retrieve_the_cable 
+	cost = 2
+	x = -1.5
+	y = 1
+	relative_position_id = GNG_a_foothold
+	prerequisite = { 
+		focus =  GNG_a_foothold
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id = GNG_the_neon_screens_illuminate_once_again
+	icon =GFX_ GNG_the_neon_screens_illuminate_once_again
+	cost = 2
+	x = -1.5
+	y = 4
+	relative_position_id = GNG_GNG_retrieve_the_cable
+	prerequisite = { 
+		focus =  GNG_retrieve_the_cable
+	}
+	completion_reward = {
+    
+	}
+}
+
