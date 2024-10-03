@@ -1,0 +1,281 @@
+focus_tree =
+{
+	id = dop_sony-japan_ending3_hitachi_tree
+	country =
+	{
+		factor = 0
+		modifier =
+		{
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_focus_weak_up_from_dream
+}
+
+shared_focus = 
+{
+	id = GNG_focus_weak_up_from_dream #大梦初觉
+	icon = GFX_GNG_focus_weak_up_from_dream
+
+	x = 0
+	y = 0
+	
+	cost = 1
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_tear_off_the_mask_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_falling_pices #分崩离析
+	icon = GFX_GNG_focus_falling_pices
+	
+	relative_position_id = GNG_focus_weak_up_from_dream	
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_weak_up_from_dream
+	}
+	cost = 2	
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_guangdong_turned_side_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_fool_cheung_kong #长实的愚昧
+	icon = GFX_GNG_focus_fool_cheung_kong
+
+	relative_position_id = GNG_focus_falling_pices
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_falling_pices
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_never_ending_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_show_the_fang #獠牙初露
+	icon = GFX_GNG_focus_show_the_fang
+
+	relative_position_id = GNG_focus_falling_pices
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_falling_pices
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_sony_capitulate_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_fujitsu_s_ridiculous #富士通的可笑
+	icon = GFX_GNG_focus_fujitsu_s_ridiculous
+
+	relative_position_id = GNG_focus_falling_pices
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_falling_pices
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_reach_the_end_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_the_lord_of_east #背后的东洋之主
+	icon = GFX_GNG_focus_the_lord_of_east
+
+	relative_position_id = GNG_focus_show_the_fang
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_fool_cheung_kong
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_show_the_fang
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_fujitsu_s_ridiculous
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_proud_of_us_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_is_sony_ruling_the_guangdong #索尼治世？
+	icon = GFX_GNG_focus_is_sony_ruling_the_guangdong
+
+	relative_position_id = GNG_focus_the_lord_of_east
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_the_lord_of_east
+	}	
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_morita_akio_no_hope_focus-tt
+		#不信任动议
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_guangdong-manchuria_friendship_agreement #广满亲善协定
+	icon = GFX_GNG_focus_guangdong-manchuria_friendship_agreement
+
+	relative_position_id = GNG_focus_the_lord_of_east
+	x = 2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_the_lord_of_east
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_true_enemy_escaped_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_who_is_the_chief_executive #谁是行政长官？
+	icon = GFX_GNG_focus_who_is_the_chief_executive
+	
+	relative_position_id = GNG_focus_the_lord_of_east
+	x = 0
+	y = 2
+
+	prerequisite =
+	{
+		focus = GNG_focus_is_sony_ruling_the_guangdong
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_guangdong-manchuria_friendship_agreement
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_clearance_of_obstacles_focus-tt
+		#投票法令
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_building_inner_ring_system #建成内环体系
+	icon = GFX_GNG_focus_building_inner_ring_system
+
+	relative_position_id = GNG_focus_who_is_the_chief_executive
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_who_is_the_chief_executive
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_hopless_focus-tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_destroy_the_source_of_chaos #消灭混乱之源
+	icon = GFX_GNG_focus_destroy_the_source_of_chaos
+
+	relative_position_id = GNG_focus_who_is_the_chief_executive
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_who_is_the_chief_executive
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_no_one_immune_focus-tt
+		#法令投票
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_guangdong_awake #广东已醒
+	icon = GFX_GNG_focus_guangdong_awake
+
+	relative_position_id = GNG_focus_who_is_the_chief_executive
+	x = 0
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_building_inner_ring_system
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_destroy_the_source_of_chaos
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_everything_done_focus-tt
+	}
+}
