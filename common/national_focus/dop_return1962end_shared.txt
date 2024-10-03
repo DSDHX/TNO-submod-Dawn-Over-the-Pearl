@@ -1,0 +1,307 @@
+focus_tree =
+{
+	id = dop_sony_return1962_tree
+	country =
+	{
+		factor = 0
+		modifier =
+		{
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_samurais_kirisute_gomen
+}
+
+shared_focus =
+{
+	id = GNG_samurais_kirisute_gomen #武士的无礼讨
+	icon = GFX_GNG_GNG_samurais_kirisute_gomen
+	
+	x = 0
+	y = 0
+
+	cost = 1
+	
+    completion_reward =
+	{
+		#效果未填写
+	}
+}
+
+shared_focus =
+{
+	id = GNG_Aftermath_of_no-confidence_vote #不信任案的余波
+    icon = GFX_GNG_Aftermath_of_no-confidence_vote
+
+	relative_position_id = GNG_samurais_kirisute_gomen
+	x = 0
+	y = 1
+
+	prerequisite =
+	{ 
+		focus = GNG_samurais_kirisute_gomen
+	}
+	cost = 2
+	
+    completion_reward =
+	{
+		#效果未填写
+	}
+}
+
+shared_focus = {
+	id = GNG_industrial_restructing_and_antimonopoly_act #产业重组与反垄断法
+    icon = GFX_GNG_industrial_restructing_and_antimonopoly_act
+	
+	relative_position_id = GNG_Aftermath_of_no-confidence_vote
+	x = 0
+	y = 1
+
+	prerequisite =
+	{ 
+		focus = GNG_Aftermath_of_no-confidence_vote
+	}
+	cost = 2
+	
+	completion_reward = 
+	{
+		#效果未填写
+	}
+}
+
+shared_focus =
+{
+	id = GNG_tear_the_capital_and_trade_union #拆解资本与工会
+    icon = GFX_GNG_tear_the_capital_and_trade_union
+
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	x = -5
+	y = 1
+
+	prerequisite = 
+	{ 
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	cost = 2
+
+	completion_reward = 
+	{
+		custom_effect_tooltip = GNG_under_the_government_tt
+		#改变工会等级——>“国家控制工会”
+		#大幅提高工会政策
+		set_temp_variable = { gdp_growth_temp = -5.0 }
+		econ_gdp_growth_change = yes
+		every_owned_state =
+		{
+			set_temp_variable = { chi_app_temp = -1.5 }
+			GNG_chinese_app_change = yes
+		}
+	}
+ 
+}
+
+shared_focus =
+{
+	id = GNG_reduce_the_budget_of_product_cycle #削减产品周期拨款
+    icon = GFX_GNG_reduce_the_budget_of_product_cycle
+
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	x = -2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_equal_opportunities_DOP1962_tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_deal_with_security_services #处理安保部门
+    icon = GFX_GNG_deal_with_security_services
+
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	x = 2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_dwss_tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_meet_up_with_new_Japanese_bureaucrats #会见日裔新官僚
+    icon = GFX_GNG_meet_up_with_new_Japanese_bureaucrats
+
+	relative_position_id = GNG_industrial_restructing_and_antimonopoly_act
+	x = 5
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_industrial_restructing_and_antimonopoly_act
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_last_chance_tt
+		every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = +3.0 }
+			GNG_japanese_app_change = yes
+			set_temp_variable = { zhu_app_temp = -2.5 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { chi_app_temp = -1.5 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_adjust_the_economic_structure #调整城乡经济结构
+    icon = GFX_GNG_tear_the_capital_and_trade_union
+
+	relative_position_id = GNG_tear_the_capital_and_trade_union
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_tear_the_capital_and_trade_union
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_remove_instability_tt
+		#农村地区GDP减少3%
+		#城市地区GDP增加3%
+		set_temp_variable = { gdp_growth_temp = -1.0 }
+		econ_gdp_growth_change = yes
+		every_owned_state =
+		{
+			set_temp_variable = { chi_app_temp = -1.0 }
+			GNG_chinese_app_change = yes
+			set_temp_variable = { jap_app_temp = +1.5 }
+			GNG_japanese_app_change = yes
+		}
+	}
+}
+ 
+shared_focus =
+{
+	id = GNG_contract_tycoon_s_political_power #压缩企业政务空间
+    icon = GFX_GNG_contract_tycoon_s_political_power
+
+	relative_position_id = GNG_reduce_the_budget_of_product_cycle
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_reduce_the_budget_of_product_cycle
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_follow_the_rule_tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_call_of_IJA #帝国陆军的来电
+    icon = GFX_GNG_call_of_IJA
+
+	relative_position_id =GNG_deal_with_security_services
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_deal_with_security_services
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_IJA_TAT_tt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_draw_zhujin_over_to_our_side #拉拢珠人基本盘
+    icon = GFX_GNG_draw_zhujin_over_to_our_side
+
+	relative_position_id = GNG_meet_up_with_new_Japanese_bureaucrats
+	x = 0
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_meet_up_with_new_Japanese_bureaucrats
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_compromise_is_smart_tt
+		every_owned_state =
+		{
+			set_temp_variable = { zhu_app_temp = +1.5 }
+			GNG_zhujin_app_change = yes
+		}
+	}
+}
+
+shared_focus = {
+	id = GNG_prison_of_enterprises #“各企业的监狱”
+    icon = GFX_GNG_prison_of_enterprises
+
+	relative_position_id = GNG_Aftermath_of_no-confidence_vote #?
+	x = 0
+	y = 4
+
+	prerequisite =
+	{
+		focus = GNG_call_of_IJA
+    }
+	prerequisite =
+	{
+	    focus = GNG_draw_zhujin_over_to_our_side
+	}
+	prerequisite =
+	{
+        focus = GNG_contract_tycoon_s_political_power
+	}
+	prerequisite =
+	{
+        focus = GNG_adjust_the_economic_structure
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_return_1962_ending_tt
+	}
+}

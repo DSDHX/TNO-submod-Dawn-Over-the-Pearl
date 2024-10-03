@@ -70,7 +70,7 @@ GNG_debug_category = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_sony-japan_ending1_lee_tree
+			load_focus_tree = dop_sony_leeend_tree
 		}
 		available = {
 
@@ -85,7 +85,7 @@ GNG_debug_category = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_sony-japan_ending2_ibuka_tree
+			load_focus_tree = dop_sony_ibukaend_tree
 		}
 		available = {
 
@@ -100,7 +100,7 @@ GNG_debug_category = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_sony-japan_ending3_hitachi_tree
+			load_focus_tree = dop_sony_hitachiend_tree
 		}
 		available = {
 		}
@@ -116,7 +116,7 @@ GNG_debug_category = {
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_sony-japan_ending4_return1962_tree
+			load_focus_tree = dop_sony_return1962_tree
 		}
 		available = { }
 	}
