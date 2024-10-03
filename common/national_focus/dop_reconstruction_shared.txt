@@ -103,7 +103,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_too_in_ea
-	icon =GFX_too_in_ea
+	icon =GFX_GNG_too_in_ea
 	cost = 2
 	x = 0
 	y = 2
@@ -163,7 +163,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_the_neon_screens_illuminate_once_again
-	icon =GFX_ GNG_the_neon_screens_illuminate_once_again
+	icon =GFX_GNG_the_neon_screens_illuminate_once_again
 	cost = 2
 	x = -1.5
 	y = 4
@@ -176,3 +176,398 @@ shared_focus = {
 	}
 }
 
+shared_focus = {
+	id = GNG_bask_in_the_warm_sunshine
+	icon = GFX_GNG_bask_in_the_warm_sunshine
+	cost = 2
+	x = 1.5
+	y = 1
+	relative_position_id = GNG_a_foothold
+	prerequisite = { 
+		focus =  GNG_a_foothold
+	}
+	completion_reward = {
+    
+	}
+}
+
+shared_focus = {
+	id = GNG_gazing_into_the_abyss
+	icon = GFX_GNG_gazing_into_the_abyss
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_bask_in_the_warm_sunshine
+	prerequisite = { 
+		focus =  GNG_bask_in_the_warm_sunshine
+	}
+	completion_reward = {
+    
+	}
+}
+shared_focus= {
+	id = GNG_examine_the_foreign_enemies
+	icon =GFX_GNG_GNG_examine_the_foreign_enemies
+	cost = 2
+	x = 6
+	y = 1
+	relative_position_id = GNG_temporary_relief
+	prerequisite = {  
+    	focus = GNG_temporary_relief
+	completion_reward = {
+    }
+	}
+}
+
+shared_focus = {
+	id = GNG_prolong_the_state_of_emergency
+	icon =GFX_GNG_prolong_the_state_of_emergency
+	cost = 2
+	x = 0
+	y = 1
+	relative_position_id = GNG_examine_the_foreign_enemies
+	prerequisite = { 
+    	focus = GNG_examine_the_foreign_enemies
+	completion_reward = {
+    }
+	}
+}
+
+shared_focus = {
+	id = GNG_the_lingnan_region_is_good
+	icon = GFX_GNG_the_lingnan_region_is_good
+    x = -1.5
+	y = 1
+	cost = 2
+    relative_position_id =GNG_prolong_the_state_of_emergency
+    prerequisite = {
+		focus = GNG_prolong_the_state_of_emergency
+	}
+	mutually_exclusive = {
+		focus = GNG_that_is_my_home
+	}
+	completion_reward = {
+	
+    }
+}
+
+shared_focus = {
+	id = GNG_that_is_my_home
+	icon = GFX_GNG_the_lingnan_region_is_good
+    x = 1.5
+	y = 1
+	cost = 2
+    relative_position_id =GNG_prolong_the_state_of_emergency
+    prerequisite = {
+		focus = GNG_prolong_the_state_of_emergency
+	}
+	mutually_exclusive = {
+		focus = GNG_the_lingnan_region_is_good
+	}
+	completion_reward = {
+	
+    }
+}
+
+shared_focus = {
+	id = GNG_get_to_work
+	icon =GFX_GNG_get_to_work
+	cost = 2
+	x = 0
+	y = 3
+	relative_position_id = GNG_a_foothold
+	prerequisite = { 
+		focus = GNG_the_lingnan_region_is_good 
+	    focus = GNG_that_is_my_home
+	}
+	prerequisite = { 
+		focus =  GNG_gazing_into_the_abyss
+	    }
+		prerequisite = { 
+			focus = GNG_the_neon_screens_illuminate_once_again 
+			}
+			prerequisite = { 
+				focus = GNG_too_in_ea 
+				}
+ completion_reward = {
+    
+	}
+}
+
+shared_focus= {
+ id = GNG_the_garrison_withdrew
+	icon =GFX_GNG_the_garrison_withdrew
+	cost = 2
+	x = -6
+	y = 1
+	relative_position_id = GNG_get_to_work
+	prerequisite = {  
+    	focus = GNG_get_to_work
+	completion_reward = {
+    }
+	}
+}
+
+shared_focus= {
+	id = GNG_renovate_the_educational_system
+	   icon =GFX_GNG_renovate_the_educational_system
+	   cost = 2
+	   x = -3
+	   y = 1
+	   relative_position_id = GNG_get_to_work
+	   prerequisite = {  
+		   focus = GNG_get_to_work
+	   completion_reward = {
+	   }
+	   }
+   }
+
+   shared_focus= {
+	id = GNG_new_products_old_friends
+	   icon =GFX_GNG_new_products,_old_friends
+	   cost = 2
+	   x = 0
+	   y = 1
+	   relative_position_id = GNG_get_to_work
+	   prerequisite = {  
+		   focus = GNG_get_to_work
+	   completion_reward = {
+	   }
+	   }
+   }
+
+   shared_focus= {
+	id = GNG_go_west
+	   icon =GFX_GNG_go_west
+	   cost = 2
+	   x = 3
+	   y = 1
+	   relative_position_id = GNG_get_to_work
+	   prerequisite = {  
+		   focus = GNG_get_to_work
+	   completion_reward = {
+	   }
+	   }
+   }
+
+   shared_focus= {
+	id = GNG_leave_the_ruins_behind
+	   icon =GFX_GNG_leave_the_ruins_behind
+	   cost = 2
+	   x = 6
+	   y = 1
+	   relative_position_id = GNG_get_to_work
+	   prerequisite = {  
+		   focus = GNG_get_to_work
+	   completion_reward = {
+	   }
+	   }
+   }
+   
+   
+   shared_focus= {
+	id = GNG_preparatory_decentralization_of_authority
+	   icon =GFX_GNG_preparatory_decentralization_of_authority
+	   cost = 2
+	   x = 1.5
+	   y = 1
+	   relative_position_id = GNG_the_garrison_withdrew
+	   prerequisite = {  
+		   focus = GNG_the_garrison_withdrew
+	     }
+		 prerequisite = {  
+			focus = GNG_renovate_the_educational_system
+		  }
+		   
+		 completion_reward = {
+	   }
+	   
+   }
+
+   
+
+   shared_focus= {
+	id = GNG_reinvestment_in_talents
+	   icon =GFX_GNG_reinvestment_in_talents
+	   cost = 2
+	   x = 1.5
+	   y = 1
+	   relative_position_id = GNG_renovate_the_educational_system
+	   prerequisite = {  
+		   focus = GNG_new_products_old_friends
+	     }
+		 prerequisite = {  
+			focus = GNG_renovate_the_educational_system
+		  }
+		   
+		 completion_reward = {
+	   }
+	   
+   }
+
+   shared_focus= {
+	id = GNG_resource_export_plan
+	   icon =GFX_GNG_resource_export_plan
+	   cost = 2
+	   x = 1.5
+	   y = 1
+	   relative_position_id = GNG_new_products_old_friends
+	   prerequisite = {  
+		   focus = GNG_new_products_old_friends
+	     }
+		 prerequisite = {  
+			focus = GNG_go_west
+		  }
+		   
+		 completion_reward = {
+	   }
+	   
+   }
+
+   
+   shared_focus= {
+	id = GNG_fences_and_gate
+	   icon =GFX_GNG_fences_and_gate
+	   cost = 2
+	   x = 1.5
+	   y = 1
+	   relative_position_id = GNG_go_west
+	   prerequisite = {  
+		   focus = GNG_leave_the_ruins_behind
+	     }
+		 prerequisite = {  
+			focus = GNG_go_west
+		  }
+		   
+		 completion_reward = {
+	   }
+	   
+   }
+
+   shared_focus= {
+	id = GNG_corporate_voraciousness
+	   icon =GFX_GNG_corporate_voraciousness
+	   cost = 2
+	   x = 0
+	   y = 1
+	   relative_position_id = GNG_reinvestment_in_talents
+	   prerequisite = {  
+		   focus = GNG_preparatory_decentralization_of_authority
+	     }
+		 prerequisite = {  
+			focus = GNG_reinvestment_in_talents
+		  }
+		   
+		 completion_reward = {
+	   }
+	   
+   }
+
+   shared_focus= {
+	id = GNG_the_trade_union_is_highly_vigilant
+	   icon =GFX_GNG_the_trade_union_is_highly_vigilant
+	   cost = 2
+	   x = 0
+	   y = 1
+	   relative_position_id = GNG_resource_export_plan
+	   prerequisite = {  
+		   focus = GNG_resource_export_plan
+	     }
+		 prerequisite = {  
+			focus = GNG_fences_and_gate
+		  }
+		   
+		 completion_reward = {
+	   }
+	}
+
+	shared_focus = {
+		id = GNG_the_problem_is_the_economy
+		icon = GFX_GNG_the_problem_is_the_economy
+		x = -1.5
+		y = 1
+		cost = 2
+		relative_position_id =GNG_corporate_voraciousness
+		prerequisite = {
+			focus = GNG_corporate_voraciousness
+		}
+		prerequisite = {
+			focus = GNG_the_trade_union_is_highly_vigilant
+		}
+
+		mutually_exclusive = {
+			focus = GNG_promote_local_efficacy
+		}
+		mutually_exclusive = {
+			focus = GNG_daily_necessities_and_housing
+		}
+		completion_reward = {
+		
+		}
+	}
+
+	shared_focus = {
+		id = GNG_promote_local_efficacy
+		icon = GFX_GNG_promote_local_efficacy
+		x = 1.5
+		y = 1
+		cost = 2
+		relative_position_id =GNG_corporate_voraciousness
+		prerequisite = {
+			focus = GNG_corporate_voraciousness
+		}
+		prerequisite = {
+			focus = GNG_the_trade_union_is_highly_vigilant
+		}
+
+		mutually_exclusive = {
+			focus = GNG_the_problem_is_the_economy
+		}
+		mutually_exclusive = {
+			focus = GNG_daily_necessities_and_housing
+		}
+		completion_reward = {
+		
+		}
+	}
+
+	shared_focus = {
+		id = GNG_daily_necessities_and_housing
+		icon = GFX_GNG_promote_local_efficacy
+		x = 4.5
+		y = 1
+		cost = 2
+		relative_position_id =GNG_corporate_voraciousness
+		prerequisite = {
+			focus = GNG_corporate_voraciousness
+		}
+		prerequisite = {
+			focus = GNG_the_trade_union_is_highly_vigilant
+		}
+
+		mutually_exclusive = {
+			focus = GNG_promote_local_efficacy
+		}
+		mutually_exclusive = {
+			focus = GNG_the_problem_is_the_economy
+		}
+		completion_reward = {
+		
+		}
+	}
+
+	shared_focus= {
+		id = GNG_return_to_Ordinary_daily_life
+		   icon =GFX_GNG_return_to_Ordinary_daily_life
+		   cost = 2
+		   x = 0
+		   y = 1
+		   relative_position_id = GNG_promote_local_efficacy
+		   prerequisite = {  
+			focus =  GNG_promote_local_efficacy 
+			focus = GNG_the_problem_is_the_economy
+		   focus =  GNG_daily_necessities_and_housing
+			completion_reward = {
+		   }
+		   }
+	   }
