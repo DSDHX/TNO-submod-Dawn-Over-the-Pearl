@@ -160,7 +160,8 @@ shared_focus =
 	
 	completion_reward =
 	{
-		#占位符
+		custom_effect_tooltip = GNG_morita_akio_no_hope_focus-tt
+		#不信任动议
 	}
 }
 
