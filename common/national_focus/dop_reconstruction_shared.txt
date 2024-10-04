@@ -253,7 +253,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_that_is_my_home
-	icon = GFX_GNG_the_lingnan_region_is_good
+	icon = GFX_GNG_GNG_that_is_my_home
     x = 1.5
 	y = 1
 	cost = 2
