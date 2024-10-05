@@ -1,0 +1,30 @@
+spriteTypes = {	 
+    ##Icon For: 
+	SpriteType = { 
+		name = "GFX_GNG_GNG_examine_the_foreign_enemies"
+		texturefile = "gfx/interface/goal/GFX_GNG_examine_the_foreign_enemies.png"
+	}
+}
+spriteTypes = {	 
+    ##Icon For: 
+	SpriteType = { 
+		name = "GFX_GNG_prolong_the_state_of_emergency"
+		texturefile = "gfx/interface/goal/GFX_GNG_prolong_the_state_of_emergency.png"
+	}
+}
+spriteTypes = {	 
+    ##Icon For: 
+	SpriteType = { 
+		name = "GFX_GNG_the_lingnan_region_is_good"
+		texturefile = "gfx/interface/goal/GFX_GNG_the_lingnan_region_is_good.png"
+	}
+}
+
+spriteTypes = {	 
+    ##Icon For: 
+	SpriteType = { 
+		name = "GFX_GNG_GNG_that_is_my_home"
+		texturefile = "gfx/interface/goal/GFX_GNG_GNG_that_is_my_home.png"
+	}
+}
+
