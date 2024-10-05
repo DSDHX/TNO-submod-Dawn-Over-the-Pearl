@@ -291,3 +291,19 @@ GNG_dop_debug_addchi = {
 		}
 			}
 		}
+
+		
+		GNG_dop_debug_load_reconsturuction = {
+			allowed = {
+				original_tag = GNG
+			}
+			icon = GFX_decision_GNG_generic
+			visible = {
+			}
+			complete_effect = {
+				custom_effect_tooltip = lomitia_tt
+				load_focus_tree = dop_reconsturuction_tree
+			}
+			available = {
+			}
+		}
