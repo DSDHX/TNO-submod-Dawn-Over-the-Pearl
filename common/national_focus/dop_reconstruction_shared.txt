@@ -207,7 +207,7 @@ shared_focus = {
 }
 shared_focus= {
 	id = GNG_examine_the_foreign_enemies
-	icon =GFX_GNG_GNG_examine_the_foreign_enemies
+	icon =GFX_GNG_examine_the_foreign_enemies
 	cost = 2
 	x = 6
 	y = 1
