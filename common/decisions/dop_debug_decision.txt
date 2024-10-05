@@ -120,6 +120,36 @@ GNG_debug_category = {
 		}
 		available = { }
 	}
+	GNG_dop_debug_load_end4_return1962 =
+	{
+		allowed = 
+		{
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = { }
+		complete_effect =
+		{
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sony-japan_ending4_return1962_tree
+		}
+		available = { }
+	}
+	GNG_dop_debug_load_reconsturuction =
+	{
+		allowed =
+		{
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = { }
+		complete_effect =
+		{
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_reconsturuction_tree
+		}
+		available = { }
+	}
 	GNG_dop_debug_load_opening = {
 		allowed = {
 			original_tag = GNG
@@ -288,22 +318,7 @@ GNG_dop_debug_addchi = {
 			icon = GFX_decision_GNG_generic
 			complete_effect = {
 				BFG_increase_japan_influence_high = yes
-		}
 			}
-		}
-
 		
-		GNG_dop_debug_load_reconsturuction = {
-			allowed = {
-				original_tag = GNG
-			}
-			icon = GFX_decision_GNG_generic
-			visible = {
-			}
-			complete_effect = {
-				custom_effect_tooltip = lomitia_tt
-				load_focus_tree = dop_reconsturuction_tree
-			}
-			available = {
-			}
 		}
+	}
