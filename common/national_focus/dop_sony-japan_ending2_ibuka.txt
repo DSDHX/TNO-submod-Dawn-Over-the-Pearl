@@ -161,7 +161,7 @@ shared_focus =
 	id = GNG_focus_rise_of_silicon #硅市崛起
 	icon = GFX_GNG_focus_rise_of_silicon
 
-	relative_position_id =GNG_focus_never_stop
+	relative_position_id = GNG_focus_never_stop
 	x = 0
 	y = 1
 

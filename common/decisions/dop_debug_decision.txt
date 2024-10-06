@@ -120,7 +120,7 @@ GNG_debug_category = {
 		}
 		available = { }
 	}
-	GNG_dop_debug_load_end4_return1962 =
+	GNG_dop_debug_load_end5_second_riot =
 	{
 		allowed = 
 		{
@@ -131,7 +131,7 @@ GNG_debug_category = {
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_sony-japan_ending4_return1962_tree
+			load_focus_tree = dop_sony-japan_ending5_second_roit_tree
 		}
 		available = { }
 	}

@@ -37,7 +37,7 @@ shared_focus =
 	icon = GFX_GNG_focus_halt_unnecessary_spending
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
-	x = -5
+	x = -6
 	y = 1
 
 	prerequisite =
@@ -125,7 +125,7 @@ shared_focus =
 	icon = GFX_GNG_focus_erase_organized_crime
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
-	x = 5
+	x = 6
 	y = 1
 
 	prerequisite =
@@ -147,9 +147,9 @@ shared_focus =
 	id = GNG_focus_personal_safety_of_the_japanese #日侨的生命
 	icon = GFX_GNG_focus_personal_safety_of_the_japanese
 
-	relative_position_id = GNG_focus_halt_unnecessary_spending
-	x = 1.5
-	y = 1
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = -4
+	y = 2
 
 	prerequisite =
 	{
@@ -177,9 +177,9 @@ shared_focus =
 	id = GNG_focus_property_safety_of_the_zhujin #珠人的财产
 	icon = GFX_GNG_focus_property_safety_of_the_zhujin
 
-	relative_position_id = GNG_focus_grasping_executive_authority
-	x = 2
-	y = 1
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = 0
+	y = 2
 
 	prerequisite =
 	{
@@ -207,9 +207,9 @@ shared_focus =
 	id = GNG_focus_population_of_chinese #华人的人口
 	icon = GFX_GNG_focus_population_of_chinese
 
-	relative_position_id = GNG_focus_normalize_curfew_policy
-	x = 1.5
-	y = 1
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = 4
+	y = 2
 
 	prerequisite =
 	{
@@ -237,9 +237,9 @@ shared_focus =
 	id = GNG_focus_adults_forgetting_history #忘记历史的成年人……
 	icon = GFX_GNG_focus_adults_forgetting_histor
 
-	relative_position_id = GNG_focus_personal_safety_of_the_japanese
-	x = 1.8
-	y = 1
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = -2
+	y = 3
 	
 	prerequisite =
 	{
@@ -262,9 +262,9 @@ shared_focus =
 	id = GNG_focus_while_adolescence_losing_homeland #……与失去祖国的年轻人
 	icon = GFX_GNG_focus_while_adolescence_losing_homeland
 
-	relative_position_id = GNG_focus_property_safety_of_the_zhujin
-	x = 1.8
-	y = 1
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
+	x = 2
+	y = 3
 
 	prerequisite =
 	{
@@ -287,9 +287,9 @@ shared_focus =
 	id = GNG_focus_is_order_prevails_in_guangdong #广东秩序井然？
 	icon = GFX_GNG_focus_is_order_prevails_in_guangdong
 
-	relative_position_id = GNG_focus_property_safety_of_the_zhujin
+	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 0
-	y = 2
+	y = 4
 
 	prerequisite =
 	{
