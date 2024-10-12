@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_sony-japan_ending3_hitachi_tree
+	id = dop_sonyjapan_ending3_hitachi_tree
 	country =
 	{
 		factor = 0
@@ -26,7 +26,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_tear_off_the_mask_focus-tt
+		custom_effect_tooltip = GNG_tear_off_the_mask_focustt
 	}
 }
 
@@ -47,7 +47,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_guangdong_turned_side_focus-tt
+		custom_effect_tooltip = GNG_guangdong_turned_side_focustt
 	}
 }
 
@@ -68,7 +68,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_never_ending_focus-tt
+		custom_effect_tooltip = GNG_never_ending_focustt
 	}
 }
 
@@ -89,7 +89,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_sony_capitulate_focus-tt
+		custom_effect_tooltip = GNG_sony_capitulate_focustt
 	}
 }
 
@@ -110,7 +110,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_reach_the_end_focus-tt
+		custom_effect_tooltip = GNG_reach_the_end_focustt
 	}
 }
 
@@ -139,7 +139,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_proud_of_us_focus-tt
+		custom_effect_tooltip = GNG_proud_of_us_focustt
 	}
 }
 
@@ -160,7 +160,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_morita_akio_no_hope_focus-tt
+		custom_effect_tooltip = GNG_morita_akio_no_hope_focustt
 		#不信任动议
 	}
 }
@@ -182,7 +182,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_true_enemy_escaped_focus-tt
+		custom_effect_tooltip = GNG_true_enemy_escaped_focustt
 	}
 }
 
@@ -207,7 +207,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_clearance_of_obstacles_focus-tt
+		custom_effect_tooltip = GNG_clearance_of_obstacles_focustt
 		#投票法令
 	}
 }
@@ -229,7 +229,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_hopless_focus-tt
+		custom_effect_tooltip = GNG_hopless_focustt
 	}
 }
 
@@ -250,7 +250,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_no_one_immune_focus-tt
+		custom_effect_tooltip = GNG_no_one_immune_focustt
 		#法令投票
 	}
 }
@@ -276,6 +276,6 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_everything_done_focus-tt
+		custom_effect_tooltip = GNG_everything_done_focustt
 	}
 }

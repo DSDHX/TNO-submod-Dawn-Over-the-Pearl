@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_sony-japan_ending2_ibuka_tree
+	id = dop_sonyjapan_ending2_ibuka_tree
 	country =
 	{
 		factor = 0
@@ -26,7 +26,7 @@ shared_focus =
 	
     completion_reward =
 	{
-		custom_effect_tooltip = GNG_detoxification_focus-tt
+		custom_effect_tooltip = GNG_detoxification_focustt
 	}
 }
 
@@ -47,7 +47,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_mistake_not_again_focus-tt
+		custom_effect_tooltip = GNG_mistake_not_again_focustt
 	}
 }
 
@@ -68,7 +68,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_remove_destabilization_focus-tt
+		custom_effect_tooltip = GNG_remove_destabilization_focustt
 	}
 }
 
@@ -89,7 +89,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_real_industrial_focus-tt
+		custom_effect_tooltip = GNG_real_industrial_focustt
 	}
 }
 
@@ -110,7 +110,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_prudence_and_efficiency_focus-tt
+		custom_effect_tooltip = GNG_prudence_and_efficiency_focustt
 	}
 }
 
@@ -131,7 +131,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_won_t_forget_guangdong_people_focus-tt
+		custom_effect_tooltip = GNG_won_t_forget_guangdong_people_focustt
 	}
 }
 
@@ -152,7 +152,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_future_belongs_to_young_focus-tt
+		custom_effect_tooltip = GNG_future_belongs_to_young_focustt
 	}
 }
 
@@ -173,7 +173,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_to_the_beyond_focus-tt
+		custom_effect_tooltip = GNG_to_the_beyond_focustt
 	}
 }
 
@@ -195,7 +195,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_power_of_machine_focus-tt
+		custom_effect_tooltip = GNG_power_of_machine_focustt
 	}
 }
 
@@ -216,7 +216,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_geniuse_focus-tt
+		custom_effect_tooltip = GNG_geniuse_focustt
 	}
 }
 
@@ -237,7 +237,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_leading_future_focus-tt
+		custom_effect_tooltip = GNG_leading_future_focustt
 	}
 }
 
@@ -270,7 +270,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_reach_the_future_focus-tt
+		custom_effect_tooltip = GNG_reach_the_future_focustt
 	}
 }
 

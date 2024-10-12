@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_sony-japan_ending4_return1962_tree
+	id = dop_sonyjapan_ending4_return1962_tree
 	country =
 	{
 		factor = 0
@@ -88,7 +88,7 @@ shared_focus =
 
 	completion_reward = 
 	{
-		custom_effect_tooltip = GNG_under_the_government_focus-tt
+		custom_effect_tooltip = GNG_under_the_government_focustt
 		#改变工会等级——>“国家控制工会”
 		#大幅提高工会政策
 		set_temp_variable = { gdp_growth_temp = -5.0 }
@@ -151,7 +151,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_equal_opportunities_DOP1962_focus-tt
+		custom_effect_tooltip = GNG_equal_opportunities_DOP1962_focustt
 	}
 }
 
@@ -172,7 +172,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_follow_the_rule_focus-tt
+		custom_effect_tooltip = GNG_follow_the_rule_focustt
 	}
 }
 
@@ -193,7 +193,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_dwss_focus-tt
+		custom_effect_tooltip = GNG_dwss_focustt
 	}
 }
 
@@ -214,7 +214,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_IJA_TAT_focus-tt
+		custom_effect_tooltip = GNG_IJA_TAT_focustt
 	}
 }
 
@@ -235,7 +235,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_last_chance_focus-tt
+		custom_effect_tooltip = GNG_last_chance_focustt
 		every_owned_state =
 		{
 			set_temp_variable = { jap_app_temp = +3.0 }
@@ -265,7 +265,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_compromise_is_smart_focus-tt
+		custom_effect_tooltip = GNG_compromise_is_smart_focustt
 		every_owned_state =
 		{
 			set_temp_variable = { zhu_app_temp = +1.5 }
@@ -302,6 +302,6 @@ shared_focus = {
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_return_1962_ending_focus-tt
+		custom_effect_tooltip = GNG_return_1962_ending_focustt
 	}
 }

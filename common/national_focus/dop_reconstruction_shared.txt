@@ -46,7 +46,7 @@ shared_focus = {
 	prerequisite = { 
     	focus = GNG_temporary_relief
  completion_reward = {
-	 comcustom_effect_tooltip = GNG_our_erstwhile_master_focus-tt
+	 comcustom_effect_tooltip = GNG_our_erstwhile_master_focustt
       }
 	}
 }
@@ -303,7 +303,7 @@ shared_focus= {
 	   prerequisite = {  
 		   focus = GNG_get_to_work
 	completion_reward = {
-		comcustom_effect_tooltip = GNG_new_products_old_friends_focus-tt 
+		comcustom_effect_tooltip = GNG_new_products_old_friends_focustt 
 	 }
 }
    }
@@ -412,7 +412,7 @@ shared_focus= {
 		  }
 		   
 		completion_reward = {
-			comcustom_effect_tooltip = GNG_fences_and_gate_focus-TT
+			comcustom_effect_tooltip = GNG_fences_and_gate_focustt
 		 }
 	   
    }
@@ -475,7 +475,7 @@ shared_focus= {
 			focus = GNG_daily_necessities_and_housing
 		}
 		completion_reward = {
-		   comcustom_effect_tooltip = GNG_the_problem_is_the_economy_focus-tt
+		   comcustom_effect_tooltip = GNG_the_problem_is_the_economy_focustt
 		 }
 	}
 
@@ -500,7 +500,7 @@ shared_focus= {
 			focus = GNG_daily_necessities_and_housing
 		}
 		completion_reward = {
-			comcustom_effect_tooltip = GNG_promote_local_efficacy_focus-tt
+			comcustom_effect_tooltip = GNG_promote_local_efficacy_focustt
 		 }
 	}
 
@@ -525,7 +525,7 @@ shared_focus= {
 			focus = GNG_the_problem_is_the_economy
 		}
 		completion_reward = {
-	     comcustom_effect_tooltip = GNG_daily_necessities_and_housing_focus-tt
+	     comcustom_effect_tooltip = GNG_daily_necessities_and_housing_focustt
 		 }
 	}
 

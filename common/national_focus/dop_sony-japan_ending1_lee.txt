@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_sony-japan_ending1_lee_tree
+	id = dop_sonyjapan_ending1_lee_tree
 	country =
 	{
 		factor = 0
@@ -26,7 +26,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_never_forget_goal_focus-tt
+		custom_effect_tooltip = GNG_never_forget_goal_focustt
 	}
 
 }
@@ -48,7 +48,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_entitlement_focus-tt
+		custom_effect_tooltip = GNG_entitlement_focustt
 	}
 }
 
@@ -69,7 +69,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_learn_from_mistake_focus-tt
+		comcustom_effect_tooltip = GNG_learn_from_mistake_focustt
 	}
 }
 
@@ -90,7 +90,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_serve_the_people_focus-tt
+		custom_effect_tooltip = GNG_serve_the_people_focustt
 	}
 }
 
@@ -111,7 +111,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_chinese_control_policy_focus-tt
+		custom_effect_tooltip = GNG_chinese_control_policy_focustt
 	}
 }
 
@@ -140,7 +140,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_pan-asianism_together_focus-tt
+		comcustom_effect_tooltip = GNG_pan-asianism_together_focustt
 	}
 }
 
@@ -161,7 +161,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_not_disappointed_focus-tt
+		comcustom_effect_tooltip = GNG_not_disappointed_focustt
 	}
 }
 
@@ -182,7 +182,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_same_topic_focus-tt
+		comcustom_effect_tooltip = GNG_same_topic_focustt
 	}
 }
 
@@ -203,7 +203,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_perfect_answer_focus-tt
+		comcustom_effect_tooltip = GNG_perfect_answer_focustt
 	}
 }
 
@@ -224,7 +224,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_fill_with_laughter_focus-tt
+		comcustom_effect_tooltip = GNG_fill_with_laughter_focustt
 	}
 }
 Shared_focus =
@@ -252,7 +252,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_equal_competition_focus-tt
+		comcustom_effect_tooltip = GNG_equal_competition_focustt
 	}
 }
 
@@ -277,6 +277,6 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_mandate_of_heaven_focus-tt
+		comcustom_effect_tooltip = GNG_mandate_of_heaven_focustt
 	}
 }

@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_sony-japan_ending5_second_roit_tree
+	id = dop_sonyjapan_ending5_second_roit_tree
 	country =
 	{
 		factor = 0
@@ -26,7 +26,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_turned_side_focus-tt
+		custom_effect_tooltip = GNG_turned_side_focustt
 		#广东现状将转变为“军警管辖之国”
 	}
 }
@@ -48,7 +48,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_econmize_focus-tt
+		custom_effect_tooltip = GNG_econmize_focustt
 		#各类debuff待填充
 		every_owned_state =
 		{
@@ -79,7 +79,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_all_for_profit_focus-tt
+		custom_effect_tooltip = GNG_all_for_profit_focustt
 		#立法会将无限期闭会
 		every_owned_state =
 		{
@@ -108,7 +108,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_extraordinary_measures_focus-tt
+		custom_effect_tooltip = GNG_extraordinary_measures_focustt
 		#军事支出将增加0.250B
 		#所有地区警察控制+2.50％
 		every_owned_state =
@@ -136,7 +136,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_ensure_stability_focus-tt
+		custom_effect_tooltip = GNG_ensure_stability_focustt
 		#农村地区警察控制+1.50％
 		#农村地区华人支持率-2.50％
 	}
@@ -163,7 +163,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_life_first_focus-tt
+		custom_effect_tooltip = GNG_life_first_focustt
 		every_owned_state =
 		{
 			set_temp_variable = { jap_app_temp = +2.5 }
@@ -193,7 +193,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_must_have_money_focus-tt
+		custom_effect_tooltip = GNG_must_have_money_focustt
 		every_owned_state =
 		{
 			set_temp_variable = { zhu_app_temp = +1.5 }
@@ -223,7 +223,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_other_value_focus-tt
+		custom_effect_tooltip = GNG_other_value_focustt
 		every_owned_state =
 		{
 			set_temp_variable = { chi_app_temp = +0.5 }
@@ -303,6 +303,6 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_stability_above_everthing_focus-tt
+		custom_effect_tooltip = GNG_stability_above_everthing_focustt
 	}
 }
