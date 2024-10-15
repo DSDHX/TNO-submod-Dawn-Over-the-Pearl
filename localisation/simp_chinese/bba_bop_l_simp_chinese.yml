@@ -16,7 +16,7 @@
  BoP_Tab_DOPSiliconCW: "硅芯冷战"
  BOP_TOOLTIP_TREND:0 ""
  BOP_TOOLTIP_STABLE:1 ""
- BOP_LEF T_SIDE_TOOLTIP:0 "[root.GetLeftSideName]"
+ BOP_LEFT_SIDE_TOOLTIP:0 "[root.GetLeftSideName]"
  BOP_RIGHT_SIDE_TOOLTIP:0 "[root.GetRightSideName]"
  BOP_ACTIVE_RANGE_DESC:0 "[root.GetActiveRangeName]"
  BOP_ACTIVE_RANGE_TOOLTIP:0 "[root.GetActiveRangeModDesc][root.GetActiveRangeRuleDesc]"

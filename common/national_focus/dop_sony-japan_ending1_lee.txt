@@ -69,7 +69,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_learn_from_mistake_focustt
+		custom_effect_tooltip = GNG_learn_from_mistake_focustt
 	}
 }
 
@@ -140,7 +140,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_pan-asianism_together_focustt
+		custom_effect_tooltip = GNG_pan-asianism_together_focustt
 	}
 }
 
@@ -161,7 +161,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_not_disappointed_focustt
+		custom_effect_tooltip = GNG_not_disappointed_focustt
 	}
 }
 
@@ -182,7 +182,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_same_topic_focustt
+		custom_effect_tooltip = GNG_same_topic_focustt
 	}
 }
 
@@ -203,7 +203,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_perfect_answer_focustt
+		custom_effect_tooltip = GNG_perfect_answer_focustt
 	}
 }
 
@@ -224,7 +224,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_fill_with_laughter_focustt
+		custom_effect_tooltip = GNG_fill_with_laughter_focustt
 	}
 }
 Shared_focus =
@@ -252,7 +252,7 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_equal_competition_focustt
+		custom_effect_tooltip = GNG_equal_competition_focustt
 	}
 }
 
@@ -277,6 +277,6 @@ Shared_focus =
 	
 	completion_reward =
 	{
-		comcustom_effect_tooltip = GNG_mandate_of_heaven_focustt
+		custom_effect_tooltip = GNG_mandate_of_heaven_focustt
 	}
 }
