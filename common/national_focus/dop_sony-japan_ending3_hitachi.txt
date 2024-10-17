@@ -19,7 +19,7 @@ shared_focus =
 	id = GNG_focus_weak_up_from_dream #大梦初觉
 	icon = GFX_GNG_focus_weak_up_from_dream
 
-	x = 0
+	x = 8
 	y = 0
 	
 	cost = 1

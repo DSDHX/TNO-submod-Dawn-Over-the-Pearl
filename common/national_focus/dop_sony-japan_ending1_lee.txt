@@ -19,7 +19,7 @@ shared_focus =
 	id = GNG_focus_the_wind_is_gentle #惠风和畅
 	icon = GFX_GNG_focus_the_wind_is_gentle
 
-	x = 0
+	x = 8
 	y = 0
 	
 	cost = 1

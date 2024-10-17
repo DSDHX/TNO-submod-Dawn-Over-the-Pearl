@@ -19,7 +19,7 @@ shared_focus =
 	id = GNG_focus_samurais_kirisute_gomen #武士的无礼讨
 	icon = GFX_GNG_focus_samurais_kirisute_gomen
 	
-	x = 0
+	x = 8
 	y = 0
 
 	cost = 1
@@ -128,7 +128,7 @@ shared_focus =
 		{
 			set_temp_variable = { chi_app_temp = -1.0 }
 			GNG_chinese_app_change = yes
-			set_temp_variable = { jap_app_temp = +1.5 }
+			set_temp_variable = { jap_app_temp = 1.5 }
 			GNG_japanese_app_change = yes
 		}
 	}
@@ -238,7 +238,7 @@ shared_focus =
 		custom_effect_tooltip = GNG_last_chance_focustt
 		every_owned_state =
 		{
-			set_temp_variable = { jap_app_temp = +3.0 }
+			set_temp_variable = { jap_app_temp = 3.0 }
 			GNG_japanese_app_change = yes
 			set_temp_variable = { zhu_app_temp = -2.5 }
 			GNG_zhujin_app_change = yes
@@ -268,7 +268,7 @@ shared_focus =
 		custom_effect_tooltip = GNG_compromise_is_smart_focustt
 		every_owned_state =
 		{
-			set_temp_variable = { zhu_app_temp = +1.5 }
+			set_temp_variable = { zhu_app_temp = 1.5 }
 			GNG_zhujin_app_change = yes
 		}
 	}

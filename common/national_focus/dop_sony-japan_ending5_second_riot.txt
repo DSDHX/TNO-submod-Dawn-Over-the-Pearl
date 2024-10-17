@@ -19,7 +19,7 @@ shared_focus =
 	id = GNG_focus_state_of_guangdong_in_emergency #全国紧急状态
 	icon = GFX_GNG_focus_state_of_guangdong_in_emergency
 	
-	x = 0
+	x = 8
 	y = 0
 
 	cost = 2
@@ -110,7 +110,7 @@ shared_focus =
 	{
 		custom_effect_tooltip = GNG_extraordinary_measures_focustt
 		#军事支出将增加0.250B
-		#所有地区警察控制+2.50％
+		#所有地区警察控制2.50％
 		every_owned_state =
 		{
 			set_temp_variable = { chi_app_temp = -1.25 }
@@ -137,7 +137,7 @@ shared_focus =
 	completion_reward =
 	{
 		custom_effect_tooltip = GNG_ensure_stability_focustt
-		#农村地区警察控制+1.50％
+		#农村地区警察控制1.50％
 		#农村地区华人支持率-2.50％
 	}
 }
@@ -166,7 +166,7 @@ shared_focus =
 		custom_effect_tooltip = GNG_life_first_focustt
 		every_owned_state =
 		{
-			set_temp_variable = { jap_app_temp = +2.5 }
+			set_temp_variable = { jap_app_temp = 2.5 }
 			GNG_japanese_app_change = yes
 		}
 	}
@@ -196,7 +196,7 @@ shared_focus =
 		custom_effect_tooltip = GNG_must_have_money_focustt
 		every_owned_state =
 		{
-			set_temp_variable = { zhu_app_temp = +1.5 }
+			set_temp_variable = { zhu_app_temp = 1.5 }
 			GNG_zhujin_app_change = yes
 		}
 	}
@@ -226,7 +226,7 @@ shared_focus =
 		custom_effect_tooltip = GNG_other_value_focustt
 		every_owned_state =
 		{
-			set_temp_variable = { chi_app_temp = +0.5 }
+			set_temp_variable = { chi_app_temp = 0.5 }
 			GNG_chinese_app_change = yes
 		}
 	}

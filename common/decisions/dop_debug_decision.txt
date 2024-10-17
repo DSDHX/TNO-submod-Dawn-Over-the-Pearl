@@ -55,7 +55,7 @@ GNG_debug_category = {
 		}
 		complete_effect = {
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_aftergawjap_tree
+			load_focus_tree = dop_sonyjapan_core_tree
 		}
 		available = {
 

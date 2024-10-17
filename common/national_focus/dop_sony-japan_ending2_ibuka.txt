@@ -19,7 +19,7 @@ shared_focus =
 	id = GNG_focus_the_ultimate_enemy #最终之敌
 	icon = GFX_GNG_focus_the_ultimate_enemy
 
-	x = 0
+	x = 8
 	y = 0	
 	
 	cost = 1
