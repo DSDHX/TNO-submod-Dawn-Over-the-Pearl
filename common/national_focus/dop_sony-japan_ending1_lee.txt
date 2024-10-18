@@ -130,7 +130,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus= GNG_focus_policy_report_system
+		focus = GNG_focus_policy_report_system
 	}
 	prerequisite =
 	{
@@ -144,7 +144,7 @@ shared_focus =
 	}
 }
 
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_all_eyes_on #万众瞩目之人
 	icon = GFX_GNG_focus_all-eyes_on
@@ -165,7 +165,7 @@ Shared_focus =
 	}
 }
 
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_cultural_affairs_bureau #康乐及文化事务署
 	icon = GFX_GNG_focus_cultural_affairs_bureau
@@ -186,7 +186,7 @@ Shared_focus =
 	}
 }
 
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_guangdong_stocks_rejuvenation #广股振兴
 	icon =GFX_GNG_focus_guangdong_stocks_rejuvenation
@@ -207,7 +207,7 @@ Shared_focus =
 	}
 }
 
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_fill_with_laughter #索尼，让欢笑充满广东
 	icon = GFX_GNG_focus_fill_with_laughter
@@ -227,7 +227,7 @@ Shared_focus =
 		custom_effect_tooltip = GNG_fill_with_laughter_focustt
 	}
 }
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_equal_competition #平等竞争
 	icon = GFX_GNG_focus_equal_competitio
@@ -256,7 +256,7 @@ Shared_focus =
 	}
 }
 
-Shared_focus =
+shared_focus =
 {
 	id = GNG_focus_a_place_for_all #所有人的容身之地
 	icon = GFX_GNG_focus_a_place_for_all

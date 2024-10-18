@@ -2471,7 +2471,7 @@ shared_focus =
 
 	relative_position_id = GNG_focus_new_fate_choice_of_gng
 
-	x = 21
+	x = 22
 	y = 1
 	
 	prerequisite =
@@ -2493,7 +2493,7 @@ shared_focus =
 
 	relative_position_id = GNG_focus_Pandoras_Box
 
-	x = -6
+	x = -7
 	y = 1
 	
 	prerequisite =
@@ -2993,330 +2993,600 @@ shared_focus =
     }
 }
 
-shared_focus = {
-	id = GNG_dangerous_advice_from_yakuza
+shared_focus =
+{
+	id = GNG_focus_dangerous_advice_from_yakuza #极道的危险建议
 	icon = GFX_goal_unknown
-	x = 88
-	y = 6.5
-	cost = 2
-	prerequisite = {
+
+	relative_position_id = GNG_focus_underworld
+
+	x = -1
+	y = 1
+	
+	prerequisite =
+	{
 		focus = GNG_focus_underworld
 	}
-	mutually_exclusive = {
-		focus = GNG_older_the_friend_better_the_wine
+	mutually_exclusive =
+	{
+		focus = GNG_focus_older_the_friend_better_the_wine
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_estate_tycoon
+shared_focus =
+{
+	id = GNG_focus_estate_tycoon #地产大亨
 	icon = GFX_goal_unknown
-	x = 88
-	y = 8
-	cost = 2
-	prerequisite = {
-		focus = GNG_dangerous_advice_from_yakuza
+
+	relative_position_id = GNG_focus_underworld
+
+	x = -1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_dangerous_advice_from_yakuza
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_CK_a_c_to_get_a_p_of_the_pie
-	icon = GFX_GNG_CK_a_c_to_get_a_p_of_the_pie
-	x = 88
-	y = 9.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_estate_tycoon
+shared_focus =
+{
+	id = GNG_focus_CK_a_c_to_get_a_p_of_the_pie #长江实业也来分杯羹
+	icon = GFX_GNG_focus_CK_a_c_to_get_a_p_of_the_pie
+
+	relative_position_id = GNG_focus_underworld
+
+	x = -1
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_estate_tycoon
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_older_the_friend_better_the_wine
+shared_focus =
+{
+	id = GNG_focus_older_the_friend_better_the_wine #还得是老朋友
 	icon = GFX_goal_unknown
-	x = 96
-	y = 6.5
-	cost = 2
-	prerequisite = {
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 1
+	y = 1
+	
+	prerequisite =
+	{
 		focus = GNG_focus_underworld
 	}
-	mutually_exclusive = {
-		focus = GNG_dangerous_advice_from_yakuza
+	mutually_exclusive =
+	{
+		focus = GNG_focus_dangerous_advice_from_yakuza
 	}
-	completion_reward = {
-	
-    }
-}
-
-shared_focus = {
-	id = GNG_a_gambling_paradise_in_East_Asia
-	icon = GFX_GNG_a_gambling_paradise_in_East_Asia
-    x = 96
-	y = 8
 	cost = 2
-	prerequisite = {
-		focus = GNG_older_the_friend_better_the_wine
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_the_boom_in_tourism
-	icon = GFX_GNG_the_boom_in_tourism
-	x = 96
-	y = 9.5
+shared_focus =
+{
+	id = GNG_focus_a_gambling_paradise_in_East_Asia #东亚的博彩天堂
+	icon = GFX_GNG_focus_a_gambling_paradise_in_East_Asia
+
+	relative_position_id = GNG_focus_underworld
+
+    x = 1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_older_the_friend_better_the_wine
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_a_gambling_paradise_in_East_Asia
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_Step_out_of_the_gray_area
+shared_focus =
+{
+	id = GNG_focus_the_boom_in_tourism #旅游业的繁荣
+	icon = GFX_GNG_focus_the_boom_in_tourism
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 1
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_a_gambling_paradise_in_East_Asia
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_Step_out_of_the_gray_area #走出灰色地带？
 	icon = GFX_goal_unknown
-	x = 92
-	y = 11
-	cost = 2
-	prerequisite = {
-		focus = GNG_CK_a_c_to_get_a_p_of_the_pie
-		focus = GNG_the_boom_in_tourism
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 0
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_CK_a_c_to_get_a_p_of_the_pie
+		focus = GNG_focus_the_boom_in_tourism
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_they_are_social_groups
+shared_focus =
+{
+	id = GNG_focus_they_are_social_groups #他们是社会团体？
 	icon = GFX_goal_unknown
-	x = 88
-	y = 12.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_Step_out_of_the_gray_area
-	}
-	mutually_exclusive = {
-		focus = GNG_they_are_also_businesses
-	}
-	completion_reward = {
-	
-    }
-}
 
-shared_focus = {
-	id = GNG_presence_of_gov_repres
-	icon = GFX_goal_unknown
-	x = 88
-	y = 15.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_they_are_social_groups
-	}
-	completion_reward = {
-	
-    }
-}
+	relative_position_id = GNG_focus_underworld
 
-shared_focus = {
-	id = GNG_they_are_also_businesses
-	icon = GFX_goal_unknown
-	x = 96
-	y = 12.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_Step_out_of_the_gray_area
-	}
-	mutually_exclusive = {
-		focus = GNG_they_are_social_groups
-	}
-	completion_reward = {
-	
-    }
-}
-
-shared_focus = {
-	id = GNG_Resident_supervisor_of_the_enterprise
-	icon = GFX_goal_unknown
-	x = 96
-	y = 15.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_they_are_also_businesses
-	}
-	completion_reward = {
-	
-    }
-}
-
-shared_focus = {
-	id = GNG_tame_the_shadows
-	icon = GFX_goal_unknown
-	x = 92
-	y = 17
-	cost = 2
-	prerequisite = {
-      	focus = GNG_presence_of_gov_repres
-		focus = GNG_Resident_supervisor_of_the_enterprise
-	}
-	completion_reward = {
-	
-    }
-}
-
-shared_focus = {
-	id = GNG_prepare_for_war_to_enjoy_peace
-	icon = GFX_goal_unknown
-	x = 100
+	x = -1
 	y = 5
+	
+	prerequisite =
+	{
+		focus = GNG_focus_Step_out_of_the_gray_area
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_they_are_also_businesses
+	}
 	cost = 2
-	prerequisite = {
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_help_maintain_stability #那就帮忙维稳
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = -1
+	y = 6
+	
+	prerequisite =
+	{
+		focus = GNG_focus_they_are_social_groups
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_presence_of_gov_repres #派驻政府代表
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = -1
+	y = 7
+	
+	prerequisite =
+	{
+		focus = GNG_focus_help_maintain_stability
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_they_are_also_businesses #他们也是企业！
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 1
+	y = 5
+	
+	prerequisite =
+	{
+		focus = GNG_focus_Step_out_of_the_gray_area
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_they_are_social_groups
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_should_pay_tex #那就得缴税
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 1
+	y = 6
+	
+	prerequisite =
+	{
+		focus = GNG_focus_they_are_also_businesses
+	}
+	cost = 2
+	
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_Resident_supervisor_of_the_enterprise #派驻企业监事
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 1
+	y = 7
+	
+	prerequisite =
+	{
+		focus = GNG_focus_should_pay_tex
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_tame_the_shadows #驾驭阴影
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_underworld
+
+	x = 0
+	y = 8
+	
+	prerequisite =
+	{
+      	focus = GNG_focus_presence_of_gov_repres
+		focus = GNG_focus_Resident_supervisor_of_the_enterprise
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_prepare_for_war_to_enjoy_peace #欲享和平，必先备战
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_Pandoras_Box
+
+	x = 5
+	y = 1
+	
+	prerequisite =
+	{
 		focus = GNG_focus_Pandoras_Box
 	}
-	completion_reward = {
-	
-    }
-}
-
-shared_focus = {
-	id = GNG_e_of_the_Defence_Division
-	icon = GFX_goal_unknown
-	x = 100
-    y = 6.5
 	cost = 2
-	prerequisite = {
-		focus = GNG_prepare_for_war_to_enjoy_peace
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_Restructuring_of_the_Police_Special_Wing
+shared_focus =
+{
+	id = GNG_focus_e_of_the_Defence_Division #设立防卫司
 	icon = GFX_goal_unknown
-	x = 100
-	y = 8
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = -2
+    y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_prepare_for_war_to_enjoy_peace
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_e_of_the_Defence_Division
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_Formation_of_the_Ground_Self_Defense_Force
+shared_focus =
+{
+	id = GNG_focus_Restructuring_of_the_Police_Special_Wing #改组警察特种联队
 	icon = GFX_goal_unknown
-	x = 100
-	y = 9.5
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = -2
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_e_of_the_Defence_Division
+	}
 	cost = 2
-	prerequisite = {
-	    focus = GNG_Restructuring_of_the_Police_Special_Wing
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_overlook_the_sea
+shared_focus =
+{
+	id = GNG_focus_Formation_of_the_Ground_Self_Defense_Force #组建陆上自卫队
 	icon = GFX_goal_unknown
-	x = 104
-	y = 8
-    cost = 2
-	prerequisite = {
-		focus = GNG_e_of_the_Defence_Division
-	}
-	completion_reward = {
-	
-    }
-}
 
-shared_focus = {
-	id = GNG_the_launch_of_the_Maritime_Self_Defense_Force
-	icon = GFX_goal_unknown
-	x = 104
-	y = 9.5
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = -2
+	y = 3
+	
+	prerequisite =
+	{
+	    focus = GNG_focus_Restructuring_of_the_Police_Special_Wing
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_overlook_the_sea
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_preparing_for_air_power
+shared_focus =
+{
+	id = GNG_focus_est_the_coast_guard #设立海上保安厅
 	icon = GFX_goal_unknown
-	x = 108
-	y = 8
-	cost = 2
-	prerequisite = {
-		focus = GNG_e_of_the_Defence_Division
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_prepare_for_war_to_enjoy_peace
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_Air_Self_Defense_Forces
+shared_focus =
+{
+	id = GNG_focus_overlook_the_sea #眺望海洋
 	icon = GFX_goal_unknown
-	x = 108
-	y = 9.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_preparing_for_air_power
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 0
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_e_of_the_Defence_Division
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_National_Defense_University
+shared_focus =
+{
+	id = GNG_focus_the_launch_of_the_Maritime_Self_Defense_Force #海上自卫队的起航
 	icon = GFX_goal_unknown
-	x = 104
-	y = 11
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 0
+	y = 3
+
+	prerequisite =
+	{
+		focus = GNG_focus_overlook_the_sea
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_Formation_of_the_Ground_Self_Defense_Force
-	}
-	prerequisite = {
-		focus = GNG_the_launch_of_the_Maritime_Self_Defense_Force
-	}
-	prerequisite = {
-		focus = GNG_Air_Self_Defense_Forces
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_refined_personnel_training
+shared_focus =
+{
+	id = GNG_focus_ask_for_help #请求日本提供支持
 	icon = GFX_goal_unknown
-	x = 100
-	y = 12.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_National_Defense_University
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_prepare_for_war_to_enjoy_peace
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_preparing_for_air_power #筹建空中力量
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 2
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_ask_for_help
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_Air_Self_Defense_Forces #我们的翅膀——航空自卫队
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 2
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_preparing_for_air_power
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_focus_National_Defense_University #国防大学
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_prepare_for_war_to_enjoy_peace
+
+	x = 0
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_Formation_of_the_Ground_Self_Defense_Force
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_the_launch_of_the_Maritime_Self_Defense_Force
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_Air_Self_Defense_Forces
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+    }
+}
+
+shared_focus =
+{
+	id = GNG_refined_personnel_training #精细化人员培训
+	icon = GFX_goal_unknown
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_National_Defense_University
+	}
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
@@ -3342,23 +3612,13 @@ shared_focus = {
 	y = 12.5
 	cost = 2
     prerequisite = {
-		focus = GNG_National_Defense_University
+		focus = GNG_focus_National_Defense_University
 	}
 	completion_reward = {
 	
     }
 }
 
-shared_focus = {
-	id = GNG_est_the_coast_guard
-	icon = GFX_goal_unknown
-	x = 108
-	y = 12.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_National_Defense_University
-	}
-}
 
 shared_focus = {
 	id = GNG_CPS_Military_Cooperation
@@ -3370,7 +3630,7 @@ shared_focus = {
 		focus = GNG_est_a_c_of_c
 	}
 	prerequisite = {
-		focus = GNG_est_the_coast_guard
+		focus = GNG_focus_est_the_coast_guard
 	}
 	completion_reward = {
 	
@@ -3384,7 +3644,7 @@ shared_focus = {
 	y = 12.5
 	cost = 2
 	prerequisite = {
-		focus = GNG_National_Defense_University
+		focus = GNG_focus_National_Defense_University
 	}
 	completion_reward = {
 	
@@ -3470,7 +3730,7 @@ shared_focus = {
 		focus = GNG_focus_gng_is_in_good_order
 	}
 	prerequisite = {
-		focus = GNG_tame_the_shadows
+		focus = GNG_focus_tame_the_shadows
 	}
 	prerequisite = {
 		focus = GNG_Safe_and_secure

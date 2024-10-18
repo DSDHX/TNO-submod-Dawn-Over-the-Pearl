@@ -1939,13 +1939,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_CK_a_c_to_get_a_p_of_the_pie"
+		name = "GFX_GNG_focus_CK_a_c_to_get_a_p_of_the_pie"
 		texturefile = "gfx/interface/goal/GFX_GNG_CK_a_c_to_get_a_p_of_the_pie.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_CK_a_c_to_get_a_p_of_the_pie_shine"
+		name = "GFX_GNG_focus_CK_a_c_to_get_a_p_of_the_pie_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_CK_a_c_to_get_a_p_of_the_pie.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -1977,13 +1977,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_a_gambling_paradise_in_East_Asia"
+		name = "GFX_GNG_focus_a_gambling_paradise_in_East_Asia"
 		texturefile = "gfx/interface/goal/GFX_GNG_a_gambling_paradise_in_East_Asia.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_a_gambling_paradise_in_East_Asia_shine"
+		name = "GFX_GNG_focus_a_gambling_paradise_in_East_Asia_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_a_gambling_paradise_in_East_Asia.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -2015,13 +2015,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_the_boom_in_tourism"
+		name = "GFX_GNG_focus_the_boom_in_tourism"
 		texturefile = "gfx/interface/goal/GFX_GNG_the_boom_in_tourism.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_the_boom_in_tourism_shine"
+		name = "GFX_GNG_focus_the_boom_in_tourism_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_the_boom_in_tourism.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
