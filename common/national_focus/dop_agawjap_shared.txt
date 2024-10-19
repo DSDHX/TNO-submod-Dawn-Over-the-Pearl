@@ -91,8 +91,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_establish_sino_zhujin_binary_system #建立珠华二元体系
-	icon = GFX_GNG_focus_establish_sino_zhujin_binary_system
+	id = GNG_focus_establish_chi_zhu_binary_system #建立珠华二元体系
+	icon = GFX_GNG_focus_establish_chi_zhu_binary_system
 	
 	relative_position_id = GNG_focus_amend_ethnic_regulation
 	
@@ -125,14 +125,14 @@ shared_focus =
 	id = GNG_focus_protect_cultural_heritage #保护文化传承
 	icon = GFX_GNG_focus_protect_cultural_heritage
 
-	relative_position_id = GNG_focus_establish_sino_zhujin_binary_system
+	relative_position_id = GNG_focus_establish_chi_zhu_binary_system
 	
 	x = -1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_establish_sino_zhujin_binary_system
+		focus = GNG_focus_establish_chi_zhu_binary_system
 	}
 	cost = 3
 
@@ -147,13 +147,13 @@ shared_focus =
 	id = GNG_assimilate_of_Japanese_expatriates #同化日侨
 	icon = GFX_GNG_assimilate_of_Japanese_expatriates
 
-	relative_position_id = GNG_focus_establish_sino_zhujin_binary_system
+	relative_position_id = GNG_focus_establish_chi_zhu_binary_system
 
 	x = 1
 	y = 1
 	prerequisite =
 	{
-		focus = GNG_focus_establish_sino_zhujin_binary_system
+		focus = GNG_focus_establish_chi_zhu_binary_system
 	}
 	cost = 3
 	
@@ -168,7 +168,7 @@ shared_focus =
 	id = GNG_foucs_stay_together_peacefully #和谐共存
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_establish_sino_zhujin_binary_system
+	relative_position_id = GNG_focus_establish_chi_zhu_binary_system
 	
 	x = 0
 	y = 2
@@ -203,7 +203,7 @@ shared_focus =
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_establish_sino_zhujin_binary_system
+		focus = GNG_focus_establish_chi_zhu_binary_system
 	}
 	cost = 1
 
@@ -242,8 +242,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_accelerate_sino_assimilation #加速珠人化
-	icon = GFX_GNG_focus_accelerate_sino_assimilation
+	id = GNG_focus_accelerate_chi_assimilation #加速珠人化
+	icon = GFX_GNG_focus_accelerate_chi_assimilation
 
 	relative_position_id = GNG_focus_Re_Discussion_of_Nationality
 	
@@ -279,7 +279,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_accelerate_sino_assimilation
+		focus = GNG_focus_accelerate_chi_assimilation
 	}
 	cost = 3
 
@@ -291,8 +291,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_p_e_in_gng #广东的政治环境
-	icon = GFX_GNG_focus_p_e_in_gng
+	id = GNG_focus_political_environment_in_gng #广东的政治环境
+	icon = GFX_GNG_focus_political_environment_in_gng
 
 	relative_position_id = GNG_focus_amend_ethnic_regulation
 	
@@ -316,17 +316,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_define_the_b_between_p_and_b #界定政商界限
+	id = GNG_focus_define_bound #界定政商界限
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_p_e_in_gng
+	relative_position_id = GNG_focus_political_environment_in_gng
 	
 	x = -4
 	y = 1
 	
     prerequisite =
 	{
-		focus = GNG_focus_p_e_in_gng
+		focus = GNG_focus_political_environment_in_gng
 	}
 	cost = 3
 
@@ -338,17 +338,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_separate_p_and_b_in_writing #书面政商分离
+	id = GNG_focus_written_separation #书面政商分离
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_define_the_b_between_p_and_b
+	relative_position_id = GNG_focus_define_bound
 	
     x = -1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_define_the_b_between_p_and_b
+		focus = GNG_focus_define_bound
 	}
 	mutually_exclusive =
 	{
@@ -364,17 +364,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_also_the_ceo_who_is_Sonys_president #兼任索尼总裁的行政长官
-	icon = GFX_GNG_focus_also_the_ceo_who_is_Sonys_president
+	id = GNG_focus_sony_and_chief #兼任索尼总裁的行政长官
+	icon = GFX_GNG_focus_sony_and_chief
 	
-	relative_position_id = GNG_focus_define_the_b_between_p_and_b
+	relative_position_id = GNG_focus_define_bound
 
 	x = -1
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_separate_p_and_b_in_writing
+		focus = GNG_focus_written_separation
 	}
 	cost = 2
 
@@ -389,18 +389,18 @@ shared_focus =
 	id = GNG_focus_make_words_vague #模糊措辞
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_define_the_b_between_p_and_b
+	relative_position_id = GNG_focus_define_bound
 
     x = 1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_define_the_b_between_p_and_b
+		focus = GNG_focus_define_bound
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_separate_p_and_b_in_writing
+		focus = GNG_focus_written_separation
 	}
 	cost = 2
 
@@ -415,7 +415,7 @@ shared_focus =
 	id = GNG_focus_better_not_to_remind_this #别提这事为好
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_define_the_b_between_p_and_b
+	relative_position_id = GNG_focus_define_bound
 	
 	x = 1
 	y = 2
@@ -434,17 +434,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_trade_union_issues #工会问题
+	id = GNG_focus_union_issues #工会问题
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_p_e_in_gng
+	relative_position_id = GNG_focus_political_environment_in_gng
 
 	x = 0
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_p_e_in_gng
+		focus = GNG_focus_political_environment_in_gng
 	}
 	cost = 2
 
@@ -470,14 +470,14 @@ shared_focus =
 	id = GNG_focus_cooperate_with_GFT #和广工联合作
 	icon = GFX_GNG_focus_cooperate_with_GFT
 
-	relative_position_id = GNG_focus_trade_union_issues
+	relative_position_id = GNG_focus_union_issues
 
 	x = -1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_trade_union_issues
+		focus = GNG_focus_union_issues
 	}
 	mutually_exclusive =
 	{
@@ -493,10 +493,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_the_stick_and_the_carrot #大棒与胡萝卜
+	id = GNG_focus_stick_and_carrot #大棒与胡萝卜
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_trade_union_issues
+	relative_position_id = GNG_focus_union_issues
 
 	x = -1
 	y = 2
@@ -528,14 +528,14 @@ shared_focus =
 	id = GNG_focus_forget_it #让他们忘了这一茬
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_trade_union_issues
+	relative_position_id = GNG_focus_union_issues
 
 	x = 1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_trade_union_issues
+		focus = GNG_focus_union_issues
 	}
 	mutually_exclusive =
 	{
@@ -551,10 +551,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_ip_the_t_of_workers #提升工人待遇
+	id = GNG_focus_up_treatment_of_workers #提升工人待遇
 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_trade_union_issues
+	relative_position_id = GNG_focus_union_issues
 
 	x = 1
 	y = 2
@@ -573,17 +573,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_call_of_d #地方公权重定
+	id = GNG_focus_local_power_re_decide #地方公权重定
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_p_e_in_gng
+	relative_position_id = GNG_focus_political_environment_in_gng
 
 	x = 4
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_p_e_in_gng
+		focus = GNG_focus_political_environment_in_gng
 	}
 	cost = 2
 
@@ -598,18 +598,18 @@ shared_focus =
 	id = GNG_focus_too_far_to_reach #遥不可及的承诺
 	icon = GFX_GNG_focus_too_far_to_reach
 
-	relative_position_id = GNG_focus_call_of_d
+	relative_position_id = GNG_focus_local_power_re_decide
 
 	x = -1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_call_of_d
+		focus = GNG_focus_local_power_re_decide
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_d_gov_can_be_a_s_of_peo
+		focus = GNG_focus_minseifu_represent_people
 	}
 	cost = 2
 
@@ -621,10 +621,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_a_part_of_d #基层部分让权
+	id = GNG_focus_local_power_loss #基层部分让权
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_call_of_d
+	relative_position_id = GNG_focus_local_power_re_decide
 
 	x = -1
 	y = 2
@@ -643,17 +643,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_d_gov_can_be_a_s_of_peo #民政府足以代表人民！
-	icon = GFX_GNG_focus_d_gov_can_be_a_s_of_peo
+	id = GNG_focus_minseifu_represent_people #民政府足以代表人民！
+	icon = GFX_GNG_focus_minseifu_represent_people
 
-	relative_position_id = GNG_focus_call_of_d
+	relative_position_id = GNG_focus_local_power_re_decide
 
     x = 1
 	y = 1
 	
     prerequisite =
 	{
-		focus = GNG_focus_call_of_d
+		focus = GNG_focus_local_power_re_decide
 	}
 	mutually_exclusive =
 	{
@@ -669,17 +669,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_exp_the_control #强化地方控制
+	id = GNG_focus_enhanced_local_control #强化地方控制
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_call_of_d
+	relative_position_id = GNG_focus_local_power_re_decide
 
 	x = 1
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_d_gov_can_be_a_s_of_peo
+		focus = GNG_focus_minseifu_represent_people
 	}
 	cost = 2
 
@@ -691,28 +691,28 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_gooooooooooood_job #政清人和
+	id = GNG_focus_good_job #政清人和
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_p_e_in_gng
+	relative_position_id = GNG_focus_political_environment_in_gng
 
 	x = 0
-	y = 4
+	y = 5
 	
 	prerequisite =
 	{
-		focus = GNG_focus_also_the_ceo_who_is_Sonys_president
+		focus = GNG_focus_sony_and_chief
 		focus = GNG_focus_better_not_to_remind_this
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_the_stick_and_the_carrot
-		focus = GNG_focus_ip_the_t_of_workers
+		focus = GNG_focus_stick_and_carrot
+		focus = GNG_focus_up_treatment_of_workers
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_a_part_of_d
-		focus = GNG_focus_exp_the_control
+		focus = GNG_focus_local_power_loss
+		focus = GNG_focus_enhanced_local_control
 	}
 	cost = 1
 
@@ -768,8 +768,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_gng_c_b #广东中央银行
-	icon = GFX_GNG_focus_gng_c_b
+	id = GNG_focus_gng_central_bank #广东中央银行
+	icon = GFX_GNG_focus_gng_central_bank
 	
 	relative_position_id = GNG_focus_strive_for_excellence
 
@@ -790,21 +790,21 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_s_HKs_f_p #巩固香港的金融地位
+	id = GNG_focus_HKs_financial_position #巩固香港的金融地位
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
     x = -1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_gng_c_b
+		focus = GNG_focus_gng_central_bank
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_support_gngs_f_i
+		focus = GNG_focus_support_guangzhou
 	}
 	cost = 2
 
@@ -816,17 +816,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_pan_asian_D_F #泛亚发展基金
+	id = GNG_focus_pan_asian_develop_fund #泛亚发展基金
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = -1
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_s_HKs_f_p
+		focus = GNG_focus_HKs_financial_position
 	}
 	cost = 2
 
@@ -838,21 +838,21 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_support_gngs_f_i #扶植广州的金融产业
+	id = GNG_focus_support_guangzhou #扶植广州的金融产业
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 1
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_gng_c_b
+		focus = GNG_focus_gng_central_bank
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_s_HKs_f_p
+		focus = GNG_focus_HKs_financial_position
 	}
 	cost = 2
 
@@ -867,14 +867,14 @@ shared_focus =
 	id = GNG_focus_pick_the_bureaucrats #挑选官僚
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 1
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_support_gngs_f_i
+		focus = GNG_focus_support_guangzhou
 	}
 	cost = 2
 
@@ -944,7 +944,7 @@ shared_focus =
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_Gz_Railway_Rail_Transit_Construction_Plan
+		focus = GNG_focus_gng_rail_transit_plan
 	}
 	cost = 2
 
@@ -956,7 +956,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_Gz_Railway_Rail_Transit_Construction_Plan #广铁轨交计划
+	id = GNG_focus_gng_rail_transit_plan #广铁轨交计划
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_industrial_upgrading
@@ -1018,7 +1018,7 @@ shared_focus =
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_construction_of_new_villages
+		focus = GNG_focus_construction_new_villages
 	}
 	cost = 2
 
@@ -1030,7 +1030,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_construction_of_new_villages #新村建设
+	id = GNG_focus_construction_new_villages #新村建设
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_industrial_upgrading
@@ -1059,14 +1059,14 @@ shared_focus =
 	id = GNG_focus_monetary_rhapsodies #货币狂想
 	icon = GFX_GNG_focus_monetary_rhapsodies
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 0
 	y = 3
 	
 	prerequisite =
 	{
-		focus = GNG_focus_pan_asian_D_F
+		focus = GNG_focus_pan_asian_develop_fund
 		focus = GNG_focus_pick_the_bureaucrats
 	}
 	cost = 2
@@ -1082,7 +1082,7 @@ shared_focus =
 	id = GNG_focus_test_attitude #试探态度
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = -1
 	y = 4
@@ -1101,10 +1101,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_build_m_from_within #内部造势
+	id = GNG_focus_internal_propaganda #内部造势
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
     x = 1
 	y = 4
@@ -1126,7 +1126,7 @@ shared_focus =
 	id = GNG_focus_court #对簿公堂
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 0
 	y = 5
@@ -1137,7 +1137,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_build_m_from_within
+		focus = GNG_focus_internal_propaganda
 	}
 	cost = 2
 
@@ -1152,7 +1152,7 @@ shared_focus =
 	id = GNG_focus_Return #铩羽而归
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = -2
     y = 6
@@ -1176,10 +1176,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_why_not_to_think_about_the_good #往好处想嘛……
+	id = GNG_focus_think_about_good #往好处想嘛……
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = -2
 	y = 7
@@ -1201,7 +1201,7 @@ shared_focus =
 	id = GNG_focus_phased_victory #阶段性胜利
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
     x = 0
 	y = 6
@@ -1224,10 +1224,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_I_o_the_f_and_the_c #家国认同
+	id = GNG_focus_national_identity #家国认同
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 	
 	x = 0
 	y = 7
@@ -1249,7 +1249,7 @@ shared_focus =
 	id = GNG_focus_gng_can_say_no #广东可以说不
 	icon = GFX_GNG_focus_gng_can_say_no
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 2
 	y = 6
@@ -1276,7 +1276,7 @@ shared_focus =
 	id = GNG_focus_forced_corporate_promotion #强制企业推广
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_gng_c_b
+	relative_position_id = GNG_focus_gng_central_bank
 
 	x = 2
 	y = 7
@@ -1306,12 +1306,12 @@ shared_focus =
 	prerequisite =
 	{
 		focus = GNG_focus_gng_Shinkansen_project
-	    focus = GNG_focus_Gz_Railway_Rail_Transit_Construction_Plan
+	    focus = GNG_focus_gng_rail_transit_plan
 	}
 	prerequisite =
 	{
 		focus = GNG_focus_rural_credit_Bank
-		focus = GNG_focus_construction_of_new_villages
+		focus = GNG_focus_construction_new_villages
 	}
 	cost = 2
 
@@ -1345,7 +1345,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_h_i_in_northern_gng #粤北的重工业
+	id = GNG_focus_heavy_industry_northern_gng #粤北的重工业
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_industrial_upgrading
@@ -1377,7 +1377,7 @@ shared_focus =
 	
 	prerequisite =
 	{
-		focus = GNG_focus_h_i_in_northern_gng
+		focus = GNG_focus_heavy_industry_northern_gng
 	}
 	cost = 2
 
@@ -1433,7 +1433,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_not_just_the_PRD #不只有珠三角
+	id = GNG_focus_not_just_three_pearls #不只有珠三角
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_industrial_upgrading
@@ -1459,8 +1459,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_the_ambitions_of_the_tycoons #大亨们的野望
-	icon = GFX_GNG_focus_the_ambitions_of_the_tycoons
+	id = GNG_focusambitions_of_tycoons #大亨们的野望
+	icon = GFX_GNG_focusambitions_of_tycoons
 
 	relative_position_id = GNG_focus_the_pearl_of_Pan_Asia
 
@@ -1481,21 +1481,21 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_w_of_Li #嘉诚的忧心
-	icon = GFX_GNG_focus_w_of_Li
+	id = GNG_focus_warry_from_Li #嘉诚的忧心
+	icon = GFX_GNG_focus_warry_from_Li
 
-	relative_position_id = GNG_focus_the_ambitions_of_the_tycoons
+	relative_position_id = GNG_focusambitions_of_tycoons
 
 	x = -3
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_the_ambitions_of_the_tycoons
+		focus = GNG_focusambitions_of_tycoons
 	}
 	mutually_exclusive =
 	{
-    	focus = GNG_focus_t_strategy_of_t_f_c
+    	focus = GNG_focus_t_strategy_of_tycoons
 		focus = GNG_focus_lunatic_of_ibuka
 	}
 	cost = 2
@@ -1508,17 +1508,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_atonement_f_the_p #为过去赎罪
-	icon = GFX_GNG_focus_atonement_f_the_p
+	id = GNG_focus_atonement_for_past #为过去赎罪
+	icon = GFX_GNG_focus_atonement_for_past
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 	
 	x = 0
 	y = 1
 	
     prerequisite =
 	{
-		focus = GNG_focus_w_of_Li
+		focus = GNG_focus_warry_from_Li
 	}
 	cost = 2
 
@@ -1533,14 +1533,14 @@ shared_focus =
 	id = GNG_focus_focus_on_str_commerce #关注街头商业
     icon = GFX_GNG_focus_focus_on_str_commerce
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = 0
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_atonement_f_the_p
+		focus = GNG_focus_atonement_for_past
 	}
 	cost = 2
 
@@ -1552,10 +1552,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_come_home_r_or_f #衣锦还乡
+	id = GNG_focus_come_back_home #衣锦还乡
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = 0
 	y = 4
@@ -1578,17 +1578,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_estab_gng_chemical_industry #兴办广东化工
+	id = GNG_focus_gng_chemical_industry #兴办广东化工
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = -1
 	y = 5
 	
 	prerequisite =
 	{
-		focus = GNG_focus_come_home_r_or_f
+		focus = GNG_focus_come_back_home
 	}
 	cost = 2
 
@@ -1600,17 +1600,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_a_with_p_companies #与药企的协定
-	icon = GFX_GNG_focus_a_with_p_companies
+	id = GNG_focus_dear_with_pharmaceutical #与药企的协定
+	icon = GFX_GNG_focus_dear_with_pharmaceutical
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = 1
 	y = 5
 	
 	prerequisite =
 	{
-		focus = GNG_focus_come_home_r_or_f
+		focus = GNG_focus_come_back_home
 	}
 	cost = 3
 
@@ -1625,18 +1625,18 @@ shared_focus =
 	id = GNG_focus_sub_center_in_gng #广东“副中心”
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = 0
 	y = 6
 	
 	prerequisite =
 	{
-		focus = GNG_focus_estab_gng_chemical_industry 
+		focus = GNG_focus_gng_chemical_industry 
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_a_with_p_companies
+		focus = GNG_focus_dear_with_pharmaceutical
 	}
 	cost = 2
 
@@ -1648,10 +1648,10 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_strengthen_c_s #加强企业监管
+	id = GNG_focus_business_regulation #加强企业监管
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_w_of_Li
+	relative_position_id = GNG_focus_warry_from_Li
 
 	x = 0
 	y = 7
@@ -1670,21 +1670,21 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_t_strategy_of_t_f_c #财界的策略
+	id = GNG_focus_t_strategy_of_tycoons #财界的策略
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_the_ambitions_of_the_tycoons
+	relative_position_id = GNG_focusambitions_of_tycoons
 
 	x = 0
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_the_ambitions_of_the_tycoons
+		focus = GNG_focusambitions_of_tycoons
 	}
 	mutually_exclusive =
 	{ 
-		focus = GNG_focus_w_of_Li
+		focus = GNG_focus_warry_from_Li
         focus = GNG_focus_lunatic_of_ibuka
 	}
 	cost = 2
@@ -1697,17 +1697,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_expand_t_f_of_giant_enterprises #扩张巨企职能
+	id = GNG_focus_expand_giant_enterprises #扩张巨企职能
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = 0
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_t_strategy_of_t_f_c
+		focus = GNG_focus_t_strategy_of_tycoons
 	}
 	cost = 2
 
@@ -1719,17 +1719,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_under_the_shadow_of_Sony #索尼的庇荫下
+	id = GNG_focus_under_shadow_of_Sony #索尼的庇荫下
 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = 0
 	y = 2
 	
 	prerequisite =
 	{
-		focus = GNG_focus_expand_t_f_of_giant_enterprises
+		focus = GNG_focus_expand_giant_enterprises
 	}
 	cost = 2
 
@@ -1741,17 +1741,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_i_e_matsushita_in_ZS_city #中山的松下园区
+	id = GNG_focus_matsushita_in_ZS #中山的松下园区
 	icon = GFX_gal_unknown
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = -1
 	y = 4
 	
 	prerequisite =
 	{
-		focus = GNG_focus_under_the_shadow_of_Sony
+		focus = GNG_focus_under_shadow_of_Sony
 	}
 	cost = 3
 
@@ -1766,14 +1766,14 @@ shared_focus =
 	id = GNG_focus_Ostrichs_tittytainment #鸵鸟们的奶头乐
 	icon = GFX_GNG_focus_Ostrichs_tittytainment
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = -1
 	y = 6
 	
 	prerequisite =
 	{
-		focus = GNG_focus_i_e_matsushita_in_ZS_city
+		focus = GNG_focus_matsushita_in_ZS
 	}
 	cost = 2
 
@@ -1785,17 +1785,17 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_lair_of_Hitachi_in_GZ_city #广州的日立巢穴
-	icon = GFX_GNG_focus_lair_of_Hitachi_in_GZ_city
+	id = GNG_focus_lair_of_Hitachi_in_GZ #广州的日立巢穴
+	icon = GFX_GNG_focus_lair_of_Hitachi_in_GZ
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = 1
 	y = 4
 	
 	prerequisite =
 	{
-		focus = GNG_focus_under_the_shadow_of_Sony
+		focus = GNG_focus_under_shadow_of_Sony
 	}
 	cost = 2
 
@@ -1810,14 +1810,14 @@ shared_focus =
 	id = GNG_focus_pleasure_of_Leviathan #利维坦的欢愉
 	icon = GFX_GNG_focus_pleasure_of_Leviathan
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = 1
 	y = 6
 	
 	prerequisite =
 	{
-		focus = GNG_focus_lair_of_Hitachi_in_GZ_city
+		focus = GNG_focus_lair_of_Hitachi_in_GZ
 	}
 	cost = 2
 
@@ -1832,7 +1832,7 @@ shared_focus =
 	id = GNG_focus_lost_in_new_techno #新技术下的迷途者
 	icon = GFX_GNG_focus_lost_in_new_techno
 
-	relative_position_id = GNG_focus_t_strategy_of_t_f_c
+	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
 	x = 0
 	y = 7
@@ -1858,19 +1858,19 @@ shared_focus =
 	id = GNG_focus_lunatic_of_ibuka #井深的狂气
 	icon = GFX_GNG_focus_lunatic_of_ibuka
 
-	relative_position_id = GNG_focus_the_ambitions_of_the_tycoons
+	relative_position_id = GNG_focusambitions_of_tycoons
 
 	x = 3
 	y = 1
 	
 	prerequisite =
 	{
-		focus = GNG_focus_the_ambitions_of_the_tycoons
+		focus = GNG_focusambitions_of_tycoons
 	}
 	mutually_exclusive =
 	{
-		focus = GNG_focus_w_of_Li
-        focus = GNG_focus_t_strategy_of_t_f_c
+		focus = GNG_focus_warry_from_Li
+        focus = GNG_focus_t_strategy_of_tycoons
 	}
 	cost = 2
 
@@ -1882,7 +1882,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_eliminate_backward_p_c #淘汰落后产能
+	id = GNG_focus_eliminate_backward #淘汰落后产能
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_lunatic_of_ibuka
@@ -1904,7 +1904,7 @@ shared_focus =
 
 shared_focus = 
 {
-	id = GNG_focus_esta_the_Sony_Fujitsu_Joint_I_Campus #建立联合园区
+	id = GNG_focus_build_Joint_Campus #建立联合园区
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_lunatic_of_ibuka
@@ -1918,7 +1918,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_eliminate_backward_p_c
+		focus = GNG_focus_eliminate_backward
 	}
 	cost = 2
 
@@ -1930,7 +1930,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_let_the_technocrats_give_a_try #让技术官僚试试看
+	id = GNG_focus_lete_technocrats_try #让技术官僚试试看
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_lunatic_of_ibuka
@@ -1940,7 +1940,7 @@ shared_focus =
 
 	prerequisite =
 	{
-		focus = GNG_focus_esta_the_Sony_Fujitsu_Joint_I_Campus
+		focus = GNG_focus_build_Joint_Campus
 	}
 	prerequisite =
 	{
@@ -1966,7 +1966,7 @@ shared_focus =
 	
 	prerequisite =
 	{
-		focus = GNG_focus_let_the_technocrats_give_a_try
+		focus = GNG_focus_lete_technocrats_try
 	}
 	cost = 3
 
@@ -1988,7 +1988,7 @@ shared_focus =
 	
 	prerequisite =
 	{
-	    focus = GNG_focus_let_the_technocrats_give_a_try
+	    focus = GNG_focus_lete_technocrats_try
 	}
 	cost = 2
 
@@ -2433,22 +2433,22 @@ shared_focus =
 
 	relative_position_id = GNG_focus_the_pearl_of_Pan_Asia
 
-	x = 0
+	x = -3
 	y = 10
 	
 	prerequisite =
 	{
-		focus = GNG_focus_why_not_to_think_about_the_good
-		focus = GNG_focus_I_o_the_f_and_the_c
+		focus = GNG_focus_think_about_good
+		focus = GNG_focus_national_identity
 		focus = GNG_focus_forced_corporate_promotion
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_not_just_the_PRD
+		focus = GNG_focus_not_just_three_pearls
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_strengthen_c_s
+		focus = GNG_focus_business_regulation
 		focus = GNG_focus_lost_in_new_techno
 		focus = GNG_focus_digitization_of_government_work
 	}
@@ -3571,7 +3571,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_refined_personnel_training #精细化人员培训
+	id = GNG_focus_refined_personnel_training #精细化人员培训
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_National_Defense_University
@@ -3591,171 +3591,256 @@ shared_focus =
     }
 }
 
-shared_focus = {
-	id = GNG_impr_the_per_recr_mec
+shared_focus =
+{
+	id = GNG_focus_impr_the_per_recr_mec #设立人员征募机制
 	icon = GFX_goal_unknown
-	x = 100
-	y = 15.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_refined_personnel_training
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = -2
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_refined_personnel_training
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_est_a_c_of_c
+shared_focus =
+{
+	id = GNG_focus_est_a_c_of_c #建立指挥体系
 	icon = GFX_goal_unknown
-	x = 104
-	y = 12.5
-	cost = 2
-    prerequisite = {
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = 0
+	y = 1
+	
+    prerequisite =
+	{
 		focus = GNG_focus_National_Defense_University
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
 
-shared_focus = {
-	id = GNG_CPS_Military_Cooperation
+shared_focus =
+{
+	id = GNG_focus_CPS_Military_Cooperation #共荣圈军事合作
 	icon = GFX_goal_unknown
-	x = 104
-	y = 15.5
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = 0
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_est_a_c_of_c
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_est_a_c_of_c
-	}
-	prerequisite = {
-		focus = GNG_focus_est_the_coast_guard
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_self_sufficient_military_industry
+shared_focus =
+{
+	id = GNG_focus_self_sufficient_military_industry #自给性军事工业
 	icon = GFX_goal_unknown
-	x = 112
-	y = 12.5
-	cost = 2
-	prerequisite = {
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
 		focus = GNG_focus_National_Defense_University
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_pull_ourselves_up_by_our_bootstraps
+shared_focus =
+{
+	id = GNG_focus_pull_ourselves_up_by_our_bootstraps #自力更生？
 	icon = GFX_goal_unknown
-	x = 112
-    y = 14
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = 1
+    y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_self_sufficient_military_industry
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_introduce_mature_industrial_products
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_self_sufficient_military_industry
-	}
-	mutually_exclusive = {
-		focus = GNG_introduce_mature_industrial_products
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_introduce_mature_industrial_products
+shared_focus =
+{
+	id = GNG_focus_introduce_mature_industrial_products #引进成熟军工产品
 	icon = GFX_goal_unknown
-	x = 116
-	y = 14
+
+	relative_position_id = GNG_focus_National_Defense_University
+
+	x = 3
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_self_sufficient_military_industry
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_pull_ourselves_up_by_our_bootstraps
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_self_sufficient_military_industry
-	}
-	mutually_exclusive = {
-		focus = GNG_pull_ourselves_up_by_our_bootstraps
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_superb_equipment
+shared_focus =
+{
+	id = GNG_focus_superb_equipment #自给自足
 	icon = GFX_goal_unknown
-	x = 108
-	y = 15.5
-	cost = 2
-	prerequisite = {
-		focus = GNG_pull_ourselves_up_by_our_bootstraps
-		focus = GNG_introduce_mature_industrial_products
+
+	relative_position_id = GNG_focus_National_Defense_University
+	
+	x = 2
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_pull_ourselves_up_by_our_bootstraps
+		focus = GNG_focus_introduce_mature_industrial_products
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_Safe_and_secure
+shared_focus =
+{
+	id = GNG_focus_Safe_and_secure #安全无虞
 	icon = GFX_goal_unknown
-	x = 104
-	y = 17
+
+	relative_position_id = GNG_focus_National_Defense_University
+	
+	x = 0
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_impr_the_per_recr_mec
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_CPS_Military_Cooperation
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_superb_equipment
+	}
 	cost = 2
-	prerequisite = {
-		focus = GNG_impr_the_per_recr_mec
-	}
-	prerequisite = {
-		focus = GNG_CPS_Military_Cooperation
-	}
-	prerequisite = {
-		focus = GNG_superb_equipment
-	}
-	completion_reward = {
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_peace_and_prosperity
+shared_focus =
+{
+	id = GNG_focus_peace_and_prosperity #国泰民安
 	icon = GFX_goal_unknown
-	x = 80
-	y = 18.5
-	cost = 2
-	prerequisite = {
+
+	relative_position_id = GNG_focus_Pandoras_Box
+
+	x = -3
+	y = 10
+	
+	prerequisite =
+	{
 		focus = GNG_focus_gng_is_in_good_order
 	}
-	prerequisite = {
+	prerequisite =
+	{
 		focus = GNG_focus_tame_the_shadows
 	}
-	prerequisite = {
-		focus = GNG_Safe_and_secure
+	prerequisite =
+	{
+		focus = GNG_focus_Safe_and_secure
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }
 
-shared_focus = {
-	id = GNG_narcissus_inaccessibilis
-	icon = GFX_GNG_narcissus_inaccessibilis
-	x = 43
-	y = 20
-	cost = 2
-	prerequisite = {
-		focus = GNG_focus_gooooooooooood_job
+shared_focus =
+{
+	id = GNG_focus_narcissus_inaccessibilis #“华南”的高岭之花
+	icon = GFX_GNG_focus_narcissus_inaccessibilis
+
+	relative_position_id = GNG_focus_new_fate_choice_of_gng
+
+	x = -3
+	y = 12
+	
+	prerequisite =
+	{
+		focus = GNG_focus_good_job
 	}
-	prerequisite = {
+	prerequisite =
+	{
 		focus = GNG_focus_prosperous_financial_fortune
 	}
-	prerequisite = {
-		focus = GNG_peace_and_prosperity
+	prerequisite =
+	{
+		focus = GNG_focus_peace_and_prosperity
 	}
-	completion_reward = {
+	cost = 2
+
+	completion_reward =
+	{
 	
     }
 }

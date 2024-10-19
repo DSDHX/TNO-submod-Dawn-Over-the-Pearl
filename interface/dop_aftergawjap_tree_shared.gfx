@@ -115,17 +115,17 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_establish_sino_zhujin_binary_system"
-		texturefile = "gfx/interface/goal/GFX_GNG_establish_sino_zhujin_binary_system.dds"
+		name = "GFX_GNG_focus_establish_chi_zhu_binary_system"
+		texturefile = "gfx/interface/goal/GFX_GNG_establish_chi_zhujin_binary_system.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_establish_sino_zhujin_binary_system_shine"
-		texturefile = "gfx/interface/goal/GFX_GNG_establish_sino_zhujin_binary_system.dds"
+		name = "GFX_GNG_focus_establish_chi_zhu_binary_system_shine"
+		texturefile = "gfx/interface/goal/GFX_GNG_establish_chi_zhujin_binary_system.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goal/GFX_GNG_establish_sino_zhujin_binary_system.dds"
+			animationmaskfile = "gfx/interface/goal/GFX_GNG_establish_chi_zhujin_binary_system.dds"
 			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -137,7 +137,7 @@ spriteTypes = {
 			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goal/GFX_GNG_establish_sino_zhujin_binary_system.dds"
+			animationmaskfile = "gfx/interface/goal/GFX_GNG_establish_chi_zhujin_binary_system.dds"
 			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -267,17 +267,17 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_accelerate_sino_assimilation"
-		texturefile = "gfx/interface/goal/GFX_GNG_accelerate_sino_assimilation.dds"
+		name = "GFX_GNG_focus_accelerate_chi_assimilation"
+		texturefile = "gfx/interface/goal/GFX_GNG_accelerate_chi_assimilation.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_accelerate_sino_assimilation_shine"
-		texturefile = "gfx/interface/goal/GFX_GNG_accelerate_sino_assimilation.dds"
+		name = "GFX_GNG_focus_accelerate_chi_assimilation_shine"
+		texturefile = "gfx/interface/goal/GFX_GNG_accelerate_chi_assimilation.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goal/GFX_GNG_accelerate_sino_assimilation.dds"
+			animationmaskfile = "gfx/interface/goal/GFX_GNG_accelerate_chi_assimilation.dds"
 			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -289,7 +289,7 @@ spriteTypes = {
 			animationtexturescale = { x = 1.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goal/GFX_GNG_accelerate_sino_assimilation.dds"
+			animationmaskfile = "gfx/interface/goal/GFX_GNG_accelerate_chi_assimilation.dds"
 			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -343,13 +343,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_p_e_in_gng"
+		name = "GFX_GNG_focus_political_environment_in_gng"
 		texturefile = "gfx/interface/goal/GFX_GNG_p_e_in_gng.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_p_e_in_gng_shine"
+		name = "GFX_GNG_focus_political_environment_in_gng_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_p_e_in_gng.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -381,13 +381,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_also_the_ceo_who_is_Sonys_president"
+		name = "GFX_GNG_focus_sony_and_chief"
 		texturefile = "gfx/interface/goal/GFX_GNG_also_the_ceo_who_is_Sonys_president.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_also_the_ceo_who_is_Sonys_president_shine"
+		name = "GFX_GNG_focus_sony_and_chief_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_also_the_ceo_who_is_Sonys_president.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -495,13 +495,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_d_gov_can_be_a_s_of_peo"
+		name = "GFX_GNG_focus_minseifu_represent_people"
 		texturefile = "gfx/interface/goal/GFX_GNG_d_gov_can_be_a_s_of_peo.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_d_gov_can_be_a_s_of_peo_shine"
+		name = "GFX_GNG_focus_minseifu_represent_people_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_d_gov_can_be_a_s_of_peo.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -609,13 +609,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_gng_c_b"
+		name = "GFX_GNG_focus_gng_central_bank"
 		texturefile = "gfx/interface/goal/GFX_GNG_gng_c_b.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_gng_c_b_shine"
+		name = "GFX_GNG_focus_gng_central_bank_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_gng_c_b.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -723,13 +723,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_the_ambitions_of_the_tycoons"
+		name = "GFX_GNG_focusambitions_of_tycoons"
 		texturefile = "gfx/interface/goal/GFX_GNG_the_ambitions_of_the_tycoons.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_the_ambitions_of_the_tycoons_shine"
+		name = "GFX_GNG_focusambitions_of_tycoons_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_the_ambitions_of_the_tycoons.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -761,13 +761,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_w_of_Li"
+		name = "GFX_GNG_focus_warry_from_Li"
 		texturefile = "gfx/interface/goal/GFX_GNG_w_of_Li.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_w_of_Li_shine"
+		name = "GFX_GNG_focus_warry_from_Li_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_w_of_Li.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -799,13 +799,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_atonement_f_the_p"
+		name = "GFX_GNG_focus_atonement_for_past"
 		texturefile = "gfx/interface/goal/GFX_GNG_atonement_f_the_p.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_atonement_f_the_p_shine"
+		name = "GFX_GNG_focus_atonement_for_past_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_atonement_f_the_p.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -875,13 +875,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_a_with_p_companies"
+		name = "GFX_GNG_focus_dear_with_pharmaceutical"
 		texturefile = "gfx/interface/goal/GFX_GNG_a_with_p_companies.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_a_with_p_companies_shine"
+		name = "GFX_GNG_focus_dear_with_pharmaceutical_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_a_with_p_companies.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -951,13 +951,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_lair_of_Hitachi_in_GZ_city"
+		name = "GFX_GNG_focus_lair_of_Hitachi_in_GZ"
 		texturefile = "gfx/interface/goal/GFX_GNG_lair_of_Hitachi_in_GZ_city.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_focus_lair_of_Hitachi_in_GZ_city_shine"
+		name = "GFX_GNG_focus_lair_of_Hitachi_in_GZ_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_lair_of_Hitachi_in_GZ_city.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -2053,13 +2053,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_narcissus_inaccessibilis"
+		name = "GFX_GNG_focus_narcissus_inaccessibilis"
 		texturefile = "gfx/interface/goal/GFX_GNG_narcissus_inaccessibilis.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_narcissus_inaccessibilis_shine"
+		name = "GFX_GNG_focus_narcissus_inaccessibilis_shine"
 		texturefile = "gfx/interface/goal/GFX_GNG_narcissus_inaccessibilis.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
