@@ -222,8 +222,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_laying_the_foundation_for_kou-u #为纮宇網奠基
-	icon = GFX_GNG_focus_laying_the_foundation_for_kou-u
+	id = GNG_focus_laying_the_foundation_for_kouu #为纮宇網奠基
+	icon = GFX_GNG_focus_laying_the_foundation_for_kouu
 
 	relative_position_id = GNG_focus_academic_golden_age
 	x = 0
@@ -264,7 +264,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-	    focus = GNG_focus_laying_the_foundation_for_kou-u
+	    focus = GNG_focus_laying_the_foundation_for_kouu
 	}
 	cost = 2
 

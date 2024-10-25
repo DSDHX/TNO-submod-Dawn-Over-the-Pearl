@@ -140,7 +140,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_pan-asianism_together_focustt
+		custom_effect_tooltip = GNG_pan_asianism_together_focustt
 	}
 }
 

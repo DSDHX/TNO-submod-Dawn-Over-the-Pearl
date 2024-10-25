@@ -167,8 +167,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_guangdong-manchuria_friendship_agreement #广满亲善协定
-	icon = GFX_GNG_focus_guangdong-manchuria_friendship_agreement
+	id = GNG_focus_guangdong_manchuria_friendship_agreement #广满亲善协定
+	icon = GFX_GNG_focus_guangdong_manchuria_friendship_agreement
 
 	relative_position_id = GNG_focus_the_lord_of_east
 	x = 2
@@ -201,7 +201,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_guangdong-manchuria_friendship_agreement
+		focus = GNG_focus_guangdong_manchuria_friendship_agreement
 	}
 	cost = 2
 	

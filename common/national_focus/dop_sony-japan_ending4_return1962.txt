@@ -32,8 +32,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_aftermath_of_no-confidence_vote #不信任案的余波
-    icon = GFX_GNG_focus_Aftermath_of_no-confidence_vote
+	id = GNG_focus_aftermath_of_no_confidence_vote #不信任案的余波
+    icon = GFX_GNG_focus_aftermath_of_no_confidence_vote
 
 	relative_position_id = GNG_focus_samurais_kirisute_gomen
 	x = 0
@@ -55,13 +55,13 @@ shared_focus = {
 	id = GNG_focus_industrial_restructing_and_antimonopoly_act #产业重组与反垄断法
     icon = GFX_GNG_focus_industrial_restructing_and_antimonopoly_act
 	
-	relative_position_id = GNG_focus_aftermath_of_no-confidence_vote
+	relative_position_id = GNG_focus_aftermath_of_no_confidence_vote
 	x = 0
 	y = 1
 
 	prerequisite =
 	{ 
-		focus = GNG_focus_aftermath_of_no-confidence_vote
+		focus = GNG_focus_aftermath_of_no_confidence_vote
 	}
 	cost = 2
 	
@@ -278,7 +278,7 @@ shared_focus = {
 	id = GNG_focus_prison_of_enterprises #“各企业的监狱”
     icon = GFX_GNG_focus_prison_of_enterprises
 
-	relative_position_id = GNG_focus_aftermath_of_no-confidence_vote
+	relative_position_id = GNG_focus_aftermath_of_no_confidence_vote
 	x = 0
 	y = 4
 
