@@ -450,7 +450,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_new_products_old_friends #新产品、老朋友
-	icon = GFX_GNG_new_products,_old_friends
+	icon = GFX_GNG_new_products_old_friends
 
 	relative_position_id = GNG_focus_get_to_work
 
@@ -465,7 +465,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		custom_effect_tooltip = GNG_product_cycle_reactivation_focustt 
+		custom_effect_tooltip = GNG_product_cycle_reactivation_focustt
 	}
 }
 
