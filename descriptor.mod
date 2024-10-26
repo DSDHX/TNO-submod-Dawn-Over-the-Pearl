@@ -1,8 +1,7 @@
-version="1.13.9"
+version="1.0"
 tags={
 	"Alternative History"
-	"Balance"
-	"Fixes"
+	"Events"
 	"Gameplay"
 	"National Focuses"
 }

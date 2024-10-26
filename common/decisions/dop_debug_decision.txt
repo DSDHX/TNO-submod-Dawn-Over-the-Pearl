@@ -1,108 +1,153 @@
-GNG_debug_category = {
-	GNG_dop_debug_enable_BOP = {
-		allowed = {
+GNG_debug_category =
+{
+	GNG_dop_debug_enable_BOP =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			GNG_BOP_Initalize = yes
 		}
 	}
-	GNG_dop_debug_enable_BOP_page_1 = {
-		allowed = {
+	GNG_dop_debug_enable_BOP_page_1 =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			set_temp_variable = { decision_tabs_id = 1 }
 			DOP_add_tab = yes
 		}
 	}
-	GNG_dop_debug_enable_BOP_page_2 = {
-		allowed = {
+	GNG_dop_debug_enable_BOP_page_2 =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			set_temp_variable = { decision_tabs_id = 2 }
 			DOP_add_tab = yes
 		}
 	}
-	GNG_dop_debug_enable_BOP_page_3 = {
-		allowed = {
+	GNG_dop_debug_enable_BOP_page_3 =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			set_temp_variable = { decision_tabs_id = 3 }
 			DOP_add_tab = yes
 		}
 	}
-	GNG_dop_debug_load_lomitia = {
-		allowed = {
+	GNG_dop_debug_load_lomitia =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_core_tree
 		}
-		available = {
+		available =
+		{
 
 		}
 	}
-	GNG_dop_debug_load_end1_lee = {
-		allowed = {
+	GNG_dop_debug_load_end1_lee =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending1_lee_tree
 		}
-		available = {
+		available =
+		{
 
 		}
 	}
-	GNG_dop_debug_load_end2_ibuka = {
-		allowed = {
+	GNG_dop_debug_load_end2_ibuka =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending2_ibuka_tree
 		}
-		available = {
+		available =
+		{
 
 		}
 	}
-	GNG_dop_debug_load_end3_hitachi = {
-		allowed = {
+	GNG_dop_debug_load_end3_hitachi =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending3_hitachi_tree
 		}
-		available = {
+		available =
+		{
 		}
 	}
 	GNG_dop_debug_load_end4_return1962 =
@@ -112,13 +157,19 @@ GNG_debug_category = {
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = { }
+		visible =
+		{
+			
+		}
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending4_return1962_tree
 		}
-		available = { }
+		available =
+		{
+			
+		}
 	}
 	GNG_dop_debug_load_end5_second_riot =
 	{
@@ -127,13 +178,19 @@ GNG_debug_category = {
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = { }
+		visible =
+		{
+			
+		}
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending5_second_roit_tree
 		}
-		available = { }
+		available =
+		{
+			
+		}
 	}
 	GNG_dop_debug_load_reconsturuction =
 	{
@@ -142,183 +199,256 @@ GNG_debug_category = {
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = { }
+		visible =
+		{
+			
+		}
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_reconsturuction_tree
 		}
-		available = { }
+		available =
+		{
+			
+		}
 	}
-	GNG_dop_debug_load_opening = {
-		allowed = {
+	GNG_dop_debug_load_opening =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			load_focus_tree = dop_opening_tree
 		}
 	}
-	GNG_dop_debug_show_all_gui_test = {
-		allowed = {
+	GNG_dop_debug_show_all_gui_test =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
 		
-		complete_effect = {
+		complete_effect =
+		{
 			set_country_flag = bfg_active
 			set_country_flag = lhc_active
 			set_country_flag = guang_dong_theater_visible
 		}
 	}
-	GNG_dop_debug_load_japtree = {
-		allowed = {
+	GNG_dop_debug_load_japtree =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			load_focus_tree = dop_warpp_tree
 			clr_country_flag = gng_chi_choiced
 		}
 	}
-	GNG_dop_debug_load_chitree = {
-		allowed = {
+	GNG_dop_debug_load_chitree =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			load_focus_tree = dop_warpp_tree
 			set_country_flag = gng_chi_choiced
 		}
 	}
-	GNG_dop_debug_load_peacetree = {
-		allowed = {
+	GNG_dop_debug_load_peacetree =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			load_focus_tree = dop_peace_develop
 		}
 	}
-	GNG_dop_debug_pregaw = {
-		allowed = {
+	GNG_dop_debug_pregaw =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			load_focus_tree = dop_pregaw_tree
 		}
 	}
-	GNG_dop_debug_remove_faction = {
-		allowed = {
+	GNG_dop_debug_remove_faction =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			JAP ={
 			remove_from_faction = chi
 			remove_from_faction = gng
 			remove_from_faction = yun}
 		}
 	}
-	GNG_dop_debug_add_seat_1 = {
-		allowed = {
+	GNG_dop_debug_add_seat_1 =
+	{
+		allowed =
+		{
 			original_tag = GNG
 		}
 		icon = GFX_decision_GNG_generic
-		visible = {
+		visible =
+		{
+			
 		}
-		complete_effect = {
+		complete_effect =
+		{
 			set_temp_variable = { GNG_legco_seat_temp = 10 }
-	set_temp_variable = { GNG_legco_faction_temp = 3 }
+	set_temp_variable =
+	{ GNG_legco_faction_temp = 3 }
 	GNG_change_legco_seats = yes
-	set_temp_variable = { GNG_legco_seat_temp = 10 }
-	set_temp_variable = { GNG_legco_faction_temp = 6 }
+	set_temp_variable =
+	{ GNG_legco_seat_temp = 10 }
+	set_temp_variable =
+	{ GNG_legco_faction_temp = 6 }
 	GNG_change_legco_seats = yes
 }
 		}
-		GNG_dop_debug_add_seat_2 = {
-			allowed = {
+		GNG_dop_debug_add_seat_2 =
+	{
+			allowed =
+		{
 				original_tag = GNG
 			}
 			icon = GFX_decision_GNG_generic
-			visible = {
+			visible =
+	{
 			}
-			complete_effect = {
+			complete_effect =
+		{
 				set_temp_variable = { GNG_legco_seat_temp = 10 }
-		set_temp_variable = { GNG_legco_faction_temp = 4 }
+		set_temp_variable =
+	{ GNG_legco_faction_temp = 4 }
 		GNG_change_legco_seats = yes
-		set_temp_variable = { GNG_legco_seat_temp = 10 }
-		set_temp_variable = { GNG_legco_faction_temp = 5 }
+		set_temp_variable =
+	{ GNG_legco_seat_temp = 10 }
+		set_temp_variable =
+	{ GNG_legco_faction_temp = 5 }
 		GNG_change_legco_seats = yes
 	}
 			}
-			GNG_dop_debug_add_seat_3 = {
-				allowed = {
+			GNG_dop_debug_add_seat_3 =
+	{
+				allowed =
+		{
 					original_tag = GNG
 				}
 				icon = GFX_decision_GNG_generic
-				visible = {
+				visible =
+	{
 				}
-				complete_effect = {
+				complete_effect =
+		{
 					set_temp_variable = { GNG_legco_seat_temp = 10 }
 			set_temp_variable = { GNG_legco_faction_temp = 7 }
 			GNG_change_legco_seats = yes
 		}
 				}
-GNG_dop_debug_show_bfg_gui = {
-allowed = {
+GNG_dop_debug_show_bfg_gui =
+	{
+allowed =
+	{
 	original_tag = GNG
 	
 }
 icon = GFX_decision_GNG_generic
-visible = {
+visible =
+	{
 	is_ai = no
 }
-complete_effect = {
+complete_effect =
+	{
 	BFG_setup_influence = yes
 }
 }
 	}
-	bfg_gui_decision_category = {
-GNG_dop_debug_addchi = {
-	allowed = {
+	bfg_gui_decision_category =
+	{
+GNG_dop_debug_addchi =
+	{
+	allowed =
+	{
 		original_tag = GNG
 	}
-	visible = {
+	visible =
+	{
 		is_debug = yes
 	}
 	icon = GFX_decision_GNG_generic
-	complete_effect = {
+	complete_effect =
+	{
 		BFG_increase_CHI_influence_high = yes
 }
 	}
-		GNG_dop_debug_addjap = {
-			allowed = {
+		GNG_dop_debug_addjap =
+	{
+			allowed =
+		{
 				original_tag = GNG
 			
 			}
-			visible = {
+			visible =
+	{
 				is_debug = yes
 			}
 			icon = GFX_decision_GNG_generic
-			complete_effect = {
+			complete_effect =
+		{
 				BFG_increase_japan_influence_high = yes
 			}
 		
 		}
-	}
+}
