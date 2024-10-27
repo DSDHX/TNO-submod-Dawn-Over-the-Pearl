@@ -144,8 +144,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_assimilate_of_Japanese_expatriates #同化日侨
-	icon = GFX_GNG_assimilate_of_Japanese_expatriates
+	id = GNG_focus_assimilate_of_Japanese_expatriates #同化日侨
+	icon = GFX_GNG_focus_assimilate_of_Japanese_expatriates
 
 	relative_position_id = GNG_focus_establish_chi_zhu_binary_system
 
@@ -174,7 +174,7 @@ shared_focus =
 	y = 2
 	prerequisite =
 	{
-		focus = GNG_assimilate_of_Japanese_expatriates
+		focus = GNG_focus_assimilate_of_Japanese_expatriates
 	}
 	prerequisite =
 	{
@@ -931,8 +931,8 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_gng_Shinkansen_project #广东新干线企划
-	icon = GFX_goal_unknown
-
+	icon = GFX_GNG_focus_gng_Shinkansen_project
+	
 	relative_position_id = GNG_focus_industrial_upgrading
 
 	x = -3
@@ -2642,7 +2642,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_into_the_community #走近社区
+	id = GNG_focus_into_the_community #走进社区
 	icon = GFX_goal_unknown
 
 	relative_position_id = GNG_focus_shield_of_the_Rising_Sun
