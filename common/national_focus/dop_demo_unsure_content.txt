@@ -1,146 +1,146 @@
-shared_focus =
-{ 
-		id = GNG_a_destoried_wall
-		icon = GFX_GNG_a_destoried_wall
-		cost = 0.5
-		x = -4
-		y = 1
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = {street_pp_var = 0.1}
-        add_to_variable = { street_ws_var = 0.1}
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-           has_country_flag = gng_chi_choiced
-        }
-		prerequisite = { focus = GNG_focus_black_cloud_roming}
-	}
-	shared_focus =
-{ 
-		id = GNG_calm_down_jap
-		icon = GFX_GNG_calm_down_jap
-		cost = 0.5
-		x = -6
-		y = 2
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = {street_pp_var = 0.2}
-        add_to_variable = { street_st_var = 0.1}
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_a_destoried_wall}
-	}
-	shared_focus =
-{ 
-		id = GNG_airport_full_power
-		icon = GFX_GNG_airport_full_power
-		cost = 0.5
-		x = -6
-		y = 3
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = {street_pp_var = 0.2}
-        add_to_variable = { street_st_var = 0.2}
-        custom_effect_tooltip =  GNG_effect_release_tt
-        add_manpower = -10000
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_calm_down_jap}
-	}
-	shared_focus =
-{ 
-		id = GNG_battle_for_freedom
-		icon = GFX_GNG_battle_for_freedom
-		cost = 0.5
-		x = -2
-		y = 2
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = {street_pp_var = 0.1}
-        add_to_variable = { street_ws_var = 0.05}
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_a_destoried_wall}
-	}
-	shared_focus =
-{ 
-		id = GNG_time_to_stand
-		icon = GFX_GNG_time_to_stand
-		cost = 0.5
-		x = -2
-		y = 3
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = { street_pp_var = 0.1}
-        add_to_variable = { street_ws_var = 0.1 }
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_battle_for_freedom}
-	}
-	shared_focus =
-{ 
-		id = GNG_come_with_gng
-		icon = GFX_GNG_come_with_gng
-		cost = 0.5
-		x = -4
-		y = 2
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = { street_cp_var = 0.1}
-        add_to_variable = { street_cf_var = -3 }
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_a_destoried_wall}
-	}
-	shared_focus =
-{ 
-		id = GNG_state_of_zhujin
-		icon = GFX_GNG_state_of_zhujin
-		cost = 0.5
-		x = -4
-		y = 3
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = { street_cp_var = 0.2}
-        add_to_variable = { street_cf_var = -1 }
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_come_with_gng}
-	}
-	shared_focus =
-{ 
-		id = GNG_everyone_be_full_of_fight
-		icon = GFX_GNG_everyone_be_full_of_fight
-		cost = 0.5
-		x = -4
-		y = 4
-		relative_position_id = GNG_focus_black_cloud_roming
-		completion_reward = {
-            add_to_variable = { street_ws_var = 2 }
-        custom_effect_tooltip =  GNG_effect_release_tt
-		}
-        allow_branch = {
-            has_country_flag = gng_chi_choiced
-         }
-		prerequisite = { focus = GNG_state_of_zhujin}
-		prerequisite = { focus = GNG_time_to_stand}
-		prerequisite = { focus = GNG_airport_full_power}
-}
+# shared_focus =
+# { 
+# 		id = GNG_a_destoried_wall
+# 		icon = GFX_GNG_a_destoried_wall
+# 		cost = 0.5
+# 		x = -4
+# 		y = 1
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = {street_pp_var = 0.1}
+#         add_to_variable = { street_ws_var = 0.1}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#            has_country_flag = gng_chi_choiced
+#         }
+# 		prerequisite = { focus = GNG_focus_black_cloud_roming}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_calm_down_jap
+# 		icon = GFX_GNG_calm_down_jap
+# 		cost = 0.5
+# 		x = -6
+# 		y = 2
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = {street_pp_var = 0.2}
+#         add_to_variable = { street_st_var = 0.1}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_a_destoried_wall}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_airport_full_power
+# 		icon = GFX_GNG_airport_full_power
+# 		cost = 0.5
+# 		x = -6
+# 		y = 3
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = {street_pp_var = 0.2}
+#         add_to_variable = { street_st_var = 0.2}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#         add_manpower = -10000
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_calm_down_jap}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_battle_for_freedom
+# 		icon = GFX_GNG_battle_for_freedom
+# 		cost = 0.5
+# 		x = -2
+# 		y = 2
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = {street_pp_var = 0.1}
+#         add_to_variable = { street_ws_var = 0.05}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_a_destoried_wall}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_time_to_stand
+# 		icon = GFX_GNG_time_to_stand
+# 		cost = 0.5
+# 		x = -2
+# 		y = 3
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = { street_pp_var = 0.1}
+#         add_to_variable = { street_ws_var = 0.1 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_battle_for_freedom}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_come_with_gng
+# 		icon = GFX_GNG_come_with_gng
+# 		cost = 0.5
+# 		x = -4
+# 		y = 2
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = { street_cp_var = 0.1}
+#         add_to_variable = { street_cf_var = -3 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_a_destoried_wall}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_state_of_zhujin
+# 		icon = GFX_GNG_state_of_zhujin
+# 		cost = 0.5
+# 		x = -4
+# 		y = 3
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = { street_cp_var = 0.2}
+#         add_to_variable = { street_cf_var = -1 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_come_with_gng}
+# 	}
+# 	shared_focus =
+# { 
+# 		id = GNG_everyone_be_full_of_fight
+# 		icon = GFX_GNG_everyone_be_full_of_fight
+# 		cost = 0.5
+# 		x = -4
+# 		y = 4
+# 		relative_position_id = GNG_focus_black_cloud_roming
+# 		completion_reward = {
+#             add_to_variable = { street_ws_var = 2 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+# 		}
+#         allow_branch = {
+#             has_country_flag = gng_chi_choiced
+#          }
+# 		prerequisite = { focus = GNG_state_of_zhujin}
+# 		prerequisite = { focus = GNG_time_to_stand}
+# 		prerequisite = { focus = GNG_airport_full_power}
+# }
