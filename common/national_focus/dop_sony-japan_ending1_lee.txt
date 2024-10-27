@@ -189,7 +189,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_guangdong_stocks_rejuvenation #广股振兴
-	icon =GFX_GNG_focus_guangdong_stocks_rejuvenation
+	icon = GFX_GNG_focus_guangdong_stocks_rejuvenation
 
 	relative_position_id = GNG_focus_all_eyes_on
 	x = 2

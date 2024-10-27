@@ -352,7 +352,7 @@ shared_focus =
     #                     logistics_skill = 7
     #     }
     #         add_corps_commander_role = {
-    #             character =GNG_wang_jingxu
+    #             character = GNG_wang_jingxu
     #             traits = {
     #                         trickster
     #                         cavalry_leader

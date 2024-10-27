@@ -1,0 +1,191 @@
+spriteTypes = {	 
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_disaster_response_department"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_disaster_response_department.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_disaster_response_department_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_disaster_response_department.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_disaster_response_department.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_disaster_response_department.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+    ##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_guangdong_stocks_rejuvenation"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_guangdong_stocks_rejuvenation.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_guangdong_stocks_rejuvenation_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_guangdong_stocks_rejuvenation.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_guangdong_stocks_rejuvenation.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_guangdong_stocks_rejuvenation.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fill_with_laughter"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_fill_with_laughter.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fill_with_laughter_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_fill_with_laughter.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_fill_with_laughter.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_fill_with_laughter.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_equal_competitio"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_equal_competitio.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_equal_competitio_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_equal_competitio.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_equal_competitio.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_equal_competitio.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_a_place_for_all"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_a_place_for_all.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_a_place_for_all_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_a_place_for_all.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_a_place_for_all.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending1/GFX_GNG_focus_a_place_for_all.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+}

@@ -166,7 +166,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_foucs_stay_together_peacefully #和谐共存
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_foucs_stay_together_peacefully
 
 	relative_position_id = GNG_focus_establish_chi_zhu_binary_system
 	
@@ -413,7 +413,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_better_not_to_remind_this #别提这事为好
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_better_not_to_remind_this
 	
 	relative_position_id = GNG_focus_define_bound
 	
@@ -692,7 +692,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_good_job #政清人和
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_good_job
 
 	relative_position_id = GNG_focus_political_environment_in_gng
 
@@ -2406,7 +2406,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_internationally_recognized #国际认可
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_internationally_recognized
 
 	relative_position_id = GNG_focus_pursue_nnovation
 
@@ -2643,7 +2643,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_into_the_community #走进社区
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_into_the_community
 
 	relative_position_id = GNG_focus_shield_of_the_Rising_Sun
 

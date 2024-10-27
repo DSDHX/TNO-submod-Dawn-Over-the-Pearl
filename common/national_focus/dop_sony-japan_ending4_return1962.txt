@@ -202,7 +202,7 @@ shared_focus =
 	id = GNG_focus_call_of_IJA #帝国陆军的来电
     icon = GFX_GNG_focus_call_of_IJA
 
-	relative_position_id =GNG_focus_deal_with_security_services
+	relative_position_id = GNG_focus_deal_with_security_services
 	x = 0
 	y = 1
 

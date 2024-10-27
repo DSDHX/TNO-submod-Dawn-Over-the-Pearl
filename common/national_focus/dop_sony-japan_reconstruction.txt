@@ -235,7 +235,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_that_is_my_home #吾心安处是吾乡
-	icon = GFX_GNG_GNG_focus_that_is_my_home
+	icon = GFX_GNG_focus_that_is_my_home
 
 	relative_position_id = GNG_focus_temporary_relief
 
@@ -779,7 +779,7 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_return_to_Ordinary_daily_life #回归平凡日常
+	id = GNG_focus_return_to_Ordinary_daily_life #回归平凡的日常
 	icon = GFX_GNG_focus_return_to_Ordinary_daily_life
 
 	relative_position_id = GNG_focus_get_to_work
