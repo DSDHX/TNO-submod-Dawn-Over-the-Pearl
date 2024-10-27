@@ -1,0 +1,715 @@
+focus_tree =
+{
+	id = dop_sonyjapan_prewar_tree
+	country =
+    {
+		factor = 0
+		modifier =
+        {
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_focus_black_cloud_roming
+}
+
+shared_focus =
+{
+	id = GNG_focus_black_cloud_roming #黑云翻墨
+	icon = GFX_GNG_focus_black_cloud_roming
+    
+    x = 8
+	y = 0
+
+	cost = 0.5
+
+	completion_reward =
+    {
+        #set_variable = {street_pp_var = -1}
+		#set_variable = {street_st_var = -0.6}
+		#set_variable = {street_ws_var = -0.8}
+		#set_variable = { street_cf_var = 10}
+		#set_variable = { street_cp_var = -0.5}
+        #add_dynamic_modifier = { modifier = GNG_street_dummy }
+        custom_effect_tooltip = GNG_GREAT_ASIAN_WAR_focustt
+        set_temp_variable = { gdp_growth_temp = -1.5 }
+		econ_gdp_growth_change = yes
+        #国家债务+1B
+        #广东现状将转变为战火中的珠三角
+        #我们的教育水平、研究设施、农业设施、医保、工业设备社会发展将极速恶化
+	}
+}
+
+shared_focus =
+{
+    id = GNG_focus_a_state_of_unstay #混乱之领
+    icon = GFX_GNG_focus_a_state_of_unstay
+
+    relative_position_id = GNG_focus_black_cloud_roming
+
+    x = -3
+    y = 1
+
+    #allow_branch =
+    #{
+    #    NOT= {has_country_flag = gng_chi_choiced}
+    #}
+    prerequisite =
+    {
+        focus = GNG_focus_black_cloud_roming
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        #add_to_variable = {street_pp_var = 0.05}
+        #add_to_variable = { street_ws_var = 0.05}
+        #custom_effect_tooltip = GNG_effect_release_tt
+        custom_effect_tooltip = GNG_chinese_esacpe_focustt
+        every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = 0.5 }
+			GNG_japanese_app_change = yes
+			set_temp_variable = { zhu_app_temp = -0.5 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { chi_app_temp = -2.5 }
+			GNG_chinese_app_change = yes
+		}
+    }
+}
+
+# shared_focus =
+# { 
+#    id = GNG_chi_crazy
+#    icon = GFX_GNG_chi_crazy
+#    cost = 0.5
+#     x = -6
+#     y = 2
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = {street_pp_var = 0.1}
+#         add_to_variable = { street_st_var = 0.1}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+#     prerequisite = { focus = GNG_focus_a_state_of_unstay}
+# }
+
+# shared_focus =
+# { 
+#     id = GNG_open_all_boarders
+#     icon = GFX_GNG_open_all_boarders
+#     cost = 0.5
+#     x = -6
+#     y = 3
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = {street_pp_var = 0.1}
+#         add_to_variable = { street_st_var = 0.2}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#         add_manpower = -100000
+#     }
+#     prerequisite = { focus = GNG_chi_crazy}
+# }
+
+shared_focus =
+{
+    id = GNG_focus_allow_chinese_escape #允许华人逃亡
+    icon = GFX_GNG_focus_allow_chinese_escape
+
+    relative_position_id = GNG_focus_a_state_of_unstay
+    
+    x = -2
+	y = 1.5
+
+    prerequisite =
+    {
+        focus = GNG_focus_a_state_of_unstay
+    }
+	cost = 1
+
+	completion_reward =
+    {
+        custom_effect_tooltip = GNG_chinese_esacpe_continue_focustt
+        add_political_power = 25
+        add_stability = 0.05
+        every_owned_state =
+        {
+            set_temp_variable = { chi_app_temp = 3.0 }
+			GNG_chinese_app_change = yes
+        }
+    }
+}
+
+# shared_focus =
+# { 
+#     id = GNG_time_for_prove
+#     icon = GFX_GNG_time_for_prove
+#     cost = 0.5
+#     x = -4
+#     y = 2
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = { street_cp_var = 0.05}
+#         add_to_variable = { street_cf_var = -3 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+#     prerequisite = { focus = GNG_focus_a_state_of_unstay}
+# }
+# shared_focus =
+# { 
+#     id = GNG_battle_for_self
+#     icon = GFX_GNG_battle_for_self
+#     cost = 0.5
+#     x = -4
+#     y = 3
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = { street_cp_var = 0.1}
+#         add_to_variable = { street_cf_var = -1 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+#     prerequisite = { focus = GNG_time_for_prove}
+# }
+
+shared_focus =
+{
+    id = GNG_focus_zhujin_loyalty #展现珠人忠诚
+    icon = GFX_GNG_focus_zhujin_loyalty
+
+    relative_position_id = GNG_focus_a_state_of_unstay
+
+    x = 0
+    y = 1.5
+
+    prerequisite =
+    {
+        focus = GNG_focus_a_state_of_unstay
+    }
+    cost = 1
+
+    completion_reward =
+    {
+        add_manpower = 100000
+        add_war_support = 0.1
+        every_owned_state =
+        {
+            set_temp_variable = { zhu_app_temp = 3.0 }
+			GNG_zhujin_app_change = yes
+        }
+    }
+}
+
+# shared_focus =
+# { 
+#     id = GNG_battle_for_loyal
+#     icon = GFX_GNG_battle_for_loyal
+#     cost = 0.5
+#     x = -2
+#     y = 2
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = {street_pp_var = 0.05}
+#         add_to_variable = { street_ws_var = 0.05}
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+#     prerequisite = { focus = GNG_focus_a_state_of_unstay}
+# }
+# shared_focus =
+# { 
+#     id = GNG_japanese_nationalism
+#     icon = GFX_GNG_japanese_nationalism
+#     cost = 0.5
+#     x = -2
+#     y = 3
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     allow_branch = {
+#         NOT= {has_country_flag = gng_chi_choiced}
+#     }
+#     completion_reward = {
+#         add_to_variable = { street_pp_var = 0.05}
+#         add_to_variable = { street_ws_var = 0.1 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+#     prerequisite = { focus = GNG_battle_for_loyal}
+# }
+
+shared_focus =
+{
+    id = GNG_focus_japanese_support #呼吁日侨援助
+    icon = GFX_GNG_focus_japanese_support
+
+    relative_position_id = GNG_focus_a_state_of_unstay
+
+    x = 2
+    y = 1.5
+    
+    prerequisite =
+    {
+        focus = GNG_focus_a_state_of_unstay
+    }
+    cost = 1
+
+    completion_reward =
+    {
+        #流动准备金+0.5B
+        #5.00K日本产步兵装备
+        #200日本产火炮
+        add_political_power = 50
+        every_owned_state =
+        {
+            set_temp_variable = { jpn_app_temp = 3.0 }
+            GNG_japanese_app_change = yes
+        }
+    }
+}
+
+shared_focus =
+{ 
+    id = GNG_focus_walking_on_tightrope #游走于钢丝之上
+    icon = GFX_GNG_focus_walking_on_tightrope
+
+    relative_position_id = GNG_focus_a_state_of_unstay
+
+    x = 0
+    y = 3
+    
+    # allow_branch = {
+    #     NOT= {has_country_flag = gng_chi_choiced}
+    # }
+    prerequisite =
+    {
+        focus = GNG_focus_allow_chinese_escape
+    }
+    prerequisite =
+    {
+        focus = GNG_focus_zhujin_loyalty
+    }
+    prerequisite =
+    {
+        focus = GNG_focus_japanese_support
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        #add_to_variable = { street_ws_var = 0.2 }
+        #custom_effect_tooltip =  GNG_effect_release_tt
+        add_manpower = 50000
+        add_stability = 0.1
+        add_war_support = 0.1
+    }
+}
+
+shared_focus =
+{
+    id = GNG_focus_prepare_never_stop #一刻不停……
+    icon = GFX_GNG_focus_prepare_never_stop
+
+    relative_position_id = GNG_focus_black_cloud_roming
+
+    x = 3
+    y = 1
+
+    prerequisite =
+    {
+        focus = GNG_focus_black_cloud_roming
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+    # if = {
+    #     limit = {
+    #         has_country_flag = chi_choiced
+    #     }
+    #     custom_effect_tooltip = chi_get_commander_tt
+    #         add_corps_commander_role = {
+    #             character = GNG_song_zhiguang
+    #             traits = {
+    #                         trickster
+    #                         cavalry_leader
+    #                     }
+    #                     skill = 6
+    #                     attack_skill = 6
+    #                     defense_skill = 7
+    #                     planning_skill = 6
+    #                     logistics_skill = 7
+    #     }
+    #         add_corps_commander_role = {
+    #             character =GNG_wang_jingxu
+    #             traits = {
+    #                         trickster
+    #                         cavalry_leader
+    #                     }
+    #                     skill = 6
+    #                     attack_skill = 7
+    #                     defense_skill = 4
+    #                     planning_skill = 1
+    #                     logistics_skill = 9
+    #     }
+    #         add_corps_commander_role = {
+    #             character = GNG_peng_mengji
+    #             traits = { commando }
+    #             skill = 4
+    #             attack_skill = 4
+    #             defense_skill = 3
+    #             planning_skill = 3
+    #             logistics_skill = 2
+    #     }
+    #             add_corps_commander_role = {
+    #             character = GNG_chen_daqing
+    #             traits = { organizer }
+    #             skill = 4
+    #             attack_skill = 4
+    #             defense_skill = 2
+    #             planning_skill = 2
+    #             logistics_skill = 3
+    #     }
+    # }
+    # army_experience = 100
+        #大幅降低最高工时落实率
+        #5.00K广东产步兵装备
+        #2.50K广东产火炮
+        #1.00K广东产反坦克装备
+        every_owned_state =
+        {
+            set_temp_variable = { chi_app_temp = -2.0 }
+            GNG_chinese_app_change = yes
+        }
+    }
+}
+
+shared_focus =
+{
+    id = GNG_focus_until_the_end #……直至终焉
+    icon = GFX_GNG_focus_until_the_end
+    
+    relative_position_id = GNG_focus_prepare_never_stop
+
+    x = 0
+    y = 1
+
+    prerequisite =
+    {
+        focus = GNG_focus_prepare_never_stop
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        #tno_conscription_worsen = yes
+    }
+}
+
+shared_focus =
+{
+    id = GNG_focus_deployment_special_police #部署特警部队
+    icon = GFX_GNG_focus_deployment_special_police
+    
+    relative_position_id = GNG_focus_prepare_never_stop
+
+    x = -1
+    y = 2
+
+    prerequisite =
+    {
+        focus = GNG_focus_until_the_end
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        # clr_country_flag = gjqh_active
+        # division_template = {
+        #     name = "Guangdong Special Police"
+        #     regiments = {
+        #         infantry = { x = 0 y = 0 }
+        #         infantry = { x = 0 y = 1 }
+        #         infantry = { x = 0 y = 2 }
+        #         infantry = { x = 1 y = 0 }
+        #         infantry = { x = 1 y = 1 }
+        #         infantry = { x = 1 y = 2 }
+        #         infantry = { x = 1 y = 3 }
+        #         infantry = { x = 1 y = 4 }
+        #         infantry = { x = 0 y = 3 }
+        #         infantry = { x = 0 y = 4 }
+        #         infantry = { x = 2 y = 0 }
+        #         infantry = { x = 2 y = 1 }
+        #         infantry = { x = 2 y = 2 }
+        #         infantry = { x = 2 y = 3 }
+        #         infantry = { x = 2 y = 4 }
+        #         infantry = { x = 3 y = 0 }
+        #         infantry = { x = 3 y = 1 }
+        #         infantry = { x = 3 y = 2 }
+        #         infantry = { x = 3 y = 3 }
+        #         infantry = { x = 3 y = 4 }
+        #     }
+        #     support = {
+        #         military_police = { x = 0 y = 0 }
+        #         engineer = { x = 0 y = 1 }
+        #         recon = { x = 0 y = 2 }
+        #         artillery = { x = 0 y = 3 }
+        #     }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<30}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 1
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<60}
+		#     check_variable = {gjqh_var>29.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 2
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<90}
+		#     check_variable = {gjqh_var>59.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 3
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<120}
+		#     check_variable = {gjqh_var>89.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 4
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<150}
+		#     check_variable = {gjqh_var>119.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 5
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<180}
+		#     check_variable = {gjqh_var>149.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 6
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+        #     check_variable = {gjqh_var<210}
+		#     check_variable = {gjqh_var>179.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1"
+        #         owner = GNG
+        #         count = 7
+        #         id = 1439
+        #     }
+        #  }
+        # }
+        # if = {
+        #     limit = {
+		#     check_variable = {gjqh_var>209.9}
+        #     }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Special Police\" division_template = \"Guangdong Special Police\" start_experience_factor=1 "
+        #         owner = GNG
+        #         count = 8
+        #         id = 1439
+        #     }
+        #  }
+        # }
+    }
+}
+
+shared_focus =
+{
+    id = GNG_focus_train_triads #训练三合会骨干
+    icon = GFX_GNG_focus_train_triads
+
+    relative_position_id = GNG_focus_prepare_never_stop
+
+    x = 1
+    y = 2
+
+    prerequisite =
+    {
+        focus = GNG_focus_until_the_end
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        # division_template = {
+        #     name = "Guangdong Tri Devision"
+        #     division_names_group = GNG_NORMAL_01
+        #     priority = 0
+        #     template_counter = 0
+        #     regiments = {
+        #         light_infantry = { x = 0 y = 0 }
+        #     light_infantry = { x = 0 y = 1 }
+        #     light_infantry = { x = 0 y = 2 }
+        #     light_infantry = { x = 1 y = 0 }
+        #     }
+        #     support = {
+        #         engineer = { x = 0 y = 0 }
+        #     }
+        # }
+        # 1439 = {
+        #     create_unit = {
+        #         division = "name = \"Guangdong_tri_Devision\" division_template = \"Guangdong Tri Devision\" start_experience_factor=0.2"
+        #         owner = GNG
+        #         count = 4
+        #         id = 1439
+        #     }
+        #  }
+    }
+}
+
+shared_focus =
+{
+    id = GNG_focus_never_surrunder #永不言弃
+    icon = GFX_GNG_focus_never_surrunder
+
+    relative_position_id = GNG_focus_prepare_never_stop
+
+    x = 0
+    y = 3
+
+    prerequisite =
+    {
+        focus = GNG_focus_deployment_special_police
+    }
+    prerequisite =
+    {
+        focus = GNG_focus_train_triads
+    }
+    cost = 0.5
+
+    completion_reward =
+    {
+        #add_war_support = 0.3
+        #减轻“战火中的硅三角”带来的稳定度惩罚（稳定度修正+10.00％）
+        #减轻“战火中的硅三角”带来的战争支持度惩罚（战争支持度修正+10.00％）
+    }
+}
+
+# shared_focus =
+# {
+#     id = GNG_because_after_all
+#     icon = GFX_GNG_because_after_all
+#     cost = 0.5
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     prerequisite = { focus = GNG_focus_never_surrunder}
+#     prerequisite = {
+#     focus = GNG_everyone_be_full_of_fight
+#     focus =  GNG_focus_walking_on_tightrope
+#     }
+#     x = 0
+#     y = 5
+#     completion_reward = {
+#         add_political_power = 100
+#         add_war_support = 0.05
+#         add_stability = 0.05
+#     }
+# }
+# shared_focus =
+# {
+#     id = GNG_for_everyone_s_state
+#     icon = GFX_GNG_for_everyone_s_state
+#     cost = 0.5
+#     relative_position_id = GNG_focus_black_cloud_roming
+#     prerequisite = { focus = GNG_because_after_all}
+#     x = 0
+#     y = 7
+#     completion_reward = {
+#         add_to_variable = { street_pp_var = 0.25 }
+#         add_to_variable = { street_cf_var = -3 }
+#         custom_effect_tooltip =  GNG_effect_release_tt
+#     }
+# }
+
+shared_focus =
+{
+    id = GNG_focus_ahead_uncertain #前路茫茫……
+    icon = GFX_GNG_focus_ahead_uncertain
+    
+    relative_position_id = GNG_focus_black_cloud_roming
+
+    x = 0
+    y = 5
+
+    prerequisite =
+    {
+        focus = GNG_focus_walking_on_tightrope
+    }
+    prerequisite =
+    {
+        focus = GNG_focus_never_surrunder
+    }
+    cost = 1
+
+    completion_reward =
+    {
+        custom_effect_tooltip = GNG_fight_with_chosen_focustt
+        add_political_power = -100
+    }
+}

@@ -355,15 +355,15 @@ GNG_bfg_countdown = {
 		if = {limit = {check_variable = { chi_inf_var > jap_inf_var }	}
 			country_event = dop_pregaw.11
 			set_country_flag = gng_chi_choiced
-			load_focus_tree = dop_warpp_tree
+			load_focus_tree = dop_sonyjapan_prewar_tree
 	}
 		else_if = {limit = { check_variable = {chi_inf_var < jap_inf_var}	}
 			country_event = dop_pregaw.12
-			load_focus_tree = dop_warpp_tree
+			load_focus_tree = dop_sonyjapan_prewar_tree
 	}
 		else = {
 			country_event = dop_pregaw.12
-			load_focus_tree = dop_warpp_tree
+			load_focus_tree = dop_sonyjapan_prewar_tree
 		}
 		clr_country_flag = bfg_active
 	}

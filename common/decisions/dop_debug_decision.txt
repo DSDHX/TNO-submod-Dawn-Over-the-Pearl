@@ -67,6 +67,27 @@ GNG_debug_category =
 			DOP_add_tab = yes
 		}
 	}
+	GNG_dop_debug_load_wartime_tree =
+	{
+		allowed =
+		{
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible =
+		{
+			
+		}
+		complete_effect =
+		{
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_wartime_tree
+		}
+		available =
+		{
+
+		}
+	}
 	GNG_dop_debug_load_lomitia =
 	{
 		allowed =
@@ -206,7 +227,7 @@ GNG_debug_category =
 		complete_effect =
 		{
 			custom_effect_tooltip = lomitia_tt
-			load_focus_tree = dop_reconsturuction_tree
+			load_focus_tree = dop_sonyjapan_reconsturuction_tree
 		}
 		available =
 		{
@@ -261,7 +282,7 @@ GNG_debug_category =
 		}
 		complete_effect =
 		{
-			load_focus_tree = dop_warpp_tree
+			load_focus_tree = dop_sonyjapan_prewar_tree
 			clr_country_flag = gng_chi_choiced
 		}
 	}
@@ -278,7 +299,7 @@ GNG_debug_category =
 		}
 		complete_effect =
 		{
-			load_focus_tree = dop_warpp_tree
+			load_focus_tree = dop_sonyjapan_prewar_tree
 			set_country_flag = gng_chi_choiced
 		}
 	}

@@ -1,16 +1,4 @@
 ﻿focus_tree = {
-	id = dop_warpp_tree
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = GNG
-		}
-	}
-	default = no
-	shared_focus = GNG_black_cloud_roming
-}
-focus_tree = {
 	id = dop_pregaw_tree
 	country = {
 		factor = 0
@@ -35,7 +23,7 @@ focus_tree = {
 	shared_focus = GNG_new_develop_project
 }
 focus_tree = {
-	id = dop_opening_tree	
+	id = dop_opening_tree
 	country = {
 		factor = 0
 		modifier = {

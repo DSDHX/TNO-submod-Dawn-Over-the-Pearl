@@ -1,0 +1,423 @@
+focus_tree =
+{
+	id = dop_sonyjapan_wartime_tree
+	country =
+	{
+		factor = 0
+		modifier =
+		{
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_focus_war_begin
+}
+
+shared_focus =
+{
+	id = GNG_focus_war_begin #战鼓渐响
+	icon = GFX_GNG_focus_war_begin
+
+	x = 8
+	y = 0
+
+	cost = 1
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_GAW_COMMING_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_support_from_allies #来自盟友的援助
+	icon = GFX_GNG_focus_support_from_allies
+
+	relative_position_id = GNG_focus_war_begin
+
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_war_begin
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		#添加将领
+		#5.00K日本产步兵装备
+		#2.50K日本产火炮
+		#2.50K日本产防空装备
+		#指挥点数+100
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_northen_defense #加强北方防御
+	icon = GFX_GNG_focus_northen_defense
+	
+	relative_position_id = GNG_focus_support_from_allies
+	
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_support_from_allies
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		#农村地区要塞+2
+		#农村地区华人支持率-1.25％
+		#国家精神“绞杀游击队”
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_recruitment_military_police #扩大军警招募
+	icon = GFX_GNG_focus_recruitment_military_police
+	
+	relative_position_id = GNG_focus_northen_defense
+	
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_northen_defense
+	}
+	cost = 1
+
+	completion_reward =
+	{
+        add_manpower = 2500
+		#所有地区广警控制-1.25%
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_bribe_yakuza #收买极道
+	icon = GFX_GNG_focus_bribe_yakuza
+	
+	relative_position_id = GNG_focus_northen_defense
+	
+	x = -1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_recruitment_military_police
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_split_triads
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_impact_future_focustt
+        add_manpower = 50000
+		#所有地区极道控制+2.50％
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_split_triads #分化三合会
+	icon = GFX_GNG_focus_split_triads
+	
+	relative_position_id = GNG_focus_northen_defense
+	
+	x = 1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_recruitment_military_police
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_bribe_yakuza
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_impact_future_focustt
+        add_manpower = 10000
+		#所有地区三合会控制+2.50％
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_reward_allegiance #效忠自有奖赏
+	icon = GFX_GNG_focus_reward_allegiance
+
+	relative_position_id = GNG_focus_northen_defense
+
+	x = 0
+	y = 3
+
+	prerequisite =
+	{
+		focus = GNG_focus_bribe_yakuza
+		focus = GNG_focus_split_triads
+	}
+	cost = 1
+
+	completion_reward =
+	{
+        add_manpower = 50000
+		#1.00k的日本产步兵装备将添加进军备库
+		#1.00k的中国产步兵装备将添加进军备库
+		#所有地区极道控制+1.00％
+		#所有地区三合会控制+1.00％
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_strapped_for_cash #财政捉襟见肘……
+	icon = GFX_GNG_focus_strapped_for_cash
+
+	relative_position_id = GNG_focus_support_from_allies
+
+	x = 2
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_support_from_allies
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_dont_forget_the_base #不忘立足之本
+	icon = GFX_GNG_focus_dont_forget_the_base
+
+	relative_position_id = GNG_focus_strapped_for_cash
+
+	x = -1
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_strapped_for_cash
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_extreme_emergency
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		#大幅降低陆军开支的上限
+		#大幅提高社会开支的上限
+		#获得国家精神“民事优先”
+		every_owned_state =
+		{
+			set_temp_variable = { jap_app_temp = 3.0 }
+			GNG_japanese_app_change = yes
+			set_temp_variable = { zhu_app_temp = 3.0 }
+			GNG_zhujin_app_change = yes
+			set_temp_variable = { chi_app_temp = 3.0 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_extreme_emergency #火烧眉毛
+	icon = GFX_GNG_focus_extreme_emergency
+
+	relative_position_id = GNG_focus_strapped_for_cash
+
+	x = 1
+	y = 1
+
+	prerequisite =
+	{
+		focus = GNG_focus_strapped_for_cash
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_dont_forget_the_base
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		#大幅降低社会开支上限
+		#大幅提高军事开支下限
+		#获得国家精神“军事优先”
+		every_owned_state =
+		{
+			set_temp_variable = { chi_app_temp = -1.25 }
+			GNG_chinese_app_change = yes
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_ensure_supplies #保障物资供应
+	icon = GFX_GNG_focus_ensure_supplies
+
+	relative_position_id = GNG_focus_strapped_for_cash
+
+	x = -1
+	y = 2
+
+	prerequisite =
+	{
+		focus = GNG_focus_dont_forget_the_base
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		#国家精神“民事优先”追加效果
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_militarization_civilian_industry #民用工业军事化
+	icon = GFX_GNG_focus_militarization_civilian_industry
+	
+	relative_position_id = GNG_focus_strapped_for_cash
+
+	x = 1
+	y = 2
+
+	prerequisite =
+	{
+		focus = GNG_focus_extreme_emergency
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		#生产单位增加3
+		#国家精神“军事优先”追加效果
+	}
+}
+
+shared_focus
+{
+	id = GNG_focus_tokyo_express #东京速递
+	icon = GFX_GNG_focus_tokyo_express
+
+	relative_position_id = GNG_focus_strapped_for_cash
+
+	x = 0
+	y = 3
+
+	prerequisite =
+	{
+		focus = GNG_focus_ensure_supplies
+		focus = GNG_focus_militarization_civilian_industry
+	}
+	cost = 1
+	
+	completion_reward =
+	{
+		#流动准备金+0.500B
+		#2.00K日本产步兵装备
+		custom_effect_tooltip = GNG_additional_aid1_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_its_our_home #此乃吾等家园……
+	icon = GFX_GNG_focus_its_our_home
+
+	relative_position_id = GNG_focus_support_from_allies
+
+	x = 0
+	y = 5
+
+	prerequisite =
+	{
+		focus = GNG_focus_reward_allegiance
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_tokyo_express
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_its_our_home_focustt
+		#减轻国家精神“战火中的硅三角”的效果（稳定度修正+10.00％）
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_for_gng_future #……为广东之未来……
+	icon = GFX_GNG_focus_for_gng_future
+
+	relative_position_id = GNG_focus_support_from_allies
+
+	x = 0
+	y = 6
+
+	prerequisite = 
+	{
+		focus = GNG_focus_its_our_home
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_gngs_future_focustt
+		#减轻国家精神“战火中的硅三角”的效果（战争支持度+10.00％）
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_until_victory #……我们死而后已！
+	icon = GFX_GNG_focus_until_victory
+
+	
+	relative_position_id = GNG_focus_support_from_allies
+
+	x = 0
+	y = 7
+	
+	prerequisite = 
+	{
+		focus = GNG_focus_for_gng_future
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_until_victory_focustt
+		#减轻国家精神“战火中的硅三角”的效果（政治点数/日+0.1，GDP增长率+0.5%）
+	}
+}

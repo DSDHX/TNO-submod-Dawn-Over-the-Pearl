@@ -1,6 +1,6 @@
 focus_tree =
 {
-	id = dop_reconsturuction_tree
+	id = dop_sonyjapan_reconsturuction_tree
 	country =
 	{
 		factor = 0
@@ -17,7 +17,7 @@ focus_tree =
 shared_focus =
 {
 	id = GNG_focus_everlasting_peace #永远的和平？
-	icon = GNG_focus_everlasting_peace
+	icon = GFX_GNG_focus_everlasting_peace
 
 	x = 8
 	y = 0

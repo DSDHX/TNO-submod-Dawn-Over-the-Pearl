@@ -534,7 +534,7 @@ country_event = { #
 		}
 		custom_effect_tooltip = pregaw_11_tt
 		custom_effect_tooltip = GNG_fakeswitchfocustree
-		complete_national_focus = GNG_black_cloud_roming
+		complete_national_focus = GNG_focus_black_cloud_roming
 		GNG_kobayashi_masami = {
 			retire = yes
 		}
@@ -577,7 +577,7 @@ country_event = { #
 		name = dop_pregaw.12.a
 		custom_effect_tooltip = pregaw_11_tt
 		custom_effect_tooltip = GNG_fakeswitchfocustree
-		complete_national_focus = GNG_black_cloud_roming
+		complete_national_focus = GNG_focus_black_cloud_roming
 	}
 }
 

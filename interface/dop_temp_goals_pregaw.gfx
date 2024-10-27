@@ -39,13 +39,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_a_state_of_unstay"
+		name = "GFX_GNG_focus_a_state_of_unstay"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_a_state_of_unstay.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_a_state_of_unstay"
+		name = "GFX_GNG_focus_a_state_of_unstay"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_a_state_of_unstay.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -267,13 +267,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_black_cloud_roming"
+		name = "GFX_GNG_focus_black_cloud_roming"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_black_cloud_roming.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_black_cloud_roming_shine"
+		name = "GFX_GNG_focus_black_cloud_roming_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_black_cloud_roming.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -495,13 +495,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_for_guangdong_forever_fake"
+		name = "GFX_GNG_focus_until_victory"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_for_guangdong_forever_fake.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_for_guangdong_forever_fake_shine"
+		name = "GFX_GNG_focus_until_victory_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_for_guangdong_forever_fake.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -533,13 +533,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_guangdong_hold_on"
+		name = "GFX_GNG_focus_walking_on_tightrope"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_guangdong_hold_on.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_guangdong_hold_on_shine"
+		name = "GFX_GNG_focus_walking_on_tightrope_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_guangdong_hold_on.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -571,13 +571,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_its_our_home"
+		name = "GFX_GNG_focus_its_our_home"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_its_our_home.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_its_our_home_shine"
+		name = "GFX_GNG_focus_its_our_home_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_its_our_home.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -685,13 +685,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_guarantee_m"
+		name = "GFX_GNG_focus_prepare_never_stop"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_prepare_never_stop.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_prepare_never_stop"
+		name = "GFX_GNG_focus_prepare_never_stop"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_prepare_never_stop.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -723,13 +723,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_putdown_sp"
+		name = "GFX_GNG_focus_deployment_special_police"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_putdown_sp.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_putdown_sp_shine"
+		name = "GFX_GNG_focus_deployment_special_police_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_putdown_sp.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -761,13 +761,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_putdown_tri"
+		name = "GFX_GNG_focus_train_triads"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_putdown_tri.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_putdown_tri_shine"
+		name = "GFX_GNG_focus_train_triads_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_putdown_tri.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -799,13 +799,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_so_we_give_our_all"
+		name = "GFX_GNG_focus_for_gng_future"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_so_we_give_our_all.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_so_we_give_our_all_shine"
+		name = "GFX_GNG_focus_for_gng_future_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_so_we_give_our_all.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -951,13 +951,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_until_the_end"
+		name = "GFX_GNG_focus_until_the_end"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_until_the_end.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_until_the_end_shine"
+		name = "GFX_GNG_focus_until_the_end_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_until_the_end.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -989,13 +989,13 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
-		name = "GFX_GNG_we_shall_never_surrunder"
+		name = "GFX_GNG_focus_never_surrunder"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_we_shall_never_surrunder.dds"
 	}
 
 	##Icon Shine For: 
 	SpriteType = { 
-		name = "GFX_GNG_we_shall_never_surrunder_shine"
+		name = "GFX_GNG_focus_never_surrunder_shine"
 		texturefile = "gfx/interface/temp_tno_goals/focus_GNG_we_shall_never_surrunder.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {

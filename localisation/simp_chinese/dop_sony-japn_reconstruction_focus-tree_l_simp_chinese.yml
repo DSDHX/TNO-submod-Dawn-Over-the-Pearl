@@ -64,7 +64,7 @@ GNG_focus_return_to_Ordinary_daily_life: "回归平凡的日常"
 GNG_focus_return_to_Ordinary_daily_life_desc: "终于，在经过漫长的重建期后，广东恢复了日常生活：工人重新上工，学生重回课堂，东京的股东们从拿到了自己的那份油水，日常的生活秩序也得以恢复。虽然炮火造成的废墟还未清理干净、越过边境的难民也没有完全得到安置，但至少，广东已经恢复了它的日常生活，平凡而寡淡的日常生活。许多人相信假以时日，广东一定能顺利完成重建工作，创造广东的“新繁荣时期”。\n\n§x对吧……？§!"
 
 #tooltip
-GNG_additional_aid1_focustt: "§Y当前在任首相将决定我们可获得的额外援助§!"
+GNG_additional_aid1_focustt: "§Y现任首相将决定我们可获得的额外援助§!"
 GNG_additional_aid2_focustt: "§Y现任首相和满洲领导人将决定我们的额外获益§!"
 GNG_product_cycle_reactivation_focustt: "§m产品研发§!§Y和§!§m产品周期§!§Y将会重新启用§!"
 GNG_refugee_focustt: "§Y从现在开始，每隔一段时间就会有§x难民潮§!来到§S广东§!，§R大幅§!增加我们的§i华人§!人口§!"
