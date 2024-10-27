@@ -126,7 +126,7 @@ shared_focus =
     relative_position_id = GNG_focus_a_state_of_unstay
     
     x = -2
-	y = 1.5
+	y = 1
 
     prerequisite =
     {
@@ -192,7 +192,7 @@ shared_focus =
     relative_position_id = GNG_focus_a_state_of_unstay
 
     x = 0
-    y = 1.5
+    y = 1
 
     prerequisite =
     {
@@ -257,7 +257,7 @@ shared_focus =
     relative_position_id = GNG_focus_a_state_of_unstay
 
     x = 2
-    y = 1.5
+    y = 1
     
     prerequisite =
     {
