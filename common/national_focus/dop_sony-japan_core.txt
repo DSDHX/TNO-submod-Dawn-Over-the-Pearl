@@ -1412,7 +1412,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_new_livelihood_projects #新民生工程
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_new_livelihood_projects
 
 	relative_position_id = GNG_focus_industrial_upgrading
 
@@ -3322,7 +3322,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_war_and_peace #欲享和平，必先备战
-	icon = GFX_goal_unknown
+	icon = GFX_GNG_focus_war_and_peace
 
 	relative_position_id = GNG_focus_Pandoras_Box
 

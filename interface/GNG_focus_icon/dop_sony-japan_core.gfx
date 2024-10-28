@@ -875,6 +875,44 @@ spriteTypes = {
 
 	##Icon For: 
 	SpriteType = { 
+		name = "GFX_GNG_focus_new_livelihood_projects"
+		texturefile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_new_livelihood_projects.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = { 
+		name = "GFX_GNG_focus_new_livelihood_projects_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_new_livelihood_projects.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_new_livelihood_projects.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_new_livelihood_projects.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = { 
 		name = "GFX_GNG_focusambitions_of_tycoons"
 		texturefile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_the_ambitions_of_the_tycoons.dds"
 	}
@@ -2266,6 +2304,44 @@ spriteTypes = {
 		}
 		animation = {
 			animationmaskfile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_the_boom_in_tourism.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = { 
+		name = "GFX_GNG_focus_war_and_peace"
+		texturefile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_war_and_peace.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = { 
+		name = "GFX_GNG_focus_war_and_peace_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_war_and_peace.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_war_and_peace.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_core/GFX_GNG_focus_war_and_peace.dds"
 			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
