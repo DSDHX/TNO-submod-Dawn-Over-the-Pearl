@@ -33,3 +33,6 @@ leak_temp.9.desc: "尽管战火已经燃尽，但中国民众遭受的苦难并�
 leak_temp.9.a: "等下，这意味着……？"
 leak_temp.9.b: "这是无耻的污蔑！"
 leak_temp.9.c: "令人发指！"
+
+#test
+#second_GUI: "测试按钮"

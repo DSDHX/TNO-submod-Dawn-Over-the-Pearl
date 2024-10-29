@@ -1,0 +1,10 @@
+# scripted_gui =
+# {
+#     second_GUI_botton =
+#     {
+#         window_name = "second_GUI_botton"
+#         context_type = player_context
+#         parent_window_token = politics_tab
+#         parent_window_name = "countrypoliticsview"
+#     }
+# }
