@@ -22,7 +22,7 @@ shared_focus =
 	x = 8
 	y = 0
 	
-	cost = 2
+	cost = 1
 	
 	completion_reward =
 	{
@@ -66,7 +66,7 @@ shared_focus =
 	{
 		focus = GNG_foucs_trouble_of_gng
 	}
-	cost = 2
+	cost = 3
 	
 	completion_reward =
 	{
@@ -107,7 +107,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Re_Discussion_of_Nationality
 	}
-	cost = 3
+	cost = 4
 	
 	completion_reward =
 	{
@@ -134,7 +134,7 @@ shared_focus =
 	{
 		focus = GNG_focus_establish_chi_zhu_binary_system
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -155,7 +155,7 @@ shared_focus =
 	{
 		focus = GNG_focus_establish_chi_zhu_binary_system
 	}
-	cost = 3
+	cost = 2
 	
 	completion_reward =
 	{
@@ -180,7 +180,7 @@ shared_focus =
 	{
 		focus = GNG_focus_protect_cultural_heritage
 	}
-	cost = 3
+	cost = 1
 	
 	completion_reward =
 	{
@@ -232,7 +232,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Re_Discussion_of_Nationality
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -254,7 +254,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Re_Discussion_of_Nationality
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -281,7 +281,7 @@ shared_focus =
 	{
 		focus = GNG_focus_accelerate_chi_assimilation
 	}
-	cost = 3
+	cost = 4
 
 	completion_reward =
 	{
@@ -328,7 +328,7 @@ shared_focus =
 	{
 		focus = GNG_focus_political_environment_in_gng
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -354,7 +354,7 @@ shared_focus =
 	{
 		focus = GNG_focus_make_words_vague
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -376,7 +376,7 @@ shared_focus =
 	{
 		focus = GNG_focus_written_separation
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -402,7 +402,7 @@ shared_focus =
 	{
 		focus = GNG_focus_written_separation
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -424,7 +424,7 @@ shared_focus =
 	{
      	focus = GNG_focus_make_words_vague
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -483,7 +483,7 @@ shared_focus =
 	{
 		focus = GNG_focus_forget_it
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -505,7 +505,7 @@ shared_focus =
 	{
 		focus = GNG_focus_cooperate_with_GFT
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -541,7 +541,7 @@ shared_focus =
 	{
 		focus = GNG_focus_cooperate_with_GFT
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -563,7 +563,7 @@ shared_focus =
 	{
 		focus = GNG_focus_forget_it
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -611,7 +611,7 @@ shared_focus =
 	{
 		focus = GNG_focus_minseifu_represent_people
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -633,7 +633,7 @@ shared_focus =
 	{
 		focus = GNG_focus_too_far_to_reach
 	}
-	cost = 2
+	cost =3
 
 	completion_reward =
 	{
@@ -659,7 +659,7 @@ shared_focus =
 	{
 		focus = GNG_focus_too_far_to_reach
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -681,7 +681,7 @@ shared_focus =
 	{
 		focus = GNG_focus_minseifu_represent_people
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -736,7 +736,7 @@ shared_focus =
 	{
 		focus = GNG_focus_new_fate_choice_of_gng
 	}
-	cost = 1
+	cost = 2
 
 	completion_reward =
 	{
@@ -780,7 +780,7 @@ shared_focus =
 	{
 		focus = GNG_focus_strive_for_excellence
 	}
-	cost = 1
+	cost = 3
 
 	completion_reward =
 	{
@@ -806,7 +806,7 @@ shared_focus =
 	{
 		focus = GNG_focus_support_guangzhou
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -828,7 +828,7 @@ shared_focus =
 	{
 		focus = GNG_focus_HKs_financial_position
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -854,7 +854,7 @@ shared_focus =
 	{
 		focus = GNG_focus_HKs_financial_position
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -876,7 +876,7 @@ shared_focus =
 	{
 		focus = GNG_focus_support_guangzhou
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -946,7 +946,7 @@ shared_focus =
 	{
 		focus = GNG_focus_gng_rail_transit_plan
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -972,7 +972,7 @@ shared_focus =
 	{
 		focus = GNG_focus_gng_Shinkansen_project
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -1020,7 +1020,7 @@ shared_focus =
 	{
 		focus = GNG_focus_construction_new_villages
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -1046,7 +1046,7 @@ shared_focus =
 	{
 		focus = GNG_focus_rural_credit_Bank
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -1069,7 +1069,7 @@ shared_focus =
 		focus = GNG_focus_pan_asian_develop_fund
 		focus = GNG_focus_pick_the_bureaucrats
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1139,7 +1139,7 @@ shared_focus =
 	{
 		focus = GNG_focus_internal_propaganda
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -1166,7 +1166,7 @@ shared_focus =
 		focus = GNG_focus_gng_can_say_no
 		focus = GNG_focus_phased_victory
 	}
-	cost = 2
+	cost = 1 #为零
 
 	completion_reward =
 	{
@@ -1214,7 +1214,7 @@ shared_focus =
 		focus = GNG_focus_Return
 		focus = GNG_focus_gng_can_say_no
 	}
-	cost = 2
+	cost = 1 #为零
 
 	completion_reward =
 	{
@@ -1263,7 +1263,7 @@ shared_focus =
 		focus = GNG_focus_Return
 		focus = GNG_focus_phased_victory
 	}
-	cost = 2
+	cost = 1 #为零
 
 	completion_reward =
 	{
@@ -1285,7 +1285,7 @@ shared_focus =
 	{
 		focus = GNG_focus_gng_can_say_no
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -1313,7 +1313,7 @@ shared_focus =
 		focus = GNG_focus_rural_credit_Bank
 		focus = GNG_focus_construction_new_villages
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1357,7 +1357,7 @@ shared_focus =
 	{
 		focus = GNG_focus_laying_blood_vessels
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1379,7 +1379,7 @@ shared_focus =
 	{
 		focus = GNG_focus_heavy_industry_northern_gng
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1401,7 +1401,7 @@ shared_focus =
 	{
 		focus = GNG_focus_laying_blood_vessels
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1423,7 +1423,7 @@ shared_focus =
 	{
 		focus = GNG_focus_resources_in_western
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -1471,7 +1471,7 @@ shared_focus =
 	{
 		focus = GNG_focus_the_pearl_of_Pan_Asia
 	}
-	cost = 2
+	cost = 1 #为零
 
 	completion_reward =
 	{
@@ -1753,7 +1753,7 @@ shared_focus =
 	{
 		focus = GNG_focus_under_shadow_of_Sony
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -1968,7 +1968,7 @@ shared_focus =
 	{
 		focus = GNG_focus_lete_technocrats_try
 	}
-	cost = 3
+	cost = 2
 
 	completion_reward =
 	{
@@ -2060,7 +2060,7 @@ shared_focus =
 	{
 	    focus = GNG_focus_the_pearl_of_Pan_Asia
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2082,7 +2082,7 @@ shared_focus =
 	{
 	    focus = GNG_focus_pursue_nnovation 
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2152,7 +2152,7 @@ shared_focus =
 	{
 		focus = GNG_focus_vultures_in_NA
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2175,7 +2175,7 @@ shared_focus =
 	{
 		focus = GNG_focus_vultures_in_NA
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2241,7 +2241,7 @@ shared_focus =
 	{
     	focus = GNG_focus_the_first_port
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2298,7 +2298,7 @@ shared_focus =
 	{
 		focus = GNG_focus_global_free_trade_port
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2369,7 +2369,7 @@ shared_focus =
 	{
 		focus = GNG_focus_wealth_of_OFN
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2456,7 +2456,7 @@ shared_focus =
 	{
 		focus = GNG_focus_internationally_recognized	
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -2500,7 +2500,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Pandoras_Box
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2544,7 +2544,7 @@ shared_focus =
 	{
 		focus = GNG_focus_level_up_equipment
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2566,7 +2566,7 @@ shared_focus =
 	{
 		focus = GNG_focus_protect_your_own_life
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2610,7 +2610,7 @@ shared_focus =
 	{
 		focus = GNG_focus_against_criminal_offences
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2632,7 +2632,7 @@ shared_focus =
 	{
 		focus = GNG_focus_expanding_Criminal_Department
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2676,7 +2676,7 @@ shared_focus =
 	{
 		focus = GNG_focus_into_the_community
     }
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2698,7 +2698,7 @@ shared_focus =
 	{
 		focus = GNG_focus_harmonious_and_safe
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2772,7 +2772,7 @@ shared_focus =
 	{
 		focus = GNG_focus_establishment_PRU
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2794,7 +2794,7 @@ shared_focus =
 	{
 		focus = GNG_focus_establishment_PRU
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2816,8 +2816,7 @@ shared_focus =
 	{
 		focus = GNG_focus_loyalty_and_courage
 	}
-	cost = 2
-
+	cost = 3
 	completion_reward =
 	{
 	
@@ -2838,7 +2837,7 @@ shared_focus =
 	{
 		focus = GNG_focus_watching_YOU
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2860,7 +2859,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Secret_Force_May
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2904,7 +2903,7 @@ shared_focus =
 	{
 		focus = GNG_focus_anti_black_department
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2926,7 +2925,7 @@ shared_focus =
 	{
 		focus = GNG_focus_anti_black_department
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -2964,8 +2963,8 @@ shared_focus =
 	{
 		focus = GNG_focus_Strike_hard_at_transnational_crime
 	}
-	cost = 2
-
+	cost = 1
+	
 	completion_reward = {
 	
     }
@@ -3011,7 +3010,7 @@ shared_focus =
 	{
 		focus = GNG_focus_older_friend
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3081,7 +3080,7 @@ shared_focus =
 	{
 		focus = GNG_focus_dangerous_advice_from_yakuza
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3148,7 +3147,7 @@ shared_focus =
 		focus = GNG_focus_CK_want_pie
 		focus = GNG_focus_boom_in_tourism
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3174,7 +3173,7 @@ shared_focus =
 	{
 		focus = GNG_focus_they_are_companies
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -3218,7 +3217,7 @@ shared_focus =
 	{
 		focus = GNG_focus_help_maintain_stability
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3244,7 +3243,7 @@ shared_focus =
 	{
 		focus = GNG_focus_they_are_social_groups
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -3288,7 +3287,7 @@ shared_focus =
 	{
 		focus = GNG_focus_should_pay_tex
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3355,7 +3354,7 @@ shared_focus =
 	{
 		focus = GNG_focus_war_and_peace
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3399,7 +3398,7 @@ shared_focus =
 	{
 	    focus = GNG_focus_Restructuring_PSU
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3421,7 +3420,7 @@ shared_focus =
 	{
 		focus = GNG_focus_war_and_peace
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3487,7 +3486,7 @@ shared_focus =
 	{
 		focus = GNG_focus_war_and_peace
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3531,7 +3530,7 @@ shared_focus =
 	{
 		focus = GNG_focus_preparing_air_force
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3583,7 +3582,7 @@ shared_focus =
 	{
 		focus = GNG_focus_National_Defense_University
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3605,7 +3604,7 @@ shared_focus =
 	{
 		focus = GNG_focus_refined_personnel_training
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3627,7 +3626,7 @@ shared_focus =
 	{
 		focus = GNG_focus_National_Defense_University
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3672,7 +3671,7 @@ shared_focus =
 	{
 		focus = GNG_focus_National_Defense_University
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -3698,7 +3697,7 @@ shared_focus =
 	{
 		focus = GNG_focus_mature_military_products
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -3724,7 +3723,7 @@ shared_focus =
 	{
 		focus = GNG_focus_develop_own
 	}
-	cost = 2
+	cost = 4
 
 	completion_reward =
 	{
@@ -3807,7 +3806,7 @@ shared_focus =
 	{
 		focus = GNG_focus_Safe_and_secure
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -3837,7 +3836,7 @@ shared_focus =
 	{
 		focus = GNG_focus_peace_and_prosperity
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
