@@ -44,7 +44,7 @@ shared_focus =
 	{
 		focus = GNG_focus_everlasting_peace
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -95,7 +95,7 @@ shared_focus =
 	{
 		focus = GNG_focus_request_emergency_funding
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -127,7 +127,7 @@ shared_focus =
 	{
 		focus = GNG_focus_hoea
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -154,7 +154,7 @@ shared_focus =
 		focus = GNG_focus_request_emergency_funding
 		focus = GNG_focus_hoea
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -198,7 +198,7 @@ shared_focus =
 	{
 		focus = GNG_focus_examine_foreign_enemies
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -224,7 +224,7 @@ shared_focus =
 	{
 		focus = GNG_focus_that_is_my_home
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -250,7 +250,7 @@ shared_focus =
 	{
 		focus = GNG_focus_lingnan_region_is_good
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -303,7 +303,7 @@ shared_focus =
 	{
 		focus = GNG_focus_foothold
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -325,7 +325,7 @@ shared_focus =
 	{
 		focus = GNG_focus_retrieve_the_cable
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -347,7 +347,7 @@ shared_focus =
 	{
 		focus = GNG_focus_foothold
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -369,7 +369,7 @@ shared_focus =
 	{
 		focus = GNG_focus_in_the_warm_sun
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
@@ -395,7 +395,7 @@ shared_focus =
 	{
 		focus = GNG_focus_gazing_into_abyss
 	}
-	cost = 2
+	cost = 1
 
  	completion_reward =
 	{
@@ -531,7 +531,7 @@ shared_focus =
 	{
 		focus = GNG_focus_renovate_educational_system
 	}
-	cost = 2
+	cost = 3
 	
 	completion_reward =
 	{
@@ -557,7 +557,7 @@ shared_focus =
 	{
 		focus = GNG_focus_renovate_educational_system
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -583,7 +583,7 @@ shared_focus =
 	{
 		focus = GNG_focus_go_west
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -609,7 +609,7 @@ shared_focus =
 	{
 		focus = GNG_focus_go_west
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -707,7 +707,7 @@ shared_focus =
 		focus = GNG_focus_promote_local_efficacy
 		focus = GNG_focus_daily_necessities_and_housing
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -738,7 +738,7 @@ shared_focus =
 		focus = GNG_focus_problem_is_economy
 		focus = GNG_focus_daily_necessities_and_housing
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -769,7 +769,7 @@ shared_focus =
 		focus = GNG_focus_problem_is_economy
 		focus = GNG_focus_promote_local_efficacy
 	}
-	cost = 2
+	cost = 3
 
 	completion_reward =
 	{
@@ -793,7 +793,7 @@ shared_focus =
 		focus = GNG_focus_promote_local_efficacy 
 		focus = GNG_focus_daily_necessities_and_housing
 	}
-	cost = 2
+	cost = 1
 
 	completion_reward =
 	{
