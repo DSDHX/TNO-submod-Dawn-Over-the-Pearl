@@ -340,4 +340,120 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+    
+    ##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fences_and_gate"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fences_and_gate_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = " GFX_GNG_focus_retrieve_the_cable"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_return_to_Ordinary_daily_life_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+    
+    
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_leave_ruins_behind "
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_return_to_Ordinary_daily_life_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
 }
