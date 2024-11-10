@@ -146,7 +146,7 @@ shared_focus =
 shared_focus =
 {
 	id = GNG_focus_all_eyes_on #万众瞩目之人
-	icon = GFX_GNG_focus_all-eyes_on
+	icon = GFX_GNG_focus_all_eyes_on
 
 	relative_position_id = GNG_focus_the_wind_is_gentle
 	x = 3
