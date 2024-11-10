@@ -1,11 +1,49 @@
 spriteTypes = {
-	##Icon For: 
+	#Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_everlasting_peace"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_everlasting_peace.dds"
+	}
+
+	#Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_everlasting_peace_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_everlasting_peace.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_everlasting_peace.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_everlasting_peace.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_our_erstwhile_master"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_our_erstwhile_master.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_our_erstwhile_master_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_our_erstwhile_master.dds"
@@ -37,13 +75,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_examine_foreign_enemies"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_examine_foreign_enemies.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_examine_foreign_enemies_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_examine_foreign_enemies.dds"
@@ -75,13 +113,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_prolong_state_of_emergency"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_prolong_state_of_emergency.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_prolong_state_of_emergency_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_prolong_state_of_emergency.dds"
@@ -113,13 +151,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_lingnan_region_is_good"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_lingnan_region_is_good.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_lingnan_region_is_good_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_lingnan_region_is_good.dds"
@@ -151,13 +189,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_that_is_my_home"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_that_is_my_home.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_that_is_my_home_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_that_is_my_home.dds"
@@ -189,13 +227,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_foothold"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_foothold.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_foothold_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_foothold.dds"
@@ -227,13 +265,89 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_retrieve_the_cable"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+	}
+
+	#Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_retrieve_the_cable_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	#Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_neon_signs_lit_up"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_neon_signs_lit_up.dds"
+	}
+
+	#Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_neon_signs_lit_up_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_neon_signs_lit_up.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_neon_signs_lit_up.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_neon_signs_lit_up.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_new_products_old_friends"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_new_products_old_friends.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_new_products_old_friends_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_new_products_old_friends.dds"
@@ -265,13 +379,51 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_leave_ruins_behind"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+	}
+
+	#Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_leave_ruins_behind_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_fences_and_gate"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_fences_and_gate_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
@@ -303,13 +455,13 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 
-	##Icon For: 
+	#Icon For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_return_to_Ordinary_daily_life"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_return_to_Ordinary_daily_life.dds"
 	}
 
-	##Icon Shine For: 
+	#Icon Shine For: 
 	SpriteType = {
 		name = "GFX_GNG_focus_return_to_Ordinary_daily_life_shine"
 		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_return_to_Ordinary_daily_life.dds"
@@ -340,120 +492,4 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-    
-    ##Icon For: 
-	SpriteType = {
-		name = "GFX_GNG_focus_fences_and_gate"
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
-	}
-
-	##Icon Shine For: 
-	SpriteType = {
-		name = "GFX_GNG_focus_fences_and_gate_shine"
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_fences_and_gate.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-
-	##Icon For: 
-	SpriteType = {
-		name = " GFX_GNG_focus_retrieve_the_cable"
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
-	}
-
-	##Icon Shine For: 
-	SpriteType = {
-		name = "GFX_GNG_focus_return_to_Ordinary_daily_life_shine"
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_retrieve_the_cable.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-    
-    
-	##Icon For: 
-	SpriteType = {
-		name = "GFX_GNG_focus_leave_ruins_behind "
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
-	}
-
-	##Icon Shine For: 
-	SpriteType = {
-		name = "GFX_GNG_focus_return_to_Ordinary_daily_life_shine"
-		texturefile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		animation = {
-			animationmaskfile = "gfx/interface/goal/sonyjapan_reconstruction/GFX_GNG_focus_leave_ruins_behind.dds"
-			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 } 
-		}
-		legacy_lazy_load = no
-	}
-
 }

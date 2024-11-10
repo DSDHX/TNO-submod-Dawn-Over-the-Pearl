@@ -180,8 +180,8 @@ shared_focus =
 
 shared_focus =
 {
-	id = GNG_focus_guangdong_supercomputer_application_center #国家超级电脑应用中心
-	icon = GFX_GNG_focus_guangdong_supercomputer_application_center
+	id = GNG_focus_supercomputer_center #国家超级电脑应用中心
+	icon = GFX_GNG_focus_supercomputer_center
 
 	relative_position_id = GNG_focus_rise_of_silicon
 	x = 0
@@ -260,7 +260,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_guangdong_supercomputer_application_center
+		focus = GNG_focus_supercomputer_center
 	}
 	prerequisite =
 	{
@@ -273,8 +273,3 @@ shared_focus =
 		custom_effect_tooltip = GNG_reach_the_future_focustt
 	}
 }
-
-
-
-
-

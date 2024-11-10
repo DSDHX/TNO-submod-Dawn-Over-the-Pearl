@@ -28,7 +28,6 @@ shared_focus =
 	{
 		custom_effect_tooltip = GNG_never_forget_goal_focustt
 	}
-
 }
 
 shared_focus =
