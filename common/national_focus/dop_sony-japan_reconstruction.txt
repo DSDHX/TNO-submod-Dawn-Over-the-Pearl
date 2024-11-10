@@ -74,6 +74,8 @@ shared_focus =
 		set_temp_variable = { gdp_growth_temp = 0.1 }
 		econ_gdp_growth_change = yes
 		#流动准备金+0.3B
+	    set_temp_variable = { money_reserves_temp = 0.3}
+	    econ_money_reserves_change_raw_money = yes
 	}
 }
 
@@ -132,6 +134,8 @@ shared_focus =
 	completion_reward =
 	{
 		#流动准备金+3B
+		set_temp_variable = { money_reserves_temp = 3.0}
+		econ_money_reserves_change_raw_money = yes
 		set_temp_variable = { gdp_growth_temp = 0.25 }
 		econ_gdp_growth_change = yes
 		#日本债务+3B

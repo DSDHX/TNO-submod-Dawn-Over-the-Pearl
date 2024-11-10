@@ -49,10 +49,23 @@ shared_focus =
 	completion_reward =
 	{
 		#添加将领
-		#5.00K日本产步兵装备
-		#2.50K日本产火炮
-		#2.50K日本产防空装备
-		#指挥点数+100
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2500
+			producer = JAP
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 2500
+			producer = JAP
+		}
+		add_equipment_to_stockpile = {
+			type = anti_air_equipment
+			amount = 2500
+			producer = JAP
+		}
+		add_command_power = 100
+	
 	}
 }
 
@@ -100,7 +113,11 @@ shared_focus =
 	{
         add_manpower = 2500
 		#所有地区广警控制-1.25%
-	}
+	    every_owned_state = {
+			set_temp_variable = { sar_spt_temp = -1.25 }
+			GNG_police_control_change = yes
+		}
+    }
 }
 
 shared_focus =
@@ -128,6 +145,11 @@ shared_focus =
 		custom_effect_tooltip = GNG_impact_future_focustt
         add_manpower = 50000
 		#所有地区极道控制+2.50％
+		every_owned_state = {
+			set_temp_variable = { yak_spt_temp = 2.5 }
+			GNG_yakuza_control_change = yes
+		}
+	
 	}
 }
 
@@ -156,6 +178,10 @@ shared_focus =
 		custom_effect_tooltip = GNG_impact_future_focustt
         add_manpower = 10000
 		#所有地区三合会控制+2.50％
+	    every_owned_state = {
+			set_temp_variable = { tri_spt_temp = 2.5 }
+			GNG_triad_control_change = yes
+		}
 	}
 }
 
@@ -179,10 +205,25 @@ shared_focus =
 	completion_reward =
 	{
         add_manpower = 50000
-		#1.00k的日本产步兵装备将添加进军备库
-		#1.00k的中国产步兵装备将添加进军备库
-		#所有地区极道控制+1.00％
-		#所有地区三合会控制+1.00％
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = JAP
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = CHI
+		}
+		every_owned_state = {
+			set_temp_variable = { yak_spt_temp = 2.5 }
+			GNG_yakuza_control_change = yes
+		}
+		every_owned_state_owned_state = {
+			set_temp_variable = { tri_spt_temp = 1.0 }
+			GNG_triad_control_change = yes
+		}
+	
 	}
 }
 
@@ -229,9 +270,10 @@ shared_focus =
 	cost = 1
 
 	completion_reward =
-	{
-		#大幅降低陆军开支的上限
+	{   #大幅降低陆军开支上限
+		army_funding_maximal_decrease_high = yes #不确定
 		#大幅提高社会开支的上限
+		social_funding_maximal_increase_high = yes #不确定
 		#获得国家精神“民事优先”
 		every_owned_state =
 		{
@@ -266,9 +308,10 @@ shared_focus =
 	cost = 1
 	
 	completion_reward =
-	{
-		#大幅降低社会开支上限
-		#大幅提高军事开支下限
+	{    #大幅降低社会开支上限
+		social_funding_maximal_decrease_high = yes #不确定
+		#大幅提高陆军开支下限
+		army_funding_minimal_increase_high = yes #不确定
 		#获得国家精神“军事优先”
 		every_owned_state =
 		{
@@ -319,7 +362,7 @@ shared_focus =
 	completion_reward =
 	{
 		#生产单位增加3
-		#国家精神“军事优先”追加效果
+		#国家精神“军事优先”追加效果#生产单位+3是军事优先的追加效果吗？
 	}
 }
 
@@ -344,6 +387,14 @@ shared_focus
 	{
 		#流动准备金+0.500B
 		#2.00K日本产步兵装备
+		set_temp_variable = { money_reserves_temp = 0.5}
+		econ_money_reserves_change_raw_money = yes
+		add_manpower = 50000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 2000
+			producer = JAP
+		}
 		custom_effect_tooltip = GNG_additional_aid1_focustt
 	}
 }

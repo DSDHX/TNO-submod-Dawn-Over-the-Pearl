@@ -49,7 +49,15 @@ shared_focus =
 	completion_reward =
 	{
 		custom_effect_tooltip = GNG_econmize_focustt
-		#各类debuff待填充
+		#大幅降低社会开支上限
+		social_funding_minimal_decrease_high = yes
+		#大幅降低行政开支上限
+		admin_funding_maximal_decrease_high = yes
+		#大幅降低科研开支上限
+		research_funding_maximal_decrease_high = yes
+		#增加2.5%的商业税
+		set_temp_variable = { business_tax_temp = 0.025 }
+		econ_business_tax_rate_change = yes
 		every_owned_state =
 		{
 			set_temp_variable = { jap_app_temp = -2.5 }
@@ -110,7 +118,12 @@ shared_focus =
 	{
 		custom_effect_tooltip = GNG_extraordinary_measures_focustt
 		#军事支出将增加0.250B
-		#所有地区警察控制2.50％
+		set_temp_variable = { GNG_military_costs_temp = 0.25 }
+			GNG_military_costs_change = yes
+		every_owned_state = {
+				set_temp_variable = { sar_spt_temp = 2.5 }
+				GNG_police_control_change = yes
+			}
 		every_owned_state =
 		{
 			set_temp_variable = { chi_app_temp = -1.25 }
@@ -279,6 +292,7 @@ shared_focus =
 	completion_reward =
 	{
 		#我们的教育落实率将中幅提高。
+		TNO_improve_education_policy_effectiveness_med = yes
 	}
 }
 
