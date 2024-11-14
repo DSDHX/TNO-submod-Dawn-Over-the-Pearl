@@ -102,7 +102,10 @@ shared_focus =
 	completion_reward =
 	{
 		#国家债务+1B
-		#流动准备金+2B
+		set_temp_variable = { debt_temp = 1.0 }
+		econ_national_debt_change = yes
+		set_temp_variable = { money_reserves_temp = 1.0}
+		econ_money_reserves_change_raw_money = yes
 		#日本债务+10B
 		#满洲债务+5B
 		custom_effect_tooltip = GNG_additional_aid2_focustt
