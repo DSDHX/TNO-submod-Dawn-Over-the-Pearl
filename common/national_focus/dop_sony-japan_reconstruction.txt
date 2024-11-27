@@ -107,7 +107,15 @@ shared_focus =
 		set_temp_variable = { money_reserves_temp = 1.0}
 		econ_money_reserves_change_raw_money = yes
 		#日本债务+10B
+		JAP = {
+		 set_temp_variable = { debt_temp = 10.0 }
+		econ_national_debt_change = yes
+		}
 		#满洲债务+5B
+		MAN = {
+		 set_temp_variable = { debt_temp = 5.0 }
+		econ_national_debt_change = yes
+		}
 		custom_effect_tooltip = GNG_additional_aid2_focustt
 		#日立席位+1
 		#索尼席位-1
@@ -142,6 +150,10 @@ shared_focus =
 		set_temp_variable = { gdp_growth_temp = 0.25 }
 		econ_gdp_growth_change = yes
 		#日本债务+3B
+		JAP = {
+			set_temp_variable = { debt_temp = 3.0 }
+		   econ_national_debt_change = yes
+		   }
 		custom_effect_tooltip = GNG_additional_aid1_focustt
 	}
 }
@@ -516,8 +528,26 @@ shared_focus =
 
 	completion_reward =
 	{
-		#广州、香港、澳门基础设施等级+3
-		#农村地区基础设施等级+2
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
 	}
 }
 

@@ -151,7 +151,21 @@ shared_focus =
 	{
 		custom_effect_tooltip = GNG_ensure_stability_focustt
 		#农村地区警察控制1.50％
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			set_temp_variable = { sar_spt_temp = 1.50 }
+			GNG_police_control_change = yes
+		}
 		#农村地区华人支持率-2.50％
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			set_temp_variable = { chi_app_temp = -2.50 }
+			GNG_chinese_app_change = yes
+		}
 	}
 }
 

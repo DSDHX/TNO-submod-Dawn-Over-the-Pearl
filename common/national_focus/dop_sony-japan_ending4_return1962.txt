@@ -121,7 +121,21 @@ shared_focus =
 	{
 		custom_effect_tooltip = GNG_focus_remove_instability_tt
 		#农村地区GDP减少3%
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			set_temp_variable = { gdp_growth_temp = -3.0 }
+			econ_gdp_growth_change = yes
+		}
 		#城市地区GDP增加3%
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = yes
+			}
+			set_temp_variable = { gdp_growth_temp = 3.0 }
+			econ_gdp_growth_change = yes
+		}
 		set_temp_variable = { gdp_growth_temp = -1.0 }
 		econ_gdp_growth_change = yes
 		every_owned_state =
