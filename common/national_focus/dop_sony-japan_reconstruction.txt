@@ -118,7 +118,12 @@ shared_focus =
 		}
 		custom_effect_tooltip = GNG_additional_aid2_focustt
 		#日立席位+1
-		#索尼席位-1
+		set_temp_variable = { GNG_legco_seat_temp = 1 }
+		set_temp_variable = { GNG_legco_faction_temp = 7 }
+		GNG_change_legco_seats = yes
+		set_temp_variable = { GNG_legco_seat_temp = -1 }
+		set_temp_variable = { GNG_legco_faction_temp = 3 }
+		GNG_change_legco_seats = yes
 	}
 }
 
