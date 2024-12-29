@@ -512,6 +512,9 @@ shared_focus =
 	completion_reward =
 	{
 		#事件“布局”
+		country_event = {
+			id = leak_temp.10
+		}
 	}
 }
 
