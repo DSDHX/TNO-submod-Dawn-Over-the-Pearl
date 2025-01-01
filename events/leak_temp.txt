@@ -177,12 +177,78 @@ country_event =
 	title = leak_temp.10.t
 	desc = leak_temp.10.desc
 	
+    is_triggered_only = yes
+	fire_only_once = yes
+    
+	option = { 
+	 name = leak_temp.10.a
+	 custom_effect_tooltip = "leak_temp.10_tt"
+	 GUX = {set_capital = { state = 594 }} 
+	 1464 = {set_demilitarized_zone = yes} 
+	 2472 = {set_demilitarized_zone = yes}
+	 country_event = {
+		id = leak_temp.11
+		days = 1
+	 } 
+	
+	}	
+} 
+
+country_event =
+{
+	id = leak_temp.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event leak_temp.11" }
+	title = leak_temp.11.t
+	desc = leak_temp.11.desc
+	
 
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	option = { 
-		name = leak_temp.10.a
-	 custom_effect_tooltip = "leak_temp.10_tt"
-	}	
-} 
+		name = leak_temp.11.a
+		country_event = {
+			id = leak_temp.12
+			days = 1
+		 } 
+	}
+}
+
+country_event =
+{
+	id = leak_temp.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event leak_temp.12" }
+	title = leak_temp.12.t
+	desc = leak_temp.12.desc
+	
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = leak_temp.12.a
+		country_event = {
+			id = leak_temp.13
+			days = 1
+		 } 
+	}
+}
+
+country_event =
+{
+	id = leak_temp.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event leak_temp.13" }
+	title = leak_temp.13.t
+	desc = leak_temp.13.desc
+	
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = leak_temp.13.a
+		days = 1
+	    
+	}
+}
+
