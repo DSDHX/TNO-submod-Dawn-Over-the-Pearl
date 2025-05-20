@@ -3,6 +3,7 @@ add_namespace = dop_pregaw
 add_namespace = dop_gaw
 add_namespace = dop_end
 add_namespace = dop_usage
+add_namespace = dop_rec
 add_namespace = dop_legco_hostage_crisis
 add_namespace = dop_flavors #maybe…i think
 add_namespace = dop_test
@@ -2637,5 +2638,1014 @@ country_event = {
 		custom_effect_tooltip = nat_6_tooltip
 		set_temp_variable = { v = 94 }
 		GNG_add_uncategorised_law = yes
+	}
+}
+
+country_event = { #失控
+	id = dop_pregaw.1
+	title = dop_pregaw.1.t
+	desc = dop_pregaw.1.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.1.a
+	}
+}
+
+country_event = { #些许改变
+	id = dop_pregaw.2
+	title = dop_pregaw.2.t
+	desc = dop_pregaw.2.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.2.a
+	}
+}
+
+country_event = { #身不由己
+	id = dop_pregaw.3
+	title = dop_pregaw.3.t
+	desc = dop_pregaw.3.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.3.a
+	}
+}
+
+country_event = { #何去何从
+	id = dop_pregaw.4
+	title = dop_pregaw.4.t
+	desc = dop_pregaw.4.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.4.a
+	}
+}
+
+country_event = { #使命
+	id = dop_pregaw.5
+	title = dop_pregaw.5.t
+	desc = dop_pregaw.5.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.5.a
+	}
+}
+
+country_event = { #使命
+	id = dop_pregaw.6
+	title = dop_pregaw.6.t
+	desc = dop_pregaw.6.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_pregaw.6.a
+	}
+}
+
+country_event = { #弃暗投明
+	id = dop_gaw.1
+	title = dop_gaw.1.t
+	desc = dop_gaw.1.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_gaw.1.a
+	}
+}
+
+country_event = { #自废武功
+	id = dop_gaw.2
+	title = dop_gaw.2.t
+	desc = dop_gaw.2.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_gaw.2.a
+	}
+}
+
+country_event = { #巧妇难为无米之炊
+	id = dop_gaw.3
+	title = dop_gaw.3.t
+	desc = dop_gaw.3.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_gaw.3.a
+	}
+}
+
+country_event = { #野火渐熄之后……
+	id = dop_rec.1
+	title = dop_ rec.1.t
+	desc = dop_rec.1.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.1.a
+	}
+}
+
+country_event = { #忍耐，直至转折点
+	id = dop_rec.2
+	title = dop_ rec.2.t
+	desc = dop_rec.2.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.2.a
+	}
+}
+
+country_event = { #忍耐，直至转折点
+	id = dop_rec.3
+	title = dop_ rec.3.t
+	desc = dop_rec.3.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.3.a
+	}
+}
+
+country_event = { #日本回应
+	id = dop_rec.5
+	title = dop_ rec.5.t
+	desc = dop_rec.5.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.5.a
+	}
+}
+
+country_event = { #日本回应
+	id = dop_rec.52
+	title = dop_ rec.52.t
+	desc = dop_rec.52.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.52.a
+	}
+}
+
+country_event = { #跨越界限
+	id = dop_rec.6
+	title = dop_ rec.6.t
+	desc = dop_rec.6.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.6.a
+	}
+}
+
+country_event = { #光明再临
+	id = dop_rec.7
+	title = dop_ rec.7.t
+	desc = dop_rec.7.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.7.a
+	}
+}
+
+country_event = { #重症需下猛药
+	id = dop_rec.8
+	title = dop_ rec.8.t
+	desc = dop_rec.8.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.8.a
+	}
+}
+
+country_event = { #资本归来
+	id = dop_rec.9
+	title = dop_ rec.9.t
+	desc = dop_rec.9.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.9.a
+	}
+}
+
+country_event = { #警务处报告
+	id = dop_rec.10
+	title = dop_ rec.10.t
+	desc = dop_rec.10.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.10.a
+	}
+}
+
+country_event = { #警务处报告
+	id = dop_rec.11
+	title = dop_ rec.11.t
+	desc = dop_rec.11.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.11.a
+	}
+}
+
+country_event = { #静夜
+	id = dop_rec.13
+	title = dop_ rec.13.t
+	desc = dop_rec.13.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.13.a
+	}
+}
+
+country_event = { #通往南宁的漫漫长路
+	id = dop_rec.14
+	title = dop_ rec.14.t
+	desc = dop_rec.14.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.14.a
+	}
+}
+
+country_event = { #新课本
+	id = dop_rec.15
+	title = dop_ rec.15.t
+	desc = dop_rec.15.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.15.a
+	}
+}
+
+country_event = { #197x年的产品周期开始了
+	id = GNG_Product_Cycle.49
+	title = GNG_Product_Cycle.49.t
+	desc = GNG_Product_Cycle.49.desc
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = GNG_Product_Cycle.49.a
+		GNG_give_product_cycle_effects = yes
+	}
+}
+
+country_event = { #打通动脉
+	title = dop_ rec.16.t
+	desc = dop_rec.16.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.16.a
+	}
+}
+
+country_event = { #新鲜血液
+	title = dop_ rec.17.t
+	desc = dop_rec.17.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.17.a
+	}
+}
+
+country_event = { #大逆不道
+	title = dop_ rec.18.t
+	desc = dop_rec.18.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.18.a
+	}
+    
+	option = { #
+	 name = dop_rec.18.b
+	}
+}
+
+country_event = { #哀鸿遍野
+	title = dop_ rec.19.t
+	desc = dop_rec.19.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.19.a
+	}
+
+    option = { #
+		name = dop_rec.19.b
+	}
+
+}
+
+country_event = { #行政命令第387号
+	title = dop_ rec.19.t
+	desc = dop_rec.19.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_rec.19.a
+	}
+}
+
+country_event = { #漫步人生路
+	title = dop_ dop_end.1.t
+	desc = dop_end.1.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.1.a
+	}
+}
+
+country_event = { #何为正义？
+	title = dop_ dop_end.2.t
+	desc = dop_end.2.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.2.a
+	}
+}
+
+country_event = { #有备无患
+	title = dop_ dop_end.3.t
+	desc = dop_end.3.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.3.a
+	}
+}
+
+country_event = { #润滑剂
+	title = dop_ dop_end.4.t
+	desc = dop_end.4.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.4.a
+	}
+}
+
+country_event = { #会见贵宾
+	title = dop_ dop_end.5.t
+	desc = dop_end.5.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.5.a
+	}
+}
+
+country_event = { #国情咨文
+	title = dop_ dop_end.6.t
+	desc = dop_end.6.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.6.a
+	}
+}
+
+country_event = { #追根溯源
+	title = dop_ dop_end.7.t
+	desc = dop_end.7.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.7.a
+	}
+}
+
+country_event = { #开门红
+	title = dop_ dop_end.8.t
+	desc = dop_end.8.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.8.a
+	}
+}
+
+country_event = { #市场监管
+	title = dop_ dop_end.9.t
+	desc = dop_end.9.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.9.a
+	}
+}
+
+country_event = { #共荣共存？
+	title = dop_ dop_end.11.t
+	desc = dop_end.11.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.11.a
+	}
+}
+
+country_event = { #旧日好时光？
+	title = dop_ dop_end.12.t
+	desc = dop_end.12.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.12.a
+	}
+}
+
+country_event = { #一往无前
+	title = dop_ dop_end.13.t
+	desc = dop_end.13.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.13.a
+	}
+}
+
+country_event = { #同是天涯沦落人
+	title = dop_ dop_end.16.t
+	desc = dop_end.16.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.16.a
+	}
+}
+
+country_event = { #紧急事项
+	title = dop_ dop_end.21.t
+	desc = dop_end.21.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.21.a
+	}
+}
+
+country_event = { #镜花水月
+	title = dop_ dop_end.22.t
+	desc = dop_end.22.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.22.a
+	}
+}
+
+country_event = { #失败作总裁
+	title = dop_ dop_end.23.t
+	desc = dop_end.23.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.23.a
+	}
+}
+
+country_event = { #低语
+	title = dop_ dop_end.24.t
+	desc = dop_end.24.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.24.a
+	}
+}
+
+country_event = { #未竟之事
+	title = dop_ dop_end.25.t
+	desc = dop_end.25.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.25.a
+	}
+}
+
+country_event = { #物竞天择
+	title = dop_ dop_end.26.t
+	desc = dop_end.26.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.26.a
+	}
+}
+
+country_event = { #启明星
+	title = dop_ dop_end.27.t
+	desc = dop_end.27.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.27.a
+	}
+}
+
+country_event = { #底线
+	title = dop_ dop_end.28.t
+	desc = dop_end.28.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.28.a
+	}
+}
+
+country_event = { #白衣骑士
+	title = dop_ dop_end.29.t
+	desc = dop_end.29.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.29.a
+	}
+}
+
+country_event = { #跳梁小丑
+	title = dop_ dop_end.30.t
+	desc = dop_end.30.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.30.a
+	}
+}
+
+country_event = { #刀光剑影
+	title = dop_ dop_end.31.t
+	desc = dop_end.31.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.31.a
+	}
+}
+
+country_event = { #螳臂当车
+	title = dop_ dop_end.32.t
+	desc = dop_end.32.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.32.a
+	}
+}
+
+country_event = { #终焉
+	title = dop_ dop_end.33.t
+	desc = dop_end.33.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.33.a
+	}
+}
+
+country_event = { #关于广东当前局势的报告
+	title = dop_ dop_end.34.t
+	desc = dop_end.34.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.34.a
+	}
+}
+
+country_event = { #新官上任
+	title = dop_ dop_end.37.t
+	desc = dop_end.37.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.37.a
+	}
+}
+
+country_event = { #伟大创举
+	title = dop_ dop_end.38.t
+	desc = dop_end.38.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.38.a
+	}
+}
+
+country_event = { #穷途末路
+	title = dop_ dop_end.39.t
+	desc = dop_end.39.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.39.a
+	}
+}
+
+country_event = { #得而复失
+	title = dop_ dop_end.40.t
+	desc = dop_end.40.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.40.a
+	}
+}
+
+country_event = { #官逼“民”反
+	title = dop_ dop_end.41.t
+	desc = dop_end.41.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.41.a
+	}
+}
+
+country_event = { #强攻
+	title = dop_ dop_end.42.t
+	desc = dop_end.42.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.42.a
+	}
+}
+
+country_event = { #见见你的新上司
+	title = dop_ dop_end.43.t
+	desc = dop_end.43.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.43.a
+	}
+}
+
+country_event = { #放尊重些！
+	title = dop_ dop_end.44.t
+	desc = dop_end.44.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.44.a
+	}
+}
+
+country_event = { #新手教程
+	title = dop_ dop_end.45.t
+	desc = dop_end.45.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.45.a
+	}
+}
+
+country_event = { #广东问题，美式方案
+	title = dop_ dop_end.46.t
+	desc = dop_end.46.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.46.a
+	}
+}
+
+country_event = { #殊死搏斗
+	title = dop_ dop_end.47.t
+	desc = dop_end.47.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.47.a
+	}
+}
+
+country_event = { #不忠的密谋
+	title = dop_ dop_end.48.t
+	desc = dop_end.48.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.48.a
+	}
+}
+
+country_event = { #抱歉，没有闲钱
+	title = dop_ dop_end.49.t
+	desc = dop_end.49.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.49.a
+	}
+}
+
+country_event = { #罪人
+	title = dop_ dop_end.50.t
+	desc = dop_end.50.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.50.a
+	}
+}
+
+country_event = { #戒严令
+	title = dop_ dop_end.51.t
+	desc = dop_end.51.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.51.a
+	}
+}
+
+country_event = { #子弹上膛
+	title = dop_ dop_end.52.t
+	desc = dop_end.52.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.52.a
+	}
+}
+
+country_event = { #悔过？
+	title = dop_ dop_end.56.t
+	desc = dop_end.56.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.56.a
+	}
+}
+
+country_event = { #当断不断
+	title = dop_ dop_end.57.t
+	desc = dop_end.57.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.57.a
+	}
+}
+
+country_event = { #观众们
+	title = dop_ dop_end.58.t
+	desc = dop_end.57.d
+	
+
+	is_triggered_only = yes
+	
+
+	option = { #
+		name = dop_end.58.a
 	}
 }
