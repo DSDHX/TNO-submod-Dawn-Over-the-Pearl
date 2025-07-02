@@ -1,0 +1,8 @@
+DOP_SCW_show_info_box = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	OR = {
+		AND = {
+			tag = GNG
+			has_country_flag = GNG_SCW_show_info_box
+		}
+	}
+}

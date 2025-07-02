@@ -1,0 +1,34 @@
+﻿l_simp_chinese:
+GNG_guangdong_theater_gui_decision_category: "廣東大妓院"
+GNG_guangdong_theater_gui_decision_category_desc: ""
+
+DOP_GNG_the_resistance_text: "观众的耐心"
+DOP_GNG_japanese_attitude_text: "日本的态度"
+DOP_GNG_the_current_show_text: "当前演出的是:[get_DOP_GNG_the_current_show_text]"
+
+DOP_GNG_guangdong_theater_Info_tt: "大东亚战争结束后，广东回到了往日的歌舞升平中。泛亚主义的赤色聚光灯下，总导演盛田昭夫的摄像机前，每位演员都带着他们的雄心壮志，走上台前。\n\n在这个如硅晶般易碎的舞台上表演必须战战兢兢，如履薄冰。投资者的态度与观众的耐心——剧场盈利的必需品——随时可能被随手做出的取舍所改变。毋庸置疑的一点是，逐利的投资者们将会根据观众对演员的反应更易他们的态度。\n\n对于演员而言，比起远在重洋之外的投资者，也许那些坐在舞台下看着他们的芸芸众生才是他们真正的衣食父母。当观众们的不满冲破了耐心的阈值时，正在上演的剧目便会因为倒彩声而强制中断，一段时间内，他们想来是不想再看到类似的题材或类似的演员了。更糟糕的是，如果这种情况出现太多次，我们的投资者可能会重新考虑我们的价值……\n\n"
+
+japanese_attitude_desc_tt: "尽管DK老师过去有段时间也犯了错误（指引入外神），但他终究是吉吉国民的一员、吉吉国高质量音骂的主要缔造者。拿他的功和过来说，错误毕竟是第二位的。他为吉吉国做的事情是不能抹杀的。从我们的感情来说，我们永远把他作为我们吉吉国的缔造者来纪念。\n\n日本态度数值: §Y[?japanese_attitude_var]§!"
+the_resistance_desc_tt: "§Y观众的耐心§!\n--------------\n§L要想演好一场精彩的表演，除了需要演员卖力的演技以外，还要有懂行的观众在周围叫好起哄；否则，再好的戏剧，也不过是给导演自娱自乐的玩具罢了。而在这座广东的大剧院内，名为华人的观众把主舞台团团围住，耐心地等待着演员们登场表演。\n\n演员在舞池中央的身姿能切中观众心弦，观众自然会为你带来满堂喝彩；但若演员出现失误，就会消耗观众们的耐心。然而演员之舞姿难以分毫不差，观众之耐心也有耗尽的一天。若是观众的耐心耗尽，使得观众对剧院的演出内容产生不满，轻则嘘声满堂，重则可能让观众把演员轰下台去……§!\n\n观众的耐心数值: §Y[?the_resistance_var]§!"
+
+#决议选项
+GNG_DOP_debug_Progressbar_test_visible_yes: "显示进度条调试"
+GNG_DOP_debug_Progressbar_test_visible_no: "隐藏进度条调试"
+
+GNG_DOP_debug_jap_add: "日本态度+1"
+GNG_DOP_debug_jap_add_10: "日本态度+10"
+GNG_DOP_debug_jap_cut: "日本态度-1"
+GNG_DOP_debug_jap_cut_10: "日本态度-10"
+
+GNG_DOP_debug_res_add: "观众的耐心+1"
+GNG_DOP_debug_res_add_10: "观众的耐心+10"
+GNG_DOP_debug_res_cut: "观众的耐心-1"
+GNG_DOP_debug_res_cut_10: "观众的耐心-10"
+
+#演出文字
+DOP_GNG_the_current_text_sony: "§F£GNG_Sony_texticon 索尼"
+DOP_GNG_the_current_text_legco: "£GNG_legco_texticon 立法会"
+DOP_GNG_the_current_text_matsushita: "£GNG_Matsushita_texticon 松下"
+DOP_GNG_the_current_text_cheung_kong: "£GNG_Cheung_Kong_texticon长江实业"
+DOP_GNG_the_current_text_fujifilm: "£GNG_Fujitsu_texticon 富士通"
+DOP_GNG_the_current_text_hitachi: "£GNG_Hitachi_texticon 日立"

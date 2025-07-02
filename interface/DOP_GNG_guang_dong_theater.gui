@@ -1,0 +1,103 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GNG_guangdong_theater_GUI"
+		size = { width = 500 height = 430 }
+		origo = center
+		position = { x = 0 y = 0 }
+
+		iconType = {
+			name = "Info"
+			spriteType = "GFX_Burgundy_GUI_Info_Button"
+			position = { x = 390 y = -65 } 
+			pdx_tooltip = DOP_GNG_guangdong_theater_Info_tt
+		}
+
+		containerWindowType = {
+			name = "GNG_guangdong_theater_bg"
+			size = { width = 486 height = 378 }
+			position = { x = 0 y = 0 }
+			iconType = {
+				name = "GNG_guangdong_theater_bg"
+				spriteType = "GFX_GNG_guangdong_theater_bg"
+				position = { x = 17 y = -10 }
+				alwaystransparent = yes
+			}
+			#iconType = { 有马你就来
+			#	name = "GNG_guangdong_theater_bg_text"
+			#	spriteType = "GFX_GNG_guangdong_theater_bg_text"
+			#	position = { x = 17 y = -10 }
+			#	alwaystransparent = yes
+			#}
+
+			iconType = {
+				name ="the_current_show_icon"
+				position = { x = 17 y = -9 }
+				alwaystransparent = yes
+			}
+
+			instantTextboxType = {
+				name = "the_current_show_text"
+				position = { x = 140 y = 348 }
+				font = "aldrich_20_outline"
+				text = "DOP_GNG_the_current_show_text"
+				maxWidth = 240
+				format = center
+			}
+
+			instantTextboxType = {
+				name = "aaaaaa"
+				position = { x = 140 y = 348 }
+				font = "aldrich_32_outline"
+				text = "[?the_current_show_var]"
+				maxWidth = 240
+				format = center
+			}
+		}
+		
+		##日本态度
+		iconType = {
+			name = "japanese_attitude_progress_bar"
+			spriteType = "GFX_DOP_japanese_attitude_progress_bar"
+			position = { x = 126 y = 379 }
+			pdx_tooltip = "japanese_attitude_desc_tt"
+		}
+		iconType = {
+			name = "japanese_attitude_frame"
+			spriteType = "GFX_GNG_guangdong_theater_text_frame1"
+			position = { x = 17 y = 380 }
+			pdx_tooltip = "japanese_attitude_desc_tt"
+		}
+		instantTextboxType = {
+			name = "japanese_attitude_text"
+			position = { x = 19 y = 386 }
+			font = "aldrich_16_outline"
+			text = "DOP_GNG_japanese_attitude_text"
+			maxWidth = 105
+			format = center
+			alwaystransparent = yes
+		}
+
+		##抵抗度
+		iconType = {
+			name = "the_resistance_progress_bar"
+			spriteType = "GFX_DOP_the_resistance_progress_bar"
+			position = { x = 126 y = 409 }
+			pdx_tooltip = "the_resistance_desc_tt"
+		}
+		iconType = {
+			name = "the_resistance_frame"
+			spriteType = "GFX_GNG_guangdong_theater_text_frame1"
+			position = { x = 17 y = 410 }
+			pdx_tooltip = "the_resistance_desc_tt"
+		}
+		instantTextboxType = {
+			name = "the_resistance_text"
+			position = { x = 19 y = 416 }
+			font = "aldrich_16_outline"
+			text = "DOP_GNG_the_resistance_text"
+			maxWidth = 105
+			format = center
+			alwaystransparent = yes
+		}
+	}
+}

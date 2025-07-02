@@ -1,0 +1,88 @@
+GNG_SiliconCW_category = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	GNG_SCW_add_USA_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { scw_USA_percentage < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+		}
+		complete_effect = {
+			set_temp_variable = { percentage_of_change = 10 }
+			set_temp_variable = { the_changed_faction_id = 1}
+			GNG_SCW_chart_recalculate = yes
+		}
+	}
+	
+	GNG_SCW_add_JAP_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { scw_JAP_percentage < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+		}
+		complete_effect = {
+			set_temp_variable = { percentage_of_change = 10 }
+			set_temp_variable = { the_changed_faction_id = 2}
+			GNG_SCW_chart_recalculate = yes
+		}
+	}
+	GNG_SCW_add_GER_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { scw_GER_percentage < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+		}
+		complete_effect = {
+			set_temp_variable = { percentage_of_change = 10 }
+			set_temp_variable = { the_changed_faction_id = 3 }
+			GNG_SCW_chart_recalculate = yes
+		}
+	}
+	GNG_SCW_add_ITA_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { scw_ITA_percentage < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+		}
+		complete_effect = {
+			set_temp_variable = {  percentage_of_change = 10 }
+			set_temp_variable = { the_changed_faction_id = 4}
+			GNG_SCW_chart_recalculate = yes
+		}
+	}
+	GNG_SCW_add_GNG_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { scw_GNG_percentage < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+		}
+		complete_effect = {
+			set_temp_variable = { percentage_of_change = 10 }
+			set_temp_variable = { the_changed_faction_id = 5}
+			GNG_SCW_chart_recalculate = yes
+		}
+	}
+}

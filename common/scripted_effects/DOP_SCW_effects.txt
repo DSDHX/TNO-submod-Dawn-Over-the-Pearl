@@ -1,0 +1,629 @@
+
+# Adds 'conflict_id' to the list of active conflicts
+# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+DOP_add_tab = {
+	custom_effect_tooltip = DOP_SCW_add_tab_tt
+	if = {
+		limit = { NOT = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } } }
+		add_to_array = { SCW_enabled_tabs = decision_tabs_id }
+
+		set_variable = { selected_decision_tabs_id = decision_tabs_id }
+		clear_array = world_conflict_guis
+		add_to_array = { world_conflict_guis = selected_conflict_id }
+
+		
+	}
+	if = {
+		limit = {
+			decision_tabs_id = 1
+		}
+		clr_country_flag = DOP_SCW_off
+	}
+	# set_temp_variable = { alert_id = token:Alert_Proxy_War_Active }
+	# add_TNO_alert_unless_exists = yes
+	# 需要补充弹窗提醒 ::heart:: ——stakataka_3030
+	# hidden_effect = {
+	# 	if = {
+	# 		limit = {
+	# 			check_variable = { NATIONAL_cp_gain_proxy = 0 }
+	# 		}
+	# 		add_dynamic_modifier = { modifier = PROXYNATIONAL_CP_GAIN }
+	# 	}
+	# 	add_to_variable = { NATIONAL_cp_gain_proxy = 0.07 }
+	# }
+	# 如果要发cp和pp在这里设置
+}
+
+# Removes `conflict_id` from the list of active conflicts
+DOP_remove_tab = {
+	custom_effect_tooltip = DOP_SCW_remove_tab_tt
+	if = {
+		limit = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } }
+		remove_from_array = { array = SCW_enabled_tabs value = decision_tabs_id }
+	}
+
+	if = {
+		limit = { check_variable = { selected_decision_tabs_id = decision_tabs_id } }
+
+		set_variable = { selected_conflict_id = -1 }
+
+		if = {
+			limit = {
+				decision_tabs_id = 1
+			}
+			set_country_flag = DOP_SCW_off
+		}
+	}
+
+	# if = {
+	# 	limit = {
+	# 		check_variable = { TNO_active_conflicts^num = 0 }
+	# 	}
+	# 	set_temp_variable = { alert_id = token:Alert_Proxy_War_Active }
+	# 	remove_TNO_alert = yes
+	# }
+	# 需要补充弹窗提醒 ::heart:: ——stakataka_3030
+	# hidden_effect = {
+	# 	add_to_variable = { NATIONAL_cp_gain_proxy = -0.07 }
+	# 	if = {
+	# 		limit = {
+	# 			check_variable = { NATIONAL_cp_gain_proxy = 0 }
+	# 		}
+	# 		remove_dynamic_modifier = { modifier = PROXYNATIONAL_CP_GAIN }
+	# 	}
+	# }
+	# 如果要发cp和pp在这里设置
+}
+
+## Enables a tag in the BoP GNGver GUI
+# Arguments: TabName (token)
+TNO_BoP_SCW_AddTab = {
+	custom_effect_tooltip = TNO_BoP_AddTab_SCW_tt
+	add_to_array = { TNO_BoP_Tabs = TabName }
+	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
+
+	# If it's the only tab in the GUI at all, select it and enable its decisions
+	if = {
+		limit = { check_variable = { TNO_BoP_Tabs^num = 1 } }
+		set_variable = { TNO_BoP_Tabs_Frames^0 = 2 }
+		set_variable = { TNO_BoP_SelectedTab = TNO_BoP_Tabs^0 }
+		
+		hidden_effect = {
+			meta_effect = {
+				text = { set_power_balance = { id = [TAB_TYPE]_[TAG] } }
+				TAG = "[THIS.GetTag]"
+				TAB_TYPE = "[?TNO_BoP_Tabs^0.GetTokenKey]"
+			}
+		}
+	}
+}
+
+## Disables a tag in the BoP GNGver GUI
+# Arguments: TabName (token)
+TNO_BoP_SCW_RemoveTab = {
+	remove_from_array = { TNO_BoP_Tabs = TabName }
+	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
+
+	if = {
+		limit = { check_variable = { TNO_BoP_SelectedTab = TabName } }
+		meta_effect = {
+			text = { remove_power_balance = { id = [TAB_TYPE]_[TAG] } }
+			TAG = "[THIS.GetTag]"
+			TAB_TYPE = "[?TabName.GetTokenKey]"
+		}
+	}
+}
+
+GNG_BOP_Initalize = {
+	set_temp_variable = { TabName = token:BoP_Tab_DOPSiliconCW }
+	TNO_BoP_SCW_AddTab = yes
+	set_country_flag = DOP_SCW_off
+	set_country_flag = DOP_SCW_enabled
+	GNG_SCW_Initialize = yes
+}
+
+GNG_SCW_Initialize ={
+	set_variable = { scw_GNG_percentage = 10 }
+	set_variable = { scw_ITA_percentage = 10 }
+	set_variable = { scw_GER_percentage = 20 }
+	set_variable = { scw_JAP_percentage = 25 }
+	set_variable = { scw_USA_percentage = 35 }
+	SCWcalorder = yes 
+}
+
+GET_GNG_SCW_chart_percentage = {
+	set_variable = {
+		the_var_left_percentage_GNG = scw_GNG_percentage
+	}
+	set_variable = {
+		the_var_left_percentage_GER = scw_GER_percentage
+	}
+	set_variable = {
+		the_var_left_percentage_JAP = scw_JAP_percentage
+	}
+	set_variable = {
+		the_var_left_percentage_ITA = scw_ITA_percentage
+	}
+	set_variable = {
+		the_var_left_percentage_USA = scw_USA_percentage
+	}
+	divide_variable = {
+		the_var_left_percentage_GNG = the_var_left_all_before
+	}
+	log = "[?the_var_left_percentage_GNG]"
+	divide_variable = {
+		the_var_left_percentage_JAP = the_var_left_all_before
+	}
+	divide_variable = {
+		the_var_left_percentage_USA = the_var_left_all_before
+	}
+	divide_variable = {
+		the_var_left_percentage_ITA = the_var_left_all_before
+	}
+	divide_variable = {
+		the_var_left_percentage_GER = the_var_left_all_before
+	}
+	set_variable = {
+		percentage_GNG = the_var_left_percentage_GNG
+	}
+	log = "[?percentage_GNG]"
+	set_variable = {
+		percentage_JAP = the_var_left_percentage_JAP
+	}
+	set_variable = {
+		percentage_GER = the_var_left_percentage_GER
+	}
+	set_variable = {
+		percentage_ITA = the_var_left_percentage_ITA
+	}
+	set_variable = {
+		percentage_USA = the_var_left_percentage_USA
+	}
+}
+
+GNG_SCW_percentage_helper = {
+	set_variable = {
+		the_new_var_true_number_GNG = the_var_left_all_after
+	}
+	log = "[?the_new_var_true_number_GNG]"
+	set_variable = {
+		the_new_var_true_number_GER = the_var_left_all_after
+	}
+	set_variable = {
+		the_new_var_true_number_JAP = the_var_left_all_after
+	}
+	set_variable = {
+		the_new_var_true_number_ITA = the_var_left_all_after
+	}
+	set_variable = {
+		the_new_var_true_number_USA = the_var_left_all_after
+	}
+	multiply_variable = {
+		the_new_var_true_number_GNG = percentage_GNG
+	}
+	log = "[?the_new_var_true_number_GNG]"
+	multiply_variable = {
+		the_new_var_true_number_JAP = percentage_JAP
+	}
+	multiply_variable = {
+		the_new_var_true_number_USA = percentage_USA
+	}
+	multiply_variable = {
+		the_new_var_true_number_ITA = percentage_ITA
+	}
+	multiply_variable = {
+		the_new_var_true_number_GER = percentage_GER
+	}
+}
+
+GNG_SCW_chart_recalculate = {
+	set_temp_variable = { a = percentage_of_change }
+	set_temp_variable = { v = the_changed_faction_id } #USA 1 JAP 2 GER 3 ITA 4 GNG 5
+	custom_effect_tooltip = change_faction_percentage_tt
+	if = {
+		limit = {
+			check_variable = { v = 1 }
+		}
+		set_variable = {
+			the_var_left_all_before = 100
+		}
+		log = "[?the_var_left_all_before]"
+		subtract_from_variable = {
+			the_var_left_all_before = scw_USA_percentage
+		}
+		log = "[?the_var_left_all_before]"
+		GET_GNG_SCW_chart_percentage = yes
+		add_to_variable = {
+			scw_USA_percentage = a
+		}
+		set_variable = {
+			the_var_left_all_after = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_after = scw_USA_percentage
+		}
+		log = '[?the_var_left_all_after]'
+		GNG_SCW_percentage_helper = yes
+		set_variable = {
+			scw_GNG_percentage = the_new_var_true_number_GNG 
+		}
+		log = "[?scw_GNG_percentage]"
+		set_variable = {
+			scw_GER_percentage = the_new_var_true_number_GER
+		}
+		set_variable = {
+			scw_JAP_percentage = the_new_var_true_number_JAP
+		}
+		set_variable = {
+			scw_ITA_percentage = the_new_var_true_number_ITA
+		}
+		
+	}
+	else_if = {
+		limit = {
+			check_variable = { v = 2 }
+		}
+		set_variable = {
+			the_var_left_all_before = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_before = scw_JAP_percentage
+		}
+		GET_GNG_SCW_chart_percentage = yes
+		add_to_variable = {
+			scw_JAP_percentage = a
+		}
+		set_variable = {
+			the_var_left_all_after = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_after = scw_JAP_percentage
+		}
+		GNG_SCW_percentage_helper = yes
+		set_variable = {
+			scw_GNG_percentage = the_new_var_true_number_GNG 
+		}
+		set_variable = {
+			scw_GER_percentage = the_new_var_true_number_GER
+		}
+		set_variable = {
+			scw_USA_percentage = the_new_var_true_number_USA
+		}
+		set_variable = {
+			scw_ITA_percentage = the_new_var_true_number_ITA
+		}
+		
+	}
+	else_if = {
+		limit = {
+			check_variable = { v = 3 }
+		}
+		set_temp_variable = {
+			the_var_left_all_before = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_before = scw_GER_percentage
+		}
+		GET_GNG_SCW_chart_percentage = yes
+		add_to_variable = {
+			scw_GER_percentage = a
+		}
+		set_variable = {
+			the_var_left_all_after = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_after = scw_GER_percentage
+		}
+		GNG_SCW_percentage_helper = yes
+		set_variable = {
+			scw_GNG_percentage = the_new_var_true_number_GNG 
+		}
+		set_variable = {
+			scw_USA_percentage = the_new_var_true_number_USA
+		}
+		set_variable = {
+			scw_JAP_percentage = the_new_var_true_number_JAP
+		}
+		set_variable = {
+			scw_ITA_percentage = the_new_var_true_number_ITA
+		}
+		
+	}
+	else_if = {
+		limit = {
+			check_variable = { v = 4 }
+		}
+		set_temp_variable = {
+			the_var_left_all_before = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_before = scw_ITA_percentage
+		}
+		GET_GNG_SCW_chart_percentage = yes
+		add_to_variable = {
+			scw_ITA_percentage = a
+		}
+		set_variable = {
+			the_var_left_all_after = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_after = scw_ITA_percentage
+		}
+		GNG_SCW_percentage_helper = yes
+		set_variable = {
+			scw_GNG_percentage = the_new_var_true_number_GNG 
+		}
+		set_variable = {
+			scw_GER_percentage = the_new_var_true_number_GER
+		}
+		set_variable = {
+			scw_USA_percentage = the_new_var_true_number_USA
+		}
+		set_variable = {
+			scw_JAP_percentage = the_new_var_true_number_JAP
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { v = 5 }
+		}
+		set_temp_variable = {
+			the_var_left_all_before = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_before = scw_GNG_percentage
+		}
+		GET_GNG_SCW_chart_percentage = yes
+		add_to_variable = {
+			scw_GNG_percentage = a
+		}
+		set_variable = {
+			the_var_left_all_after = 100
+		}
+		subtract_from_variable = {
+			the_var_left_all_after = scw_GNG_percentage
+		}
+		GNG_SCW_percentage_helper = yes
+		set_variable = {
+			scw_GER_percentage = the_new_var_true_number_GER
+		}
+		set_variable = {
+			scw_USA_percentage = the_new_var_true_number_USA
+		}
+		set_variable = {
+			scw_JAP_percentage = the_new_var_true_number_JAP
+		}
+		set_variable = {
+			scw_ITA_percentage = the_new_var_true_number_ITA
+		}
+		
+	}
+	else = {
+		log = "ERROR:False country selection"
+	}
+	SCWcalorder = yes
+}
+
+SCWcalorder = {
+	if = {
+		limit = {
+			check_variable = {
+				scw_USA_percentage < scw_GNG_percentage
+			}
+		}
+		set_variable = {
+			SCWNO1 = 5
+		}
+		set_variable = {
+			SCWNO2 = 1
+		}
+		set_variable = {
+			SCWNO3 = 2
+		}
+		set_variable = {
+			SCWNO4 = 3
+		}
+		set_variable = {
+			SCWNO5 = 4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				scw_JAP_percentage < scw_GNG_percentage
+			}
+		}
+		set_variable = {
+			SCWNO1 = 1
+		}
+		set_variable = {
+			SCWNO2 = 5
+		}
+		set_variable = {
+			SCWNO3 = 2
+		}
+		set_variable = {
+			SCWNO4 = 3
+		}
+		set_variable = {
+			SCWNO5 = 4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				scw_GER_percentage < scw_GNG_percentage
+			}
+		}
+		set_variable = {
+			SCWNO1 = 1
+		}
+		set_variable = {
+			SCWNO2 = 2
+		}
+		set_variable = {
+			SCWNO3 = 5
+		}
+		set_variable = {
+			SCWNO4 = 3
+		}
+		set_variable = {
+			SCWNO5 = 4
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				scw_ITA_percentage < scw_GNG_percentage
+			}
+		}
+		set_variable = {
+			SCWNO1 = 1
+		}
+		set_variable = {
+			SCWNO2 = 2
+		}
+		set_variable = {
+			SCWNO3 = 3
+		}
+		set_variable = {
+			SCWNO4 = 5
+		}
+		set_variable = {
+			SCWNO5 = 4
+		}
+	}
+	else = {
+		set_variable = {
+			SCWNO1 = 1
+		}
+		set_variable = {
+			SCWNO2 = 2
+		}
+		set_variable = {
+			SCWNO3 = 3
+		}
+		set_variable = {
+			SCWNO4 = 4
+		}
+		set_variable = {
+			SCWNO5 = 5
+		}
+	}
+	
+	# clear_array = scw_array_percentage
+	# add_to_array = {
+	# 	scw_array_percentage = -1
+	# } 
+	# add_to_array = {
+	# 	scw_array_percentage = scw_USA_percentage
+	# }
+	# add_to_array = {
+	# 	scw_array_percentage = scw_JAP_percentage
+	# }
+	# add_to_array = {
+	# 	scw_array_percentage = scw_GER_percentage
+	# }
+	# add_to_array = {
+	# 	scw_array_percentage = scw_ITA_percentage
+	# }
+	# add_to_array = {
+	# 	scw_array_percentage = scw_GNG_percentage
+	# }
+	# log = "[?scw_array_percentage^1],[?scw_array_percentage^5]"
+	# while_loop_effect = {
+	# 	limit = {
+	# 		OR = {
+	# 			check_variable = {
+	# 				SCWNO1 = 0
+	# 			}
+	# 			check_variable = {
+	# 				SCWNO2 = 0
+	# 			}
+	# 			check_variable = {
+	# 				SCWNO3 = 0
+	# 			}
+	# 			check_variable = {
+	# 				SCWNO4 = 0
+	# 			}
+	# 			check_variable = {
+	# 				SCWNO5 = 0
+	# 			}
+	# 		}
+	# 	}
+	# 	for_loop_effect = {
+	# 		start = 1
+	# 		end = 6
+	# 		value = temp
+	# 		set_temp_variable = { numget = 0 }
+	# 		for_loop_effect = {
+	# 			start = 1
+	# 			end = 6
+	# 			value = tempv
+	# 			if = {
+	# 				limit = {
+	# 					check_variable = {
+	# 						scw_array_percentage^temp < scw_array_percentage^tempv
+	# 					}
+	# 				}
+	# 				add_to_variable = {
+	# 					numget = 1
+	# 				}
+	# 				log = "1"
+	# 			}
+	# 			log = "2"
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					numget = 0
+	# 				}
+	# 			}
+	# 			set_variable = {
+	# 				SCWNO1 = temp
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					numget = 1
+	# 				}
+	# 			}
+	# 			set_variable = {
+	# 				SCWNO2 = temp
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					numget = 2
+	# 				}
+	# 			}
+	# 			set_variable = {
+	# 				SCWNO3 = temp
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					numget = 3
+	# 				}
+	# 			}
+	# 			set_variable = {
+	# 				SCWNO4 = temp
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				check_variable = {
+	# 					numget = 4
+	# 				}
+	# 			}
+	# 			set_variable = {
+	# 				SCWNO5 = temp
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# log = "[?SCWNO1],[?SCWNO2],[?SCWNO3],[?SCWNO4],[?SCWNO5]"
+}

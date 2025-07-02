@@ -16,7 +16,7 @@ characters = {
 			logistics_skill = 7
 			legacy_id = 12111
 			visible = {
-				has_completed_focus = GNG_prepare_never_stop
+				has_completed_focus = GNG_focus_prepare_never_stop
 				has_country_flag = gng_chi_choiced
 			}
 		}
@@ -40,7 +40,7 @@ characters = {
 			logistics_skill = 9
 			legacy_id = 12112
 			visible = {
-				has_completed_focus = GNG_prepare_never_stop
+				has_completed_focus = GNG_focus_prepare_never_stop
 				has_country_flag = gng_chi_choiced
 			}
 		}
@@ -60,7 +60,7 @@ GNG_peng_mengji = {
 		logistics_skill = 2
 		legacy_id = 24100
 		visible = {
-			has_completed_focus = GNG_prepare_never_stop
+			has_completed_focus = GNG_focus_prepare_never_stop
 			has_country_flag = gng_chi_choiced
 		}
 	}
@@ -79,7 +79,7 @@ GNG_chen_daqing = {
 		logistics_skill = 3
 		legacy_id = 24120
 		visible = {
-			has_completed_focus = GNG_prepare_never_stop
+			has_completed_focus = GNG_focus_prepare_never_stop
 			has_country_flag = gng_chi_choiced
 		}
 	}

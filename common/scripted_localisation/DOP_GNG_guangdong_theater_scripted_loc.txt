@@ -1,0 +1,81 @@
+defined_text = {
+	name = DOPGNGTheCurrentShowIcon
+	#演出图标
+	text = { #索尼
+		trigger = { 
+			check_variable = {the_current_show_var=1}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_sony
+	}
+	text = {
+		trigger = { #立法会
+			check_variable = {the_current_show_var=2}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_legco
+	}
+	text = {
+		trigger = { #松下
+			check_variable = {the_current_show_var=3}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_matsushita
+	}
+	text = {
+		trigger = { #长江实业
+			check_variable = {the_current_show_var=4}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_cheung_kong
+	}
+	text = {
+		trigger = { #富士通
+			check_variable = {the_current_show_var=5}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_fujifilm
+	}
+	text = {
+		trigger = { #日立
+			check_variable = {the_current_show_var=5}
+		 }
+		localization_key = GFX_DOP_GNG_the_current_show_hitachi
+	}
+}
+
+defined_text = {
+	name = get_DOP_GNG_the_current_show_text
+	#演出文字
+	text = { #索尼
+		trigger = { 
+			check_variable = {the_current_show_var=1}
+		 }
+		localization_key = DOP_GNG_the_current_text_sony
+	}
+	text = {
+		trigger = { #立法会
+			check_variable = {the_current_show_var=2}
+		 }
+		localization_key = DOP_GNG_the_current_text_legco
+	}
+	text = {
+		trigger = { #松下
+			check_variable = {the_current_show_var=3}
+		 }
+		localization_key = DOP_GNG_the_current_text_matsushita
+	}
+	text = {
+		trigger = { #长江实业
+			check_variable = {the_current_show_var=4}
+		 }
+		localization_key = DOP_GNG_the_current_text_cheung_kong
+	}
+	text = {
+		trigger = { #富士通
+			check_variable = {the_current_show_var=5}
+		 }
+		localization_key = DOP_GNG_the_current_text_fujifilm
+	}
+	text = {
+		trigger = { #日立
+			check_variable = {the_current_show_var=5}
+		 }
+		localization_key = DOP_GNG_the_current_text_hitachi
+	}
+}

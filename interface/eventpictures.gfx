@@ -1,0 +1,39 @@
+spriteTypes =
+{
+	spriteType = {
+		name = "GFX_leak_focu_1"
+		texturefile = "gfx/event_pictures/leak_focu_1.dds"
+	}
+    spriteType = {
+		name = "GFX_report_event_GNG_generic_riots_2"
+		texturefile = "gfx/event_pictures/report_event_GNG_generic_riots_2.dds"
+	}
+	spriteType = {
+		name = "GFX_leak_focu_3"
+		texturefile = "gfx/event_pictures/leak_focu_3.dds"
+	}
+	spriteType = {
+		name = "GFX_leak_focu_4"
+		texturefile = "gfx/event_pictures/leak_focu_4.dds"
+	}
+    spriteType = {
+		name = "GFX_report_event_GNG_apartments_generic_3"
+		texturefile = "gfx/event_pictures/report_event_GNG_apartments_generic_3.dds"
+	}
+    spriteType = {
+		name = "GFX_leak_focu_6"
+		texturefile = "gfx/event_pictures/leak_focu_6.dds"
+	}
+    spriteType = {
+		name = "GFX_report_event_GNG_police_hat"
+		texturefile = "gfx/event_pictures/report_event_GNG_police_hat.dds"
+	}
+    spriteType = {
+		name = "GFX_leak_focu_8"
+		texturefile = "gfx/event_pictures/leak_focu_8.dds"
+	}
+    spriteType = {
+		name = "GFX_leak_focu_9"
+		texturefile = "gfx/event_pictures/leak_focu_9.dds"
+	}
+}

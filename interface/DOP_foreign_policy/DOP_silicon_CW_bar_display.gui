@@ -1,0 +1,100 @@
+guiTypes = {
+    containerWindowType = {
+        name = "DOP_SCW_bar_display"
+        position = { x = 24 y = 180}
+        size = { width = 496 height = 506 }
+        instantTextboxType = {
+            name = "scw_logo_1"
+            position = { x = 10 y = 9 }
+			borderSize = {x = 0 y = 0}
+			font = "aldrich_32_outline"
+			text = [Getscw_logo_1]
+			maxWidth = 50
+			maxHeight = 60
+			format = left
+            pdx_tooltip = SCWINFO_1
+        }
+        iconType = {
+            name = "scw_bar_1_o"
+            position = { x = 10 y = 9 }
+            quadTextureSprite = "GFX_SCW_genericbar"
+            frame = 50
+            pdx_tooltip = SCWINFO_1
+        }     
+
+        instantTextboxType = {
+            name = "scw_logo_2"
+            position = { x = 10 y = 89 }
+			borderSize = {x = 0 y = 0}
+			font = "aldrich_32_outline"
+			text = [Getscw_logo_2]
+			maxWidth = 50
+			maxHeight = 60
+			format = left
+            pdx_tooltip = SCWINFO_2
+        }
+        iconType = {
+            name = "scw_bar_2_o"
+            position = { x = 10 y = 89 }
+            quadTextureSprite = "GFX_SCW_genericbar"
+            frame = 50
+            pdx_tooltip = SCWINFO_2
+        }     
+        instantTextboxType = {
+            name = "scw_logo_3"
+            position = { x = 10 y = 169 }
+			borderSize = {x = 0 y = 0}
+			font = "aldrich_32_outline"
+			text = [Getscw_logo_3]
+			maxWidth = 50
+			maxHeight = 60
+			format = left
+            pdx_tooltip = SCWINFO_3
+        }
+        iconType = {
+            name = "scw_bar_3_o"
+            position = { x = 10 y = 169 }
+            quadTextureSprite = "GFX_SCW_genericbar"
+            frame = 50
+            pdx_tooltip = SCWINFO_3
+        }     
+
+        instantTextboxType = {
+            name = "scw_logo_4"
+            position = { x = 10 y = 249 }
+			borderSize = {x = 0 y = 0}
+			font = "aldrich_32_outline"
+			text = [Getscw_logo_4]
+			maxWidth = 50
+			maxHeight = 60
+			format = left
+            pdx_tooltip = SCWINFO_4
+        }
+        iconType = {
+            name = "scw_bar_4_o"
+            position = { x = 10 y = 249 }
+            quadTextureSprite = "GFX_SCW_genericbar"
+            frame = 50
+            pdx_tooltip = SCWINFO_4
+        }     
+
+        instantTextboxType = {
+            name = "scw_logo_5"
+            position = { x = 10 y = 329 }
+			borderSize = {x = 0 y = 0}
+			font = "aldrich_32_outline"
+			text = [Getscw_logo_5]
+			maxWidth = 50
+			maxHeight = 60
+			format = left
+            pdx_tooltip = SCWINFO_5
+        } 
+        iconType = {
+            name = "scw_bar_5_o"
+            position = { x = 10 y = 329 }
+            quadTextureSprite = "GFX_SCW_genericbar"
+            frame = 50
+            pdx_tooltip = "SCWINFO_5"
+        }     
+    }
+}
