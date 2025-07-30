@@ -5,4 +5,4 @@ GNG_street_dummy = {
 	war_support_factor = street_ws_var
 	civilian_factory_use = street_cf_var
 	command_power_gain = street_cp_var
-		}
+}
