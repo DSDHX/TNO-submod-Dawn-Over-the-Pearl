@@ -1,0 +1,847 @@
+focus_tree =
+{
+	id = dop_sonyjapan_reconsturuction_tree
+	country =
+	{
+		factor = 0
+		modifier =
+		{
+			add = 10
+			tag = GNG
+		}
+	}
+	default = no
+	shared_focus = GNG_focus_everlasting_peace
+}
+
+shared_focus =
+{
+	id = GNG_focus_everlasting_peace #永远的和平？
+	icon = GFX_GNG_focus_everlasting_peace
+
+	x = 8
+	y = 0
+	
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_temporary_relief #……或暂时的喘息
+	icon = GFX_GNG_focus_temporary_relief
+	
+	relative_position_id = GNG_focus_everlasting_peace
+
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_everlasting_peace
+	}
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_our_erstwhile_master #我们的旧主
+	icon = GFX_GNG_focus_our_erstwhile_master
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_temporary_relief
+	}
+	cost = 2
+
+ 	completion_reward =
+	{
+		custom_effect_tooltip = GNG_additional_aid1_focustt
+		set_temp_variable = { gdp_growth_temp = 0.1 }
+		econ_gdp_growth_change = yes
+		#流动准备金+0.3B
+	    set_temp_variable = { money_reserves_temp = 0.3}
+	    econ_money_reserves_change_raw_money = yes
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_hoea #共荣圈经济协定本部
+	icon = GFX_GNG_focus_hoea
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = -3
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_our_erstwhile_master
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_request_emergency_funding
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		#国家债务+1B
+		set_temp_variable = { debt_temp = 1.0 }
+		econ_national_debt_change = yes
+		set_temp_variable = { money_reserves_temp = 1.0}
+		econ_money_reserves_change_raw_money = yes
+		#日本债务+10B
+		JAP = {
+		 set_temp_variable = { debt_temp = 10.0 }
+		econ_national_debt_change = yes
+		}
+		#满洲债务+5B
+		MAN = {
+		 set_temp_variable = { debt_temp = 5.0 }
+		econ_national_debt_change = yes
+		}
+		custom_effect_tooltip = GNG_additional_aid2_focustt
+		#日立席位+1
+		set_temp_variable = { GNG_legco_seat_temp = 1 }
+		set_temp_variable = { GNG_legco_faction_temp = 7 }
+		GNG_change_legco_seats = yes
+		set_temp_variable = { GNG_legco_seat_temp = -1 }
+		set_temp_variable = { GNG_legco_faction_temp = 3 }
+		GNG_change_legco_seats = yes
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_request_emergency_funding #申请紧急拨款
+	icon = GFX_GNG_focus_request_emergency_funding
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = -1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_our_erstwhile_master
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_hoea
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		#流动准备金+3B
+		set_temp_variable = { money_reserves_temp = 3.0}
+		econ_money_reserves_change_raw_money = yes
+		set_temp_variable = { gdp_growth_temp = 0.25 }
+		econ_gdp_growth_change = yes
+		#日本债务+3B
+		JAP = {
+			set_temp_variable = { debt_temp = 3.0 }
+		   econ_national_debt_change = yes
+		   }
+		custom_effect_tooltip = GNG_additional_aid1_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_old_east_asia_order #东亚旧秩序
+	icon = GFX_GNG_focus_old_east_asia_order
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = -2
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_request_emergency_funding
+		focus = GNG_focus_hoea
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_examine_foreign_enemies #审视“外敌”
+	icon = GFX_GNG_focus_examine_foreign_enemies
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_temporary_relief
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_prolong_state_of_emergency #延长紧急状态
+	icon = GFX_GNG_focus_prolong_state_of_emergency
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 2
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_examine_foreign_enemies
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_lingnan_region_is_good #试问岭南应不好
+	icon = GFX_GNG_focus_lingnan_region_is_good
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 1
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_prolong_state_of_emergency
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_that_is_my_home
+	}
+	cost = 3
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_that_is_my_home #吾心安处是吾乡
+	icon = GFX_GNG_focus_that_is_my_home
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 3
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_prolong_state_of_emergency
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_lingnan_region_is_good
+	}
+	cost = 3
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_foothold #我们脚下的家园
+	icon = GFX_GNG_focus_foothold
+
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 0
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_old_east_asia_order
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_temporary_relief
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_lingnan_region_is_good
+		focus = GNG_focus_that_is_my_home
+	}
+	cost = 2
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_retrieve_the_cable #重接电缆  
+	icon = GFX_GNG_focus_retrieve_the_cable 
+
+	relative_position_id = GNG_focus_foothold
+
+	x = -1
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_foothold
+	}
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_neon_signs_lit_up #霓虹招牌亮起
+	icon = GFX_GNG_focus_neon_signs_lit_up
+
+	relative_position_id = GNG_focus_foothold
+
+	x = -1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_retrieve_the_cable
+	}
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_in_the_warm_sun #沐浴暖阳之下
+	icon = GFX_GNG_focus_in_the_warm_sun
+
+	relative_position_id = GNG_focus_foothold
+
+	x = 1
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_foothold
+	}
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_gazing_into_abyss #凝视深渊之中
+	icon = GFX_GNG_focus_gazing_into_abyss
+
+	relative_position_id = GNG_focus_in_the_warm_sun
+
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_in_the_warm_sun
+	}
+	cost = 1
+
+	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_get_to_work #开工！
+	icon = GFX_GNG_focus_get_to_work
+	
+	relative_position_id = GNG_focus_temporary_relief
+
+	x = 0
+	y = 7
+	
+	prerequisite =
+	{
+		focus = GNG_focus_neon_signs_lit_up
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_gazing_into_abyss
+	}
+	cost = 1
+
+ 	completion_reward =
+	{
+	
+	}
+}
+
+shared_focus =
+{
+ 	id = GNG_focus_garrison_withdrew #驻军退潮时
+	icon = GFX_GNG_focus_garrison_withdrew
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -4
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_get_to_work
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_renovate_educational_system #修缮教育体制
+	icon = GFX_GNG_focus_renovate_educational_system
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_get_to_work
+	}
+	cost = 2
+
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_new_products_old_friends #新产品、老朋友
+	icon = GFX_GNG_new_products_old_friends
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 0
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_get_to_work
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_product_cycle_reactivation_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_go_west #向西行……
+	icon = GFX_GNG_focus_go_west
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 2
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_get_to_work
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		#事件“布局”
+		country_event = {
+			id = leak_temp.10
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_leave_ruins_behind #走出残垣断壁
+	icon = GFX_GNG_focus_leave_ruins_behind
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 4
+	y = 1
+	
+	prerequisite =
+	{
+		focus = GNG_focus_get_to_work
+	}
+	cost = 2
+
+	completion_reward =
+	{
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = no
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		every_owned_state = {
+			limit = {
+				GNG_is_pearl_river_delta_state = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_decentralization_authority #预备权力下放
+	icon = GFX_GNG_focus_decentralization_authority
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -3
+	y = 2
+	prerequisite =
+	{
+		focus = GNG_focus_garrison_withdrew
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_renovate_educational_system
+	}
+	cost = 3
+	
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_reinvestment_talents #人才再投资
+	icon = GFX_GNG_focus_reinvestment_talents
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_new_products_old_friends
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_renovate_educational_system
+	}
+	cost = 3
+
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_resource_export_plan #资源出口计划表
+	icon = GFX_GNG_focus_resource_export_plan
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 1
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_new_products_old_friends
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_go_west
+	}
+	cost = 3
+
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_fences_and_gate #围栏与关口
+	icon = GFX_GNG_focus_fences_and_gate
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 3
+	y = 2
+	
+	prerequisite =
+	{
+		focus = GNG_focus_leave_ruins_behind
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_go_west
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_refugee_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_corporate_voraciousness #企业狼吞虎咽
+	icon = GFX_GNG_focus_corporate_voraciousness
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -1
+	y = 3
+	
+	prerequisite =
+	{
+		focus = GNG_focus_decentralization_authority
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_reinvestment_talents
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_resource_export_plan
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_fences_and_gate
+	}
+	cost = 2
+
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_trade_union_highly_vigilant #工会目光炯炯
+	icon = GFX_GNG_focus_trade_union_highly_vigilant
+	
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 1
+	y = 3
+	prerequisite =
+	{
+		focus = GNG_focus_decentralization_authority
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_reinvestment_talents
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_resource_export_plan
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_fences_and_gate
+	}
+	cost = 2
+
+	completion_reward =
+	{
+
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_problem_is_economy #笨蛋！问题是经济！
+	icon = GFX_GNG_focus_problem_is_economy
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = -2
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_corporate_voraciousness
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_trade_union_highly_vigilant
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_promote_local_efficacy
+		focus = GNG_focus_daily_necessities_and_housing
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_resume_production_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_promote_local_efficacy #增进本地行政效能
+	icon = GFX_GNG_focus_promote_local_efficacy
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 0
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_corporate_voraciousness
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_trade_union_highly_vigilant
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_problem_is_economy
+		focus = GNG_focus_daily_necessities_and_housing
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_administrative_reform_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_daily_necessities_and_housing #内地的日用品与房屋
+	icon = GFX_GNG_focus_promote_local_efficacy
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 2
+	y = 4
+	
+	prerequisite =
+	{
+		focus = GNG_focus_corporate_voraciousness
+	}
+	prerequisite =
+	{
+		focus = GNG_focus_trade_union_highly_vigilant
+	}
+	mutually_exclusive =
+	{
+		focus = GNG_focus_problem_is_economy
+		focus = GNG_focus_promote_local_efficacy
+	}
+	cost = 3
+
+	completion_reward =
+	{
+		custom_effect_tooltip = GNG_provide_relief_focustt
+	}
+}
+
+shared_focus =
+{
+	id = GNG_focus_return_to_Ordinary_daily_life #回归平凡的日常
+	icon = GFX_GNG_focus_return_to_Ordinary_daily_life
+
+	relative_position_id = GNG_focus_get_to_work
+
+	x = 0
+	y = 5
+	
+	prerequisite =
+	{
+		focus = GNG_focus_problem_is_economy
+		focus = GNG_focus_promote_local_efficacy 
+		focus = GNG_focus_daily_necessities_and_housing
+	}
+	cost = 1
+
+	completion_reward =
+	{
+		
+	}
+}

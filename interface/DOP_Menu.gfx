@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_CountryClosing_picture_GNG_DOP_Demo_Ending"
+		texturefile = "gfx/interface/DOP_demo_ending.png"
+	}
+	spriteType = {
+		name = "GFX_frontend_DOP_logo"
+		texturefile = "gfx/interface/thumbnail.png"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_fronticons_dop"
+		texturefile = "gfx/interface/DOP_Frontend_Background_picture.dds"
+		borderSize = { x=0 y= 0 }
+		size = {  x=934 y= 375 }
+		tilingCenter = no
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	spriteType = {
+		name = "GFX_frontend_DOP_backpic"
+		texturefile = "gfx/interface/DOP_Frontend_Background_picture.dds"
+	}
+}

@@ -10,5 +10,5 @@ dependencies={
 	"The New Order: Last Days of Europe"
 	"The New Order: Last Days of Europe(CN.Ver)"
 }
-supported_version="1.14.*"
+supported_version="1.*.*"
 remote_file_id="3179057095"
