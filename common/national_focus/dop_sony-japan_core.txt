@@ -37,7 +37,7 @@ shared_focus =
 
 	relative_position_id = GNG_focus_new_fate_choice_of_gng
 	
-	x = -23
+	x = -31
 	y = 1
 
 	prerequisite =
@@ -751,7 +751,7 @@ shared_focus =
 
 	relative_position_id = GNG_focus_the_pearl_of_Pan_Asia
 
-	x = -11
+	x = -17
 	y = 1
 	
 	prerequisite =
@@ -773,7 +773,7 @@ shared_focus =
 	
 	relative_position_id = GNG_focus_strive_for_excellence
 
-	x = -3
+	x = -5
     y = 1
 	
 	prerequisite =
@@ -884,175 +884,175 @@ shared_focus =
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_industrial_upgrading #产业升级
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_industrial_upgrading #产业升级
+# 	icon = GFX_goal_unknown
 	
-	relative_position_id = GNG_focus_strive_for_excellence
+# 	relative_position_id = GNG_focus_strive_for_excellence
 
-	x = 3
-	y = 1
+# 	x = 3
+# 	y = 1
 	
-	prerequisite =
-	{
-		focus = GNG_focus_strive_for_excellence
-	}
-	cost = 2
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_strive_for_excellence
+# 	}
+# 	cost = 2
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_urban_issues #城市问题
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_urban_issues #城市问题
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = -2
-	y = 1
+# 	x = -2
+# 	y = 1
 	
-	prerequisite =
-	{
-		focus = GNG_focus_industrial_upgrading
-	}
-	cost = 2
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_industrial_upgrading
+# 	}
+# 	cost = 2
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_gng_Shinkansen_project #广东新干线企划
-	icon = GFX_GNG_focus_gng_Shinkansen_project
+# shared_focus =
+# {
+# 	id = GNG_focus_gng_Shinkansen_project #广东新干线企划
+# 	icon = GFX_GNG_focus_gng_Shinkansen_project
 	
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = -3
-	y = 2
+# 	x = -3
+# 	y = 2
 	
-	prerequisite =
-	{
-		focus = GNG_focus_urban_issues
-	}
-	mutually_exclusive =
-	{
-		focus = GNG_focus_gng_rail_transit_plan
-	}
-	cost = 4
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_urban_issues
+# 	}
+# 	mutually_exclusive =
+# 	{
+# 		focus = GNG_focus_gng_rail_transit_plan
+# 	}
+# 	cost = 4
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_gng_rail_transit_plan #广铁轨交计划
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_gng_rail_transit_plan #广铁轨交计划
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = -1
-	y = 2
+# 	x = -1
+# 	y = 2
 	
-	prerequisite =
-	{
-		focus = GNG_focus_urban_issues
-	}
-	mutually_exclusive =
-	{
-		focus = GNG_focus_gng_Shinkansen_project
-	}
-	cost = 4
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_urban_issues
+# 	}
+# 	mutually_exclusive =
+# 	{
+# 		focus = GNG_focus_gng_Shinkansen_project
+# 	}
+# 	cost = 4
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_rural_crisis #乡村危机
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_rural_crisis #乡村危机
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = 2
-	y = 1
+# 	x = 2
+# 	y = 1
 	
-	prerequisite =
-	{
-		focus = GNG_focus_industrial_upgrading
-	}
-	cost = 2
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_industrial_upgrading
+# 	}
+# 	cost = 2
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_rural_credit_Bank #乡村信用银行
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_rural_credit_Bank #乡村信用银行
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = 1
-	y = 2
+# 	x = 1
+# 	y = 2
 	
-	prerequisite =
-	{
-	    focus = GNG_focus_rural_crisis
-	}
-	mutually_exclusive =
-	{
-		focus = GNG_focus_construction_new_villages
-	}
-	cost = 4
+# 	prerequisite =
+# 	{
+# 	    focus = GNG_focus_rural_crisis
+# 	}
+# 	mutually_exclusive =
+# 	{
+# 		focus = GNG_focus_construction_new_villages
+# 	}
+# 	cost = 4
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
-shared_focus =
-{
-	id = GNG_focus_construction_new_villages #新村建设
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_construction_new_villages #新村建设
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = 3
-	y = 2
+# 	x = 3
+# 	y = 2
 	
-	prerequisite =
-	{
-	    focus = GNG_focus_rural_crisis 
-	}
-	mutually_exclusive =
-	{
-		focus = GNG_focus_rural_credit_Bank
-	}
-	cost = 4
+# 	prerequisite =
+# 	{
+# 	    focus = GNG_focus_rural_crisis 
+# 	}
+# 	mutually_exclusive =
+# 	{
+# 		focus = GNG_focus_rural_credit_Bank
+# 	}
+# 	cost = 4
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
-    }
-}
+#     }
+# }
 
 shared_focus =
 {
@@ -1293,169 +1293,491 @@ shared_focus =
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_look_inland #望向内陆
-	icon = GFX_goal_unknown
+# shared_focus =
+# {
+# 	id = GNG_focus_look_inland #望向内陆
+# 	icon = GFX_goal_unknown
 
-	relative_position_id = GNG_focus_industrial_upgrading
+# 	relative_position_id = GNG_focus_industrial_upgrading
 
-	x = 0
-	y = 3
+# 	x = 0
+# 	y = 3
 	
-	prerequisite =
-	{
-		focus = GNG_focus_gng_Shinkansen_project
-	    focus = GNG_focus_gng_rail_transit_plan
-	}
-	prerequisite =
-	{
-		focus = GNG_focus_rural_credit_Bank
-		focus = GNG_focus_construction_new_villages
-	}
-	cost = 3
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_gng_Shinkansen_project
+# 	    focus = GNG_focus_gng_rail_transit_plan
+# 	}
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_rural_credit_Bank
+# 		focus = GNG_focus_construction_new_villages
+# 	}
+# 	cost = 3
 
-	completion_reward =
-	{
+# 	completion_reward =
+# 	{
 	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_laying_blood_vessels #铺设血管
+# 	icon = GFX_goal_unknown
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = 0
+# 	y = 4
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_look_inland
+# 	}
+# 	cost = 2
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_heavy_industry_northern_gng #粤北的重工业
+# 	icon = GFX_goal_unknown
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = -1
+# 	y = 5
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_laying_blood_vessels
+# 	}
+# 	cost = 3
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_build_low_rent_apartments #建设公共邨屋
+# 	icon = GFX_goal_unknown
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = -1
+# 	y = 6
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_heavy_industry_northern_gng
+# 	}
+# 	cost = 3
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_resources_in_western #粤西的资源
+# 	icon = GFX_goal_unknown
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = 1
+# 	y = 5
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_laying_blood_vessels
+# 	}
+# 	cost = 3
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_new_livelihood_projects #新民生工程
+# 	icon = GFX_GNG_focus_new_livelihood_projects
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = 1
+# 	y = 6
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_resources_in_western
+# 	}
+# 	cost = 3
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+# shared_focus =
+# {
+# 	id = GNG_focus_not_just_three_pearls #不只有珠三角
+# 	icon = GFX_goal_unknown
+
+# 	relative_position_id = GNG_focus_industrial_upgrading
+
+# 	x = 0
+# 	y = 7
+	
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_build_low_rent_apartments
+# 	}
+# 	prerequisite =
+# 	{
+# 		focus = GNG_focus_new_livelihood_projects
+# 	}
+# 	cost = 2
+
+# 	completion_reward =
+# 	{
+	
+#     }
+# }
+
+shared_focus = {
+    id = DOP_GNG_Industrial_Upgrade
+    icon = DOP_GNG_Industrial_Upgrade_gfx
+	relative_position_id = GNG_focus_strive_for_excellence
+    x = 5
+    y = 1
+    cost = 3.000
+	prerequisite = { # 前置组 12
+        focus = GNG_focus_strive_for_excellence
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Industrial_Upgrade"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_laying_blood_vessels #铺设血管
-	icon = GFX_goal_unknown
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = 0
-	y = 4
-	
-	prerequisite =
-	{
-		focus = GNG_focus_look_inland
-	}
-	cost = 2
-
-	completion_reward =
-	{
-	
+# 城市问题：
+shared_focus = {
+    id = DOP_GNG_Urban_Issue
+    icon = DOP_GNG_Urban_Issue_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -3
+    y = 1
+    cost = 3.000
+    prerequisite = { # 前置组 12
+        focus = DOP_GNG_Industrial_Upgrade
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Urban_Issue"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_heavy_industry_northern_gng #粤北的重工业
-	icon = GFX_goal_unknown
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = -1
-	y = 5
-	
-	prerequisite =
-	{
-		focus = GNG_focus_laying_blood_vessels
-	}
-	cost = 3
-
-	completion_reward =
-	{
-	
+# 乡村危机：
+shared_focus = {
+    id = DOP_GNG_Rural_Crisis
+    icon = DOP_GNG_Rural_Crisis_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 3
+    y = 1
+    cost = 3.000
+    prerequisite = { # 前置组 13
+        focus = DOP_GNG_Industrial_Upgrade
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Rural_Crisis"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_build_low_rent_apartments #建设公共邨屋
-	icon = GFX_goal_unknown
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = -1
-	y = 6
-	
-	prerequisite =
-	{
-		focus = GNG_focus_heavy_industry_northern_gng
-	}
-	cost = 3
-
-	completion_reward =
-	{
-	
+# 广东新干线计划：
+shared_focus = {
+    id = DOP_GNG_Guangdong_New_Railway
+    icon = DOP_GNG_Guangdong_New_Railway_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -4
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 1
+        focus = DOP_GNG_Urban_Issue
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Guangdong_New_Railway"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_resources_in_western #粤西的资源
-	icon = GFX_goal_unknown
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = 1
-	y = 5
-	
-	prerequisite =
-	{
-		focus = GNG_focus_laying_blood_vessels
-	}
-	cost = 3
-
-	completion_reward =
-	{
-	
+# 旅客铁道株式会社：
+shared_focus = {
+    id = DOP_GNG_Passenger_Railway_Company
+    icon = DOP_GNG_Passenger_Railway_Company_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -2
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 2
+        focus = DOP_GNG_Urban_Issue
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Passenger_Railway_Company"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_new_livelihood_projects #新民生工程
-	icon = GFX_GNG_focus_new_livelihood_projects
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = 1
-	y = 6
-	
-	prerequisite =
-	{
-		focus = GNG_focus_resources_in_western
-	}
-	cost = 3
-
-	completion_reward =
-	{
-	
+# 乡村信用银行：
+shared_focus = {
+    id = DOP_GNG_Rural_Credit_Bank
+    icon = DOP_GNG_Rural_Credit_Bank_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 2
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 14
+        focus = DOP_GNG_Rural_Crisis
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Rural_Credit_Bank"
     }
 }
 
-shared_focus =
-{
-	id = GNG_focus_not_just_three_pearls #不只有珠三角
-	icon = GFX_goal_unknown
-
-	relative_position_id = GNG_focus_industrial_upgrading
-
-	x = 0
-	y = 7
-	
-	prerequisite =
-	{
-		focus = GNG_focus_build_low_rent_apartments
-	}
-	prerequisite =
-	{
-		focus = GNG_focus_new_livelihood_projects
-	}
-	cost = 2
-
-	completion_reward =
-	{
-	
+# 新民生工程：
+shared_focus = {
+    id = DOP_GNG_New_Livelihood_Project
+    icon = DOP_GNG_New_Livelihood_Project_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -3
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 3
+        focus = DOP_GNG_Guangdong_New_Railway
+    }
+    prerequisite = { # 前置组 4
+        focus = DOP_GNG_Passenger_Railway_Company
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_New_Livelihood_Project"
     }
 }
+
+# 望向内陆：
+shared_focus = {
+    id = DOP_GNG_Look_Inland
+    icon = DOP_GNG_Look_Inland_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 3
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 16
+        focus = DOP_GNG_Rural_Credit_Bank
+    }
+    prerequisite = { # 前置组 17
+        focus = DOP_GNG_Build_New_villages
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Look_Inland"
+    }
+}
+
+# 建设公共班屋：
+shared_focus = {
+    id = DOP_GNG_Public_Housing_Construction
+    icon = DOP_GNG_Public_Housing_Construction_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -3
+    y = 4
+    cost = 3.000
+    prerequisite = { # 前置组 5
+        focus = DOP_GNG_New_Livelihood_Project
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Public_Housing_Construction"
+    }
+}
+
+# 铺设血管：
+shared_focus = {
+    id = DOP_GNG_Lay_Infrastructure
+    icon = DOP_GNG_Lay_Infrastructure_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 3
+    y = 4
+    cost = 3.000
+    prerequisite = { # 前置组 18
+        focus = DOP_GNG_Look_Inland
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Lay_Infrastructure"
+    }
+}
+
+# 木棉花医疗保险：
+shared_focus = {
+    id = DOP_GNG_Cotton_Medical_Insurance
+    icon = DOP_GNG_Cotton_Medical_Insurance_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -5
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 6
+        focus = DOP_GNG_Public_Housing_Construction
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Cotton_Medical_Insurance"
+    }
+}
+
+# 广东的新课纲：
+shared_focus = {
+    id = DOP_GNG_Guangdong_New_Curriculum
+    icon = DOP_GNG_Guangdong_New_Curriculum_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -3
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 7
+        focus = DOP_GNG_Public_Housing_Construction
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Guangdong_New_Curriculum"
+    }
+}
+
+# 寻找粮仓：
+shared_focus = {
+    id = DOP_GNG_Seek_Granary
+    icon = DOP_GNG_Seek_Granary_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -1
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 8
+        focus = DOP_GNG_Public_Housing_Construction
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Seek_Granary"
+    }
+}
+
+# 广州湾的另一个可能：
+shared_focus = {
+    id = DOP_GNG_Other_Possibility_Guangzhou_Bay
+    icon = DOP_GNG_Other_Possibility_Guangzhou_Bay_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 1
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 19
+        focus = DOP_GNG_Lay_Infrastructure
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Other_Possibility_Guangzhou_Bay"
+    }
+}
+
+# 粤西的资源：
+shared_focus = {
+    id = DOP_GNG_West_Guangdong_Resources
+    icon = DOP_GNG_West_Guangdong_Resources_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 3
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 20
+        focus = DOP_GNG_Lay_Infrastructure
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_West_Guangdong_Resources"
+    }
+}
+
+# 粤北的重工业：
+shared_focus = {
+    id = DOP_GNG_North_Guangdong_Heavy_Industry
+    icon = DOP_GNG_North_Guangdong_Heavy_Industry_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 5
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 21
+        focus = DOP_GNG_Lay_Infrastructure
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_North_Guangdong_Heavy_Industry"
+    }
+}
+
+# 富足的市民们：
+shared_focus = {
+    id = DOP_GNG_Wealthy_Citizens
+    icon = DOP_GNG_Wealthy_Citizens_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = -3
+    y = 6
+    cost = 3.000
+    prerequisite = { # 前置组 9
+        focus = DOP_GNG_Cotton_Medical_Insurance
+    }
+    prerequisite = { # 前置组 10
+        focus = DOP_GNG_Guangdong_New_Curriculum
+    }
+    prerequisite = { # 前置组 11
+        focus = DOP_GNG_Seek_Granary
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Wealthy_Citizens"
+    }
+}
+
+# 不只有珠三角：
+shared_focus = {
+    id = DOP_GNG_Not_Only_Pearl_River_Delta
+    icon = DOP_GNG_Not_Only_Pearl_River_Delta_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 3
+    y = 6
+    cost = 3.000
+    prerequisite = { # 前置组 22
+        focus = DOP_GNG_West_Guangdong_Resources
+    }
+    prerequisite = { # 前置组 23
+        focus = DOP_GNG_Other_Possibility_Guangzhou_Bay
+    }
+    prerequisite = { # 前置组 24
+        focus = DOP_GNG_North_Guangdong_Heavy_Industry
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Not_Only_Pearl_River_Delta"
+    }
+}
+
+# 新村建设：
+shared_focus = {
+    id = DOP_GNG_Build_New_villages
+    icon = DOP_GNG_Build_New_villages_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 4
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 15
+        focus = DOP_GNG_Rural_Crisis
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Build_New_villages"
+    }
+}
+
 
 shared_focus =
 {
