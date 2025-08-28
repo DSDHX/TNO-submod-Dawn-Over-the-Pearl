@@ -1,0 +1,196 @@
+GNG_debug_category = {
+	GNG_dop_debug_load_lomitia = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_core_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_end1_lee = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_ending1_lee_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_end2_ibuka = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_ending2_ibuka_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_end3_hitachi = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_ending3_hitachi_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_end4_return1962 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_ending4_return1962_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_end5_second_riot = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_ending5_second_roit_tree
+		}
+		available = {
+		}
+	}
+	GNG_dop_debug_load_reconsturuction = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			custom_effect_tooltip = lomitia_tt
+			load_focus_tree = dop_sonyjapan_reconsturuction_tree
+		}
+		available = {
+		}
+	}
+	# GNG_dop_debug_load_opening = {
+	# 	allowed = {
+	# 		original_tag = GNG
+	# 	}
+	# 	icon = GFX_decision_GNG_generic
+	# 	visible = {
+	# 		has_country_flag = GNG_show_debug_decisions
+	# 	}
+	# 	complete_effect = {
+	# 		load_focus_tree = dop_opening_tree
+	# 	}
+	# }
+	# GNG_dop_debug_load_japtree = {
+	# 	allowed = {
+	# 		original_tag = GNG
+	# 	}
+	# 	icon = GFX_decision_GNG_generic
+	# 	visible = {
+	# 		has_country_flag = GNG_show_debug_decisions
+	# 	}
+	# 	complete_effect = {
+	# 		load_focus_tree = dop_sonyjapan_prewar_tree
+	# 		clr_country_flag = gng_chi_choiced
+	# 	}
+	# }
+	GNG_dop_debug_remove_faction = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			JAP = {
+				remove_from_faction = chi
+				remove_from_faction = gng
+				remove_from_faction = yun
+			}
+		}
+	}
+	GNG_dop_debug_add_seat_1 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 3 }
+			GNG_change_legco_seats = yes
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 6 }
+			GNG_change_legco_seats = yes
+		}
+	}
+	GNG_dop_debug_add_seat_2 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 4 }
+			GNG_change_legco_seats = yes
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 5 }
+			GNG_change_legco_seats = yes
+		}
+	}
+	GNG_dop_debug_add_seat_3 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			set_temp_variable = { GNG_legco_seat_temp = 10 }
+			set_temp_variable = { GNG_legco_faction_temp = 7 }
+			GNG_change_legco_seats = yes
+		}
+	}
+}

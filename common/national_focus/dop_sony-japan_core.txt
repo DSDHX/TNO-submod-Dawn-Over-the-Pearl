@@ -1,11 +1,8 @@
-focus_tree =
-{
+focus_tree = {
 	id = dop_sonyjapan_core_tree
-	country =
-	{
+	country = {
 		factor = 0
-		modifier =
-		{
+		modifier = {
 			add = 10
 			tag = GNG
 		}
@@ -14,18 +11,13 @@ focus_tree =
 	shared_focus = GNG_focus_new_fate_choice_of_gng
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_new_fate_choice_of_gng #新的十字路口
 	icon = GFX_GNG_focus_new_fate_choice_of_gng
-	
 	x = 8
 	y = 0
-	
 	cost = 1
-	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_be_careful_focustt
 	}
 }
@@ -1507,7 +1499,7 @@ shared_focus = {
 # 广东新干线计划：
 shared_focus = {
     id = DOP_GNG_Guangdong_New_Railway
-    icon = DOP_GNG_Guangdong_New_Railway_gfx
+    icon = GFX_GNG_focus_gng_Shinkansen_project
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -4
     y = 2

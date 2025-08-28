@@ -14,7 +14,7 @@
   GNG_dop_debug_load_end3_hitachi: "加载财界结局国策树"
   GNG_dop_debug_add_seat_1: "£GNG_Sony_texticon §V索尼§!和£GNG_Cheung_Kong_texticon §C长江实业§!：获得立法会席位作弊"
   GNG_dop_debug_add_seat_2: "£GNG_Fujitsu_texticon §m富士通§!和£GNG_Matsushita_texticon §W松下§!：获得立法会席位作弊"
-  GNG_dop_debug_add_seat_3: "£GNG_Hitachi_texticon §k日立§!：获得立法会席位作弊"
+  GNG_dop_debug_add_seat_3: "£GNG_Hitachi_texticon §L日立§!：获得立法会席位作弊"
   GNG_dop_debug_addchi: "增加£GNG_chinese_nation_texticon §M中国§!影响力"
   GNG_dop_debug_addjap: "增加£GNG_japanese_nation_texticon §j日本§!影响力"
   GNG_ken_effect_on_bfg: "£GNG_kenpeitai_texticon §e宪兵队§!正影响争夺！"
@@ -627,7 +627,7 @@
   GNG_legco_amend_87_2_title: "§m富士通议员被贿赂§!"
   GNG_legco_amend_87_2_effect: "£GNG_Fujitsu_texticon §m富士通§!议员被贿赂，投票通过法案。"
   GNG_legco_amend_87_3_title: "§k日立被恐吓§!"
-  GNG_legco_amend_87_3_effect: "£GNG_Hitachi_texticon §k日立§!被要挟，被迫投赞成票。 "
+  GNG_legco_amend_87_3_effect: "£GNG_Hitachi_texticon §L日立§!被要挟，被迫投赞成票。 "
   #laws
   GNG_typ_law_1: "§V三年发展计划§!"
   GNG_typ_law_desc: "§F§V三年发展计划§!是£GNG_Sony_texticon §V索尼§!和£GNG_Cheung_Kong_texticon §C长江实业§!提出的新§F£GFX_GNG_Guangdong_texticon §S广东§!发展规划，行政长官期望通过这一计划对60年代发展的漏洞查漏补缺，并进一步强化带有人性面孔的资本主义这一概念。§!§!"
