@@ -1,0 +1,68 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_GNG_guangdong_theater_bg"
+		texturefile = "gfx/interface/DOP_theater_gui/GNG_guangdong_theater_bg.png"
+	}
+	spriteType = {
+		name = "GFX_GNG_guangdong_theater_bg_text"
+		texturefile = "gfx/interface/DOP_theater_gui/GNG_guangdong_theater_bg_text.png"
+	}
+	spriteType = {
+		name = "GFX_GNG_guangdong_theater_text_frame1"
+		texturefile = "gfx/interface/DOP_theater_gui/GNG_guangdong_theater_text_frame1.png"
+	}
+	progressbartype = {
+		name = "GFX_DOP_japanese_attitude_progress_bar"
+		texturefile1 = "gfx/interface/DOP_theater_gui/japanese_attitude_progress_bar_full.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/japanese_attitude_progress_bar_empty.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = {
+			x = 371
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+
+	progressbartype = {
+		name = "GFX_DOP_the_resistance_progress_bar"
+		texturefile1 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_full.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = {
+			x = 371
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+	spriteType = { #索尼
+		name = "GFX_DOP_GNG_the_current_show_sony"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_sony.png"
+	}
+	spriteType = { #立法会
+		name = "GFX_DOP_GNG_the_current_show_legco"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_legco.png"
+	}
+	spriteType = { #松下
+		name = "GFX_DOP_GNG_the_current_show_matsushita"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_matsushita.png"
+	}
+	spriteType = { #长江实业
+		name = "GFX_DOP_GNG_the_current_show_cheung_kong"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_cheung_kong.png"
+	}
+	spriteType = { #富士通
+		name = "GFX_DOP_GNG_the_current_show_fujifilm"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_fujifilm.png"
+	}
+	spriteType = { #日立
+	name = "GFX_DOP_GNG_the_current_show_hitachi"
+	texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_hitachi.png"
+}
+}
+

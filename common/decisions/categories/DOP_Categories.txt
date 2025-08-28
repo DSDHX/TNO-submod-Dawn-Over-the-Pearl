@@ -2,3 +2,18 @@ GNG_SiliconCW_category = {# 致DOP制作组CODER：如果你没有完全把握�
 	allowed = { original_tag = GNG }
 	visible = { has_country_flag = DOP_SCW_enabled }
 }
+
+GNG_guangdong_theater_gui_decision_category = {
+	icon = GFX_decision_category_GNG_generic
+	#picture = GFX_decision_image_GNG_debug
+	priority = 999999
+	allowed = {
+		original_tag = GNG
+	}
+	visible = {
+		has_country_flag = guang_dong_theater_visible
+	}
+	visible_when_empty = yes
+
+	scripted_gui = GNG_guangdong_theater_GUI
+}

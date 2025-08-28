@@ -206,4 +206,32 @@ GNG_debug_category = {
 			GNG_change_legco_seats = yes
 		}
 	}
+	GNG_dop_debug_show_guang_dong_theater = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = {
+				has_country_flag = guang_dong_theater_visible
+			}
+		}
+		complete_effect = {
+			set_country_flag = guang_dong_theater_visible
+		}
+	}
+	GNG_dop_debug_close_guang_dong_theater = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			has_country_flag = guang_dong_theater_visible
+		}
+		complete_effect = {
+			clr_country_flag = guang_dong_theater_visible
+		}
+	}
 }
