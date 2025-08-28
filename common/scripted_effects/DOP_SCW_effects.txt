@@ -4,10 +4,7 @@ DOP_add_tab = {
 	if = {
 		limit = { NOT = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } } }
 		add_to_array = { SCW_enabled_tabs = decision_tabs_id }
-
 		set_variable = { selected_decision_tabs_id = decision_tabs_id }
-		clear_array = world_conflict_guis
-		add_to_array = { world_conflict_guis = selected_conflict_id }
 	}
 	if = {
 		limit = {
@@ -24,12 +21,9 @@ DOP_remove_tab = {
 		limit = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } }
 		remove_from_array = { array = SCW_enabled_tabs value = decision_tabs_id }
 	}
-
 	if = {
 		limit = { check_variable = { selected_decision_tabs_id = decision_tabs_id } }
-
 		set_variable = { selected_conflict_id = -1 }
-
 		if = {
 			limit = {
 				decision_tabs_id = 1
@@ -45,13 +39,10 @@ TNO_BoP_SCW_AddTab = {
 	custom_effect_tooltip = TNO_BoP_AddTab_SCW_tt
 	add_to_array = { TNO_BoP_Tabs = TabName }
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
-
-	# If it's the only tab in the GUI at all, select it and enable its decisions
 	if = {
 		limit = { check_variable = { TNO_BoP_Tabs^num = 1 } }
 		set_variable = { TNO_BoP_Tabs_Frames^0 = 2 }
 		set_variable = { TNO_BoP_SelectedTab = TNO_BoP_Tabs^0 }
-		
 		hidden_effect = {
 			meta_effect = {
 				text = { set_power_balance = { id = [TAB_TYPE]_[TAG] } }
@@ -62,12 +53,10 @@ TNO_BoP_SCW_AddTab = {
 	}
 }
 
-## Disables a tag in the BoP GNGver GUI
 # Arguments: TabName (token)
 TNO_BoP_SCW_RemoveTab = {
 	remove_from_array = { TNO_BoP_Tabs = TabName }
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
-
 	if = {
 		limit = { check_variable = { TNO_BoP_SelectedTab = TabName } }
 		meta_effect = {
@@ -474,120 +463,4 @@ SCWcalorder = {
 			SCWNO5 = 5
 		}
 	}
-	
-	# clear_array = scw_array_percentage
-	# add_to_array = {
-	# 	scw_array_percentage = -1
-	# } 
-	# add_to_array = {
-	# 	scw_array_percentage = scw_USA_percentage
-	# }
-	# add_to_array = {
-	# 	scw_array_percentage = scw_JAP_percentage
-	# }
-	# add_to_array = {
-	# 	scw_array_percentage = scw_GER_percentage
-	# }
-	# add_to_array = {
-	# 	scw_array_percentage = scw_ITA_percentage
-	# }
-	# add_to_array = {
-	# 	scw_array_percentage = scw_GNG_percentage
-	# }
-	# log = "[?scw_array_percentage^1],[?scw_array_percentage^5]"
-	# while_loop_effect = {
-	# 	limit = {
-	# 		OR = {
-	# 			check_variable = {
-	# 				SCWNO1 = 0
-	# 			}
-	# 			check_variable = {
-	# 				SCWNO2 = 0
-	# 			}
-	# 			check_variable = {
-	# 				SCWNO3 = 0
-	# 			}
-	# 			check_variable = {
-	# 				SCWNO4 = 0
-	# 			}
-	# 			check_variable = {
-	# 				SCWNO5 = 0
-	# 			}
-	# 		}
-	# 	}
-	# 	for_loop_effect = {
-	# 		start = 1
-	# 		end = 6
-	# 		value = temp
-	# 		set_temp_variable = { numget = 0 }
-	# 		for_loop_effect = {
-	# 			start = 1
-	# 			end = 6
-	# 			value = tempv
-	# 			if = {
-	# 				limit = {
-	# 					check_variable = {
-	# 						scw_array_percentage^temp < scw_array_percentage^tempv
-	# 					}
-	# 				}
-	# 				add_to_variable = {
-	# 					numget = 1
-	# 				}
-	# 				log = "1"
-	# 			}
-	# 			log = "2"
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				check_variable = {
-	# 					numget = 0
-	# 				}
-	# 			}
-	# 			set_variable = {
-	# 				SCWNO1 = temp
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				check_variable = {
-	# 					numget = 1
-	# 				}
-	# 			}
-	# 			set_variable = {
-	# 				SCWNO2 = temp
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				check_variable = {
-	# 					numget = 2
-	# 				}
-	# 			}
-	# 			set_variable = {
-	# 				SCWNO3 = temp
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				check_variable = {
-	# 					numget = 3
-	# 				}
-	# 			}
-	# 			set_variable = {
-	# 				SCWNO4 = temp
-	# 			}
-	# 		}
-	# 		if = {
-	# 			limit = {
-	# 				check_variable = {
-	# 					numget = 4
-	# 				}
-	# 			}
-	# 			set_variable = {
-	# 				SCWNO5 = temp
-	# 			}
-	# 		}
-	# 	}
-	# }
-	# log = "[?SCWNO1],[?SCWNO2],[?SCWNO3],[?SCWNO4],[?SCWNO5]"
 }

@@ -104,31 +104,44 @@ GNG_debug_category = {
 		available = {
 		}
 	}
-	# GNG_dop_debug_load_opening = {
-	# 	allowed = {
-	# 		original_tag = GNG
-	# 	}
-	# 	icon = GFX_decision_GNG_generic
-	# 	visible = {
-	# 		has_country_flag = GNG_show_debug_decisions
-	# 	}
-	# 	complete_effect = {
-	# 		load_focus_tree = dop_opening_tree
-	# 	}
-	# }
-	# GNG_dop_debug_load_japtree = {
-	# 	allowed = {
-	# 		original_tag = GNG
-	# 	}
-	# 	icon = GFX_decision_GNG_generic
-	# 	visible = {
-	# 		has_country_flag = GNG_show_debug_decisions
-	# 	}
-	# 	complete_effect = {
-	# 		load_focus_tree = dop_sonyjapan_prewar_tree
-	# 		clr_country_flag = gng_chi_choiced
-	# 	}
-	# }
+	GNG_dop_debug_enable_BOP = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			GNG_BOP_Initalize = yes
+		}
+	}
+	GNG_dop_debug_enable_BOP_page_1 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			set_temp_variable = { decision_tabs_id = 1 }
+			DOP_add_tab = yes
+		}
+	}
+	GNG_dop_debug_enable_BOP_page_2 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			set_temp_variable = { decision_tabs_id = 2 }
+			DOP_add_tab = yes
+		}
+	}
 	GNG_dop_debug_remove_faction = {
 		allowed = {
 			original_tag = GNG

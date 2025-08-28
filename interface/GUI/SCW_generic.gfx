@@ -1,0 +1,51 @@
+spriteTypes = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	## Base BoP assets
+	spriteType = { # GNG_SiliconCW_category
+	name = "GFX_BoP_Tab_DOPSiliconCW_Icon"
+	textureFile = "gfx/interface/bop/GFX_BoP_Tab_Espionage_Icon.dds"
+	}
+	spriteType = {
+		name = "GFX_Fujitsutemp_JAP"
+		textureFile = "gfx/interface/DOP_SCW/Fujitsutemp_JAP.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_SGS_ITA"
+		textureFile = "gfx/interface/DOP_SCW/SGS_ITA.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_Sony_GNG"
+		textureFile = "gfx/interface/DOP_SCW/Sony_GNG.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_Siemens_GER"
+		textureFile = "gfx/interface/DOP_SCW/Siemens_GER.ddss"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_IBM_USA"
+		textureFile = "gfx/interface/DOP_SCW/IBM_USA.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_con_button"
+		textureFile = "gfx/interface/DOP_SCW/con_button.dds"
+		legacy_lazy_load = no 
+	}
+	spriteType = {
+		name = "GFX_pro_button"
+		textureFile = "gfx/interface/DOP_SCW/pro_button.dds"
+		legacy_lazy_load = no 
+	}
+	progressbartype = {
+		name = "GFX_SCW_genericbar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		size = { x = 480 y = 20 }
+		textureFile1 = "gfx/interface/DOP_SCW/Progressbar_full.dds"
+		textureFile2 = "gfx/interface/DOP_SCW/Progressbar_blank.dds"
+		effectFile = "gfx/FX/progress.lua"
+	}
+}

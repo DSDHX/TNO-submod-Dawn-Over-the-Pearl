@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- #BOP_BUTTON: "[GetBOPbuttonname]" 
+ BOP_BUTTON: "[GetBOPbuttonname]" 
  BOP_BUTTON: "全球贸易"
  BOP_BUTTON_GCG: "外交事务"
  BOP_TOOLTIP:1 "[GetBOPbuttonintro]"

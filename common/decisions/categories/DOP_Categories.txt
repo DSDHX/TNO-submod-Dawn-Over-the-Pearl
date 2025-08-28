@@ -1,0 +1,4 @@
+GNG_SiliconCW_category = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	allowed = { original_tag = GNG }
+	visible = { has_country_flag = DOP_SCW_enabled }
+}

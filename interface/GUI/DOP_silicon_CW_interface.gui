@@ -1,0 +1,243 @@
+guiTypes = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	extendedScrollbarType = {
+		name = "top_horizontal_slider"
+		position = { x = 0 y = -6 }
+		size = { width = 18 height = 18 }
+		tileSize = { width = 12 height = 12}
+		maxValue =1
+		minValue =0
+		stepSize =0.01
+		startValue = 0
+		horizontal = yes
+		orientation = upper_left
+		origo = upper_left
+
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_scrollbar_horisontal_bg"
+		}
+
+		slider = {
+			name = "Slider"
+			quadTextureSprite = "GFX_scroll_drager"
+			position = { x=0 y = -2 }
+		}
+
+		track = {
+			name = "Track"
+			quadTextureSprite = "GFX_scroll_track_horisontal"
+			position = { x=0 y = 3 }
+			alwaystransparent = yes
+		}
+
+		decreaseButton = {
+			name = "Decrease"
+			quadTextureSprite = "GFX_scroll_left"
+			position = { x=3 y = 1 }
+		}
+
+		increaseButton = {
+			name = "Increase"
+			quadTextureSprite = "GFX_scroll_right"
+			position = { x=-19 y = -17 }
+		}
+	}
+
+	containerWindowType = {
+		name = "DOP_SCW_base_container"
+		position = { x = 25 y = 19 }
+		size = { height = 618 width = 500 }
+
+		### Top Bar ###
+		containerWindowType = {
+			name = "DOP_SCW_TOPBAR"
+			position = { x = 41 y = -24 }
+			
+			# Title
+			instantTextBoxType = {
+				name = "GlobalConflicts_GUI_Title"
+				position = { x = 0 y = 0 }
+				font = "vt323_72_WT_outline"
+				text = [GetGCname]
+				maxWidth = 857
+				maxHeight = 58
+				format = center
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+
+			# Info Button
+			iconType = {
+				name = "DOP_SCW_GUI_InfoBtn"
+				spriteType = "GFX_ParliamentMechanic_InfoButton"
+				position = { x = 901 y = 29 }
+				pdx_tooltip = "DOP_SCW_info_icon_tt"
+				pdx_tooltip_delayed = "DOP_SCW_info_icon_tt_delayed"
+			}
+		}
+		# Vertical Divider
+		iconType = {
+			name = "GlobalConflicts_GUI_VerticalDivider"
+			position = { x = 513 y = 67 }
+			spriteType = "GFX_BoP_Base_Vertical_Divider_Full"
+		}
+		# Decisions Divider
+		iconType = {
+			name = "GlobalConflicts_GUI_DecisionDivider"
+			position = { x = 529 y = 154 }
+			spriteType = "GFX_BoP_Decision_Divider"
+		}
+
+		iconType = {
+			name = "tabs"
+			spriteType = "GFX_fopo_crisis_box"
+			position = { x = 2 y = 72 }
+			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tabs_container"
+			horizontalScrollbar = "top_horizontal_slider"
+			size = { width = 500 height = 90 }
+			position = { x = 520 y = 70 }
+			margin = { top = 0 left = 0 bottom = 0 right = 0 }
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+	
+			gridboxtype = {
+				name = "decision_tabs"
+				position = { x = 0 y = 15 }
+				size = { width = 480 height = 45 }
+				slotsize = { width = 120 height = 45 }
+				add_horizontal = yes
+			}
+		}
+		buttonType = {
+			name = "production_btn"
+			spriteType = "GFX_pro_button"
+			position = { x = 12 y = 120 }
+			pdx_tooltip = manage_production_tt
+		}
+		buttonType = {
+			name = "competitiveness_btn"
+			spriteType = "GFX_con_button"
+			position = { x = 256 y = 120 }
+			pdx_tooltip = manage_competitiveness_tt
+		}	
+		iconType = {
+			name = "conflict_status"
+			spriteType = "GFX_fopo_conflict_status"
+			position = { x = 12 y = 82 }
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "conflict_title"
+			text = SCW_title_name
+			position = { x = 12 y = 83 }
+			maxwidth = 480
+			maxheight = 30
+			format = center
+			vertical_alignment = center
+			font = "aldrich_22_outline"
+		}
+		containerWindowType = {
+			name = "conflict_guis_container"
+			position = { x = 4 y = 112 }
+		}
+	}
+	
+	containerWindowType = {
+		name = "DOP_Switch_between_decisions_tab"
+		position = { x = -40 y = 0 }
+		
+		iconType = {
+			name = "tab_bg"
+			spriteType = "GFX_fopo_tab_bg"
+			position = { x = -129 y = 0 }
+		}
+		buttonType = {
+			name = "tab"
+			spriteType = "GFX_fopo_tab"
+			position = { x = -129 y = 0 }
+			pdx_tooltip = "SCW_desicion_tab_name"
+		}
+		buttonType = {
+			name = "decision_tab_icon"
+			spriteType = "GFX_fopo_indonesia_icon_us"
+			position = { x = -125 y = 2 }
+			pdx_tooltip = "SCW_desicion_tab_name"
+		}
+	}
+	
+	containerWindowType = {
+		name = "DOP_SCW_disabled"
+		position = { x = 29 y = 131 }
+		
+		iconType = {
+			name = "globe_animation"
+			position = { x = 69 y = 23 }
+			spriteType = "GFX_fopo_globe_animation"
+		}
+		
+		instantTextBoxType = {
+			name = "no_conflicts_active_text"
+			text = SCW_current_not_enabled
+			maxwidth = 359
+			maxheight = 30
+			position = { x = 69 y = 398 }
+			font = "aldrich_48_outline"
+			format = center
+			text_color_code = G
+		}
+		
+		instantTextBoxType = {
+			name = "no_conflicts_active_poem_title"
+			position = { x = 530 y = -32 }
+			text = SCW_current_not_enabled_intro
+			font = "aldrich_32_outline"
+			maxwidth = 500
+			maxheight = 64
+			vertical_alignment = center
+			text_color_code = D
+		}
+		
+		iconType = {
+			name = "empty_fopo_block"
+			spriteType = "GFX_fopo_empty_fopo_block"
+			position = { x = 525 y = 44 }
+		}
+		
+		instantTextBoxType = {
+			name = "no_conflicts_active_poem"
+			position = { x = 530 y = 58 }
+			text = SCW_current_not_enabled_intro_content
+			font = "aldrich_22_outline"
+			maxwidth = 500
+			text_color_code = L
+		}
+	}
+	containerWindowType = {
+		name = "DOP_SCW_generic_topbar"
+		position = { x = 29 y = 131 }
+		size = { width = 496 height = 506 }
+
+		iconType = {
+			name = "seal"
+			position = { x = 98 y = 75 }
+		}
+
+		instantTextBoxType = {
+			name = "fopo_desc"
+			position = { x = 8 y = 10 }
+			text = fopo_desc_text
+			font = "aldrich_18_outline"
+			maxWidth = 480
+			maxHeight = 500
+			alwaystransparent = yes
+		}
+	}
+	
+}

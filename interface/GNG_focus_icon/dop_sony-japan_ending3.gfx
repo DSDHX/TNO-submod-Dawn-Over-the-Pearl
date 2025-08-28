@@ -1,0 +1,229 @@
+spriteTypes = {
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_falling_pices"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_falling_pices.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_falling_pices_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_falling_pices.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_falling_pices.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_falling_pices.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+    
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_show_the_fang"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_show_the_fang.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_show_the_fang_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_show_the_fang.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_show_the_fang.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_show_the_fang.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fujitsu_s_ridiculous"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_fujitsu_s_ridiculous.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_fujitsu_s_ridiculous_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_fujitsu_s_ridiculous.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_fujitsu_s_ridiculous.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_fujitsu_s_ridiculous.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_the_lord_of_east"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_the_lord_of_east.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_the_lord_of_east_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_the_lord_of_east.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_the_lord_of_east.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_the_lord_of_east.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_guangdong_manchuria_friendship_agreement"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_guangdong_manchuria_friendship_agreement.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_guangdong_manchuria_friendship_agreement_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_guangdong_manchuria_friendship_agreement.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_guangdong_manchuria_friendship_agreement.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_guangdong_manchuria_friendship_agreement.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_who_is_the_chief_executive"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_who_is_the_chief_executive.dds"
+	}
+
+	##Icon Shine For: 
+	SpriteType = {
+		name = "GFX_GNG_focus_who_is_the_chief_executive_shine"
+		texturefile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_who_is_the_chief_executive.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_who_is_the_chief_executive.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goal/sonyjapan_ending3/GFX_GNG_focus_who_is_the_chief_executive.dds"
+			animationtexturefile = "gfx/interface/goal/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+}
