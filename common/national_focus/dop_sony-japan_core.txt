@@ -1762,6 +1762,24 @@ shared_focus = {
     }
 }
 
+shared_focus = {
+	id = DOP_GNG_Guangdong_Modernized
+    icon = DOP_GNG_Guangdong_Modernized_gfx
+    relative_position_id = DOP_GNG_Industrial_Upgrade
+    x = 0
+    y = 7
+    cost = 1.000
+    prerequisite = { # 前置组 22
+        focus = DOP_GNG_Not_Only_Pearl_River_Delta
+    }
+    prerequisite = { # 前置组 23
+        focus = DOP_GNG_Wealthy_Citizens
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Guangdong_Modernized"
+    }
+}
+
 # 新村建设：
 shared_focus = {
     id = DOP_GNG_Build_New_villages
@@ -2766,7 +2784,7 @@ shared_focus =
 	}
 	prerequisite =
 	{
-		focus = GNG_focus_not_just_three_pearls
+		focus = DOP_GNG_Guangdong_Modernized
 	}
 	prerequisite =
 	{
