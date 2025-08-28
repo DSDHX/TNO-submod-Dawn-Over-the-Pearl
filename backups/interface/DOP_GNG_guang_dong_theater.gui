@@ -43,15 +43,6 @@ guiTypes = {
 				maxWidth = 240
 				format = center
 			}
-
-			instantTextboxType = {
-				name = "aaaaaa"
-				position = { x = 140 y = 348 }
-				font = "aldrich_32_outline"
-				text = "[?the_current_show_var]"
-				maxWidth = 240
-				format = center
-			}
 		}
 		
 		##日本态度

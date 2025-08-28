@@ -22,12 +22,6 @@ guiTypes = {
 				position = { x = 17 y = -10 }
 				alwaystransparent = yes
 			}
-			#iconType = { 有马你就来
-			#	name = "GNG_guangdong_theater_bg_text"
-			#	spriteType = "GFX_GNG_guangdong_theater_bg_text"
-			#	position = { x = 17 y = -10 }
-			#	alwaystransparent = yes
-			#}
 
 			iconType = {
 				name ="the_current_show_icon"
