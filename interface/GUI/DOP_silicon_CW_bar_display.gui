@@ -6,7 +6,7 @@ guiTypes = {
         size = { width = 496 height = 506 }
         instantTextboxType = {
             name = "scw_logo_1"
-            position = { x = 10 y = 9 }
+            position = { x = 20 y = -20 }
 			borderSize = {x = 0 y = 0}
 			font = "aldrich_32_outline"
 			text = [Getscw_logo_1]
@@ -17,7 +17,7 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_1_o"
-            position = { x = 10 y = 9 }
+            position = { x = 80 y = 9 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
             pdx_tooltip = SCWINFO_1
@@ -25,7 +25,7 @@ guiTypes = {
 
         instantTextboxType = {
             name = "scw_logo_2"
-            position = { x = 10 y = 89 }
+            position = { x = 20 y = 60 }
 			borderSize = {x = 0 y = 0}
 			font = "aldrich_32_outline"
 			text = [Getscw_logo_2]
@@ -36,14 +36,14 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_2_o"
-            position = { x = 10 y = 89 }
+            position = { x = 80 y = 89 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
             pdx_tooltip = SCWINFO_2
         }     
         instantTextboxType = {
             name = "scw_logo_3"
-            position = { x = 10 y = 169 }
+            position = { x = 20 y = 140 }
 			borderSize = {x = 0 y = 0}
 			font = "aldrich_32_outline"
 			text = [Getscw_logo_3]
@@ -54,7 +54,7 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_3_o"
-            position = { x = 10 y = 169 }
+            position = { x = 80 y = 169 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
             pdx_tooltip = SCWINFO_3
@@ -62,7 +62,7 @@ guiTypes = {
 
         instantTextboxType = {
             name = "scw_logo_4"
-            position = { x = 10 y = 249 }
+            position = { x = 20 y = 220 }
 			borderSize = {x = 0 y = 0}
 			font = "aldrich_32_outline"
 			text = [Getscw_logo_4]
@@ -73,7 +73,7 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_4_o"
-            position = { x = 10 y = 249 }
+            position = { x = 80 y = 249 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
             pdx_tooltip = SCWINFO_4
@@ -81,7 +81,7 @@ guiTypes = {
 
         instantTextboxType = {
             name = "scw_logo_5"
-            position = { x = 10 y = 329 }
+            position = { x = 20 y = 300 }
 			borderSize = {x = 0 y = 0}
 			font = "aldrich_32_outline"
 			text = [Getscw_logo_5]
@@ -92,7 +92,7 @@ guiTypes = {
         } 
         iconType = {
             name = "scw_bar_5_o"
-            position = { x = 10 y = 329 }
+            position = { x = 80 y = 329 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
             pdx_tooltip = "SCWINFO_5"

@@ -1,7 +1,6 @@
 ﻿l_simp_chinese:
  BOP_BUTTON_GNG: "全球贸易"
  BOP_BUTTON_GCG: "外交事务"
- BOP_BUTTON: "[GetBOPbuttonname]" 
  BOP_TOOLTIP_GNG: "§F点击管理§Y我国世界贸易政策§!。§!"
  TNO_SiliconCW_GUI_Title: "硅芯冷战"
  TNO_BoP_AddTab_SCW_tt: "§B全球贸易§!菜单中的§W[?TabName.GetTokenLocalizedKey]§!现已可用。\n"
@@ -17,7 +16,7 @@
  SCW_desicion_tab_name: "§Y[Get_SCW_desicion_tab_name]§!"
  SCW_title_name: "§D[Get_SCW_desicion_tab_title_name]§!"
  SCW_desicion_tab_name_0: "未选中"
- SCW_desicion_tab_name_1: "硅芯冷战：产量&产品竞争力"
+ SCW_desicion_tab_name_1: "晶色竞速"
  SCW_desicion_tab_name_2: "特殊研发项目"
  SCW_desicion_tab_name_blank: "未定义-§F如果您在正常游戏中看到，请向制作组汇报§!"
  GNG_dop_debug_enable_BOP: "§MDOP调试§!：启用芯片冷战GUI"
