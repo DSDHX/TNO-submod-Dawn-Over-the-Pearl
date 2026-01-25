@@ -17,10 +17,10 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_1_o"
-            position = { x = 80 y = 9 }
+            position = { x = 80 y = 17 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
-            pdx_tooltip = SCWINFO_1
+            pdx_tooltip = SCWINFO_1_ProduceSpeedIntro
         }     
 
         instantTextboxType = {
@@ -36,10 +36,10 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_2_o"
-            position = { x = 80 y = 89 }
+            position = { x = 80 y = 97 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
-            pdx_tooltip = SCWINFO_2
+            pdx_tooltip = SCWINFO_2_ProduceSpeedIntro
         }     
         instantTextboxType = {
             name = "scw_logo_3"
@@ -54,10 +54,10 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_3_o"
-            position = { x = 80 y = 169 }
+            position = { x = 80 y = 177 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
-            pdx_tooltip = SCWINFO_3
+            pdx_tooltip = SCWINFO_3_ProduceSpeedIntro
         }     
 
         instantTextboxType = {
@@ -73,10 +73,10 @@ guiTypes = {
         }
         iconType = {
             name = "scw_bar_4_o"
-            position = { x = 80 y = 249 }
+            position = { x = 80 y = 257 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
-            pdx_tooltip = SCWINFO_4
+            pdx_tooltip = SCWINFO_4_ProduceSpeedIntro
         }     
 
         instantTextboxType = {
@@ -92,10 +92,10 @@ guiTypes = {
         } 
         iconType = {
             name = "scw_bar_5_o"
-            position = { x = 80 y = 329 }
+            position = { x = 80 y = 337 }
             quadTextureSprite = "GFX_SCW_genericbar"
             frame = 50
-            pdx_tooltip = "SCWINFO_5"
+            pdx_tooltip = SCWINFO_5_ProduceSpeedIntro
         }     
     }
 }
