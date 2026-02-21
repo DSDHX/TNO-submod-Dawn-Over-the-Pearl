@@ -26,7 +26,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -48,7 +48,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -182,7 +182,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		
+	#uncompleted
 	}
 }
 
@@ -204,7 +204,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		
+	#uncompleted
 	}
 }
 
@@ -226,7 +226,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		
+	#uncompleted
 	}
 }
 
@@ -252,7 +252,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -278,7 +278,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -309,7 +309,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -331,7 +331,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -353,7 +353,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -375,7 +375,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -397,7 +397,7 @@ shared_focus =
 
 	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -423,7 +423,7 @@ shared_focus =
 
  	completion_reward =
 	{
-	
+	#uncompleted
 	}
 }
 
@@ -445,7 +445,7 @@ shared_focus =
 
 	completion_reward =
 	{
-		
+	#uncompleted
 	}
 }
 
@@ -467,7 +467,7 @@ shared_focus =
 
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -580,7 +580,7 @@ shared_focus =
 	
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -606,7 +606,7 @@ shared_focus =
 
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -632,7 +632,7 @@ shared_focus =
 
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -692,7 +692,7 @@ shared_focus =
 
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -725,7 +725,7 @@ shared_focus =
 
 	completion_reward =
 	{
-
+	#uncompleted
 	}
 }
 
@@ -842,6 +842,6 @@ shared_focus =
 
 	completion_reward =
 	{
-		
+	#uncompleted
 	}
 }

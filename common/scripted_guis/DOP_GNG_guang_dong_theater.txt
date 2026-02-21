@@ -17,6 +17,7 @@ scripted_gui = {
 			}
 		}
 		effects = {
+			#passed
 		}
 	}
 }

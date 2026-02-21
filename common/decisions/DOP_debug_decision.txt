@@ -11,8 +11,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_core_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_end1_lee = {
 		allowed = {
@@ -26,8 +25,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending1_lee_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_end2_ibuka = {
 		allowed = {
@@ -41,8 +39,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending2_ibuka_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_end3_hitachi = {
 		allowed = {
@@ -56,8 +53,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending3_hitachi_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_end4_return1962 = {
 		allowed = {
@@ -71,8 +67,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending4_return1962_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_end5_second_riot = {
 		allowed = {
@@ -86,8 +81,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending5_second_roit_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_load_reconsturuction = {
 		allowed = {
@@ -101,8 +95,7 @@ GNG_debug_category = {
 			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_reconsturuction_tree
 		}
-		available = {
-		}
+		
 	}
 	GNG_dop_debug_enable_BOP = {
 		allowed = {
