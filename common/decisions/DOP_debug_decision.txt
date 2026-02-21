@@ -8,7 +8,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_core_tree
 		}
 		
@@ -22,7 +21,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending1_lee_tree
 		}
 		
@@ -36,7 +34,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending2_ibuka_tree
 		}
 		
@@ -50,7 +47,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending3_hitachi_tree
 		}
 		
@@ -64,7 +60,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending4_return1962_tree
 		}
 		
@@ -78,7 +73,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_ending5_second_roit_tree
 		}
 		
@@ -92,7 +86,6 @@ GNG_debug_category = {
 			has_country_flag = GNG_show_debug_decisions
 		}
 		complete_effect = {
-			custom_effect_tooltip = lomitia_tt
 			load_focus_tree = dop_sonyjapan_reconsturuction_tree
 		}
 		

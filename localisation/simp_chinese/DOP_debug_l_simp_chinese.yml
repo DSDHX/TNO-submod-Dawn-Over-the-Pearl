@@ -1,7 +1,6 @@
 ﻿l_simp_chinese:
 GNG_dop_debug_remove_faction: "§MDOP调试§!：退出阵营"
 GNG_dop_debug_load_lomitia: "§MDOP调试§!：加载倒向£GNG_japanese_nation_texticon §j日本§!战后国策"
-lomitia_tt: "敬请期待！将在下个版本推出——告诉你不要看啦——"
 GNG_dop_debug_load_opening: "§MDOP调试§!：加载DOP开局国策树"
 GNG_dop_debug_load_reconsturuction: "§MDOP调试§!：加载重建国策树"
 GNG_dop_debug_load_end1_lee: "§MDOP调试§!：加载§V盛田§!-§C李§!结局国策树"
