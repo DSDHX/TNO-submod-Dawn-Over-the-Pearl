@@ -9,7 +9,7 @@ spriteTypes = {
 	}
 	corneredTileSpriteType = {
 		name = "GFX_fronticons_dop"
-		texturefile = "gfx/interface/DOP_Frontend_Background_picture.dds"
+		texturefile = "gfx/interface/DOP_frontend_background_picture.dds"
 		borderSize = { x=0 y= 0 }
 		size = {  x=934 y= 375 }
 		tilingCenter = no
@@ -17,6 +17,6 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_frontend_DOP_backpic"
-		texturefile = "gfx/interface/DOP_Frontend_Background_picture.dds"
+		texturefile = "gfx/interface/DOP_frontend_background_picture.dds"
 	}
 }
