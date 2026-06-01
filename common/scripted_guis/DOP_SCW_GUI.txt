@@ -13,7 +13,12 @@ scripted_gui = {
 		window_name = "DOP_SCW_bar_display"
 		context_type = player_context
 		parent_window_name = powerbalanceview
-		visible = { check_variable = { selected_decision_tabs_id = 1 } }
+		visible = { 
+			AND = {
+				check_variable = { selected_decision_tabs_id = 1 } 
+				check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			}
+		}
 		ai_enabled = { always = no }
 		properties = {
 			scw_bar_1_o = {

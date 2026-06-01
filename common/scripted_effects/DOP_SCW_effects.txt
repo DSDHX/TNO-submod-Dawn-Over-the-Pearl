@@ -1,5 +1,5 @@
 # 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
-DOP_add_tab = {
+GNG_SCW_add_tab = {
 	custom_effect_tooltip = DOP_SCW_add_tab_tt
 	if = {
 		limit = { NOT = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } } }
@@ -15,7 +15,7 @@ DOP_add_tab = {
 }
 
 # Removes `conflict_id` from the list of active conflicts
-DOP_remove_tab = {
+GNG_SCW_remove_tab = {
 	custom_effect_tooltip = DOP_SCW_remove_tab_tt
 	if = {
 		limit = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } }
@@ -35,8 +35,8 @@ DOP_remove_tab = {
 
 ## Enables a tag in the BoP GNGver GUI
 # Arguments: TabName (token)
-TNO_BoP_SCW_AddTab = {
-	custom_effect_tooltip = TNO_BoP_AddTab_SCW_tt
+TNO_BoP_GNG_AddTab = {
+	custom_effect_tooltip = TNO_BoP_AddTab_GNG_tt
 	add_to_array = { TNO_BoP_Tabs = TabName }
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
 	if = {
@@ -54,7 +54,7 @@ TNO_BoP_SCW_AddTab = {
 }
 
 # Arguments: TabName (token)
-TNO_BoP_SCW_RemoveTab = {
+TNO_BoP_GNG_RemoveTab = {
 	remove_from_array = { TNO_BoP_Tabs = TabName }
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
 	if = {
@@ -67,12 +67,17 @@ TNO_BoP_SCW_RemoveTab = {
 	}
 }
 
-GNG_BOP_Initalize = {
+GNG_BOP_SCW_Initialize = {
 	set_temp_variable = { TabName = token:BoP_Tab_DOPSiliconCW }
-	TNO_BoP_SCW_AddTab = yes
+	TNO_BoP_GNG_AddTab = yes
 	set_country_flag = DOP_SCW_off
 	set_country_flag = DOP_SCW_enabled
 	GNG_SCW_Initialize = yes
+}
+
+GNG_BOP_GSA_Initialize = {
+	set_temp_variable = { TabName = token:BoP_Tab_DOPScienceAcademy }
+	TNO_BoP_GNG_AddTab = yes
 }
 
 GNG_SCW_Initialize ={

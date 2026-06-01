@@ -2,7 +2,7 @@ defined_text = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了
 	name = GetBOPbuttonname
 	text = {
 		trigger = {
-			Tag = GNG
+			tag = GNG
 		}
 		localization_key = BOP_BUTTON_GNG
 	}
@@ -14,7 +14,7 @@ defined_text = {
 	name = GetBOPbuttonintro
 	text = {
 		trigger = {
-			Tag = GNG
+			tag = GNG
 		}
 		localization_key = BOP_TOOLTIP_GNG
 	}
@@ -26,7 +26,7 @@ defined_text = {
 	name = GetGCname
 	text = {
 		trigger = {
-			Tag = GNG
+			tag = GNG
 		}
 		localization_key = TNO_SiliconCW_GUI_Title
 	}
