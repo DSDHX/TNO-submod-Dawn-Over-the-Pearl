@@ -43,13 +43,107 @@ spriteTypes = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了�
 		textureFile = "gfx/interface/DOP_SCW/pro_button.dds"
 		legacy_lazy_load = no 
 	}
+	spriteType = {
+		name = "GFX_fopo_kanton_seal"
+		textureFile = "gfx/interface/bop/kanton_seal.dds"
+	}
+	spriteType = {
+		name = "GFX_fopo_silicon_color_speed_race"
+		textureFile = "gfx/interface/bop/bop_decision_selection_silicon_color_speed_race.dds"
+	}
+	spriteType = {
+		name = "GFX_fopo_production_chain"
+		textureFile = "gfx/interface/bop/bop_decision_selection_production_chain.dds"
+	}
+	spriteType = {
+		name = "GFX_GSA_bg_on"
+		textureFile = "gfx/interface/bop/GSA_display_background.dds"
+	}
+	spriteType = {
+		name = "GFX_GSA_bg_off"
+		textureFile = "gfx/interface/bop/GSA_display_background_not_on.dds"
+	}
+	spriteType = {
+		name = "GFX_GSA_kanton_shenkansen_research"
+		textureFile = "gfx/interface/bop/kanton_shenkansen_research.dds"
+	}
+	spriteType = {
+		name = "GFX_GSA_manage_research"
+		textureFile = "gfx/interface/bop/GSA_manage_research.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_bg"
+		textureFile = "gfx/interface/bop/GCW_Chain_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_speedrun_bg"
+		textureFile = "gfx/interface/bop/GCW_speedrun_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn1_off"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn1_off.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn1_selected"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn1_selected.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn2_off"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn2_off.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn2_selected"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn2_selected.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn3_off"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn3_off.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn3_selected"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn3_selected.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn4_off"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn4_off.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn4_selected"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn4_selected.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn5_off"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn5_off.dds"
+	}
+	spriteType = {
+		name = "GFX_GCW_chain_btn5_selected"
+		textureFile = "gfx/interface/bop/GCW_Chain_btn5_selected.dds"
+	}
+	# progressbartype = {
+	# 	name = "GFX_SCW_genericbar"
+	# 	color = { 1.0 1.0 1.0 }
+	# 	colortwo = { 1.0 1.0 1.0 }
+	# 	size = { x = 480 y = 20 }
+	# 	textureFile1 = "gfx/interface/DOP_SCW/Progressbar_full.dds"
+	# 	textureFile2 = "gfx/interface/DOP_SCW/Progressbar_blank.dds"
+	# 	effectFile = "gfx/FX/progress.lua"
+	# }
 	progressbartype = {
-		name = "GFX_SCW_genericbar"
-		color = { 1.0 1.0 1.0 }
-		colortwo = { 1.0 1.0 1.0 }
-		size = { x = 480 y = 20 }
-		textureFile1 = "gfx/interface/DOP_SCW/Progressbar_full.dds"
-		textureFile2 = "gfx/interface/DOP_SCW/Progressbar_blank.dds"
+		name = "GFX_GCW_percentage_progress_bar"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { x = 22 y = 418 }
+		textureFile1 = "gfx/interface/bop/GCW_percentage_bar_full.dds"
+		textureFile2 = "gfx/interface/bop/GCW_percentage_bar_empty_clear.dds"
+		effectFile = "gfx/FX/progress_vertical.lua"
+	}
+	progressbartype = {
+		name = "GFX_GSA_research_progress_bar"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { x = 243 y = 37 }
+		textureFile1 = "gfx/interface/bop/GSA_research_prgbarfull.dds"
+		textureFile2 = "gfx/interface/bop/GSA_research_prgbarempty.dds"
 		effectFile = "gfx/FX/progress.lua"
 	}
 }

@@ -23,8 +23,7 @@ guiTypes = {
 		name = "owned_dlc_item"
 		size = { width = 50 height = 50 }
 		
-		buttonType =
-		{
+		buttonType = {
 			position = { x = -230 y = 0 }
 			name ="dlc_button"
 			spriteType = "GFX_frontend_banner_dlc018"
@@ -62,8 +61,7 @@ guiTypes = {
 		name = "unowned_dlc_item"
 		size = { width = 50 height = 50 }
 		
-		buttonType =
-		{
+		buttonType = {
 			position = { x = -230 y = 0 }
 			name ="dlc_button"
 			spriteType = "GFX_frontend_banner_dlc018"

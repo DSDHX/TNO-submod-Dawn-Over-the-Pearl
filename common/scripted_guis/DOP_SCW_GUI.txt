@@ -1,9 +1,9 @@
 scripted_gui = {
 	# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
-	GNG_SG_politics_bop_cover = {
+	DOP_bop_cover = {
 		context_type = player_context
 		parent_window_token = politics_tab
-		window_name = "GNG_SG_politics_bop_cover"
+		window_name = "DOP_bop_cover"
 		visible = {
 			has_any_power_balance = yes
 		}
@@ -22,19 +22,19 @@ scripted_gui = {
 		ai_enabled = { always = no }
 		properties = {
 			scw_bar_1_o = {
-				frame = scw_USA_percentage
+				frame = USA_percentage_for_bar
 			}
 			scw_bar_2_o = {
-				frame = scw_JAP_percentage
+				frame = JAP_percentage_for_bar
 			}
 			scw_bar_3_o = {
-				frame = scw_GER_percentage
+				frame = GER_percentage_for_bar
 			}
 			scw_bar_4_o = {
-				frame = scw_ITA_percentage
+				frame = ITA_percentage_for_bar
 			}
 			scw_bar_5_o = {
-				frame = scw_GNG_percentage
+				frame = GNG_percentage_for_bar
 			}
 		}
 	}
@@ -64,11 +64,75 @@ scripted_gui = {
 				clear_array = SCW_the_gui_showing_now
 				add_to_array = { SCW_the_gui_showing_now = allowed_decision_tab_id }
 			}
-			production_btn_click = {
-				set_variable = { DOP_SCW_selected_page = 1 }
+			chain_btn_1_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chain_part_selected = 1
+						}
+					}
+					set_variable = { chain_part_selected = 0 }
+				}
+				else = {
+					set_variable = { chain_part_selected = 0 }
+					set_variable = { chain_part_selected = 1 }
+				}
 			}
-			competitiveness_btn_click = {
-				set_variable = { DOP_SCW_selected_page = 2 }
+			chain_btn_2_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chain_part_selected = 2
+						}
+					}
+					set_variable = { chain_part_selected = 0 }
+				}
+				else = {
+					set_variable = { chain_part_selected = 0 }
+					set_variable = { chain_part_selected = 2 }
+				}
+			}
+			chain_btn_3_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chain_part_selected = 3
+						}
+					}
+					set_variable = { chain_part_selected = 0 }
+				}
+				else = {
+					set_variable = { chain_part_selected = 0 }
+					set_variable = { chain_part_selected = 3 }
+				}
+			}
+			chain_btn_4_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chain_part_selected = 4
+						}
+					}
+					set_variable = { chain_part_selected = 0 }
+				}
+				else = {
+					set_variable = { chain_part_selected = 0 }
+					set_variable = { chain_part_selected = 4 }
+				}
+			}
+			chain_btn_5_click = {
+				if = {
+					limit = {
+						check_variable = {
+							chain_part_selected = 5
+						}
+					}
+					set_variable = { chain_part_selected = 0 }
+				}
+				else = {
+					set_variable = { chain_part_selected = 0 }
+					set_variable = { chain_part_selected = 5 }
+				}
 			}
 		}
 
@@ -84,12 +148,6 @@ scripted_gui = {
 					set_temp_variable = { fopo_button_tab_frame = 1 }
 				}
 			}
-			production_btn_visible = {
-				check_variable = {selected_decision_tabs_id = 1}
-			}
-			competitiveness_btn_visible = {
-				check_variable = {selected_decision_tabs_id = 1}
-			}
 			conflict_status_visible = {
 				always = yes
 			}
@@ -98,6 +156,62 @@ scripted_gui = {
 			}
 			info_tab_visible = {
 				TNO_fopo_show_info_tab = yes
+			}
+			chain_bg_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			GCW_gng_per_bar_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_usa_per_bar_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_ita_per_bar_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_ger_per_bar_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_jap_per_bar_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			speedrun_bg_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			chain_btn_1_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_2_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_3_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_4_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_5_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_1_on_visible = {
+				check_variable = { chain_part_selected = 1 }
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_2_on_visible = {
+				check_variable = { chain_part_selected = 2 }
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_3_on_visible = {
+				check_variable = { chain_part_selected = 3 }
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_4_on_visible = {
+				check_variable = { chain_part_selected = 4 }
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
+			chain_btn_5_on_visible = {
+				check_variable = { chain_part_selected = 5 }
+				check_variable = { selected_decision_tabs_id = 2 }
 			}
 		}
 
@@ -110,6 +224,21 @@ scripted_gui = {
 			}
 			decision_tab_icon = {
 				image = "[Get_SCW_desicion_tab_icon]"
+			}
+			GCW_gng_per_bar = {
+				frame = var:GNG_percentage_for_bar
+			}
+			GCW_usa_per_bar = {
+				frame = var:USA_percentage_for_bar
+			}
+			GCW_ita_per_bar = {
+				frame = var:ITA_percentage_for_bar
+			}
+			GCW_ger_per_bar = {
+				frame = var:GER_percentage_for_bar
+			}
+			GCW_jap_per_bar = {
+				frame = var:JAP_percentage_for_bar
 			}
 		}
 		
@@ -139,6 +268,9 @@ scripted_gui = {
 			info_tab_visible = {
 				DOP_SCW_show_info_box = yes
 			}
+			seal_visible = {
+				always = no
+			}
 		}
 
 		properties = {
@@ -148,4 +280,45 @@ scripted_gui = {
 		}
 	}
 	
+
+	DOP_GSA_base_container = {
+		window_name = "DOP_GSA_base_container"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+
+		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } }
+		ai_enabled = { always = no }
+		dynamic_lists = {
+
+		}
+		effects = {
+
+		}
+
+		triggers = {
+			GSA_bg_off_visible = {
+				check_variable = { GNG_GSA_research_on_now = 0 }
+			}
+			GSA_research_icon_visible = {
+				NOT = {
+					check_variable = { GNG_GSA_research_on_now = 0 }
+				}
+			}
+			GSA_research_progress_visible = {
+				NOT = {
+					check_variable = { GNG_GSA_research_on_now = 0 }
+				}
+			}
+		}
+
+		properties = {
+			GSA_research_icon = {
+				image = "[Get_GSA_research_icon]"
+			}
+			GSA_research_progress = {
+				frame = var:GNG_GSA_research_progress
+			}
+		}
+		
+	}
 }

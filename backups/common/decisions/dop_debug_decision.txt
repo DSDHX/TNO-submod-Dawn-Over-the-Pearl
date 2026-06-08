@@ -31,6 +31,7 @@ GNG_debug_category =
 		{
 			set_temp_variable = { decision_tabs_id = 1 }
 			DOP_add_tab = yes
+			GNG_SCW_Initialize = yes
 		}
 	}
 	GNG_dop_debug_enable_BOP_page_2 =

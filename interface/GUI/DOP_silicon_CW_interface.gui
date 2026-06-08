@@ -115,6 +115,120 @@ guiTypes = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整�
 				add_horizontal = yes
 			}
 		}
+
+		iconType = {
+			name = "chain_bg"
+			spriteType = "GFX_GCW_chain_bg"
+			position = { x = -20 y = -20 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "speedrun_bg"
+			spriteType = "GFX_GCW_speedrun_bg"
+			position = { x = 30 y = 140 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "GCW_gng_per_bar"
+			spriteType = "GFX_GCW_percentage_progress_bar"
+			position = { x = 81 y = 160 }
+			pdx_tooltip = "SCW_gng_per_bar_tt"
+		}
+
+		iconType = {
+			name = "GCW_usa_per_bar"
+			spriteType = "GFX_GCW_percentage_progress_bar"
+			position = { x = 161 y = 160 }
+			pdx_tooltip = "SCW_usa_per_bar_tt"
+		}
+
+		iconType = {
+			name = "GCW_ita_per_bar"
+			spriteType = "GFX_GCW_percentage_progress_bar"
+			position = { x = 241 y = 160 }
+			pdx_tooltip = "SCW_ita_per_bar_tt"
+		}
+
+		iconType = {
+			name = "GCW_ger_per_bar"
+			spriteType = "GFX_GCW_percentage_progress_bar"
+			position = { x = 321 y = 160 }
+			pdx_tooltip = "SCW_ger_per_bar_tt"
+		}
+
+		iconType = {
+			name = "GCW_jap_per_bar"
+			spriteType = "GFX_GCW_percentage_progress_bar"
+			position = { x = 401 y = 160 }
+			pdx_tooltip = "SCW_jap_per_bar_tt"
+		}
+
+		buttonType = {
+			name = "chain_btn_1"
+			spriteType = "GFX_GCW_chain_btn1_off"
+			position = { x = 200 y = 162 }
+			pdx_tooltip = "SCW_chain_btn_1_tt"
+		}
+		buttonType = {
+			name = "chain_btn_2"
+			spriteType = "GFX_GCW_chain_btn2_off"
+			position = { x = 50 y = 312 }
+			pdx_tooltip = "SCW_chain_btn_2_tt"
+		}
+		buttonType = {
+			name = "chain_btn_3"
+			spriteType = "GFX_GCW_chain_btn3_off"
+			position = { x = 199 y = 462 }
+			pdx_tooltip = "SCW_chain_btn_3_tt"
+		}
+		buttonType = {
+			name = "chain_btn_4"
+			spriteType = "GFX_GCW_chain_btn4_off"
+			position = { x = 350 y = 312 }
+			pdx_tooltip = "SCW_chain_btn_4_tt"
+		}
+		buttonType = {
+			name = "chain_btn_5"
+			spriteType = "GFX_GCW_chain_btn5_off"
+			position = { x = 349 y = 162 }
+			pdx_tooltip = "SCW_chain_btn_5_tt"
+		}
+		iconType = {
+			name = "chain_btn_1_on"
+			spriteType = "GFX_GCW_chain_btn1_selected"
+			position = { x = 200 y = 162 }
+			pdx_tooltip = "SCW_chain_btn_1_tt"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "chain_btn_2_on"
+			spriteType = "GFX_GCW_chain_btn2_selected"
+			position = { x = 50 y = 312 }
+			pdx_tooltip = "SCW_chain_btn_2_tt"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "chain_btn_3_on"
+			spriteType = "GFX_GCW_chain_btn3_selected"
+			position = { x = 199 y = 462 }
+			pdx_tooltip = "SCW_chain_btn_3_tt"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "chain_btn_4_on"
+			spriteType = "GFX_GCW_chain_btn4_selected"
+			position = { x = 350 y = 312 }
+			pdx_tooltip = "SCW_chain_btn_4_tt"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "chain_btn_5_on"
+			spriteType = "GFX_GCW_chain_btn5_selected"
+			position = { x = 349 y = 162 }
+			pdx_tooltip = "SCW_chain_btn_5_tt"
+			alwaystransparent = yes
+		}
 		# buttonType = {
 		# 	name = "production_btn"
 		# 	spriteType = "GFX_pro_button"
@@ -239,5 +353,106 @@ guiTypes = {# 致DOP制作组CODER：如果你没有完全把握你弄懂了整�
 			alwaystransparent = yes
 		}
 	}
-	
+	containerWindowType = {
+		name = "DOP_GSA_base_container"
+		position = { x = 25 y = 19 }
+		size = { height = 618 width = 500 }
+
+		### Top Bar ###
+		containerWindowType = {
+			name = "DOP_GSA_TOPBAR"
+			position = { x = 41 y = -24 }
+			
+			# Title
+			instantTextBoxType = {
+				name = "GlobalConflicts_GUI_Title"
+				position = { x = 0 y = 0 }
+				font = "vt323_72_WT_outline"
+				text = [GetGCname]
+				maxWidth = 857
+				maxHeight = 58
+				format = center
+				fixedsize = yes
+				alwaystransparent = yes
+			}
+
+			# Info Button
+			iconType = {
+				name = "DOP_SCW_GUI_InfoBtn"
+				spriteType = "GFX_ParliamentMechanic_InfoButton"
+				position = { x = 901 y = 29 }
+				pdx_tooltip = "DOP_GSA_info_icon_tt"
+				pdx_tooltip_delayed = "DOP_GSA_info_icon_tt_delayed"
+			}
+		}		
+
+		iconType = {
+			name = "GSA_research_icon"
+			spriteType = "GFX_GSA_kanton_shenkansen_research"
+			position = { x = -15 y = -15 }
+			alwaystransparent = yes
+		}
+
+
+		iconType = {
+			name = "GSA_research_progress"
+			spriteType = "GFX_GSA_research_progress_bar"
+			position = { x = 231 y = 168 }
+			pdx_tooltip = "GSA_research_progress_tt"
+			# alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "tabs"
+			spriteType = "GFX_fopo_crisis_box"
+			position = { x = 2 y = 72 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "GSA_bg"
+			spriteType = "GFX_GSA_bg_on"
+			position = { x = -15 y = -15 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "GSA_manage_research"
+			spriteType = "GFX_GSA_manage_research"
+			position = { x = 520 y = 70 }
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "GSA_bg_off"
+			spriteType = "GFX_GSA_bg_off"
+			position = { x = -15 y = -15 }
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "research_name"
+			position = { x = 105 y = 105 }
+			text = GSA_research_name
+			font = "aldrich_48_outline"
+			maxWidth = 300
+			maxHeight = 48
+			alwaystransparent = yes
+			format = center
+			fixedsize = yes
+		}
+
+		instantTextBoxType = {
+			name = "research_description"
+			position = { x = 240 y = 240 }
+			text = GSA_research_description
+			font = "aldrich_18_outline"
+			maxWidth = 230
+			maxHeight = 600
+			alwaystransparent = yes
+			format = upper_left
+			fixedsize = yes
+		}
+		
+	}
 }

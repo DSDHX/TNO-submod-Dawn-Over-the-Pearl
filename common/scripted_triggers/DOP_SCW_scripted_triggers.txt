@@ -6,3 +6,7 @@ DOP_SCW_show_info_box = {# 致DOP制作组CODER：如果你没有完全把握你
 		}
 	}
 }
+
+DOP_GSA_research_bar_empty = {
+	check_variable = { GNG_GSA_research_on_now = 0 }
+}

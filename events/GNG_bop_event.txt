@@ -1,0 +1,16 @@
+add_namespace = GNG_GSA_research_complete
+
+country_event = {
+	id = GNG_GSA_research_complete.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_GSA_research_complete.1" }
+	title = GNG_GSA_research_complete.1.t
+	desc = GNG_GSA_research_complete.1.desc
+	#picture = GFX_report_event_GNG_GSA_research_complete
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_GSA_research_complete.1.a
+	}
+}

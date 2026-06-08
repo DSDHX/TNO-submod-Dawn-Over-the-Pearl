@@ -1,0 +1,245 @@
+GNG_SiliconCW_category = {
+	GNG_dop_debug_gsa_start_test_research = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } 
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { research_id = 1 }
+			set_temp_variable = { research_count = 31200 }
+			GSA_research_init_effects = yes
+		}
+	}
+	GNG_dop_debug_gsa_research_plus = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } 
+			is_debug = yes
+		}
+		complete_effect = {
+			add_to_variable = {
+				GNG_GSA_research_progress = 20
+			}
+		}
+	}
+
+    GNG_SCW_add_GNG_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { GNG_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW } 
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 1 }
+			set_temp_variable = { change_t = 10 }
+			SCW_production_scale_increase = yes
+		}
+	}
+	
+	GNG_SCW_add_USA_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { USA_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW } 
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 2 }
+			set_temp_variable = { change_t = 10 }
+			SCW_production_scale_increase = yes
+		}
+	}
+	GNG_SCW_add_ITA_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { ITA_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 3 }
+			set_temp_variable = { change_t = 10 }
+			SCW_production_scale_increase = yes
+		}
+	}
+	GNG_SCW_add_GER_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { GER_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 4 }
+			set_temp_variable = { change_t = 10 }
+			SCW_production_scale_increase = yes
+		}
+	}
+	GNG_SCW_add_JAP_value = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { JAP_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 5 }
+			set_temp_variable = { change_t = 10 }
+			SCW_production_scale_increase = yes
+		}
+	}
+
+	GNG_SCW_add_GNG_com = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { GNG_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW } 
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 1 }
+			set_temp_variable = { change_t = 0.1 }
+			SCW_compatibility_increase = yes
+		}
+	}
+	
+	GNG_SCW_add_USA_com = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { USA_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW } 
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 2 }
+			set_temp_variable = { change_t = 0.1 }
+			SCW_compatibility_increase = yes
+		}
+	}
+	GNG_SCW_add_ITA_com = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { ITA_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 3 }
+			set_temp_variable = { change_t = 0.1 }
+			SCW_compatibility_increase = yes
+		}
+	}
+	GNG_SCW_add_GER_com = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { GER_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 4 }
+			set_temp_variable = { change_t = 0.1 }
+			SCW_compatibility_increase = yes
+		}
+	}
+	GNG_SCW_add_JAP_com = {
+		allowed = {
+			original_tag = GNG
+		}
+		available = {
+			check_variable = { JAP_percentage_for_bar < 90 }
+		}
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			is_debug = yes
+		}
+		complete_effect = {
+			set_temp_variable = { faction_id_t = 5 }
+			set_temp_variable = { change_t = 0.1 }
+			SCW_compatibility_increase = yes
+		}
+	}
+
+    #————————GCW————————
+    GNG_dop_show_chain_selected = {
+        allowed = {
+            original_tag = GNG
+        }
+        icon = GFX_decision_generic_document
+        visible = {
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+            check_variable = { selected_decision_tabs_id = 2 }
+        }
+        available = {
+            hidden_trigger = {
+                always = no
+            }
+        }
+    }
+}

@@ -27,13 +27,22 @@ defined_text = {
 	text = {
 		trigger = {
 			Tag = GNG
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
 		}
 		localization_key = TNO_SiliconCW_GUI_Title
+	}
+	text = {
+		trigger = {
+			Tag = GNG
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy }
+		}
+		localization_key = TNO_GSA_GUI_Title
 	}
 	text = {
 		localization_key = TNO_GlobalConflicts_GUI_Title
 	} 
 }
+
 defined_text = {
 	name = Get_fopo_seal
 	text = {
@@ -56,32 +65,61 @@ defined_text = {
 		trigger = { tag = IBR }
 		localization_key = "GFX_fopo_iberia_seal"
 	}
-	text = { # waiting on GFX
+	text = {
 		trigger = { tag = ENG }
 		localization_key = "GFX_fopo_britain_seal"
 	}
-	text = { # 现在没图，使用巴西的图
+	text = {
+		trigger = { tag = MEX }
+		localization_key = "GFX_fopo_mexico_seal"
+	}
+	text = {
+		trigger = { tag = ITA }
+		localization_key = "GFX_fopo_italy_seal"
+	}
+	text = {
+		trigger = { tag = TUR }
+		localization_key = "GFX_fopo_turkey_seal"
+	}
+	text = {
 		trigger = { tag = GNG }
-		localization_key = "GFX_fopo_brazil_seal"
+		localization_key = "GFX_fopo_kanton_seal"
 	}
 	text = {
 		localization_key = ""
 	}
 }
+
 defined_text = {
 	name = Get_SCW_desicion_tab_icon
 	text = { # 产量
 		trigger = { check_variable = { allowed_decision_tab_id = 1 }  }
-		localization_key = "GFX_fopo_malaysia_civil_war_icon_us"
+		localization_key = "GFX_fopo_silicon_color_speed_race"
 	}
-	text = { # 特殊研发
+	text = { # 产业链
 		trigger = { check_variable = { allowed_decision_tab_id = 2 }  }
-		localization_key = "GFX_fopo_iran_civil_war_icon_us"
+		localization_key = "GFX_fopo_production_chain"
 	}
 	text = { # 防溢出
 		localization_key = "GFX_fopo_iran_civil_war_icon_us_early"
 	}
 }
+
+defined_text = {
+	name = Get_GSA_research_icon
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now = 0 } }
+		localization_key = ""
+	}
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now = 1 } }
+		localization_key = "GFX_GSA_kanton_shenkansen_research"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
 defined_text = {
 	name = Get_SCW_desicion_tab_name
 	text = {
@@ -131,34 +169,193 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetGSAResearchNameTemp
+	text = {
+		trigger = {
+			check_variable = { research_id = 0 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			check_variable = { research_id = 1 }
+		}
+		localization_key = "GSA_research_name_1"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetGSAResearchName
+	text = {
+		trigger = {
+			check_variable = { GNG_GSA_research_on_now = 0 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_GSA_research_on_now = 1 }
+		}
+		localization_key = "GSA_research_name_1"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetGSAResearchDescription
+	text = {
+		trigger = {
+			check_variable = { GNG_GSA_research_on_now = 0 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_GSA_research_on_now = 1 }
+		}
+		localization_key = "GSA_research_desc_1"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = Get_SCW_chain_selected_name
+	text = {
+		trigger = {
+			check_variable = { chain_part_selected = 1 }
+		}
+		localization_key = "SCW_chain_part_1"
+	}
+	text = {
+		trigger = {
+			check_variable = { chain_part_selected = 2 }
+		}
+		localization_key = "SCW_chain_part_2"
+	}
+	text = {
+		trigger = {
+			check_variable = { chain_part_selected = 3 }
+		}
+		localization_key = "SCW_chain_part_3"
+	}
+	text = {
+		trigger = {
+			check_variable = { chain_part_selected = 4 }
+		}
+		localization_key = "SCW_chain_part_4"
+	}
+	text = {
+		trigger = {
+			check_variable = { chain_part_selected = 5 }
+		}
+		localization_key = "SCW_chain_part_5"
+	}
+	text = {
+		localization_key = "SCW_chain_part_none"
+	}
+}
+
+# defined_text = {
+# 	name = Get_SCW_chain_btn_1
+# 	text = {
+# 		trigger = {
+# 			NOT = { check_variable = { chain_part_selected = 1 } }
+# 		}
+# 		localization_key = "GFX_GCW_chain_btn1_off"
+# 	}
+# 	text = {
+# 		localization_key = "GFX_GCW_chain_btn1_selected"
+# 	}
+# }
+
+# defined_text = {
+# 	name = Get_SCW_chain_btn_2
+# 	text = {
+# 		trigger = {
+# 			check_variable = { chain_part_selected = 2 }
+# 		}
+# 		localization_key = "GFX_GCW_chain_btn2_selected"
+# 	}
+# 	text = {
+# 		localization_key = "GFX_GCW_chain_btn2_off"
+# 	}
+# }
+
+# defined_text = {
+# 	name = Get_SCW_chain_btn_3
+# 	text = {
+# 		trigger = {
+# 			check_variable = { chain_part_selected = 3 }
+# 		}
+# 		localization_key = "GFX_GCW_chain_btn3_selected"
+# 	}
+# 	text = {
+# 		localization_key = "GFX_GCW_chain_btn3_off"
+# 	}
+# }
+
+# defined_text = {
+# 	name = Get_SCW_chain_btn_4
+# 	text = {
+# 		trigger = {
+# 			check_variable = { chain_part_selected = 4 }
+# 		}
+# 		localization_key = "GFX_GCW_chain_btn4_selected"
+# 	}
+# 	text = {
+# 		localization_key = "GFX_GCW_chain_btn4_off"
+# 	}
+# }
+
+# defined_text = {
+# 	name = Get_SCW_chain_btn_5
+# 	text = {
+# 		trigger = {
+# 			check_variable = { chain_part_selected = 5 }
+# 		}
+# 		localization_key = "GFX_GCW_chain_btn5_selected"
+# 	}
+# 	text = {
+# 		localization_key = "GFX_GCW_chain_btn5_off"
+# 	}
+# }
+
+defined_text = {
 	name = GetChangedFactionNAME
 	text = {
 		trigger = {
-			check_variable = {  v = 1 }
+			check_variable = { faction_id_t = 1 }
 		}
 		localization_key = SCWNAME1
 	}
 	text = {
 		trigger = {
-			check_variable = {  v = 2 }
+			check_variable = { faction_id_t = 2 }
 		}
 		localization_key = SCWNAME2
 	}
 	text = {
 		trigger = {
-			check_variable = {  v = 3 }
+			check_variable = { faction_id_t = 3 }
 		}
 		localization_key = SCWNAME3
 	}
 	text = {
 		trigger = {
-			check_variable = {  v = 4 }
+			check_variable = { faction_id_t = 4 }
 		}
 		localization_key = SCWNAME4
 	}
 	text = {
 		trigger = {
-			check_variable = {  v = 5 }
+			check_variable = { faction_id_t = 5 }
 		}
 		localization_key = SCWNAME5
 	}
@@ -166,258 +363,258 @@ defined_text = {
 		localization_key = SCW_desicion_tab_name_blank
 	}
 }
-defined_text = {
-	name = Getscw_logo_1
-	text = {
-		trigger = {
+# defined_text = {
+# 	name = Getscw_logo_1
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO1 = 5
-			}
-		}
-		localization_key = loc_Sony_GNG
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO1 = 5
+# 			}
+# 		}
+# 		localization_key = loc_Sony_GNG
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO1 = 4
-			}
-		}
-		localization_key = loc_SGS_ITA
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO1 = 4
+# 			}
+# 		}
+# 		localization_key = loc_SGS_ITA
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO1 = 3
-			}
-		}
-		localization_key = loc_Siemens_GER
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO1 = 3
+# 			}
+# 		}
+# 		localization_key = loc_Siemens_GER
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO1 = 2
-			}
-		}
-		localization_key = loc_Fujitsutemp_JAP
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO1 = 2
+# 			}
+# 		}
+# 		localization_key = loc_Fujitsutemp_JAP
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO1 = 1
-			}
-		}
-		localization_key = loc_IBM_USA
-	}
-	text = { # 防溢出
-		localization_key = SCW_desicion_tab_name_blank
-	}
-}
-defined_text = {
-	name = Getscw_logo_2
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO1 = 1
+# 			}
+# 		}
+# 		localization_key = loc_IBM_USA
+# 	}
+# 	text = { # 防溢出
+# 		localization_key = SCW_desicion_tab_name_blank
+# 	}
+# }
+# defined_text = {
+# 	name = Getscw_logo_2
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO2 = 5
-			}
-		}
-		localization_key = loc_Sony_GNG
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO2 = 5
+# 			}
+# 		}
+# 		localization_key = loc_Sony_GNG
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO2 = 4
-			}
-		}
-		localization_key = loc_SGS_ITA
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO2 = 4
+# 			}
+# 		}
+# 		localization_key = loc_SGS_ITA
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO2 = 3
-			}
-		}
-		localization_key = loc_Siemens_GER
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO2 = 3
+# 			}
+# 		}
+# 		localization_key = loc_Siemens_GER
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO2 = 2
-			}
-		}
-		localization_key = loc_Fujitsutemp_JAP
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO2 = 2
+# 			}
+# 		}
+# 		localization_key = loc_Fujitsutemp_JAP
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO2 = 1
-			}
-		}
-		localization_key = loc_IBM_USA
-	}
-	text = { # 防溢出
-		localization_key = SCW_desicion_tab_name_blank
-	}
-}
-defined_text = {
-	name = Getscw_logo_3
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO2 = 1
+# 			}
+# 		}
+# 		localization_key = loc_IBM_USA
+# 	}
+# 	text = { # 防溢出
+# 		localization_key = SCW_desicion_tab_name_blank
+# 	}
+# }
+# defined_text = {
+# 	name = Getscw_logo_3
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO3 = 5
-			}
-		}
-		localization_key = loc_Sony_GNG
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO3 = 5
+# 			}
+# 		}
+# 		localization_key = loc_Sony_GNG
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO3 = 4
-			}
-		}
-		localization_key = loc_SGS_ITA
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO3 = 4
+# 			}
+# 		}
+# 		localization_key = loc_SGS_ITA
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO3 = 3
-			}
-		}
-		localization_key = loc_Siemens_GER
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO3 = 3
+# 			}
+# 		}
+# 		localization_key = loc_Siemens_GER
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO3 = 2
-			}
-		}
-		localization_key = loc_Fujitsutemp_JAP
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO3 = 2
+# 			}
+# 		}
+# 		localization_key = loc_Fujitsutemp_JAP
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO3 = 1
-			}
-		}
-		localization_key = loc_IBM_USA
-	}
-	text = { # 防溢出
-		localization_key = SCW_desicion_tab_name_blank
-	}
-}
-defined_text = {
-	name = Getscw_logo_4
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO3 = 1
+# 			}
+# 		}
+# 		localization_key = loc_IBM_USA
+# 	}
+# 	text = { # 防溢出
+# 		localization_key = SCW_desicion_tab_name_blank
+# 	}
+# }
+# defined_text = {
+# 	name = Getscw_logo_4
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO4 = 5
-			}
-		}
-		localization_key = loc_Sony_GNG
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO4 = 5
+# 			}
+# 		}
+# 		localization_key = loc_Sony_GNG
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO4 = 4
-			}
-		}
-		localization_key = loc_SGS_ITA
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO4 = 4
+# 			}
+# 		}
+# 		localization_key = loc_SGS_ITA
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO4 = 3
-			}
-		}
-		localization_key = loc_Siemens_GER
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO4 = 3
+# 			}
+# 		}
+# 		localization_key = loc_Siemens_GER
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO4 = 2
-			}
-		}
-		localization_key = loc_Fujitsutemp_JAP
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO4 = 2
+# 			}
+# 		}
+# 		localization_key = loc_Fujitsutemp_JAP
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO4 = 1
-			}
-		}
-		localization_key = loc_IBM_USA
-	}
-	text = { # 防溢出
-		localization_key = SCW_desicion_tab_name_blank
-	}
-}
-defined_text = {
-	name = Getscw_logo_5
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO4 = 1
+# 			}
+# 		}
+# 		localization_key = loc_IBM_USA
+# 	}
+# 	text = { # 防溢出
+# 		localization_key = SCW_desicion_tab_name_blank
+# 	}
+# }
+# defined_text = {
+# 	name = Getscw_logo_5
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO5 = 5
-			}
-		}
-		localization_key = loc_Sony_GNG
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO5 = 5
+# 			}
+# 		}
+# 		localization_key = loc_Sony_GNG
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO5 = 4
-			}
-		}
-		localization_key = loc_SGS_ITA
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO5 = 4
+# 			}
+# 		}
+# 		localization_key = loc_SGS_ITA
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO5 = 3
-			}
-		}
-		localization_key = loc_Siemens_GER
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO5 = 3
+# 			}
+# 		}
+# 		localization_key = loc_Siemens_GER
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO5 = 2
-			}
-		}
-		localization_key = loc_Fujitsutemp_JAP
-	}
-	text = {
-		trigger = {
+# 			check_variable = {
+# 				SCWNO5 = 2
+# 			}
+# 		}
+# 		localization_key = loc_Fujitsutemp_JAP
+# 	}
+# 	text = {
+# 		trigger = {
 			
-			check_variable = {
-				SCWNO5 = 1
-			}
-		}
-		localization_key = loc_IBM_USA
-	}
-	text = { # 防溢出
-		localization_key = SCW_desicion_tab_name_blank
-	}
-}
+# 			check_variable = {
+# 				SCWNO5 = 1
+# 			}
+# 		}
+# 		localization_key = loc_IBM_USA
+# 	}
+# 	text = { # 防溢出
+# 		localization_key = SCW_desicion_tab_name_blank
+# 	}
+# }

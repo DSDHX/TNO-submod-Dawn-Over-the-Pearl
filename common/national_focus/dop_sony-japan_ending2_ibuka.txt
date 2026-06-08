@@ -1,11 +1,8 @@
-focus_tree =
-{
+focus_tree = {
 	id = dop_sonyjapan_ending2_ibuka_tree
-	country =
-	{
+	country = {
 		factor = 0
-		modifier =
-		{
+		modifier = {
 			add = 10
 			tag = GNG
 		}
@@ -14,8 +11,7 @@ focus_tree =
 	shared_focus = GNG_focus_the_ultimate_enemy 
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_the_ultimate_enemy #最终之敌
 	icon = GFX_GNG_focus_the_ultimate_enemy
 
@@ -24,14 +20,12 @@ shared_focus =
 	
 	cost = 1
 	
-    completion_reward =
-	{
+    completion_reward = {
 		custom_effect_tooltip = GNG_detoxification_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_never_look_back #永不回望
 	icon = GFX_GNG_focus_never_look_back
 
@@ -39,20 +33,17 @@ shared_focus =
 	x = -3
 	y = 1	
 	
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_the_ultimate_enemy
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_mistake_not_again_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_risk_clearance #风险出清
 	icon = GFX_GNG_focus_risk_clearance
 
@@ -60,20 +51,17 @@ shared_focus =
 	x = -3
 	y = 1
 	
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_never_look_back
 	}	
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_remove_destabilization_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_industrial_nation #实业之国
 	icon = GFX_GNG_focus_industrial_nation
 	
@@ -81,20 +69,17 @@ shared_focus =
 	x = 0
 	y = 1
 	
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_never_look_back
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_real_industrial_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_reform_inefficient_administration #改革低效“人治”
 	icon = GFX_GNG_focus_reform_inefficient_administration
 
@@ -102,20 +87,17 @@ shared_focus =
 	x = 0
 	y = 1
 	
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_never_look_back
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_prudence_and_efficiency_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_end_of_poverty #贫困不复
 	icon = GFX_GNG_focus_end_of_poverty
 	
@@ -123,20 +105,17 @@ shared_focus =
 	x = 0
 	y = 1
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_reform_inefficient_administration
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_won_t_forget_guangdong_people_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_never_stop #永不停歇
 	icon = GFX_GNG_focus_never_stop
 
@@ -144,20 +123,17 @@ shared_focus =
 	x = 3
 	y = 1
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_the_ultimate_enemy
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_future_belongs_to_young_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_rise_of_silicon #硅市崛起
 	icon = GFX_GNG_focus_rise_of_silicon
 
@@ -165,21 +141,18 @@ shared_focus =
 	x = 0
 	y = 1
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_never_stop
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_to_the_beyond_focustt
 	}
 }
 
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_supercomputer_center #国家超级电脑应用中心
 	icon = GFX_GNG_focus_supercomputer_center
 
@@ -187,20 +160,17 @@ shared_focus =
 	x = 0
 	y = 1
 	
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_rise_of_silicon
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_power_of_machine_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_academic_golden_age #学术黄金时代
 	icon = GFX_GNG_focus_academic_golden_age
 	
@@ -208,20 +178,17 @@ shared_focus =
 	x = 3
 	y = 1
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_never_stop
 	}
 	cost = 2
 	
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_geniuse_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_laying_the_foundation_for_kouu #为纮宇網奠基
 	icon = GFX_GNG_focus_laying_the_foundation_for_kouu
 
@@ -229,20 +196,17 @@ shared_focus =
 	x = 0
 	y = 1
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_academic_golden_age
 	}
 	cost = 2
 
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_leading_future_focustt
 	}
 }
 
-shared_focus =
-{
+shared_focus = {
 	id = GNG_focus_onward_to_Tomorrow #致明日
 	icon = GFX_GNG_focus_onward_to_Tomorrow
 	
@@ -250,26 +214,21 @@ shared_focus =
 	x = 0
 	y = 4
 
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_industrial_nation
 	}
-	prerequisite =
-	{
+	prerequisite = {
 	    focus = GNG_focus_end_of_poverty
 	}
-	prerequisite =
-	{
+	prerequisite = {
 		focus = GNG_focus_supercomputer_center
 	}
-	prerequisite =
-	{
+	prerequisite = {
 	    focus = GNG_focus_laying_the_foundation_for_kouu
 	}
 	cost = 2
 
-	completion_reward =
-	{
+	completion_reward = {
 		custom_effect_tooltip = GNG_reach_the_future_focustt
 	}
 }

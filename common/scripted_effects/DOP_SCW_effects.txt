@@ -72,400 +72,515 @@ GNG_BOP_SCW_Initialize = {
 	TNO_BoP_GNG_AddTab = yes
 	set_country_flag = DOP_SCW_off
 	set_country_flag = DOP_SCW_enabled
-	GNG_SCW_Initialize = yes
 }
 
 GNG_BOP_GSA_Initialize = {
 	set_temp_variable = { TabName = token:BoP_Tab_DOPScienceAcademy }
+	set_variable = { GNG_GSA_research_on_now = 0 }
+	set_variable = { GNG_GSA_research_progress = 0 }
+	set_variable = { research_speed_value = 60 }
+	set_variable = { research_ability_factor = 0.8 }
 	TNO_BoP_GNG_AddTab = yes
 }
-
 GNG_SCW_Initialize ={
-	set_variable = { scw_GNG_percentage = 10 }
-	set_variable = { scw_ITA_percentage = 10 }
-	set_variable = { scw_GER_percentage = 20 }
-	set_variable = { scw_JAP_percentage = 25 }
-	set_variable = { scw_USA_percentage = 35 }
-	SCWcalorder = yes 
+	set_temp_variable = { scw_GNG_production_value_t = 150 }
+	set_temp_variable = { scw_GNG_compatibility_value_t = 1 }
+	set_temp_variable = { scw_USA_production_value_t = 300 }
+	set_temp_variable = { scw_USA_compatibility_value_t = 1 }
+	set_temp_variable = { scw_ITA_production_value_t = 100 }
+	set_temp_variable = { scw_ITA_compatibility_value_t = 1 }
+	set_temp_variable = { scw_GER_production_value_t = 250 }
+	set_temp_variable = { scw_GER_compatibility_value_t = 1 }
+	set_temp_variable = { scw_JAP_production_value_t = 200 }
+	set_temp_variable = { scw_JAP_compatibility_value_t = 1 }
+	SCW_piechart_recalculate = yes 
 }
 
-GET_GNG_SCW_chart_percentage = {
-	set_variable = {
-		the_var_left_percentage_GNG = scw_GNG_percentage
+SCW_production_scale_increase = {
+	set_temp_variable = {
+		scw_GNG_production_value_t = scw_GNG_production_value
 	}
-	set_variable = {
-		the_var_left_percentage_GER = scw_GER_percentage
+	set_temp_variable = {
+		scw_USA_production_value_t = scw_USA_production_value
 	}
-	set_variable = {
-		the_var_left_percentage_JAP = scw_JAP_percentage
+	set_temp_variable = {
+		scw_ITA_production_value_t = scw_ITA_production_value
 	}
-	set_variable = {
-		the_var_left_percentage_ITA = scw_ITA_percentage
+	set_temp_variable = {
+		scw_GER_production_value_t = scw_GER_production_value
 	}
-	set_variable = {
-		the_var_left_percentage_USA = scw_USA_percentage
+	set_temp_variable = {
+		scw_JAP_production_value_t = scw_JAP_production_value
 	}
-	divide_variable = {
-		the_var_left_percentage_GNG = the_var_left_all_before
+	set_temp_variable = {
+		scw_GNG_compatibility_value_t = scw_GNG_compatibility_value
 	}
-	log = "[?the_var_left_percentage_GNG]"
-	divide_variable = {
-		the_var_left_percentage_JAP = the_var_left_all_before
+	set_temp_variable = {
+		scw_USA_compatibility_value_t = scw_USA_compatibility_value
 	}
-	divide_variable = {
-		the_var_left_percentage_USA = the_var_left_all_before
+	set_temp_variable = {
+		scw_ITA_compatibility_value_t = scw_ITA_compatibility_value
 	}
-	divide_variable = {
-		the_var_left_percentage_ITA = the_var_left_all_before
+	set_temp_variable = {
+		scw_GER_compatibility_value_t = scw_GER_compatibility_value
 	}
-	divide_variable = {
-		the_var_left_percentage_GER = the_var_left_all_before
+	set_temp_variable = {
+		scw_JAP_compatibility_value_t = scw_JAP_compatibility_value
 	}
-	set_variable = {
-		percentage_GNG = the_var_left_percentage_GNG
-	}
-	log = "[?percentage_GNG]"
-	set_variable = {
-		percentage_JAP = the_var_left_percentage_JAP
-	}
-	set_variable = {
-		percentage_GER = the_var_left_percentage_GER
-	}
-	set_variable = {
-		percentage_ITA = the_var_left_percentage_ITA
-	}
-	set_variable = {
-		percentage_USA = the_var_left_percentage_USA
-	}
-}
-
-GNG_SCW_percentage_helper = {
-	set_variable = {
-		the_new_var_true_number_GNG = the_var_left_all_after
-	}
-	log = "[?the_new_var_true_number_GNG]"
-	set_variable = {
-		the_new_var_true_number_GER = the_var_left_all_after
-	}
-	set_variable = {
-		the_new_var_true_number_JAP = the_var_left_all_after
-	}
-	set_variable = {
-		the_new_var_true_number_ITA = the_var_left_all_after
-	}
-	set_variable = {
-		the_new_var_true_number_USA = the_var_left_all_after
-	}
-	multiply_variable = {
-		the_new_var_true_number_GNG = percentage_GNG
-	}
-	log = "[?the_new_var_true_number_GNG]"
-	multiply_variable = {
-		the_new_var_true_number_JAP = percentage_JAP
-	}
-	multiply_variable = {
-		the_new_var_true_number_USA = percentage_USA
-	}
-	multiply_variable = {
-		the_new_var_true_number_ITA = percentage_ITA
-	}
-	multiply_variable = {
-		the_new_var_true_number_GER = percentage_GER
-	}
-}
-
-GNG_SCW_chart_recalculate = {
-	set_temp_variable = { a = percentage_of_change }
-	set_temp_variable = { v = the_changed_faction_id } #USA 1 JAP 2 GER 3 ITA 4 GNG 5
-	custom_effect_tooltip = change_faction_percentage_tt
 	if = {
-		limit = {
-			check_variable = { v = 1 }
-		}
-		set_variable = {
-			the_var_left_all_before = 100
-		}
-		log = "[?the_var_left_all_before]"
-		subtract_from_variable = {
-			the_var_left_all_before = scw_USA_percentage
-		}
-		log = "[?the_var_left_all_before]"
-		GET_GNG_SCW_chart_percentage = yes
-		add_to_variable = {
-			scw_USA_percentage = a
-		}
-		set_variable = {
-			the_var_left_all_after = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_after = scw_USA_percentage
-		}
-		log = '[?the_var_left_all_after]'
-		GNG_SCW_percentage_helper = yes
-		set_variable = {
-			scw_GNG_percentage = the_new_var_true_number_GNG 
-		}
-		log = "[?scw_GNG_percentage]"
-		set_variable = {
-			scw_GER_percentage = the_new_var_true_number_GER
-		}
-		set_variable = {
-			scw_JAP_percentage = the_new_var_true_number_JAP
-		}
-		set_variable = {
-			scw_ITA_percentage = the_new_var_true_number_ITA
-		}
-		
-	}
-	else_if = {
-		limit = {
-			check_variable = { v = 2 }
-		}
-		set_variable = {
-			the_var_left_all_before = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_before = scw_JAP_percentage
-		}
-		GET_GNG_SCW_chart_percentage = yes
-		add_to_variable = {
-			scw_JAP_percentage = a
-		}
-		set_variable = {
-			the_var_left_all_after = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_after = scw_JAP_percentage
-		}
-		GNG_SCW_percentage_helper = yes
-		set_variable = {
-			scw_GNG_percentage = the_new_var_true_number_GNG 
-		}
-		set_variable = {
-			scw_GER_percentage = the_new_var_true_number_GER
-		}
-		set_variable = {
-			scw_USA_percentage = the_new_var_true_number_USA
-		}
-		set_variable = {
-			scw_ITA_percentage = the_new_var_true_number_ITA
-		}
-		
-	}
-	else_if = {
-		limit = {
-			check_variable = { v = 3 }
-		}
-		set_temp_variable = {
-			the_var_left_all_before = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_before = scw_GER_percentage
-		}
-		GET_GNG_SCW_chart_percentage = yes
-		add_to_variable = {
-			scw_GER_percentage = a
-		}
-		set_variable = {
-			the_var_left_all_after = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_after = scw_GER_percentage
-		}
-		GNG_SCW_percentage_helper = yes
-		set_variable = {
-			scw_GNG_percentage = the_new_var_true_number_GNG 
-		}
-		set_variable = {
-			scw_USA_percentage = the_new_var_true_number_USA
-		}
-		set_variable = {
-			scw_JAP_percentage = the_new_var_true_number_JAP
-		}
-		set_variable = {
-			scw_ITA_percentage = the_new_var_true_number_ITA
-		}
-		
-	}
-	else_if = {
-		limit = {
-			check_variable = { v = 4 }
-		}
-		set_temp_variable = {
-			the_var_left_all_before = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_before = scw_ITA_percentage
-		}
-		GET_GNG_SCW_chart_percentage = yes
-		add_to_variable = {
-			scw_ITA_percentage = a
-		}
-		set_variable = {
-			the_var_left_all_after = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_after = scw_ITA_percentage
-		}
-		GNG_SCW_percentage_helper = yes
-		set_variable = {
-			scw_GNG_percentage = the_new_var_true_number_GNG 
-		}
-		set_variable = {
-			scw_GER_percentage = the_new_var_true_number_GER
-		}
-		set_variable = {
-			scw_USA_percentage = the_new_var_true_number_USA
-		}
-		set_variable = {
-			scw_JAP_percentage = the_new_var_true_number_JAP
+		limit = { check_variable = { faction_id_t = 1 } }
+		add_to_temp_variable = {
+			scw_GNG_production_value_t = change_t
 		}
 	}
 	else_if = {
-		limit = {
-			check_variable = { v = 5 }
-		}
-		set_temp_variable = {
-			the_var_left_all_before = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_before = scw_GNG_percentage
-		}
-		GET_GNG_SCW_chart_percentage = yes
-		add_to_variable = {
-			scw_GNG_percentage = a
-		}
-		set_variable = {
-			the_var_left_all_after = 100
-		}
-		subtract_from_variable = {
-			the_var_left_all_after = scw_GNG_percentage
-		}
-		GNG_SCW_percentage_helper = yes
-		set_variable = {
-			scw_GER_percentage = the_new_var_true_number_GER
-		}
-		set_variable = {
-			scw_USA_percentage = the_new_var_true_number_USA
-		}
-		set_variable = {
-			scw_JAP_percentage = the_new_var_true_number_JAP
-		}
-		set_variable = {
-			scw_ITA_percentage = the_new_var_true_number_ITA
-		}
-		
-	}
-	else = {
-		log = "ERROR:False country selection"
-	}
-	SCWcalorder = yes
-}
-
-SCWcalorder = {
-	if = {
-		limit = {
-			check_variable = {
-				scw_USA_percentage < scw_GNG_percentage
-			}
-		}
-		set_variable = {
-			SCWNO1 = 5
-		}
-		set_variable = {
-			SCWNO2 = 1
-		}
-		set_variable = {
-			SCWNO3 = 2
-		}
-		set_variable = {
-			SCWNO4 = 3
-		}
-		set_variable = {
-			SCWNO5 = 4
+		limit = { check_variable = { faction_id_t = 2 } }
+		add_to_temp_variable = {
+			scw_USA_production_value_t = change_t
 		}
 	}
 	else_if = {
-		limit = {
-			check_variable = {
-				scw_JAP_percentage < scw_GNG_percentage
-			}
-		}
-		set_variable = {
-			SCWNO1 = 1
-		}
-		set_variable = {
-			SCWNO2 = 5
-		}
-		set_variable = {
-			SCWNO3 = 2
-		}
-		set_variable = {
-			SCWNO4 = 3
-		}
-		set_variable = {
-			SCWNO5 = 4
+		limit = { check_variable = { faction_id_t = 3 } }
+		add_to_temp_variable = {
+			scw_ITA_production_value_t = change_t
 		}
 	}
 	else_if = {
-		limit = {
-			check_variable = {
-				scw_GER_percentage < scw_GNG_percentage
-			}
-		}
-		set_variable = {
-			SCWNO1 = 1
-		}
-		set_variable = {
-			SCWNO2 = 2
-		}
-		set_variable = {
-			SCWNO3 = 5
-		}
-		set_variable = {
-			SCWNO4 = 3
-		}
-		set_variable = {
-			SCWNO5 = 4
+		limit = { check_variable = { faction_id_t = 4 } }
+		add_to_temp_variable = {
+			scw_GER_production_value_t = change_t
 		}
 	}
 	else_if = {
-		limit = {
-			check_variable = {
-				scw_ITA_percentage < scw_GNG_percentage
-			}
-		}
-		set_variable = {
-			SCWNO1 = 1
-		}
-		set_variable = {
-			SCWNO2 = 2
-		}
-		set_variable = {
-			SCWNO3 = 3
-		}
-		set_variable = {
-			SCWNO4 = 5
-		}
-		set_variable = {
-			SCWNO5 = 4
+		limit = { check_variable = { faction_id_t = 5 } }
+		add_to_temp_variable = {
+			scw_JAP_production_value_t = change_t
 		}
 	}
 	else = {
-		set_variable = {
-			SCWNO1 = 1
+		log = "[GetDateText]: [Root.GetName]: Invalid faction ID for production scale increase."
+	}
+	custom_effect_tooltip = SCW_pro_in_tt
+	SCW_piechart_recalculate = yes
+}
+
+SCW_production_scale_decrease = {
+	set_temp_variable = {
+		scw_GNG_production_value_t = scw_GNG_production_value
+	}
+	set_temp_variable = {
+		scw_USA_production_value_t = scw_USA_production_value
+	}
+	set_temp_variable = {
+		scw_ITA_production_value_t = scw_ITA_production_value
+	}
+	set_temp_variable = {
+		scw_GER_production_value_t = scw_GER_production_value
+	}
+	set_temp_variable = {
+		scw_JAP_production_value_t = scw_JAP_production_value
+	}
+	set_temp_variable = {
+		scw_GNG_compatibility_value_t = scw_GNG_compatibility_value
+	}
+	set_temp_variable = {
+		scw_USA_compatibility_value_t = scw_USA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_ITA_compatibility_value_t = scw_ITA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_GER_compatibility_value_t = scw_GER_compatibility_value
+	}
+	set_temp_variable = {
+		scw_JAP_compatibility_value_t = scw_JAP_compatibility_value
+	}
+	if = {
+		limit = { check_variable = { faction_id_t = 1 } }
+		subtract_from_temp_variable = {
+			scw_GNG_production_value_t = change_t
 		}
-		set_variable = {
-			SCWNO2 = 2
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 2 } }
+		subtract_from_temp_variable = {
+			scw_USA_production_value_t = change_t
 		}
-		set_variable = {
-			SCWNO3 = 3
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 3 } }
+		subtract_from_temp_variable = {
+			scw_ITA_production_value_t = change_t
 		}
-		set_variable = {
-			SCWNO4 = 4
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 4 } }
+		subtract_from_temp_variable = {
+			scw_GER_production_value_t = change_t
 		}
-		set_variable = {
-			SCWNO5 = 5
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 5 } }
+		subtract_from_temp_variable = {
+			scw_JAP_production_value_t = change_t
 		}
+	}
+	else = {
+		log = "[GetDateText]: [Root.GetName]: Invalid faction ID for production scale decrease."
+	}
+	custom_effect_tooltip = SCW_pro_de_tt
+	SCW_piechart_recalculate = yes
+}
+
+SCW_compatibility_increase = {
+	set_temp_variable = {
+		scw_GNG_production_value_t = scw_GNG_production_value
+	}
+	set_temp_variable = {
+		scw_USA_production_value_t = scw_USA_production_value
+	}
+	set_temp_variable = {
+		scw_ITA_production_value_t = scw_ITA_production_value
+	}
+	set_temp_variable = {
+		scw_GER_production_value_t = scw_GER_production_value
+	}
+	set_temp_variable = {
+		scw_JAP_production_value_t = scw_JAP_production_value
+	}
+	set_temp_variable = {
+		scw_GNG_compatibility_value_t = scw_GNG_compatibility_value
+	}
+	set_temp_variable = {
+		scw_USA_compatibility_value_t = scw_USA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_ITA_compatibility_value_t = scw_ITA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_GER_compatibility_value_t = scw_GER_compatibility_value
+	}
+	set_temp_variable = {
+		scw_JAP_compatibility_value_t = scw_JAP_compatibility_value
+	}
+	if = {
+		limit = { check_variable = { faction_id_t = 1 } }
+		add_to_temp_variable = {
+			scw_GNG_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 2 } }
+		add_to_temp_variable = {
+			scw_USA_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 3 } }
+		add_to_temp_variable = {
+			scw_ITA_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 4 } }
+		add_to_temp_variable = {
+			scw_GER_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 5 } }
+		add_to_temp_variable = {
+			scw_JAP_compatibility_value_t = change_t
+		}
+	}
+	else = {
+		log = "[GetDateText]: [Root.GetName]: Invalid faction ID for production scale increase."
+	}
+	custom_effect_tooltip = SCW_com_in_tt
+	SCW_piechart_recalculate = yes
+}
+
+SCW_compatibility_decrease = {
+	set_temp_variable = {
+		scw_GNG_production_value_t = scw_GNG_production_value
+	}
+	set_temp_variable = {
+		scw_USA_production_value_t = scw_USA_production_value
+	}
+	set_temp_variable = {
+		scw_ITA_production_value_t = scw_ITA_production_value
+	}
+	set_temp_variable = {
+		scw_GER_production_value_t = scw_GER_production_value
+	}
+	set_temp_variable = {
+		scw_JAP_production_value_t = scw_JAP_production_value
+	}
+	set_temp_variable = {
+		scw_GNG_compatibility_value_t = scw_GNG_compatibility_value
+	}
+	set_temp_variable = {
+		scw_USA_compatibility_value_t = scw_USA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_ITA_compatibility_value_t = scw_ITA_compatibility_value
+	}
+	set_temp_variable = {
+		scw_GER_compatibility_value_t = scw_GER_compatibility_value
+	}
+	set_temp_variable = {
+		scw_JAP_compatibility_value_t = scw_JAP_compatibility_value
+	}
+	if = {
+		limit = { check_variable = { faction_id_t = 1 } }
+		subtract_from_temp_variable = {
+			scw_GNG_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 2 } }
+		subtract_from_temp_variable = {
+			scw_USA_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 3 } }
+		subtract_from_temp_variable = {
+			scw_ITA_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 4 } }
+		subtract_from_temp_variable = {
+			scw_GER_compatibility_value_t = change_t
+		}
+	}
+	else_if = {
+		limit = { check_variable = { faction_id_t = 5 } }
+		subtract_from_temp_variable = {
+			scw_JAP_compatibility_value_t = change_t
+		}
+	}
+	else = {
+		log = "[GetDateText]: [Root.GetName]: Invalid faction ID for production scale decrease."
+	}
+	custom_effect_tooltip = SCW_com_de_tt
+	SCW_piechart_recalculate = yes
+}
+
+SCW_piechart_recalculate = {
+	clamp_temp_variable = {
+		var = scw_GNG_production_value_t
+		min = 1
+	}
+	clamp_temp_variable = {
+		var = scw_GNG_compatibility_value_t
+		min = 0.01
+	}
+	clamp_temp_variable = {
+		var = scw_USA_production_value_t
+		min = 1
+	}
+	clamp_temp_variable = {
+		var = scw_USA_compatibility_value_t
+		min = 0.01
+	}
+	clamp_temp_variable = {
+		var = scw_ITA_production_value_t
+		min = 1
+	}
+	clamp_temp_variable = {
+		var = scw_ITA_compatibility_value_t
+		min = 0.01
+	}
+	clamp_temp_variable = {
+		var = scw_GER_production_value_t
+		min = 1
+	}
+	clamp_temp_variable = {
+		var = scw_GER_compatibility_value_t
+		min = 0.01
+	}
+	clamp_temp_variable = {
+		var = scw_JAP_production_value_t
+		min = 1
+	}
+	clamp_temp_variable = {
+		var = scw_JAP_compatibility_value_t
+		min = 0.01
+	}
+	set_temp_variable = {
+		scw_GNG_value = scw_GNG_production_value_t
+	}
+	multiply_temp_variable = {
+		scw_GNG_value = scw_GNG_compatibility_value_t
+	}
+	clamp_temp_variable = {
+		var = scw_GNG_value
+		min = 1
+	}
+	set_temp_variable = {
+		scw_USA_value = scw_USA_production_value_t
+	}
+	multiply_temp_variable = {
+		scw_USA_value = scw_USA_compatibility_value_t
+	}
+	clamp_temp_variable = {
+		var = scw_USA_value
+		min = 1
+	}
+	set_temp_variable = {
+		scw_ITA_value = scw_ITA_production_value_t
+	}
+	multiply_temp_variable = {
+		scw_ITA_value = scw_ITA_compatibility_value_t
+	}
+	clamp_temp_variable = {
+		var = scw_ITA_value
+		min = 1
+	}
+	set_temp_variable = {
+		scw_GER_value = scw_GER_production_value_t
+	}
+	multiply_temp_variable = {
+		scw_GER_value = scw_GER_compatibility_value_t
+	}
+	clamp_temp_variable = {
+		var = scw_GER_value
+		min = 1
+	}
+	set_temp_variable = {
+		scw_JAP_value = scw_JAP_production_value_t
+	}
+	multiply_temp_variable = {
+		scw_JAP_value = scw_JAP_compatibility_value_t
+	}
+	clamp_temp_variable = {
+		var = scw_JAP_value
+		min = 1
+	}
+	set_temp_variable = {
+		scw_value_count = scw_GNG_value
+	}
+	add_to_temp_variable = {
+		scw_value_count = scw_USA_value
+	}
+	add_to_temp_variable = {
+		scw_value_count = scw_ITA_value
+	}
+	add_to_temp_variable = {
+		scw_value_count = scw_GER_value
+	}
+	add_to_temp_variable = {
+		scw_value_count = scw_JAP_value
+	}
+	set_temp_variable = {
+		GNG_percentage_for_bar_t = scw_GNG_value
+	}
+	divide_temp_variable = {
+		GNG_percentage_for_bar_t = scw_value_count
+	}
+	set_temp_variable = {
+		USA_percentage_for_bar_t = scw_USA_value
+	}
+	divide_temp_variable = {
+		USA_percentage_for_bar_t = scw_value_count
+	}
+	set_temp_variable = {
+		ITA_percentage_for_bar_t = scw_ITA_value
+	}
+	divide_temp_variable = {
+		ITA_percentage_for_bar_t = scw_value_count
+	}
+	set_temp_variable = {
+		GER_percentage_for_bar_t = scw_GER_value
+	}
+	divide_temp_variable = {
+		GER_percentage_for_bar_t = scw_value_count
+	}
+	set_temp_variable = {
+		JAP_percentage_for_bar_t = scw_JAP_value
+	}
+	divide_temp_variable = {
+		JAP_percentage_for_bar_t = scw_value_count
+	}
+	set_variable = { GNG_percentage_for_bar = GNG_percentage_for_bar_t }
+	set_variable = { USA_percentage_for_bar = USA_percentage_for_bar_t }
+	set_variable = { ITA_percentage_for_bar = ITA_percentage_for_bar_t }
+	set_variable = { GER_percentage_for_bar = GER_percentage_for_bar_t }
+	set_variable = { JAP_percentage_for_bar = JAP_percentage_for_bar_t }
+	set_variable = { scw_GNG_production_value = scw_GNG_production_value_t }
+	set_variable = { scw_GNG_compatibility_value = scw_GNG_compatibility_value_t }
+	set_variable = { scw_USA_production_value = scw_USA_production_value_t }
+	set_variable = { scw_USA_compatibility_value = scw_USA_compatibility_value_t }
+	set_variable = { scw_ITA_production_value = scw_ITA_production_value_t }
+	set_variable = { scw_ITA_compatibility_value = scw_ITA_compatibility_value_t }
+	set_variable = { scw_GER_production_value = scw_GER_production_value_t }
+	set_variable = { scw_GER_compatibility_value = scw_GER_compatibility_value_t }
+	set_variable = { scw_JAP_production_value = scw_JAP_production_value_t }
+	set_variable = { scw_JAP_compatibility_value = scw_JAP_compatibility_value_t }
+	multiply_variable = {
+		GNG_percentage_for_bar = 100
+	}
+	multiply_variable = {
+		USA_percentage_for_bar = 100
+	}
+	multiply_variable = {
+		ITA_percentage_for_bar = 100
+	}
+	multiply_variable = {
+		GER_percentage_for_bar = 100
+	}
+	multiply_variable = {
+		JAP_percentage_for_bar = 100
+	}
+	custom_effect_tooltip = new_chart_dis_tt
+	log = "[GetDateText]: [Root.GetName]: Recalculate SCW percentages."
+}
+
+GSA_research_init_effects = {
+	set_variable = {
+		GNG_GSA_research_on_now = research_id
+	}
+	set_variable = {
+		GNG_GSA_research_count = research_count
+	}
+	set_temp_variable = {
+		research_speed_value_t = research_speed_value
+	}
+	multiply_temp_variable = {
+		research_speed_value_t = research_ability_factor
+	}
+	set_temp_variable = {
+		research_speed_p = research_speed_value
+	}
+	divide_temp_variable = {
+		research_speed_p = research_count
+	}
+	multiply_temp_variable = {
+		research_speed_p = 100
+	}
+	set_variable = {
+		GNG_GSA_research_speed_percent = research_speed_p
+	}
+	custom_effect_tooltip = GSA_research_init_effects_tt
+}
+
+GSA_research_complete_effects = {
+	if = {
+		limit = {
+			check_variable = { GNG_GSA_research_on_now = 0 }
+		}
+		log = "ERROR: Research complete effect called when no research was ongoing"
+	}
+	else_if = {
+		limit = {
+			check_variable = { GNG_GSA_research_on_now = 1 }
+		}
+		country_event = { id = GNG_GSA_research_complete.1 }
+		set_country_flag = GNG_GSA_research_1_complete
+	}
+	else = {
+		log = "ERROR: Research complete effect called with unknown research id"
 	}
 }

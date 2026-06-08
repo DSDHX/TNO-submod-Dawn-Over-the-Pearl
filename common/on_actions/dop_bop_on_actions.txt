@@ -1,0 +1,21 @@
+on_actions = {
+    on_daily = {
+		effect = {
+			if = {
+				limit = {
+					check_variable = { GNG_GSA_research_on_now > 0 }
+				}
+                add_to_variable = { GNG_GSA_research_progress = GNG_GSA_research_speed_percent }
+				if = {
+					limit = {
+						check_variable = { GNG_GSA_research_progress >= 100 }
+					}
+					GSA_research_complete_effects = yes
+					set_variable = { GNG_GSA_research_on_now = 0 }
+					set_variable = { GNG_GSA_research_progress = 0 }
+					log = "GNG:Research complete for [?GNG_GSA_research_on_now]"
+				}
+			}
+		}
+	}
+}

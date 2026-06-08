@@ -125,6 +125,7 @@ GNG_debug_category = {
 		complete_effect = {
 			set_temp_variable = { decision_tabs_id = 1 }
 			GNG_SCW_add_tab = yes
+			GNG_SCW_Initialize = yes
 		}
 	}
 	GNG_dop_debug_enable_BOP_page_2 = {
@@ -233,3 +234,20 @@ GNG_debug_category = {
 		}
 	}
 }
+
+# GNG_SiliconCW_category = {
+# 	GNG_dop_debug_gsa_research_plus = {
+# 		allowed = {
+# 			original_tag = GNG
+# 		}
+# 		icon = GFX_decision_GNG_generic
+# 		visible = {
+# 			has_country_flag = GNG_show_debug_decisions
+# 		}
+# 		complete_effect = {
+# 			add_to_variable = {
+# 				GNG_GSA_research_progress = 20
+# 			}
+# 		}
+# 	}
+# }
