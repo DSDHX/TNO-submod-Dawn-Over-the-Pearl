@@ -288,12 +288,6 @@ scripted_gui = {
 
 		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } }
 		ai_enabled = { always = no }
-		dynamic_lists = {
-
-		}
-		effects = {
-
-		}
 
 		triggers = {
 			GSA_bg_off_visible = {
