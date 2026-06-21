@@ -159,48 +159,6 @@ guiTypes = {
 			}
 		}
 
-		# iconType = {
-		# 	name = "speedrun_bg"
-		# 	spriteType = "GFX_GCW_speedrun_bg"
-		# 	position = { x = 30 y = 140 }
-		# 	alwaystransparent = yes
-		# }
-
-		# iconType = {
-		# 	name = "GCW_gng_per_bar"
-		# 	spriteType = "GFX_GCW_percentage_progress_bar"
-		# 	position = { x = 81 y = 160 }
-		# 	pdx_tooltip = "SCW_gng_per_bar_tt"
-		# }
-
-		# iconType = {
-		# 	name = "GCW_usa_per_bar"
-		# 	spriteType = "GFX_GCW_percentage_progress_bar"
-		# 	position = { x = 161 y = 160 }
-		# 	pdx_tooltip = "SCW_usa_per_bar_tt"
-		# }
-
-		# iconType = {
-		# 	name = "GCW_ita_per_bar"
-		# 	spriteType = "GFX_GCW_percentage_progress_bar"
-		# 	position = { x = 241 y = 160 }
-		# 	pdx_tooltip = "SCW_ita_per_bar_tt"
-		# }
-
-		# iconType = {
-		# 	name = "GCW_ger_per_bar"
-		# 	spriteType = "GFX_GCW_percentage_progress_bar"
-		# 	position = { x = 321 y = 160 }
-		# 	pdx_tooltip = "SCW_ger_per_bar_tt"
-		# }
-
-		# iconType = {
-		# 	name = "GCW_jap_per_bar"
-		# 	spriteType = "GFX_GCW_percentage_progress_bar"
-		# 	position = { x = 401 y = 160 }
-		# 	pdx_tooltip = "SCW_jap_per_bar_tt"
-		# }
-
 		buttonType = {
 			name = "chain_btn_1"
 			spriteType = "GFX_GCW_chain_btn1_off"
@@ -266,18 +224,6 @@ guiTypes = {
 			pdx_tooltip = "SCW_chain_btn_5_tt"
 			alwaystransparent = yes
 		}
-		# buttonType = {
-		# 	name = "production_btn"
-		# 	spriteType = "GFX_pro_button"
-		# 	position = { x = 12 y = 120 }
-		# 	pdx_tooltip = manage_production_tt
-		# }
-		# buttonType = {
-		# 	name = "competitiveness_btn"
-		# 	spriteType = "GFX_con_button"
-		# 	position = { x = 256 y = 120 }
-		# 	pdx_tooltip = manage_competitiveness_tt
-		# }	
 		iconType = {
 			name = "conflict_status"
 			spriteType = "GFX_fopo_conflict_status"

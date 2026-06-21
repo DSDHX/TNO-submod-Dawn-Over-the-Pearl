@@ -40,27 +40,27 @@ spriteTypes = {
 		horizontal = yes
 		steps = 100
 	}
-	spriteType = { #索尼
+	spriteType = {
 		name = "GFX_DOP_GNG_the_current_show_sony"
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_sony.png"
 	}
-	spriteType = { #立法会
+	spriteType = {
 		name = "GFX_DOP_GNG_the_current_show_legco"
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_legco.png"
 	}
-	spriteType = { #松下
+	spriteType = { 
 		name = "GFX_DOP_GNG_the_current_show_matsushita"
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_matsushita.png"
 	}
-	spriteType = { #长江实业
+	spriteType = { 
 		name = "GFX_DOP_GNG_the_current_show_cheung_kong"
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_cheung_kong.png"
 	}
-	spriteType = { #富士通
+	spriteType = {
 		name = "GFX_DOP_GNG_the_current_show_fujifilm"
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_fujifilm.png"
 	}
-	spriteType = { #日立
+	spriteType = {
 	name = "GFX_DOP_GNG_the_current_show_hitachi"
 	texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_hitachi.png"
 }

@@ -48,7 +48,6 @@ guiTypes = {
 			}
 		}
 		
-		##日本态度
 		iconType = {
 			name = "japanese_attitude_progress_bar"
 			spriteType = "GFX_DOP_japanese_attitude_progress_bar"
@@ -71,7 +70,6 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		##抵抗度
 		iconType = {
 			name = "the_resistance_progress_bar"
 			spriteType = "GFX_DOP_the_resistance_progress_bar"

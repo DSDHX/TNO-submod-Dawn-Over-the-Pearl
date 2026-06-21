@@ -75,13 +75,14 @@ GNG_BOP_SCW_Initialize = {
 
 GNG_BOP_GSA_Initialize = {
 	set_temp_variable = { TabName = token:BoP_Tab_DOPScienceAcademy }
+	TNO_BoP_GNG_AddTab = yes
 	set_variable = { GNG_GSA_research_on_now = 0 }
 	set_variable = { GNG_GSA_research_progress = 0 }
 	set_variable = { research_speed_value = 60 }
 	set_variable = { research_ability_factor = 0.8 }
-	TNO_BoP_GNG_AddTab = yes
 }
-GNG_SCW_Initialize ={
+
+GNG_SCW_Initialize = {
 	set_temp_variable = { scw_GNG_production_value_t = 150 }
 	set_temp_variable = { scw_GNG_compatibility_value_t = 1 }
 	set_temp_variable = { scw_USA_production_value_t = 300 }

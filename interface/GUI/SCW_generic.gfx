@@ -1,10 +1,9 @@
 spriteTypes = {
-	## Base BoP assets
-	spriteType = { # GNG_SiliconCW_category
+	spriteType = { 
 		name = "GFX_BoP_Tab_DOPSiliconCW_Icon"
 		textureFile = "gfx/interface/bop/GFX_BoP_Tab_SCW_Icon.dds"
 	}
-	spriteType = { # GNG_SiliconCW_category
+	spriteType = { 
 		name = "GFX_BoP_Tab_DOPScienceAcademy_Icon"
 		textureFile = "gfx/interface/bop/GFX_BoP_Tab_GSA_Icon.dds"
 	}
@@ -119,15 +118,6 @@ spriteTypes = {
 		name = "GFX_GCW_chain_btn5_selected"
 		textureFile = "gfx/interface/bop/GCW_Chain_btn5_selected.dds"
 	}
-	# progressbartype = {
-	# 	name = "GFX_SCW_genericbar"
-	# 	color = { 1.0 1.0 1.0 }
-	# 	colortwo = { 1.0 1.0 1.0 }
-	# 	size = { x = 480 y = 20 }
-	# 	textureFile1 = "gfx/interface/DOP_SCW/Progressbar_full.dds"
-	# 	textureFile2 = "gfx/interface/DOP_SCW/Progressbar_blank.dds"
-	# 	effectFile = "gfx/FX/progress.lua"
-	# }
 	spriteType = {
 		name = "GCW_speedrun_pie_overlay"
 		textureFile = "gfx/interface/bop/GCW_pie_cover.dds"
