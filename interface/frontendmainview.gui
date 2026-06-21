@@ -56,7 +56,101 @@ guiTypes = {
 		}
 		
 	}
-	
+	containerWindowType = {
+		name = "change_background"
+		size = { width = 40 height = 40 }
+		position = { x = -973 y = 122 }
+		Orientation = CENTER_DOWN
+		Origo = center
+
+		buttonType = {
+			name ="change_background_button"
+			position = { x = 466 y = -412 }
+			
+			quadTextureSprite = "GFX_background_icon"
+			pdx_tooltip = "CHANGE_BACKGROUND"
+			buttonFont = "aldrich_24_outline"
+			Orientation = center
+		}
+
+		containerWindowType = {
+			name = "background_selection"
+			size = { width = 244 height = 650 }
+			position = { x = 200 y = -750 }
+			margin = { top = 18 bottom = 0 left = 4}
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_bg_uniform"
+			}
+			
+			checkboxType = {
+					name = "select_all_checkbox"
+					position = { x = 13 y = 0 }
+					quadTextureSprite ="GFX_generic_checkbox"
+					buttonText = ""
+					buttonFont = "Main_14_black"
+					clicksound = click_checkbox
+				}
+			instantTextBoxType={
+					position = {x = 53 y = 6 }
+					name = "select_all_label"
+					font = "aldrich_18_outline"
+					borderSize = {x = 0 y = 0}	
+					maxWidth = 150
+					maxHeight = 18
+					text = "SELECT_ALL"	
+					orientation = "UPPER_LEFT"
+					format = left
+					
+			}
+						
+		containerWindowType = {
+			name = "background_selection_list"
+			size = { width = 230 height = 576 }
+			position = { x = 0 y = 40 }
+			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 63
+			smooth_scrolling = yes
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+			}
+			
+				gridBoxType = {
+					position = { x = 9 y = 0 }
+					name = "available_backgrounds"
+					size = { width = 200 height = 0 }
+					slotsize = { width = 200 height = 150 }
+					max_slots_horizontal = 1		
+				}
+
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "available_background"
+		size = { width = 190 height = 140 }
+		position = { x = 0 y = 0 }
+
+		buttonType = {
+			name = "change_background_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_tiled_window_1b_border"
+		}
+		
+		containerWindowType = {
+		name = "highlight"
+		size = { width = 192 height = 144 }
+			background = {
+				name = "glowup"
+				quadTextureSprite = "GFX_tiled_frame_selected"
+				alwaysTransparent = yes
+			}
+		}
+	}
+
 	containerWindowType = {
 		name = "unowned_dlc_item"
 		size = { width = 50 height = 50 }
@@ -448,7 +542,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "career_profile_button"
-			position = { x = 43 y = 94 }
+			position = { x = 43 y = 98 }
 			quadTextureSprite = "GFX_career_profile_icon"
 			clicksound = click_default
 			oversound = ui_menu_over

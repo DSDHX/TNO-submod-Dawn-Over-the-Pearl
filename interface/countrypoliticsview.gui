@@ -378,14 +378,6 @@ guiTypes = {
 					spriteType = "GFX_tno_button_148x34_underlay"
 				}
 
-				# instantTextboxType = {
-				# 	name = "power_balance_cover"
-				# 	font = "Bomb_16"
-				# 	Orientation = "UPPER_LEFT"
-				# 	text = "BOP_BUTTON"
-				# 	alwaysTransparent = yes
-				# }
-
 				buttonType = {
 					name = "show_power_balance"
 					position = { x = 0 y = 0 }

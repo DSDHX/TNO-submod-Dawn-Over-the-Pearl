@@ -534,6 +534,102 @@ SCW_piechart_recalculate = {
 	multiply_variable = {
 		JAP_percentage_for_bar = 100
 	}
+	#Prepare Frame for Piechart, This should be SSSEEE.0
+	set_variable = {
+		GNG_percentage_for_pie_chart_ed = GNG_percentage_for_bar
+	}
+	set_variable = {
+		GNG_percentage_for_pie_chart_st = 0
+	}
+	set_variable = {
+		USA_percentage_for_pie_chart_st = GNG_percentage_for_pie_chart_ed
+	}
+	set_variable = {
+		USA_percentage_for_pie_chart_ed = {
+			value = USA_percentage_for_bar
+			add = GNG_percentage_for_pie_chart_ed
+		}
+	}
+	set_variable = {
+		ITA_percentage_for_pie_chart_st = USA_percentage_for_pie_chart_ed
+	}
+	set_variable = {
+		ITA_percentage_for_pie_chart_ed = {
+			value = ITA_percentage_for_bar
+			add = USA_percentage_for_pie_chart_ed
+		}
+	}
+	set_variable = {
+		GER_percentage_for_pie_chart_st = ITA_percentage_for_pie_chart_ed
+	}
+	set_variable = {
+		GER_percentage_for_pie_chart_ed = {
+			value = GER_percentage_for_bar
+			add = ITA_percentage_for_pie_chart_ed
+		}
+	}
+	set_variable = {
+		JAP_percentage_for_pie_chart_st = GER_percentage_for_pie_chart_ed
+	}
+	set_variable = {
+		JAP_percentage_for_pie_chart_st = {
+			value = 100
+			subtract = GER_percentage_for_pie_chart_ed
+		}
+	}
+	set_variable = {
+		JAP_percentage_for_pie_chart_ed = 100
+	}
+	set_variable = {
+		GNG_pie_chart_frame =  {
+			value = GNG_percentage_for_pie_chart_st
+			multiply = 1000
+		}
+	}
+	set_variable = {
+		USA_pie_chart_frame =  {
+			value = USA_percentage_for_pie_chart_st
+			multiply = 1000
+		}
+	}
+	set_variable = {
+		ITA_pie_chart_frame =  {
+			value = ITA_percentage_for_pie_chart_st
+			multiply = 1000
+		}
+	}
+	set_variable = {
+		GER_pie_chart_frame =  {
+			value = GER_percentage_for_pie_chart_st
+			multiply = 1000
+		}
+	}
+	set_variable = {
+		JAP_pie_chart_frame =  {
+			value = JAP_percentage_for_pie_chart_st
+			multiply = 1000
+		}
+	}
+	round_variable = GNG_pie_chart_frame
+	round_variable = USA_pie_chart_frame
+	round_variable = ITA_pie_chart_frame
+	round_variable = GER_pie_chart_frame
+	round_variable = JAP_pie_chart_frame
+	add_to_variable = {
+		GNG_pie_chart_frame = GNG_percentage_for_pie_chart_ed
+	}
+	add_to_variable = {
+		USA_pie_chart_frame = USA_percentage_for_pie_chart_ed
+	}
+	add_to_variable = {
+		ITA_pie_chart_frame = ITA_percentage_for_pie_chart_ed
+	}
+	add_to_variable = {
+		GER_pie_chart_frame = GER_percentage_for_pie_chart_ed
+	}
+	add_to_variable = {
+		JAP_pie_chart_frame = JAP_percentage_for_pie_chart_ed
+	}
 	custom_effect_tooltip = new_chart_dis_tt
 	log = "[GetDateText]: [Root.GetName]: Recalculate SCW percentages."
 }

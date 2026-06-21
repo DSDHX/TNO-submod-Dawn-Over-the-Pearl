@@ -28,8 +28,6 @@
  GNG_dop_debug_enable_BOP_GSA: "§MDOP调试§!：启用广东科学院GUI"
  GNG_dop_debug_enable_BOP_page_1: "§MDOP调试§!：启用「晶色竞速」"
  GNG_dop_debug_enable_BOP_page_2: "§MDOP调试§!：启用「产业链」"
-#  manage_production_tt: "管理§C产量§!相关内容。"
-#  manage_competitiveness_tt: "管理§m竞争力§!相关内容。"
  SCW_pro_in_tt: "§Y[GetChangedFactionNAME]§!的§C产量§!将§G提升§!§Y[?change_t]§!。"
  SCW_com_in_tt: "§Y[GetChangedFactionNAME]§!的§m竞争力§!将§G提升§!§Y[?change_t|2%]§!。"
  SCW_pro_de_tt: "§Y[GetChangedFactionNAME]§!的§C产量§!将§R降低§!§Y[?change_t]§!。"

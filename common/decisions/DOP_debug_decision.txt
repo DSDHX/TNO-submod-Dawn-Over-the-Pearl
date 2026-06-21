@@ -234,20 +234,3 @@ GNG_debug_category = {
 		}
 	}
 }
-
-# GNG_SiliconCW_category = {
-# 	GNG_dop_debug_gsa_research_plus = {
-# 		allowed = {
-# 			original_tag = GNG
-# 		}
-# 		icon = GFX_decision_GNG_generic
-# 		visible = {
-# 			has_country_flag = GNG_show_debug_decisions
-# 		}
-# 		complete_effect = {
-# 			add_to_variable = {
-# 				GNG_GSA_research_progress = 20
-# 			}
-# 		}
-# 	}
-# }

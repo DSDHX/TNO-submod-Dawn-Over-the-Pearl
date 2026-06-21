@@ -1,5 +1,5 @@
 scripted_gui = {
-	# 致DOP制作组CODER：如果你没有完全把握你弄懂了整个冷战gui，不要动这个东西！::heart:: ——stakataka_3030
+	
 	DOP_bop_cover = {
 		context_type = player_context
 		parent_window_token = politics_tab
@@ -38,6 +38,37 @@ scripted_gui = {
 			}
 		}
 	}
+
+	GCW_speedrun_pie = {
+		window_name = "GCW_speedrun_pie"
+		context_type = player_context 
+		parent_window_name = powerbalanceview
+		visible = { 
+			AND = {
+				check_variable = { selected_decision_tabs_id = 1 } 
+				check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			}
+		}
+		ai_enabled = { always = no }
+		properties = {
+			GCW_speedrun_pie_GNG = {
+				frame = var:GNG_pie_chart_frame
+			}
+			GCW_speedrun_pie_USA = {
+				frame = var:USA_pie_chart_frame
+			}
+			GCW_speedrun_pie_ITA = {
+				frame = var:ITA_pie_chart_frame
+			}
+			GCW_speedrun_pie_GER = {
+				frame = var:GER_pie_chart_frame
+			}
+			GCW_speedrun_pie_JAP = {
+				frame = var:JAP_pie_chart_frame
+			}
+		}
+	}
+
 	DOP_SCW_base_container = {
 		window_name = "DOP_SCW_base_container"
 		context_type = player_context
@@ -48,21 +79,17 @@ scripted_gui = {
 		dynamic_lists = {
 			decision_tabs = {
 				array = SCW_enabled_tabs
-				index = allowed_decision_tab
-				value = allowed_decision_tab_id
+				index = bop_decision_tab
+				value = bop_decision_tab_id
 				entry_container = DOP_Switch_between_decisions_tab
 			}
 		}
 		effects = {
 			decision_tab_icon_click = {
-				set_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
-				clear_array = SCW_the_gui_showing_now
-				add_to_array = { SCW_the_gui_showing_now = allowed_decision_tab_id }
+				set_variable = { selected_decision_tabs_id = bop_decision_tab_id }
 			}
 			tab_click = {
-				set_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
-				clear_array = SCW_the_gui_showing_now
-				add_to_array = { SCW_the_gui_showing_now = allowed_decision_tab_id }
+				set_variable = { selected_decision_tabs_id = bop_decision_tab_id }
 			}
 			chain_btn_1_click = {
 				if = {
@@ -74,7 +101,6 @@ scripted_gui = {
 					set_variable = { chain_part_selected = 0 }
 				}
 				else = {
-					set_variable = { chain_part_selected = 0 }
 					set_variable = { chain_part_selected = 1 }
 				}
 			}
@@ -88,7 +114,6 @@ scripted_gui = {
 					set_variable = { chain_part_selected = 0 }
 				}
 				else = {
-					set_variable = { chain_part_selected = 0 }
 					set_variable = { chain_part_selected = 2 }
 				}
 			}
@@ -102,7 +127,6 @@ scripted_gui = {
 					set_variable = { chain_part_selected = 0 }
 				}
 				else = {
-					set_variable = { chain_part_selected = 0 }
 					set_variable = { chain_part_selected = 3 }
 				}
 			}
@@ -116,7 +140,6 @@ scripted_gui = {
 					set_variable = { chain_part_selected = 0 }
 				}
 				else = {
-					set_variable = { chain_part_selected = 0 }
 					set_variable = { chain_part_selected = 4 }
 				}
 			}
@@ -130,7 +153,6 @@ scripted_gui = {
 					set_variable = { chain_part_selected = 0 }
 				}
 				else = {
-					set_variable = { chain_part_selected = 0 }
 					set_variable = { chain_part_selected = 5 }
 				}
 			}
@@ -140,7 +162,7 @@ scripted_gui = {
 			decision_tab_icon_visible = {
 				if = {
 					limit = {
-						check_variable = { selected_decision_tabs_id = allowed_decision_tab_id }
+						check_variable = { selected_decision_tabs_id = bop_decision_tab_id }
 					}
 					set_temp_variable = { fopo_button_tab_frame = 2 }
 				}
@@ -152,7 +174,7 @@ scripted_gui = {
 				always = yes
 			}
 			conflict_title_visible = {
-				NOT = {has_country_flag = DOP_SCW_off}
+				NOT = { has_country_flag = DOP_SCW_off }
 			}
 			info_tab_visible = {
 				TNO_fopo_show_info_tab = yes
@@ -261,12 +283,15 @@ scripted_gui = {
 		visible = {
 			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
 			tag = GNG
-			NOT = {has_country_flag = DOP_SCW_off}
+			NOT = { has_country_flag = DOP_SCW_off }
 		}
 
 		triggers = {
 			info_tab_visible = {
-				DOP_SCW_show_info_box = yes
+				AND = {
+					tag = GNG
+					has_country_flag = GNG_SCW_show_info_box
+				}
 			}
 			seal_visible = {
 				always = no
