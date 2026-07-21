@@ -122,7 +122,26 @@ spriteTypes = {
 		name = "GCW_speedrun_pie_overlay"
 		textureFile = "gfx/interface/bop/GCW_pie_cover.dds"
 	}
-
+	spriteType = {
+		name = "GFX_GCW_IBM_logo"
+		textureFile = "gfx/interface/bop/IBM_logo.png"
+	}
+	spriteType = {
+		name = "GFX_GCW_SONY_logo"
+		textureFile = "gfx/interface/bop/SONY_logo.png"
+	}
+	spriteType = {
+		name = "GFX_GCW_Siemens_logo"
+		textureFile = "gfx/interface/bop/Siemens_logo.png"
+	}
+	spriteType = {
+		name = "GFX_GCW_VLSI_logo"
+		textureFile = "gfx/interface/bop/VLSI_logo.png"
+	}
+	spriteType = {
+		name = "GFX_GCW_SGS_logo"
+		textureFile = "gfx/interface/bop/SGS_logo.png"
+	}
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_GNG_chart"
 		textureFile1 = "gfx/interface/bop/GCW_pie_GNG_sony.dds"

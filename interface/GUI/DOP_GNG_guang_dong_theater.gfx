@@ -61,8 +61,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_fujifilm.png"
 	}
 	spriteType = {
-	name = "GFX_DOP_GNG_the_current_show_hitachi"
-	texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_hitachi.png"
-}
+		name = "GFX_DOP_GNG_the_current_show_hitachi"
+		texturefile = "gfx/interface/DOP_theater_gui/DOP_GNG_the_current_show_hitachi.png"
+	}
 }
 

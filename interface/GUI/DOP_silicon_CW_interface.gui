@@ -125,7 +125,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "GCW_speedrun_pie"
-			position = { x = 194 y = -8 }
+			position = { x = 75 y = 160 }
 
 			iconType = {
 				name = "GCW_speedrun_pie_GNG"
@@ -154,11 +154,46 @@ guiTypes = {
 			}
 			iconType = {
 				name = "GCW_speedrun_pie_overlay"
-				spriteType = "GFX_haiti_pie_overlay"
-				position = { x = -10 y = -9 }
+				spriteType = "GCW_speedrun_pie_overlay"
+				position = { x = -36 y = -36 }
+				alwaystransparent = yes
 			}
 		}
-
+		iconType = {
+			name = "Part_Info_IBM"
+			spriteType = "GFX_GCW_IBM_logo"
+			position = { x = 130 y = 560 }
+			scale = 0.125
+			pdx_tooltip = SCW_usa_per_bar_tt
+		}
+		iconType = {
+			name = "Part_Info_SONY"
+			spriteType = "GFX_GCW_SONY_logo"
+			position = { x = 50 y = 550 }
+			scale = 0.03
+			pdx_tooltip = SCW_gng_per_bar_tt
+		}
+		iconType = {
+			name = "Part_Info_Siemens"
+			spriteType = "GFX_GCW_Siemens_logo"
+			position = { x = 330 y = 550 }
+			scale = 0.125
+			pdx_tooltip = SCW_ger_per_bar_tt
+		}
+		iconType = {
+			name = "Part_Info_VLSI"
+			spriteType = "GFX_GCW_VLSI_logo"
+			position = { x = 390 y = 560 }
+			scale = 0.5
+			pdx_tooltip = SCW_jap_per_bar_tt
+		}
+		iconType = {
+			name = "Part_Info_SGS"
+			spriteType = "GFX_GCW_SGS_logo"
+			position = { x = 220 y = 560 }
+			scale = 0.25
+			pdx_tooltip = SCW_ita_per_bar_tt
+		}
 		buttonType = {
 			name = "chain_btn_1"
 			spriteType = "GFX_GCW_chain_btn1_off"

@@ -39,36 +39,6 @@ scripted_gui = {
 		}
 	}
 
-	GCW_speedrun_pie = {
-		window_name = "GCW_speedrun_pie"
-		context_type = player_context 
-		parent_window_name = powerbalanceview
-		visible = { 
-			AND = {
-				check_variable = { selected_decision_tabs_id = 1 } 
-				check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
-			}
-		}
-		ai_enabled = { always = no }
-		properties = {
-			GCW_speedrun_pie_GNG = {
-				frame = var:GNG_pie_chart_frame
-			}
-			GCW_speedrun_pie_USA = {
-				frame = var:USA_pie_chart_frame
-			}
-			GCW_speedrun_pie_ITA = {
-				frame = var:ITA_pie_chart_frame
-			}
-			GCW_speedrun_pie_GER = {
-				frame = var:GER_pie_chart_frame
-			}
-			GCW_speedrun_pie_JAP = {
-				frame = var:JAP_pie_chart_frame
-			}
-		}
-	}
-
 	DOP_SCW_base_container = {
 		window_name = "DOP_SCW_base_container"
 		context_type = player_context
@@ -235,6 +205,39 @@ scripted_gui = {
 				check_variable = { chain_part_selected = 5 }
 				check_variable = { selected_decision_tabs_id = 2 }
 			}
+			GCW_speedrun_pie_GNG_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_speedrun_pie_USA_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_speedrun_pie_ITA_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_speedrun_pie_GER_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_speedrun_pie_JAP_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			GCW_speedrun_pie_overlay_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			Part_Info_IBM_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			Part_Info_SONY_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			Part_Info_Siemens_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			Part_Info_VLSI_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			Part_Info_SGS_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
 		}
 
 		properties = {
@@ -247,20 +250,20 @@ scripted_gui = {
 			decision_tab_icon = {
 				image = "[Get_SCW_desicion_tab_icon]"
 			}
-			GCW_gng_per_bar = {
-				frame = var:GNG_percentage_for_bar
+			GCW_speedrun_pie_GNG = {
+				frame = var:GNG_pie_chart_frame
 			}
-			GCW_usa_per_bar = {
-				frame = var:USA_percentage_for_bar
+			GCW_speedrun_pie_USA = {
+				frame = var:USA_pie_chart_frame
 			}
-			GCW_ita_per_bar = {
-				frame = var:ITA_percentage_for_bar
+			GCW_speedrun_pie_ITA = {
+				frame = var:ITA_pie_chart_frame
 			}
-			GCW_ger_per_bar = {
-				frame = var:GER_percentage_for_bar
+			GCW_speedrun_pie_GER = {
+				frame = var:GER_pie_chart_frame
 			}
-			GCW_jap_per_bar = {
-				frame = var:JAP_percentage_for_bar
+			GCW_speedrun_pie_JAP = {
+				frame = var:JAP_pie_chart_frame
 			}
 		}
 		
