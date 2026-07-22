@@ -2,8 +2,8 @@
 GNG_guangdong_theater_gui_decision_category: "广东大剧院"
 GNG_guangdong_theater_gui_decision_category_desc: ""
 
-DOP_GNG_the_resistance_text: "观众的耐心"
-DOP_GNG_japanese_attitude_text: "日本的态度"
+DOP_GNG_the_resistance_text: "旁观者的耐心"
+DOP_GNG_japanese_attitude_text: "灼日的态度"
 DOP_GNG_the_current_show_text: "当前演出的是:[get_DOP_GNG_the_current_show_text]"
 
 DOP_GNG_guangdong_theater_Info_tt: "大东亚战争结束后，广东回到了往日的歌舞升平中。泛亚主义的赤色聚光灯下，总导演盛田昭夫的摄像机前，每位演员都带着他们的雄心壮志，走上台前。\n\n在这个如硅晶般易碎的舞台上表演必须战战兢兢，如履薄冰。投资者的态度与观众的耐心——剧场盈利的必需品——随时可能被随手做出的取舍所改变。毋庸置疑的一点是，逐利的投资者们将会根据观众对演员的反应更易他们的态度。\n\n对于演员而言，比起远在重洋之外的投资者，也许那些坐在舞台下看着他们的芸芸众生才是他们真正的衣食父母。当观众们的不满冲破了耐心的阈值时，正在上演的剧目便会因为倒彩声而强制中断，一段时间内，他们想来是不想再看到类似的题材或类似的演员了。更糟糕的是，如果这种情况出现太多次，我们的投资者可能会重新考虑我们的价值……\n\n"

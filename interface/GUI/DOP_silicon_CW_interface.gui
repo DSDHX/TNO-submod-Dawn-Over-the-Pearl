@@ -160,10 +160,10 @@ guiTypes = {
 			}
 		}
 		iconType = {
-			name = "Part_Info_IBM"
-			spriteType = "GFX_GCW_IBM_logo"
-			position = { x = 130 y = 560 }
-			scale = 0.125
+			name = "Part_Info_SEMATECH"
+			spriteType = "GFX_GCW_SEMATECH_logo"
+			position = { x = 125 y = 555 }
+			scale = 0.08
 			pdx_tooltip = SCW_usa_per_bar_tt
 		}
 		iconType = {

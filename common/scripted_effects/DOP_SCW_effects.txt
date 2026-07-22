@@ -652,11 +652,6 @@ SCW_piechart_recalculate = {
 	add_to_variable = {
 		JAP_pie_chart_frame = JAP_percentage_for_pie_chart_ed
 	}
-	# round_variable = GNG_pie_chart_frame
-	# round_variable = USA_pie_chart_frame
-	# round_variable = ITA_pie_chart_frame
-	# round_variable = GER_pie_chart_frame
-	# round_variable = JAP_pie_chart_frame
 	custom_effect_tooltip = new_chart_dis_tt
 	log = "[GetDateText]: [Root.GetName]: Recalculate SCW percentages."
 }

@@ -1,0 +1,342 @@
+focus_tree = {
+    id = DOP_GNG_opening_tree
+    default = no
+    shared_focus = DOP_GNG_year_of_the_rain
+}
+
+# 风雨飘摇的时代：
+shared_focus = {
+    id = DOP_GNG_year_of_the_rain
+    icon = DOP_GNG_year_of_the_rain_gfx
+    x = 0
+    y = 0
+    cost = 3.000
+    prerequisite = { # 前置组 4
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_year_of_the_rain"
+    }
+}
+
+# 拨云见日：
+shared_focus = {
+    id = DOP_GNG_res_from_oc
+    icon = DOP_GNG_res_from_oc_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -4
+    y = 1
+    cost = 1.000
+    prerequisite = { # 前置组 5
+        focus = DOP_GNG_year_of_the_rain
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_res_from_oc"
+    }
+}
+
+# 重连经济网：
+shared_focus = {
+    id = DOP_GNG_regen_econ
+    icon = DOP_GNG_regen_econ_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -2
+    y = 2
+    cost = 2.000
+    prerequisite = { # 前置组 6
+        focus = DOP_GNG_res_from_oc
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_regen_econ"
+    }
+}
+
+# 全球的残垣断壁：
+shared_focus = {
+    id = DOP_GNG_wrecking_world
+    icon = DOP_GNG_wrecking_world_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -6
+    y = 2
+    cost = 2.000
+    prerequisite = { # 前置组 7
+        focus = DOP_GNG_res_from_oc
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_wrecking_world"
+    }
+}
+
+# 暴乱的尾声：
+shared_focus = {
+    id = DOP_GNG_deal_w_labors
+    icon = DOP_GNG_deal_w_labors_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -4
+    y = 4
+    cost = 3.000
+    prerequisite = { # 前置组 16
+        focus = DOP_GNG_pan_thai_bay
+    }
+    prerequisite = { 
+        focus = DOP_GNG_gd_mex_col
+    }
+    prerequisite = { 
+        focus = DOP_GNG_expand_d
+    }
+    prerequisite = { 
+        focus = DOP_GNG_lower_barrier
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_deal_w_labors"
+    }
+}
+
+# 诱之以利：
+shared_focus = {
+    id = DOP_GNG_more_jobs
+    icon = DOP_GNG_more_jobs_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -5
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 8
+        focus = DOP_GNG_deal_w_labors
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_more_jobs"
+    }
+}
+
+# 动之以情：
+shared_focus = {
+    id = DOP_GNG_legal_compromise
+    icon = DOP_GNG_legal_compromise_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -3
+    y = 5
+    cost = 3.000
+    prerequisite = { # 前置组 9
+        focus = DOP_GNG_deal_w_labors
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_legal_compromise"
+    }
+}
+
+# 广东失业救济法：
+shared_focus = {
+    id = DOP_GNG_save_unemp
+    icon = DOP_GNG_save_unemp_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -3
+    y = 6
+    cost = 5.000
+    prerequisite = { # 前置组 10
+        focus = DOP_GNG_legal_compromise
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_save_unemp"
+    }
+}
+
+# 石油自主化计划：
+shared_focus = {
+    id = DOP_GNG_maoming_ins
+    icon = DOP_GNG_maoming_ins_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -5
+    y = 6
+    cost = 5.000
+    prerequisite = { # 前置组 11
+        focus = DOP_GNG_more_jobs
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_maoming_ins"
+    }
+}
+
+# 环泰国湾经济合作：
+shared_focus = {
+    id = DOP_GNG_pan_thai_bay
+    icon = DOP_GNG_pan_thai_bay_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -7
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 12
+        focus = DOP_GNG_wrecking_world
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_pan_thai_bay"
+    }
+}
+
+# 跨越太平洋的朋友：
+shared_focus = {
+    id = DOP_GNG_gd_mex_col
+    icon = DOP_GNG_gd_mex_col_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -5
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 13
+        focus = DOP_GNG_wrecking_world
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_gd_mex_col"
+    }
+}
+
+# 索尼，以旧换新：
+shared_focus = {
+    id = DOP_GNG_expand_d
+    icon = DOP_GNG_expand_d_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -3
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 14
+        focus = DOP_GNG_regen_econ
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_expand_d"
+    }
+}
+
+# 翻热股市：
+shared_focus = {
+    id = DOP_GNG_lower_barrier
+    icon = DOP_GNG_lower_barrier_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = -1
+    y = 3
+    cost = 2.000
+    prerequisite = { # 前置组 15
+        focus = DOP_GNG_regen_econ
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_lower_barrier"
+    }
+}
+
+# 正当防卫：
+shared_focus = {
+    id = DOP_GNG_rightous_def
+    icon = DOP_GNG_rightous_def_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 2
+    y = 1
+    cost = 1.000
+    prerequisite = { # 前置组 17
+        focus = DOP_GNG_year_of_the_rain
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_rightous_def"
+    }
+}
+
+# 警务处再武装化：
+shared_focus = {
+    id = DOP_GNG_rearm_pol
+    icon = DOP_GNG_rearm_pol_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 1
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 19
+        focus = DOP_GNG_rightous_def
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_rearm_pol"
+    }
+}
+
+# 共荣圈情报协作：
+shared_focus = {
+    id = DOP_GNG_cps_info_co
+    icon = DOP_GNG_cps_info_co_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 3
+    y = 2
+    cost = 3.000
+    prerequisite = { # 前置组 20
+        focus = DOP_GNG_rightous_def
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_cps_info_co"
+    }
+}
+
+# 充实对策部队：
+shared_focus = {
+    id = DOP_GNG_fill_resp_troops
+    icon = DOP_GNG_fill_resp_troops_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 1
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 21
+        focus = DOP_GNG_rearm_pol
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_fill_resp_troops"
+    }
+}
+
+# 重审《地位协定》：
+shared_focus = {
+    id = DOP_GNG_reiterate_our_pos
+    icon = DOP_GNG_reiterate_our_pos_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 3
+    y = 3
+    cost = 3.000
+    prerequisite = { # 前置组 22
+        focus = DOP_GNG_cps_info_co
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_reiterate_our_pos"
+    }
+}
+
+# 袭扰与阻滞：
+shared_focus = {
+    id = DOP_GNG_army_of_gadfly
+    icon = DOP_GNG_army_of_gadfly_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 2
+    y = 4
+    cost = 3.000
+    prerequisite = { # 前置组 23
+        focus = DOP_GNG_fill_resp_troops
+    }
+    prerequisite = { 
+        focus = DOP_GNG_reiterate_our_pos
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_army_of_gadfly"
+    }
+}
+
+# 新的十字路口：
+shared_focus = {
+    id = DOP_GNG_faux_opening
+    icon = DOP_GNG_faux_opening_gfx
+    relative_position_id = DOP_GNG_year_of_the_rain
+    x = 0
+    y = 7
+    cost = 4.000
+    prerequisite = { # 前置组 24
+        focus = DOP_GNG_maoming_ins
+    }
+    prerequisite = { 
+        focus = DOP_GNG_save_unemp
+    }
+    prerequisite = { 
+        focus = DOP_GNG_army_of_gadfly
+    }
+    completion_reward = {
+        log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_faux_opening"
+    }
+}
+

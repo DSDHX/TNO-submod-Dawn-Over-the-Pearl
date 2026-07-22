@@ -223,7 +223,7 @@ scripted_gui = {
 			GCW_speedrun_pie_overlay_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
 			}
-			Part_Info_IBM_visible = {
+			Part_Info_SEMATECH_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
 			}
 			Part_Info_SONY_visible = {

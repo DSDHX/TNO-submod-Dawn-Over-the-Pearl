@@ -1,4 +1,16 @@
 GNG_debug_category = {
+	GNG_dop_debug_load_opening = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		complete_effect = {
+			load_focus_tree = DOP_GNG_opening_tree
+		}
+	}
 	GNG_dop_debug_load_lomitia = {
 		allowed = {
 			original_tag = GNG
@@ -10,7 +22,6 @@ GNG_debug_category = {
 		complete_effect = {
 			load_focus_tree = dop_sonyjapan_core_tree
 		}
-		
 	}
 	GNG_dop_debug_load_end1_lee = {
 		allowed = {

@@ -123,8 +123,8 @@ spriteTypes = {
 		textureFile = "gfx/interface/bop/GCW_pie_cover.dds"
 	}
 	spriteType = {
-		name = "GFX_GCW_IBM_logo"
-		textureFile = "gfx/interface/bop/IBM_logo.png"
+		name = "GFX_GCW_SEMATECH_logo"
+		textureFile = "gfx/interface/bop/SEMATECH_logo.png"
 	}
 	spriteType = {
 		name = "GFX_GCW_SONY_logo"
