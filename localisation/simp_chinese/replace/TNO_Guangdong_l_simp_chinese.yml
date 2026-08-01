@@ -1,2 +1,5 @@
 ﻿l_simp_chinese:
   GNG_core_economic_statistics_desc: "[Get_DOP_GNG_econ_statistics]"
+   GNG_econ_graph_tt_inner_GDP: "[Get_DOP_GNG_econ_graph_tt_GDP]"
+ GNG_econ_graph_tt_inner_GDP_Growth: "[Get_DOP_GNG_econ_graph_tt_GDP_Growth]"
+ GNG_econ_graph_tt_inner_debt_to_GDP: "[Get_DOP_GNG_econ_graph_tt_debt_to_GDP]"

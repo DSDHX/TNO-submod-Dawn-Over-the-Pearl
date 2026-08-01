@@ -18,3 +18,33 @@ defined_text = {
 		localization_key = DOP_GNG_econ_statistics_man
 	}
 }
+defined_text = {
+	name = Get_DOP_GNG_econ_graph_tt_GDP
+	text = {
+		trigger = { has_global_flag = DOP_GNG_econ_compare_chi }
+		localization_key = DOP_GNG_econ_graph_tt_GDP_chi
+	}
+	text = {
+		localization_key = DOP_GNG_econ_graph_tt_GDP_man
+	}
+}
+defined_text = {
+	name = Get_DOP_GNG_econ_graph_tt_GDP_Growth
+	text = {
+		trigger = { has_global_flag = DOP_GNG_econ_compare_chi }
+		localization_key = DOP_GNG_econ_graph_tt_GDP_Growth_chi
+	}
+	text = {
+		localization_key = DOP_GNG_econ_graph_tt_GDP_Growth_man
+	}
+}
+defined_text = {
+	name = Get_DOP_GNG_econ_graph_tt_debt_to_GDP
+	text = {
+		trigger = { has_global_flag = DOP_GNG_econ_compare_chi }
+		localization_key = DOP_GNG_econ_graph_tt_debt_to_GDP_chi
+	}
+	text = {
+		localization_key = DOP_GNG_econ_graph_tt_debt_to_GDP_man
+	}
+}
