@@ -1,0 +1,23 @@
+add_namespace = DOP_GNG_econ_compare
+
+# DOP：开局回填（guangdong_flavor.8，60h 后调用 GNG_backfill_graphs）会把 MAN 数据
+# 重新写回 GNG_manchukuo_*_history；如果玩家已开启 CHI 对比，本事件在 1 小时后
+# 自动重新应用 CHI 数据，避免“开局后一小段时间 CHI 突然变成 MAN”。
+country_event = {
+	id = DOP_GNG_econ_compare.1
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = ok
+		hidden_effect = {
+			if = {
+				limit = {
+					has_global_flag = DOP_GNG_econ_compare_chi
+				}
+				DOP_GNG_econ_apply_compare = yes
+			}
+		}
+	}
+}

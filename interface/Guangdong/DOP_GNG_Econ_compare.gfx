@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_GNG_econ_compare_chi_texticon"
+		texturefile = "gfx/interface/DOP_GNG_econ_compare/chinese_nation.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_GNG_econ_compare_man_texticon"
+		texturefile = "gfx/interface/DOP_GNG_econ_compare/manchukuo_gdp_2.dds"
+		legacy_lazy_load = no
+	}
+	progressbartype = {
+		name = GFX_DOP_GNG_Econ_Linegraph_Chi
+		steps = 1000000
+		color = { 0.015 0.200 0.250 0.0 }
+		colortwo = { 0.25 0.55 1.0 1 }
+		# 与满洲国线同一套 15x200 线段图，仅换颜色（蓝色）。
+		# 不要加 textureFile1/2：line_graph_2.shader 的 Texture effect 会输出纯白，
+		# 无贴图时走 Color effect 由 shader 用 colortwo 程序化画线。
+		size = {
+			x = 15
+			y = 200
+		}
+		effectFile = "gfx/FX/line_graph_2.shader"
+	}
+}

@@ -12,6 +12,12 @@ scripted_gui = {
 			line_segment = {
 				frame = segment_value
 			}
+			line_segment_manchukuo = {
+				frame = segment_value
+			}
+			line_segment_chi = {
+				frame = segment_value
+			}
 			line_segment_target = {
 				frame = segment_value
 			}
@@ -40,6 +46,9 @@ scripted_gui = {
 				y = GNG_econ_actual_y
 			}
 			manchukuo_gdp = {
+				y = GNG_econ_manchukuo_y
+			}
+			chi_gdp = {
 				y = GNG_econ_manchukuo_y
 			}
 
@@ -236,6 +245,29 @@ scripted_gui = {
 			GNG_Graphs_IJA_Animation_visible = {
 				has_country_flag = GNG_disable_all_mechanics_IJA
 			}
+			line_segment_manchukuo_visible = {
+				NOT = { has_global_flag = DOP_GNG_econ_compare_chi }
+			}
+			line_segment_chi_visible = {
+				has_global_flag = DOP_GNG_econ_compare_chi
+			}
+			manchukuo_gdp_visible = {
+				NOT = { has_global_flag = DOP_GNG_econ_compare_chi }
+			}
+			chi_gdp_visible = {
+				has_global_flag = DOP_GNG_econ_compare_chi
+			}
+			DOP_econ_compare_button_visible = {
+				has_country_flag = GNG_debug_tools
+			}
+			DOP_econ_compare_man_icon_visible = {
+				has_country_flag = GNG_debug_tools
+				NOT = { has_global_flag = DOP_GNG_econ_compare_chi }
+			}
+			DOP_econ_compare_chi_icon_visible = {
+				has_country_flag = GNG_debug_tools
+				has_global_flag = DOP_GNG_econ_compare_chi
+			}
 		}
 
 		effects = {
@@ -257,9 +289,11 @@ scripted_gui = {
 						has_country_flag = DOP_GNG_econ_compare_chi
 					}
 					clr_country_flag = DOP_GNG_econ_compare_chi
+					clr_global_flag = DOP_GNG_econ_compare_chi
 				}
 				else = {
 					set_country_flag = DOP_GNG_econ_compare_chi
+					set_global_flag = DOP_GNG_econ_compare_chi
 				}
 				add_to_variable = { GNG_economy_dirty_variable = 1 }
 				DOP_GNG_econ_apply_compare = yes

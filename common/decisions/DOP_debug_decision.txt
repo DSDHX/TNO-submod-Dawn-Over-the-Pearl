@@ -261,9 +261,11 @@ GNG_debug_category = {
 					has_country_flag = DOP_GNG_econ_compare_chi
 				}
 				clr_country_flag = DOP_GNG_econ_compare_chi
+				clr_global_flag = DOP_GNG_econ_compare_chi
 			}
 			else = {
 				set_country_flag = DOP_GNG_econ_compare_chi
+				set_global_flag = DOP_GNG_econ_compare_chi
 			}
 			add_to_variable = { GNG_economy_dirty_variable = 1 }
 			DOP_GNG_econ_apply_compare = yes
@@ -282,6 +284,8 @@ GNG_debug_category = {
 			}
 		}
 		complete_effect = {
+			set_variable = { DOP_GNG_econ_compare_inited = 0 }
+			set_variable = { DOP_man_gdp_snapshot_done = 0 }
 			DOP_GNG_econ_compare_init = yes
 			DOP_GNG_econ_apply_compare = yes
 			add_to_variable = { GNG_economy_dirty_variable = 1 }

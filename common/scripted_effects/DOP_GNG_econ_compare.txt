@@ -1,37 +1,206 @@
-# DOP: 珠江奇迹经济图 - 对比对象切换（满洲国 <-> 改组国民政府/CHI）
-# 不改动 TNO 的接口与原有逻辑；开关开启时把 CHI 数据覆盖到现有对比线上，
-# 关闭时恢复满洲国数据。镜像数组在后台按月滚动，保证随时可切换。
+# DOP: 珠江奇迹经济图 - 对比对象切换（满洲国 <-> 中华民国/CHI）
+#
+# 设计要点：
+# 1. 满洲国镜像 = 只读快照。首次初始化时保存 TNO 回填的“开局前”记录，
+#    之后绝不滚动/覆盖，切回满洲国时原样恢复。
+# 2. 中华民国历史 = 按 TNO GNG_backfill_graphs 的算法编造的“开局前”记录，
+#    并随月份滚动更新（与 TNO 原机制对满洲国的设计一致）。
+# 3. 增长率回退：GDP_growth_real 在经济脉冲首次计算前为 0，
+#    回退到 GDP_growth（开局基数），再回退到固定默认值，避免首月读零。
+# 4. 债务率数组单位与 TNO 一致（百分数，×100）。
 
-DOP_GNG_econ_compare_init = {
-	# 镜像满洲国当前历史（TNO 通过事件回填的 25 个月数据）
+DOP_GNG_econ_chi_growth_now = {
+	set_temp_variable = { DOP_chi_growth_now = CHI.GDP_growth_real }
+	if = {
+		limit = { check_variable = { DOP_chi_growth_now = 0 } }
+		set_temp_variable = { DOP_chi_growth_now = CHI.GDP_growth }
+	}
+	if = {
+		limit = { check_variable = { DOP_chi_growth_now = 0 } }
+		set_temp_variable = { DOP_chi_growth_now = 8 }
+	}
+}
+
+DOP_GNG_econ_man_growth_now = {
+	set_temp_variable = { DOP_man_growth_now = MAN.GDP_growth_real }
+	if = {
+		limit = { check_variable = { DOP_man_growth_now = 0 } }
+		set_temp_variable = { DOP_man_growth_now = MAN.GDP_growth }
+	}
+	if = {
+		limit = { check_variable = { DOP_man_growth_now = 0 } }
+		set_temp_variable = { DOP_man_growth_now = 4 }
+	}
+}
+
+# 按 TNO GNG_backfill_graphs 的满洲国参数重新生成“开局前”历史
+# （仅在原记录已丢失/不可用时使用，例如开关在初始化前已被打开）
+DOP_GNG_econ_backfill_man = {
 	clear_array = DOP_man_gdp_history
-	for_each_loop = {
-		array = GNG_manchukuo_gdp_history
-		add_to_array = { DOP_man_gdp_history = v }
-	}
 	clear_array = DOP_man_gdp_growth_history
-	for_each_loop = {
-		array = GNG_manchukuo_gdp_growth_history
-		add_to_array = { DOP_man_gdp_growth_history = v }
-	}
 	clear_array = DOP_man_debt_ratio_history
-	for_each_loop = {
-		array = GNG_manchukuo_debt_ratio_history
-		add_to_array = { DOP_man_debt_ratio_history = v }
-	}
 
-	# 改组国民政府历史用当前值回填 25 个月
-	clear_array = DOP_chi_gdp_history
-	clear_array = DOP_chi_gdp_growth_history
-	clear_array = DOP_chi_debt_ratio_history
+	DOP_GNG_econ_man_growth_now = yes
+
+	set_temp_variable = { man_monthly_gdp_growth = DOP_man_growth_now }
+	divide_temp_variable = { man_monthly_gdp_growth = 12 }
+	multiply_temp_variable = { man_monthly_gdp_growth = MAN.GDP }
+
+	set_temp_variable = { curr_man_GDP = MAN.GDP }
 	for_loop_effect = {
 		start = 0
 		end = 25
 		value = i
 
-		add_to_array = { array = DOP_chi_gdp_history value = CHI.GDP index = 0 }
-		add_to_array = { array = DOP_chi_gdp_growth_history value = CHI.GDP_growth_real index = 0 }
-		add_to_array = { array = DOP_chi_debt_ratio_history value = CHI.debt_to_GDP_ratio index = 0 }
+		add_to_array = { array = DOP_man_gdp_history value = curr_man_GDP index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = 0.01
+			max = 0.015
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		multiply_temp_variable = { delta = man_monthly_gdp_growth }
+		subtract_from_temp_variable = { curr_man_GDP = delta }
+	}
+
+	set_temp_variable = { man_monthly_gdp_growth = DOP_man_growth_now }
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_man_gdp_growth_history value = man_monthly_gdp_growth index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = -0.02
+			max = 0.03
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		multiply_temp_variable = { delta = man_monthly_gdp_growth }
+		subtract_from_temp_variable = { man_monthly_gdp_growth = delta }
+	}
+
+	set_temp_variable = { curr_man_debt = MAN.debt_to_GDP_ratio }
+	multiply_temp_variable = { curr_man_debt = 100 }
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_man_debt_ratio_history value = curr_man_debt index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = -0.15
+			max = -0.1
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		subtract_from_temp_variable = { curr_man_debt = delta }
+	}
+}
+
+DOP_GNG_econ_compare_init = {
+	# 中华民国：编造“开局前”历史（TNO 风格逐月回推）
+	DOP_GNG_econ_chi_growth_now = yes
+
+	clear_array = DOP_chi_gdp_history
+	clear_array = DOP_chi_gdp_growth_history
+	clear_array = DOP_chi_debt_ratio_history
+
+	set_temp_variable = { chi_monthly_gdp_growth = DOP_chi_growth_now }
+	divide_temp_variable = { chi_monthly_gdp_growth = 12 }
+	multiply_temp_variable = { chi_monthly_gdp_growth = CHI.GDP }
+
+	set_temp_variable = { curr_chi_GDP = CHI.GDP }
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_chi_gdp_history value = curr_chi_GDP index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = 0.012
+			max = 0.018
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		multiply_temp_variable = { delta = chi_monthly_gdp_growth }
+		subtract_from_temp_variable = { curr_chi_GDP = delta }
+	}
+
+	set_temp_variable = { chi_monthly_gdp_growth = DOP_chi_growth_now }
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_chi_gdp_growth_history value = chi_monthly_gdp_growth index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = -0.02
+			max = 0.03
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		multiply_temp_variable = { delta = chi_monthly_gdp_growth }
+		subtract_from_temp_variable = { chi_monthly_gdp_growth = delta }
+	}
+
+	set_temp_variable = { curr_chi_debt = CHI.debt_to_GDP_ratio }
+	multiply_temp_variable = { curr_chi_debt = 100 }
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_chi_debt_ratio_history value = curr_chi_debt index = 0 }
+
+		randomize_temp_variable = {
+			var = rand_multiplier
+			distribution = binomial
+			min = -0.15
+			max = -0.1
+		}
+		set_temp_variable = { delta = rand_multiplier }
+		subtract_from_temp_variable = { curr_chi_debt = delta }
+	}
+
+	# 满洲国：只保存一次原始记录（TNO 回填的开局前数据），此后原样恢复
+	if = {
+		limit = { check_variable = { DOP_man_gdp_snapshot_done = 0 } }
+		if = {
+			limit = {
+				NOT = { has_country_flag = DOP_GNG_econ_compare_chi }
+			}
+			clear_array = DOP_man_gdp_history
+			clear_array = DOP_man_gdp_growth_history
+			clear_array = DOP_man_debt_ratio_history
+			for_each_loop = {
+				array = GNG_manchukuo_gdp_history
+				add_to_array = { DOP_man_gdp_history = v }
+			}
+			for_each_loop = {
+				array = GNG_manchukuo_gdp_growth_history
+				add_to_array = { DOP_man_gdp_growth_history = v }
+			}
+			for_each_loop = {
+				array = GNG_manchukuo_debt_ratio_history
+				add_to_array = { DOP_man_debt_ratio_history = v }
+			}
+		}
+		else = {
+			# 开关已在初始化前打开：原数组可能已被 CHI 覆盖，按 TNO 算法重建
+			DOP_GNG_econ_backfill_man = yes
+		}
+		set_variable = { DOP_man_gdp_snapshot_done = 1 }
 	}
 
 	set_variable = { DOP_GNG_econ_compare_inited = 1 }
@@ -39,35 +208,37 @@ DOP_GNG_econ_compare_init = {
 
 DOP_GNG_econ_compare_monthly = {
 	if = {
-		limit = { NOT = { has_variable = DOP_GNG_econ_compare_inited } }
+		limit = { check_variable = { DOP_GNG_econ_compare_inited = 0 } }
 		DOP_GNG_econ_compare_init = yes
 	}
 
-	# 滚动满洲国镜像
-	remove_from_array = { array = DOP_man_gdp_history index = 0 }
-	add_to_array = { DOP_man_gdp_history = MAN.GDP }
-	remove_from_array = { array = DOP_man_gdp_growth_history index = 0 }
-	add_to_array = { DOP_man_gdp_growth_history = MAN.GDP_growth_real }
-	remove_from_array = { array = DOP_man_debt_ratio_history index = 0 }
-	add_to_array = { DOP_man_debt_ratio_history = MAN.debt_to_GDP_ratio }
+	# 中华民国历史滚动（满洲国快照保持只读）
+	DOP_GNG_econ_chi_growth_now = yes
 
-	# 滚动改组国民政府历史
 	remove_from_array = { array = DOP_chi_gdp_history index = 0 }
 	add_to_array = { DOP_chi_gdp_history = CHI.GDP }
+
 	remove_from_array = { array = DOP_chi_gdp_growth_history index = 0 }
-	add_to_array = { DOP_chi_gdp_growth_history = CHI.GDP_growth_real }
+	add_to_array = { DOP_chi_gdp_growth_history = DOP_chi_growth_now }
+
+	set_temp_variable = { chi_debt_now = CHI.debt_to_GDP_ratio }
+	multiply_temp_variable = { chi_debt_now = 100 }
 	remove_from_array = { array = DOP_chi_debt_ratio_history index = 0 }
-	add_to_array = { DOP_chi_debt_ratio_history = CHI.debt_to_GDP_ratio }
+	add_to_array = { DOP_chi_debt_ratio_history = chi_debt_now }
 
 	if = {
-		limit = { has_country_flag = DOP_GNG_econ_compare_chi }
+		limit = { has_global_flag = DOP_GNG_econ_compare_chi }
 		DOP_GNG_econ_apply_compare = yes
 	}
 }
 
 DOP_GNG_econ_apply_compare = {
 	if = {
-		limit = { has_country_flag = DOP_GNG_econ_compare_chi }
+		limit = { check_variable = { DOP_GNG_econ_compare_inited = 0 } }
+		DOP_GNG_econ_compare_init = yes
+	}
+	if = {
+		limit = { has_global_flag = DOP_GNG_econ_compare_chi }
 		clear_array = GNG_manchukuo_gdp_history
 		for_each_loop = {
 			array = DOP_chi_gdp_history
@@ -102,4 +273,98 @@ DOP_GNG_econ_apply_compare = {
 		}
 	}
 	GNG_draw_graphs = yes
+}
+
+# ============================================================================
+# 重构：复制 TNO 的 GNG_econ_graph_monthly_tick，改名为 DOP_GNG_econ_graph_monthly_tick，
+# 并在末尾追加 DOP_GNG_econ_compare_monthly，保证 CHI 模式下每月数据更新后立即恢复 CHI，
+# 而不是被 TNO 原 tick 写回的 MAN 数据覆盖（不能用同名覆盖 scripted_effect）。
+# 调用点已换成：common/on_actions/TNO_Guangdong_on_actions.txt 的 on_monthly_GNG。
+# ============================================================================
+DOP_GNG_econ_graph_monthly_tick = {
+	remove_from_array = { array = GNG_econ_graph_months index = 0 }
+	remove_from_array = { array = GNG_gdp_history index = 0 }
+	remove_from_array = { array = GNG_target_gdp_history index = 0 }
+	remove_from_array = { array = GNG_manchukuo_gdp_history index = 0 }
+	remove_from_array = { array = GNG_gdp_growth_history index = 0 }
+	remove_from_array = { array = GNG_target_gdp_growth_history index = 0 }
+	remove_from_array = { array = GNG_manchukuo_gdp_growth_history index = 0 }
+	remove_from_array = { array = GNG_debt_ratio_history index = 0 }
+	remove_from_array = { array = GNG_debt_target_1_history index = 0 }
+	remove_from_array = { array = GNG_debt_target_2_history index = 0 }
+	remove_from_array = { array = GNG_debt_target_3_history index = 0 }
+	remove_from_array = { array = GNG_debt_target_4_history index = 0 }
+	remove_from_array = { array = GNG_manchukuo_debt_ratio_history index = 0 }
+
+	add_to_array = { GNG_econ_graph_months = GNG_econ_graph_month }
+
+	add_to_array = { GNG_gdp_history = GDP }
+	add_to_array = { GNG_target_gdp_history = GNG_GDP_Goal }
+	add_to_array = { GNG_manchukuo_gdp_history = MAN.GDP }
+
+	add_to_array = { GNG_gdp_growth_history = GDP_growth_real }
+	set_temp_variable = { GNG_Growth_Goal_temp = GNG_Growth_Goal }
+	multiply_temp_variable = { GNG_Growth_Goal_temp = 100 }
+	add_to_array = { GNG_target_gdp_growth_history = GNG_Growth_Goal_temp }
+	add_to_array = { GNG_manchukuo_gdp_growth_history = MAN.GDP_growth_real }
+
+	set_temp_variable = { GNG_debt_ratio_temp = debt_to_GDP_ratio }
+	multiply_temp_variable = { GNG_debt_ratio_temp = 100 }
+	add_to_array = { GNG_debt_ratio_history = GNG_debt_ratio_temp }
+	add_to_array = { GNG_debt_target_1_history = 25 }
+	add_to_array = { GNG_debt_target_2_history = 50 }
+	add_to_array = { GNG_debt_target_3_history = 75 }
+	add_to_array = { GNG_debt_target_4_history = 100 }
+	set_temp_variable = { GNG_man_debt_ratio_temp = MAN.debt_to_GDP_ratio }
+	multiply_temp_variable = { GNG_man_debt_ratio_temp = 100 }
+	add_to_array = { GNG_manchukuo_debt_ratio_history = GNG_man_debt_ratio_temp }
+
+	add_to_variable = { GNG_econ_graph_month = 1 }
+	GNG_draw_graphs = yes
+	hidden_effect = {
+		if = {
+			limit = {
+				has_country_flag = GNG_silicon_years_active
+				check_variable = { GNG.GDP > MAN.GDP }
+			}
+			if = {
+				limit = {
+					check_variable = { GNG_legco_faction_in_power = 3 } #Sony
+				}
+				country_event = {
+					id = guangdong_manchukuointeractions.18
+					days = 7
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { GNG_legco_faction_in_power = 4 } #Matsushita
+				}
+				country_event = {
+					id = guangdong_manchukuointeractions.19
+					days = 7
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { GNG_legco_faction_in_power = 5 } #Fujitsu
+				}
+				country_event = {
+					id = guangdong_manchukuointeractions.20
+					days = 7
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { GNG_legco_faction_in_power = 7 } #Hitachi
+				}
+				country_event = {
+					id = guangdong_manchukuointeractions.21
+					days = 7
+				}
+			}
+		}
+	}
+	# DOP：TNO 原 tick 已把 MAN 数据写回并重绘，这里立即滚动 CHI 数据并恢复 CHI 显示
+	DOP_GNG_econ_compare_monthly = yes
 }

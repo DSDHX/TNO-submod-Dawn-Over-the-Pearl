@@ -20,6 +20,26 @@ guiTypes = {
 			maxHeight = 20
 			format = center
 		}
+		buttonType = {
+			name = "DOP_econ_compare_button"
+			spriteType = GFX_GNG_econ_options_boxes
+			position = { x = 199 y = 328 }
+			buttonText = "DOP_GNG_econ_compare_button_text"
+			font = "aldrich_18_outline"
+			pdx_tooltip = DOP_GNG_econ_compare_tt
+		}
+		iconType = {
+			name = "DOP_econ_compare_man_icon"
+			spriteType = "GFX_DOP_GNG_econ_compare_man_texticon"
+			position = { x = 155 y = 333 }
+			scale = 1.75
+		}
+		iconType = {
+			name = "DOP_econ_compare_chi_icon"
+			spriteType = "GFX_DOP_GNG_econ_compare_chi_texticon"
+			position = { x = 155 y = 333 }
+			scale = 1.75
+		}
 
 		containerWindowType = {
 			name = "graph_boxes"
@@ -154,21 +174,17 @@ guiTypes = {
 					spriteType = "GFX_GNG_manchukuo_gdp_texticon"
 					position = { x = 0 y = 0 }
 				}
+				iconType = {
+					name = "chi_gdp"
+					spriteType = "GFX_DOP_GNG_econ_compare_chi_texticon"
+					position = { x = 0 y = 0 }
+				}
 			}
 			iconType = {
 				name = "GNG_Graphs_IJA_Animation"
 				spriteType = "GFX_GNG_Graphs_IJA_Animation"
 				position = { x = -95 y = -145 }
 			}
-		}
-
-		buttonType = {
-			name = "DOP_econ_compare_button"
-			spriteType = GFX_GNG_econ_options_boxes
-			position = { x = 199 y = 328 }
-			buttonText = "DOP_GNG_econ_compare_button_text"
-			font = "aldrich_18_outline"
-			pdx_tooltip = DOP_GNG_econ_compare_tt
 		}
 		
 	}
@@ -241,8 +257,14 @@ guiTypes = {
 		name = "GNG_Economy_Graph_Segment_manchukuo"
 
 		iconType = {
-			name = "line_segment"
+			name = "line_segment_manchukuo"
 			spriteType = "GFX_GNG_Econ_Linegraph_Manchukuo"
+			position = { x = 0 y = 0 }
+			pdx_tooltip = GNG_econ_graph_tt
+		}
+		iconType = {
+			name = "line_segment_chi"
+			spriteType = "GFX_DOP_GNG_Econ_Linegraph_Chi"
 			position = { x = 0 y = 0 }
 			pdx_tooltip = GNG_econ_graph_tt
 		}
