@@ -9,37 +9,27 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_Fujitsutemp_JAP"
-		textureFile = "gfx/interface/DOP_SCW/Fujitsutemp_JAP.dds"
+		textureFile = "gfx/interface/bop/VLSI_logo.png"
 		legacy_lazy_load = no 
 	}
 	spriteType = {
 		name = "GFX_SGS_ITA"
-		textureFile = "gfx/interface/DOP_SCW/SGS_ITA.dds"
+		textureFile = "gfx/interface/bop/SGS_logo.png"
 		legacy_lazy_load = no 
 	}
 	spriteType = {
 		name = "GFX_Sony_GNG"
-		textureFile = "gfx/interface/DOP_SCW/Sony_GNG.dds"
+		textureFile = "gfx/interface/bop/SONY_logo.png"
 		legacy_lazy_load = no 
 	}
 	spriteType = {
 		name = "GFX_Siemens_GER"
-		textureFile = "gfx/interface/DOP_SCW/Siemens_GER.ddss"
+		textureFile = "gfx/interface/bop/Siemens_logo.png"
 		legacy_lazy_load = no 
 	}
 	spriteType = {
 		name = "GFX_IBM_USA"
-		textureFile = "gfx/interface/DOP_SCW/IBM_USA.dds"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_con_button"
-		textureFile = "gfx/interface/DOP_SCW/con_button.dds"
-		legacy_lazy_load = no 
-	}
-	spriteType = {
-		name = "GFX_pro_button"
-		textureFile = "gfx/interface/DOP_SCW/pro_button.dds"
+		textureFile = "gfx/interface/bop/IBM_logo.png"
 		legacy_lazy_load = no 
 	}
 	spriteType = {

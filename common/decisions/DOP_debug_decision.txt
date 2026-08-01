@@ -244,4 +244,48 @@ GNG_debug_category = {
 			clr_country_flag = guang_dong_theater_visible
 		}
 	}
+	GNG_dop_debug_econ_compare_toggle = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = {
+				has_country_flag = GNG_disable_all_mechanics_IJA
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = DOP_GNG_econ_compare_chi
+				}
+				clr_country_flag = DOP_GNG_econ_compare_chi
+			}
+			else = {
+				set_country_flag = DOP_GNG_econ_compare_chi
+			}
+			add_to_variable = { GNG_economy_dirty_variable = 1 }
+			DOP_GNG_econ_apply_compare = yes
+			custom_effect_tooltip = DOP_GNG_econ_debug_toggle_compare_tt
+		}
+	}
+	GNG_dop_debug_econ_compare_init = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = {
+				has_country_flag = GNG_disable_all_mechanics_IJA
+			}
+		}
+		complete_effect = {
+			DOP_GNG_econ_compare_init = yes
+			DOP_GNG_econ_apply_compare = yes
+			add_to_variable = { GNG_economy_dirty_variable = 1 }
+			custom_effect_tooltip = DOP_GNG_econ_debug_reinit_compare_tt
+		}
+	}
 }

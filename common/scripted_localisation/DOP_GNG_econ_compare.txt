@@ -1,0 +1,10 @@
+defined_text = {
+	name = Get_DOP_GNG_econ_compare_mode
+	text = {
+		trigger = { has_country_flag = DOP_GNG_econ_compare_chi }
+		localization_key = DOP_GNG_econ_compare_mode_chi
+	}
+	text = {
+		localization_key = DOP_GNG_econ_compare_mode_man
+	}
+}

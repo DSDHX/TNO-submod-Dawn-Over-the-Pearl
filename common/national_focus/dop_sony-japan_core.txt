@@ -38,6 +38,8 @@ shared_focus = {
 	
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.132 days = 0 }
 	}
 }
 
@@ -57,6 +59,8 @@ shared_focus = {
 	
 	completion_reward = {
 		#uncompleted
+	
+		country_event = { id = DOP_GNG_event.191 days = 0 }
 	}
 }
 
@@ -84,7 +88,9 @@ shared_focus = {
 		#{
 			##id = dop_nat.4
 		#}
-    }
+    
+		country_event = { id = DOP_GNG_event.171 days = 0 }
+	}
 }
 
 shared_focus = {
@@ -103,6 +109,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.123 days = 0 }
 	}
 }
 
@@ -168,7 +176,9 @@ shared_focus = {
 		#{
 		#	id = dop_nat.3
 		#}
-    }
+    
+		country_event = { id = DOP_GNG_event.101 days = 0 }
+	}
 }
 
 shared_focus = {
@@ -206,6 +216,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.182 days = 0 }
 	}
 }
 
@@ -620,6 +632,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.1 days = 0 }
 	}
 }
 
@@ -930,6 +944,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.170 days = 0 }
 	}
 }
 
@@ -1238,7 +1254,9 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_New_Livelihood_Project"
-    }
+    
+		country_event = { id = DOP_GNG_event.102 days = 0 }
+	}
 }
 
 # 望向内陆：
@@ -1273,7 +1291,9 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_Public_Housing_Construction"
-    }
+    
+		country_event = { id = DOP_GNG_event.105 days = 0 }
+	}
 }
 
 # 铺设血管：
@@ -1706,6 +1726,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.168 days = 0 }
 	}
 }
 
@@ -1725,6 +1747,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.174 days = 0 }
 	}
 }
 
@@ -1744,6 +1768,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.167 days = 0 }
 	}
 }
 
@@ -1763,6 +1789,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.99 days = 0 }
 	}
 }
 
@@ -1827,6 +1855,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.181 days = 0 }
 	}
 }
 
@@ -1846,6 +1876,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.107 days = 0 }
 	}
 }
 
@@ -1868,6 +1900,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.22 days = 0 }
 	}
 }
 
@@ -1890,6 +1924,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.14 days = 0 }
 	}
 }
 
@@ -1909,6 +1945,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.109 days = 0 }
 	}
 }
 
@@ -1928,6 +1966,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.177 days = 0 }
 	}
 }
 
@@ -1950,6 +1990,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.159 days = 0 }
 	}
 }
 
@@ -1969,6 +2011,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.100 days = 0 }
 	}
 }
 
@@ -2106,6 +2150,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.63 days = 0 }
 	}
 }
 
@@ -2125,6 +2171,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.113 days = 0 }
 	}
 }
 
@@ -2144,6 +2192,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.183 days = 0 }
 	}
 }
 
@@ -2166,6 +2216,8 @@ shared_focus = {
 
     completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.3 days = 0 }
 	}	
 }
 
@@ -2212,6 +2264,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.161 days = 0 }
 	}
 }
 
@@ -2295,6 +2349,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.175 days = 0 }
 	}
 }
 
@@ -2762,6 +2818,8 @@ shared_focus = {
 	
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.193 days = 0 }
 	}
 }
 
@@ -3486,6 +3544,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.112 days = 0 }
 	}
 }
 

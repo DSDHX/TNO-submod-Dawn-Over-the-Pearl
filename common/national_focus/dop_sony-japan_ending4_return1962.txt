@@ -40,6 +40,8 @@ shared_focus = {
 	
     completion_reward = {
 		#效果未填写
+	
+		country_event = { id = DOP_GNG_event.206 days = 0 }
 	}
 }
 
@@ -58,6 +60,8 @@ shared_focus = {
 	
 	completion_reward = {
 		#效果未填写
+	
+		country_event = { id = DOP_GNG_event.90 days = 0 }
 	}
 }
 
@@ -84,6 +88,8 @@ shared_focus = {
 			set_temp_variable = { chi_app_temp = -1.5 }
 			GNG_chinese_app_change = yes
 		}
+	
+		country_event = { id = DOP_GNG_event.144 days = 0 }
 	}
  
 }
@@ -127,6 +133,8 @@ shared_focus = {
 			set_temp_variable = { jap_app_temp = 1.5 }
 			GNG_japanese_app_change = yes
 		}
+	
+		country_event = { id = DOP_GNG_event.130 days = 0 }
 	}
 }
 
@@ -145,6 +153,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_equal_opportunities_DOP1962_focustt
+	
+		country_event = { id = DOP_GNG_event.178 days = 0 }
 	}
 }
 
@@ -163,6 +173,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_follow_the_rule_focustt
+	
+		country_event = { id = DOP_GNG_event.216 days = 0 }
 	}
 }
 
@@ -181,6 +193,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_dwss_focustt
+	
+		country_event = { id = DOP_GNG_event.172 days = 0 }
 	}
 }
 
@@ -199,6 +213,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_IJA_TAT_focustt
+	
+		country_event = { id = DOP_GNG_event.67 days = 0 }
 	}
 }
 
@@ -225,6 +241,8 @@ shared_focus = {
 			set_temp_variable = { chi_app_temp = -1.5 }
 			GNG_chinese_app_change = yes
 		}
+	
+		country_event = { id = DOP_GNG_event.92 days = 0 }
 	}
 }
 
@@ -247,6 +265,8 @@ shared_focus = {
 			set_temp_variable = { zhu_app_temp = 1.5 }
 			GNG_zhujin_app_change = yes
 		}
+	
+		country_event = { id = DOP_GNG_event.13 days = 0 }
 	}
 }
 

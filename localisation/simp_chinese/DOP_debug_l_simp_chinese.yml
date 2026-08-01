@@ -13,3 +13,5 @@ GNG_dop_debug_add_seat_2: "§MDOP调试§!：£GNG_Fujitsu_texticon §m富士通
 GNG_dop_debug_add_seat_3: "§MDOP调试§!：£GNG_Hitachi_texticon §L日立§!：获得立法会席位作弊"
 GNG_dop_debug_show_guang_dong_theater: "§MDOP调试§!：启用广东大剧院GUI"
 GNG_dop_debug_close_guang_dong_theater: "§MDOP调试§!：关闭广东大剧院GUI"
+GNG_dop_debug_econ_compare_toggle: "§MDOP调试§!：切换经济图对比对象"
+GNG_dop_debug_econ_compare_init: "§MDOP调试§!：重置经济图对比数据"

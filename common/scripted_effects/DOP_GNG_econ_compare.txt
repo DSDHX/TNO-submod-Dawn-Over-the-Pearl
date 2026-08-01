@@ -1,0 +1,105 @@
+# DOP: 珠江奇迹经济图 - 对比对象切换（满洲国 <-> 改组国民政府/CHI）
+# 不改动 TNO 的接口与原有逻辑；开关开启时把 CHI 数据覆盖到现有对比线上，
+# 关闭时恢复满洲国数据。镜像数组在后台按月滚动，保证随时可切换。
+
+DOP_GNG_econ_compare_init = {
+	# 镜像满洲国当前历史（TNO 通过事件回填的 25 个月数据）
+	clear_array = DOP_man_gdp_history
+	for_each_loop = {
+		array = GNG_manchukuo_gdp_history
+		add_to_array = { DOP_man_gdp_history = v }
+	}
+	clear_array = DOP_man_gdp_growth_history
+	for_each_loop = {
+		array = GNG_manchukuo_gdp_growth_history
+		add_to_array = { DOP_man_gdp_growth_history = v }
+	}
+	clear_array = DOP_man_debt_ratio_history
+	for_each_loop = {
+		array = GNG_manchukuo_debt_ratio_history
+		add_to_array = { DOP_man_debt_ratio_history = v }
+	}
+
+	# 改组国民政府历史用当前值回填 25 个月
+	clear_array = DOP_chi_gdp_history
+	clear_array = DOP_chi_gdp_growth_history
+	clear_array = DOP_chi_debt_ratio_history
+	for_loop_effect = {
+		start = 0
+		end = 25
+		value = i
+
+		add_to_array = { array = DOP_chi_gdp_history value = CHI.GDP index = 0 }
+		add_to_array = { array = DOP_chi_gdp_growth_history value = CHI.GDP_growth_real index = 0 }
+		add_to_array = { array = DOP_chi_debt_ratio_history value = CHI.debt_to_GDP_ratio index = 0 }
+	}
+
+	set_variable = { DOP_GNG_econ_compare_inited = 1 }
+}
+
+DOP_GNG_econ_compare_monthly = {
+	if = {
+		limit = { NOT = { has_variable = DOP_GNG_econ_compare_inited } }
+		DOP_GNG_econ_compare_init = yes
+	}
+
+	# 滚动满洲国镜像
+	remove_from_array = { array = DOP_man_gdp_history index = 0 }
+	add_to_array = { DOP_man_gdp_history = MAN.GDP }
+	remove_from_array = { array = DOP_man_gdp_growth_history index = 0 }
+	add_to_array = { DOP_man_gdp_growth_history = MAN.GDP_growth_real }
+	remove_from_array = { array = DOP_man_debt_ratio_history index = 0 }
+	add_to_array = { DOP_man_debt_ratio_history = MAN.debt_to_GDP_ratio }
+
+	# 滚动改组国民政府历史
+	remove_from_array = { array = DOP_chi_gdp_history index = 0 }
+	add_to_array = { DOP_chi_gdp_history = CHI.GDP }
+	remove_from_array = { array = DOP_chi_gdp_growth_history index = 0 }
+	add_to_array = { DOP_chi_gdp_growth_history = CHI.GDP_growth_real }
+	remove_from_array = { array = DOP_chi_debt_ratio_history index = 0 }
+	add_to_array = { DOP_chi_debt_ratio_history = CHI.debt_to_GDP_ratio }
+
+	if = {
+		limit = { has_country_flag = DOP_GNG_econ_compare_chi }
+		DOP_GNG_econ_apply_compare = yes
+	}
+}
+
+DOP_GNG_econ_apply_compare = {
+	if = {
+		limit = { has_country_flag = DOP_GNG_econ_compare_chi }
+		clear_array = GNG_manchukuo_gdp_history
+		for_each_loop = {
+			array = DOP_chi_gdp_history
+			add_to_array = { GNG_manchukuo_gdp_history = v }
+		}
+		clear_array = GNG_manchukuo_gdp_growth_history
+		for_each_loop = {
+			array = DOP_chi_gdp_growth_history
+			add_to_array = { GNG_manchukuo_gdp_growth_history = v }
+		}
+		clear_array = GNG_manchukuo_debt_ratio_history
+		for_each_loop = {
+			array = DOP_chi_debt_ratio_history
+			add_to_array = { GNG_manchukuo_debt_ratio_history = v }
+		}
+	}
+	else = {
+		clear_array = GNG_manchukuo_gdp_history
+		for_each_loop = {
+			array = DOP_man_gdp_history
+			add_to_array = { GNG_manchukuo_gdp_history = v }
+		}
+		clear_array = GNG_manchukuo_gdp_growth_history
+		for_each_loop = {
+			array = DOP_man_gdp_growth_history
+			add_to_array = { GNG_manchukuo_gdp_growth_history = v }
+		}
+		clear_array = GNG_manchukuo_debt_ratio_history
+		for_each_loop = {
+			array = DOP_man_debt_ratio_history
+			add_to_array = { GNG_manchukuo_debt_ratio_history = v }
+		}
+	}
+	GNG_draw_graphs = yes
+}

@@ -1,0 +1,126 @@
+add_namespace = GNG_ending_event
+
+# 立法会改革事件链
+# 1 -> 2 -> 3 -> 4 -> (5 或 6) -> 7
+# 5/6 由两个 country_flag 区分：GNG_ending_manipulated -> 广式民主，GNG_ending_referendum -> 人民之声
+
+country_event = {
+	id = GNG_ending_event.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.1" }
+	title = GNG_ending_event.1.t
+	desc = GNG_ending_event.1.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.1.a
+		country_event = { id = GNG_ending_event.2 hours = 48 }
+	}
+}
+
+country_event = {
+	id = GNG_ending_event.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.2" }
+	title = GNG_ending_event.2.t
+	desc = GNG_ending_event.2.desc
+	picture = GFX_report_event_CHI_nanjing_summit_start
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.2.a
+		country_event = { id = GNG_ending_event.3 hours = 72 }
+	}
+}
+
+country_event = {
+	id = GNG_ending_event.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.3" }
+	title = GNG_ending_event.3.t
+	desc = GNG_ending_event.3.desc
+	picture = GFX_report_event_IBR_basques_arrested
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.3.a
+		country_event = { id = GNG_ending_event.4 hours = 48 }
+	}
+}
+
+country_event = {
+	id = GNG_ending_event.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.4" }
+	title = GNG_ending_event.4.t
+	desc = GNG_ending_event.4.desc
+	picture = GFX_report_event_IBR_big_meeting
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.4.a
+			if = {
+				limit = { has_country_flag = GNG_ending_manipulated }
+				country_event = { id = GNG_ending_event.5 hours = 72 }
+			}
+			else_if = {
+				limit = { has_country_flag = GNG_ending_referendum }
+				country_event = { id = GNG_ending_event.6 hours = 72 }
+			}
+			else = {
+				country_event = { id = GNG_ending_event.5 hours = 72 }
+			}
+		}
+	}
+
+country_event = {
+	id = GNG_ending_event.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.5" }
+	title = GNG_ending_event.5.t
+	desc = GNG_ending_event.5.desc
+	picture = GFX_report_event_IBR_guy_paper_meeting
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.5.a
+		country_event = { id = GNG_ending_event.7 hours = 48 }
+	}
+}
+
+country_event = {
+	id = GNG_ending_event.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.6" }
+	title = GNG_ending_event.6.t
+	desc = GNG_ending_event.6.desc
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.6.a
+		country_event = { id = GNG_ending_event.7 hours = 48 }
+	}
+}
+
+country_event = {
+	id = GNG_ending_event.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GNG_ending_event.7" }
+	title = GNG_ending_event.7.t
+	desc = GNG_ending_event.7.desc
+	picture = GFX_report_event_generic_money
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = GNG_ending_event.7.a
+	}
+}

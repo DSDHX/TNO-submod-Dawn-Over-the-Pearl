@@ -40,6 +40,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_entitlement_focustt
+	
+		country_event = { id = DOP_GNG_event.205 days = 0 }
 	}
 }
 
@@ -58,6 +60,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_learn_from_mistake_focustt
+	
+		country_event = { id = DOP_GNG_event.204 days = 0 }
 	}
 }
 
@@ -94,6 +98,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_chinese_control_policy_focustt
+	
+		country_event = { id = DOP_GNG_event.188 days = 0 }
 	}
 }
 
@@ -118,6 +124,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_pan_asianism_together_focustt
+	
+		country_event = { id = DOP_GNG_event.186 days = 0 }
 	}
 }
 
@@ -136,6 +144,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_not_disappointed_focustt
+	
+		country_event = { id = DOP_GNG_event.122 days = 0 }
 	}
 }
 
@@ -154,6 +164,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_same_topic_focustt
+	
+		country_event = { id = DOP_GNG_event.98 days = 0 }
 	}
 }
 
@@ -172,6 +184,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_perfect_answer_focustt
+	
+		country_event = { id = DOP_GNG_event.201 days = 0 }
 	}
 }
 
@@ -213,6 +227,8 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_equal_competition_focustt
+	
+		country_event = { id = DOP_GNG_event.176 days = 0 }
 	}
 }
 
@@ -234,5 +250,7 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_mandate_of_heaven_focustt
+	
+		country_event = { id = DOP_GNG_event.38 days = 0 }
 	}
 }

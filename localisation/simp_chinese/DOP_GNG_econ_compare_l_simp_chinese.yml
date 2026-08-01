@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ DOP_GNG_econ_compare_button_text: "切换对比对象"
+ DOP_GNG_econ_compare_tt: "点击在§Y满洲国§!与§Y中华民国（改组国民政府/南京）§!之间切换GDP对比对象。\n当前对比对象：[Get_DOP_GNG_econ_compare_mode]"
+ DOP_GNG_econ_compare_mode_man: "满洲国"
+ DOP_GNG_econ_compare_mode_chi: "中华民国（改组国民政府）"
+ DOP_GNG_econ_debug_toggle_compare: "§MDOP调试§!：切换经济图对比对象"
+ DOP_GNG_econ_debug_toggle_compare_tt: "切换DOP_GNG_econ_compare_chi标记并立即刷新经济图（满洲国↔中华民国/改组国民政府）。"
+ DOP_GNG_econ_debug_reinit_compare: "§MDOP调试§!：重置经济图对比数据"
+ DOP_GNG_econ_debug_reinit_compare_tt: "重新镜像满洲国历史，并以中华民国当前值回填对比历史。"
+ # 覆盖 TNO 图表提示：对比对象名称随开关变化，不再写死“满洲国”
+ GNG_econ_graph_tt_inner_GDP: "£GNG_actual_gdp_texticon §S广东GDP§!：§Y[?seg_display_gdp|2]B美元§!\n§S对比国GDP：§!§Y[?seg_display_mgdp|2]B美元§!\n£GNG_potential_gdp_texticon §W广东年终GDP增长目标：§!§Y[?seg_display_target_gdp|2]B美元§!"
+ GNG_econ_graph_tt_inner_GDP_Growth: "£GNG_actual_gdp_texticon §S广东实际GDP增长率：§!§Y[?seg_display_gdp_growth|2]%§!\n§S对比国实际GDP增长率：§!§Y[?seg_display_mgdp_growth|2]%§!\n£GNG_potential_gdp_texticon §W广东年终实际GDP增长目标率：§!§Y[?seg_display_target_gdp_growth|2]%§!"
+ GNG_econ_graph_tt_inner_debt_to_GDP: "£GNG_actual_gdp_texticon §S广东债务负担率：§!§Y[?seg_display_debt_ratio|2]%§!\n§S对比国债务负担率：§!§Y[?seg_display_man_debt_ratio|2]%§!\n£GNG_potential_gdp_texticon §W广东财政健康：十分健康：§!§Y[?seg_display_target_1_debt_ratio|2]%§!\n£GNG_potential_gdp_texticon §W广东财政健康：存在风险：§!§Y[?seg_display_target_2_debt_ratio|2]%§!\n£GNG_potential_gdp_texticon §W广东财政健康：需要警惕：§!§Y[?seg_display_target_3_debt_ratio|2]%§!\n£GNG_potential_gdp_texticon §W广东财政健康：问题频发：§! §Y[?seg_display_target_4_debt_ratio|2]%§!"

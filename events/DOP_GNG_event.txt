@@ -1,0 +1,3371 @@
+add_namespace = DOP_GNG_event
+
+# ==== 毋庸置疑的新星.docx ====
+
+# 毋庸置疑的新星
+country_event = {
+	id = DOP_GNG_event.1
+	title = DOP_GNG_event.1.t
+	desc = DOP_GNG_event.1.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.1.a
+	}
+}
+# ==== 戒严令.docx ====
+
+# 戒严令
+country_event = {
+	id = DOP_GNG_event.2
+	title = DOP_GNG_event.2.t
+	desc = DOP_GNG_event.2.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.2.a
+	}
+}
+# ==== 港口4.docx ====
+
+# 金浪
+country_event = {
+	id = DOP_GNG_event.3
+	title = DOP_GNG_event.3.t
+	desc = DOP_GNG_event.3.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.3.a
+	}
+}
+# ==== 井深补完.docx ====
+
+# 井深补完
+country_event = {
+	id = DOP_GNG_event.4
+	title = DOP_GNG_event.4.t
+	desc = DOP_GNG_event.4.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.4.a
+	}
+}
+
+# 硅晶巨兽
+country_event = {
+	id = DOP_GNG_event.5
+	title = DOP_GNG_event.5.t
+	desc = DOP_GNG_event.5.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.5.a
+	}
+}
+
+# 精密的机器
+country_event = {
+	id = DOP_GNG_event.6
+	title = DOP_GNG_event.6.t
+	desc = DOP_GNG_event.6.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.6.a
+	}
+}
+
+# 产量跃升
+country_event = {
+	id = DOP_GNG_event.7
+	title = DOP_GNG_event.7.t
+	desc = DOP_GNG_event.7.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.7.a
+	}
+}
+
+# 小恩小惠
+country_event = {
+	id = DOP_GNG_event.8
+	title = DOP_GNG_event.8.t
+	desc = DOP_GNG_event.8.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.8.a
+	}
+}
+
+# 更进一步
+country_event = {
+	id = DOP_GNG_event.9
+	title = DOP_GNG_event.9.t
+	desc = DOP_GNG_event.9.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.9.a
+	}
+}
+
+# 东方硅谷
+country_event = {
+	id = DOP_GNG_event.10
+	title = DOP_GNG_event.10.t
+	desc = DOP_GNG_event.10.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.10.a
+	}
+}
+
+# 传播智慧
+country_event = {
+	id = DOP_GNG_event.11
+	title = DOP_GNG_event.11.t
+	desc = DOP_GNG_event.11.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.11.a
+	}
+}
+
+# 尝试性交流
+country_event = {
+	id = DOP_GNG_event.12
+	title = DOP_GNG_event.12.t
+	desc = DOP_GNG_event.12.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.12.a
+	}
+}
+# ==== 广东问题，美式方案.docx ====
+
+# 广东问题，美式方案
+country_event = {
+	id = DOP_GNG_event.13
+	title = DOP_GNG_event.13.t
+	desc = DOP_GNG_event.13.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.13.a
+	}
+}
+# ==== 谋事在人.docx ====
+
+# 谋事在人
+country_event = {
+	id = DOP_GNG_event.14
+	title = DOP_GNG_event.14.t
+	desc = DOP_GNG_event.14.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.14.a
+	}
+}
+# ==== 悔过？.docx ====
+
+# 悔过？
+country_event = {
+	id = DOP_GNG_event.15
+	title = DOP_GNG_event.15.t
+	desc = DOP_GNG_event.15.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.15.a
+	}
+}
+# ==== GAW预告事件.docx ====
+
+# 前路何在？
+country_event = {
+	id = DOP_GNG_event.16
+	title = DOP_GNG_event.16.t
+	desc = DOP_GNG_event.16.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.16.a
+	}
+}
+
+# 广东将来必定要在中国和日本间选边站，但无论如何，盛田昭夫和李嘉诚都会携手共进，保卫广东和她的人民的利益
+country_event = {
+	id = DOP_GNG_event.17
+	title = DOP_GNG_event.17.t
+	desc = DOP_GNG_event.17.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.17.a
+	}
+}
+
+# 工程师与手艺人可能会形成各自的看法，但对他们来说，保全他们为广东共同绘制的蓝图将是第一要务
+country_event = {
+	id = DOP_GNG_event.18
+	title = DOP_GNG_event.18.t
+	desc = DOP_GNG_event.18.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.18.a
+	}
+}
+
+# 行政长官将与自己放出的魔鬼殊死搏斗，纵使孤身一人，他也要依靠外力打破囚禁广东的牢笼
+country_event = {
+	id = DOP_GNG_event.19
+	title = DOP_GNG_event.19.t
+	desc = DOP_GNG_event.19.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.19.a
+	}
+}
+
+# 稻叶的统治并不稳固，企业的联合也并非铁板一块，中国和日本的博弈，或许就将在广东的内部展开……
+country_event = {
+	id = DOP_GNG_event.20
+	title = DOP_GNG_event.20.t
+	desc = DOP_GNG_event.20.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.20.a
+	}
+}
+
+# 中国不会容忍广东军政府的存在，广东的企业对军队也颇有怨言，这片土地未来的主人到底是谁，还是一个悬而未决的问题
+country_event = {
+	id = DOP_GNG_event.21
+	title = DOP_GNG_event.21.t
+	desc = DOP_GNG_event.21.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.21.a
+	}
+}
+# ==== 人外有人.docx ====
+
+# 人外有人
+country_event = {
+	id = DOP_GNG_event.22
+	title = DOP_GNG_event.22.t
+	desc = DOP_GNG_event.22.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.22.a
+	}
+}
+# ==== 对美外交（部分）.docx ====
+
+# 李嘉诚访问纽约
+country_event = {
+	id = DOP_GNG_event.23
+	title = DOP_GNG_event.23.t
+	desc = DOP_GNG_event.23.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.23.a
+	}
+}
+
+# 消息传到广东，引起了一些不满……
+country_event = {
+	id = DOP_GNG_event.24
+	title = DOP_GNG_event.24.t
+	desc = DOP_GNG_event.24.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.24.a
+	}
+}
+
+# 额外收入+0.10（以十亿美元计））
+country_event = {
+	id = DOP_GNG_event.25
+	title = DOP_GNG_event.25.t
+	desc = DOP_GNG_event.25.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.25.a
+	}
+}
+
+# 何鸿燊到达旧金山
+country_event = {
+	id = DOP_GNG_event.26
+	title = DOP_GNG_event.26.t
+	desc = DOP_GNG_event.26.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.26.a
+	}
+}
+
+# 三合会似乎参与其中……
+country_event = {
+	id = DOP_GNG_event.27
+	title = DOP_GNG_event.27.t
+	desc = DOP_GNG_event.27.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.27.a
+	}
+}
+
+# 额外收入+0.05（以十亿美元计））
+country_event = {
+	id = DOP_GNG_event.28
+	title = DOP_GNG_event.28.t
+	desc = DOP_GNG_event.28.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.28.a
+	}
+}
+# ==== 战前法案.docx ====
+
+# 石油产业经营条例
+country_event = {
+	id = DOP_GNG_event.29
+	title = DOP_GNG_event.29.t
+	desc = DOP_GNG_event.29.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.29.a
+	}
+}
+
+# 法案通过
+country_event = {
+	id = DOP_GNG_event.30
+	title = DOP_GNG_event.30.t
+	desc = DOP_GNG_event.30.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.30.a
+	}
+}
+
+# 法案失败
+country_event = {
+	id = DOP_GNG_event.31
+	title = DOP_GNG_event.31.t
+	desc = DOP_GNG_event.31.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.31.a
+	}
+}
+
+# 失业救济条例
+country_event = {
+	id = DOP_GNG_event.32
+	title = DOP_GNG_event.32.t
+	desc = DOP_GNG_event.32.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.32.a
+	}
+}
+
+# 法案失败
+country_event = {
+	id = DOP_GNG_event.33
+	title = DOP_GNG_event.33.t
+	desc = DOP_GNG_event.33.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.33.a
+	}
+}
+# ==== 政府改革？.docx ====
+
+# 政府改革？
+country_event = {
+	id = DOP_GNG_event.34
+	title = DOP_GNG_event.34.t
+	desc = DOP_GNG_event.34.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.34.a
+	}
+}
+# ==== 旧日好时光？.docx ====
+
+# 旧日好时光？
+country_event = {
+	id = DOP_GNG_event.35
+	title = DOP_GNG_event.35.t
+	desc = DOP_GNG_event.35.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.35.a
+	}
+}
+
+# 在不稳定的同盟的引导下，广东的未来似乎走到了十字路口……
+country_event = {
+	id = DOP_GNG_event.36
+	title = DOP_GNG_event.36.t
+	desc = DOP_GNG_event.36.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.36.a
+	}
+}
+# ==== 观众们.docx ====
+
+# 观众们
+country_event = {
+	id = DOP_GNG_event.37
+	title = DOP_GNG_event.37.t
+	desc = DOP_GNG_event.37.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.37.a
+	}
+}
+# ==== 共荣共存？.docx ====
+
+# 共荣共存？
+country_event = {
+	id = DOP_GNG_event.38
+	title = DOP_GNG_event.38.t
+	desc = DOP_GNG_event.38.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.38.a
+	}
+}
+# ==== 罪人.docx ====
+
+# 罪人
+country_event = {
+	id = DOP_GNG_event.39
+	title = DOP_GNG_event.39.t
+	desc = DOP_GNG_event.39.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.39.a
+	}
+}
+# ==== 重症需下猛药.docx ====
+
+# 重症需下猛药
+country_event = {
+	id = DOP_GNG_event.40
+	title = DOP_GNG_event.40.t
+	desc = DOP_GNG_event.40.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.40.a
+	}
+}
+# ==== NPA事件.docx ====
+
+# 细细的蓝线
+country_event = {
+	id = DOP_GNG_event.41
+	title = DOP_GNG_event.41.t
+	desc = DOP_GNG_event.41.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.41.a
+	}
+}
+
+# 承诺
+country_event = {
+	id = DOP_GNG_event.42
+	title = DOP_GNG_event.42.t
+	desc = DOP_GNG_event.42.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.42.a
+	}
+}
+
+# 标准化装备
+country_event = {
+	id = DOP_GNG_event.43
+	title = DOP_GNG_event.43.t
+	desc = DOP_GNG_event.43.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.43.a
+	}
+	option = {
+		name = DOP_GNG_event.43.b
+	}
+}
+
+# 除了对付犯罪分子需要用到的警械，新的装备标准化采购清单里还包括了一件在危急时刻可能挽救警员生命的物品——防刺服。
+country_event = {
+	id = DOP_GNG_event.44
+	title = DOP_GNG_event.44.t
+	desc = DOP_GNG_event.44.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.44.a
+	}
+}
+
+# 第二次机会
+country_event = {
+	id = DOP_GNG_event.45
+	title = DOP_GNG_event.45.t
+	desc = DOP_GNG_event.45.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.45.a
+	}
+}
+
+# 艰难一日
+country_event = {
+	id = DOP_GNG_event.46
+	title = DOP_GNG_event.46.t
+	desc = DOP_GNG_event.46.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.46.a
+	}
+}
+
+# 招兵买马
+country_event = {
+	id = DOP_GNG_event.47
+	title = DOP_GNG_event.47.t
+	desc = DOP_GNG_event.47.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.47.a
+	}
+}
+
+# 追凶
+country_event = {
+	id = DOP_GNG_event.48
+	title = DOP_GNG_event.48.t
+	desc = DOP_GNG_event.48.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.48.a
+	}
+}
+
+# 寻人
+country_event = {
+	id = DOP_GNG_event.49
+	title = DOP_GNG_event.49.t
+	desc = DOP_GNG_event.49.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.49.a
+	}
+}
+
+# 无人知晓
+country_event = {
+	id = DOP_GNG_event.50
+	title = DOP_GNG_event.50.t
+	desc = DOP_GNG_event.50.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.50.a
+	}
+}
+
+# 突击
+country_event = {
+	id = DOP_GNG_event.51
+	title = DOP_GNG_event.51.t
+	desc = DOP_GNG_event.51.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.51.a
+	}
+}
+
+# 警觉的眼睛
+country_event = {
+	id = DOP_GNG_event.52
+	title = DOP_GNG_event.52.t
+	desc = DOP_GNG_event.52.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.52.a
+	}
+}
+
+# 《公共秩序警务手册》
+country_event = {
+	id = DOP_GNG_event.53
+	title = DOP_GNG_event.53.t
+	desc = DOP_GNG_event.53.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.53.a
+	}
+}
+
+# 剧烈冲撞
+country_event = {
+	id = DOP_GNG_event.54
+	title = DOP_GNG_event.54.t
+	desc = DOP_GNG_event.54.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.54.a
+	}
+}
+
+# 破门而入
+country_event = {
+	id = DOP_GNG_event.55
+	title = DOP_GNG_event.55.t
+	desc = DOP_GNG_event.55.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.55.a
+	}
+}
+
+# 中央集权的警务模式？
+country_event = {
+	id = DOP_GNG_event.56
+	title = DOP_GNG_event.56.t
+	desc = DOP_GNG_event.56.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.56.a
+	}
+}
+
+# 非常手段
+country_event = {
+	id = DOP_GNG_event.57
+	title = DOP_GNG_event.57.t
+	desc = DOP_GNG_event.57.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.57.a
+	}
+}
+
+# 杀或被杀
+country_event = {
+	id = DOP_GNG_event.58
+	title = DOP_GNG_event.58.t
+	desc = DOP_GNG_event.58.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.58.a
+	}
+}
+
+# 适可而止
+country_event = {
+	id = DOP_GNG_event.59
+	title = DOP_GNG_event.59.t
+	desc = DOP_GNG_event.59.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.59.a
+	}
+}
+
+# 大事件
+country_event = {
+	id = DOP_GNG_event.60
+	title = DOP_GNG_event.60.t
+	desc = DOP_GNG_event.60.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.60.a
+	}
+}
+
+# 斩首
+country_event = {
+	id = DOP_GNG_event.61
+	title = DOP_GNG_event.61.t
+	desc = DOP_GNG_event.61.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.61.a
+	}
+}
+
+# 守护者？监视者？
+country_event = {
+	id = DOP_GNG_event.62
+	title = DOP_GNG_event.62.t
+	desc = DOP_GNG_event.62.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.62.a
+	}
+}
+# ==== 港口1.docx ====
+
+# 海外贸易发展战略
+country_event = {
+	id = DOP_GNG_event.63
+	title = DOP_GNG_event.63.t
+	desc = DOP_GNG_event.63.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.63.a
+	}
+}
+# ==== 另一半天空.docx ====
+
+# 另一半天空
+country_event = {
+	id = DOP_GNG_event.64
+	title = DOP_GNG_event.64.t
+	desc = DOP_GNG_event.64.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.64.a
+	}
+}
+
+# 危险地带
+country_event = {
+	id = DOP_GNG_event.65
+	title = DOP_GNG_event.65.t
+	desc = DOP_GNG_event.65.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.65.a
+	}
+}
+
+# 嗯……保留其他的条款也已经是不小的进步了。
+country_event = {
+	id = DOP_GNG_event.66
+	title = DOP_GNG_event.66.t
+	desc = DOP_GNG_event.66.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.66.a
+	}
+}
+# ==== 放尊重些！.docx ====
+
+# 放尊重些！
+country_event = {
+	id = DOP_GNG_event.67
+	title = DOP_GNG_event.67.t
+	desc = DOP_GNG_event.67.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.67.a
+	}
+}
+# ==== SDF事件.docx ====
+
+# 正当防卫
+country_event = {
+	id = DOP_GNG_event.68
+	title = DOP_GNG_event.68.t
+	desc = DOP_GNG_event.68.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.68.a
+	}
+}
+
+# 新官上任
+country_event = {
+	id = DOP_GNG_event.69
+	title = DOP_GNG_event.69.t
+	desc = DOP_GNG_event.69.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.69.a
+	}
+}
+
+# 部门重整
+country_event = {
+	id = DOP_GNG_event.70
+	title = DOP_GNG_event.70.t
+	desc = DOP_GNG_event.70.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.70.a
+	}
+}
+
+# 与狼共舞……
+country_event = {
+	id = DOP_GNG_event.71
+	title = DOP_GNG_event.71.t
+	desc = DOP_GNG_event.71.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.71.a
+	}
+}
+
+# 触手可及的人力资源
+country_event = {
+	id = DOP_GNG_event.72
+	title = DOP_GNG_event.72.t
+	desc = DOP_GNG_event.72.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.72.a
+	}
+}
+
+# 外行指导内行？
+country_event = {
+	id = DOP_GNG_event.73
+	title = DOP_GNG_event.73.t
+	desc = DOP_GNG_event.73.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.73.a
+	}
+}
+
+# 海边一瞥
+country_event = {
+	id = DOP_GNG_event.74
+	title = DOP_GNG_event.74.t
+	desc = DOP_GNG_event.74.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.74.a
+	}
+}
+
+# 开始的结束
+country_event = {
+	id = DOP_GNG_event.75
+	title = DOP_GNG_event.75.t
+	desc = DOP_GNG_event.75.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.75.a
+	}
+}
+
+# 未知深蓝
+country_event = {
+	id = DOP_GNG_event.76
+	title = DOP_GNG_event.76.t
+	desc = DOP_GNG_event.76.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.76.a
+	}
+}
+
+# 钢之穹顶
+country_event = {
+	id = DOP_GNG_event.77
+	title = DOP_GNG_event.77.t
+	desc = DOP_GNG_event.77.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.77.a
+	}
+}
+
+# 意外之喜？
+country_event = {
+	id = DOP_GNG_event.78
+	title = DOP_GNG_event.78.t
+	desc = DOP_GNG_event.78.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.78.a
+	}
+}
+
+# 挽留能者
+country_event = {
+	id = DOP_GNG_event.79
+	title = DOP_GNG_event.79.t
+	desc = DOP_GNG_event.79.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.79.a
+	}
+}
+
+# 有钱能使人服鬼役
+country_event = {
+	id = DOP_GNG_event.80
+	title = DOP_GNG_event.80.t
+	desc = DOP_GNG_event.80.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.80.a
+	}
+}
+
+# 《华南武装力量发展趋势》节选
+country_event = {
+	id = DOP_GNG_event.81
+	title = DOP_GNG_event.81.t
+	desc = DOP_GNG_event.81.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.81.a
+	}
+}
+
+# 善意的合作……
+country_event = {
+	id = DOP_GNG_event.82
+	title = DOP_GNG_event.82.t
+	desc = DOP_GNG_event.82.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.82.a
+	}
+}
+
+# 衣食父母
+country_event = {
+	id = DOP_GNG_event.83
+	title = DOP_GNG_event.83.t
+	desc = DOP_GNG_event.83.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.83.a
+	}
+}
+
+# 刺激脑细胞
+country_event = {
+	id = DOP_GNG_event.84
+	title = DOP_GNG_event.84.t
+	desc = DOP_GNG_event.84.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.84.a
+	}
+}
+
+# 改头换面
+country_event = {
+	id = DOP_GNG_event.85
+	title = DOP_GNG_event.85.t
+	desc = DOP_GNG_event.85.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.85.a
+	}
+}
+
+# 鸟枪换炮
+country_event = {
+	id = DOP_GNG_event.86
+	title = DOP_GNG_event.86.t
+	desc = DOP_GNG_event.86.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.86.a
+	}
+}
+
+# 我沿着江户川漫步，眺望西方的皇居……
+country_event = {
+	id = DOP_GNG_event.87
+	title = DOP_GNG_event.87.t
+	desc = DOP_GNG_event.87.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.87.a
+	}
+}
+# ==== 光明再临.docx ====
+
+# 光明再临
+country_event = {
+	id = DOP_GNG_event.88
+	title = DOP_GNG_event.88.t
+	desc = DOP_GNG_event.88.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.88.a
+	}
+}
+# ==== 资本归来.docx ====
+
+# 资本归来
+country_event = {
+	id = DOP_GNG_event.89
+	title = DOP_GNG_event.89.t
+	desc = DOP_GNG_event.89.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.89.a
+	}
+}
+# ==== 伟大创举.docx ====
+
+# 伟大创举
+country_event = {
+	id = DOP_GNG_event.90
+	title = DOP_GNG_event.90.t
+	desc = DOP_GNG_event.90.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.90.a
+	}
+}
+# ==== 紧急事项.docx ====
+
+# 紧急事项
+country_event = {
+	id = DOP_GNG_event.91
+	title = DOP_GNG_event.91.t
+	desc = DOP_GNG_event.91.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.91.a
+	}
+}
+# ==== 新手教程.docx ====
+
+# 新手教程
+country_event = {
+	id = DOP_GNG_event.92
+	title = DOP_GNG_event.92.t
+	desc = DOP_GNG_event.92.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.92.a
+	}
+}
+# ==== 军政补完.docx ====
+
+# 无形的绳索
+country_event = {
+	id = DOP_GNG_event.93
+	title = DOP_GNG_event.93.t
+	desc = DOP_GNG_event.93.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.93.a
+	}
+}
+
+# 若隐若现的囚笼
+country_event = {
+	id = DOP_GNG_event.94
+	title = DOP_GNG_event.94.t
+	desc = DOP_GNG_event.94.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.94.a
+	}
+}
+
+# 有形的锁链
+country_event = {
+	id = DOP_GNG_event.95
+	title = DOP_GNG_event.95.t
+	desc = DOP_GNG_event.95.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.95.a
+	}
+}
+# ==== 巧妇难为无米之炊.docx ====
+
+# 巧妇难为无米之炊
+country_event = {
+	id = DOP_GNG_event.96
+	title = DOP_GNG_event.96.t
+	desc = DOP_GNG_event.96.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.96.a
+	}
+	option = {
+		name = DOP_GNG_event.96.b
+	}
+}
+
+# 所有地区三大种族支持率-1.50
+country_event = {
+	id = DOP_GNG_event.97
+	title = DOP_GNG_event.97.t
+	desc = DOP_GNG_event.97.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.97.a
+	}
+}
+# ==== 追根溯源.docx ====
+
+# 追根溯源
+country_event = {
+	id = DOP_GNG_event.98
+	title = DOP_GNG_event.98.t
+	desc = DOP_GNG_event.98.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.98.a
+	}
+}
+# ==== 狡兔三窟.docx ====
+
+# 狡兔三窟
+country_event = {
+	id = DOP_GNG_event.99
+	title = DOP_GNG_event.99.t
+	desc = DOP_GNG_event.99.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.99.a
+	}
+}
+# ==== 新玩伴.docx ====
+
+# 新玩伴……？
+country_event = {
+	id = DOP_GNG_event.100
+	title = DOP_GNG_event.100.t
+	desc = DOP_GNG_event.100.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.100.a
+	}
+}
+# ==== 休克疗法.docx ====
+
+# 休克疗法
+country_event = {
+	id = DOP_GNG_event.101
+	title = DOP_GNG_event.101.t
+	desc = DOP_GNG_event.101.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.101.a
+	}
+}
+# ==== 新民生工程+建设公共邨屋.docx ====
+
+# 新民生工程
+country_event = {
+	id = DOP_GNG_event.102
+	title = DOP_GNG_event.102.t
+	desc = DOP_GNG_event.102.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.102.a
+	}
+	option = {
+		name = DOP_GNG_event.102.b
+	}
+}
+
+# 止步与否？
+country_event = {
+	id = DOP_GNG_event.103
+	title = DOP_GNG_event.103.t
+	desc = DOP_GNG_event.103.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.103.a
+	}
+	option = {
+		name = DOP_GNG_event.103.b
+	}
+}
+
+# 国民福祉与健康保险条例通过！
+country_event = {
+	id = DOP_GNG_event.104
+	title = DOP_GNG_event.104.t
+	desc = DOP_GNG_event.104.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.104.a
+	}
+}
+
+# 建设公共邨屋
+country_event = {
+	id = DOP_GNG_event.105
+	title = DOP_GNG_event.105.t
+	desc = DOP_GNG_event.105.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.105.a
+	}
+}
+
+# 两个愿望，一次实现
+country_event = {
+	id = DOP_GNG_event.106
+	title = DOP_GNG_event.106.t
+	desc = DOP_GNG_event.106.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.106.a
+	}
+}
+# ==== 沧海一粟.docx ====
+
+# 沧海一粟
+country_event = {
+	id = DOP_GNG_event.107
+	title = DOP_GNG_event.107.t
+	desc = DOP_GNG_event.107.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.107.a
+	}
+}
+# ==== 道阻且长.docx ====
+
+# 道阻且长
+country_event = {
+	id = DOP_GNG_event.108
+	title = DOP_GNG_event.108.t
+	desc = DOP_GNG_event.108.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.108.a
+	}
+}
+# ==== 人世无常.docx ====
+
+# 人世无常
+country_event = {
+	id = DOP_GNG_event.109
+	title = DOP_GNG_event.109.t
+	desc = DOP_GNG_event.109.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.109.a
+	}
+}
+# ==== 又一届峰会.docx ====
+
+# 又一届峰会
+country_event = {
+	id = DOP_GNG_event.110
+	title = DOP_GNG_event.110.t
+	desc = DOP_GNG_event.110.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.110.a
+	}
+}
+# ==== 子弹上膛.docx ====
+
+# 子弹上膛
+country_event = {
+	id = DOP_GNG_event.111
+	title = DOP_GNG_event.111.t
+	desc = DOP_GNG_event.111.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.111.a
+	}
+}
+# ==== 虽笼中之虎…….docx ====
+
+# 虽笼中之虎……
+country_event = {
+	id = DOP_GNG_event.112
+	title = DOP_GNG_event.112.t
+	desc = DOP_GNG_event.112.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.112.a
+	}
+}
+# ==== 港口2.docx ====
+
+# 繁荣而又繁忙的港口
+country_event = {
+	id = DOP_GNG_event.113
+	title = DOP_GNG_event.113.t
+	desc = DOP_GNG_event.113.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.113.a
+	}
+}
+# ==== 密会.docx ====
+
+# 密会
+country_event = {
+	id = DOP_GNG_event.114
+	title = DOP_GNG_event.114.t
+	desc = DOP_GNG_event.114.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.114.a
+	}
+}
+# ==== 大逆不道.docx ====
+
+# 大逆不道
+country_event = {
+	id = DOP_GNG_event.115
+	title = DOP_GNG_event.115.t
+	desc = DOP_GNG_event.115.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.115.a
+	}
+	option = {
+		name = DOP_GNG_event.115.b
+	}
+}
+# ==== 行政命令第387号.docx ====
+
+# 行政命令第387号
+country_event = {
+	id = DOP_GNG_event.116
+	title = DOP_GNG_event.116.t
+	desc = DOP_GNG_event.116.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.116.a
+	}
+}
+# ==== 更进一步？.docx ====
+
+# 更进一步？
+country_event = {
+	id = DOP_GNG_event.117
+	title = DOP_GNG_event.117.t
+	desc = DOP_GNG_event.117.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.117.a
+	}
+}
+
+# 将工会政策等级改为允许所有工会
+country_event = {
+	id = DOP_GNG_event.118
+	title = DOP_GNG_event.118.t
+	desc = DOP_GNG_event.118.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.118.a
+	}
+}
+
+# 将工会政策等级改为国家控制工会
+country_event = {
+	id = DOP_GNG_event.119
+	title = DOP_GNG_event.119.t
+	desc = DOP_GNG_event.119.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.119.a
+	}
+}
+# ==== 布局.docx ====
+
+# 布局
+country_event = {
+	id = DOP_GNG_event.120
+	title = DOP_GNG_event.120.t
+	desc = DOP_GNG_event.120.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.120.a
+	}
+}
+
+# 满洲或许已不足为惧，但仍不可大意行事，让其起死回生。
+country_event = {
+	id = DOP_GNG_event.121
+	title = DOP_GNG_event.121.t
+	desc = DOP_GNG_event.121.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.121.a
+	}
+}
+# ==== 国情咨文.docx ====
+
+# 国情咨文
+country_event = {
+	id = DOP_GNG_event.122
+	title = DOP_GNG_event.122.t
+	desc = DOP_GNG_event.122.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.122.a
+	}
+}
+# ==== 南腔北调.docx ====
+
+# 南腔北调
+country_event = {
+	id = DOP_GNG_event.123
+	title = DOP_GNG_event.123.t
+	desc = DOP_GNG_event.123.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.123.a
+	}
+}
+# ==== 劳资关系协调条例通过事件.docx ====
+
+# 劳资关系协调条例通过！
+country_event = {
+	id = DOP_GNG_event.124
+	title = DOP_GNG_event.124.t
+	desc = DOP_GNG_event.124.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.124.a
+	}
+}
+
+# 劳资关系协调条例未通过！
+country_event = {
+	id = DOP_GNG_event.125
+	title = DOP_GNG_event.125.t
+	desc = DOP_GNG_event.125.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.125.a
+	}
+}
+# ==== 新鲜血液.docx ====
+
+# 新鲜血液
+country_event = {
+	id = DOP_GNG_event.126
+	title = DOP_GNG_event.126.t
+	desc = DOP_GNG_event.126.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.126.a
+	}
+}
+# ==== ……黑暗笼罩一切.docx ====
+
+# ……黑暗笼罩一切
+country_event = {
+	id = DOP_GNG_event.127
+	title = DOP_GNG_event.127.t
+	desc = DOP_GNG_event.127.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.127.a
+	}
+}
+# ==== 忍耐，直至转折点.docx ====
+
+# 忍耐，直至转折点
+country_event = {
+	id = DOP_GNG_event.128
+	title = DOP_GNG_event.128.t
+	desc = DOP_GNG_event.128.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.128.a
+	}
+}
+# ==== 静夜.docx ====
+
+# 静夜
+country_event = {
+	id = DOP_GNG_event.129
+	title = DOP_GNG_event.129.t
+	desc = DOP_GNG_event.129.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.129.a
+	}
+}
+# ==== 得而复失.docx ====
+
+# 得而复失
+country_event = {
+	id = DOP_GNG_event.130
+	title = DOP_GNG_event.130.t
+	desc = DOP_GNG_event.130.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.130.a
+	}
+}
+# ==== 阳光所不能及之处…….docx ====
+
+# 阳光所不能及之处……
+country_event = {
+	id = DOP_GNG_event.131
+	title = DOP_GNG_event.131.t
+	desc = DOP_GNG_event.131.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.131.a
+	}
+}
+# ==== 何以为家？.docx ====
+
+# 何以为家？
+country_event = {
+	id = DOP_GNG_event.132
+	title = DOP_GNG_event.132.t
+	desc = DOP_GNG_event.132.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.132.a
+	}
+}
+# ==== 外交2.docx ====
+
+# 外事会议
+country_event = {
+	id = DOP_GNG_event.133
+	title = DOP_GNG_event.133.t
+	desc = DOP_GNG_event.133.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.133.a
+	}
+}
+
+# 我们将让李嘉诚出使东南亚
+country_event = {
+	id = DOP_GNG_event.134
+	title = DOP_GNG_event.134.t
+	desc = DOP_GNG_event.134.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.134.a
+	}
+}
+
+# 我们将让松下正治出使东南亚
+country_event = {
+	id = DOP_GNG_event.135
+	title = DOP_GNG_event.135.t
+	desc = DOP_GNG_event.135.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.135.a
+	}
+}
+
+# 再进一步？
+country_event = {
+	id = DOP_GNG_event.136
+	title = DOP_GNG_event.136.t
+	desc = DOP_GNG_event.136.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.136.a
+	}
+}
+
+# 我们将让何鸿燊出访美国
+country_event = {
+	id = DOP_GNG_event.137
+	title = DOP_GNG_event.137.t
+	desc = DOP_GNG_event.137.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.137.a
+	}
+}
+
+# 我们将让李嘉诚出访美国
+country_event = {
+	id = DOP_GNG_event.138
+	title = DOP_GNG_event.138.t
+	desc = DOP_GNG_event.138.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.138.a
+	}
+}
+
+# 盛田昭夫将亲自出访美国
+country_event = {
+	id = DOP_GNG_event.139
+	title = DOP_GNG_event.139.t
+	desc = DOP_GNG_event.139.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.139.a
+	}
+}
+
+# 打开魔盒
+country_event = {
+	id = DOP_GNG_event.140
+	title = DOP_GNG_event.140.t
+	desc = DOP_GNG_event.140.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.140.a
+	}
+}
+# ==== 军政转线事件链.docx ====
+
+# 不忠的密谋
+country_event = {
+	id = DOP_GNG_event.141
+	title = DOP_GNG_event.141.t
+	desc = DOP_GNG_event.141.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.141.a
+	}
+}
+
+# 刀刺在背
+country_event = {
+	id = DOP_GNG_event.142
+	title = DOP_GNG_event.142.t
+	desc = DOP_GNG_event.142.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.142.a
+	}
+}
+
+# 武装力量的干预让广东的未来似乎走到了尽头，但仍有希望……
+country_event = {
+	id = DOP_GNG_event.143
+	title = DOP_GNG_event.143.t
+	desc = DOP_GNG_event.143.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.143.a
+	}
+}
+# ==== 穷途末路.docx ====
+
+# 穷途末路
+country_event = {
+	id = DOP_GNG_event.144
+	title = DOP_GNG_event.144.t
+	desc = DOP_GNG_event.144.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.144.a
+	}
+}
+# ==== 殊死搏斗.docx ====
+
+# 殊死搏斗
+country_event = {
+	id = DOP_GNG_event.145
+	title = DOP_GNG_event.145.t
+	desc = DOP_GNG_event.145.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.145.a
+	}
+}
+
+# 产业重组与反垄断法被无限期搁置
+country_event = {
+	id = DOP_GNG_event.146
+	title = DOP_GNG_event.146.t
+	desc = DOP_GNG_event.146.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.146.a
+	}
+}
+# ==== 警务处报告.docx ====
+
+# 警务处报告
+country_event = {
+	id = DOP_GNG_event.147
+	title = DOP_GNG_event.147.t
+	desc = DOP_GNG_event.147.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.147.a
+	}
+}
+# ==== 配套事件.docx ====
+
+# 争分夺秒
+country_event = {
+	id = DOP_GNG_event.148
+	title = DOP_GNG_event.148.t
+	desc = DOP_GNG_event.148.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.148.a
+	}
+}
+
+# 未雨绸缪
+country_event = {
+	id = DOP_GNG_event.149
+	title = DOP_GNG_event.149.t
+	desc = DOP_GNG_event.149.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.149.a
+	}
+}
+
+# 席卷全球
+country_event = {
+	id = DOP_GNG_event.150
+	title = DOP_GNG_event.150.t
+	desc = DOP_GNG_event.150.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.150.a
+	}
+}
+
+# 阴影下的“共荣”
+country_event = {
+	id = DOP_GNG_event.151
+	title = DOP_GNG_event.151.t
+	desc = DOP_GNG_event.151.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.151.a
+	}
+}
+
+# 脏货
+country_event = {
+	id = DOP_GNG_event.152
+	title = DOP_GNG_event.152.t
+	desc = DOP_GNG_event.152.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.152.a
+	}
+}
+
+# 再度扩张
+country_event = {
+	id = DOP_GNG_event.153
+	title = DOP_GNG_event.153.t
+	desc = DOP_GNG_event.153.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.153.a
+	}
+}
+
+# 打破常规
+country_event = {
+	id = DOP_GNG_event.154
+	title = DOP_GNG_event.154.t
+	desc = DOP_GNG_event.154.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.154.a
+	}
+}
+
+# 一旦研发成功，这一划时代的产品将在当年的产品周期发布
+country_event = {
+	id = DOP_GNG_event.155
+	title = DOP_GNG_event.155.t
+	desc = DOP_GNG_event.155.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.155.a
+	}
+}
+
+# 善后计划
+country_event = {
+	id = DOP_GNG_event.156
+	title = DOP_GNG_event.156.t
+	desc = DOP_GNG_event.156.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.156.a
+	}
+}
+
+# 公平竞争
+country_event = {
+	id = DOP_GNG_event.157
+	title = DOP_GNG_event.157.t
+	desc = DOP_GNG_event.157.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.157.a
+	}
+}
+
+# 一劳永逸？
+country_event = {
+	id = DOP_GNG_event.158
+	title = DOP_GNG_event.158.t
+	desc = DOP_GNG_event.158.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.158.a
+	}
+}
+# ==== 不甘平庸.docx ====
+
+# 不甘平庸
+country_event = {
+	id = DOP_GNG_event.159
+	title = DOP_GNG_event.159.t
+	desc = DOP_GNG_event.159.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.159.a
+	}
+}
+# ==== 一往无前.docx ====
+
+# 一往无前
+country_event = {
+	id = DOP_GNG_event.160
+	title = DOP_GNG_event.160.t
+	desc = DOP_GNG_event.160.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.160.a
+	}
+}
+# ==== 外交1.docx ====
+
+# 走向世界？
+country_event = {
+	id = DOP_GNG_event.161
+	title = DOP_GNG_event.161.t
+	desc = DOP_GNG_event.161.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.161.a
+	}
+}
+# ==== 北境孤城.docx ====
+
+# 北境孤城
+country_event = {
+	id = DOP_GNG_event.162
+	title = DOP_GNG_event.162.t
+	desc = DOP_GNG_event.162.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.162.a
+	}
+}
+# ==== 打通动脉.docx ====
+
+# 打通动脉
+country_event = {
+	id = DOP_GNG_event.163
+	title = DOP_GNG_event.163.t
+	desc = DOP_GNG_event.163.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.163.a
+	}
+}
+# ==== 修订民族融合条例通过.docx ====
+
+# 修订民族融合条例通过！
+country_event = {
+	id = DOP_GNG_event.164
+	title = DOP_GNG_event.164.t
+	desc = DOP_GNG_event.164.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.164.a
+	}
+}
+
+# 这么做可能是扬汤止沸……
+country_event = {
+	id = DOP_GNG_event.165
+	title = DOP_GNG_event.165.t
+	desc = DOP_GNG_event.165.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.165.a
+	}
+}
+# ==== 抱歉，没有闲钱.docx ====
+
+# 抱歉，没有闲钱
+country_event = {
+	id = DOP_GNG_event.166
+	title = DOP_GNG_event.166.t
+	desc = DOP_GNG_event.166.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.166.a
+	}
+}
+# ==== 片刻欢愉.docx ====
+
+# 片刻欢愉
+country_event = {
+	id = DOP_GNG_event.167
+	title = DOP_GNG_event.167.t
+	desc = DOP_GNG_event.167.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.167.a
+	}
+}
+# ==== 似是而非.docx ====
+
+# 似是而非
+country_event = {
+	id = DOP_GNG_event.168
+	title = DOP_GNG_event.168.t
+	desc = DOP_GNG_event.168.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.168.a
+	}
+}
+# ==== 自废武功.docx ====
+
+# 自废武功
+country_event = {
+	id = DOP_GNG_event.169
+	title = DOP_GNG_event.169.t
+	desc = DOP_GNG_event.169.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.169.a
+	}
+}
+# ==== 午间休息.docx ====
+
+# 午间休息
+country_event = {
+	id = DOP_GNG_event.170
+	title = DOP_GNG_event.170.t
+	desc = DOP_GNG_event.170.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.170.a
+	}
+}
+# ==== 釜底抽薪.docx ====
+
+# 釜底抽薪
+country_event = {
+	id = DOP_GNG_event.171
+	title = DOP_GNG_event.171.t
+	desc = DOP_GNG_event.171.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.171.a
+	}
+}
+# ==== 见见你的新上司.docx ====
+
+# 见见你的新上司
+country_event = {
+	id = DOP_GNG_event.172
+	title = DOP_GNG_event.172.t
+	desc = DOP_GNG_event.172.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.172.a
+	}
+}
+# ==== 新的王储？.docx ====
+
+# 新的王储？
+country_event = {
+	id = DOP_GNG_event.173
+	title = DOP_GNG_event.173.t
+	desc = DOP_GNG_event.173.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.173.a
+	}
+}
+# ==== 蒙旧日恩泽.docx ====
+
+# 蒙旧日恩泽
+country_event = {
+	id = DOP_GNG_event.174
+	title = DOP_GNG_event.174.t
+	desc = DOP_GNG_event.174.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.174.a
+	}
+}
+# ==== 国际舞台上的广东.docx ====
+
+# 国际舞台上的广东
+country_event = {
+	id = DOP_GNG_event.175
+	title = DOP_GNG_event.175.t
+	desc = DOP_GNG_event.175.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.175.a
+	}
+}
+# ==== 市场监管.docx ====
+
+# 市场监管
+country_event = {
+	id = DOP_GNG_event.176
+	title = DOP_GNG_event.176.t
+	desc = DOP_GNG_event.176.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.176.a
+	}
+}
+# ==== 人工心脏.docx ====
+
+# 人工心脏
+country_event = {
+	id = DOP_GNG_event.177
+	title = DOP_GNG_event.177.t
+	desc = DOP_GNG_event.177.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.177.a
+	}
+}
+# ==== 官逼“民”反.docx ====
+
+# 官逼“民”反
+country_event = {
+	id = DOP_GNG_event.178
+	title = DOP_GNG_event.178.t
+	desc = DOP_GNG_event.178.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.178.a
+	}
+}
+# ==== “弃暗投明”.docx ====
+
+# “弃暗投明”
+country_event = {
+	id = DOP_GNG_event.179
+	title = DOP_GNG_event.179.t
+	desc = DOP_GNG_event.179.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.179.a
+	}
+}
+# ==== 两难境地.docx ====
+
+# 两难境地
+country_event = {
+	id = DOP_GNG_event.180
+	title = DOP_GNG_event.180.t
+	desc = DOP_GNG_event.180.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.180.a
+	}
+}
+# ==== 来自昨日的同盟.docx ====
+
+# 来自昨日的同盟……
+country_event = {
+	id = DOP_GNG_event.181
+	title = DOP_GNG_event.181.t
+	desc = DOP_GNG_event.181.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.181.a
+	}
+}
+# ==== 黑色遗产.docx ====
+
+# 黑色遗产
+country_event = {
+	id = DOP_GNG_event.182
+	title = DOP_GNG_event.182.t
+	desc = DOP_GNG_event.182.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.182.a
+	}
+}
+# ==== 港口3.docx ====
+
+# 东亚的“中转站”
+country_event = {
+	id = DOP_GNG_event.183
+	title = DOP_GNG_event.183.t
+	desc = DOP_GNG_event.183.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.183.a
+	}
+}
+# ==== 野火渐熄之后.docx ====
+
+# 野火渐熄之后……
+country_event = {
+	id = DOP_GNG_event.184
+	title = DOP_GNG_event.184.t
+	desc = DOP_GNG_event.184.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.184.a
+	}
+}
+# ==== 呼吁.docx ====
+
+# 呼吁
+country_event = {
+	id = DOP_GNG_event.185
+	title = DOP_GNG_event.185.t
+	desc = DOP_GNG_event.185.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.185.a
+	}
+}
+# ==== 会见贵宾.docx ====
+
+# 会见贵宾
+country_event = {
+	id = DOP_GNG_event.186
+	title = DOP_GNG_event.186.t
+	desc = DOP_GNG_event.186.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.186.a
+	}
+}
+# ==== 哀鸿遍野.docx ====
+
+# 哀鸿遍野
+country_event = {
+	id = DOP_GNG_event.187
+	title = DOP_GNG_event.187.t
+	desc = DOP_GNG_event.187.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.187.a
+	}
+}
+# ==== 润滑剂.docx ====
+
+# 润滑剂
+country_event = {
+	id = DOP_GNG_event.188
+	title = DOP_GNG_event.188.t
+	desc = DOP_GNG_event.188.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.188.a
+	}
+}
+# ==== 修订民族团结条例通过！.docx ====
+
+# 修订民族团结条例通过！
+country_event = {
+	id = DOP_GNG_event.189
+	title = DOP_GNG_event.189.t
+	desc = DOP_GNG_event.189.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.189.a
+	}
+}
+
+# 只有时间才会证明这是否有效……
+country_event = {
+	id = DOP_GNG_event.190
+	title = DOP_GNG_event.190.t
+	desc = DOP_GNG_event.190.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.190.a
+	}
+}
+# ==== 对症下药.docx ====
+
+# 对症下药
+country_event = {
+	id = DOP_GNG_event.191
+	title = DOP_GNG_event.191.t
+	desc = DOP_GNG_event.191.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.191.a
+	}
+	option = {
+		name = DOP_GNG_event.191.b
+	}
+}
+# ==== 局外人.docx ====
+
+# 局外人
+country_event = {
+	id = DOP_GNG_event.192
+	title = DOP_GNG_event.192.t
+	desc = DOP_GNG_event.192.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.192.a
+	}
+}
+# ==== 当断不断.docx ====
+
+# 当断不断
+country_event = {
+	id = DOP_GNG_event.193
+	title = DOP_GNG_event.193.t
+	desc = DOP_GNG_event.193.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.193.a
+	}
+}
+# ==== 荣辱与共.docx ====
+
+# 荣辱与共
+country_event = {
+	id = DOP_GNG_event.194
+	title = DOP_GNG_event.194.t
+	desc = DOP_GNG_event.194.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.194.a
+	}
+}
+
+# 我们将与长实站在一起，推行李嘉诚的计划
+country_event = {
+	id = DOP_GNG_event.195
+	title = DOP_GNG_event.195.t
+	desc = DOP_GNG_event.195.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.195.a
+	}
+}
+# ==== 漫步人生路.docx ====
+
+# 漫步人生路
+country_event = {
+	id = DOP_GNG_event.196
+	title = DOP_GNG_event.196.t
+	desc = DOP_GNG_event.196.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.196.a
+	}
+}
+
+# 因为行政长官始终与广大人民站在一起，广东的未来将更加光明……？
+country_event = {
+	id = DOP_GNG_event.197
+	title = DOP_GNG_event.197.t
+	desc = DOP_GNG_event.197.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.197.a
+	}
+}
+# ==== 通往南宁的漫漫长路.docx ====
+
+# 通往南宁的漫漫长路
+country_event = {
+	id = DOP_GNG_event.198
+	title = DOP_GNG_event.198.t
+	desc = DOP_GNG_event.198.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.198.a
+	}
+}
+
+# 一个地方怎么能没有警察呢
+country_event = {
+	id = DOP_GNG_event.199
+	title = DOP_GNG_event.199.t
+	desc = DOP_GNG_event.199.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.199.a
+	}
+}
+# ==== 待哺的众生.docx ====
+
+# 待哺的众生
+country_event = {
+	id = DOP_GNG_event.200
+	title = DOP_GNG_event.200.t
+	desc = DOP_GNG_event.200.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.200.a
+	}
+	option = {
+		name = DOP_GNG_event.200.b
+	}
+}
+# ==== 开门红.docx ====
+
+# 开门红
+country_event = {
+	id = DOP_GNG_event.201
+	title = DOP_GNG_event.201.t
+	desc = DOP_GNG_event.201.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.201.a
+	}
+}
+# ==== 打开魔盒.docx ====
+
+# 打开魔盒
+country_event = {
+	id = DOP_GNG_event.202
+	title = DOP_GNG_event.202.t
+	desc = DOP_GNG_event.202.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.202.a
+	}
+}
+# ==== 同是天涯沦落人.docx ====
+
+# 同是天涯沦落人
+country_event = {
+	id = DOP_GNG_event.203
+	title = DOP_GNG_event.203.t
+	desc = DOP_GNG_event.203.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.203.a
+	}
+}
+# ==== 有备无患.docx ====
+
+# 有备无患
+country_event = {
+	id = DOP_GNG_event.204
+	title = DOP_GNG_event.204.t
+	desc = DOP_GNG_event.204.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.204.a
+	}
+}
+# ==== 何为正义？.docx ====
+
+# 何为正义？
+country_event = {
+	id = DOP_GNG_event.205
+	title = DOP_GNG_event.205.t
+	desc = DOP_GNG_event.205.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.205.a
+	}
+}
+# ==== 新官上任.docx ====
+
+# 新官上任
+country_event = {
+	id = DOP_GNG_event.206
+	title = DOP_GNG_event.206.t
+	desc = DOP_GNG_event.206.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.206.a
+	}
+}
+# ==== 1962转线事件链.docx ====
+
+# 关于广东当前局势的报告
+country_event = {
+	id = DOP_GNG_event.207
+	title = DOP_GNG_event.207.t
+	desc = DOP_GNG_event.207.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.207.a
+	}
+}
+
+# 东京来电
+country_event = {
+	id = DOP_GNG_event.208
+	title = DOP_GNG_event.208.t
+	desc = DOP_GNG_event.208.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.208.a
+	}
+}
+
+# 大幕落下
+country_event = {
+	id = DOP_GNG_event.209
+	title = DOP_GNG_event.209.t
+	desc = DOP_GNG_event.209.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.209.a
+	}
+}
+
+# 在东京的直接干预下，广东的未来陷入一片黑暗……
+country_event = {
+	id = DOP_GNG_event.210
+	title = DOP_GNG_event.210.t
+	desc = DOP_GNG_event.210.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.210.a
+	}
+}
+# ==== 事件.docx ====
+
+# 新约
+country_event = {
+	id = DOP_GNG_event.211
+	title = DOP_GNG_event.211.t
+	desc = DOP_GNG_event.211.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.211.a
+	}
+}
+
+# 搬迁
+country_event = {
+	id = DOP_GNG_event.212
+	title = DOP_GNG_event.212.t
+	desc = DOP_GNG_event.212.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.212.a
+	}
+}
+
+# 扬眉吐气
+country_event = {
+	id = DOP_GNG_event.213
+	title = DOP_GNG_event.213.t
+	desc = DOP_GNG_event.213.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.213.a
+	}
+}
+
+# 会议当日（接扬眉吐气）
+country_event = {
+	id = DOP_GNG_event.214
+	title = DOP_GNG_event.214.t
+	desc = DOP_GNG_event.214.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.214.a
+	}
+}
+
+# 拉开帷幕
+country_event = {
+	id = DOP_GNG_event.215
+	title = DOP_GNG_event.215.t
+	desc = DOP_GNG_event.215.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.215.a
+	}
+}
+# ==== 强攻.docx ====
+
+# 强攻
+country_event = {
+	id = DOP_GNG_event.216
+	title = DOP_GNG_event.216.t
+	desc = DOP_GNG_event.216.desc
+	picture = GFX_report_event_IBR_meeting_small
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = DOP_GNG_event.216.a
+	}
+}

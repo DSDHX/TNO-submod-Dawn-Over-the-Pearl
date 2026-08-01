@@ -22,6 +22,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.184 days = 0 }
 	}
 }
 
@@ -41,6 +43,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.128 days = 0 }
 	}
 }
 
@@ -269,6 +273,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.162 days = 0 }
 	}
 }
 
@@ -288,6 +294,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.88 days = 0 }
 	}
 }
 
@@ -307,6 +315,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.40 days = 0 }
 	}
 }
 
@@ -326,6 +336,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.89 days = 0 }
 	}
 }
 
@@ -345,6 +357,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.147 days = 0 }
 	}
 }
 
@@ -367,6 +381,8 @@ shared_focus = {
 
  	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.129 days = 0 }
 	}
 }
 
@@ -484,6 +500,8 @@ shared_focus = {
 				instant_build = yes
 			}
 		}
+	
+		country_event = { id = DOP_GNG_event.163 days = 0 }
 	}
 }
 
@@ -505,6 +523,8 @@ shared_focus = {
 	
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.34 days = 0 }
 	}
 }
 
@@ -527,6 +547,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.126 days = 0 }
 	}
 }
 
@@ -549,6 +571,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.115 days = 0 }
 	}
 }
 
@@ -571,6 +595,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_refugee_focustt
+	
+		country_event = { id = DOP_GNG_event.187 days = 0 }
 	}
 }
 
@@ -599,6 +625,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.200 days = 0 }
 	}
 }
 
@@ -626,6 +654,8 @@ shared_focus = {
 
 	completion_reward = {
 	#uncompleted
+	
+		country_event = { id = DOP_GNG_event.116 days = 0 }
 	}
 }
 
@@ -652,6 +682,8 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_resume_production_focustt
+	
+		country_event = { id = DOP_GNG_event.180 days = 0 }
 	}
 }
 
