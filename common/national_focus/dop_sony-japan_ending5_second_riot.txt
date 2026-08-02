@@ -59,7 +59,10 @@ shared_focus = {
 			GNG_chinese_app_change = yes
 		}
 	
-		country_event = { id = DOP_GNG_event.166 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.155 days = 0 }
 	}
 }
 
@@ -86,7 +89,10 @@ shared_focus = {
 			GNG_zhujin_app_change = yes
 		}
 	
-		country_event = { id = DOP_GNG_event.39 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.36 days = 0 }
 	}
 }
 
@@ -116,6 +122,9 @@ shared_focus = {
 			set_temp_variable = { chi_app_temp = -1.25 }
 			GNG_chinese_app_change = yes
 		}
+	
+	
+	
 	
 		country_event = { id = DOP_GNG_event.2 days = 0 }
 	}
@@ -153,7 +162,10 @@ shared_focus = {
 			GNG_chinese_app_change = yes
 		}
 	
-		country_event = { id = DOP_GNG_event.111 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.107 days = 0 }
 	}
 }
 
@@ -251,6 +263,9 @@ shared_focus = {
 	completion_reward = {
 		#效果未填写
 	
+	
+	
+	
 		country_event = { id = DOP_GNG_event.15 days = 0 }
 	}
 }
@@ -275,7 +290,10 @@ shared_focus = {
 		#我们的教育落实率将中幅提高。
 		TNO_improve_education_policy_effectiveness_med = yes
 	
-		country_event = { id = DOP_GNG_event.185 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.186 days = 0 }
 	}
 }
 

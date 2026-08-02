@@ -22,6 +22,10 @@ shared_focus = {
 	
     completion_reward = {
 		custom_effect_tooltip = GNG_detoxification_focustt
+	
+	
+	
+		country_event = { id = DOP_GNG_event.33 days = 0 }
 	}
 }
 
@@ -41,7 +45,10 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_mistake_not_again_focustt
 	
-		country_event = { id = DOP_GNG_event.160 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.149 days = 0 }
 	}
 }
 
@@ -115,7 +122,10 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_won_t_forget_guangdong_people_focustt
 	
-		country_event = { id = DOP_GNG_event.203 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.201 days = 0 }
 	}
 }
 
@@ -235,6 +245,9 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_reach_the_future_focustt
 	
-		country_event = { id = DOP_GNG_event.91 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.88 days = 0 }
 	}
 }

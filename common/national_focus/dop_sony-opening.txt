@@ -137,7 +137,10 @@ shared_focus = {
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_save_unemp"
     
-		country_event = { id = DOP_GNG_event.32 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.30 days = 0 }
 	}
 }
 
@@ -155,7 +158,10 @@ shared_focus = {
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_maoming_ins"
     
-		country_event = { id = DOP_GNG_event.29 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.27 days = 0 }
 	}
 }
 
@@ -342,7 +348,10 @@ shared_focus = {
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_faux_opening"
     
-		country_event = { id = DOP_GNG_event.108 days = 0 }
+	
+	
+	
+		country_event = { id = DOP_GNG_event.104 days = 0 }
 	}
 }
 

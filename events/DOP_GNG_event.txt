@@ -308,8 +308,9 @@ country_event = {
 		name = DOP_GNG_event.20.a
 	}
 }
+# ==== 人外有人.docx ====
 
-# 中国不会容忍广东军政府的存在，广东的企业对军队也颇有怨言，这片土地未来的主人到底是谁，还是一个悬而未决的问题
+# 人外有人
 country_event = {
 	id = DOP_GNG_event.21
 	title = DOP_GNG_event.21.t
@@ -323,9 +324,9 @@ country_event = {
 		name = DOP_GNG_event.21.a
 	}
 }
-# ==== 人外有人.docx ====
+# ==== 对美外交（部分）.docx ====
 
-# 人外有人
+# 李嘉诚访问纽约
 country_event = {
 	id = DOP_GNG_event.22
 	title = DOP_GNG_event.22.t
@@ -339,9 +340,8 @@ country_event = {
 		name = DOP_GNG_event.22.a
 	}
 }
-# ==== 对美外交（部分）.docx ====
 
-# 李嘉诚访问纽约
+# 浮士德式交易
 country_event = {
 	id = DOP_GNG_event.23
 	title = DOP_GNG_event.23.t
@@ -356,7 +356,7 @@ country_event = {
 	}
 }
 
-# 消息传到广东，引起了一些不满……
+# 纽约游记
 country_event = {
 	id = DOP_GNG_event.24
 	title = DOP_GNG_event.24.t
@@ -371,7 +371,7 @@ country_event = {
 	}
 }
 
-# 额外收入+0.10（以十亿美元计））
+# 何鸿燊到达旧金山
 country_event = {
 	id = DOP_GNG_event.25
 	title = DOP_GNG_event.25.t
@@ -386,7 +386,7 @@ country_event = {
 	}
 }
 
-# 何鸿燊到达旧金山
+# 止步不前
 country_event = {
 	id = DOP_GNG_event.26
 	title = DOP_GNG_event.26.t
@@ -400,8 +400,9 @@ country_event = {
 		name = DOP_GNG_event.26.a
 	}
 }
+# ==== 战前法案.docx ====
 
-# 三合会似乎参与其中……
+# 石油产业经营条例
 country_event = {
 	id = DOP_GNG_event.27
 	title = DOP_GNG_event.27.t
@@ -416,7 +417,7 @@ country_event = {
 	}
 }
 
-# 额外收入+0.05（以十亿美元计））
+# 法案通过
 country_event = {
 	id = DOP_GNG_event.28
 	title = DOP_GNG_event.28.t
@@ -430,9 +431,8 @@ country_event = {
 		name = DOP_GNG_event.28.a
 	}
 }
-# ==== 战前法案.docx ====
 
-# 石油产业经营条例
+# 法案失败
 country_event = {
 	id = DOP_GNG_event.29
 	title = DOP_GNG_event.29.t
@@ -447,7 +447,7 @@ country_event = {
 	}
 }
 
-# 法案通过
+# 失业救济条例
 country_event = {
 	id = DOP_GNG_event.30
 	title = DOP_GNG_event.30.t
@@ -476,8 +476,9 @@ country_event = {
 		name = DOP_GNG_event.31.a
 	}
 }
+# ==== 政府改革？.docx ====
 
-# 失业救济条例
+# 政府改革？
 country_event = {
 	id = DOP_GNG_event.32
 	title = DOP_GNG_event.32.t
@@ -491,8 +492,9 @@ country_event = {
 		name = DOP_GNG_event.32.a
 	}
 }
+# ==== 旧日好时光？.docx ====
 
-# 法案失败
+# 旧日好时光？
 country_event = {
 	id = DOP_GNG_event.33
 	title = DOP_GNG_event.33.t
@@ -506,9 +508,9 @@ country_event = {
 		name = DOP_GNG_event.33.a
 	}
 }
-# ==== 政府改革？.docx ====
+# ==== 观众们.docx ====
 
-# 政府改革？
+# 观众们
 country_event = {
 	id = DOP_GNG_event.34
 	title = DOP_GNG_event.34.t
@@ -522,9 +524,9 @@ country_event = {
 		name = DOP_GNG_event.34.a
 	}
 }
-# ==== 旧日好时光？.docx ====
+# ==== 共荣共存？.docx ====
 
-# 旧日好时光？
+# 共荣共存？
 country_event = {
 	id = DOP_GNG_event.35
 	title = DOP_GNG_event.35.t
@@ -538,8 +540,9 @@ country_event = {
 		name = DOP_GNG_event.35.a
 	}
 }
+# ==== 罪人.docx ====
 
-# 在不稳定的同盟的引导下，广东的未来似乎走到了十字路口……
+# 罪人
 country_event = {
 	id = DOP_GNG_event.36
 	title = DOP_GNG_event.36.t
@@ -553,9 +556,9 @@ country_event = {
 		name = DOP_GNG_event.36.a
 	}
 }
-# ==== 观众们.docx ====
+# ==== 重症需下猛药.docx ====
 
-# 观众们
+# 重症需下猛药
 country_event = {
 	id = DOP_GNG_event.37
 	title = DOP_GNG_event.37.t
@@ -569,9 +572,9 @@ country_event = {
 		name = DOP_GNG_event.37.a
 	}
 }
-# ==== 共荣共存？.docx ====
+# ==== NPA事件.docx ====
 
-# 共荣共存？
+# 细细的蓝线
 country_event = {
 	id = DOP_GNG_event.38
 	title = DOP_GNG_event.38.t
@@ -585,9 +588,8 @@ country_event = {
 		name = DOP_GNG_event.38.a
 	}
 }
-# ==== 罪人.docx ====
 
-# 罪人
+# 承诺
 country_event = {
 	id = DOP_GNG_event.39
 	title = DOP_GNG_event.39.t
@@ -601,9 +603,8 @@ country_event = {
 		name = DOP_GNG_event.39.a
 	}
 }
-# ==== 重症需下猛药.docx ====
 
-# 重症需下猛药
+# 标准化装备
 country_event = {
 	id = DOP_GNG_event.40
 	title = DOP_GNG_event.40.t
@@ -616,10 +617,12 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.40.a
 	}
+	option = {
+		name = DOP_GNG_event.40.b
+	}
 }
-# ==== NPA事件.docx ====
 
-# 细细的蓝线
+# 除了对付犯罪分子需要用到的警械，新的装备标准化采购清单里还包括了一件在危急时刻可能挽救警员生命的物品——防刺服。
 country_event = {
 	id = DOP_GNG_event.41
 	title = DOP_GNG_event.41.t
@@ -634,7 +637,7 @@ country_event = {
 	}
 }
 
-# 承诺
+# 第二次机会
 country_event = {
 	id = DOP_GNG_event.42
 	title = DOP_GNG_event.42.t
@@ -649,7 +652,7 @@ country_event = {
 	}
 }
 
-# 标准化装备
+# 艰难一日
 country_event = {
 	id = DOP_GNG_event.43
 	title = DOP_GNG_event.43.t
@@ -662,12 +665,9 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.43.a
 	}
-	option = {
-		name = DOP_GNG_event.43.b
-	}
 }
 
-# 除了对付犯罪分子需要用到的警械，新的装备标准化采购清单里还包括了一件在危急时刻可能挽救警员生命的物品——防刺服。
+# 招兵买马
 country_event = {
 	id = DOP_GNG_event.44
 	title = DOP_GNG_event.44.t
@@ -682,7 +682,7 @@ country_event = {
 	}
 }
 
-# 第二次机会
+# 追凶
 country_event = {
 	id = DOP_GNG_event.45
 	title = DOP_GNG_event.45.t
@@ -697,7 +697,7 @@ country_event = {
 	}
 }
 
-# 艰难一日
+# 寻人
 country_event = {
 	id = DOP_GNG_event.46
 	title = DOP_GNG_event.46.t
@@ -712,7 +712,7 @@ country_event = {
 	}
 }
 
-# 招兵买马
+# 无人知晓
 country_event = {
 	id = DOP_GNG_event.47
 	title = DOP_GNG_event.47.t
@@ -727,7 +727,7 @@ country_event = {
 	}
 }
 
-# 追凶
+# 突击
 country_event = {
 	id = DOP_GNG_event.48
 	title = DOP_GNG_event.48.t
@@ -742,7 +742,7 @@ country_event = {
 	}
 }
 
-# 寻人
+# 警觉的眼睛
 country_event = {
 	id = DOP_GNG_event.49
 	title = DOP_GNG_event.49.t
@@ -757,7 +757,7 @@ country_event = {
 	}
 }
 
-# 无人知晓
+# 《公共秩序警务手册》
 country_event = {
 	id = DOP_GNG_event.50
 	title = DOP_GNG_event.50.t
@@ -772,7 +772,7 @@ country_event = {
 	}
 }
 
-# 突击
+# 剧烈冲撞
 country_event = {
 	id = DOP_GNG_event.51
 	title = DOP_GNG_event.51.t
@@ -787,7 +787,7 @@ country_event = {
 	}
 }
 
-# 警觉的眼睛
+# 破门而入
 country_event = {
 	id = DOP_GNG_event.52
 	title = DOP_GNG_event.52.t
@@ -802,7 +802,7 @@ country_event = {
 	}
 }
 
-# 《公共秩序警务手册》
+# 中央集权的警务模式？
 country_event = {
 	id = DOP_GNG_event.53
 	title = DOP_GNG_event.53.t
@@ -817,7 +817,7 @@ country_event = {
 	}
 }
 
-# 剧烈冲撞
+# 非常手段
 country_event = {
 	id = DOP_GNG_event.54
 	title = DOP_GNG_event.54.t
@@ -832,7 +832,7 @@ country_event = {
 	}
 }
 
-# 破门而入
+# 杀或被杀
 country_event = {
 	id = DOP_GNG_event.55
 	title = DOP_GNG_event.55.t
@@ -847,7 +847,7 @@ country_event = {
 	}
 }
 
-# 中央集权的警务模式？
+# 适可而止
 country_event = {
 	id = DOP_GNG_event.56
 	title = DOP_GNG_event.56.t
@@ -862,7 +862,7 @@ country_event = {
 	}
 }
 
-# 非常手段
+# 大事件
 country_event = {
 	id = DOP_GNG_event.57
 	title = DOP_GNG_event.57.t
@@ -877,7 +877,7 @@ country_event = {
 	}
 }
 
-# 杀或被杀
+# 斩首
 country_event = {
 	id = DOP_GNG_event.58
 	title = DOP_GNG_event.58.t
@@ -892,7 +892,7 @@ country_event = {
 	}
 }
 
-# 适可而止
+# 守护者？监视者？
 country_event = {
 	id = DOP_GNG_event.59
 	title = DOP_GNG_event.59.t
@@ -906,8 +906,9 @@ country_event = {
 		name = DOP_GNG_event.59.a
 	}
 }
+# ==== 港口1.docx ====
 
-# 大事件
+# 海外贸易发展战略
 country_event = {
 	id = DOP_GNG_event.60
 	title = DOP_GNG_event.60.t
@@ -921,8 +922,9 @@ country_event = {
 		name = DOP_GNG_event.60.a
 	}
 }
+# ==== 另一半天空.docx ====
 
-# 斩首
+# 另一半天空
 country_event = {
 	id = DOP_GNG_event.61
 	title = DOP_GNG_event.61.t
@@ -937,7 +939,7 @@ country_event = {
 	}
 }
 
-# 守护者？监视者？
+# 危险地带
 country_event = {
 	id = DOP_GNG_event.62
 	title = DOP_GNG_event.62.t
@@ -951,9 +953,8 @@ country_event = {
 		name = DOP_GNG_event.62.a
 	}
 }
-# ==== 港口1.docx ====
 
-# 海外贸易发展战略
+# 《劳动基准条例》修订案通过！
 country_event = {
 	id = DOP_GNG_event.63
 	title = DOP_GNG_event.63.t
@@ -967,9 +968,9 @@ country_event = {
 		name = DOP_GNG_event.63.a
 	}
 }
-# ==== 另一半天空.docx ====
+# ==== 放尊重些！.docx ====
 
-# 另一半天空
+# 放尊重些！
 country_event = {
 	id = DOP_GNG_event.64
 	title = DOP_GNG_event.64.t
@@ -983,8 +984,9 @@ country_event = {
 		name = DOP_GNG_event.64.a
 	}
 }
+# ==== SDF事件.docx ====
 
-# 危险地带
+# 正当防卫
 country_event = {
 	id = DOP_GNG_event.65
 	title = DOP_GNG_event.65.t
@@ -999,7 +1001,7 @@ country_event = {
 	}
 }
 
-# 嗯……保留其他的条款也已经是不小的进步了。
+# 新官上任
 country_event = {
 	id = DOP_GNG_event.66
 	title = DOP_GNG_event.66.t
@@ -1013,9 +1015,8 @@ country_event = {
 		name = DOP_GNG_event.66.a
 	}
 }
-# ==== 放尊重些！.docx ====
 
-# 放尊重些！
+# 部门重整
 country_event = {
 	id = DOP_GNG_event.67
 	title = DOP_GNG_event.67.t
@@ -1029,9 +1030,8 @@ country_event = {
 		name = DOP_GNG_event.67.a
 	}
 }
-# ==== SDF事件.docx ====
 
-# 正当防卫
+# 与狼共舞……
 country_event = {
 	id = DOP_GNG_event.68
 	title = DOP_GNG_event.68.t
@@ -1046,7 +1046,7 @@ country_event = {
 	}
 }
 
-# 新官上任
+# 触手可及的人力资源
 country_event = {
 	id = DOP_GNG_event.69
 	title = DOP_GNG_event.69.t
@@ -1061,7 +1061,7 @@ country_event = {
 	}
 }
 
-# 部门重整
+# 外行指导内行？
 country_event = {
 	id = DOP_GNG_event.70
 	title = DOP_GNG_event.70.t
@@ -1076,7 +1076,7 @@ country_event = {
 	}
 }
 
-# 与狼共舞……
+# 海边一瞥
 country_event = {
 	id = DOP_GNG_event.71
 	title = DOP_GNG_event.71.t
@@ -1091,7 +1091,7 @@ country_event = {
 	}
 }
 
-# 触手可及的人力资源
+# 开始的结束
 country_event = {
 	id = DOP_GNG_event.72
 	title = DOP_GNG_event.72.t
@@ -1106,7 +1106,7 @@ country_event = {
 	}
 }
 
-# 外行指导内行？
+# 未知深蓝
 country_event = {
 	id = DOP_GNG_event.73
 	title = DOP_GNG_event.73.t
@@ -1121,7 +1121,7 @@ country_event = {
 	}
 }
 
-# 海边一瞥
+# 钢之穹顶
 country_event = {
 	id = DOP_GNG_event.74
 	title = DOP_GNG_event.74.t
@@ -1136,7 +1136,7 @@ country_event = {
 	}
 }
 
-# 开始的结束
+# 意外之喜？
 country_event = {
 	id = DOP_GNG_event.75
 	title = DOP_GNG_event.75.t
@@ -1151,7 +1151,7 @@ country_event = {
 	}
 }
 
-# 未知深蓝
+# 挽留能者
 country_event = {
 	id = DOP_GNG_event.76
 	title = DOP_GNG_event.76.t
@@ -1166,7 +1166,7 @@ country_event = {
 	}
 }
 
-# 钢之穹顶
+# 有钱能使人服鬼役
 country_event = {
 	id = DOP_GNG_event.77
 	title = DOP_GNG_event.77.t
@@ -1181,7 +1181,7 @@ country_event = {
 	}
 }
 
-# 意外之喜？
+# 《华南武装力量发展趋势》节选
 country_event = {
 	id = DOP_GNG_event.78
 	title = DOP_GNG_event.78.t
@@ -1196,7 +1196,7 @@ country_event = {
 	}
 }
 
-# 挽留能者
+# 善意的合作……
 country_event = {
 	id = DOP_GNG_event.79
 	title = DOP_GNG_event.79.t
@@ -1211,7 +1211,7 @@ country_event = {
 	}
 }
 
-# 有钱能使人服鬼役
+# 衣食父母
 country_event = {
 	id = DOP_GNG_event.80
 	title = DOP_GNG_event.80.t
@@ -1226,7 +1226,7 @@ country_event = {
 	}
 }
 
-# 《华南武装力量发展趋势》节选
+# 刺激脑细胞
 country_event = {
 	id = DOP_GNG_event.81
 	title = DOP_GNG_event.81.t
@@ -1241,7 +1241,7 @@ country_event = {
 	}
 }
 
-# 善意的合作……
+# 改头换面
 country_event = {
 	id = DOP_GNG_event.82
 	title = DOP_GNG_event.82.t
@@ -1256,7 +1256,7 @@ country_event = {
 	}
 }
 
-# 衣食父母
+# 鸟枪换炮
 country_event = {
 	id = DOP_GNG_event.83
 	title = DOP_GNG_event.83.t
@@ -1271,7 +1271,7 @@ country_event = {
 	}
 }
 
-# 刺激脑细胞
+# 我沿着江户川漫步，眺望西方的皇居……
 country_event = {
 	id = DOP_GNG_event.84
 	title = DOP_GNG_event.84.t
@@ -1285,8 +1285,9 @@ country_event = {
 		name = DOP_GNG_event.84.a
 	}
 }
+# ==== 光明再临.docx ====
 
-# 改头换面
+# 光明再临
 country_event = {
 	id = DOP_GNG_event.85
 	title = DOP_GNG_event.85.t
@@ -1300,8 +1301,9 @@ country_event = {
 		name = DOP_GNG_event.85.a
 	}
 }
+# ==== 资本归来.docx ====
 
-# 鸟枪换炮
+# 资本归来
 country_event = {
 	id = DOP_GNG_event.86
 	title = DOP_GNG_event.86.t
@@ -1315,8 +1317,9 @@ country_event = {
 		name = DOP_GNG_event.86.a
 	}
 }
+# ==== 伟大创举.docx ====
 
-# 我沿着江户川漫步，眺望西方的皇居……
+# 伟大创举
 country_event = {
 	id = DOP_GNG_event.87
 	title = DOP_GNG_event.87.t
@@ -1330,9 +1333,9 @@ country_event = {
 		name = DOP_GNG_event.87.a
 	}
 }
-# ==== 光明再临.docx ====
+# ==== 紧急事项.docx ====
 
-# 光明再临
+# 紧急事项
 country_event = {
 	id = DOP_GNG_event.88
 	title = DOP_GNG_event.88.t
@@ -1346,9 +1349,9 @@ country_event = {
 		name = DOP_GNG_event.88.a
 	}
 }
-# ==== 资本归来.docx ====
+# ==== 新手教程.docx ====
 
-# 资本归来
+# 新手教程
 country_event = {
 	id = DOP_GNG_event.89
 	title = DOP_GNG_event.89.t
@@ -1362,9 +1365,9 @@ country_event = {
 		name = DOP_GNG_event.89.a
 	}
 }
-# ==== 伟大创举.docx ====
+# ==== 军政补完.docx ====
 
-# 伟大创举
+# 无形的绳索
 country_event = {
 	id = DOP_GNG_event.90
 	title = DOP_GNG_event.90.t
@@ -1378,9 +1381,8 @@ country_event = {
 		name = DOP_GNG_event.90.a
 	}
 }
-# ==== 紧急事项.docx ====
 
-# 紧急事项
+# 林巧川和黄浩辉坐在一辆车上，黄浩辉的任务是去查封一些“不良资产”，林巧川除了实际的查封工作外，还要保护黄浩辉的个人安全。
 country_event = {
 	id = DOP_GNG_event.91
 	title = DOP_GNG_event.91.t
@@ -1394,9 +1396,8 @@ country_event = {
 		name = DOP_GNG_event.91.a
 	}
 }
-# ==== 新手教程.docx ====
 
-# 新手教程
+# 有形的锁链
 country_event = {
 	id = DOP_GNG_event.92
 	title = DOP_GNG_event.92.t
@@ -1410,9 +1411,9 @@ country_event = {
 		name = DOP_GNG_event.92.a
 	}
 }
-# ==== 军政补完.docx ====
+# ==== 巧妇难为无米之炊.docx ====
 
-# 无形的绳索
+# 巧妇难为无米之炊
 country_event = {
 	id = DOP_GNG_event.93
 	title = DOP_GNG_event.93.t
@@ -1425,9 +1426,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.93.a
 	}
+	option = {
+		name = DOP_GNG_event.93.b
+	}
 }
+# ==== 追根溯源.docx ====
 
-# 若隐若现的囚笼
+# 追根溯源
 country_event = {
 	id = DOP_GNG_event.94
 	title = DOP_GNG_event.94.t
@@ -1441,8 +1446,9 @@ country_event = {
 		name = DOP_GNG_event.94.a
 	}
 }
+# ==== 狡兔三窟.docx ====
 
-# 有形的锁链
+# 狡兔三窟
 country_event = {
 	id = DOP_GNG_event.95
 	title = DOP_GNG_event.95.t
@@ -1456,9 +1462,9 @@ country_event = {
 		name = DOP_GNG_event.95.a
 	}
 }
-# ==== 巧妇难为无米之炊.docx ====
+# ==== 新玩伴.docx ====
 
-# 巧妇难为无米之炊
+# 新玩伴……？
 country_event = {
 	id = DOP_GNG_event.96
 	title = DOP_GNG_event.96.t
@@ -1471,12 +1477,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.96.a
 	}
-	option = {
-		name = DOP_GNG_event.96.b
-	}
 }
+# ==== 休克疗法.docx ====
 
-# 所有地区三大种族支持率-1.50
+# 休克疗法
 country_event = {
 	id = DOP_GNG_event.97
 	title = DOP_GNG_event.97.t
@@ -1490,9 +1494,9 @@ country_event = {
 		name = DOP_GNG_event.97.a
 	}
 }
-# ==== 追根溯源.docx ====
+# ==== 新民生工程+建设公共邨屋.docx ====
 
-# 追根溯源
+# 新民生工程
 country_event = {
 	id = DOP_GNG_event.98
 	title = DOP_GNG_event.98.t
@@ -1505,10 +1509,12 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.98.a
 	}
+	option = {
+		name = DOP_GNG_event.98.b
+	}
 }
-# ==== 狡兔三窟.docx ====
 
-# 狡兔三窟
+# 止步与否？
 country_event = {
 	id = DOP_GNG_event.99
 	title = DOP_GNG_event.99.t
@@ -1521,10 +1527,12 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.99.a
 	}
+	option = {
+		name = DOP_GNG_event.99.b
+	}
 }
-# ==== 新玩伴.docx ====
 
-# 新玩伴……？
+# 国民福祉与健康保险条例通过！
 country_event = {
 	id = DOP_GNG_event.100
 	title = DOP_GNG_event.100.t
@@ -1538,9 +1546,8 @@ country_event = {
 		name = DOP_GNG_event.100.a
 	}
 }
-# ==== 休克疗法.docx ====
 
-# 休克疗法
+# 建设公共邨屋
 country_event = {
 	id = DOP_GNG_event.101
 	title = DOP_GNG_event.101.t
@@ -1554,9 +1561,8 @@ country_event = {
 		name = DOP_GNG_event.101.a
 	}
 }
-# ==== 新民生工程+建设公共邨屋.docx ====
 
-# 新民生工程
+# 两个愿望，一次实现
 country_event = {
 	id = DOP_GNG_event.102
 	title = DOP_GNG_event.102.t
@@ -1569,12 +1575,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.102.a
 	}
-	option = {
-		name = DOP_GNG_event.102.b
-	}
 }
+# ==== 沧海一粟.docx ====
 
-# 止步与否？
+# 沧海一粟
 country_event = {
 	id = DOP_GNG_event.103
 	title = DOP_GNG_event.103.t
@@ -1587,12 +1591,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.103.a
 	}
-	option = {
-		name = DOP_GNG_event.103.b
-	}
 }
+# ==== 道阻且长.docx ====
 
-# 国民福祉与健康保险条例通过！
+# 道阻且长
 country_event = {
 	id = DOP_GNG_event.104
 	title = DOP_GNG_event.104.t
@@ -1606,8 +1608,9 @@ country_event = {
 		name = DOP_GNG_event.104.a
 	}
 }
+# ==== 人世无常.docx ====
 
-# 建设公共邨屋
+# 人世无常
 country_event = {
 	id = DOP_GNG_event.105
 	title = DOP_GNG_event.105.t
@@ -1621,8 +1624,9 @@ country_event = {
 		name = DOP_GNG_event.105.a
 	}
 }
+# ==== 又一届峰会.docx ====
 
-# 两个愿望，一次实现
+# 又一届峰会
 country_event = {
 	id = DOP_GNG_event.106
 	title = DOP_GNG_event.106.t
@@ -1636,9 +1640,9 @@ country_event = {
 		name = DOP_GNG_event.106.a
 	}
 }
-# ==== 沧海一粟.docx ====
+# ==== 子弹上膛.docx ====
 
-# 沧海一粟
+# 子弹上膛
 country_event = {
 	id = DOP_GNG_event.107
 	title = DOP_GNG_event.107.t
@@ -1652,9 +1656,9 @@ country_event = {
 		name = DOP_GNG_event.107.a
 	}
 }
-# ==== 道阻且长.docx ====
+# ==== 虽笼中之虎…….docx ====
 
-# 道阻且长
+# 虽笼中之虎……
 country_event = {
 	id = DOP_GNG_event.108
 	title = DOP_GNG_event.108.t
@@ -1668,9 +1672,9 @@ country_event = {
 		name = DOP_GNG_event.108.a
 	}
 }
-# ==== 人世无常.docx ====
+# ==== 港口2.docx ====
 
-# 人世无常
+# 繁荣而又繁忙的港口
 country_event = {
 	id = DOP_GNG_event.109
 	title = DOP_GNG_event.109.t
@@ -1684,9 +1688,9 @@ country_event = {
 		name = DOP_GNG_event.109.a
 	}
 }
-# ==== 又一届峰会.docx ====
+# ==== 密会.docx ====
 
-# 又一届峰会
+# 密会
 country_event = {
 	id = DOP_GNG_event.110
 	title = DOP_GNG_event.110.t
@@ -1700,9 +1704,9 @@ country_event = {
 		name = DOP_GNG_event.110.a
 	}
 }
-# ==== 子弹上膛.docx ====
+# ==== 大逆不道.docx ====
 
-# 子弹上膛
+# 大逆不道
 country_event = {
 	id = DOP_GNG_event.111
 	title = DOP_GNG_event.111.t
@@ -1715,10 +1719,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.111.a
 	}
+	option = {
+		name = DOP_GNG_event.111.b
+	}
 }
-# ==== 虽笼中之虎…….docx ====
+# ==== 行政命令第387号.docx ====
 
-# 虽笼中之虎……
+# 行政命令第387号
 country_event = {
 	id = DOP_GNG_event.112
 	title = DOP_GNG_event.112.t
@@ -1732,9 +1739,9 @@ country_event = {
 		name = DOP_GNG_event.112.a
 	}
 }
-# ==== 港口2.docx ====
+# ==== 更进一步？.docx ====
 
-# 繁荣而又繁忙的港口
+# 更进一步？
 country_event = {
 	id = DOP_GNG_event.113
 	title = DOP_GNG_event.113.t
@@ -1747,10 +1754,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.113.a
 	}
+	option = {
+		name = DOP_GNG_event.113.b
+	}
 }
-# ==== 密会.docx ====
+# ==== 布局.docx ====
 
-# 密会
+# 布局
 country_event = {
 	id = DOP_GNG_event.114
 	title = DOP_GNG_event.114.t
@@ -1764,9 +1774,8 @@ country_event = {
 		name = DOP_GNG_event.114.a
 	}
 }
-# ==== 大逆不道.docx ====
 
-# 大逆不道
+# 将解锁决议开发中国南部地区
 country_event = {
 	id = DOP_GNG_event.115
 	title = DOP_GNG_event.115.t
@@ -1779,13 +1788,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.115.a
 	}
-	option = {
-		name = DOP_GNG_event.115.b
-	}
 }
-# ==== 行政命令第387号.docx ====
+# ==== 国情咨文.docx ====
 
-# 行政命令第387号
+# 国情咨文
 country_event = {
 	id = DOP_GNG_event.116
 	title = DOP_GNG_event.116.t
@@ -1799,9 +1805,9 @@ country_event = {
 		name = DOP_GNG_event.116.a
 	}
 }
-# ==== 更进一步？.docx ====
+# ==== 南腔北调.docx ====
 
-# 更进一步？
+# 南腔北调
 country_event = {
 	id = DOP_GNG_event.117
 	title = DOP_GNG_event.117.t
@@ -1815,8 +1821,9 @@ country_event = {
 		name = DOP_GNG_event.117.a
 	}
 }
+# ==== 劳资关系协调条例通过事件.docx ====
 
-# 将工会政策等级改为允许所有工会
+# 劳资关系协调条例通过！
 country_event = {
 	id = DOP_GNG_event.118
 	title = DOP_GNG_event.118.t
@@ -1831,7 +1838,7 @@ country_event = {
 	}
 }
 
-# 将工会政策等级改为国家控制工会
+# 劳资关系协调条例未通过！
 country_event = {
 	id = DOP_GNG_event.119
 	title = DOP_GNG_event.119.t
@@ -1845,9 +1852,9 @@ country_event = {
 		name = DOP_GNG_event.119.a
 	}
 }
-# ==== 布局.docx ====
+# ==== 新鲜血液.docx ====
 
-# 布局
+# 新鲜血液
 country_event = {
 	id = DOP_GNG_event.120
 	title = DOP_GNG_event.120.t
@@ -1861,8 +1868,9 @@ country_event = {
 		name = DOP_GNG_event.120.a
 	}
 }
+# ==== ……黑暗笼罩一切.docx ====
 
-# 满洲或许已不足为惧，但仍不可大意行事，让其起死回生。
+# ……黑暗笼罩一切
 country_event = {
 	id = DOP_GNG_event.121
 	title = DOP_GNG_event.121.t
@@ -1876,9 +1884,9 @@ country_event = {
 		name = DOP_GNG_event.121.a
 	}
 }
-# ==== 国情咨文.docx ====
+# ==== 忍耐，直至转折点.docx ====
 
-# 国情咨文
+# 忍耐，直至转折点
 country_event = {
 	id = DOP_GNG_event.122
 	title = DOP_GNG_event.122.t
@@ -1892,9 +1900,9 @@ country_event = {
 		name = DOP_GNG_event.122.a
 	}
 }
-# ==== 南腔北调.docx ====
+# ==== 静夜.docx ====
 
-# 南腔北调
+# 静夜
 country_event = {
 	id = DOP_GNG_event.123
 	title = DOP_GNG_event.123.t
@@ -1908,9 +1916,9 @@ country_event = {
 		name = DOP_GNG_event.123.a
 	}
 }
-# ==== 劳资关系协调条例通过事件.docx ====
+# ==== 得而复失.docx ====
 
-# 劳资关系协调条例通过！
+# 得而复失
 country_event = {
 	id = DOP_GNG_event.124
 	title = DOP_GNG_event.124.t
@@ -1924,8 +1932,9 @@ country_event = {
 		name = DOP_GNG_event.124.a
 	}
 }
+# ==== 阳光所不能及之处…….docx ====
 
-# 劳资关系协调条例未通过！
+# 阳光所不能及之处……
 country_event = {
 	id = DOP_GNG_event.125
 	title = DOP_GNG_event.125.t
@@ -1939,9 +1948,9 @@ country_event = {
 		name = DOP_GNG_event.125.a
 	}
 }
-# ==== 新鲜血液.docx ====
+# ==== 何以为家？.docx ====
 
-# 新鲜血液
+# 何以为家？
 country_event = {
 	id = DOP_GNG_event.126
 	title = DOP_GNG_event.126.t
@@ -1955,9 +1964,9 @@ country_event = {
 		name = DOP_GNG_event.126.a
 	}
 }
-# ==== ……黑暗笼罩一切.docx ====
+# ==== 外交2.docx ====
 
-# ……黑暗笼罩一切
+# 外事会议
 country_event = {
 	id = DOP_GNG_event.127
 	title = DOP_GNG_event.127.t
@@ -1971,9 +1980,8 @@ country_event = {
 		name = DOP_GNG_event.127.a
 	}
 }
-# ==== 忍耐，直至转折点.docx ====
 
-# 忍耐，直至转折点
+# 旋风外交
 country_event = {
 	id = DOP_GNG_event.128
 	title = DOP_GNG_event.128.t
@@ -1987,9 +1995,8 @@ country_event = {
 		name = DOP_GNG_event.128.a
 	}
 }
-# ==== 静夜.docx ====
 
-# 静夜
+# 再进一步？
 country_event = {
 	id = DOP_GNG_event.129
 	title = DOP_GNG_event.129.t
@@ -2003,9 +2010,8 @@ country_event = {
 		name = DOP_GNG_event.129.a
 	}
 }
-# ==== 得而复失.docx ====
 
-# 得而复失
+# 职责所在
 country_event = {
 	id = DOP_GNG_event.130
 	title = DOP_GNG_event.130.t
@@ -2019,9 +2025,8 @@ country_event = {
 		name = DOP_GNG_event.130.a
 	}
 }
-# ==== 阳光所不能及之处…….docx ====
 
-# 阳光所不能及之处……
+# 打开魔盒
 country_event = {
 	id = DOP_GNG_event.131
 	title = DOP_GNG_event.131.t
@@ -2035,9 +2040,9 @@ country_event = {
 		name = DOP_GNG_event.131.a
 	}
 }
-# ==== 何以为家？.docx ====
+# ==== 军政转线事件链.docx ====
 
-# 何以为家？
+# 不忠的密谋
 country_event = {
 	id = DOP_GNG_event.132
 	title = DOP_GNG_event.132.t
@@ -2051,9 +2056,8 @@ country_event = {
 		name = DOP_GNG_event.132.a
 	}
 }
-# ==== 外交2.docx ====
 
-# 外事会议
+# 刀刺在背
 country_event = {
 	id = DOP_GNG_event.133
 	title = DOP_GNG_event.133.t
@@ -2067,8 +2071,9 @@ country_event = {
 		name = DOP_GNG_event.133.a
 	}
 }
+# ==== 穷途末路.docx ====
 
-# 我们将让李嘉诚出使东南亚
+# 穷途末路
 country_event = {
 	id = DOP_GNG_event.134
 	title = DOP_GNG_event.134.t
@@ -2082,8 +2087,9 @@ country_event = {
 		name = DOP_GNG_event.134.a
 	}
 }
+# ==== 殊死搏斗.docx ====
 
-# 我们将让松下正治出使东南亚
+# 殊死搏斗
 country_event = {
 	id = DOP_GNG_event.135
 	title = DOP_GNG_event.135.t
@@ -2097,8 +2103,9 @@ country_event = {
 		name = DOP_GNG_event.135.a
 	}
 }
+# ==== 警务处报告.docx ====
 
-# 再进一步？
+# 警务处报告
 country_event = {
 	id = DOP_GNG_event.136
 	title = DOP_GNG_event.136.t
@@ -2112,8 +2119,9 @@ country_event = {
 		name = DOP_GNG_event.136.a
 	}
 }
+# ==== 配套事件.docx ====
 
-# 我们将让何鸿燊出访美国
+# 争分夺秒
 country_event = {
 	id = DOP_GNG_event.137
 	title = DOP_GNG_event.137.t
@@ -2128,7 +2136,7 @@ country_event = {
 	}
 }
 
-# 我们将让李嘉诚出访美国
+# 未雨绸缪
 country_event = {
 	id = DOP_GNG_event.138
 	title = DOP_GNG_event.138.t
@@ -2143,7 +2151,7 @@ country_event = {
 	}
 }
 
-# 盛田昭夫将亲自出访美国
+# 席卷全球
 country_event = {
 	id = DOP_GNG_event.139
 	title = DOP_GNG_event.139.t
@@ -2158,7 +2166,7 @@ country_event = {
 	}
 }
 
-# 打开魔盒
+# 阴影下的“共荣”
 country_event = {
 	id = DOP_GNG_event.140
 	title = DOP_GNG_event.140.t
@@ -2172,9 +2180,8 @@ country_event = {
 		name = DOP_GNG_event.140.a
 	}
 }
-# ==== 军政转线事件链.docx ====
 
-# 不忠的密谋
+# 脏货
 country_event = {
 	id = DOP_GNG_event.141
 	title = DOP_GNG_event.141.t
@@ -2189,7 +2196,7 @@ country_event = {
 	}
 }
 
-# 刀刺在背
+# 再度扩张
 country_event = {
 	id = DOP_GNG_event.142
 	title = DOP_GNG_event.142.t
@@ -2204,7 +2211,7 @@ country_event = {
 	}
 }
 
-# 武装力量的干预让广东的未来似乎走到了尽头，但仍有希望……
+# 打破常规
 country_event = {
 	id = DOP_GNG_event.143
 	title = DOP_GNG_event.143.t
@@ -2218,9 +2225,8 @@ country_event = {
 		name = DOP_GNG_event.143.a
 	}
 }
-# ==== 穷途末路.docx ====
 
-# 穷途末路
+# 让金钱流动
 country_event = {
 	id = DOP_GNG_event.144
 	title = DOP_GNG_event.144.t
@@ -2234,9 +2240,8 @@ country_event = {
 		name = DOP_GNG_event.144.a
 	}
 }
-# ==== 殊死搏斗.docx ====
 
-# 殊死搏斗
+# 善后计划
 country_event = {
 	id = DOP_GNG_event.145
 	title = DOP_GNG_event.145.t
@@ -2251,7 +2256,7 @@ country_event = {
 	}
 }
 
-# 产业重组与反垄断法被无限期搁置
+# 公平竞争
 country_event = {
 	id = DOP_GNG_event.146
 	title = DOP_GNG_event.146.t
@@ -2265,9 +2270,8 @@ country_event = {
 		name = DOP_GNG_event.146.a
 	}
 }
-# ==== 警务处报告.docx ====
 
-# 警务处报告
+# 一劳永逸？
 country_event = {
 	id = DOP_GNG_event.147
 	title = DOP_GNG_event.147.t
@@ -2281,9 +2285,9 @@ country_event = {
 		name = DOP_GNG_event.147.a
 	}
 }
-# ==== 配套事件.docx ====
+# ==== 不甘平庸.docx ====
 
-# 争分夺秒
+# 不甘平庸
 country_event = {
 	id = DOP_GNG_event.148
 	title = DOP_GNG_event.148.t
@@ -2297,8 +2301,9 @@ country_event = {
 		name = DOP_GNG_event.148.a
 	}
 }
+# ==== 一往无前.docx ====
 
-# 未雨绸缪
+# 一往无前
 country_event = {
 	id = DOP_GNG_event.149
 	title = DOP_GNG_event.149.t
@@ -2312,8 +2317,9 @@ country_event = {
 		name = DOP_GNG_event.149.a
 	}
 }
+# ==== 外交1.docx ====
 
-# 席卷全球
+# 走向世界？
 country_event = {
 	id = DOP_GNG_event.150
 	title = DOP_GNG_event.150.t
@@ -2327,8 +2333,9 @@ country_event = {
 		name = DOP_GNG_event.150.a
 	}
 }
+# ==== 北境孤城.docx ====
 
-# 阴影下的“共荣”
+# 北境孤城
 country_event = {
 	id = DOP_GNG_event.151
 	title = DOP_GNG_event.151.t
@@ -2342,8 +2349,9 @@ country_event = {
 		name = DOP_GNG_event.151.a
 	}
 }
+# ==== 打通动脉.docx ====
 
-# 脏货
+# 打通动脉
 country_event = {
 	id = DOP_GNG_event.152
 	title = DOP_GNG_event.152.t
@@ -2357,8 +2365,9 @@ country_event = {
 		name = DOP_GNG_event.152.a
 	}
 }
+# ==== 修订民族融合条例通过.docx ====
 
-# 再度扩张
+# 修订民族融合条例通过！
 country_event = {
 	id = DOP_GNG_event.153
 	title = DOP_GNG_event.153.t
@@ -2373,7 +2382,7 @@ country_event = {
 	}
 }
 
-# 打破常规
+# 这么做可能是扬汤止沸……
 country_event = {
 	id = DOP_GNG_event.154
 	title = DOP_GNG_event.154.t
@@ -2387,8 +2396,9 @@ country_event = {
 		name = DOP_GNG_event.154.a
 	}
 }
+# ==== 抱歉，没有闲钱.docx ====
 
-# 一旦研发成功，这一划时代的产品将在当年的产品周期发布
+# 抱歉，没有闲钱
 country_event = {
 	id = DOP_GNG_event.155
 	title = DOP_GNG_event.155.t
@@ -2402,8 +2412,9 @@ country_event = {
 		name = DOP_GNG_event.155.a
 	}
 }
+# ==== 片刻欢愉.docx ====
 
-# 善后计划
+# 片刻欢愉
 country_event = {
 	id = DOP_GNG_event.156
 	title = DOP_GNG_event.156.t
@@ -2417,8 +2428,9 @@ country_event = {
 		name = DOP_GNG_event.156.a
 	}
 }
+# ==== 似是而非.docx ====
 
-# 公平竞争
+# 似是而非
 country_event = {
 	id = DOP_GNG_event.157
 	title = DOP_GNG_event.157.t
@@ -2432,8 +2444,9 @@ country_event = {
 		name = DOP_GNG_event.157.a
 	}
 }
+# ==== 自废武功.docx ====
 
-# 一劳永逸？
+# 自废武功
 country_event = {
 	id = DOP_GNG_event.158
 	title = DOP_GNG_event.158.t
@@ -2447,9 +2460,9 @@ country_event = {
 		name = DOP_GNG_event.158.a
 	}
 }
-# ==== 不甘平庸.docx ====
+# ==== 午间休息.docx ====
 
-# 不甘平庸
+# 午间休息
 country_event = {
 	id = DOP_GNG_event.159
 	title = DOP_GNG_event.159.t
@@ -2463,9 +2476,8 @@ country_event = {
 		name = DOP_GNG_event.159.a
 	}
 }
-# ==== 一往无前.docx ====
 
-# 一往无前
+# 一场普通的外事访问
 country_event = {
 	id = DOP_GNG_event.160
 	title = DOP_GNG_event.160.t
@@ -2479,9 +2491,8 @@ country_event = {
 		name = DOP_GNG_event.160.a
 	}
 }
-# ==== 外交1.docx ====
 
-# 走向世界？
+# 工作前的会议
 country_event = {
 	id = DOP_GNG_event.161
 	title = DOP_GNG_event.161.t
@@ -2495,9 +2506,8 @@ country_event = {
 		name = DOP_GNG_event.161.a
 	}
 }
-# ==== 北境孤城.docx ====
 
-# 北境孤城
+# 逸散在空气中的问答
 country_event = {
 	id = DOP_GNG_event.162
 	title = DOP_GNG_event.162.t
@@ -2511,9 +2521,8 @@ country_event = {
 		name = DOP_GNG_event.162.a
 	}
 }
-# ==== 打通动脉.docx ====
 
-# 打通动脉
+# 今日头条
 country_event = {
 	id = DOP_GNG_event.163
 	title = DOP_GNG_event.163.t
@@ -2527,9 +2536,8 @@ country_event = {
 		name = DOP_GNG_event.163.a
 	}
 }
-# ==== 修订民族融合条例通过.docx ====
 
-# 修订民族融合条例通过！
+# 巨蛛食鼠
 country_event = {
 	id = DOP_GNG_event.164
 	title = DOP_GNG_event.164.t
@@ -2544,7 +2552,7 @@ country_event = {
 	}
 }
 
-# 这么做可能是扬汤止沸……
+# 央行新布告
 country_event = {
 	id = DOP_GNG_event.165
 	title = DOP_GNG_event.165.t
@@ -2558,9 +2566,8 @@ country_event = {
 		name = DOP_GNG_event.165.a
 	}
 }
-# ==== 抱歉，没有闲钱.docx ====
 
-# 抱歉，没有闲钱
+# 事前准备
 country_event = {
 	id = DOP_GNG_event.166
 	title = DOP_GNG_event.166.t
@@ -2574,9 +2581,8 @@ country_event = {
 		name = DOP_GNG_event.166.a
 	}
 }
-# ==== 片刻欢愉.docx ====
 
-# 片刻欢愉
+# 虎落平阳
 country_event = {
 	id = DOP_GNG_event.167
 	title = DOP_GNG_event.167.t
@@ -2590,9 +2596,8 @@ country_event = {
 		name = DOP_GNG_event.167.a
 	}
 }
-# ==== 似是而非.docx ====
 
-# 似是而非
+# 一手交钱，一手交货
 country_event = {
 	id = DOP_GNG_event.168
 	title = DOP_GNG_event.168.t
@@ -2606,9 +2611,8 @@ country_event = {
 		name = DOP_GNG_event.168.a
 	}
 }
-# ==== 自废武功.docx ====
 
-# 自废武功
+# 和气生财
 country_event = {
 	id = DOP_GNG_event.169
 	title = DOP_GNG_event.169.t
@@ -2622,9 +2626,8 @@ country_event = {
 		name = DOP_GNG_event.169.a
 	}
 }
-# ==== 午间休息.docx ====
 
-# 午间休息
+# 最后一场大会
 country_event = {
 	id = DOP_GNG_event.170
 	title = DOP_GNG_event.170.t
@@ -2638,9 +2641,8 @@ country_event = {
 		name = DOP_GNG_event.170.a
 	}
 }
-# ==== 釜底抽薪.docx ====
 
-# 釜底抽薪
+# 家校沟通
 country_event = {
 	id = DOP_GNG_event.171
 	title = DOP_GNG_event.171.t
@@ -2654,9 +2656,9 @@ country_event = {
 		name = DOP_GNG_event.171.a
 	}
 }
-# ==== 见见你的新上司.docx ====
+# ==== 釜底抽薪.docx ====
 
-# 见见你的新上司
+# 釜底抽薪
 country_event = {
 	id = DOP_GNG_event.172
 	title = DOP_GNG_event.172.t
@@ -2670,9 +2672,9 @@ country_event = {
 		name = DOP_GNG_event.172.a
 	}
 }
-# ==== 新的王储？.docx ====
+# ==== 见见你的新上司.docx ====
 
-# 新的王储？
+# 见见你的新上司
 country_event = {
 	id = DOP_GNG_event.173
 	title = DOP_GNG_event.173.t
@@ -2686,9 +2688,9 @@ country_event = {
 		name = DOP_GNG_event.173.a
 	}
 }
-# ==== 蒙旧日恩泽.docx ====
+# ==== 新的王储？.docx ====
 
-# 蒙旧日恩泽
+# 新的王储？
 country_event = {
 	id = DOP_GNG_event.174
 	title = DOP_GNG_event.174.t
@@ -2702,9 +2704,9 @@ country_event = {
 		name = DOP_GNG_event.174.a
 	}
 }
-# ==== 国际舞台上的广东.docx ====
+# ==== 蒙旧日恩泽.docx ====
 
-# 国际舞台上的广东
+# 蒙旧日恩泽
 country_event = {
 	id = DOP_GNG_event.175
 	title = DOP_GNG_event.175.t
@@ -2718,9 +2720,9 @@ country_event = {
 		name = DOP_GNG_event.175.a
 	}
 }
-# ==== 市场监管.docx ====
+# ==== 国际舞台上的广东.docx ====
 
-# 市场监管
+# 国际舞台上的广东
 country_event = {
 	id = DOP_GNG_event.176
 	title = DOP_GNG_event.176.t
@@ -2734,9 +2736,9 @@ country_event = {
 		name = DOP_GNG_event.176.a
 	}
 }
-# ==== 人工心脏.docx ====
+# ==== 市场监管.docx ====
 
-# 人工心脏
+# 市场监管
 country_event = {
 	id = DOP_GNG_event.177
 	title = DOP_GNG_event.177.t
@@ -2750,9 +2752,9 @@ country_event = {
 		name = DOP_GNG_event.177.a
 	}
 }
-# ==== 官逼“民”反.docx ====
+# ==== 人工心脏.docx ====
 
-# 官逼“民”反
+# 人工心脏
 country_event = {
 	id = DOP_GNG_event.178
 	title = DOP_GNG_event.178.t
@@ -2766,9 +2768,9 @@ country_event = {
 		name = DOP_GNG_event.178.a
 	}
 }
-# ==== “弃暗投明”.docx ====
+# ==== 官逼“民”反.docx ====
 
-# “弃暗投明”
+# 官逼“民”反
 country_event = {
 	id = DOP_GNG_event.179
 	title = DOP_GNG_event.179.t
@@ -2782,9 +2784,9 @@ country_event = {
 		name = DOP_GNG_event.179.a
 	}
 }
-# ==== 两难境地.docx ====
+# ==== “弃暗投明”.docx ====
 
-# 两难境地
+# “弃暗投明”
 country_event = {
 	id = DOP_GNG_event.180
 	title = DOP_GNG_event.180.t
@@ -2798,9 +2800,9 @@ country_event = {
 		name = DOP_GNG_event.180.a
 	}
 }
-# ==== 来自昨日的同盟.docx ====
+# ==== 两难境地.docx ====
 
-# 来自昨日的同盟……
+# 两难境地
 country_event = {
 	id = DOP_GNG_event.181
 	title = DOP_GNG_event.181.t
@@ -2813,10 +2815,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.181.a
 	}
+	option = {
+		name = DOP_GNG_event.181.b
+	}
 }
-# ==== 黑色遗产.docx ====
+# ==== 来自昨日的同盟.docx ====
 
-# 黑色遗产
+# 来自昨日的同盟……
 country_event = {
 	id = DOP_GNG_event.182
 	title = DOP_GNG_event.182.t
@@ -2830,9 +2835,9 @@ country_event = {
 		name = DOP_GNG_event.182.a
 	}
 }
-# ==== 港口3.docx ====
+# ==== 黑色遗产.docx ====
 
-# 东亚的“中转站”
+# 黑色遗产
 country_event = {
 	id = DOP_GNG_event.183
 	title = DOP_GNG_event.183.t
@@ -2846,9 +2851,9 @@ country_event = {
 		name = DOP_GNG_event.183.a
 	}
 }
-# ==== 野火渐熄之后.docx ====
+# ==== 港口3.docx ====
 
-# 野火渐熄之后……
+# 东亚的“中转站”
 country_event = {
 	id = DOP_GNG_event.184
 	title = DOP_GNG_event.184.t
@@ -2862,9 +2867,9 @@ country_event = {
 		name = DOP_GNG_event.184.a
 	}
 }
-# ==== 呼吁.docx ====
+# ==== 野火渐熄之后.docx ====
 
-# 呼吁
+# 野火渐熄之后……
 country_event = {
 	id = DOP_GNG_event.185
 	title = DOP_GNG_event.185.t
@@ -2878,9 +2883,9 @@ country_event = {
 		name = DOP_GNG_event.185.a
 	}
 }
-# ==== 会见贵宾.docx ====
+# ==== 呼吁.docx ====
 
-# 会见贵宾
+# 呼吁
 country_event = {
 	id = DOP_GNG_event.186
 	title = DOP_GNG_event.186.t
@@ -2894,9 +2899,9 @@ country_event = {
 		name = DOP_GNG_event.186.a
 	}
 }
-# ==== 哀鸿遍野.docx ====
+# ==== 会见贵宾.docx ====
 
-# 哀鸿遍野
+# 会见贵宾
 country_event = {
 	id = DOP_GNG_event.187
 	title = DOP_GNG_event.187.t
@@ -2910,9 +2915,9 @@ country_event = {
 		name = DOP_GNG_event.187.a
 	}
 }
-# ==== 润滑剂.docx ====
+# ==== 哀鸿遍野.docx ====
 
-# 润滑剂
+# 哀鸿遍野
 country_event = {
 	id = DOP_GNG_event.188
 	title = DOP_GNG_event.188.t
@@ -2926,9 +2931,9 @@ country_event = {
 		name = DOP_GNG_event.188.a
 	}
 }
-# ==== 修订民族团结条例通过！.docx ====
+# ==== 润滑剂.docx ====
 
-# 修订民族团结条例通过！
+# 润滑剂
 country_event = {
 	id = DOP_GNG_event.189
 	title = DOP_GNG_event.189.t
@@ -2942,8 +2947,9 @@ country_event = {
 		name = DOP_GNG_event.189.a
 	}
 }
+# ==== 修订民族团结条例通过！.docx ====
 
-# 只有时间才会证明这是否有效……
+# 修订民族团结条例通过！
 country_event = {
 	id = DOP_GNG_event.190
 	title = DOP_GNG_event.190.t
@@ -2957,9 +2963,8 @@ country_event = {
 		name = DOP_GNG_event.190.a
 	}
 }
-# ==== 对症下药.docx ====
 
-# 对症下药
+# 只有时间才会证明这是否有效……
 country_event = {
 	id = DOP_GNG_event.191
 	title = DOP_GNG_event.191.t
@@ -2972,13 +2977,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.191.a
 	}
-	option = {
-		name = DOP_GNG_event.191.b
-	}
 }
-# ==== 局外人.docx ====
+# ==== 对症下药.docx ====
 
-# 局外人
+# 对症下药
 country_event = {
 	id = DOP_GNG_event.192
 	title = DOP_GNG_event.192.t
@@ -2991,10 +2993,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.192.a
 	}
+	option = {
+		name = DOP_GNG_event.192.b
+	}
 }
-# ==== 当断不断.docx ====
+# ==== 局外人.docx ====
 
-# 当断不断
+# 局外人
 country_event = {
 	id = DOP_GNG_event.193
 	title = DOP_GNG_event.193.t
@@ -3008,9 +3013,9 @@ country_event = {
 		name = DOP_GNG_event.193.a
 	}
 }
-# ==== 荣辱与共.docx ====
+# ==== 当断不断.docx ====
 
-# 荣辱与共
+# 当断不断
 country_event = {
 	id = DOP_GNG_event.194
 	title = DOP_GNG_event.194.t
@@ -3024,8 +3029,9 @@ country_event = {
 		name = DOP_GNG_event.194.a
 	}
 }
+# ==== 荣辱与共.docx ====
 
-# 我们将与长实站在一起，推行李嘉诚的计划
+# 荣辱与共
 country_event = {
 	id = DOP_GNG_event.195
 	title = DOP_GNG_event.195.t
@@ -3055,8 +3061,9 @@ country_event = {
 		name = DOP_GNG_event.196.a
 	}
 }
+# ==== 通往南宁的漫漫长路.docx ====
 
-# 因为行政长官始终与广大人民站在一起，广东的未来将更加光明……？
+# 通往南宁的漫漫长路
 country_event = {
 	id = DOP_GNG_event.197
 	title = DOP_GNG_event.197.t
@@ -3070,9 +3077,9 @@ country_event = {
 		name = DOP_GNG_event.197.a
 	}
 }
-# ==== 通往南宁的漫漫长路.docx ====
+# ==== 待哺的众生.docx ====
 
-# 通往南宁的漫漫长路
+# 待哺的众生
 country_event = {
 	id = DOP_GNG_event.198
 	title = DOP_GNG_event.198.t
@@ -3085,9 +3092,13 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.198.a
 	}
+	option = {
+		name = DOP_GNG_event.198.b
+	}
 }
+# ==== 开门红.docx ====
 
-# 一个地方怎么能没有警察呢
+# 开门红
 country_event = {
 	id = DOP_GNG_event.199
 	title = DOP_GNG_event.199.t
@@ -3101,9 +3112,9 @@ country_event = {
 		name = DOP_GNG_event.199.a
 	}
 }
-# ==== 待哺的众生.docx ====
+# ==== 打开魔盒.docx ====
 
-# 待哺的众生
+# 打开魔盒
 country_event = {
 	id = DOP_GNG_event.200
 	title = DOP_GNG_event.200.t
@@ -3116,13 +3127,10 @@ country_event = {
 	option = {
 		name = DOP_GNG_event.200.a
 	}
-	option = {
-		name = DOP_GNG_event.200.b
-	}
 }
-# ==== 开门红.docx ====
+# ==== 同是天涯沦落人.docx ====
 
-# 开门红
+# 同是天涯沦落人
 country_event = {
 	id = DOP_GNG_event.201
 	title = DOP_GNG_event.201.t
@@ -3136,9 +3144,9 @@ country_event = {
 		name = DOP_GNG_event.201.a
 	}
 }
-# ==== 打开魔盒.docx ====
+# ==== 有备无患.docx ====
 
-# 打开魔盒
+# 有备无患
 country_event = {
 	id = DOP_GNG_event.202
 	title = DOP_GNG_event.202.t
@@ -3152,9 +3160,9 @@ country_event = {
 		name = DOP_GNG_event.202.a
 	}
 }
-# ==== 同是天涯沦落人.docx ====
+# ==== 何为正义？.docx ====
 
-# 同是天涯沦落人
+# 何为正义？
 country_event = {
 	id = DOP_GNG_event.203
 	title = DOP_GNG_event.203.t
@@ -3168,9 +3176,9 @@ country_event = {
 		name = DOP_GNG_event.203.a
 	}
 }
-# ==== 有备无患.docx ====
+# ==== 新官上任.docx ====
 
-# 有备无患
+# 新官上任
 country_event = {
 	id = DOP_GNG_event.204
 	title = DOP_GNG_event.204.t
@@ -3184,9 +3192,9 @@ country_event = {
 		name = DOP_GNG_event.204.a
 	}
 }
-# ==== 何为正义？.docx ====
+# ==== 1962转线事件链.docx ====
 
-# 何为正义？
+# 关于广东当前局势的报告
 country_event = {
 	id = DOP_GNG_event.205
 	title = DOP_GNG_event.205.t
@@ -3200,9 +3208,8 @@ country_event = {
 		name = DOP_GNG_event.205.a
 	}
 }
-# ==== 新官上任.docx ====
 
-# 新官上任
+# 东京来电
 country_event = {
 	id = DOP_GNG_event.206
 	title = DOP_GNG_event.206.t
@@ -3216,9 +3223,8 @@ country_event = {
 		name = DOP_GNG_event.206.a
 	}
 }
-# ==== 1962转线事件链.docx ====
 
-# 关于广东当前局势的报告
+# 大幕落下
 country_event = {
 	id = DOP_GNG_event.207
 	title = DOP_GNG_event.207.t
@@ -3233,7 +3239,7 @@ country_event = {
 	}
 }
 
-# 东京来电
+# 盛田昭夫退休
 country_event = {
 	id = DOP_GNG_event.208
 	title = DOP_GNG_event.208.t
@@ -3247,8 +3253,9 @@ country_event = {
 		name = DOP_GNG_event.208.a
 	}
 }
+# ==== 事件.docx ====
 
-# 大幕落下
+# 新约
 country_event = {
 	id = DOP_GNG_event.209
 	title = DOP_GNG_event.209.t
@@ -3263,7 +3270,7 @@ country_event = {
 	}
 }
 
-# 在东京的直接干预下，广东的未来陷入一片黑暗……
+# 搬迁
 country_event = {
 	id = DOP_GNG_event.210
 	title = DOP_GNG_event.210.t
@@ -3277,9 +3284,8 @@ country_event = {
 		name = DOP_GNG_event.210.a
 	}
 }
-# ==== 事件.docx ====
 
-# 新约
+# 扬眉吐气
 country_event = {
 	id = DOP_GNG_event.211
 	title = DOP_GNG_event.211.t
@@ -3294,7 +3300,7 @@ country_event = {
 	}
 }
 
-# 搬迁
+# 会议当日
 country_event = {
 	id = DOP_GNG_event.212
 	title = DOP_GNG_event.212.t
@@ -3309,7 +3315,7 @@ country_event = {
 	}
 }
 
-# 扬眉吐气
+# 拉开帷幕
 country_event = {
 	id = DOP_GNG_event.213
 	title = DOP_GNG_event.213.t
@@ -3323,8 +3329,9 @@ country_event = {
 		name = DOP_GNG_event.213.a
 	}
 }
+# ==== 强攻.docx ====
 
-# 会议当日（接扬眉吐气）
+# 强攻
 country_event = {
 	id = DOP_GNG_event.214
 	title = DOP_GNG_event.214.t
@@ -3336,36 +3343,5 @@ country_event = {
 
 	option = {
 		name = DOP_GNG_event.214.a
-	}
-}
-
-# 拉开帷幕
-country_event = {
-	id = DOP_GNG_event.215
-	title = DOP_GNG_event.215.t
-	desc = DOP_GNG_event.215.desc
-	picture = GFX_report_event_IBR_meeting_small
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = DOP_GNG_event.215.a
-	}
-}
-# ==== 强攻.docx ====
-
-# 强攻
-country_event = {
-	id = DOP_GNG_event.216
-	title = DOP_GNG_event.216.t
-	desc = DOP_GNG_event.216.desc
-	picture = GFX_report_event_IBR_meeting_small
-
-	is_triggered_only = yes
-	fire_only_once = yes
-
-	option = {
-		name = DOP_GNG_event.216.a
 	}
 }
