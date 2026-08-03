@@ -1,0 +1,490 @@
+#################################
+# DOP LegCo skins (appearance only)
+# Skin strips keep TNO's 7-frame layout:
+#   faction 1/2 (yasuda/suzuki, unused) -> 建制
+#   faction 3 (sony slot)      -> 自贸 / 财界
+#   faction 4 (matsushita slot)-> 华人 / 工政
+#   faction 5 (fujitsu slot)   -> 珠人 / 营商
+#   faction 6 (ck slot)        -> 建制
+#   faction 7 (hitachi slot)   -> 新民 / 硅芯
+#################################
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_long_dynamic
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 1 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 2 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_faction_zimaocai_ft
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_faction_huaren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_faction_zhuren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 6 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_faction_xinmin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 1 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 2 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_faction_zimaocai_fin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_faction_gongzheng
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_faction_yingshang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 6 }
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_faction_guixin
+	}
+	text = {
+		localization_key = "[GNG_legco_current_faction_long_dynamic]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin1_faction_title_dynamic
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_faction_zimaocai_ft
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_faction_huaren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_faction_zhuren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_faction_xinmin
+	}
+	text = {
+		localization_key = "[GNG_legco_faction_title]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin2_faction_title_dynamic
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_faction_jizhi_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_faction_zimaocai_fin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_faction_gongzheng
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_faction_yingshang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_faction_guixin
+	}
+	text = {
+		localization_key = "[GNG_legco_faction_title]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin1_icon_dynamic
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Suochang_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Zimaocai_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Huaren_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Zhuren_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Xinmin_Small
+	}
+	text = {
+		localization_key = GFX_GNG_LegCo_Sony_Small
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin2_icon_dynamic
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Suofu_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Zimaocai_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Gongzheng_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Yingshang_Small
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GFX_DOP_LegCo_Faction_Guixin_Small
+	}
+	text = {
+		localization_key = GFX_GNG_LegCo_Sony_Small
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_seat_faction
+	text = {
+		trigger = {
+			set_temp_variable = { GNG_legco_faction = GNG_legco_faction^seat_idx }
+		}
+		localization_key = "[GNG_dop_legco_skin_faction_long_dynamic]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_logo_dynamic
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_logo_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_logo_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_logo_zimaocai
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_logo_huaren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_logo_gongzheng
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_logo_zhuren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_logo_yingshang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_logo_xinmin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_logo_guixin
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_seat_faction_logo
+	text = {
+		trigger = {
+			set_temp_variable = { GNG_legco_faction = GNG_legco_faction^seat_idx }
+		}
+		localization_key = "[GNG_dop_legco_skin_faction_logo_dynamic]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_seats_dynamic
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_skin_seats_sony
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_skin_seats_matsushita
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_skin_seats_fujitsu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 6 }
+		}
+		localization_key = GNG_dop_legco_skin_seats_cheungkong
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_skin_seats_hitachi
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_color_dynamic
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_color_v
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_color_v
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_color_w
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_color_c
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_color_c
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_color_e
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_color_g
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_color_v
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_color_blue
+	}
+	text = {
+		localization_key = ""
+	}
+}

@@ -1,0 +1,47 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Huaren_texticon"
+		texturefile = "gfx/texticons/guangdong/huaren.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Gongzheng_texticon"
+		texturefile = "gfx/texticons/guangdong/gongzheng.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Xinmin_texticon"
+		texturefile = "gfx/texticons/guangdong/xinmin.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Zhuren_texticon"
+		texturefile = "gfx/texticons/guangdong/zhuren.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Guixin_texticon"
+		texturefile = "gfx/texticons/guangdong/guixin.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Suofu_texticon"
+		texturefile = "gfx/texticons/guangdong/suofu.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Suochang_texticon"
+		texturefile = "gfx/texticons/guangdong/suochang.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Zimaocai_texticon"
+		texturefile = "gfx/texticons/guangdong/zimaocai.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_LegCo_Faction_Yingshang_texticon"
+		texturefile = "gfx/texticons/guangdong/yingshang.dds"
+		legacy_lazy_load = no
+	}
+}

@@ -216,6 +216,62 @@ GNG_debug_category = {
 			GNG_change_legco_seats = yes
 		}
 	}
+	GNG_dop_debug_legco_skin_style1 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = {
+				has_country_flag = GNG_IJA_Disable_LegCo
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = { check_variable = { GNG_dop_legco_skin = 1 } }
+				}
+				set_variable = { GNG_dop_legco_skin = 1 }
+			}
+			else = {
+				set_variable = { GNG_dop_legco_skin = 0 }
+			}
+			add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+			custom_effect_tooltip = GNG_dop_legco_skin_style1_tt
+		}
+	}
+	GNG_dop_debug_legco_skin_style2 = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = {
+				has_country_flag = GNG_IJA_Disable_LegCo
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = { check_variable = { GNG_dop_legco_skin = 2 } }
+				}
+				set_variable = { GNG_dop_legco_skin = 2 }
+			}
+			else = {
+				set_variable = { GNG_dop_legco_skin = 0 }
+			}
+			add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+			custom_effect_tooltip = GNG_dop_legco_skin_style2_tt
+		}
+	}
 	GNG_dop_debug_show_guang_dong_theater = {
 		allowed = {
 			original_tag = GNG
