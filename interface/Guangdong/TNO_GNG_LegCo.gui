@@ -308,6 +308,16 @@ guiTypes = {
 			}
 		}
 
+		buttonType = {
+			name = "DOP_legco_archive_button"
+			quadTextureSprite = "GFX_GNG_Product_Decisions_GUI_Product_History"
+			position = { x = 1110 y = 472 }
+			scale = 1.25
+			pdx_tooltip = "DOP_legco_archive_tt"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+
 		containerWindowType = {
 			name = "TNO_GNG_LegCo_Current_Ordinance"
 			size = { width = 263 height = 452 }
@@ -625,6 +635,60 @@ guiTypes = {
 			position = { x = 126 y = 165 }
 			scale = 1
 			pdx_tooltip = GNG_legco_debug_add_seat_tt
+		}
+	}
+
+	containerWindowType = {
+		name = "DOP_LegCo_Archive"
+		size = { width = 263 height = 350 }
+		position = { x = 1588 y = 532 }
+		moveable = yes
+		clipping = no
+
+		background = {
+			name = "Background"
+			spriteType = "GFX_tiled_window_1b_no_border"
+		}
+
+		instantTextboxType = {
+			name = "DOP_archive_header"
+			position = { x = 0 y = 26 }
+			font = "aldrich_28_outline"
+			text = DOP_legco_archive_title
+			maxWidth = 263
+			format = center
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "DOP_archive_close_button"
+			quadTextureSprite = "GFX_Kartenhaus_CloseButton"
+			position = { x = 233 y = 5 }
+			scale = 0.5
+			clicksound = click_close
+			pdx_tooltip = "DOP_legco_archive_close_tt"
+		}
+
+		containerWindowType = {
+			name = "DOP_archive_list_container"
+			size = { width = 260 height = 240 }
+
+			verticalScrollbar = "right_vertical_slider"
+			position = { x = -2 y = 91 }
+
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+			}
+
+			gridboxtype = {
+				name = "DOP_archive_list"
+				position = { x = 18 y = 0 }
+				size = { width = 216 height = 240 }
+				slotsize = { width = 216 height = 62 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
 		}
 	}
 }

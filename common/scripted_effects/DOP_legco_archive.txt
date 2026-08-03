@@ -1,0 +1,10 @@
+# 一次性将已表决法案列表清空并平移到条例归档数组
+DOP_legco_archive_ordinances = {
+	clear_array = GNG_dop_legco_archive
+	for_each_loop = {
+		array = GNG_legco_history
+		add_to_array = { GNG_dop_legco_archive = GNG_legco_history^i }
+	}
+	clear_array = GNG_legco_history
+	set_country_flag = DOP_legco_archive_done
+}

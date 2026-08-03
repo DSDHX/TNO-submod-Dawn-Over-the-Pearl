@@ -153,7 +153,7 @@ scripted_gui = {
 				frame = GNG_yasuda_display
 			}
 			DOP_skin1_hitachibar = {
-				frame = GNG_hitachi_display
+				frame = GNG_dop_skin_hitachi_frame
 			}
 			DOP_skin2_cheungkongbar = {
 				frame = GNG_cheungkong_right
@@ -171,7 +171,7 @@ scripted_gui = {
 				frame = GNG_yasuda_display
 			}
 			DOP_skin2_hitachibar = {
-				frame = GNG_hitachi_display
+				frame = GNG_dop_skin_hitachi_frame
 			}
 			DOP_skin1_letterhead = {
 				frame = GNG_legco_sponsor_faction^GNG_legco_ordinance_id
@@ -265,6 +265,9 @@ scripted_gui = {
 			}
 			add_seat_visible = {
 				has_country_flag = TNO_GNG_LegCo_GUI_Debug
+			}
+			DOP_legco_archive_button_visible = {
+				has_country_flag = DOP_legco_archive_done
 			}
 			sub_seat_visible = {
 				has_country_flag = TNO_GNG_LegCo_GUI_Debug
@@ -414,6 +417,16 @@ scripted_gui = {
 
 
 		effects = {
+			DOP_legco_archive_button_click = {
+				if = {
+					limit = { NOT = { has_country_flag = DOP_legco_archive_open } }
+					set_country_flag = DOP_legco_archive_open
+				}
+				else = {
+					clr_country_flag = DOP_legco_archive_open
+				}
+				add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+			}
 			debug_change_view_click = {
 				if = {
 					limit = { has_country_flag = GNG_legco_stage_2 }
@@ -461,6 +474,50 @@ scripted_gui = {
 					limit = { has_country_flag = TNO_GNG_LegCo_GUI_Open }
 					clr_country_flag = TNO_GNG_LegCo_GUI_Open
 				}
+			}
+		}
+	}
+
+	DOP_legco_archive_gui = {
+		context_type = player_context
+		window_name = "DOP_LegCo_Archive"
+		dirty = GNG_dop_legco_skin_dirty
+
+		visible = {
+			has_country_flag = DOP_legco_archive_open
+			has_country_flag = DOP_legco_archive_done
+			has_country_flag = TNO_GNG_LegCo_GUI_Open
+		}
+
+		effects = {
+			DOP_archive_close_button_click = {
+				clr_country_flag = DOP_legco_archive_open
+				add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+			}
+		}
+
+		dynamic_lists = {
+			DOP_archive_list = {
+				array = GNG_dop_legco_archive
+				change_scope = no
+				index = GNG_legco_archive_i
+				entry_container = GNG_legco_ord
+				value = GNG_legco_ordinance_id
+			}
+		}
+
+		properties = {
+			history_letterhead = {
+				frame = GNG_legco_sponsor_faction^GNG_legco_ordinance_id
+			}
+			history_symbol = {
+				frame = GNG_legco_sponsor_faction^GNG_legco_ordinance_id
+			}
+		}
+
+		triggers = {
+			history_letterhead = {
+				check_variable = { GNG_legco_current_ordinance_id > 0 }
 			}
 		}
 	}

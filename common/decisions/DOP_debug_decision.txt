@@ -240,6 +240,9 @@ GNG_debug_category = {
 			else = {
 				set_variable = { GNG_dop_legco_skin = 0 }
 			}
+			set_variable = { GNG_dop_skin_hitachi_frame = GNG_hitachi_left }
+			multiply_variable = { GNG_dop_skin_hitachi_frame = 1000 }
+			add_to_variable = { GNG_dop_skin_hitachi_frame = 100 }
 			add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
 			custom_effect_tooltip = GNG_dop_legco_skin_style1_tt
 		}
@@ -268,8 +271,28 @@ GNG_debug_category = {
 			else = {
 				set_variable = { GNG_dop_legco_skin = 0 }
 			}
+			set_variable = { GNG_dop_skin_hitachi_frame = GNG_hitachi_left }
+			multiply_variable = { GNG_dop_skin_hitachi_frame = 1000 }
+			add_to_variable = { GNG_dop_skin_hitachi_frame = 100 }
 			add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
 			custom_effect_tooltip = GNG_dop_legco_skin_style2_tt
+		}
+	}
+	GNG_dop_debug_legco_archive = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			DOP_legco_archive_ordinances = yes
+			add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+			custom_effect_tooltip = DOP_legco_archive_done_tt
 		}
 	}
 	GNG_dop_debug_show_guang_dong_theater = {

@@ -137,6 +137,10 @@ on_actions = {
 				GNG_initialize_research_team = yes
 				GNG_check_votes_legco = yes
 				GNG_calculate_rGDP = yes
+				# DOP LegCo skin: pack last-faction bar value as left*1000 + 100
+				set_variable = { GNG_dop_skin_hitachi_frame = GNG_hitachi_left }
+				multiply_variable = { GNG_dop_skin_hitachi_frame = 1000 }
+				add_to_variable = { GNG_dop_skin_hitachi_frame = 100 }
 			}
 
 			##Flavour Events
@@ -182,6 +186,9 @@ on_actions = {
 				DOP_GNG_econ_graph_monthly_tick = yes
 				GNG_monthly_demographics_pulse = yes
 				GNG_research_monthly_calc = yes
+				set_variable = { GNG_dop_skin_hitachi_frame = GNG_hitachi_left }
+				multiply_variable = { GNG_dop_skin_hitachi_frame = 1000 }
+				add_to_variable = { GNG_dop_skin_hitachi_frame = 100 }
 			}
 		}
 	}
