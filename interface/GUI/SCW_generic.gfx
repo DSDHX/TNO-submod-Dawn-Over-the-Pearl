@@ -183,15 +183,6 @@ spriteTypes = {
 	}
 
 	progressbartype = {
-		name = "GFX_GCW_percentage_progress_bar"
-		color = { 0.0 0.0 0.0 }
-		colortwo = { 0.0 0.0 0.0 }
-		size = { x = 22 y = 418 }
-		textureFile1 = "gfx/interface/bop/GCW_percentage_bar_full.dds"
-		textureFile2 = "gfx/interface/bop/GCW_percentage_bar_empty_clear.dds"
-		effectFile = "gfx/FX/progress_vertical.lua"
-	}
-	progressbartype = {
 		name = "GFX_GSA_research_progress_bar"
 		color = { 0.0 0.0 0.0 }
 		colortwo = { 0.0 0.0 0.0 }

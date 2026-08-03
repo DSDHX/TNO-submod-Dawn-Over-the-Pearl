@@ -9,36 +9,6 @@ scripted_gui = {
 		}
 	}
 
-	DOP_SCW_bar_display = {
-		window_name = "DOP_SCW_bar_display"
-		context_type = player_context
-		parent_window_name = powerbalanceview
-		visible = { 
-			AND = {
-				check_variable = { selected_decision_tabs_id = 1 } 
-				check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
-			}
-		}
-		ai_enabled = { always = no }
-		properties = {
-			scw_bar_1_o = {
-				frame = USA_percentage_for_bar
-			}
-			scw_bar_2_o = {
-				frame = JAP_percentage_for_bar
-			}
-			scw_bar_3_o = {
-				frame = GER_percentage_for_bar
-			}
-			scw_bar_4_o = {
-				frame = ITA_percentage_for_bar
-			}
-			scw_bar_5_o = {
-				frame = GNG_percentage_for_bar
-			}
-		}
-	}
-
 	DOP_SCW_base_container = {
 		window_name = "DOP_SCW_base_container"
 		context_type = player_context
@@ -151,21 +121,6 @@ scripted_gui = {
 			}
 			chain_bg_visible = {
 				check_variable = { selected_decision_tabs_id = 2 }
-			}
-			GCW_gng_per_bar_visible = {
-				check_variable = { selected_decision_tabs_id = 1 }
-			}
-			GCW_usa_per_bar_visible = {
-				check_variable = { selected_decision_tabs_id = 1 }
-			}
-			GCW_ita_per_bar_visible = {
-				check_variable = { selected_decision_tabs_id = 1 }
-			}
-			GCW_ger_per_bar_visible = {
-				check_variable = { selected_decision_tabs_id = 1 }
-			}
-			GCW_jap_per_bar_visible = {
-				check_variable = { selected_decision_tabs_id = 1 }
 			}
 			speedrun_bg_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
