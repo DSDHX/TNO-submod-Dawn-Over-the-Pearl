@@ -1,0 +1,21 @@
+defined_text = {
+	name = Get_DOP_GNG_591_Tooltip
+	text = {
+		trigger = { set_temp_variable = { GNG_map_hovered_state = 591 } }
+		localization_key = "GNG_map_state_tooltip"
+	}
+}
+defined_text = {
+	name = Get_DOP_GNG_1464_Tooltip
+	text = {
+		trigger = { set_temp_variable = { GNG_map_hovered_state = 1464 } }
+		localization_key = "GNG_map_state_tooltip"
+	}
+}
+defined_text = {
+	name = Get_DOP_GNG_2472_Tooltip
+	text = {
+		trigger = { set_temp_variable = { GNG_map_hovered_state = 2472 } }
+		localization_key = "GNG_map_state_tooltip"
+	}
+}

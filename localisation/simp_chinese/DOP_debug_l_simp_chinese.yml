@@ -15,3 +15,5 @@ GNG_dop_debug_show_guang_dong_theater: "§MDOP调试§!：启用广东大剧院G
 GNG_dop_debug_close_guang_dong_theater: "§MDOP调试§!：关闭广东大剧院GUI"
 GNG_dop_debug_econ_compare_toggle: "§MDOP调试§!：切换经济图对比对象"
 GNG_dop_debug_econ_compare_init: "§MDOP调试§!：重置经济图对比数据"
+GNG_dop_debug_unlock_extra_regions: "§MDOP调试§!：开放海南、钦州与湛江"
+GNG_dop_debug_theater_takeover_three_evils: "§MDOP调试§!：三大忧患并入大剧院"

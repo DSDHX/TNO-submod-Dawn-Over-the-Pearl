@@ -7,13 +7,34 @@ scripted_gui = {
 		window_name = "GNG_guangdong_theater_GUI"
 		properties = {
 			japanese_attitude_progress_bar = {
-				frame = japanese_attitude_var
+				frame = GNG_Japan_Approval
 			}
 			the_resistance_progress_bar = {
-				frame = the_resistance_var
+				frame = GNG_China_Opinion
+			}
+			the_stage_integrity_progress_bar = {
+				frame = DOP_theater_stage_integrity_var
+			}
+			the_stage_integrity_progress_bar_yellow = {
+				frame = DOP_theater_stage_integrity_var
+			}
+			the_stage_integrity_progress_bar_red = {
+				frame = DOP_theater_stage_integrity_var
 			}
 			the_current_show_icon = { 
 				image = "[DOPGNGTheCurrentShowIcon]" 
+			}
+		}
+		triggers = {
+			the_stage_integrity_progress_bar_visible = {
+				check_variable = { var = GNG_corruption_var value = 50 compare = less_than_or_equals }
+			}
+			the_stage_integrity_progress_bar_yellow_visible = {
+				check_variable = { var = GNG_corruption_var value = 50 compare = greater_than }
+				check_variable = { var = GNG_corruption_var value = 75 compare = less_than_or_equals }
+			}
+			the_stage_integrity_progress_bar_red_visible = {
+				check_variable = { var = GNG_corruption_var value = 75 compare = greater_than }
 			}
 		}
 		effects = {

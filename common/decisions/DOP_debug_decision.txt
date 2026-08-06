@@ -371,4 +371,96 @@ GNG_debug_category = {
 			custom_effect_tooltip = DOP_GNG_econ_debug_reinit_compare_tt
 		}
 	}
+	GNG_dop_debug_unlock_extra_regions = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = { has_country_flag = DOP_GNG_extra_regions_unlocked }
+			NOT = { has_country_flag = GNG_disable_all_mechanics_IJA }
+		}
+		complete_effect = {
+			set_country_flag = DOP_GNG_extra_regions_unlocked
+			hidden_effect = {
+				# Bring the three formerly locked states into the Guangdong mechanics
+				add_to_array = { GNG_states_list = 591 }
+				add_to_array = { GNG_states_list = 1464 }
+				add_to_array = { GNG_states_list = 2472 }
+				add_to_array = { GNG_rural_states = 591 }
+				add_to_array = { GNG_rural_states = 1464 }
+				add_to_array = { GNG_rural_states = 2472 }
+
+				591 = { #Hainan
+					set_variable = { sar_spt = 48 }
+					set_variable = { tri_spt = 14 }
+					set_variable = { yak_spt = 16 }
+					set_variable = { ken_spt = 22 }
+					set_variable = { jap_pop = 6 }
+					set_variable = { zhu_pop = 18 }
+					set_variable = { chi_pop = 76 }
+					set_variable = { jap_app = 58 }
+					set_variable = { zhu_app = 50 }
+					set_variable = { chi_app = 45 }
+				}
+				1464 = { #Zhanjiang
+					set_variable = { sar_spt = 12 }
+					set_variable = { tri_spt = 38 }
+					set_variable = { yak_spt = 28 }
+					set_variable = { ken_spt = 22 }
+					set_variable = { jap_pop = 4 }
+					set_variable = { zhu_pop = 16 }
+					set_variable = { chi_pop = 80 }
+					set_variable = { jap_app = 42 }
+					set_variable = { zhu_app = 44 }
+					set_variable = { chi_app = 55 }
+				}
+				2472 = { #Qinzhou
+					set_variable = { sar_spt = 10 }
+					set_variable = { tri_spt = 42 }
+					set_variable = { yak_spt = 26 }
+					set_variable = { ken_spt = 22 }
+					set_variable = { jap_pop = 3 }
+					set_variable = { zhu_pop = 14 }
+					set_variable = { chi_pop = 83 }
+					set_variable = { jap_app = 38 }
+					set_variable = { zhu_app = 42 }
+					set_variable = { chi_app = 58 }
+				}
+
+				GNG_update_underworld_display = yes
+				GNG_update_demographic_display = yes
+				add_to_variable = { GNG_map_dirty_variable = 0.01 }
+				add_to_variable = { GNG_economy_dirty_variable = 0.01 }
+			}
+		}
+	}
+	GNG_dop_debug_theater_takeover_three_evils = {
+		allowed = {
+			original_tag = GNG
+		}
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			NOT = { has_country_flag = DOP_theater_replaces_three_evils }
+		}
+		complete_effect = {
+			set_country_flag = DOP_theater_replaces_three_evils
+			set_country_flag = guang_dong_theater_visible
+			hidden_effect = {
+				# 关闭三大忧患的界面与决策
+				clr_country_flag = GNG_Three_Evils_Show
+				clr_country_flag = GNG_show_china_opinion_decisions
+				clr_country_flag = GNG_show_corruption_decisions
+				clr_country_flag = GNG_show_japan_approval_decisions
+				# 数值/buff 不复制：大剧院直接读 GNG_Japan_Approval / GNG_China_Opinion / GNG_corruption_var，
+				# 月度 GNG_corruption_tick -> GNG_clamp_three_evils -> GNG_3E_calculate_effects 链继续跑，buff 保持。
+				GNG_clamp_three_evils = yes
+				set_variable = { DOP_theater_stage_integrity_var = 100 }
+				subtract_from_variable = { DOP_theater_stage_integrity_var = GNG_corruption_var }
+				clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
+			}
+		}
+	}
 }

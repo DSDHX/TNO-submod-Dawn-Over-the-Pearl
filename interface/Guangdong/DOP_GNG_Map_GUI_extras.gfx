@@ -1,0 +1,95 @@
+spriteTypes = {
+
+	# Hainan (state 591) - unlocked by DOP decision
+	progressbartype = {
+		name = GFX_DOP_GNG_Hainan_display
+		textureFile1 = "gfx/interface/guangdong_gui/map_gui/states/Hainan_display.dds"
+		textureFile2 = "gfx/interface/guangdong_gui/map_gui/state_colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.106 0.090 1 1 }
+		size = {
+			x = 106
+			y = 90
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_GNG_Hainan_outline"
+		texturefile = "gfx/interface/guangdong_gui/map_gui/states/Hainan_outline.dds"
+		noOfFrames = 2
+		animation_rate_fps = 2
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spritetype = {
+		name = GFX_DOP_GNG_Hainan_button
+		textureFile = "gfx/interface/guangdong_gui/map_gui/states/Hainan_button.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+
+	# Qinzhou (state 2472) - unlocked by DOP decision
+	progressbartype = {
+		name = GFX_DOP_GNG_Qinzhou_display
+		textureFile1 = "gfx/interface/guangdong_gui/map_gui/states/Qinzhou_display.dds"
+		textureFile2 = "gfx/interface/guangdong_gui/map_gui/state_colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.104 0.059 1 1 }
+		size = {
+			x = 104
+			y = 59
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_GNG_Qinzhou_outline"
+		texturefile = "gfx/interface/guangdong_gui/map_gui/states/Qinzhou_outline.dds"
+		noOfFrames = 2
+		animation_rate_fps = 2
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spritetype = {
+		name = GFX_DOP_GNG_Qinzhou_button
+		textureFile = "gfx/interface/guangdong_gui/map_gui/states/Qinzhou_button.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+
+	# Zhanjiang (state 1464) - unlocked by DOP decision
+	progressbartype = {
+		name = GFX_DOP_GNG_Zhanjiang_display
+		textureFile1 = "gfx/interface/guangdong_gui/map_gui/states/Zhanjiang_display.dds"
+		textureFile2 = "gfx/interface/guangdong_gui/map_gui/state_colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.069 0.080 1 1 }
+		size = {
+			x = 69
+			y = 80
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_GNG_Zhanjiang_outline"
+		texturefile = "gfx/interface/guangdong_gui/map_gui/states/Zhanjiang_outline.dds"
+		noOfFrames = 2
+		animation_rate_fps = 2
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spritetype = {
+		name = GFX_DOP_GNG_Zhanjiang_button
+		textureFile = "gfx/interface/guangdong_gui/map_gui/states/Zhanjiang_button.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+}

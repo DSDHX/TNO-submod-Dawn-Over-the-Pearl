@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "GNG_guangdong_theater_GUI"
-		size = { width = 500 height = 430 }
+		size = { width = 500 height = 466 }
 		origo = center
 		position = { x = 0 y = 0 }
 
@@ -78,6 +78,40 @@ guiTypes = {
 			position = { x = 19 y = 416 }
 			font = "aldrich_16_outline"
 			text = "DOP_GNG_the_resistance_text"
+			maxWidth = 105
+			format = center
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "the_stage_integrity_progress_bar"
+			spriteType = "GFX_DOP_the_stage_integrity_progress_bar"
+			position = { x = 126 y = 439 }
+			pdx_tooltip = "the_stage_integrity_desc_tt"
+		}
+		iconType = {
+			name = "the_stage_integrity_progress_bar_yellow"
+			spriteType = "GFX_DOP_the_stage_integrity_progress_bar_yellow"
+			position = { x = 126 y = 439 }
+			pdx_tooltip = "the_stage_integrity_desc_tt"
+		}
+		iconType = {
+			name = "the_stage_integrity_progress_bar_red"
+			spriteType = "GFX_DOP_the_stage_integrity_progress_bar_red"
+			position = { x = 126 y = 439 }
+			pdx_tooltip = "the_stage_integrity_desc_tt"
+		}
+		iconType = {
+			name = "the_stage_integrity_frame"
+			spriteType = "GFX_GNG_guangdong_theater_text_frame1"
+			position = { x = 17 y = 440 }
+			pdx_tooltip = "the_stage_integrity_desc_tt"
+		}
+		instantTextboxType = {
+			name = "the_stage_integrity_text"
+			position = { x = 19 y = 446 }
+			font = "aldrich_16_outline"
+			text = "DOP_GNG_the_stage_integrity_text"
 			maxWidth = 105
 			format = center
 			alwaystransparent = yes

@@ -28,10 +28,52 @@ spriteTypes = {
 
 	progressbartype = {
 		name = "GFX_DOP_the_resistance_progress_bar"
-		texturefile1 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_full.dds"
-		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty.dds"
-		color = { 0.0 0.0 0.0 }
-		colortwo = { 0.0 0.0 0.0 }
+		texturefile1 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_full_chinese.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty_hollow.dds"
+		color = { 0.192 0.243 0.635 1 }
+		colortwo = { 0.192 0.243 0.635 1 }
+		size = {
+			x = 371
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+	progressbartype = {
+		name = "GFX_DOP_the_stage_integrity_progress_bar"
+		texturefile1 = "gfx/interface/DOP_theater_gui/the_stage_integrity_progress_bar_full.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty_hollow.dds"
+		color = { 0.506 0.902 0.580 1 }
+		colortwo = { 0.506 0.902 0.580 1 }
+		size = {
+			x = 371
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+	progressbartype = {
+		name = "GFX_DOP_the_stage_integrity_progress_bar_yellow"
+		texturefile1 = "gfx/interface/DOP_theater_gui/the_stage_integrity_progress_bar_full_yellow.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty_hollow.dds"
+		color = { 0.922 0.745 0.118 1 }
+		colortwo = { 0.922 0.745 0.118 1 }
+		size = {
+			x = 371
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+		steps = 100
+	}
+	progressbartype = {
+		name = "GFX_DOP_the_stage_integrity_progress_bar_red"
+		texturefile1 = "gfx/interface/DOP_theater_gui/the_stage_integrity_progress_bar_full_red.dds"
+		texturefile2 = "gfx/interface/DOP_theater_gui/the_resistance_progress_bar_empty_hollow.dds"
+		color = { 0.824 0.176 0.137 1 }
+		colortwo = { 0.824 0.176 0.137 1 }
 		size = {
 			x = 371
 			y = 27
