@@ -15,7 +15,7 @@
  GNG_dop_debug_construction_speed_factor_minus_desc:0 "为当前选中的建设项目减少 §R0.10×§! 额外速度倍率；最低不会低于 0。"
  DOP_construction_selected_name:0 "[?DOP_construction_selected_project_token.GetTokenLocalizedKey]"
  DOP_construction_selected_desc:0 "[DOP_construction_GetSelectedDesc]"
- DOP_construction_selected_region:0 "§B[?DOP_construction_selected_region_token.GetTokenLocalizedKey]§!"
+ DOP_construction_selected_region:0 "§B[DOP_construction_GetSelectedRegionName]§!"
  DOP_construction_selected_status:0 "状态：[DOP_construction_GetStatus]"
  DOP_construction_status_pending:0 "§Y待完成§!"
  DOP_construction_status_completed:0 "§G已完工§!"
@@ -102,12 +102,14 @@
 
  # BEGIN GENERATED CONSTRUCTION LOCALISATION
  # Dynamic directory and registry localisation.
- DOP_construction_region_directory_title:0 "地区目录"
+ DOP_construction_region_directory_title:0 "建设目录"
  DOP_construction_project_directory_title:0 "设施项目"
- DOP_construction_region_entry_name:0 "§B[?DOP_construction_region_tokens^DOP_construction_region_id.GetTokenLocalizedKey]§!"
- DOP_construction_region_entry_tt:0 "选择该地区并显示其建设项目。"
- DOP_construction_project_entry_name:0 "[?DOP_construction_project_tokens^DOP_construction_project_id.GetTokenLocalizedKey]  [?DOP_construction_percent^DOP_construction_project_id|0]%"
+ DOP_construction_region_entry_name:0 "§B[DOP_construction_GetDirectoryRegionMarker] [DOP_construction_GetDirectoryRegionName]§!"
+ DOP_construction_region_entry_tt:0 "展开或收起该地区；同时切换到该地区的第一个建设项目。"
+ DOP_construction_project_entry_name:0 "[?DOP_construction_project_tokens^DOP_construction_directory_item.GetTokenLocalizedKey]"
  DOP_construction_project_entry_tt:0 "[DOP_construction_GetEntryDesc]"
+ DOP_construction_directory_marker_open:0 "−"
+ DOP_construction_directory_marker_closed:0 "+"
 
  DOP_construction_region_prd:0 "珠三角"
  DOP_construction_region_chaoshan:0 "潮汕"

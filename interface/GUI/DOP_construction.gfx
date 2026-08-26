@@ -12,7 +12,7 @@ spriteTypes = {
 	}
 	progressbartype = {
 		name = "GFX_DOP_construction_row_progress"
-		size = { x = 160 y = 24 }
+		size = { x = 141 y = 30 }
 		textureFile1 = "gfx/interface/bop/GSA_research_prgbarfull.dds"
 		textureFile2 = "gfx/interface/bop/GSA_research_prgbarempty.dds"
 		effectFile = "gfx/FX/progress.lua"

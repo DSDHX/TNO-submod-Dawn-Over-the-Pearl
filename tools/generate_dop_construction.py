@@ -11,6 +11,7 @@ EFFECTS_PATH = ROOT / "common/scripted_effects/DOP_construction_effects.txt"
 EVENTS_PATH = ROOT / "events/DOP_GNG_construction.txt"
 LOC_PATH = ROOT / "localisation/simp_chinese/DOP_Construction_l_simp_chinese.yml"
 TOKENS_PATH = ROOT / "common/synchronized_dynamic_tokens/DOP_construction_tokens.txt"
+SCRIPTED_LOC_PATH = ROOT / "common/scripted_localisation/DOP_Construction_Scripted_loc.txt"
 
 REGISTRY_BEGIN = "# BEGIN GENERATED CONSTRUCTION REGISTRY"
 REGISTRY_END = "# END GENERATED CONSTRUCTION REGISTRY"
@@ -20,10 +21,16 @@ TOKENS_BEGIN = "# BEGIN GENERATED CONSTRUCTION TOKENS"
 TOKENS_END = "# END GENERATED CONSTRUCTION TOKENS"
 EVENT_DISPATCH_BEGIN = "# BEGIN GENERATED CONSTRUCTION EVENT DISPATCH"
 EVENT_DISPATCH_END = "# END GENERATED CONSTRUCTION EVENT DISPATCH"
-REGION_LIST_BEGIN = "# BEGIN GENERATED CONSTRUCTION REGION LISTS"
-REGION_LIST_END = "# END GENERATED CONSTRUCTION REGION LISTS"
+DIRECTORY_BEGIN = "# BEGIN GENERATED CONSTRUCTION DIRECTORY"
+DIRECTORY_END = "# END GENERATED CONSTRUCTION DIRECTORY"
+DIRECTORY_TOGGLE_BEGIN = "# BEGIN GENERATED CONSTRUCTION DIRECTORY TOGGLES"
+DIRECTORY_TOGGLE_END = "# END GENERATED CONSTRUCTION DIRECTORY TOGGLES"
 CLEAR_FLAGS_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR FLAGS"
 CLEAR_FLAGS_END = "# END GENERATED CONSTRUCTION CLEAR FLAGS"
+CLEAR_EXPANSION_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS"
+CLEAR_EXPANSION_END = "# END GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS"
+SCRIPTED_LOC_BEGIN = "# BEGIN GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
+SCRIPTED_LOC_END = "# END GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
 CALLBACK_END = "# END GENERATED COMPLETION CALLBACKS"
 PLACEHOLDER_IMAGE = "GSA_kanton_shenkansen_research"
 
@@ -199,23 +206,50 @@ def render_event_dispatch() -> list[str]:
     return lines
 
 
-def render_region_lists() -> list[str]:
+def render_directory() -> list[str]:
     region_id = {region.slug: region.id for region in REGIONS}
     lines: list[str] = []
     for region in REGIONS:
+        lines.append(
+            f"add_to_array = {{ DOP_construction_directory_items = {100 + region.id} }}"
+        )
         lines.extend(
             [
                 "if = {",
-                "\tlimit = { check_variable = { "
-                f"DOP_construction_selected_region = {region.id} }} }}",
+                f"\tlimit = {{ has_country_flag = DOP_construction_region_{region.id}_expanded }}",
             ]
         )
         for project in PROJECTS:
             if region_id[project.region] == region.id:
                 lines.append(
-                    f"\tadd_to_array = {{ DOP_construction_visible_projects = {project.id} }}"
+                    f"\tadd_to_array = {{ DOP_construction_directory_items = {project.id} }}"
                 )
         lines.append("}")
+    return lines
+
+
+def render_directory_toggles() -> list[str]:
+    region_id = {region.slug: region.id for region in REGIONS}
+    lines: list[str] = []
+    for region in REGIONS:
+        first_project = next(
+            project for project in PROJECTS if region_id[project.region] == region.id
+        )
+        lines.extend(
+            [
+                "if = {",
+                "\tlimit = { check_variable = { "
+                f"DOP_construction_directory_item = {100 + region.id} }} }}",
+                f"\tset_variable = {{ DOP_construction_selected_region = {region.id} }}",
+                f"\tset_variable = {{ DOP_construction_selected = {first_project.id} }}",
+                "\tif = {",
+                f"\t\tlimit = {{ has_country_flag = DOP_construction_region_{region.id}_expanded }}",
+                f"\t\tclr_country_flag = DOP_construction_region_{region.id}_expanded",
+                "\t}",
+                f"\telse = {{ set_country_flag = DOP_construction_region_{region.id}_expanded }}",
+                "}",
+            ]
+        )
     return lines
 
 
@@ -226,15 +260,82 @@ def render_clear_flags() -> list[str]:
     ]
 
 
+def render_clear_expansion_flags() -> list[str]:
+    return [
+        f"clr_country_flag = DOP_construction_region_{region.id}_expanded"
+        for region in REGIONS
+    ]
+
+
+def render_scripted_localisation() -> list[str]:
+    lines = [
+        "defined_text = {",
+        "\tname = DOP_construction_GetDirectoryEntryContainer",
+        "\ttext = {",
+        "\t\ttrigger = { check_variable = { DOP_construction_directory_item > 100 } }",
+        '\t\tlocalization_key = "DOP_construction_region_entry"',
+        "\t}",
+        '\ttext = { localization_key = "DOP_construction_project_entry" }',
+        "}",
+        "",
+        "defined_text = {",
+        "\tname = DOP_construction_GetDirectoryRegionName",
+    ]
+    for region in REGIONS:
+        lines.extend(
+            [
+                "\ttext = {",
+                "\t\ttrigger = { check_variable = { "
+                f"DOP_construction_directory_item = {100 + region.id} }} }}",
+                f"\t\tlocalization_key = DOP_construction_region_{region.slug}",
+                "\t}",
+            ]
+        )
+    lines.extend(["}", "", "defined_text = {", "\tname = DOP_construction_GetSelectedRegionName"])
+    for region in REGIONS:
+        lines.extend(
+            [
+                "\ttext = {",
+                "\t\ttrigger = { check_variable = { "
+                f"DOP_construction_selected_region = {region.id} }} }}",
+                f"\t\tlocalization_key = DOP_construction_region_{region.slug}",
+                "\t}",
+            ]
+        )
+    lines.extend(["}", "", "defined_text = {", "\tname = DOP_construction_GetDirectoryRegionMarker"])
+    for region in REGIONS:
+        lines.extend(
+            [
+                "\ttext = {",
+                "\t\ttrigger = {",
+                "\t\t\tcheck_variable = { "
+                f"DOP_construction_directory_item = {100 + region.id} }}",
+                f"\t\t\thas_country_flag = DOP_construction_region_{region.id}_expanded",
+                "\t\t}",
+                "\t\tlocalization_key = DOP_construction_directory_marker_open",
+                "\t}",
+            ]
+        )
+    lines.extend(
+        [
+            "\ttext = { localization_key = DOP_construction_directory_marker_closed }",
+            "}",
+        ]
+    )
+    return lines
+
+
 def render_localisation() -> list[str]:
     lines = [
         "# Dynamic directory and registry localisation.",
-        'DOP_construction_region_directory_title:0 "地区目录"',
+        'DOP_construction_region_directory_title:0 "建设目录"',
         'DOP_construction_project_directory_title:0 "设施项目"',
-        'DOP_construction_region_entry_name:0 "§B[?DOP_construction_region_tokens^DOP_construction_region_id.GetTokenLocalizedKey]§!"',
-        'DOP_construction_region_entry_tt:0 "选择该地区并显示其建设项目。"',
-        'DOP_construction_project_entry_name:0 "[?DOP_construction_project_tokens^DOP_construction_project_id.GetTokenLocalizedKey]  [?DOP_construction_percent^DOP_construction_project_id|0]%"',
+        'DOP_construction_region_entry_name:0 "§B[DOP_construction_GetDirectoryRegionMarker] [DOP_construction_GetDirectoryRegionName]§!"',
+        'DOP_construction_region_entry_tt:0 "展开或收起该地区；同时切换到该地区的第一个建设项目。"',
+        'DOP_construction_project_entry_name:0 "[?DOP_construction_project_tokens^DOP_construction_directory_item.GetTokenLocalizedKey]"',
         'DOP_construction_project_entry_tt:0 "[DOP_construction_GetEntryDesc]"',
+        'DOP_construction_directory_marker_open:0 "−"',
+        'DOP_construction_directory_marker_closed:0 "+"',
         "",
     ]
     for region in REGIONS:
@@ -300,9 +401,16 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
     )
     effects = replace_marked(
         effects,
-        REGION_LIST_BEGIN,
-        REGION_LIST_END,
-        render_region_lists(),
+        DIRECTORY_BEGIN,
+        DIRECTORY_END,
+        render_directory(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        DIRECTORY_TOGGLE_BEGIN,
+        DIRECTORY_TOGGLE_END,
+        render_directory_toggles(),
         newline,
     )
     effects = replace_marked(
@@ -310,6 +418,13 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
         CLEAR_FLAGS_BEGIN,
         CLEAR_FLAGS_END,
         render_clear_flags(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        CLEAR_EXPANSION_BEGIN,
+        CLEAR_EXPANSION_END,
+        render_clear_expansion_flags(),
         newline,
     )
     effects = ensure_callbacks(effects, newline)
@@ -327,6 +442,16 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
     tokens, newline, bom = read_text(TOKENS_PATH)
     tokens = replace_marked(tokens, TOKENS_BEGIN, TOKENS_END, render_tokens(), newline)
     outputs[TOKENS_PATH] = (tokens, bom)
+
+    scripted_loc, newline, bom = read_text(SCRIPTED_LOC_PATH)
+    scripted_loc = replace_marked(
+        scripted_loc,
+        SCRIPTED_LOC_BEGIN,
+        SCRIPTED_LOC_END,
+        render_scripted_localisation(),
+        newline,
+    )
+    outputs[SCRIPTED_LOC_PATH] = (scripted_loc, bom)
     return outputs
 
 

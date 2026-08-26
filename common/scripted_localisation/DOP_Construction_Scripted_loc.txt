@@ -8,7 +8,7 @@ defined_text = {
 defined_text = {
 	name = DOP_construction_GetEntryDesc
 	text = {
-		localization_key = "[?DOP_construction_project_desc_tokens^DOP_construction_project_id.GetTokenKey]"
+		localization_key = "[?DOP_construction_project_desc_tokens^DOP_construction_directory_item.GetTokenKey]"
 	}
 }
 
@@ -20,3 +20,162 @@ defined_text = {
 	}
 	text = { localization_key = DOP_construction_status_pending }
 }
+
+# BEGIN GENERATED CONSTRUCTION DIRECTORY LOCALISATION
+defined_text = {
+	name = DOP_construction_GetDirectoryEntryContainer
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item > 100 } }
+		localization_key = "DOP_construction_region_entry"
+	}
+	text = { localization_key = "DOP_construction_project_entry" }
+}
+
+defined_text = {
+	name = DOP_construction_GetDirectoryRegionName
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 101 } }
+		localization_key = DOP_construction_region_prd
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 102 } }
+		localization_key = DOP_construction_region_chaoshan
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 103 } }
+		localization_key = DOP_construction_region_northern_guangdong
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 104 } }
+		localization_key = DOP_construction_region_western_guangdong
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 105 } }
+		localization_key = DOP_construction_region_jiaoyang
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 106 } }
+		localization_key = DOP_construction_region_yongning
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 107 } }
+		localization_key = DOP_construction_region_cangwu
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 108 } }
+		localization_key = DOP_construction_region_guiliu
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_directory_item = 109 } }
+		localization_key = DOP_construction_region_tiannan
+	}
+}
+
+defined_text = {
+	name = DOP_construction_GetSelectedRegionName
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 1 } }
+		localization_key = DOP_construction_region_prd
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 2 } }
+		localization_key = DOP_construction_region_chaoshan
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 3 } }
+		localization_key = DOP_construction_region_northern_guangdong
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 4 } }
+		localization_key = DOP_construction_region_western_guangdong
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 5 } }
+		localization_key = DOP_construction_region_jiaoyang
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 6 } }
+		localization_key = DOP_construction_region_yongning
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 7 } }
+		localization_key = DOP_construction_region_cangwu
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 8 } }
+		localization_key = DOP_construction_region_guiliu
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_region = 9 } }
+		localization_key = DOP_construction_region_tiannan
+	}
+}
+
+defined_text = {
+	name = DOP_construction_GetDirectoryRegionMarker
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 101 }
+			has_country_flag = DOP_construction_region_1_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 102 }
+			has_country_flag = DOP_construction_region_2_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 103 }
+			has_country_flag = DOP_construction_region_3_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 104 }
+			has_country_flag = DOP_construction_region_4_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 105 }
+			has_country_flag = DOP_construction_region_5_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 106 }
+			has_country_flag = DOP_construction_region_6_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 107 }
+			has_country_flag = DOP_construction_region_7_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 108 }
+			has_country_flag = DOP_construction_region_8_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = {
+		trigger = {
+			check_variable = { DOP_construction_directory_item = 109 }
+			has_country_flag = DOP_construction_region_9_expanded
+		}
+		localization_key = DOP_construction_directory_marker_open
+	}
+	text = { localization_key = DOP_construction_directory_marker_closed }
+}
+# END GENERATED CONSTRUCTION DIRECTORY LOCALISATION

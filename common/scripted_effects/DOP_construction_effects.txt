@@ -31,8 +31,8 @@ DOP_construction_prepare_slider_set_indices = {
 	for_loop_effect = {
 		start = 0
 		end = 61
-		value = DOP_construction_slider_set_index
-		add_to_array = { DOP_construction_slider_set_indices = DOP_construction_slider_set_index }
+		value = i
+		add_to_array = { DOP_construction_slider_set_indices = i }
 	}
 }
 
@@ -46,6 +46,7 @@ DOP_construction_register_all_projects = {
 
 	clear_array = DOP_construction_region_ids
 	clear_array = DOP_construction_visible_projects
+	clear_array = DOP_construction_directory_items
 	clear_array = DOP_construction_project_ids
 	clear_array = DOP_construction_region_tokens
 	clear_array = DOP_construction_project_tokens
@@ -278,6 +279,20 @@ DOP_construction_clear_completion_flags = {
 	# END GENERATED CONSTRUCTION CLEAR FLAGS
 }
 
+DOP_construction_clear_expansion_flags = {
+	# BEGIN GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS
+	clr_country_flag = DOP_construction_region_1_expanded
+	clr_country_flag = DOP_construction_region_2_expanded
+	clr_country_flag = DOP_construction_region_3_expanded
+	clr_country_flag = DOP_construction_region_4_expanded
+	clr_country_flag = DOP_construction_region_5_expanded
+	clr_country_flag = DOP_construction_region_6_expanded
+	clr_country_flag = DOP_construction_region_7_expanded
+	clr_country_flag = DOP_construction_region_8_expanded
+	clr_country_flag = DOP_construction_region_9_expanded
+	# END GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS
+}
+
 DOP_construction_initialize_variables = {
 	DOP_construction_register_all_projects = yes
 	DOP_construction_clear_completion_flags = yes
@@ -286,6 +301,8 @@ DOP_construction_initialize_variables = {
 	set_country_flag = DOP_construction_dynamic_v3_initialized
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
+	set_country_flag = DOP_construction_dynamic_v6_initialized
+	DOP_construction_clear_expansion_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
 	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
@@ -303,7 +320,7 @@ DOP_construction_migrate_legacy_variables = {
 
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
+		set_temp_variable = { DOP_construction_project_id = v }
 		set_temp_variable = { DOP_construction_project_token = DOP_construction_project_tokens^DOP_construction_project_id }
 		meta_effect = {
 			text = {
@@ -332,6 +349,8 @@ DOP_construction_migrate_legacy_variables = {
 	set_country_flag = DOP_construction_dynamic_v3_initialized
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
+	set_country_flag = DOP_construction_dynamic_v6_initialized
+	DOP_construction_clear_expansion_flags = yes
 	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
@@ -365,7 +384,7 @@ DOP_construction_migrate_dynamic_v3 = {
 
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
+		set_temp_variable = { DOP_construction_project_id = v }
 		add_to_temp_array = { DOP_construction_saved_progress = DOP_construction_progress^DOP_construction_project_id }
 		add_to_temp_array = { DOP_construction_saved_funding = DOP_construction_funding^DOP_construction_project_id }
 		add_to_temp_array = { DOP_construction_saved_manpower = DOP_construction_manpower^DOP_construction_project_id }
@@ -385,7 +404,7 @@ DOP_construction_migrate_dynamic_v3 = {
 
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
+		set_temp_variable = { DOP_construction_project_id = v }
 		if = {
 			limit = {
 				check_variable = {
@@ -421,7 +440,6 @@ DOP_construction_migrate_dynamic_v4 = {
 	add_to_array = { DOP_construction_input_factor = 0 }
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
 		add_to_array = { DOP_construction_input_factor = 1 }
 	}
 	set_country_flag = DOP_construction_dynamic_v4_initialized
@@ -435,6 +453,14 @@ DOP_construction_migrate_dynamic_v5 = {
 	DOP_construction_prepare_slider_set_indices = yes
 	set_variable = { DOP_construction_weekly_counter = 0 }
 	set_country_flag = DOP_construction_dynamic_v5_initialized
+	DOP_construction_rebuild_visible_projects = yes
+}
+
+# Rebuilds the left directory as a persistent multi-folder tree. Existing
+# saves start with every region collapsed; later window closes keep the flags.
+DOP_construction_migrate_dynamic_v6 = {
+	DOP_construction_clear_expansion_flags = yes
+	set_country_flag = DOP_construction_dynamic_v6_initialized
 	DOP_construction_rebuild_visible_projects = yes
 }
 
@@ -465,6 +491,10 @@ GNG_BOP_Construction_Initialize = {
 		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v5_initialized } }
 		DOP_construction_migrate_dynamic_v5 = yes
 	}
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v6_initialized } }
+		DOP_construction_migrate_dynamic_v6 = yes
+	}
 	DOP_construction_rebuild_visible_projects = yes
 }
 
@@ -476,6 +506,8 @@ DOP_construction_reset = {
 	set_country_flag = DOP_construction_dynamic_v3_initialized
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
+	set_country_flag = DOP_construction_dynamic_v6_initialized
+	DOP_construction_clear_expansion_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
 	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
@@ -483,64 +515,159 @@ DOP_construction_reset = {
 }
 
 DOP_construction_rebuild_visible_projects = {
-	clear_array = DOP_construction_visible_projects
-	# BEGIN GENERATED CONSTRUCTION REGION LISTS
+	clear_array = DOP_construction_directory_items
+	# BEGIN GENERATED CONSTRUCTION DIRECTORY
+	add_to_array = { DOP_construction_directory_items = 101 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 1 } }
-		add_to_array = { DOP_construction_visible_projects = 1 }
-		add_to_array = { DOP_construction_visible_projects = 2 }
-		add_to_array = { DOP_construction_visible_projects = 3 }
-		add_to_array = { DOP_construction_visible_projects = 4 }
-		add_to_array = { DOP_construction_visible_projects = 5 }
+		limit = { has_country_flag = DOP_construction_region_1_expanded }
+		add_to_array = { DOP_construction_directory_items = 1 }
+		add_to_array = { DOP_construction_directory_items = 2 }
+		add_to_array = { DOP_construction_directory_items = 3 }
+		add_to_array = { DOP_construction_directory_items = 4 }
+		add_to_array = { DOP_construction_directory_items = 5 }
 	}
+	add_to_array = { DOP_construction_directory_items = 102 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 2 } }
-		add_to_array = { DOP_construction_visible_projects = 6 }
+		limit = { has_country_flag = DOP_construction_region_2_expanded }
+		add_to_array = { DOP_construction_directory_items = 6 }
 	}
+	add_to_array = { DOP_construction_directory_items = 103 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 3 } }
-		add_to_array = { DOP_construction_visible_projects = 7 }
+		limit = { has_country_flag = DOP_construction_region_3_expanded }
+		add_to_array = { DOP_construction_directory_items = 7 }
 	}
+	add_to_array = { DOP_construction_directory_items = 104 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 4 } }
-		add_to_array = { DOP_construction_visible_projects = 8 }
+		limit = { has_country_flag = DOP_construction_region_4_expanded }
+		add_to_array = { DOP_construction_directory_items = 8 }
 	}
+	add_to_array = { DOP_construction_directory_items = 105 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 5 } }
-		add_to_array = { DOP_construction_visible_projects = 9 }
-		add_to_array = { DOP_construction_visible_projects = 10 }
-		add_to_array = { DOP_construction_visible_projects = 11 }
+		limit = { has_country_flag = DOP_construction_region_5_expanded }
+		add_to_array = { DOP_construction_directory_items = 9 }
+		add_to_array = { DOP_construction_directory_items = 10 }
+		add_to_array = { DOP_construction_directory_items = 11 }
 	}
+	add_to_array = { DOP_construction_directory_items = 106 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 6 } }
-		add_to_array = { DOP_construction_visible_projects = 12 }
-		add_to_array = { DOP_construction_visible_projects = 13 }
+		limit = { has_country_flag = DOP_construction_region_6_expanded }
+		add_to_array = { DOP_construction_directory_items = 12 }
+		add_to_array = { DOP_construction_directory_items = 13 }
 	}
+	add_to_array = { DOP_construction_directory_items = 107 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 7 } }
-		add_to_array = { DOP_construction_visible_projects = 14 }
+		limit = { has_country_flag = DOP_construction_region_7_expanded }
+		add_to_array = { DOP_construction_directory_items = 14 }
 	}
+	add_to_array = { DOP_construction_directory_items = 108 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 8 } }
-		add_to_array = { DOP_construction_visible_projects = 15 }
+		limit = { has_country_flag = DOP_construction_region_8_expanded }
+		add_to_array = { DOP_construction_directory_items = 15 }
 	}
+	add_to_array = { DOP_construction_directory_items = 109 }
 	if = {
-		limit = { check_variable = { DOP_construction_selected_region = 9 } }
-		add_to_array = { DOP_construction_visible_projects = 16 }
+		limit = { has_country_flag = DOP_construction_region_9_expanded }
+		add_to_array = { DOP_construction_directory_items = 16 }
 	}
-	# END GENERATED CONSTRUCTION REGION LISTS
-
-	if = {
-		limit = { check_variable = { DOP_construction_visible_projects^num > 0 } }
-		set_temp_variable = { DOP_construction_selected_project_region = DOP_construction_project_region^DOP_construction_selected }
-		if = {
-			limit = {
-				NOT = { check_variable = { DOP_construction_selected_project_region = DOP_construction_selected_region } }
-			}
-			set_variable = { DOP_construction_selected = DOP_construction_visible_projects^0 }
-		}
-	}
+	# END GENERATED CONSTRUCTION DIRECTORY
 	DOP_construction_sync_selected = yes
+}
+
+DOP_construction_toggle_directory_region = {
+	# BEGIN GENERATED CONSTRUCTION DIRECTORY TOGGLES
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 101 } }
+		set_variable = { DOP_construction_selected_region = 1 }
+		set_variable = { DOP_construction_selected = 1 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_1_expanded }
+			clr_country_flag = DOP_construction_region_1_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_1_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 102 } }
+		set_variable = { DOP_construction_selected_region = 2 }
+		set_variable = { DOP_construction_selected = 6 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_2_expanded }
+			clr_country_flag = DOP_construction_region_2_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_2_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 103 } }
+		set_variable = { DOP_construction_selected_region = 3 }
+		set_variable = { DOP_construction_selected = 7 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_3_expanded }
+			clr_country_flag = DOP_construction_region_3_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_3_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 104 } }
+		set_variable = { DOP_construction_selected_region = 4 }
+		set_variable = { DOP_construction_selected = 8 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_4_expanded }
+			clr_country_flag = DOP_construction_region_4_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_4_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 105 } }
+		set_variable = { DOP_construction_selected_region = 5 }
+		set_variable = { DOP_construction_selected = 9 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_5_expanded }
+			clr_country_flag = DOP_construction_region_5_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_5_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 106 } }
+		set_variable = { DOP_construction_selected_region = 6 }
+		set_variable = { DOP_construction_selected = 12 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_6_expanded }
+			clr_country_flag = DOP_construction_region_6_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_6_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 107 } }
+		set_variable = { DOP_construction_selected_region = 7 }
+		set_variable = { DOP_construction_selected = 14 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_7_expanded }
+			clr_country_flag = DOP_construction_region_7_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_7_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 108 } }
+		set_variable = { DOP_construction_selected_region = 8 }
+		set_variable = { DOP_construction_selected = 15 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_8_expanded }
+			clr_country_flag = DOP_construction_region_8_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_8_expanded }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_directory_item = 109 } }
+		set_variable = { DOP_construction_selected_region = 9 }
+		set_variable = { DOP_construction_selected = 16 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_9_expanded }
+			clr_country_flag = DOP_construction_region_9_expanded
+		}
+		else = { set_country_flag = DOP_construction_region_9_expanded }
+	}
+	# END GENERATED CONSTRUCTION DIRECTORY TOGGLES
+	DOP_construction_rebuild_visible_projects = yes
+	log = "[GetDateText]: [Root.GetName]: DOP construction region toggled [?DOP_construction_selected_region]; selected project [?DOP_construction_selected]"
 }
 
 DOP_construction_recalculate_project = {
@@ -567,7 +694,7 @@ DOP_construction_recalculate_project = {
 DOP_construction_recalculate_all = {
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
+		set_temp_variable = { DOP_construction_project_id = v }
 		DOP_construction_recalculate_project = yes
 	}
 }
@@ -695,11 +822,12 @@ DOP_construction_weekly_tick = {
 	log = "[GetDateText]: [Root.GetName]: DOP construction weekly tick started"
 	for_each_loop = {
 		array = DOP_construction_project_ids
-		value = DOP_construction_project_id
+		set_temp_variable = { DOP_construction_project_id = v }
 		if = {
 			limit = { check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 } }
 			DOP_construction_recalculate_project = yes
 			add_to_variable = { DOP_construction_progress^DOP_construction_project_id = DOP_construction_actual_speed^DOP_construction_project_id }
+			log = "[GetDateText]: [Root.GetName]: DOP construction project [?DOP_construction_project_id] advanced by [?DOP_construction_actual_speed^DOP_construction_project_id] to [?DOP_construction_progress^DOP_construction_project_id]"
 			DOP_construction_complete_project_if_needed = yes
 		}
 	}
@@ -711,7 +839,6 @@ DOP_construction_sync_selected = {
 	set_variable = { DOP_construction_selected_project_token = DOP_construction_project_tokens^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_project_desc_token = DOP_construction_project_desc_tokens^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_project_region = DOP_construction_project_region^DOP_construction_selected }
-	set_variable = { DOP_construction_selected_region_token = DOP_construction_region_tokens^DOP_construction_selected_project_region }
 	set_variable = { DOP_construction_selected_image = DOP_construction_project_images^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_event_id = DOP_construction_event_ids^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_total = DOP_construction_total^DOP_construction_selected }

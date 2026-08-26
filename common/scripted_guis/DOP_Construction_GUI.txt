@@ -9,28 +9,18 @@ scripted_gui = {
 		ai_enabled = { always = no }
 
 		dynamic_lists = {
-			construction_region_grid = {
-				array = DOP_construction_region_ids
-				index = DOP_construction_region_list_index
-				value = DOP_construction_region_id
+			construction_directory_grid = {
+				array = DOP_construction_directory_items
+				index = DOP_construction_directory_index
+				value = DOP_construction_directory_item
 				change_scope = no
-				entry_container = DOP_construction_region_entry
-			}
-		}
-		dynamic_lists = {
-			construction_project_grid = {
-				array = DOP_construction_visible_projects
-				index = DOP_construction_project_list_index
-				value = DOP_construction_project_id
-				change_scope = no
-				entry_container = DOP_construction_project_entry
+				entry_container = "[DOP_construction_GetDirectoryEntryContainer]"
 			}
 		}
 		dynamic_lists = {
 			DOP_construction_funding_set_buttons = {
 				array = DOP_construction_slider_set_indices
-				index = DOP_construction_funding_set_list_index
-				value = DOP_construction_funding_set_index
+				value = button_idx
 				change_scope = no
 				entry_container = DOP_construction_funding_set_button_entry
 			}
@@ -38,8 +28,7 @@ scripted_gui = {
 		dynamic_lists = {
 			DOP_construction_manpower_set_buttons = {
 				array = DOP_construction_slider_set_indices
-				index = DOP_construction_manpower_set_list_index
-				value = DOP_construction_manpower_set_index
+				value = button_idx
 				change_scope = no
 				entry_container = DOP_construction_manpower_set_button_entry
 			}
@@ -47,25 +36,26 @@ scripted_gui = {
 
 		effects = {
 			construction_region_entry_button_click = {
-				set_variable = { DOP_construction_selected_region = DOP_construction_region_id }
-				DOP_construction_rebuild_visible_projects = yes
-				log = "[GetDateText]: [Root.GetName]: DOP construction region selected [?DOP_construction_selected_region]"
+				DOP_construction_toggle_directory_region = yes
 			}
 			construction_project_entry_button_click = {
-				set_variable = { DOP_construction_selected = DOP_construction_project_id }
+				set_variable = { DOP_construction_selected = DOP_construction_directory_item }
+				set_variable = { DOP_construction_selected_region = DOP_construction_project_region^DOP_construction_directory_item }
 				DOP_construction_sync_selected = yes
 				log = "[GetDateText]: [Root.GetName]: DOP construction project selected [?DOP_construction_selected]"
 			}
 			DOP_construction_funding_set_button_click = {
 				set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
-				set_temp_variable = { DOP_construction_value = DOP_construction_funding_set_index }
+				set_temp_variable = { DOP_construction_value = button_idx }
+				log = "[GetDateText]: [Root.GetName]: DOP construction funding track index [?button_idx] for project [?DOP_construction_target_project]"
 				multiply_temp_variable = { DOP_construction_value = 1.5 }
 				add_to_temp_variable = { DOP_construction_value = 10 }
 				DOP_construction_set_funding = yes
 			}
 			DOP_construction_manpower_set_button_click = {
 				set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
-				set_temp_variable = { DOP_construction_value = DOP_construction_manpower_set_index }
+				set_temp_variable = { DOP_construction_value = button_idx }
+				log = "[GetDateText]: [Root.GetName]: DOP construction manpower track index [?button_idx] for project [?DOP_construction_target_project]"
 				multiply_temp_variable = { DOP_construction_value = 1.5 }
 				add_to_temp_variable = { DOP_construction_value = 10 }
 				DOP_construction_set_manpower = yes
@@ -91,7 +81,7 @@ scripted_gui = {
 				x = DOP_construction_manpower_thumb_x
 			}
 			construction_project_entry_progress = {
-				frame = DOP_construction_percent^DOP_construction_project_id
+				frame = DOP_construction_percent^DOP_construction_directory_item
 			}
 			construction_project_image = {
 				image = "GFX_[?DOP_construction_selected_image.GetTokenKey]"
