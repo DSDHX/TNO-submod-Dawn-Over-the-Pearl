@@ -1,23 +1,71 @@
 guiTypes = {
 	containerWindowType = {
-		name = "DOP_construction_base_container"
-		position = { x = 25 y = 19 }
-		size = { width = 1040 height = 618 }
-
-		iconType = {
-			name = "construction_background"
-			spriteType = "GFX_GSA_bg_on"
-			position = { x = -15 y = -15 }
+		name = DOP_construction_region_entry
+		position = { x = 0 y = 0 }
+		size = { width = 160 height = 28 }
+		buttonType = {
+			name = construction_region_entry_button
+			position = { x = 0 y = 0 }
+			size = { width = 160 height = 28 }
+			quadTextureSprite = GFX_tiled_window_transparent
+			pdx_tooltip = DOP_construction_region_entry_tt
+			clicksound = click_default
+		}
+		instantTextBoxType = {
+			name = construction_region_entry_label
+			position = { x = 8 y = 3 }
+			font = aldrich_18_outline
+			text = DOP_construction_region_entry_name
+			maxWidth = 144
+			maxHeight = 22
+			format = left
+			fixedsize = yes
 			alwaystransparent = yes
 		}
+	}
 
+	containerWindowType = {
+		name = DOP_construction_project_entry
+		position = { x = 0 y = 0 }
+		size = { width = 160 height = 30 }
+		iconType = {
+			name = construction_project_entry_progress
+			position = { x = 0 y = 3 }
+			spriteType = GFX_DOP_construction_row_progress
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = construction_project_entry_button
+			position = { x = 0 y = 3 }
+			size = { width = 160 height = 24 }
+			quadTextureSprite = GFX_tiled_window_transparent
+			pdx_tooltip = DOP_construction_project_entry_tt
+			clicksound = click_default
+		}
+		instantTextBoxType = {
+			name = construction_project_entry_label
+			position = { x = 7 y = 5 }
+			font = aldrich_14_outline
+			text = DOP_construction_project_entry_name
+			maxWidth = 146
+			maxHeight = 20
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = DOP_construction_base_container
+		position = { x = 25 y = 19 }
+		size = { width = 1040 height = 618 }
 		containerWindowType = {
-			name = "DOP_construction_topbar"
+			name = DOP_construction_topbar
 			position = { x = 41 y = -24 }
 			instantTextBoxType = {
-				name = "DOP_construction_title"
+				name = DOP_construction_title
 				position = { x = 0 y = 0 }
-				font = "vt323_72_WT_outline"
+				font = vt323_72_WT_outline
 				text = [GetGCname]
 				maxWidth = 857
 				maxHeight = 58
@@ -26,542 +74,77 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 		}
-
 		iconType = {
-			name = "construction_divider_left"
-			spriteType = "GFX_BoP_Base_Vertical_Divider_Full"
+			name = construction_divider_left
+			spriteType = GFX_BoP_Base_Vertical_Divider_Full
 			position = { x = 225 y = 67 }
 			alwaystransparent = yes
 		}
-
 		iconType = {
-			name = "construction_divider_right"
-			spriteType = "GFX_BoP_Base_Vertical_Divider_Full"
+			name = construction_divider_right
+			spriteType = GFX_BoP_Base_Vertical_Divider_Full
 			position = { x = 745 y = 67 }
 			alwaystransparent = yes
 		}
 
+		instantTextBoxType = {
+			name = construction_region_directory_title
+			position = { x = -10 y = 78 }
+			font = aldrich_18_outline
+			text = DOP_construction_region_directory_title
+			maxWidth = 235
+			maxHeight = 22
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
 		containerWindowType = {
-			name = "construction_catalog_scroll"
-			position = { x = 40 y = 82 }
-			size = { width = 180 height = 515 }
-			verticalScrollbar = "right_vertical_slider"
+			name = construction_region_scroll
+			position = { x = 40 y = 104 }
+			size = { width = 180 height = 252 }
+			verticalScrollbar = right_vertical_slider
 			clipping = yes
-
-			instantTextBoxType = {
-				name = "construction_region_1"
+			gridboxtype = {
+				name = construction_region_grid
 				position = { x = 2 y = 0 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_1
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
+				size = { width = 160 height = 252 }
+				slotsize = { width = 160 height = 28 }
+				max_slots_horizontal = 1
+				add_horizontal = no
 			}
-
-			iconType = {
-				name = "construction_project_1_progress"
-				position = { x = 2 y = 24 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_1_label"
-				position = { x = 8 y = 26 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_1
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_1"
-				position = { x = 2 y = 24 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_1
-			}
-
-			iconType = {
-				name = "construction_project_2_progress"
-				position = { x = 2 y = 53 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_2_label"
-				position = { x = 8 y = 55 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_2
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_2"
-				position = { x = 2 y = 53 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_2
-			}
-
-			iconType = {
-				name = "construction_project_3_progress"
-				position = { x = 2 y = 82 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_3_label"
-				position = { x = 8 y = 84 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_3
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_3"
-				position = { x = 2 y = 82 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_3
-			}
-
-			iconType = {
-				name = "construction_project_4_progress"
-				position = { x = 2 y = 111 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_4_label"
-				position = { x = 8 y = 113 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_4
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_4"
-				position = { x = 2 y = 111 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_4
-			}
-
-			iconType = {
-				name = "construction_project_5_progress"
-				position = { x = 2 y = 140 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_5_label"
-				position = { x = 8 y = 142 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_5
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_5"
-				position = { x = 2 y = 140 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_5
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_6"
-				position = { x = 2 y = 169 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_6
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_6_progress"
-				position = { x = 2 y = 193 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_6_label"
-				position = { x = 8 y = 195 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_6
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_6"
-				position = { x = 2 y = 193 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_6
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_7"
-				position = { x = 2 y = 222 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_7
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_7_progress"
-				position = { x = 2 y = 246 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_7_label"
-				position = { x = 8 y = 248 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_7
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_7"
-				position = { x = 2 y = 246 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_7
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_8"
-				position = { x = 2 y = 275 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_8
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_8_progress"
-				position = { x = 2 y = 299 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_8_label"
-				position = { x = 8 y = 301 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_8
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_8"
-				position = { x = 2 y = 299 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_8
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_9"
-				position = { x = 2 y = 328 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_9
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_9_progress"
-				position = { x = 2 y = 352 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_9_label"
-				position = { x = 8 y = 354 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_9
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_9"
-				position = { x = 2 y = 352 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_9
-			}
-
-			iconType = {
-				name = "construction_project_10_progress"
-				position = { x = 2 y = 381 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_10_label"
-				position = { x = 8 y = 383 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_10
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_10"
-				position = { x = 2 y = 381 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_10
-			}
-
-			iconType = {
-				name = "construction_project_11_progress"
-				position = { x = 2 y = 410 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_11_label"
-				position = { x = 8 y = 412 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_11
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_11"
-				position = { x = 2 y = 410 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_11
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_12"
-				position = { x = 2 y = 439 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_12
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_12_progress"
-				position = { x = 2 y = 463 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_12_label"
-				position = { x = 8 y = 465 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_12
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_12"
-				position = { x = 2 y = 463 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_12
-			}
-
-			iconType = {
-				name = "construction_project_13_progress"
-				position = { x = 2 y = 492 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_13_label"
-				position = { x = 8 y = 494 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_13
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_13"
-				position = { x = 2 y = 492 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_13
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_14"
-				position = { x = 2 y = 521 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_14
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_14_progress"
-				position = { x = 2 y = 545 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_14_label"
-				position = { x = 8 y = 547 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_14
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_14"
-				position = { x = 2 y = 545 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_14
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_15"
-				position = { x = 2 y = 574 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_15
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_15_progress"
-				position = { x = 2 y = 598 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_15_label"
-				position = { x = 8 y = 600 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_15
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_15"
-				position = { x = 2 y = 598 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_15
-			}
-
-			instantTextBoxType = {
-				name = "construction_region_16"
-				position = { x = 2 y = 627 }
-				font = "aldrich_18_outline"
-				text = DOP_construction_region_16
-				maxWidth = 160
-				maxHeight = 22
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-
-			iconType = {
-				name = "construction_project_16_progress"
-				position = { x = 2 y = 651 }
-				spriteType = "GFX_DOP_construction_row_progress"
-				alwaystransparent = yes
-			}
-			instantTextBoxType = {
-				name = "construction_project_16_label"
-				position = { x = 8 y = 653 }
-				font = "aldrich_14_outline"
-				text = DOP_construction_catalog_16
-				maxWidth = 148
-				maxHeight = 20
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
-			buttonType = {
-				name = "construction_project_16"
-				position = { x = 2 y = 651 }
-				size = { x = 160 y = 24 }
-				quadTextureSprite = "GFX_tiled_window_transparent"
-				pdx_tooltip = DOP_construction_project_desc_16
-			}
-
 		}
 
 		instantTextBoxType = {
-			name = "construction_selected_region"
+			name = construction_project_directory_title
+			position = { x = -10 y = 364 }
+			font = aldrich_18_outline
+			text = DOP_construction_project_directory_title
+			maxWidth = 235
+			maxHeight = 22
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = construction_project_scroll
+			position = { x = 40 y = 390 }
+			size = { width = 180 height = 205 }
+			verticalScrollbar = right_vertical_slider
+			clipping = yes
+			gridboxtype = {
+				name = construction_project_grid
+				position = { x = 2 y = 0 }
+				size = { width = 160 height = 205 }
+				slotsize = { width = 160 height = 30 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+		}
+
+		instantTextBoxType = {
+			name = construction_selected_region
 			position = { x = 252 y = 82 }
-			font = "aldrich_18_outline"
+			font = aldrich_18_outline
 			text = DOP_construction_selected_region
 			maxWidth = 470
 			maxHeight = 22
@@ -570,9 +153,9 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
-			name = "construction_selected_name"
+			name = construction_selected_name
 			position = { x = 252 y = 106 }
-			font = "aldrich_32_outline"
+			font = aldrich_32_outline
 			text = DOP_construction_selected_name
 			maxWidth = 470
 			maxHeight = 38
@@ -580,50 +163,47 @@ guiTypes = {
 			fixedsize = yes
 			alwaystransparent = yes
 		}
-
 		iconType = {
-			name = "construction_main_progress"
-			spriteType = "GFX_DOP_construction_main_progress"
-			position = { x = 272 y = 150 }
+			name = construction_main_progress
+			spriteType = GFX_DOP_construction_main_progress
+			position = { x = 260 y = 150 }
+			scale = 0.58
 			pdx_tooltip = DOP_construction_main_progress_tt
 			alwaystransparent = yes
 		}
-
 		instantTextBoxType = {
-			name = "construction_status"
-			position = { x = 252 y = 188 }
-			font = "aldrich_18_outline"
+			name = construction_status
+			position = { x = 255 y = 188 }
+			font = aldrich_18_outline
 			text = DOP_construction_selected_status
-			maxWidth = 470
+			maxWidth = 260
 			maxHeight = 22
 			format = center
 			fixedsize = yes
 			alwaystransparent = yes
 		}
-
 		containerWindowType = {
-			name = "construction_description_scroll"
+			name = construction_description_scroll
 			position = { x = 255 y = 218 }
-			size = { width = 285 height = 150 }
-			verticalScrollbar = "right_vertical_slider"
+			size = { width = 260 height = 150 }
+			verticalScrollbar = right_vertical_slider
 			clipping = yes
 			instantTextBoxType = {
-				name = "construction_description"
+				name = construction_description
 				position = { x = 0 y = 0 }
-				font = "aldrich_16_outline"
+				font = aldrich_16_outline
 				text = DOP_construction_selected_desc
-				maxWidth = 265
+				maxWidth = 240
 				maxHeight = 500
 				format = left
 				fixedsize = yes
 				alwaystransparent = yes
 			}
 		}
-
 		instantTextBoxType = {
-			name = "construction_numbers"
+			name = construction_numbers
 			position = { x = 550 y = 218 }
-			font = "aldrich_16_outline"
+			font = aldrich_16_outline
 			text = DOP_construction_selected_numbers
 			maxWidth = 185
 			maxHeight = 150
@@ -631,102 +211,104 @@ guiTypes = {
 			fixedsize = yes
 			alwaystransparent = yes
 		}
+
 		instantTextBoxType = {
-			name = "construction_funding_label"
-			position = { x = 315 y = 375 }
-			font = "aldrich_18_outline"
+			name = construction_funding_label
+			position = { x = 540 y = 375 }
+			font = aldrich_14_outline
 			text = DOP_construction_funding_label
-			maxWidth = 330
+			maxWidth = 205
 			maxHeight = 24
 			format = center
 			fixedsize = yes
 			alwaystransparent = yes
 		}
 		containerWindowType = {
-			name = "construction_funding_slider"
-			position = { x = 330 y = 405 }
-			size = { width = 303 height = 24 }
+			name = construction_funding_slider
+			position = { x = 550 y = 405 }
+			size = { width = 185 height = 36 }
 			clipping = no
 			iconType = {
-				name = "construction_funding_background"
-				spriteType = "GFX_econ_crt_slider_bg"
+				name = construction_funding_background
+				quadTextureSprite = GFX_econ_crt_slider_bg
 				position = { x = 0 y = 11 }
+				scale = 0.72
 				alwaystransparent = yes
 			}
 			iconType = {
-				name = "construction_funding_dot"
-				spriteType = "GFX_econ_crt_slider_dot"
-				position = { x = 0 y = 12 }
+				name = construction_funding_dot
+				quadTextureSprite = GFX_econ_crt_slider_dot
+				position = { x = 20 y = 9 }
+				scale = 0.72
 				alwaystransparent = yes
-				centerposition = yes
 			}
 			buttonType = {
-				name = "construction_funding_decrease"
-				spriteType = "GFX_econ_crt_slider_left"
-				position = { x = -9 y = 12 }
-				centerposition = yes
+				name = construction_funding_decrease
+				quadTextureSprite = GFX_econ_crt_slider_left
+				position = { x = 9 y = 11 }
+				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_decrease_tt
 			}
 			buttonType = {
-				name = "construction_funding_increase"
-				spriteType = "GFX_econ_crt_slider_right"
-				position = { x = 312 y = 12 }
-				centerposition = yes
+				name = construction_funding_increase
+				quadTextureSprite = GFX_econ_crt_slider_right
+				position = { x = 169 y = 11 }
+				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_increase_tt
 			}
 		}
 
 		instantTextBoxType = {
-			name = "construction_manpower_label"
-			position = { x = 315 y = 455 }
-			font = "aldrich_18_outline"
+			name = construction_manpower_label
+			position = { x = 540 y = 455 }
+			font = aldrich_14_outline
 			text = DOP_construction_manpower_label
-			maxWidth = 330
+			maxWidth = 205
 			maxHeight = 24
 			format = center
 			fixedsize = yes
 			alwaystransparent = yes
 		}
 		containerWindowType = {
-			name = "construction_manpower_slider"
-			position = { x = 330 y = 485 }
-			size = { width = 303 height = 24 }
+			name = construction_manpower_slider
+			position = { x = 550 y = 485 }
+			size = { width = 185 height = 36 }
 			clipping = no
 			iconType = {
-				name = "construction_manpower_background"
-				spriteType = "GFX_econ_crt_slider_bg"
+				name = construction_manpower_background
+				quadTextureSprite = GFX_econ_crt_slider_bg
 				position = { x = 0 y = 11 }
+				scale = 0.72
 				alwaystransparent = yes
 			}
 			iconType = {
-				name = "construction_manpower_dot"
-				spriteType = "GFX_econ_crt_slider_dot"
-				position = { x = 0 y = 12 }
+				name = construction_manpower_dot
+				quadTextureSprite = GFX_econ_crt_slider_dot
+				position = { x = 20 y = 9 }
+				scale = 0.72
 				alwaystransparent = yes
-				centerposition = yes
 			}
 			buttonType = {
-				name = "construction_manpower_decrease"
-				spriteType = "GFX_econ_crt_slider_left"
-				position = { x = -9 y = 12 }
-				centerposition = yes
+				name = construction_manpower_decrease
+				quadTextureSprite = GFX_econ_crt_slider_left
+				position = { x = 9 y = 11 }
+				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_decrease_tt
 			}
 			buttonType = {
-				name = "construction_manpower_increase"
-				spriteType = "GFX_econ_crt_slider_right"
-				position = { x = 312 y = 12 }
-				centerposition = yes
+				name = construction_manpower_increase
+				quadTextureSprite = GFX_econ_crt_slider_right
+				position = { x = 169 y = 11 }
+				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_increase_tt
 			}
 		}
 
 		iconType = {
-			name = "construction_project_image"
-			spriteType = "GFX_GSA_kanton_shenkansen_research"
-			position = { x = 720 y = -60 }
+			name = construction_project_image
+			spriteType = GFX_GSA_kanton_shenkansen_research
+			position = { x = 766 y = -46 }
 			alwaystransparent = yes
 		}
-
 	}
 }

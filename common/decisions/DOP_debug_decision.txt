@@ -479,6 +479,50 @@ GNG_debug_category = {
 		allowed = { original_tag = GNG }
 		icon = GFX_decision_GNG_generic
 		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
-		complete_effect = { DOP_construction_monthly_tick = yes }
+		complete_effect = { DOP_construction_weekly_tick = yes }
+	}
+	GNG_dop_debug_construction_speed_add_plus = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+			set_temp_variable = { DOP_construction_value = 250 }
+			DOP_construction_add_speed_add = yes
+		}
+	}
+	GNG_dop_debug_construction_speed_add_minus = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+			set_temp_variable = { DOP_construction_value = -250 }
+			DOP_construction_add_speed_add = yes
+		}
+	}
+	GNG_dop_debug_construction_speed_factor_plus = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+			set_temp_variable = { DOP_construction_value = 0.1 }
+			DOP_construction_add_speed_factor = yes
+		}
+	}
+	GNG_dop_debug_construction_speed_factor_minus = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = {
+			set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+			set_temp_variable = { DOP_construction_value = -0.1 }
+			DOP_construction_add_speed_factor = yes
+		}
 	}
 }

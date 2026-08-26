@@ -3,12 +3,30 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					has_country_flag = DOP_construction_initialized
+					NOT = { has_country_flag = DOP_construction_dynamic_v3_initialized }
+				}
+				DOP_construction_migrate_dynamic_v3 = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = DOP_construction_initialized
+					NOT = { has_country_flag = DOP_construction_dynamic_v4_initialized }
+				}
+				DOP_construction_migrate_dynamic_v4 = yes
+			}
+			if = {
+				limit = {
 					check_variable = { GNG_GSA_research_on_now > 0 }
 				}
                 add_to_variable = { GNG_GSA_research_progress = GNG_GSA_research_speed_percent }
 				if = {
 					limit = {
-						check_variable = { GNG_GSA_research_progress >= 100 }
+						check_variable = {
+							var = GNG_GSA_research_progress
+							value = 100
+							compare = greater_than_or_equals
+						}
 					}
 					GSA_research_complete_effects = yes
 					set_variable = { GNG_GSA_research_on_now = 0 }
@@ -18,12 +36,12 @@ on_actions = {
 			}
 		}
 	}
-    on_monthly = {
-        effect = {
-            if = {
-                limit = { has_country_flag = DOP_construction_initialized }
-                DOP_construction_monthly_tick = yes
-            }
-        }
-    }
+	on_weekly = {
+		effect = {
+			if = {
+				limit = { has_country_flag = DOP_construction_initialized }
+				DOP_construction_weekly_tick = yes
+			}
+		}
+	}
 }

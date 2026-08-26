@@ -3,25 +3,39 @@ scripted_gui = {
 		window_name = "DOP_construction_base_container"
 		context_type = player_context
 		parent_window_name = powerbalanceview
-		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPConstruction } }
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPConstruction }
+		}
 		ai_enabled = { always = no }
+
+		dynamic_lists = {
+			construction_region_grid = {
+				array = DOP_construction_region_ids
+				index = DOP_construction_region_list_index
+				value = DOP_construction_region_id
+				change_scope = no
+				entry_container = DOP_construction_region_entry
+			}
+		}
+		dynamic_lists = {
+			construction_project_grid = {
+				array = DOP_construction_visible_projects
+				index = DOP_construction_project_list_index
+				value = DOP_construction_project_id
+				change_scope = no
+				entry_container = DOP_construction_project_entry
+			}
+		}
+
 		effects = {
-			construction_project_1_click = { DOP_construction_select_1 = yes }
-			construction_project_2_click = { DOP_construction_select_2 = yes }
-			construction_project_3_click = { DOP_construction_select_3 = yes }
-			construction_project_4_click = { DOP_construction_select_4 = yes }
-			construction_project_5_click = { DOP_construction_select_5 = yes }
-			construction_project_6_click = { DOP_construction_select_6 = yes }
-			construction_project_7_click = { DOP_construction_select_7 = yes }
-			construction_project_8_click = { DOP_construction_select_8 = yes }
-			construction_project_9_click = { DOP_construction_select_9 = yes }
-			construction_project_10_click = { DOP_construction_select_10 = yes }
-			construction_project_11_click = { DOP_construction_select_11 = yes }
-			construction_project_12_click = { DOP_construction_select_12 = yes }
-			construction_project_13_click = { DOP_construction_select_13 = yes }
-			construction_project_14_click = { DOP_construction_select_14 = yes }
-			construction_project_15_click = { DOP_construction_select_15 = yes }
-			construction_project_16_click = { DOP_construction_select_16 = yes }
+			construction_region_entry_button_click = {
+				set_variable = { DOP_construction_selected_region = DOP_construction_region_id }
+				DOP_construction_rebuild_visible_projects = yes
+			}
+			construction_project_entry_button_click = {
+				set_variable = { DOP_construction_selected = DOP_construction_project_id }
+				DOP_construction_sync_selected = yes
+			}
 			construction_funding_decrease_click = { DOP_construction_selected_funding_decrease = yes }
 			construction_funding_increase_click = { DOP_construction_selected_funding_increase = yes }
 			construction_funding_decrease_control_click = { DOP_construction_selected_funding_minimum = yes }
@@ -31,26 +45,23 @@ scripted_gui = {
 			construction_manpower_decrease_control_click = { DOP_construction_selected_manpower_minimum = yes }
 			construction_manpower_increase_control_click = { DOP_construction_selected_manpower_maximum = yes }
 		}
+
 		properties = {
-			construction_main_progress = { frame = var:DOP_construction_selected_percent }
-			construction_funding_dot = { x = DOP_construction_funding_thumb_x }
-			construction_manpower_dot = { x = DOP_construction_manpower_thumb_x }
-			construction_project_1_progress = { frame = var:DOP_construction_sky_tower_percent }
-			construction_project_2_progress = { frame = var:DOP_construction_rose_garden_percent }
-			construction_project_3_progress = { frame = var:DOP_construction_alice_dream_factory_percent }
-			construction_project_4_progress = { frame = var:DOP_construction_daya_bay_nuclear_plant_percent }
-			construction_project_5_progress = { frame = var:DOP_construction_guangdong_shinkansen_percent }
-			construction_project_6_progress = { frame = var:DOP_construction_chaoshan_university_percent }
-			construction_project_7_progress = { frame = var:DOP_construction_xinfengjiang_reservoir_percent }
-			construction_project_8_progress = { frame = var:DOP_construction_luoding_granary_percent }
-			construction_project_9_progress = { frame = var:DOP_construction_pinglu_canal_percent }
-			construction_project_10_progress = { frame = var:DOP_construction_south_china_sea_drilling_platform_percent }
-			construction_project_11_progress = { frame = var:DOP_construction_wenchang_space_center_percent }
-			construction_project_12_progress = { frame = var:DOP_construction_guangxi_industrial_institute_percent }
-			construction_project_13_progress = { frame = var:DOP_construction_guangxi_expressway_network_percent }
-			construction_project_14_progress = { frame = var:DOP_construction_nanyue_folk_memorial_park_percent }
-			construction_project_15_progress = { frame = var:DOP_construction_lijiang_waterway_percent }
-			construction_project_16_progress = { frame = var:DOP_construction_honghe_fan_asia_friendship_pass_percent }
+			construction_main_progress = {
+				frame = DOP_construction_selected_percent
+			}
+			construction_funding_dot = {
+				x = DOP_construction_funding_thumb_x
+			}
+			construction_manpower_dot = {
+				x = DOP_construction_manpower_thumb_x
+			}
+			construction_project_entry_progress = {
+				frame = DOP_construction_percent^DOP_construction_project_id
+			}
+			construction_project_image = {
+				image = "GFX_[?DOP_construction_selected_image.GetTokenKey]"
+			}
 		}
 	}
 }
