@@ -26,15 +26,49 @@ scripted_gui = {
 				entry_container = DOP_construction_project_entry
 			}
 		}
+		dynamic_lists = {
+			DOP_construction_funding_set_buttons = {
+				array = DOP_construction_slider_set_indices
+				index = DOP_construction_funding_set_list_index
+				value = DOP_construction_funding_set_index
+				change_scope = no
+				entry_container = DOP_construction_funding_set_button_entry
+			}
+		}
+		dynamic_lists = {
+			DOP_construction_manpower_set_buttons = {
+				array = DOP_construction_slider_set_indices
+				index = DOP_construction_manpower_set_list_index
+				value = DOP_construction_manpower_set_index
+				change_scope = no
+				entry_container = DOP_construction_manpower_set_button_entry
+			}
+		}
 
 		effects = {
 			construction_region_entry_button_click = {
 				set_variable = { DOP_construction_selected_region = DOP_construction_region_id }
 				DOP_construction_rebuild_visible_projects = yes
+				log = "[GetDateText]: [Root.GetName]: DOP construction region selected [?DOP_construction_selected_region]"
 			}
 			construction_project_entry_button_click = {
 				set_variable = { DOP_construction_selected = DOP_construction_project_id }
 				DOP_construction_sync_selected = yes
+				log = "[GetDateText]: [Root.GetName]: DOP construction project selected [?DOP_construction_selected]"
+			}
+			DOP_construction_funding_set_button_click = {
+				set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+				set_temp_variable = { DOP_construction_value = DOP_construction_funding_set_index }
+				multiply_temp_variable = { DOP_construction_value = 1.5 }
+				add_to_temp_variable = { DOP_construction_value = 10 }
+				DOP_construction_set_funding = yes
+			}
+			DOP_construction_manpower_set_button_click = {
+				set_temp_variable = { DOP_construction_target_project = DOP_construction_selected }
+				set_temp_variable = { DOP_construction_value = DOP_construction_manpower_set_index }
+				multiply_temp_variable = { DOP_construction_value = 1.5 }
+				add_to_temp_variable = { DOP_construction_value = 10 }
+				DOP_construction_set_manpower = yes
 			}
 			construction_funding_decrease_click = { DOP_construction_selected_funding_decrease = yes }
 			construction_funding_increase_click = { DOP_construction_selected_funding_increase = yes }

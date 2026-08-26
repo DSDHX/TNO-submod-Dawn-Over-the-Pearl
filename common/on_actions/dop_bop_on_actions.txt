@@ -17,6 +17,28 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					has_country_flag = DOP_construction_initialized
+					NOT = { has_country_flag = DOP_construction_dynamic_v5_initialized }
+				}
+				DOP_construction_migrate_dynamic_v5 = yes
+			}
+			if = {
+				limit = { has_country_flag = DOP_construction_initialized }
+				add_to_variable = { DOP_construction_weekly_counter = 1 }
+				if = {
+					limit = {
+						check_variable = {
+							var = DOP_construction_weekly_counter
+							value = 7
+							compare = greater_than_or_equals
+						}
+					}
+					subtract_from_variable = { DOP_construction_weekly_counter = 7 }
+					DOP_construction_weekly_tick = yes
+				}
+			}
+			if = {
+				limit = {
 					check_variable = { GNG_GSA_research_on_now > 0 }
 				}
                 add_to_variable = { GNG_GSA_research_progress = GNG_GSA_research_speed_percent }
@@ -33,14 +55,6 @@ on_actions = {
 					set_variable = { GNG_GSA_research_progress = 0 }
 					log = "GNG:Research complete for [?GNG_GSA_research_on_now]"
 				}
-			}
-		}
-	}
-	on_weekly = {
-		effect = {
-			if = {
-				limit = { has_country_flag = DOP_construction_initialized }
-				DOP_construction_weekly_tick = yes
 			}
 		}
 	}

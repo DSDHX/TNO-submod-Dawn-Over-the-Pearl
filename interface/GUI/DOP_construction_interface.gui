@@ -6,19 +6,19 @@ guiTypes = {
 		buttonType = {
 			name = construction_region_entry_button
 			position = { x = 0 y = 0 }
-			size = { width = 160 height = 28 }
+			size = { x = 160 y = 28 }
 			quadTextureSprite = GFX_tiled_window_transparent
 			pdx_tooltip = DOP_construction_region_entry_tt
 			clicksound = click_default
 		}
 		instantTextBoxType = {
 			name = construction_region_entry_label
-			position = { x = 8 y = 3 }
+			position = { x = 0 y = 3 }
 			font = aldrich_18_outline
 			text = DOP_construction_region_entry_name
-			maxWidth = 144
+			maxWidth = 160
 			maxHeight = 22
-			format = left
+			format = center
 			fixedsize = yes
 			alwaystransparent = yes
 		}
@@ -37,21 +37,49 @@ guiTypes = {
 		buttonType = {
 			name = construction_project_entry_button
 			position = { x = 0 y = 3 }
-			size = { width = 160 height = 24 }
+			size = { x = 160 y = 24 }
 			quadTextureSprite = GFX_tiled_window_transparent
 			pdx_tooltip = DOP_construction_project_entry_tt
 			clicksound = click_default
 		}
 		instantTextBoxType = {
 			name = construction_project_entry_label
-			position = { x = 7 y = 5 }
+			position = { x = 0 y = 5 }
 			font = aldrich_14_outline
 			text = DOP_construction_project_entry_name
-			maxWidth = 146
+			maxWidth = 160
 			maxHeight = 20
-			format = left
+			format = center
 			fixedsize = yes
 			alwaystransparent = yes
+		}
+	}
+
+	# The economy GUI implements track selection with a dense grid of invisible
+	# buttons. These two entry containers mirror that pattern for the two inputs.
+	containerWindowType = {
+		name = DOP_construction_funding_set_button_entry
+		position = { x = 0 y = 0 }
+		size = { width = 3 height = 18 }
+		buttonType = {
+			name = DOP_construction_funding_set_button
+			position = { x = 0 y = 0 }
+			spriteType = GFX_econ_crt_slider_set_transparent
+			pdx_tooltip = DOP_construction_slider_set_tt
+			clicksound = click_scroll
+		}
+	}
+
+	containerWindowType = {
+		name = DOP_construction_manpower_set_button_entry
+		position = { x = 0 y = 0 }
+		size = { width = 3 height = 18 }
+		buttonType = {
+			name = DOP_construction_manpower_set_button
+			position = { x = 0 y = 0 }
+			spriteType = GFX_econ_crt_slider_set_transparent
+			pdx_tooltip = DOP_construction_slider_set_tt
+			clicksound = click_scroll
 		}
 	}
 
@@ -166,14 +194,13 @@ guiTypes = {
 		iconType = {
 			name = construction_main_progress
 			spriteType = GFX_DOP_construction_main_progress
-			position = { x = 260 y = 150 }
-			scale = 0.58
+			position = { x = 244 y = 150 }
 			pdx_tooltip = DOP_construction_main_progress_tt
 			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = construction_status
-			position = { x = 255 y = 188 }
+			position = { x = 239 y = 180 }
 			font = aldrich_18_outline
 			text = DOP_construction_selected_status
 			maxWidth = 260
@@ -184,7 +211,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = construction_description_scroll
-			position = { x = 255 y = 218 }
+			position = { x = 239 y = 210 }
 			size = { width = 260 height = 150 }
 			verticalScrollbar = right_vertical_slider
 			clipping = yes
@@ -202,11 +229,11 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = construction_numbers
-			position = { x = 550 y = 218 }
+			position = { x = 524 y = 150 }
 			font = aldrich_16_outline
 			text = DOP_construction_selected_numbers
-			maxWidth = 185
-			maxHeight = 150
+			maxWidth = 210
+			maxHeight = 155
 			format = left
 			fixedsize = yes
 			alwaystransparent = yes
@@ -214,10 +241,10 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = construction_funding_label
-			position = { x = 540 y = 375 }
+			position = { x = 524 y = 315 }
 			font = aldrich_14_outline
 			text = DOP_construction_funding_label
-			maxWidth = 205
+			maxWidth = 210
 			maxHeight = 24
 			format = center
 			fixedsize = yes
@@ -225,7 +252,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = construction_funding_slider
-			position = { x = 550 y = 405 }
+			position = { x = 531 y = 345 }
 			size = { width = 185 height = 36 }
 			clipping = no
 			iconType = {
@@ -256,14 +283,21 @@ guiTypes = {
 				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_increase_tt
 			}
+			gridboxtype = {
+				name = DOP_construction_funding_set_buttons
+				position = { x = 19 y = 8 }
+				size = { width = 138 height = 18 }
+				slotsize = { width = 2.25 height = 18 }
+				add_horizontal = yes
+			}
 		}
 
 		instantTextBoxType = {
 			name = construction_manpower_label
-			position = { x = 540 y = 455 }
+			position = { x = 524 y = 405 }
 			font = aldrich_14_outline
 			text = DOP_construction_manpower_label
-			maxWidth = 205
+			maxWidth = 210
 			maxHeight = 24
 			format = center
 			fixedsize = yes
@@ -271,7 +305,7 @@ guiTypes = {
 		}
 		containerWindowType = {
 			name = construction_manpower_slider
-			position = { x = 550 y = 485 }
+			position = { x = 531 y = 435 }
 			size = { width = 185 height = 36 }
 			clipping = no
 			iconType = {
@@ -301,6 +335,13 @@ guiTypes = {
 				position = { x = 169 y = 11 }
 				scale = 0.72
 				pdx_tooltip = DOP_construction_slider_increase_tt
+			}
+			gridboxtype = {
+				name = DOP_construction_manpower_set_buttons
+				position = { x = 19 y = 8 }
+				size = { width = 138 height = 18 }
+				slotsize = { width = 2.25 height = 18 }
+				add_horizontal = yes
 			}
 		}
 

@@ -20,6 +20,10 @@ TOKENS_BEGIN = "# BEGIN GENERATED CONSTRUCTION TOKENS"
 TOKENS_END = "# END GENERATED CONSTRUCTION TOKENS"
 EVENT_DISPATCH_BEGIN = "# BEGIN GENERATED CONSTRUCTION EVENT DISPATCH"
 EVENT_DISPATCH_END = "# END GENERATED CONSTRUCTION EVENT DISPATCH"
+REGION_LIST_BEGIN = "# BEGIN GENERATED CONSTRUCTION REGION LISTS"
+REGION_LIST_END = "# END GENERATED CONSTRUCTION REGION LISTS"
+CLEAR_FLAGS_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR FLAGS"
+CLEAR_FLAGS_END = "# END GENERATED CONSTRUCTION CLEAR FLAGS"
 CALLBACK_END = "# END GENERATED COMPLETION CALLBACKS"
 PLACEHOLDER_IMAGE = "GSA_kanton_shenkansen_research"
 
@@ -179,13 +183,45 @@ def render_tokens() -> list[str]:
 
 
 def render_event_dispatch() -> list[str]:
-    return [
-        (
-            "if = { limit = { check_variable = { "
-            f"DOP_construction_completed_event_id = {project.completion_event_id} "
-            "} } country_event = { id = "
-            f"DOP_GNG_construction.{project.completion_event_id} days = 1 }} }}"
+    lines: list[str] = []
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "if = {",
+                "\tlimit = { check_variable = { "
+                f"DOP_construction_completed_event_id = {project.completion_event_id} }} }}",
+                f"\tset_country_flag = DOP_construction_{project.slug}_completed",
+                f"\tDOP_construction_{project.slug}_completion_effect = yes",
+                f"\tcountry_event = {{ id = DOP_GNG_construction.{project.completion_event_id} days = 1 }}",
+                "}",
+            ]
         )
+    return lines
+
+
+def render_region_lists() -> list[str]:
+    region_id = {region.slug: region.id for region in REGIONS}
+    lines: list[str] = []
+    for region in REGIONS:
+        lines.extend(
+            [
+                "if = {",
+                "\tlimit = { check_variable = { "
+                f"DOP_construction_selected_region = {region.id} }} }}",
+            ]
+        )
+        for project in PROJECTS:
+            if region_id[project.region] == region.id:
+                lines.append(
+                    f"\tadd_to_array = {{ DOP_construction_visible_projects = {project.id} }}"
+                )
+        lines.append("}")
+    return lines
+
+
+def render_clear_flags() -> list[str]:
+    return [
+        f"clr_country_flag = DOP_construction_{project.slug}_completed"
         for project in PROJECTS
     ]
 
@@ -260,6 +296,20 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
         EVENT_DISPATCH_BEGIN,
         EVENT_DISPATCH_END,
         render_event_dispatch(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        REGION_LIST_BEGIN,
+        REGION_LIST_END,
+        render_region_lists(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        CLEAR_FLAGS_BEGIN,
+        CLEAR_FLAGS_END,
+        render_clear_flags(),
         newline,
     )
     effects = ensure_callbacks(effects, newline)

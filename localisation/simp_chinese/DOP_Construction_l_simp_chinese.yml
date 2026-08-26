@@ -25,6 +25,7 @@
  DOP_construction_main_progress_tt:0 "每周实际速度 =（基础速度 + 额外速度）× 基准速度倍率 × 额外速度倍率。\n基准速度倍率 =（资金投入 + 人力投入）÷ 100。"
  DOP_construction_slider_decrease_tt:0 "点击降低 5%。按住 Ctrl 点击直接降至当前下限。"
  DOP_construction_slider_increase_tt:0 "点击提高 5%。按住 Ctrl 点击直接升至当前上限。"
+ DOP_construction_slider_set_tt:0 "点击轨道直接设定投入；也可按住鼠标沿轨道移动后释放。"
  DOP_construction_project_name_1:0 "白鹅新区晴空塔"
  DOP_construction_project_desc_1:0 "广佛同城之后的新核心区——这个世界的珠江新城与广州塔。"
  DOP_construction_project_region_1:0 "珠三角"
