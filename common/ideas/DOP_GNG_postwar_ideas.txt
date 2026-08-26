@@ -1,0 +1,157 @@
+ideas = {
+	country = {
+		DOP_GNG_first_national_crisis = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_state_path
+		}
+		DOP_GNG_lingnan_spring = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_silicon_years
+		}
+		DOP_GNG_status_lee = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_state_path
+		}
+		DOP_GNG_status_ibuka = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_ibuka_path
+		}
+		DOP_GNG_status_finance = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_hitachi_path
+		}
+		DOP_GNG_status_1962 = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_martial_law
+		}
+		DOP_GNG_status_second_riot = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_the_guangdong_riots
+		}
+		DOP_GNG_security_southwest_war = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_security_the_militarized_state
+		}
+		DOP_GNG_security_postwar = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_security_transitional_security_apparatus
+		}
+		DOP_GNG_security_reformed = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_security_the_guangdong_network
+		}
+		DOP_GNG_integrity_waltz = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_fiscal_sound
+		}
+		DOP_GNG_integrity_chorus = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_fiscal_caution
+		}
+		DOP_GNG_integrity_dissonance = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_fiscal_warning
+		}
+		DOP_GNG_integrity_chaos = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_fiscal_emergency
+		}
+		DOP_GNG_identity_initial = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_between_two_worlds
+		}
+		DOP_GNG_identity_dual = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_state_path
+		}
+		DOP_GNG_identity_zhujin = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_state_path
+		}
+		DOP_GNG_wartime_triangle = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_yasuda_crisis
+		}
+		DOP_GNG_strangle_guerrillas = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_security_blunt_force_policing
+			modifier = {
+				resistance_damage_to_garrison = -0.15
+				army_defence_factor = 0.10
+			}
+		}
+		DOP_GNG_civil_priority = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_silicon_years
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+		DOP_GNG_civil_priority_supply = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_silicon_years
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				attrition = -0.05
+				max_organisation_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+		DOP_GNG_military_priority = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_south_china_area_army
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.10
+				industrial_capacity_factory = 0.20
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+		DOP_GNG_military_priority_industry = {
+			allowed = { original_tag = GNG }
+			removal_cost = -1
+			picture = GNG_south_china_area_army
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.10
+				industrial_capacity_factory = 0.25
+				production_factory_efficiency_gain_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+	}
+}

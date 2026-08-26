@@ -7,7 +7,7 @@ focus_tree = {
 # 风雨飘摇的时代：
 shared_focus = {
     id = DOP_GNG_year_of_the_rain
-    icon = DOP_GNG_year_of_the_rain_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     x = 0
     y = 0
     cost = 3.000
@@ -21,7 +21,7 @@ shared_focus = {
 # 拨云见日：
 shared_focus = {
     id = DOP_GNG_res_from_oc
-    icon = DOP_GNG_res_from_oc_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -4
     y = 1
@@ -37,7 +37,7 @@ shared_focus = {
 # 重连经济网：
 shared_focus = {
     id = DOP_GNG_regen_econ
-    icon = DOP_GNG_regen_econ_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -2
     y = 2
@@ -53,7 +53,7 @@ shared_focus = {
 # 全球的残垣断壁：
 shared_focus = {
     id = DOP_GNG_wrecking_world
-    icon = DOP_GNG_wrecking_world_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -6
     y = 2
@@ -69,7 +69,7 @@ shared_focus = {
 # 暴乱的尾声：
 shared_focus = {
     id = DOP_GNG_deal_w_labors
-    icon = DOP_GNG_deal_w_labors_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -4
     y = 4
@@ -94,7 +94,7 @@ shared_focus = {
 # 诱之以利：
 shared_focus = {
     id = DOP_GNG_more_jobs
-    icon = DOP_GNG_more_jobs_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -5
     y = 5
@@ -110,7 +110,7 @@ shared_focus = {
 # 动之以情：
 shared_focus = {
     id = DOP_GNG_legal_compromise
-    icon = DOP_GNG_legal_compromise_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -3
     y = 5
@@ -126,7 +126,7 @@ shared_focus = {
 # 广东失业救济法：
 shared_focus = {
     id = DOP_GNG_save_unemp
-    icon = DOP_GNG_save_unemp_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -3
     y = 6
@@ -147,7 +147,7 @@ shared_focus = {
 # 石油自主化计划：
 shared_focus = {
     id = DOP_GNG_maoming_ins
-    icon = DOP_GNG_maoming_ins_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -5
     y = 6
@@ -168,7 +168,7 @@ shared_focus = {
 # 环泰国湾经济合作：
 shared_focus = {
     id = DOP_GNG_pan_thai_bay
-    icon = DOP_GNG_pan_thai_bay_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -7
     y = 3
@@ -184,7 +184,7 @@ shared_focus = {
 # 跨越太平洋的朋友：
 shared_focus = {
     id = DOP_GNG_gd_mex_col
-    icon = DOP_GNG_gd_mex_col_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -5
     y = 3
@@ -200,7 +200,7 @@ shared_focus = {
 # 索尼，以旧换新：
 shared_focus = {
     id = DOP_GNG_expand_d
-    icon = DOP_GNG_expand_d_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -3
     y = 3
@@ -216,7 +216,7 @@ shared_focus = {
 # 翻热股市：
 shared_focus = {
     id = DOP_GNG_lower_barrier
-    icon = DOP_GNG_lower_barrier_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = -1
     y = 3
@@ -232,7 +232,7 @@ shared_focus = {
 # 正当防卫：
 shared_focus = {
     id = DOP_GNG_rightous_def
-    icon = DOP_GNG_rightous_def_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 2
     y = 1
@@ -248,7 +248,7 @@ shared_focus = {
 # 警务处再武装化：
 shared_focus = {
     id = DOP_GNG_rearm_pol
-    icon = DOP_GNG_rearm_pol_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 1
     y = 2
@@ -264,7 +264,7 @@ shared_focus = {
 # 共荣圈情报协作：
 shared_focus = {
     id = DOP_GNG_cps_info_co
-    icon = DOP_GNG_cps_info_co_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 3
     y = 2
@@ -280,7 +280,7 @@ shared_focus = {
 # 充实对策部队：
 shared_focus = {
     id = DOP_GNG_fill_resp_troops
-    icon = DOP_GNG_fill_resp_troops_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 1
     y = 3
@@ -296,7 +296,7 @@ shared_focus = {
 # 重审《地位协定》：
 shared_focus = {
     id = DOP_GNG_reiterate_our_pos
-    icon = DOP_GNG_reiterate_our_pos_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 3
     y = 3
@@ -312,7 +312,7 @@ shared_focus = {
 # 袭扰与阻滞：
 shared_focus = {
     id = DOP_GNG_army_of_gadfly
-    icon = DOP_GNG_army_of_gadfly_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 2
     y = 4
@@ -331,7 +331,7 @@ shared_focus = {
 # 新的十字路口：
 shared_focus = {
     id = DOP_GNG_faux_opening
-    icon = DOP_GNG_faux_opening_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_year_of_the_rain
     x = 0
     y = 7

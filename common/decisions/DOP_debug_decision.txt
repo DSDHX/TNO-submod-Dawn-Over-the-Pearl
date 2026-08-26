@@ -463,4 +463,22 @@ GNG_debug_category = {
 			}
 		}
 	}
+	GNG_dop_debug_enable_BOP_Construction = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions NOT = { has_country_flag = DOP_construction_tab_enabled } }
+		complete_effect = { GNG_BOP_Construction_Initialize = yes }
+	}
+	GNG_dop_debug_reset_construction = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_tab_enabled }
+		complete_effect = { DOP_construction_reset = yes }
+	}
+	GNG_dop_debug_tick_construction = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		complete_effect = { DOP_construction_monthly_tick = yes }
+	}
 }

@@ -1,0 +1,649 @@
+# Generated from 事件.zip by tools/import_dop_zip.py.
+# Only explicitly annotated effects are scripted.
+add_namespace = DOP_GNG_zip
+
+country_event = {
+    id = DOP_GNG_zip.1
+    title = DOP_GNG_zip.1.t
+    desc = DOP_GNG_zip.1.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.1.a1
+        custom_effect_tooltip = DOP_GNG_zip.1.a1.tt
+        country_event = { id = DOP_GNG_zip.4 days = 1 }
+    }
+
+    option = {
+        name = DOP_GNG_zip.1.a2
+        custom_effect_tooltip = DOP_GNG_zip.1.a2.tt
+        country_event = { id = DOP_GNG_zip.2 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.2
+    title = DOP_GNG_zip.2.t
+    desc = DOP_GNG_zip.2.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.2.a1
+        country_event = { id = DOP_GNG_zip.3 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.3
+    title = DOP_GNG_zip.3.t
+    desc = DOP_GNG_zip.3.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.3.a1
+        country_event = { id = DOP_GNG_zip.4 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.4
+    title = DOP_GNG_zip.4.t
+    desc = DOP_GNG_zip.4.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.4.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.5
+    title = DOP_GNG_zip.5.t
+    desc = DOP_GNG_zip.5.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.5.a1
+        custom_effect_tooltip = DOP_GNG_zip.5.a1.tt
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.6
+    title = DOP_GNG_zip.6.t
+    desc = DOP_GNG_zip.6.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.6.a1
+        custom_effect_tooltip = DOP_GNG_zip.6.a1.tt
+        set_temp_variable = { GNG_legco_faction_temp = 3 }
+        set_temp_variable = { GNG_legco_seat_temp = 2 }
+        GNG_change_legco_seats = yes
+        set_temp_variable = { GNG_legco_faction_temp = 6 }
+        set_temp_variable = { GNG_legco_seat_temp = 2 }
+        GNG_change_legco_seats = yes
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.7
+    title = DOP_GNG_zip.7.t
+    desc = DOP_GNG_zip.7.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.7.a1
+        country_event = { id = DOP_GNG_zip.8 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.8
+    title = DOP_GNG_zip.8.t
+    desc = DOP_GNG_zip.8.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.8.a1
+        country_event = { id = DOP_GNG_zip.9 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.9
+    title = DOP_GNG_zip.9.t
+    desc = DOP_GNG_zip.9.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.9.a1
+        custom_effect_tooltip = DOP_GNG_zip.9.a1.tt
+        set_temp_variable = { GNG_legco_faction_temp = 3 }
+        set_temp_variable = { GNG_legco_seat_temp = -3 }
+        GNG_change_legco_seats = yes
+        set_temp_variable = { GNG_legco_faction_temp = 6 }
+        set_temp_variable = { GNG_legco_seat_temp = 3 }
+        GNG_change_legco_seats = yes
+        country_event = { id = DOP_GNG_zip.10 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.10
+    title = DOP_GNG_zip.10.t
+    desc = DOP_GNG_zip.10.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.10.a1
+        custom_effect_tooltip = DOP_GNG_zip.10.a1.tt
+        set_temp_variable = { GNG_legco_faction_temp = 3 }
+        set_temp_variable = { GNG_legco_seat_temp = -7 }
+        GNG_change_legco_seats = yes
+        set_temp_variable = { GNG_legco_faction_temp = 4 }
+        set_temp_variable = { GNG_legco_seat_temp = 3 }
+        GNG_change_legco_seats = yes
+        set_temp_variable = { GNG_legco_faction_temp = 5 }
+        set_temp_variable = { GNG_legco_seat_temp = 2 }
+        GNG_change_legco_seats = yes
+        set_temp_variable = { GNG_legco_faction_temp = 7 }
+        set_temp_variable = { GNG_legco_seat_temp = 2 }
+        GNG_change_legco_seats = yes
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.11
+    title = DOP_GNG_zip.11.t
+    desc = DOP_GNG_zip.11.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.11.a1
+        custom_effect_tooltip = DOP_GNG_zip.11.a1.tt
+        country_event = { id = DOP_GNG_zip.12 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.12
+    title = DOP_GNG_zip.12.t
+    desc = DOP_GNG_zip.12.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.12.a1
+        custom_effect_tooltip = DOP_GNG_zip.12.a1.tt
+        country_event = { id = DOP_GNG_zip.13 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.13
+    title = DOP_GNG_zip.13.t
+    desc = DOP_GNG_zip.13.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.13.a1
+        custom_effect_tooltip = DOP_GNG_zip.13.a1.tt
+        country_event = { id = DOP_GNG_zip.14 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.14
+    title = DOP_GNG_zip.14.t
+    desc = DOP_GNG_zip.14.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.14.a1
+        country_event = { id = DOP_GNG_zip.15 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.15
+    title = DOP_GNG_zip.15.t
+    desc = DOP_GNG_zip.15.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.15.a1
+        country_event = { id = DOP_GNG_zip.16 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.16
+    title = DOP_GNG_zip.16.t
+    desc = DOP_GNG_zip.16.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.16.a1
+        custom_effect_tooltip = DOP_GNG_zip.16.a1.tt
+        for_each_loop = {
+            array = GNG_states_list
+            GNG_japanese_pop_change = -7.5
+            GNG_chinese_pop_change = -7.5
+            GNG_japanese_app_change = -2.5
+            GNG_zhujin_app_change = -2.5
+            GNG_chinese_app_change = -5
+        }
+        country_event = { id = DOP_GNG_zip.17 days = 2 }
+        country_event = { id = DOP_GNG_zip.18 days = 4 }
+        country_event = { id = DOP_GNG_zip.19 days = 6 }
+        country_event = { id = DOP_GNG_zip.20 days = 8 }
+        country_event = { id = DOP_GNG_zip.21 days = 10 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.17
+    title = DOP_GNG_zip.17.t
+    desc = DOP_GNG_zip.17.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.17.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.18
+    title = DOP_GNG_zip.18.t
+    desc = DOP_GNG_zip.18.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.18.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.19
+    title = DOP_GNG_zip.19.t
+    desc = DOP_GNG_zip.19.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.19.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.20
+    title = DOP_GNG_zip.20.t
+    desc = DOP_GNG_zip.20.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.20.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.21
+    title = DOP_GNG_zip.21.t
+    desc = DOP_GNG_zip.21.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.21.a1
+        country_event = { id = DOP_GNG_zip.22 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.22
+    title = DOP_GNG_zip.22.t
+    desc = DOP_GNG_zip.22.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.22.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.23
+    title = DOP_GNG_zip.23.t
+    desc = DOP_GNG_zip.23.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.23.a1
+        country_event = { id = DOP_GNG_zip.24 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.24
+    title = DOP_GNG_zip.24.t
+    desc = DOP_GNG_zip.24.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.24.a1
+        country_event = { id = DOP_GNG_zip.25 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.25
+    title = DOP_GNG_zip.25.t
+    desc = DOP_GNG_zip.25.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.25.a1
+        country_event = { id = DOP_GNG_zip.26 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.26
+    title = DOP_GNG_zip.26.t
+    desc = DOP_GNG_zip.26.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.26.a1
+        country_event = { id = DOP_GNG_zip.27 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.27
+    title = DOP_GNG_zip.27.t
+    desc = DOP_GNG_zip.27.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.27.a1
+        country_event = { id = DOP_GNG_zip.28 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.28
+    title = DOP_GNG_zip.28.t
+    desc = DOP_GNG_zip.28.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.28.a1
+        country_event = { id = DOP_GNG_zip.29 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.29
+    title = DOP_GNG_zip.29.t
+    desc = DOP_GNG_zip.29.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.29.a1
+        country_event = { id = DOP_GNG_zip.30 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.30
+    title = DOP_GNG_zip.30.t
+    desc = DOP_GNG_zip.30.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.30.a1
+        country_event = { id = DOP_GNG_zip.31 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.31
+    title = DOP_GNG_zip.31.t
+    desc = DOP_GNG_zip.31.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.31.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.32
+    title = DOP_GNG_zip.32.t
+    desc = DOP_GNG_zip.32.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.32.a1
+        country_event = { id = DOP_GNG_zip.33 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.33
+    title = DOP_GNG_zip.33.t
+    desc = DOP_GNG_zip.33.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.33.a1
+        country_event = { id = DOP_GNG_zip.34 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.34
+    title = DOP_GNG_zip.34.t
+    desc = DOP_GNG_zip.34.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.34.a1
+        country_event = { id = DOP_GNG_zip.35 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.35
+    title = DOP_GNG_zip.35.t
+    desc = DOP_GNG_zip.35.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.35.a1
+        if = {
+            limit = { check_variable = { GNG_ending_referendum = 1 } }
+            country_event = { id = DOP_GNG_zip.36 days = 1 }
+            else = { country_event = { id = DOP_GNG_zip.37 days = 1 } }
+        }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.36
+    title = DOP_GNG_zip.36.t
+    desc = DOP_GNG_zip.36.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.36.a1
+        country_event = { id = DOP_GNG_zip.38 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.37
+    title = DOP_GNG_zip.37.t
+    desc = DOP_GNG_zip.37.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.37.a1
+        country_event = { id = DOP_GNG_zip.38 days = 1 }
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.38
+    title = DOP_GNG_zip.38.t
+    desc = DOP_GNG_zip.38.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.38.a1
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.39
+    title = DOP_GNG_zip.39.t
+    desc = DOP_GNG_zip.39.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.39.a1
+        custom_effect_tooltip = DOP_GNG_zip.39.a1.tt
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.40
+    title = DOP_GNG_zip.40.t
+    desc = DOP_GNG_zip.40.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.40.a1
+        custom_effect_tooltip = DOP_GNG_zip.40.a1.tt
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.41
+    title = DOP_GNG_zip.41.t
+    desc = DOP_GNG_zip.41.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.41.a1
+        custom_effect_tooltip = DOP_GNG_zip.41.a1.tt
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.42
+    title = DOP_GNG_zip.42.t
+    desc = DOP_GNG_zip.42.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.42.a1
+        custom_effect_tooltip = DOP_GNG_zip.42.a1.tt
+    }
+
+}
+
+country_event = {
+    id = DOP_GNG_zip.43
+    title = DOP_GNG_zip.43.t
+    desc = DOP_GNG_zip.43.d
+    picture = GFX_report_event_IBR_meeting_small
+    is_triggered_only = yes
+
+    option = {
+        name = DOP_GNG_zip.43.a1
+        custom_effect_tooltip = DOP_GNG_zip.43.a1.tt
+    }
+
+}

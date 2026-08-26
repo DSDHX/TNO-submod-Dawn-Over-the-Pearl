@@ -13,7 +13,7 @@ focus_tree = {
 
 shared_focus = {
 	id = GNG_focus_samurais_kirisute_gomen #武士的无礼讨
-	icon = GFX_GNG_focus_samurais_kirisute_gomen
+	icon = GFX_GNG_focus_a_state_of_unstay
 	
 	x = 8
 	y = 0
@@ -27,7 +27,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_aftermath_of_no_confidence_vote #不信任案的余波
-    icon = GFX_GNG_focus_aftermath_of_no_confidence_vote
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_samurais_kirisute_gomen
 	x = 0
@@ -50,7 +50,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_industrial_restructing_and_antimonopoly_act #产业重组与反垄断法
-    icon = GFX_GNG_focus_industrial_restructing_and_antimonopoly_act
+    icon = GFX_GNG_focus_a_state_of_unstay
 	
 	relative_position_id = GNG_focus_aftermath_of_no_confidence_vote
 	x = 0
@@ -73,7 +73,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_tear_the_capital_and_trade_union #拆解资本与工会
-    icon = GFX_GNG_foucs_tear_the_capital_and_trade_union
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_industrial_restructing_and_antimonopoly_act
 	x = -5
@@ -105,7 +105,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_adjust_the_economic_structure #调整城乡经济结构
-    icon = GFX_GNG_focus_tear_the_capital_and_trade_union
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_tear_the_capital_and_trade_union
 	x = 0
@@ -152,7 +152,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_reduce_the_budget_of_product_cycle #削减产品周期拨款
-    icon = GFX_GNG_focus_reduce_the_budget_of_product_cycle
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_industrial_restructing_and_antimonopoly_act
 	x = -2
@@ -170,12 +170,14 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.179 days = 0 }
+
+		set_country_flag = DOP_GNG_open_product_cycle_investment
 	}
 }
 
 shared_focus = {
 	id = GNG_focus_contract_tycoon_s_political_power #压缩企业政务空间
-    icon = GFX_GNG_focus_contract_tycoon_s_political_power
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_reduce_the_budget_of_product_cycle
 	x = 0
@@ -221,7 +223,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_call_of_IJA #帝国陆军的来电
-    icon = GFX_GNG_focus_call_of_IJA
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_deal_with_security_services
 	x = 0
@@ -244,7 +246,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_meet_up_with_new_Japanese_bureaucrats #会见日裔新官僚
-    icon = GFX_GNG_focus_meet_up_with_new_Japanese_bureaucrats
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_industrial_restructing_and_antimonopoly_act
 	x = 5
@@ -302,7 +304,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_prison_of_enterprises #“各企业的监狱”
-    icon = GFX_GNG_focus_prison_of_enterprises
+    icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_aftermath_of_no_confidence_vote
 	x = 0
@@ -328,5 +330,7 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.135 days = 0 }
+
+		DOP_GNG_set_status_1962 = yes
 	}
 }

@@ -39,6 +39,13 @@ defined_text = {
 		localization_key = TNO_GSA_GUI_Title
 	}
 	text = {
+		trigger = {
+			Tag = GNG
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPConstruction }
+		}
+		localization_key = TNO_DOP_Construction_GUI_Title
+	}
+	text = {
 		localization_key = TNO_GlobalConflicts_GUI_Title
 	} 
 }

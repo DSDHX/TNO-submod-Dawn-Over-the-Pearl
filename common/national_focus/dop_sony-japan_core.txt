@@ -99,6 +99,8 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.172 days = 0 }
+
+		DOP_GNG_set_identity_dual = yes
 	}
 }
 
@@ -236,6 +238,8 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.183 days = 0 }
+
+		DOP_GNG_set_identity_zhujin = yes
 	}
 }
 
@@ -1161,7 +1165,7 @@ shared_focus = {
 
 shared_focus = {
     id = DOP_GNG_Industrial_Upgrade
-    icon = DOP_GNG_Industrial_Upgrade_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_strive_for_excellence
     x = 5
     y = 1
@@ -1177,7 +1181,7 @@ shared_focus = {
 # 城市问题：
 shared_focus = {
     id = DOP_GNG_Urban_Issue
-    icon = DOP_GNG_Urban_Issue_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -3
     y = 1
@@ -1193,7 +1197,7 @@ shared_focus = {
 # 乡村危机：
 shared_focus = {
     id = DOP_GNG_Rural_Crisis
-    icon = DOP_GNG_Rural_Crisis_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 3
     y = 1
@@ -1234,7 +1238,7 @@ shared_focus = {
 # 旅客铁道株式会社：
 shared_focus = {
     id = DOP_GNG_Passenger_Railway_Company
-    icon = DOP_GNG_Passenger_Railway_Company_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -2
     y = 2
@@ -1250,7 +1254,7 @@ shared_focus = {
 # 乡村信用银行：
 shared_focus = {
     id = DOP_GNG_Rural_Credit_Bank
-    icon = DOP_GNG_Rural_Credit_Bank_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 2
     y = 2
@@ -1266,7 +1270,7 @@ shared_focus = {
 # 新民生工程：
 shared_focus = {
     id = DOP_GNG_New_Livelihood_Project
-    icon = DOP_GNG_New_Livelihood_Project_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -3
     y = 3
@@ -1290,7 +1294,7 @@ shared_focus = {
 # 望向内陆：
 shared_focus = {
     id = DOP_GNG_Look_Inland
-    icon = DOP_GNG_Look_Inland_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 3
     y = 3
@@ -1309,7 +1313,7 @@ shared_focus = {
 # 建设公共班屋：
 shared_focus = {
     id = DOP_GNG_Public_Housing_Construction
-    icon = DOP_GNG_Public_Housing_Construction_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -3
     y = 4
@@ -1330,7 +1334,7 @@ shared_focus = {
 # 铺设血管：
 shared_focus = {
     id = DOP_GNG_Lay_Infrastructure
-    icon = DOP_GNG_Lay_Infrastructure_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 3
     y = 4
@@ -1346,7 +1350,7 @@ shared_focus = {
 # 木棉花医疗保险：
 shared_focus = {
     id = DOP_GNG_Cotton_Medical_Insurance
-    icon = DOP_GNG_Cotton_Medical_Insurance_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -5
     y = 5
@@ -1362,7 +1366,7 @@ shared_focus = {
 # 广东的新课纲：
 shared_focus = {
     id = DOP_GNG_Guangdong_New_Curriculum
-    icon = DOP_GNG_Guangdong_New_Curriculum_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -3
     y = 5
@@ -1378,7 +1382,7 @@ shared_focus = {
 # 寻找粮仓：
 shared_focus = {
     id = DOP_GNG_Seek_Granary
-    icon = DOP_GNG_Seek_Granary_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -1
     y = 5
@@ -1394,7 +1398,7 @@ shared_focus = {
 # 广州湾的另一个可能：
 shared_focus = {
     id = DOP_GNG_Other_Possibility_Guangzhou_Bay
-    icon = DOP_GNG_Other_Possibility_Guangzhou_Bay_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 1
     y = 5
@@ -1410,7 +1414,7 @@ shared_focus = {
 # 粤西的资源：
 shared_focus = {
     id = DOP_GNG_West_Guangdong_Resources
-    icon = DOP_GNG_West_Guangdong_Resources_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 3
     y = 5
@@ -1426,7 +1430,7 @@ shared_focus = {
 # 粤北的重工业：
 shared_focus = {
     id = DOP_GNG_North_Guangdong_Heavy_Industry
-    icon = DOP_GNG_North_Guangdong_Heavy_Industry_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 5
     y = 5
@@ -1442,7 +1446,7 @@ shared_focus = {
 # 富足的市民们：
 shared_focus = {
     id = DOP_GNG_Wealthy_Citizens
-    icon = DOP_GNG_Wealthy_Citizens_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = -3
     y = 6
@@ -1464,7 +1468,7 @@ shared_focus = {
 # 不只有珠三角：
 shared_focus = {
     id = DOP_GNG_Not_Only_Pearl_River_Delta
-    icon = DOP_GNG_Not_Only_Pearl_River_Delta_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 3
     y = 6
@@ -1485,7 +1489,7 @@ shared_focus = {
 
 shared_focus = {
 	id = DOP_GNG_Guangdong_Modernized
-    icon = DOP_GNG_Guangdong_Modernized_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 0
     y = 7
@@ -1504,7 +1508,7 @@ shared_focus = {
 # 新村建设：
 shared_focus = {
     id = DOP_GNG_Build_New_villages
-    icon = DOP_GNG_Build_New_villages_gfx
+    icon = GFX_GNG_focus_a_state_of_unstay
     relative_position_id = DOP_GNG_Industrial_Upgrade
     x = 4
     y = 2
@@ -1773,7 +1777,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_matsushita_in_ZS #中山的松下园区
-	icon = GFX_gal_unknown
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_t_strategy_of_tycoons
 
@@ -3669,4 +3673,15 @@ shared_focus = {
 	completion_reward = {
 	#uncompleted
 	}
+}
+
+shared_focus = {
+    id = DOP_GNG_focus_exquisite_equipment
+    icon = GFX_GNG_focus_a_state_of_unstay
+    relative_position_id = GNG_focus_level_up_equipment
+    x = 2
+    y = 1
+    prerequisite = { focus = GNG_focus_level_up_equipment }
+    cost = 1
+    completion_reward = { }
 }

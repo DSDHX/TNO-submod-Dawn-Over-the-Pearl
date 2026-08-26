@@ -1,0 +1,30 @@
+add_namespace = DOP_GNG_product_cycle
+
+country_event = {
+	id = DOP_GNG_product_cycle.1
+	title = GNG_Product_Cycle.3.t
+	desc = GNG_Product_Cycle.3.desc
+	picture = GFX_report_event_GNG_generic_engineers_2
+	is_triggered_only = yes
+
+	option = {
+		name = GNG_Product_Cycle.3.a
+		ai_chance = { factor = 1 }
+		DOP_GNG_start_product_cycle_as_sony = yes
+	}
+	option = {
+		name = GNG_Product_Cycle.3.b
+		ai_chance = { factor = 1 }
+		DOP_GNG_start_product_cycle_as_matsushita = yes
+	}
+	option = {
+		name = GNG_Product_Cycle.3.c
+		ai_chance = { factor = 1 }
+		DOP_GNG_start_product_cycle_as_fujitsu = yes
+	}
+	option = {
+		name = GNG_Product_Cycle.3.d
+		ai_chance = { factor = 1 }
+		DOP_GNG_start_product_cycle_as_hitachi = yes
+	}
+}

@@ -1,0 +1,113 @@
+add_namespace = DOP_GNG_focus_stub
+
+country_event = {
+	id = DOP_GNG_focus_stub.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.2
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.3
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.4
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.5
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.6
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.7
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.8
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.9
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.10
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.11
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.12
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.13
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.14
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.15
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_focus_stub.16
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}

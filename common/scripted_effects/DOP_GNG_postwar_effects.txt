@@ -1,0 +1,140 @@
+DOP_GNG_set_status_first_crisis = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_first_national_crisis
+}
+
+DOP_GNG_set_status_postwar = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_lingnan_spring
+}
+
+DOP_GNG_set_status_lee = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_status_lee
+}
+
+DOP_GNG_set_status_ibuka = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_status_ibuka
+}
+
+DOP_GNG_set_status_finance = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_status_finance
+}
+
+DOP_GNG_set_status_1962 = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_status_1962
+}
+
+DOP_GNG_set_status_second_riot = {
+	remove_ideas = DOP_GNG_first_national_crisis
+	remove_ideas = DOP_GNG_lingnan_spring
+	remove_ideas = DOP_GNG_status_lee
+	remove_ideas = DOP_GNG_status_ibuka
+	remove_ideas = DOP_GNG_status_finance
+	remove_ideas = DOP_GNG_status_1962
+	remove_ideas = DOP_GNG_status_second_riot
+	add_ideas = DOP_GNG_status_second_riot
+}
+
+DOP_GNG_set_security_war = {
+	remove_ideas = DOP_GNG_security_southwest_war
+	remove_ideas = DOP_GNG_security_postwar
+	remove_ideas = DOP_GNG_security_reformed
+	add_ideas = DOP_GNG_security_southwest_war
+}
+
+DOP_GNG_set_security_postwar = {
+	remove_ideas = DOP_GNG_security_southwest_war
+	remove_ideas = DOP_GNG_security_postwar
+	remove_ideas = DOP_GNG_security_reformed
+	add_ideas = DOP_GNG_security_postwar
+}
+
+DOP_GNG_set_security_reformed = {
+	remove_ideas = DOP_GNG_security_southwest_war
+	remove_ideas = DOP_GNG_security_postwar
+	remove_ideas = DOP_GNG_security_reformed
+	add_ideas = DOP_GNG_security_reformed
+}
+
+DOP_GNG_set_identity_initial = {
+	remove_ideas = DOP_GNG_identity_initial
+	remove_ideas = DOP_GNG_identity_dual
+	remove_ideas = DOP_GNG_identity_zhujin
+	add_ideas = DOP_GNG_identity_initial
+}
+
+DOP_GNG_set_identity_dual = {
+	remove_ideas = DOP_GNG_identity_initial
+	remove_ideas = DOP_GNG_identity_dual
+	remove_ideas = DOP_GNG_identity_zhujin
+	add_ideas = DOP_GNG_identity_dual
+}
+
+DOP_GNG_set_identity_zhujin = {
+	remove_ideas = DOP_GNG_identity_initial
+	remove_ideas = DOP_GNG_identity_dual
+	remove_ideas = DOP_GNG_identity_zhujin
+	add_ideas = DOP_GNG_identity_zhujin
+}
+
+DOP_GNG_update_stage_integrity = {
+	remove_ideas = DOP_GNG_integrity_waltz
+	remove_ideas = DOP_GNG_integrity_chorus
+	remove_ideas = DOP_GNG_integrity_dissonance
+	remove_ideas = DOP_GNG_integrity_chaos
+	if = {
+		limit = { check_variable = { DOP_GNG_stage_integrity >= 75 } }
+		add_ideas = DOP_GNG_integrity_waltz
+	}
+	else_if = {
+		limit = { check_variable = { DOP_GNG_stage_integrity >= 50 } }
+		add_ideas = DOP_GNG_integrity_chorus
+	}
+	else_if = {
+		limit = { check_variable = { DOP_GNG_stage_integrity >= 25 } }
+		add_ideas = DOP_GNG_integrity_dissonance
+	}
+	else = {
+		add_ideas = DOP_GNG_integrity_chaos
+	}
+}

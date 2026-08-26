@@ -31,7 +31,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_the_forgotten #仍被忘却之人
-	icon = GFX_GNG_focus_the_forgotten
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_the_wind_is_gentle
 	x = -3
@@ -77,7 +77,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_policy_report_system #施政报告制度
-	icon = GFX_GNG_focus_policy_report_system
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_the_forgotten
 	x = -2
@@ -95,7 +95,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_chinese_chief_secretary #华人布政司
-	icon = GFX_GNG_focus_chinese_chief_secretary
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_the_forgotten
 	x = 0
@@ -118,7 +118,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_feed_back_china #反哺中华
-	icon = GFX_GNG_focus_feed_back_china
+	icon = GFX_GNG_focus_a_state_of_unstay
 	
 	relative_position_id = GNG_focus_chinese_chief_secretary
 	x = 0
@@ -170,7 +170,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_cultural_affairs_bureau #康乐及文化事务署
-	icon = GFX_GNG_focus_cultural_affairs_bureau
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_all_eyes_on
 	x = 0
@@ -283,5 +283,7 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.35 days = 0 }
+
+		DOP_GNG_set_status_lee = yes
 	}
 }

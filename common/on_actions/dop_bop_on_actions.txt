@@ -18,4 +18,12 @@ on_actions = {
 			}
 		}
 	}
+    on_monthly = {
+        effect = {
+            if = {
+                limit = { has_country_flag = DOP_construction_initialized }
+                DOP_construction_monthly_tick = yes
+            }
+        }
+    }
 }

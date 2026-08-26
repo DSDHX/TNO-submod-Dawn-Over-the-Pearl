@@ -13,7 +13,7 @@ focus_tree = {
 
 shared_focus = {
 	id = GNG_focus_the_ultimate_enemy #最终之敌
-	icon = GFX_GNG_focus_the_ultimate_enemy
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	x = 8
 	y = 0	
@@ -31,7 +31,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_never_look_back #永不回望
-	icon = GFX_GNG_focus_never_look_back
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_the_ultimate_enemy
 	x = -3
@@ -54,7 +54,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_risk_clearance #风险出清
-	icon = GFX_GNG_focus_risk_clearance
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_never_look_back	
 	x = -3
@@ -90,7 +90,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_reform_inefficient_administration #改革低效“人治”
-	icon = GFX_GNG_focus_reform_inefficient_administration
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_never_look_back
 	x = 0
@@ -131,7 +131,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_never_stop #永不停歇
-	icon = GFX_GNG_focus_never_stop
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_the_ultimate_enemy
 	x = 3
@@ -186,7 +186,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_academic_golden_age #学术黄金时代
-	icon = GFX_GNG_focus_academic_golden_age
+	icon = GFX_GNG_focus_a_state_of_unstay
 	
 	relative_position_id = GNG_focus_never_stop
 	x = 3
@@ -204,7 +204,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_laying_the_foundation_for_kouu #为纮宇網奠基
-	icon = GFX_GNG_focus_laying_the_foundation_for_kouu
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_academic_golden_age
 	x = 0
@@ -222,7 +222,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_onward_to_Tomorrow #致明日
-	icon = GFX_GNG_focus_onward_to_Tomorrow
+	icon = GFX_GNG_focus_a_state_of_unstay
 	
 	relative_position_id = GNG_focus_the_ultimate_enemy
 	x = 0
@@ -249,5 +249,7 @@ shared_focus = {
 	
 	
 		country_event = { id = DOP_GNG_event.88 days = 0 }
+
+		DOP_GNG_set_status_ibuka = yes
 	}
 }

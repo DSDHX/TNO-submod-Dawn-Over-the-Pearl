@@ -13,7 +13,7 @@ focus_tree = {
 
 shared_focus = {
 	id = GNG_focus_state_of_guangdong_in_emergency #全国紧急状态
-	icon = GFX_GNG_focus_state_of_guangdong_in_emergency
+	icon = GFX_GNG_focus_a_state_of_unstay
 	
 	x = 8
 	y = 0
@@ -28,7 +28,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_halt_unnecessary_spending #暂停非必要支出
-	icon = GFX_GNG_focus_halt_unnecessary_spending
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = -6
@@ -68,7 +68,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_grasping_executive_authority #收拢企业权力
-	icon = GFX_GNG_focus_grasping_executive_authority
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = -2
@@ -98,7 +98,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_normalize_curfew_policy #常态化宵禁
-	icon = GFX_GNG_focus_normalize_curfew_policy
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 2
@@ -132,7 +132,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_erase_organized_crime #清剿暴力团伙
-	icon = GFX_GNG_focus_erase_organized_crime
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 6
@@ -171,7 +171,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_personal_safety_of_the_japanese #日侨的生命
-	icon = GFX_GNG_focus_personal_safety_of_the_japanese
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = -4
@@ -196,7 +196,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_property_safety_of_the_zhujin #珠人的财产
-	icon = GFX_GNG_focus_property_safety_of_the_zhujin
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 0
@@ -221,7 +221,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_population_of_chinese #华人的人口
-	icon = GFX_GNG_focus_population_of_chinese
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 4
@@ -246,7 +246,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_adults_forgetting_history #忘记历史的成年人……
-	icon = GFX_GNG_focus_adults_forgetting_histor
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = -2
@@ -272,7 +272,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_while_adolescence_losing_homeland #……与失去祖国的年轻人
-	icon = GFX_GNG_focus_while_adolescence_losing_homeland
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 2
@@ -299,7 +299,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GNG_focus_is_order_prevails_in_guangdong #广东秩序井然？
-	icon = GFX_GNG_focus_is_order_prevails_in_guangdong
+	icon = GFX_GNG_focus_a_state_of_unstay
 
 	relative_position_id = GNG_focus_state_of_guangdong_in_emergency
 	x = 0
@@ -315,5 +315,7 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_stability_above_everthing_focustt
+
+		DOP_GNG_set_status_second_riot = yes
 	}
 }

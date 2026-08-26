@@ -1,0 +1,20 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_BoP_Tab_DOPConstruction_Icon"
+		textureFile = "gfx/interface/bop/GFX_BoP_Tab_GSA_Icon.dds"
+	}
+	progressbartype = {
+		name = "GFX_DOP_construction_main_progress"
+		size = { x = 430 y = 37 }
+		textureFile1 = "gfx/interface/bop/GSA_research_prgbarfull.dds"
+		textureFile2 = "gfx/interface/bop/GSA_research_prgbarempty.dds"
+		effectFile = "gfx/FX/progress.lua"
+	}
+	progressbartype = {
+		name = "GFX_DOP_construction_row_progress"
+		size = { x = 160 y = 24 }
+		textureFile1 = "gfx/interface/bop/GSA_research_prgbarfull.dds"
+		textureFile2 = "gfx/interface/bop/GSA_research_prgbarempty.dds"
+		effectFile = "gfx/FX/progress.lua"
+	}
+}

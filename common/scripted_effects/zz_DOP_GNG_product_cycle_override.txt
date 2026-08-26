@@ -1,0 +1,106 @@
+# Intentional narrow override of TNO's product-cycle dispatcher.
+GNG_product_cycle_event_initializer = {
+	if = {
+		limit = {
+			has_country_flag = DOP_GNG_open_product_cycle_investment
+			OR = {
+				check_variable = { GNG_product_cycle_tracker = 2 }
+				check_variable = { GNG_product_cycle_tracker = 3 }
+				check_variable = { GNG_product_cycle_tracker = 4 }
+				check_variable = { GNG_product_cycle_tracker = 5 }
+				check_variable = { GNG_product_cycle_tracker = 6 }
+				check_variable = { GNG_product_cycle_tracker = 7 }
+				check_variable = { GNG_product_cycle_tracker = 8 }
+				check_variable = { GNG_product_cycle_tracker = 9 }
+				check_variable = { GNG_product_cycle_tracker = 10 }
+				check_variable = { GNG_product_cycle_tracker = 11 }
+				check_variable = { GNG_product_cycle_tracker = 12 }
+			}
+		}
+		country_event = DOP_GNG_product_cycle.1
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 2 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 3 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 4 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 5 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 6 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 7 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 8 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 9 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 10 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 11 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 12 } }
+		country_event = GNG_Product_Cycle.3
+	}
+	else_if = {
+		limit = { check_variable = { GNG_product_cycle_tracker = 13 } }
+		country_event = GNG_Product_Cycle.3
+	}
+}
+
+DOP_GNG_start_product_cycle_as_sony = {
+	set_temp_variable = { GNG_product_cycle_company_temp = 1 }
+	set_temp_variable = { DOP_GNG_product_id_temp = GNG_product_cycle_tracker }
+	multiply_temp_variable = { DOP_GNG_product_id_temp = 4 }
+	add_to_temp_variable = { DOP_GNG_product_id_temp = 8 }
+	set_variable = { GNG_current_product_id = DOP_GNG_product_id_temp }
+	GNG_new_product_cycle_start = yes
+}
+
+DOP_GNG_start_product_cycle_as_matsushita = {
+	set_temp_variable = { GNG_product_cycle_company_temp = 2 }
+	set_temp_variable = { DOP_GNG_product_id_temp = GNG_product_cycle_tracker }
+	multiply_temp_variable = { DOP_GNG_product_id_temp = 4 }
+	add_to_temp_variable = { DOP_GNG_product_id_temp = 9 }
+	set_variable = { GNG_current_product_id = DOP_GNG_product_id_temp }
+	GNG_new_product_cycle_start = yes
+}
+
+DOP_GNG_start_product_cycle_as_fujitsu = {
+	set_temp_variable = { GNG_product_cycle_company_temp = 3 }
+	set_temp_variable = { DOP_GNG_product_id_temp = GNG_product_cycle_tracker }
+	multiply_temp_variable = { DOP_GNG_product_id_temp = 4 }
+	add_to_temp_variable = { DOP_GNG_product_id_temp = 10 }
+	set_variable = { GNG_current_product_id = DOP_GNG_product_id_temp }
+	GNG_new_product_cycle_start = yes
+}
+
+DOP_GNG_start_product_cycle_as_hitachi = {
+	set_temp_variable = { GNG_product_cycle_company_temp = 4 }
+	set_temp_variable = { DOP_GNG_product_id_temp = GNG_product_cycle_tracker }
+	multiply_temp_variable = { DOP_GNG_product_id_temp = 4 }
+	add_to_temp_variable = { DOP_GNG_product_id_temp = 11 }
+	set_variable = { GNG_current_product_id = DOP_GNG_product_id_temp }
+	GNG_new_product_cycle_start = yes
+}

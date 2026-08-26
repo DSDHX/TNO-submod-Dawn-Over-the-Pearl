@@ -1,0 +1,5 @@
+DOP_GNG_construction_category = {
+	visible = {
+		always = no
+	}
+}

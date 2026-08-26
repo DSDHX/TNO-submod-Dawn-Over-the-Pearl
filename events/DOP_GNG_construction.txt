@@ -1,0 +1,113 @@
+add_namespace = DOP_GNG_construction
+
+country_event = {
+	id = DOP_GNG_construction.1
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.2
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.3
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.4
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.5
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.6
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.7
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.8
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.9
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.10
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.11
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.12
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.13
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.14
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.15
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}
+
+country_event = {
+	id = DOP_GNG_construction.16
+	hidden = yes
+	is_triggered_only = yes
+	immediate = { }
+}

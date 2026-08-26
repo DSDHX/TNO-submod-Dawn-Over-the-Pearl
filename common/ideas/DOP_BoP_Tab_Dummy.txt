@@ -10,5 +10,8 @@ ideas = {
 		BoP_Tab_DOPScienceAcademy = {
 			#
 		}
+		BoP_Tab_DOPConstruction = {
+			#
+		}
 	}
 }
