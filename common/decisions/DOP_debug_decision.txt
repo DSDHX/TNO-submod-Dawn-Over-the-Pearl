@@ -481,6 +481,27 @@ GNG_debug_category = {
 		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
 		complete_effect = { DOP_construction_weekly_tick = yes }
 	}
+	GNG_dop_debug_construction_show_all = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = { DOP_construction_show_all_projects = yes }
+	}
+	GNG_dop_debug_construction_start_all = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = { DOP_construction_start_all_projects = yes }
+	}
+	GNG_dop_debug_construction_show_and_start_all = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = { has_country_flag = GNG_show_debug_decisions has_country_flag = DOP_construction_initialized }
+		cost = 0
+		complete_effect = { DOP_construction_show_and_start_all_projects = yes }
+	}
 	GNG_dop_debug_construction_speed_add_plus = {
 		allowed = { original_tag = GNG }
 		icon = GFX_decision_GNG_generic

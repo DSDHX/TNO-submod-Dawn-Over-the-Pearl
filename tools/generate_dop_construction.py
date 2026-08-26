@@ -29,6 +29,12 @@ CLEAR_FLAGS_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR FLAGS"
 CLEAR_FLAGS_END = "# END GENERATED CONSTRUCTION CLEAR FLAGS"
 CLEAR_EXPANSION_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS"
 CLEAR_EXPANSION_END = "# END GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS"
+STATE_DISPATCH_BEGIN = "# BEGIN GENERATED CONSTRUCTION STATE DISPATCH"
+STATE_DISPATCH_END = "# END GENERATED CONSTRUCTION STATE DISPATCH"
+CLEAR_STATE_BEGIN = "# BEGIN GENERATED CONSTRUCTION CLEAR STATE FLAGS"
+CLEAR_STATE_END = "# END GENERATED CONSTRUCTION CLEAR STATE FLAGS"
+SELECT_FIRST_BEGIN = "# BEGIN GENERATED CONSTRUCTION SELECT FIRST SHOWN"
+SELECT_FIRST_END = "# END GENERATED CONSTRUCTION SELECT FIRST SHOWN"
 SCRIPTED_LOC_BEGIN = "# BEGIN GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
 SCRIPTED_LOC_END = "# END GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
 CALLBACK_END = "# END GENERATED COMPLETION CALLBACKS"
@@ -179,7 +185,8 @@ def loc_value(value: str) -> str:
 
 
 def render_tokens() -> list[str]:
-    lines = [f"DOP_construction_region_{region.slug}" for region in REGIONS]
+    lines = ["DOP_construction_no_region", "DOP_construction_no_project", "DOP_construction_no_project_desc", ""]
+    lines.extend(f"DOP_construction_region_{region.slug}" for region in REGIONS)
     lines.append("")
     for project in PROJECTS:
         lines.append(f"DOP_construction_{project.slug}")
@@ -210,21 +217,39 @@ def render_directory() -> list[str]:
     region_id = {region.slug: region.id for region in REGIONS}
     lines: list[str] = []
     for region in REGIONS:
-        lines.append(
-            f"add_to_array = {{ DOP_construction_directory_items = {100 + region.id} }}"
-        )
+        region_projects = [
+            project for project in PROJECTS if region_id[project.region] == region.id
+        ]
         lines.extend(
             [
                 "if = {",
-                f"\tlimit = {{ has_country_flag = DOP_construction_region_{region.id}_expanded }}",
+                "\tlimit = {",
+                "\t\tOR = {",
             ]
         )
-        for project in PROJECTS:
-            if region_id[project.region] == region.id:
-                lines.append(
-                    f"\tadd_to_array = {{ DOP_construction_directory_items = {project.id} }}"
-                )
-        lines.append("}")
+        for project in region_projects:
+            lines.append(
+                f"\t\t\tcheck_variable = {{ DOP_construction_shown^{project.id} > 0 }}"
+            )
+        lines.extend(
+            [
+                "\t\t}",
+                "\t}",
+                f"\tadd_to_array = {{ DOP_construction_directory_items = {100 + region.id} }}",
+                "\tif = {",
+                f"\t\tlimit = {{ has_country_flag = DOP_construction_region_{region.id}_expanded }}",
+            ]
+        )
+        for project in region_projects:
+            lines.extend(
+                [
+                    "\t\tif = {",
+                    f"\t\t\tlimit = {{ check_variable = {{ DOP_construction_shown^{project.id} > 0 }} }}",
+                    f"\t\t\tadd_to_array = {{ DOP_construction_directory_items = {project.id} }}",
+                    "\t\t}",
+                ]
+            )
+        lines.extend(["\t}", "}"])
     return lines
 
 
@@ -232,16 +257,29 @@ def render_directory_toggles() -> list[str]:
     region_id = {region.slug: region.id for region in REGIONS}
     lines: list[str] = []
     for region in REGIONS:
-        first_project = next(
+        region_projects = [
             project for project in PROJECTS if region_id[project.region] == region.id
-        )
+        ]
         lines.extend(
             [
                 "if = {",
                 "\tlimit = { check_variable = { "
                 f"DOP_construction_directory_item = {100 + region.id} }} }}",
                 f"\tset_variable = {{ DOP_construction_selected_region = {region.id} }}",
-                f"\tset_variable = {{ DOP_construction_selected = {first_project.id} }}",
+            ]
+        )
+        for index, project in enumerate(region_projects):
+            branch = "if" if index == 0 else "else_if"
+            lines.extend(
+                [
+                    f"\t{branch} = {{",
+                    f"\t\tlimit = {{ check_variable = {{ DOP_construction_shown^{project.id} > 0 }} }}",
+                    f"\t\tset_variable = {{ DOP_construction_selected = {project.id} }}",
+                    "\t}",
+                ]
+            )
+        lines.extend(
+            [
                 "\tif = {",
                 f"\t\tlimit = {{ has_country_flag = DOP_construction_region_{region.id}_expanded }}",
                 f"\t\tclr_country_flag = DOP_construction_region_{region.id}_expanded",
@@ -250,6 +288,58 @@ def render_directory_toggles() -> list[str]:
                 "}",
             ]
         )
+    return lines
+
+
+def render_select_first_shown() -> list[str]:
+    region_id = {region.slug: region.id for region in REGIONS}
+    lines: list[str] = []
+    for index, project in enumerate(PROJECTS):
+        branch = "if" if index == 0 else "else_if"
+        lines.extend(
+            [
+                f"{branch} = {{",
+                f"\tlimit = {{ check_variable = {{ DOP_construction_shown^{project.id} > 0 }} }}",
+                f"\tset_variable = {{ DOP_construction_selected = {project.id} }}",
+                f"\tset_variable = {{ DOP_construction_selected_region = {region_id[project.region]} }}",
+                "}",
+            ]
+        )
+    lines.extend(
+        [
+            "else = {",
+            "\tset_variable = { DOP_construction_selected = 0 }",
+            "\tset_variable = { DOP_construction_selected_region = 0 }",
+            "}",
+        ]
+    )
+    return lines
+
+
+def render_state_dispatch() -> list[str]:
+    lines = ["DOP_construction_mark_project_shown = {"]
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\tif = {",
+                f"\t\tlimit = {{ check_variable = {{ DOP_construction_target_project = {project.id} }} }}",
+                f"\t\tset_variable = {{ DOP_construction_shown^{project.id} = 1 }}",
+                f"\t\tset_country_flag = DOP_construction_{project.slug}_shown",
+                "\t}",
+            ]
+        )
+    lines.extend(["}", "", "DOP_construction_mark_project_started = {"])
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\tif = {",
+                f"\t\tlimit = {{ check_variable = {{ DOP_construction_target_project = {project.id} }} }}",
+                f"\t\tset_variable = {{ DOP_construction_started^{project.id} = 1 }}",
+                f"\t\tset_country_flag = DOP_construction_{project.slug}_started",
+                "\t}",
+            ]
+        )
+    lines.append("}")
     return lines
 
 
@@ -265,6 +355,14 @@ def render_clear_expansion_flags() -> list[str]:
         f"clr_country_flag = DOP_construction_region_{region.id}_expanded"
         for region in REGIONS
     ]
+
+
+def render_clear_state_flags() -> list[str]:
+    lines: list[str] = []
+    for project in PROJECTS:
+        lines.append(f"clr_country_flag = DOP_construction_{project.slug}_shown")
+        lines.append(f"clr_country_flag = DOP_construction_{project.slug}_started")
+    return lines
 
 
 def render_scripted_localisation() -> list[str]:
@@ -302,7 +400,33 @@ def render_scripted_localisation() -> list[str]:
                 "\t}",
             ]
         )
-    lines.extend(["}", "", "defined_text = {", "\tname = DOP_construction_GetDirectoryRegionMarker"])
+    lines.extend(
+        [
+            "\ttext = { localization_key = DOP_construction_no_region }",
+            "}",
+            "",
+            "defined_text = {",
+            "\tname = DOP_construction_GetTargetProjectName",
+        ]
+    )
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\ttext = {",
+                f"\t\ttrigger = {{ check_variable = {{ DOP_construction_target_project = {project.id} }} }}",
+                f"\t\tlocalization_key = DOP_construction_{project.slug}",
+                "\t}",
+            ]
+        )
+    lines.extend(
+        [
+            "\ttext = { localization_key = DOP_construction_no_project }",
+            "}",
+            "",
+            "defined_text = {",
+            "\tname = DOP_construction_GetDirectoryRegionMarker",
+        ]
+    )
     for region in REGIONS:
         lines.extend(
             [
@@ -328,14 +452,20 @@ def render_scripted_localisation() -> list[str]:
 def render_localisation() -> list[str]:
     lines = [
         "# Dynamic directory and registry localisation.",
+        'DOP_construction_no_region:0 "暂无地区"',
+        'DOP_construction_no_project:0 "暂无建设项目"',
+        'DOP_construction_no_project_desc:0 "建设项目尚未添加到岭南开发总署。"',
         'DOP_construction_region_directory_title:0 "建设目录"',
         'DOP_construction_project_directory_title:0 "设施项目"',
         'DOP_construction_region_entry_name:0 "§B[DOP_construction_GetDirectoryRegionMarker] [DOP_construction_GetDirectoryRegionName]§!"',
-        'DOP_construction_region_entry_tt:0 "展开或收起该地区；同时切换到该地区的第一个建设项目。"',
+        'DOP_construction_region_entry_tt:0 "展开或收起该地区；同时切换到该地区的第一个已显示建设项目。"',
         'DOP_construction_project_entry_name:0 "[?DOP_construction_project_tokens^DOP_construction_directory_item.GetTokenLocalizedKey]"',
         'DOP_construction_project_entry_tt:0 "[DOP_construction_GetEntryDesc]"',
         'DOP_construction_directory_marker_open:0 "−"',
         'DOP_construction_directory_marker_closed:0 "+"',
+        'DOP_construction_show_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中。"',
+        'DOP_construction_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将开始建设。"',
+        'DOP_construction_show_and_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中并开始建设。"',
         "",
     ]
     for region in REGIONS:
@@ -425,6 +555,27 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
         CLEAR_EXPANSION_BEGIN,
         CLEAR_EXPANSION_END,
         render_clear_expansion_flags(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        STATE_DISPATCH_BEGIN,
+        STATE_DISPATCH_END,
+        render_state_dispatch(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        CLEAR_STATE_BEGIN,
+        CLEAR_STATE_END,
+        render_clear_state_flags(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        SELECT_FIRST_BEGIN,
+        SELECT_FIRST_END,
+        render_select_first_shown(),
         newline,
     )
     effects = ensure_callbacks(effects, newline)

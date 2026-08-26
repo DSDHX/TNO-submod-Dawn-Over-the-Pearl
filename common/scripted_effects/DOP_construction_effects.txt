@@ -24,6 +24,8 @@ DOP_construction_register_project = {
 	add_to_array = { DOP_construction_percent = 0 }
 	add_to_array = { DOP_construction_actual_speed = DOP_construction_base_speed }
 	add_to_array = { DOP_construction_completed = 0 }
+	add_to_array = { DOP_construction_shown = 0 }
+	add_to_array = { DOP_construction_started = 0 }
 }
 
 DOP_construction_prepare_slider_set_indices = {
@@ -39,8 +41,8 @@ DOP_construction_prepare_slider_set_indices = {
 DOP_construction_register_all_projects = {
 	set_variable = { DOP_construction_base_speed = 250 }
 	set_variable = { DOP_construction_project_count = 0 }
-	set_variable = { DOP_construction_selected_region = 1 }
-	set_variable = { DOP_construction_selected = 1 }
+	set_variable = { DOP_construction_selected_region = 0 }
+	set_variable = { DOP_construction_selected = 0 }
 	set_variable = { DOP_construction_weekly_counter = 0 }
 	DOP_construction_prepare_slider_set_indices = yes
 
@@ -68,14 +70,16 @@ DOP_construction_register_all_projects = {
 	clear_array = DOP_construction_percent
 	clear_array = DOP_construction_actual_speed
 	clear_array = DOP_construction_completed
+	clear_array = DOP_construction_shown
+	clear_array = DOP_construction_started
 
-	# Index zero is deliberately unused, so stable project IDs can be used as
-	# direct array indexes without a generated resize count.
-	add_to_array = { DOP_construction_region_tokens = 0 }
-	add_to_array = { DOP_construction_project_tokens = 0 }
-	add_to_array = { DOP_construction_project_desc_tokens = 0 }
+	# Index zero is the empty-GUI placeholder, so stable project IDs can still be
+	# used as direct array indexes without a generated resize count.
+	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_no_region }
+	add_to_array = { DOP_construction_project_tokens = token:DOP_construction_no_project }
+	add_to_array = { DOP_construction_project_desc_tokens = token:DOP_construction_no_project_desc }
 	add_to_array = { DOP_construction_project_region = 0 }
-	add_to_array = { DOP_construction_project_images = 0 }
+	add_to_array = { DOP_construction_project_images = token:GSA_kanton_shenkansen_research }
 	add_to_array = { DOP_construction_event_ids = 0 }
 	add_to_array = { DOP_construction_total = 0 }
 	add_to_array = { DOP_construction_progress = 0 }
@@ -91,6 +95,8 @@ DOP_construction_register_all_projects = {
 	add_to_array = { DOP_construction_percent = 0 }
 	add_to_array = { DOP_construction_actual_speed = 0 }
 	add_to_array = { DOP_construction_completed = 0 }
+	add_to_array = { DOP_construction_shown = 0 }
+	add_to_array = { DOP_construction_started = 0 }
 
 	# BEGIN GENERATED CONSTRUCTION REGISTRY
 	add_to_array = { DOP_construction_region_ids = 1 }
@@ -293,6 +299,213 @@ DOP_construction_clear_expansion_flags = {
 	# END GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS
 }
 
+DOP_construction_clear_state_flags = {
+	# BEGIN GENERATED CONSTRUCTION CLEAR STATE FLAGS
+	clr_country_flag = DOP_construction_sky_tower_shown
+	clr_country_flag = DOP_construction_sky_tower_started
+	clr_country_flag = DOP_construction_rose_garden_shown
+	clr_country_flag = DOP_construction_rose_garden_started
+	clr_country_flag = DOP_construction_alice_dream_factory_shown
+	clr_country_flag = DOP_construction_alice_dream_factory_started
+	clr_country_flag = DOP_construction_daya_bay_nuclear_plant_shown
+	clr_country_flag = DOP_construction_daya_bay_nuclear_plant_started
+	clr_country_flag = DOP_construction_guangdong_shinkansen_shown
+	clr_country_flag = DOP_construction_guangdong_shinkansen_started
+	clr_country_flag = DOP_construction_chaoshan_university_shown
+	clr_country_flag = DOP_construction_chaoshan_university_started
+	clr_country_flag = DOP_construction_xinfengjiang_reservoir_shown
+	clr_country_flag = DOP_construction_xinfengjiang_reservoir_started
+	clr_country_flag = DOP_construction_luoding_granary_shown
+	clr_country_flag = DOP_construction_luoding_granary_started
+	clr_country_flag = DOP_construction_pinglu_canal_shown
+	clr_country_flag = DOP_construction_pinglu_canal_started
+	clr_country_flag = DOP_construction_south_china_sea_drilling_platform_shown
+	clr_country_flag = DOP_construction_south_china_sea_drilling_platform_started
+	clr_country_flag = DOP_construction_wenchang_space_center_shown
+	clr_country_flag = DOP_construction_wenchang_space_center_started
+	clr_country_flag = DOP_construction_guangxi_industrial_institute_shown
+	clr_country_flag = DOP_construction_guangxi_industrial_institute_started
+	clr_country_flag = DOP_construction_guangxi_expressway_network_shown
+	clr_country_flag = DOP_construction_guangxi_expressway_network_started
+	clr_country_flag = DOP_construction_nanyue_folk_memorial_park_shown
+	clr_country_flag = DOP_construction_nanyue_folk_memorial_park_started
+	clr_country_flag = DOP_construction_lijiang_waterway_shown
+	clr_country_flag = DOP_construction_lijiang_waterway_started
+	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_shown
+	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_started
+	# END GENERATED CONSTRUCTION CLEAR STATE FLAGS
+}
+
+# Generated fixed-ID dispatch keeps public focus/decision/event APIs generic,
+# while still exposing stable per-project country flags for other content.
+# BEGIN GENERATED CONSTRUCTION STATE DISPATCH
+DOP_construction_mark_project_shown = {
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 1 } }
+		set_variable = { DOP_construction_shown^1 = 1 }
+		set_country_flag = DOP_construction_sky_tower_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 2 } }
+		set_variable = { DOP_construction_shown^2 = 1 }
+		set_country_flag = DOP_construction_rose_garden_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 3 } }
+		set_variable = { DOP_construction_shown^3 = 1 }
+		set_country_flag = DOP_construction_alice_dream_factory_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 4 } }
+		set_variable = { DOP_construction_shown^4 = 1 }
+		set_country_flag = DOP_construction_daya_bay_nuclear_plant_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 5 } }
+		set_variable = { DOP_construction_shown^5 = 1 }
+		set_country_flag = DOP_construction_guangdong_shinkansen_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 6 } }
+		set_variable = { DOP_construction_shown^6 = 1 }
+		set_country_flag = DOP_construction_chaoshan_university_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 7 } }
+		set_variable = { DOP_construction_shown^7 = 1 }
+		set_country_flag = DOP_construction_xinfengjiang_reservoir_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 8 } }
+		set_variable = { DOP_construction_shown^8 = 1 }
+		set_country_flag = DOP_construction_luoding_granary_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 9 } }
+		set_variable = { DOP_construction_shown^9 = 1 }
+		set_country_flag = DOP_construction_pinglu_canal_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 10 } }
+		set_variable = { DOP_construction_shown^10 = 1 }
+		set_country_flag = DOP_construction_south_china_sea_drilling_platform_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 11 } }
+		set_variable = { DOP_construction_shown^11 = 1 }
+		set_country_flag = DOP_construction_wenchang_space_center_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 12 } }
+		set_variable = { DOP_construction_shown^12 = 1 }
+		set_country_flag = DOP_construction_guangxi_industrial_institute_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 13 } }
+		set_variable = { DOP_construction_shown^13 = 1 }
+		set_country_flag = DOP_construction_guangxi_expressway_network_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 14 } }
+		set_variable = { DOP_construction_shown^14 = 1 }
+		set_country_flag = DOP_construction_nanyue_folk_memorial_park_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 15 } }
+		set_variable = { DOP_construction_shown^15 = 1 }
+		set_country_flag = DOP_construction_lijiang_waterway_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 16 } }
+		set_variable = { DOP_construction_shown^16 = 1 }
+		set_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_shown
+	}
+}
+
+DOP_construction_mark_project_started = {
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 1 } }
+		set_variable = { DOP_construction_started^1 = 1 }
+		set_country_flag = DOP_construction_sky_tower_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 2 } }
+		set_variable = { DOP_construction_started^2 = 1 }
+		set_country_flag = DOP_construction_rose_garden_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 3 } }
+		set_variable = { DOP_construction_started^3 = 1 }
+		set_country_flag = DOP_construction_alice_dream_factory_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 4 } }
+		set_variable = { DOP_construction_started^4 = 1 }
+		set_country_flag = DOP_construction_daya_bay_nuclear_plant_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 5 } }
+		set_variable = { DOP_construction_started^5 = 1 }
+		set_country_flag = DOP_construction_guangdong_shinkansen_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 6 } }
+		set_variable = { DOP_construction_started^6 = 1 }
+		set_country_flag = DOP_construction_chaoshan_university_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 7 } }
+		set_variable = { DOP_construction_started^7 = 1 }
+		set_country_flag = DOP_construction_xinfengjiang_reservoir_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 8 } }
+		set_variable = { DOP_construction_started^8 = 1 }
+		set_country_flag = DOP_construction_luoding_granary_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 9 } }
+		set_variable = { DOP_construction_started^9 = 1 }
+		set_country_flag = DOP_construction_pinglu_canal_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 10 } }
+		set_variable = { DOP_construction_started^10 = 1 }
+		set_country_flag = DOP_construction_south_china_sea_drilling_platform_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 11 } }
+		set_variable = { DOP_construction_started^11 = 1 }
+		set_country_flag = DOP_construction_wenchang_space_center_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 12 } }
+		set_variable = { DOP_construction_started^12 = 1 }
+		set_country_flag = DOP_construction_guangxi_industrial_institute_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 13 } }
+		set_variable = { DOP_construction_started^13 = 1 }
+		set_country_flag = DOP_construction_guangxi_expressway_network_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 14 } }
+		set_variable = { DOP_construction_started^14 = 1 }
+		set_country_flag = DOP_construction_nanyue_folk_memorial_park_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 15 } }
+		set_variable = { DOP_construction_started^15 = 1 }
+		set_country_flag = DOP_construction_lijiang_waterway_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 16 } }
+		set_variable = { DOP_construction_started^16 = 1 }
+		set_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_started
+	}
+}
+# END GENERATED CONSTRUCTION STATE DISPATCH
+
 DOP_construction_initialize_variables = {
 	DOP_construction_register_all_projects = yes
 	DOP_construction_clear_completion_flags = yes
@@ -302,7 +515,9 @@ DOP_construction_initialize_variables = {
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
 	set_country_flag = DOP_construction_dynamic_v6_initialized
+	set_country_flag = DOP_construction_dynamic_v7_initialized
 	DOP_construction_clear_expansion_flags = yes
+	DOP_construction_clear_state_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
 	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
@@ -350,7 +565,9 @@ DOP_construction_migrate_legacy_variables = {
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
 	set_country_flag = DOP_construction_dynamic_v6_initialized
+	set_country_flag = DOP_construction_dynamic_v7_initialized
 	DOP_construction_clear_expansion_flags = yes
+	DOP_construction_clear_state_flags = yes
 	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
@@ -464,6 +681,26 @@ DOP_construction_migrate_dynamic_v6 = {
 	DOP_construction_rebuild_visible_projects = yes
 }
 
+# Adds independent shown/started state. The new content contract is opt-in, so
+# both fresh games and migrated saves begin with every project hidden/stopped.
+DOP_construction_migrate_dynamic_v7 = {
+	clear_array = DOP_construction_shown
+	clear_array = DOP_construction_started
+	add_to_array = { DOP_construction_shown = 0 }
+	add_to_array = { DOP_construction_started = 0 }
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		add_to_array = { DOP_construction_shown = 0 }
+		add_to_array = { DOP_construction_started = 0 }
+	}
+	DOP_construction_clear_state_flags = yes
+	DOP_construction_clear_expansion_flags = yes
+	set_variable = { DOP_construction_selected = 0 }
+	set_variable = { DOP_construction_selected_region = 0 }
+	set_country_flag = DOP_construction_dynamic_v7_initialized
+	DOP_construction_rebuild_visible_projects = yes
+}
+
 GNG_BOP_Construction_Initialize = {
 	if = {
 		limit = { NOT = { has_country_flag = DOP_construction_tab_enabled } }
@@ -495,6 +732,10 @@ GNG_BOP_Construction_Initialize = {
 		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v6_initialized } }
 		DOP_construction_migrate_dynamic_v6 = yes
 	}
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v7_initialized } }
+		DOP_construction_migrate_dynamic_v7 = yes
+	}
 	DOP_construction_rebuild_visible_projects = yes
 }
 
@@ -507,69 +748,287 @@ DOP_construction_reset = {
 	set_country_flag = DOP_construction_dynamic_v4_initialized
 	set_country_flag = DOP_construction_dynamic_v5_initialized
 	set_country_flag = DOP_construction_dynamic_v6_initialized
+	set_country_flag = DOP_construction_dynamic_v7_initialized
 	DOP_construction_clear_expansion_flags = yes
+	DOP_construction_clear_state_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
 	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
 
+DOP_construction_select_first_shown_project = {
+	# BEGIN GENERATED CONSTRUCTION SELECT FIRST SHOWN
+	if = {
+		limit = { check_variable = { DOP_construction_shown^1 > 0 } }
+		set_variable = { DOP_construction_selected = 1 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^2 > 0 } }
+		set_variable = { DOP_construction_selected = 2 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^3 > 0 } }
+		set_variable = { DOP_construction_selected = 3 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^4 > 0 } }
+		set_variable = { DOP_construction_selected = 4 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^5 > 0 } }
+		set_variable = { DOP_construction_selected = 5 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^6 > 0 } }
+		set_variable = { DOP_construction_selected = 6 }
+		set_variable = { DOP_construction_selected_region = 2 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^7 > 0 } }
+		set_variable = { DOP_construction_selected = 7 }
+		set_variable = { DOP_construction_selected_region = 3 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^8 > 0 } }
+		set_variable = { DOP_construction_selected = 8 }
+		set_variable = { DOP_construction_selected_region = 4 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^9 > 0 } }
+		set_variable = { DOP_construction_selected = 9 }
+		set_variable = { DOP_construction_selected_region = 5 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^10 > 0 } }
+		set_variable = { DOP_construction_selected = 10 }
+		set_variable = { DOP_construction_selected_region = 5 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^11 > 0 } }
+		set_variable = { DOP_construction_selected = 11 }
+		set_variable = { DOP_construction_selected_region = 5 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^12 > 0 } }
+		set_variable = { DOP_construction_selected = 12 }
+		set_variable = { DOP_construction_selected_region = 6 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^13 > 0 } }
+		set_variable = { DOP_construction_selected = 13 }
+		set_variable = { DOP_construction_selected_region = 6 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^14 > 0 } }
+		set_variable = { DOP_construction_selected = 14 }
+		set_variable = { DOP_construction_selected_region = 7 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^15 > 0 } }
+		set_variable = { DOP_construction_selected = 15 }
+		set_variable = { DOP_construction_selected_region = 8 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^16 > 0 } }
+		set_variable = { DOP_construction_selected = 16 }
+		set_variable = { DOP_construction_selected_region = 9 }
+	}
+	else = {
+		set_variable = { DOP_construction_selected = 0 }
+		set_variable = { DOP_construction_selected_region = 0 }
+	}
+	# END GENERATED CONSTRUCTION SELECT FIRST SHOWN
+}
+
 DOP_construction_rebuild_visible_projects = {
 	clear_array = DOP_construction_directory_items
 	# BEGIN GENERATED CONSTRUCTION DIRECTORY
-	add_to_array = { DOP_construction_directory_items = 101 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_1_expanded }
-		add_to_array = { DOP_construction_directory_items = 1 }
-		add_to_array = { DOP_construction_directory_items = 2 }
-		add_to_array = { DOP_construction_directory_items = 3 }
-		add_to_array = { DOP_construction_directory_items = 4 }
-		add_to_array = { DOP_construction_directory_items = 5 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^1 > 0 }
+				check_variable = { DOP_construction_shown^2 > 0 }
+				check_variable = { DOP_construction_shown^3 > 0 }
+				check_variable = { DOP_construction_shown^4 > 0 }
+				check_variable = { DOP_construction_shown^5 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 101 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_1_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^1 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 1 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^2 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 2 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^3 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 3 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^4 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 4 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^5 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 5 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 102 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_2_expanded }
-		add_to_array = { DOP_construction_directory_items = 6 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^6 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 102 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_2_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^6 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 6 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 103 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_3_expanded }
-		add_to_array = { DOP_construction_directory_items = 7 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^7 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 103 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_3_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^7 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 7 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 104 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_4_expanded }
-		add_to_array = { DOP_construction_directory_items = 8 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^8 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 104 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_4_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^8 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 8 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 105 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_5_expanded }
-		add_to_array = { DOP_construction_directory_items = 9 }
-		add_to_array = { DOP_construction_directory_items = 10 }
-		add_to_array = { DOP_construction_directory_items = 11 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^9 > 0 }
+				check_variable = { DOP_construction_shown^10 > 0 }
+				check_variable = { DOP_construction_shown^11 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 105 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_5_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^9 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 9 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^10 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 10 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^11 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 11 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 106 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_6_expanded }
-		add_to_array = { DOP_construction_directory_items = 12 }
-		add_to_array = { DOP_construction_directory_items = 13 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^12 > 0 }
+				check_variable = { DOP_construction_shown^13 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 106 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_6_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^12 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 12 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^13 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 13 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 107 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_7_expanded }
-		add_to_array = { DOP_construction_directory_items = 14 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^14 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 107 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_7_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^14 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 14 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 108 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_8_expanded }
-		add_to_array = { DOP_construction_directory_items = 15 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^15 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 108 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_8_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^15 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 15 }
+			}
+		}
 	}
-	add_to_array = { DOP_construction_directory_items = 109 }
 	if = {
-		limit = { has_country_flag = DOP_construction_region_9_expanded }
-		add_to_array = { DOP_construction_directory_items = 16 }
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_shown^16 > 0 }
+			}
+		}
+		add_to_array = { DOP_construction_directory_items = 109 }
+		if = {
+			limit = { has_country_flag = DOP_construction_region_9_expanded }
+			if = {
+				limit = { check_variable = { DOP_construction_shown^16 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 16 }
+			}
+		}
 	}
 	# END GENERATED CONSTRUCTION DIRECTORY
+	if = {
+		limit = {
+			OR = {
+				check_variable = { DOP_construction_selected < 1 }
+				check_variable = { DOP_construction_shown^DOP_construction_selected < 1 }
+			}
+		}
+		DOP_construction_select_first_shown_project = yes
+	}
 	DOP_construction_sync_selected = yes
 }
 
@@ -578,7 +1037,26 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 101 } }
 		set_variable = { DOP_construction_selected_region = 1 }
-		set_variable = { DOP_construction_selected = 1 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^1 > 0 } }
+			set_variable = { DOP_construction_selected = 1 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^2 > 0 } }
+			set_variable = { DOP_construction_selected = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^3 > 0 } }
+			set_variable = { DOP_construction_selected = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^4 > 0 } }
+			set_variable = { DOP_construction_selected = 4 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^5 > 0 } }
+			set_variable = { DOP_construction_selected = 5 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_1_expanded }
 			clr_country_flag = DOP_construction_region_1_expanded
@@ -588,7 +1066,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 102 } }
 		set_variable = { DOP_construction_selected_region = 2 }
-		set_variable = { DOP_construction_selected = 6 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^6 > 0 } }
+			set_variable = { DOP_construction_selected = 6 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_2_expanded }
 			clr_country_flag = DOP_construction_region_2_expanded
@@ -598,7 +1079,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 103 } }
 		set_variable = { DOP_construction_selected_region = 3 }
-		set_variable = { DOP_construction_selected = 7 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^7 > 0 } }
+			set_variable = { DOP_construction_selected = 7 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_3_expanded }
 			clr_country_flag = DOP_construction_region_3_expanded
@@ -608,7 +1092,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 104 } }
 		set_variable = { DOP_construction_selected_region = 4 }
-		set_variable = { DOP_construction_selected = 8 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^8 > 0 } }
+			set_variable = { DOP_construction_selected = 8 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_4_expanded }
 			clr_country_flag = DOP_construction_region_4_expanded
@@ -618,7 +1105,18 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 105 } }
 		set_variable = { DOP_construction_selected_region = 5 }
-		set_variable = { DOP_construction_selected = 9 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^9 > 0 } }
+			set_variable = { DOP_construction_selected = 9 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^10 > 0 } }
+			set_variable = { DOP_construction_selected = 10 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^11 > 0 } }
+			set_variable = { DOP_construction_selected = 11 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_5_expanded }
 			clr_country_flag = DOP_construction_region_5_expanded
@@ -628,7 +1126,14 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 106 } }
 		set_variable = { DOP_construction_selected_region = 6 }
-		set_variable = { DOP_construction_selected = 12 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^12 > 0 } }
+			set_variable = { DOP_construction_selected = 12 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^13 > 0 } }
+			set_variable = { DOP_construction_selected = 13 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_6_expanded }
 			clr_country_flag = DOP_construction_region_6_expanded
@@ -638,7 +1143,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 107 } }
 		set_variable = { DOP_construction_selected_region = 7 }
-		set_variable = { DOP_construction_selected = 14 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^14 > 0 } }
+			set_variable = { DOP_construction_selected = 14 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_7_expanded }
 			clr_country_flag = DOP_construction_region_7_expanded
@@ -648,7 +1156,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 108 } }
 		set_variable = { DOP_construction_selected_region = 8 }
-		set_variable = { DOP_construction_selected = 15 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^15 > 0 } }
+			set_variable = { DOP_construction_selected = 15 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_8_expanded }
 			clr_country_flag = DOP_construction_region_8_expanded
@@ -658,7 +1169,10 @@ DOP_construction_toggle_directory_region = {
 	if = {
 		limit = { check_variable = { DOP_construction_directory_item = 109 } }
 		set_variable = { DOP_construction_selected_region = 9 }
-		set_variable = { DOP_construction_selected = 16 }
+		if = {
+			limit = { check_variable = { DOP_construction_shown^16 > 0 } }
+			set_variable = { DOP_construction_selected = 16 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_9_expanded }
 			clr_country_flag = DOP_construction_region_9_expanded
@@ -824,7 +1338,10 @@ DOP_construction_weekly_tick = {
 		array = DOP_construction_project_ids
 		set_temp_variable = { DOP_construction_project_id = v }
 		if = {
-			limit = { check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 } }
+			limit = {
+				check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
+				check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
+			}
 			DOP_construction_recalculate_project = yes
 			add_to_variable = { DOP_construction_progress^DOP_construction_project_id = DOP_construction_actual_speed^DOP_construction_project_id }
 			log = "[GetDateText]: [Root.GetName]: DOP construction project [?DOP_construction_project_id] advanced by [?DOP_construction_actual_speed^DOP_construction_project_id] to [?DOP_construction_progress^DOP_construction_project_id]"
@@ -855,6 +1372,7 @@ DOP_construction_sync_selected = {
 	set_variable = { DOP_construction_selected_input_factor = DOP_construction_input_factor^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_speed_factor = DOP_construction_speed_factor^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_completed = DOP_construction_completed^DOP_construction_selected }
+	set_variable = { DOP_construction_selected_started = DOP_construction_started^DOP_construction_selected }
 
 	set_variable = { DOP_construction_funding_thumb_x = DOP_construction_selected_funding }
 	subtract_from_variable = { DOP_construction_funding_thumb_x = DOP_construction_selected_funding_min }
@@ -940,8 +1458,60 @@ DOP_construction_selected_manpower_minimum = {
 	DOP_construction_sync_selected = yes
 }
 
-# Public API for focuses, decisions and events. Callers provide
-# DOP_construction_target_project and the value variable documented per effect.
+# Public project-state API for focuses, decisions and events. Callers set
+# DOP_construction_target_project to the stable project ID before invoking one
+# of these three effects. The custom tooltips resolve the project name from it.
+DOP_construction_show_project = {
+	custom_effect_tooltip = DOP_construction_show_project_tt
+	DOP_construction_mark_project_shown = yes
+	DOP_construction_rebuild_visible_projects = yes
+}
+
+DOP_construction_start_project = {
+	custom_effect_tooltip = DOP_construction_start_project_tt
+	DOP_construction_mark_project_started = yes
+	DOP_construction_sync_selected = yes
+}
+
+DOP_construction_show_and_start_project = {
+	custom_effect_tooltip = DOP_construction_show_and_start_project_tt
+	DOP_construction_mark_project_shown = yes
+	DOP_construction_mark_project_started = yes
+	DOP_construction_rebuild_visible_projects = yes
+}
+
+# Bulk helpers deliberately omit per-project custom tooltips; they are intended
+# for debug and migration utilities, while normal content uses the APIs above.
+DOP_construction_show_all_projects = {
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_target_project = v }
+		DOP_construction_mark_project_shown = yes
+	}
+	DOP_construction_rebuild_visible_projects = yes
+}
+
+DOP_construction_start_all_projects = {
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_target_project = v }
+		DOP_construction_mark_project_started = yes
+	}
+	DOP_construction_sync_selected = yes
+}
+
+DOP_construction_show_and_start_all_projects = {
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_target_project = v }
+		DOP_construction_mark_project_shown = yes
+		DOP_construction_mark_project_started = yes
+	}
+	DOP_construction_rebuild_visible_projects = yes
+}
+
+# Remaining public API. Callers provide DOP_construction_target_project and the
+# value variable documented per effect.
 DOP_construction_finish_external_change = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_target_project }
 	DOP_construction_recalculate_project = yes

@@ -30,6 +30,13 @@ on_actions = {
 				DOP_construction_migrate_dynamic_v6 = yes
 			}
 			if = {
+				limit = {
+					has_country_flag = DOP_construction_initialized
+					NOT = { has_country_flag = DOP_construction_dynamic_v7_initialized }
+				}
+				DOP_construction_migrate_dynamic_v7 = yes
+			}
+			if = {
 				limit = { has_country_flag = DOP_construction_initialized }
 				add_to_variable = { DOP_construction_weekly_counter = 1 }
 				if = {

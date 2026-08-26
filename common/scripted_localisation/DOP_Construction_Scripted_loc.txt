@@ -15,10 +15,18 @@ defined_text = {
 defined_text = {
 	name = DOP_construction_GetStatus
 	text = {
+		trigger = { check_variable = { DOP_construction_selected < 1 } }
+		localization_key = DOP_construction_status_unavailable
+	}
+	text = {
 		trigger = { check_variable = { DOP_construction_selected_completed > 0 } }
 		localization_key = DOP_construction_status_completed
 	}
-	text = { localization_key = DOP_construction_status_pending }
+	text = {
+		trigger = { check_variable = { DOP_construction_selected_started > 0 } }
+		localization_key = DOP_construction_status_pending
+	}
+	text = { localization_key = DOP_construction_status_waiting }
 }
 
 # BEGIN GENERATED CONSTRUCTION DIRECTORY LOCALISATION
@@ -109,6 +117,76 @@ defined_text = {
 		trigger = { check_variable = { DOP_construction_selected_region = 9 } }
 		localization_key = DOP_construction_region_tiannan
 	}
+	text = { localization_key = DOP_construction_no_region }
+}
+
+defined_text = {
+	name = DOP_construction_GetTargetProjectName
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 1 } }
+		localization_key = DOP_construction_sky_tower
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 2 } }
+		localization_key = DOP_construction_rose_garden
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 3 } }
+		localization_key = DOP_construction_alice_dream_factory
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 4 } }
+		localization_key = DOP_construction_daya_bay_nuclear_plant
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 5 } }
+		localization_key = DOP_construction_guangdong_shinkansen
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 6 } }
+		localization_key = DOP_construction_chaoshan_university
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 7 } }
+		localization_key = DOP_construction_xinfengjiang_reservoir
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 8 } }
+		localization_key = DOP_construction_luoding_granary
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 9 } }
+		localization_key = DOP_construction_pinglu_canal
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 10 } }
+		localization_key = DOP_construction_south_china_sea_drilling_platform
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 11 } }
+		localization_key = DOP_construction_wenchang_space_center
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 12 } }
+		localization_key = DOP_construction_guangxi_industrial_institute
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 13 } }
+		localization_key = DOP_construction_guangxi_expressway_network
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 14 } }
+		localization_key = DOP_construction_nanyue_folk_memorial_park
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 15 } }
+		localization_key = DOP_construction_lijiang_waterway
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 16 } }
+		localization_key = DOP_construction_honghe_fan_asia_friendship_pass
+	}
+	text = { localization_key = DOP_construction_no_project }
 }
 
 defined_text = {

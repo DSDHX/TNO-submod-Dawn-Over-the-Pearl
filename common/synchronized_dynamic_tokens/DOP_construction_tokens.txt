@@ -1,4 +1,8 @@
 # BEGIN GENERATED CONSTRUCTION TOKENS
+DOP_construction_no_region
+DOP_construction_no_project
+DOP_construction_no_project_desc
+
 DOP_construction_region_prd
 DOP_construction_region_chaoshan
 DOP_construction_region_northern_guangdong
