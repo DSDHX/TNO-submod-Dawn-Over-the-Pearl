@@ -1020,6 +1020,11 @@ DOP_construction_rebuild_visible_projects = {
 		}
 	}
 	# END GENERATED CONSTRUCTION DIRECTORY
+	set_variable = { DOP_construction_directory_scroll_extent = DOP_construction_directory_items^num }
+	multiply_variable = { DOP_construction_directory_scroll_extent = 36 }
+	# One complete 36 px scroll step beyond the 491 px viewport guarantees the
+	# standard scrollbar remains instantiated even while the collapsed tree fits.
+	clamp_variable = { var = DOP_construction_directory_scroll_extent min = 528 }
 	if = {
 		limit = {
 			OR = {

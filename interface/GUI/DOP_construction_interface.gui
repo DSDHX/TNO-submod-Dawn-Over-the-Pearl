@@ -140,12 +140,19 @@ guiTypes = {
 			gridboxtype = {
 				name = construction_directory_grid
 				position = { x = 2 y = 0 }
-				# The viewport owns the fixed height. A 100% grid is allowed to grow
-				# with dynamic entries, which is what activates the scrollbar.
+				# The viewport owns the fixed height; the scripted scroll ensurer below
+				# reports the dynamic list's real content extent to the parent.
 				size = { width = 160 height = 100% }
 				slotsize = { width = 160 height = 36 }
 				max_slots_horizontal = 1
 				add_horizontal = no
+			}
+			# Scripted dynamic-list entries do not reliably expand a container's
+			# scroll bounds. TNO's economy GUI uses the same invisible-child fix.
+			containerWindowType = {
+				name = DOP_construction_directory_scroll_ensurer
+				position = { x = 0 y = 528 }
+				size = { width = 1 height = 1 }
 			}
 		}
 

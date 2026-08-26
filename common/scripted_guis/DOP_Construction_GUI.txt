@@ -71,6 +71,9 @@ scripted_gui = {
 		}
 
 		properties = {
+			DOP_construction_directory_scroll_ensurer = {
+				y = DOP_construction_directory_scroll_extent
+			}
 			construction_main_progress = {
 				frame = DOP_construction_selected_percent
 			}
