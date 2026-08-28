@@ -44,4 +44,24 @@ spriteTypes = {
 		texturefile = "gfx/texticons/guangdong/yingshang.dds"
 		legacy_lazy_load = no
 	}
+	spriteType = {
+		name = "GFX_DOP_Yeung_Kwong_texticon"
+		texturefile = "gfx/texticons/guangdong/DOP_Yeung_Kwong_texticon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_Yamashita_Toshihiko_texticon"
+		texturefile = "gfx/texticons/guangdong/DOP_Yamashita_Toshihiko_texticon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_Fok_Ying_Tung_texticon"
+		texturefile = "gfx/texticons/guangdong/DOP_Fok_Ying_Tung_texticon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_Niwa_Uichiro_texticon"
+		texturefile = "gfx/texticons/guangdong/DOP_Niwa_Uichiro_texticon.dds"
+		legacy_lazy_load = no
+	}
 }

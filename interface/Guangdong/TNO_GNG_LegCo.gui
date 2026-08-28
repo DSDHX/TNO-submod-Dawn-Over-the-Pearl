@@ -157,14 +157,14 @@ guiTypes = {
 			}
 			iconType = {
 				name = "DOP_skin1_fujitsubar"
-				quadTextureSprite = "GFX_DOP_LegCo_Faction_ZhurenBar"
+				quadTextureSprite = "GFX_DOP_LegCo_Faction_YingshangBar"
 				position = { x = -8 y = -389 }
 				frame = 25
 				alwaystransparent = yes
 			}
 			iconType = {
 				name = "DOP_skin1_matsushitabar"
-				quadTextureSprite = "GFX_DOP_LegCo_Faction_HuarenBar"
+				quadTextureSprite = "GFX_DOP_LegCo_Faction_GongzhengBar"
 				position = { x = -8 y = -389 }
 				frame = 25
 				alwaystransparent = yes
@@ -200,14 +200,14 @@ guiTypes = {
 			}
 			iconType = {
 				name = "DOP_skin2_fujitsubar"
-				quadTextureSprite = "GFX_DOP_LegCo_Faction_YingshangBar"
+				quadTextureSprite = "GFX_DOP_LegCo_Faction_ZhurenBar"
 				position = { x = -8 y = -389 }
 				frame = 25
 				alwaystransparent = yes
 			}
 			iconType = {
 				name = "DOP_skin2_matsushitabar"
-				quadTextureSprite = "GFX_DOP_LegCo_Faction_GongzhengBar"
+				quadTextureSprite = "GFX_DOP_LegCo_Faction_HuarenBar"
 				position = { x = -8 y = -389 }
 				frame = 25
 				alwaystransparent = yes

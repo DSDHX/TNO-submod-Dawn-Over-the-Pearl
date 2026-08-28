@@ -3,8 +3,8 @@
 # Skin strips keep TNO's 7-frame layout:
 #   faction 1/2 (yasuda/suzuki, unused) -> 建制
 #   faction 3 (sony slot)      -> 自贸 / 财界
-#   faction 4 (matsushita slot)-> 华人 / 工政
-#   faction 5 (fujitsu slot)   -> 珠人 / 营商
+#   faction 4 (matsushita slot)-> 工政 / 华人
+#   faction 5 (fujitsu slot)   -> 营商 / 珠人
 #   faction 6 (ck slot)        -> 建制
 #   faction 7 (hitachi slot)   -> 新民 / 硅芯
 #################################
@@ -37,14 +37,14 @@ defined_text = {
 			check_variable = { GNG_dop_legco_skin = 1 }
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_faction_huaren
+		localization_key = GNG_dop_legco_faction_gongzheng
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 1 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_faction_zhuren
+		localization_key = GNG_dop_legco_faction_yingshang
 	}
 	text = {
 		trigger = {
@@ -86,14 +86,14 @@ defined_text = {
 			check_variable = { GNG_dop_legco_skin = 2 }
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_faction_gongzheng
+		localization_key = GNG_dop_legco_faction_huaren
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 2 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_faction_yingshang
+		localization_key = GNG_dop_legco_faction_zhuren
 	}
 	text = {
 		trigger = {
@@ -111,6 +111,164 @@ defined_text = {
 	}
 	text = {
 		localization_key = "[GNG_legco_current_faction_long_dynamic]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_leader_dynamic
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_dop_legco_skin = 1 }
+				check_variable = { GNG_dop_legco_skin = 2 }
+			}
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_leader_morita
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GNG_dop_legco_skin = 1 }
+				check_variable = { GNG_dop_legco_skin = 2 }
+			}
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_leader_yamashita
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_leader_yang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_leader_fok
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_leader_niwa
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_leader_li
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_leader_niwa
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_leader_ibuka
+	}
+	text = {
+		localization_key = "[GNG_legco_current_faction_leader_dynamic]"
+	}
+}
+
+defined_text = {
+	name = GNG_dop_legco_skin_faction_desc_dynamic
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_desc_jizhi_suochang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_desc_zimaocai_ft
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_desc_gongzheng
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_desc_yingshang
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 1 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_desc_xinmin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			OR = {
+				check_variable = { GNG_legco_faction = 1 }
+				check_variable = { GNG_legco_faction = 2 }
+				check_variable = { GNG_legco_faction = 6 }
+			}
+		}
+		localization_key = GNG_dop_legco_desc_jizhi_suofu
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 3 }
+		}
+		localization_key = GNG_dop_legco_desc_zimaocai_fin
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 4 }
+		}
+		localization_key = GNG_dop_legco_desc_huaren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 5 }
+		}
+		localization_key = GNG_dop_legco_desc_zhuren
+	}
+	text = {
+		trigger = {
+			check_variable = { GNG_dop_legco_skin = 2 }
+			check_variable = { GNG_legco_faction = 7 }
+		}
+		localization_key = GNG_dop_legco_desc_guixin
+	}
+	text = {
+		localization_key = "[GNG_legco_current_faction_desc_dynamic]"
 	}
 }
 
@@ -136,13 +294,13 @@ defined_text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_faction_huaren
+		localization_key = GNG_dop_legco_faction_gongzheng
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_faction_zhuren
+		localization_key = GNG_dop_legco_faction_yingshang
 	}
 	text = {
 		trigger = {
@@ -177,13 +335,13 @@ defined_text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_faction_gongzheng
+		localization_key = GNG_dop_legco_faction_huaren
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_faction_yingshang
+		localization_key = GNG_dop_legco_faction_zhuren
 	}
 	text = {
 		trigger = {
@@ -218,13 +376,13 @@ defined_text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GFX_DOP_LegCo_Faction_Huaren_Small
+		localization_key = GFX_DOP_LegCo_Faction_Gongzheng_Small
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GFX_DOP_LegCo_Faction_Zhuren_Small
+		localization_key = GFX_DOP_LegCo_Faction_Yingshang_Small
 	}
 	text = {
 		trigger = {
@@ -259,13 +417,13 @@ defined_text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GFX_DOP_LegCo_Faction_Gongzheng_Small
+		localization_key = GFX_DOP_LegCo_Faction_Huaren_Small
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GFX_DOP_LegCo_Faction_Yingshang_Small
+		localization_key = GFX_DOP_LegCo_Faction_Zhuren_Small
 	}
 	text = {
 		trigger = {
@@ -323,28 +481,28 @@ defined_text = {
 			check_variable = { GNG_dop_legco_skin = 1 }
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_logo_huaren
+		localization_key = GNG_dop_legco_logo_gongzheng
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 2 }
 			check_variable = { GNG_legco_faction = 4 }
 		}
-		localization_key = GNG_dop_legco_logo_gongzheng
+		localization_key = GNG_dop_legco_logo_huaren
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 1 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_logo_zhuren
+		localization_key = GNG_dop_legco_logo_yingshang
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 2 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_logo_yingshang
+		localization_key = GNG_dop_legco_logo_zhuren
 	}
 	text = {
 		trigger = {
@@ -461,14 +619,14 @@ defined_text = {
 			check_variable = { GNG_dop_legco_skin = 1 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_color_e
+		localization_key = GNG_dop_legco_color_g
 	}
 	text = {
 		trigger = {
 			check_variable = { GNG_dop_legco_skin = 2 }
 			check_variable = { GNG_legco_faction = 5 }
 		}
-		localization_key = GNG_dop_legco_color_g
+		localization_key = GNG_dop_legco_color_e
 	}
 	text = {
 		trigger = {
