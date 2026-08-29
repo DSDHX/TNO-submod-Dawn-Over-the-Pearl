@@ -1,7 +1,7 @@
 spriteTypes = {
 	spriteType = {
 		name = "GFX_BoP_Tab_DOPConstruction_Icon"
-		textureFile = "gfx/interface/bop/GFX_BoP_Tab_GSA_Icon.dds"
+		textureFile = "gfx/interface/bop/GFX_BoP_Tab_DOPConstruction_Icon.dds"
 	}
 	progressbartype = {
 		name = "GFX_DOP_construction_main_progress"

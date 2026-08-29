@@ -16,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TNO_ROOT = Path(
     r"D:\Steam\steamapps\workshop\content\394360\2438003901"
 )
+DEFAULT_TNO_CN_ROOT = Path(
+    r"D:\Steam\steamapps\workshop\content\394360\2243912940"
+)
 DEFAULT_SOURCE_DIR = Path(
     r"D:\Creations\DOP_pre_full_rollback_20260829_075704\workspace"
     r"\output\imagegen\construction_previews\sources"
@@ -229,11 +232,53 @@ def validate_reward_geography(source: str, tno_root: Path) -> None:
     )
 
 
+def validate_tno_component_localisation(tno_cn_root: Path) -> None:
+    localisation_dir = tno_cn_root / "localisation/simp_chinese"
+    sources = "\n".join(
+        text(localisation_dir / name)
+        for name in (
+            "TNO_Guangdong_l_simp_chinese.yml",
+            "TNO_societal_development_l_simp_chinese.yml",
+            "TNO_economy_l_simp_chinese.yml",
+            "modifiers_l_simp_chinese.yml",
+        )
+    )
+    required = (
+        "GNG_chi_app_temp_increase_tt:",
+        "GNG_zhu_app_temp_increase_tt:",
+        "GNG_jap_app_temp_increase_tt:",
+        "GNG_Three_Evils_change_decrease_tt:",
+        "TNO_econ_pus_increase_tt:",
+        "TNO_econ_misc_income_increase_tt:",
+        "improve_academic_base_small:",
+        "improve_admin_efficiency_small:",
+        "improve_industrial_expertise_small:",
+        "improve_poverty_small:",
+        "MODIFIER_RESEARCH_SPEED_FACTOR:",
+        "MODIFIER_LOCAL_RESOURCES_FACTOR:",
+        "MODIFIER_TRADE_OPINION_FACTOR:",
+    )
+    require(
+        all(key in sources for key in required),
+        "all referenced TNO Chinese effect components exist",
+    )
+    require(
+        "§E珠人§!" in sources
+        and "§e日侨§!" in sources
+        and "§Y政府支持率§!" in sources
+        and "§Y教育水平§!" in sources,
+        "TNO Chinese component terminology is available and canonical",
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Static acceptance checks for the DOP construction system."
     )
     parser.add_argument("--tno-root", type=Path, default=DEFAULT_TNO_ROOT)
+    parser.add_argument(
+        "--tno-cn-root", type=Path, default=DEFAULT_TNO_CN_ROOT
+    )
     parser.add_argument("--source-dir", type=Path, default=DEFAULT_SOURCE_DIR)
     args = parser.parse_args()
 
@@ -271,10 +316,57 @@ def main() -> int:
         not any("political_power" in line for line in reward_lines),
         "completion reward amplification leaves political power untouched",
     )
+    social_values = {
+        "really_low": Decimal("0.5"),
+        "low": Decimal("1"),
+        "med": Decimal("2"),
+        "high": Decimal("3"),
+    }
+    poverty_values = {
+        "low": Decimal("0.03"),
+        "med": Decimal("0.06"),
+        "high": Decimal("0.09"),
+    }
+    social_totals = {
+        area: sum(
+            (
+                poverty_values[tier]
+                if area == "poverty"
+                else social_values[tier]
+                for line in reward_lines
+                for matched_area, tier in re.findall(
+                    r"TNO_improve_(academic_base|research_facilities|"
+                    r"agriculture|admin_efficiency|industrial_equipment|"
+                    r"industrial_expertise|poverty)_"
+                    r"(really_low|low|med|high)",
+                    line,
+                )
+                if matched_area == area
+            ),
+            Decimal("0"),
+        )
+        for area in (
+            "academic_base",
+            "research_facilities",
+            "agriculture",
+            "admin_efficiency",
+            "industrial_equipment",
+            "industrial_expertise",
+            "poverty",
+        )
+    }
     require(
-        sum(line.lstrip().startswith("TNO_improve_") for line in reward_lines)
-        == 90,
-        "completion rewards contain the doubled social-development payload",
+        social_totals
+        == {
+            "academic_base": Decimal("12"),
+            "research_facilities": Decimal("12"),
+            "agriculture": Decimal("12"),
+            "admin_efficiency": Decimal("28"),
+            "industrial_equipment": Decimal("22"),
+            "industrial_expertise": Decimal("22"),
+            "poverty": Decimal("0.66"),
+        },
+        "completion rewards preserve the doubled social-development payload",
     )
     require(
         reward_total(
@@ -402,6 +494,42 @@ def main() -> int:
         "effect overlay previews the same real callback used by rewards",
     )
     require(
+        not re.search(
+            r"custom_effect_tooltip\s*=\s*"
+            r"DOP_construction_\w+_effect_tt",
+            reward_effects,
+        )
+        and all(
+            f"DOP_construction_{project.slug}_effect_tt:" not in localisation
+            for project in projects
+        ),
+        "project rewards no longer use hand-written aggregate effect text",
+    )
+    require(
+        all(
+            component in reward_effects
+            for component in (
+                "DOP_construction_add_misc_income_reward = yes",
+                "DOP_construction_add_free_pu_reward = yes",
+                "DOP_construction_add_research_speed_reward = yes",
+                "DOP_construction_add_resource_factor_reward = yes",
+                "DOP_construction_add_trade_opinion_reward = yes",
+            )
+        ),
+        "DOP-only persistent rewards call reusable effect components",
+    )
+    require(
+        all(
+            not re.search(
+                rf"DOP_construction_{re.escape(project.slug)}_completion_effect"
+                r"\s*=\s*\{\s*(?:custom_effect_tooltip|hidden_effect)",
+                reward_effects,
+            )
+            for project in projects
+        ),
+        "project callbacks expose their real TNO and engine effect components",
+    )
+    require(
         "DOP_construction_process_completion_queue = yes" in on_actions
         and "DOP_construction_event_fired_today" in reward_effects,
         "daily completion queue is wired for at most one event per day",
@@ -446,12 +574,25 @@ def main() -> int:
     )
     validate_gng_app_scopes(reward_effects)
     validate_reward_geography(reward_effects, args.tno_root)
+    validate_tno_component_localisation(args.tno_cn_root)
+
+    require(
+        "竹人" not in localisation
+        and "满意度" not in localisation
+        and "岭南开发总署" not in localisation,
+        "construction localisation contains no obsolete Chinese terminology",
+    )
+    require(
+        "§E珠人§!" in localisation
+        and "§e日侨§!" in localisation
+        and "政府支持率" in localisation,
+        "construction localisation uses TNO's 珠人/日侨/政府支持率 terminology",
+    )
 
     for project in projects:
         for key in (
             f"DOP_construction_{project.slug}:",
             f"DOP_construction_{project.slug}_desc:",
-            f"DOP_construction_{project.slug}_effect_tt:",
             f"DOP_GNG_construction.{project.completion_event_id}.t:",
         ):
             require(key in localisation, f"localisation key exists: {key[:-1]}")
@@ -461,9 +602,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260829A"
+        "EARLY DEVELOPMENT BUILD 260829C"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260829A",
+        "user-facing build version is 260829C",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

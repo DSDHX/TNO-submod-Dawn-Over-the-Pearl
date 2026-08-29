@@ -122,16 +122,11 @@ class Reward:
     risk: str
     effect: tuple[str, ...]
 
-    @property
-    def summary(self) -> str:
-        return f"§Y地区建设§!：{self.regional}\\n§Y社会发展§!：{self.social}\\n§YGNG特色§!：{self.gng}"
-
-
 NON_PP_REWARD_MULTIPLIER = Decimal("2")
 SOCIAL_DEVELOPMENT_EFFECT = re.compile(
-    r"^\s*TNO_improve_(?:academic_base|research_facilities|agriculture|"
-    r"admin_efficiency|industrial_equipment|industrial_expertise|poverty)_"
-    r"(?:really_low|low|med|high)\s*=\s*yes\s*$"
+    r"^(?P<indent>\s*)TNO_improve_(?P<area>academic_base|research_facilities|"
+    r"agriculture|admin_efficiency|industrial_equipment|industrial_expertise|"
+    r"poverty)_(?P<tier>really_low|low|med|high)\s*=\s*yes\s*$"
 )
 SCALED_TEMP_VALUE = re.compile(
     r"(set_temp_variable\s*=\s*\{\s*(?:GNG_corruption_temp_var|"
@@ -153,6 +148,34 @@ SCALED_RESOURCE = re.compile(
     r"(add_resource\s*=\s*\{\s*type\s*=\s*\w+\s+amount\s*=\s*)"
     r"(-?\d+(?:\.\d+)?)(\s*\})"
 )
+PERSISTENT_REWARD_EFFECT = re.compile(
+    r"^(?P<indent>\s*)add_to_variable\s*=\s*\{\s*"
+    r"(?P<variable>DOP_construction_reward_(?:misc_income|free_pu|"
+    r"research_speed|trade_opinion|resource_factor))\s*=\s*"
+    r"(?P<value>-?\d+(?:\.\d+)?)\s*\}\s*$"
+)
+PERSISTENT_REWARD_COMPONENTS = {
+    "DOP_construction_reward_misc_income": (
+        "misc_income_temp",
+        "DOP_construction_add_misc_income_reward",
+    ),
+    "DOP_construction_reward_free_pu": (
+        "pus_temp",
+        "DOP_construction_add_free_pu_reward",
+    ),
+    "DOP_construction_reward_research_speed": (
+        "DOP_construction_reward_component_value",
+        "DOP_construction_add_research_speed_reward",
+    ),
+    "DOP_construction_reward_resource_factor": (
+        "DOP_construction_reward_component_value",
+        "DOP_construction_add_resource_factor_reward",
+    ),
+    "DOP_construction_reward_trade_opinion": (
+        "DOP_construction_reward_component_value",
+        "DOP_construction_add_trade_opinion_reward",
+    ),
+}
 
 
 def scaled_number(raw: str) -> str:
@@ -172,6 +195,22 @@ def amplify_non_pp_reward_script(script: str) -> tuple[str, ...]:
     amplified: list[str] = []
     for raw_line in script.strip().splitlines():
         line = raw_line.rstrip()
+        social_match = SOCIAL_DEVELOPMENT_EFFECT.fullmatch(line)
+        if social_match:
+            indent = social_match.group("indent")
+            area = social_match.group("area")
+            tier = social_match.group("tier")
+            doubled_tiers = {
+                "really_low": ("low",),
+                "low": ("med",),
+                "med": ("high", "low"),
+                "high": ("high", "high"),
+            }[tier]
+            amplified.extend(
+                f"{indent}TNO_improve_{area}_{doubled_tier} = yes"
+                for doubled_tier in doubled_tiers
+            )
+            continue
         line = SCALED_TEMP_VALUE.sub(
             lambda match: match.group(1)
             + scaled_number(match.group(2))
@@ -197,9 +236,25 @@ def amplify_non_pp_reward_script(script: str) -> tuple[str, ...]:
             line,
         )
         amplified.append(line)
-        if SOCIAL_DEVELOPMENT_EFFECT.fullmatch(line):
-            amplified.append(line)
     return tuple(amplified)
+
+
+def canonical_tno_cn(value: str) -> str:
+    """Use the official TNO Chinese terms in generated audit prose."""
+    replacements = (
+        ("学术基础", "教育水平"),
+        ("竹人", "珠人"),
+        ("日本人", "日侨"),
+        ("满意度", "政府支持率"),
+        ("资源开采效率", "战略资源获取效率"),
+        ("贸易关系评价", "贸易协定关系修正"),
+        ("两次极小幅", "小幅"),
+        ("两次小幅", "中等"),
+        ("两次中等", "大幅与小幅"),
+    )
+    for old, new in replacements:
+        value = value.replace(old, new)
+    return value
 
 
 def reward(
@@ -213,13 +268,13 @@ def reward(
     script: str,
 ) -> Reward:
     return Reward(
-        regional,
-        social,
-        gng,
-        references,
-        targets,
-        strength,
-        risk,
+        canonical_tno_cn(regional),
+        canonical_tno_cn(social),
+        canonical_tno_cn(gng),
+        canonical_tno_cn(references),
+        canonical_tno_cn(targets),
+        canonical_tno_cn(strength),
+        canonical_tno_cn(risk),
         amplify_non_pp_reward_script(script),
     )
 
@@ -1172,7 +1227,7 @@ def render_localisation() -> list[str]:
         "# Dynamic construction registry, GUI and completion-event localisation.",
         'DOP_construction_no_region:0 "暂无地区"',
         'DOP_construction_no_project:0 "暂无建设项目"',
-        'DOP_construction_no_project_desc:0 "建设项目尚未添加到岭南开发总署。"',
+        'DOP_construction_no_project_desc:0 "建设项目尚未添加到岭南建设总署。"',
         'DOP_construction_region_directory_title:0 "建设目录"',
         'DOP_construction_project_directory_title:0 "设施项目"',
         'DOP_construction_region_entry_name:0 "§B[DOP_construction_GetDirectoryRegionMarker] [DOP_construction_GetDirectoryRegionName]§!"',
@@ -1181,21 +1236,24 @@ def render_localisation() -> list[str]:
         'DOP_construction_project_entry_tt:0 "[DOP_construction_GetEntryDesc]"',
         'DOP_construction_directory_marker_open:0 "−"',
         'DOP_construction_directory_marker_closed:0 "+"',
-        'DOP_construction_show_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中。"',
+        'DOP_construction_show_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南建设总署§!界面中。"',
         'DOP_construction_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将开始建设。"',
-        'DOP_construction_show_and_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中并开始建设。"',
+        'DOP_construction_show_and_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南建设总署§!界面中并开始建设。"',
         'DOP_construction_selected_numbers:0 "目标工程量：[?DOP_construction_selected_total|0]\\n当前进度：[?DOP_construction_selected_progress|0]（[?DOP_construction_selected_percent|1]%）\\n基础速度：[?DOP_construction_base_speed|0]/周\\n实际速度：[?DOP_construction_selected_actual_speed|1]/周\\n资金倍率：[?DOP_construction_selected_funding_speed_factor|2]×\\n人力倍率：[?DOP_construction_selected_manpower_speed_factor|2]×\\n额外倍率：[?DOP_construction_selected_speed_factor|2]×"',
         'DOP_construction_funding_label:0 "资金投入：[?DOP_construction_selected_funding|0]%"',
-        'DOP_construction_funding_effects:0 "本项目持续支出：[?DOP_construction_selected_misc_cost|3]B\\n本项目生产单位占用：[?DOP_construction_selected_pu_cost|2]\\n全部施工持续支出：[?DOP_construction_total_misc_costs|3]B\\n全部施工生产单位占用：[?DOP_construction_total_pu_occupied|0]"',
+        'DOP_construction_funding_effects:0 "本项目持续支出：[?DOP_construction_selected_misc_cost|3]B美元\\n本项目占用：£tt_prod_unit [?DOP_construction_selected_pu_cost|2]生产单位\\n全部施工持续支出：[?DOP_construction_total_misc_costs|3]B美元\\n全部施工占用：£tt_prod_unit [?DOP_construction_total_pu_occupied|0]生产单位"',
         'DOP_construction_manpower_label:0 "人力组织：[?DOP_construction_selected_manpower|0]%"',
-        'DOP_construction_manpower_effects:0 "施工倍率：[?DOP_construction_selected_manpower_speed_factor|2]×\\n每日政治点数：[?DOP_construction_mobilisation_pp_gain|2]\\n每周稳定度：[?DOP_construction_mobilisation_stability_weekly_display|2]%\\n每月工业专业知识：[?DOP_construction_mobilisation_expertise_monthly|2]\\n每月贫困改善：[?DOP_construction_mobilisation_poverty_monthly|2]\\n每月行政效率：[?DOP_construction_mobilisation_admin_monthly|2]\\n每月华人/竹人/日本人支持：[?DOP_construction_mobilisation_chinese_monthly|2]/[?DOP_construction_mobilisation_zhujin_monthly|2]/[?DOP_construction_mobilisation_japanese_monthly|2]"',
+        'DOP_construction_manpower_effects:0 "施工倍率：[?DOP_construction_selected_manpower_speed_factor|2]×\\n每日政治点数：[?DOP_construction_mobilisation_pp_gain|=+2]\\n每周稳定度：[?DOP_construction_mobilisation_stability_weekly_display|=+2]%\\n每月工业专业知识：[?DOP_construction_mobilisation_expertise_monthly|=+2]\\n每月贫困改善：[?DOP_construction_mobilisation_poverty_monthly|=+2]\\n每月行政效率：[?DOP_construction_mobilisation_admin_monthly|=+2]\\n每月£GNG_chinese_texticon §i华人§!政府支持率：[?DOP_construction_mobilisation_chinese_monthly|=+2]\\n每月£GNG_zhujin_texticon §E珠人§!政府支持率：[?DOP_construction_mobilisation_zhujin_monthly|=+2]\\n每月£GNG_expats_texticon §e日侨§!政府支持率：[?DOP_construction_mobilisation_japanese_monthly|=+2]"',
         'DOP_construction_description_click_tt:0 "§G点击§!项目简介以查看真实完工效果。"',
         'DOP_construction_effect_overlay_heading:0 "§Y项目完工效果§!"',
         'DOP_construction_effect_overlay_hint:0 "将光标停留在此页查看真实效果。\\n§G点击§!返回项目简介。"',
         'DOP_construction_selected_effect_tt:0 "[!construction_effect_overlay_button_click]"',
         'DOP_construction_preview_return_tt:0 "\\n§G点击§!返回项目简介。"',
-        'DOP_GNG_construction.completed.desc:0 "岭南开发总署确认工程已达到计划目标。项目的地区设施、社会发展与广东特色收益，将在本事件确认后一次性发放。"',
+        'DOP_GNG_construction.completed.desc:0 "岭南建设总署确认工程已达到计划目标。项目的地区设施、社会发展与广东特色收益，将在本事件确认后一次性发放。"',
         'DOP_GNG_construction.completed.a:0 "验收工程并落实全部收益"',
+        'DOP_construction_research_speed_reward_tt:0 "$MODIFIER_RESEARCH_SPEED_FACTOR$：[?DOP_construction_reward_component_value|=+%2]\\n"',
+        'DOP_construction_resource_factor_reward_tt:0 "$MODIFIER_LOCAL_RESOURCES_FACTOR$：[?DOP_construction_reward_component_value|=+%2]\\n"',
+        'DOP_construction_trade_opinion_reward_tt:0 "$MODIFIER_TRADE_OPINION_FACTOR$：[?DOP_construction_reward_component_value|=+%2]\\n"',
         "",
     ]
     for region in REGIONS:
@@ -1205,10 +1263,76 @@ def render_localisation() -> list[str]:
         lines.append(f'DOP_construction_{project.slug}:0 "{loc_value(project.name)}"')
         lines.append(f'DOP_construction_{project.slug}_desc:0 "{loc_value(project.desc)}"')
         lines.append(
-            f'DOP_construction_{project.slug}_effect_tt:0 "{loc_value(REWARDS[project.id].summary)}"'
+            f'DOP_GNG_construction.{project.completion_event_id}.t:0 "{loc_value(project.name)}建设完成"'
         )
-        lines.append(
-            f'DOP_GNG_construction.{project.completion_event_id}.t:0 "“{loc_value(project.name)}”建设完成"'
+    return lines
+
+
+def render_persistent_reward_components() -> list[str]:
+    components = (
+        (
+            "DOP_construction_add_misc_income_reward",
+            "TNO_econ_misc_income_increase_tt",
+            "DOP_construction_reward_misc_income",
+            "misc_income_temp",
+        ),
+        (
+            "DOP_construction_add_free_pu_reward",
+            "TNO_econ_pus_increase_tt",
+            "DOP_construction_reward_free_pu",
+            "pus_temp",
+        ),
+        (
+            "DOP_construction_add_research_speed_reward",
+            "DOP_construction_research_speed_reward_tt",
+            "DOP_construction_reward_research_speed",
+            "DOP_construction_reward_component_value",
+        ),
+        (
+            "DOP_construction_add_resource_factor_reward",
+            "DOP_construction_resource_factor_reward_tt",
+            "DOP_construction_reward_resource_factor",
+            "DOP_construction_reward_component_value",
+        ),
+        (
+            "DOP_construction_add_trade_opinion_reward",
+            "DOP_construction_trade_opinion_reward_tt",
+            "DOP_construction_reward_trade_opinion",
+            "DOP_construction_reward_component_value",
+        ),
+    )
+    lines: list[str] = []
+    for effect, tooltip, variable, temp_variable in components:
+        lines.extend(
+            [
+                f"{effect} = {{",
+                f"\tcustom_effect_tooltip = {tooltip}",
+                "\thidden_effect = {",
+                f"\t\tadd_to_variable = {{ {variable} = {temp_variable} }}",
+                "\t}",
+                "}",
+                "",
+            ]
+        )
+    return lines
+
+
+def render_componentised_reward(effect: tuple[str, ...]) -> list[str]:
+    lines: list[str] = []
+    for line in effect:
+        match = PERSISTENT_REWARD_EFFECT.fullmatch(line)
+        if not match:
+            lines.append(line)
+            continue
+        temp_variable, component = PERSISTENT_REWARD_COMPONENTS[
+            match.group("variable")
+        ]
+        indent = match.group("indent")
+        lines.extend(
+            [
+                f"{indent}set_temp_variable = {{ {temp_variable} = {match.group('value')} }}",
+                f"{indent}{component} = yes",
+            ]
         )
     return lines
 
@@ -1219,16 +1343,14 @@ def render_rewards() -> str:
         "# The event payout and effect_tooltip preview share these callbacks.",
         "",
     ]
+    lines.extend(render_persistent_reward_components())
     for project in PROJECTS:
+        lines.append(f"DOP_construction_{project.slug}_completion_effect = {{")
         lines.extend(
-            [
-                f"DOP_construction_{project.slug}_completion_effect = {{",
-                f"\tcustom_effect_tooltip = DOP_construction_{project.slug}_effect_tt",
-                "\thidden_effect = {",
-            ]
+            "\t" + line if line else ""
+            for line in render_componentised_reward(REWARDS[project.id].effect)
         )
-        lines.extend("\t\t" + line if line else "" for line in REWARDS[project.id].effect)
-        lines.extend(["\t}", "}", ""])
+        lines.extend(["}", ""])
 
     lines.append("DOP_construction_dispatch_reward_callback = {")
     for project in PROJECTS:
@@ -1514,23 +1636,23 @@ def render_audit() -> str:
             "- 资金持续支出 = 项目工程量 / 1,000,000 × 资金百分比 / 50；生产单位占用 = 项目工程量 / 100,000 × 资金百分比 / 50，所有在建项目汇总后四舍五入。",
             "- 全项目同时在建时：资金 10/50/100 分别为 0.241/1.205/2.410B 持续支出和约 2/12/24 个生产单位占用。",
             "- 资金/人力均为 10、50、100 时，基础周进度分别为 456、1,000、1,950。",
-            "- 人力偏移 = (人力百分比 - 50) / 50，并按项目工程量 / 100,000 聚合。政治点维持原值，其余动员数值提高至 2 倍；最终修正有明确 clamp：每日政治点数 [-0.50, +0.20]；每周稳定度 [-0.30%, +0.08%]；每月工业专业知识 [-0.30, +0.80]；每月贫困改善 [-0.60, +0.40]；每月行政效率 [-0.50, +0.30]；三群体月度支持各 [-3.00, +3.00]。",
-            "- 20 项全开且人力 100 时，未 clamp 的聚合近似为每日政治点数 -0.482、每周稳定度 -0.193%、工业专业知识 +0.964、贫困 -0.603、行政 -0.482、华人 +2.892、竹人 -0.723、日本人 -2.410；超过上述边界的值由动态修正 clamp。",
-            "- 20 项全开且人力 10 时，未 clamp 的聚合近似为每日政治点数 +0.386、每周稳定度 +0.154%、工业专业知识 -0.771、贫困 +0.482、行政 +0.386、华人 -2.314、竹人 +0.578、日本人 +1.928；同样由边界 clamp。",
+            "- 人力偏移 = (人力百分比 - 50) / 50，并按项目工程量 / 100,000 聚合。政治点维持原值，其余动员数值提高至 2 倍；最终修正有明确 clamp：每日政治点数 [-0.50, +0.20]；每周稳定度 [-0.30%, +0.08%]；每月工业专业知识 [-0.30, +0.80]；每月贫困改善 [-0.60, +0.40]；每月行政效率 [-0.50, +0.30]；三群体月度政府支持率各 [-3.00, +3.00]。",
+            "- 20 项全开且人力 100 时，未 clamp 的聚合近似为每日政治点数 -0.482、每周稳定度 -0.193%、工业专业知识 +0.964、贫困 -0.603、行政 -0.482、华人 +2.892、珠人 -0.723、日侨 -2.410；超过上述边界的值由动态修正 clamp。",
+            "- 20 项全开且人力 10 时，未 clamp 的聚合近似为每日政治点数 +0.386、每周稳定度 +0.154%、工业专业知识 -0.771、贫困 +0.482、行政 +0.386、华人 -2.314、珠人 +0.578、日侨 +1.928；同样由边界 clamp。",
             "- 滑杆只产生施工期间的聚合动态修正；项目完工、停工或尚未开工时不计入，不存在通过来回拖动获得永久收益的接口。",
             "",
             "## 完工累计上限",
             "",
-            "- 永久全国经济修正：生产单位 +8、杂项收入 +2.90B、研究速度 +7%、资源开采效率 +12%、贸易关系评价 +10%。",
-            "- 社会发展点数合计：学术基础 12、研究设施 12、农业 12、行政效率 28、工业设备 22、工业专业知识 22；贫困改善月度点数合计 0.66。",
-            "- 腐败累计 -24；单一州单次最大满意度变化为华人 +8、竹人 +6、日本人 +4（民俗园日本人 -2）。相关 GNG helper 均在州作用域调用并由 TNO 接口结算。",
+            "- 永久全国经济修正：生产单位 +8、杂项收入 +2.90B、研究速度 +7%、战略资源获取效率 +12%、贸易协定关系修正 +10%。",
+            "- 社会发展点数合计：教育水平 12、研究设施 12、农业 12、行政效率 28、工业设备 22、工业专业知识 22；贫困改善月度点数合计 0.66。",
+            "- 腐败累计 -24；单一州单次最大政府支持率变化为华人 +8、珠人 +6、日侨 +4（民俗园日侨 -2）。相关 GNG helper 均在州作用域调用并由 TNO 接口结算。",
             "- 领奖路径为一次性 reward_claimed 数组保护；完成事件队列每日最多弹出一个事件。无 pending 奖励、无控制权检查、无 on_state_control_changed 发奖。",
             "",
             "## TNO 接口依据",
             "",
             "- 社会发展：common/scripted_effects/TNO_SocDev_scripted_effects.txt。",
             "- 贫困：common/scripted_effects/TNO_economy_frontend_scripted_effects.txt。",
-            "- 腐败及三群体满意度：common/scripted_effects/TNO_Guangdong_scripted_effects.txt。",
+            "- 腐败及三群体政府支持率：common/scripted_effects/TNO_Guangdong_scripted_effects.txt。",
             "- 永久全国经济收益只写入 DOP_construction_completed_assets 动态修正；施工负担只写入经济承诺和社会动员动态修正。",
             "",
         ]
@@ -1635,6 +1757,20 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
     outputs[EFFECTS_PATH] = (effects, bom)
 
     localisation, newline, bom = read_text(LOC_PATH)
+    prefix, generated = localisation.split(LOC_BEGIN, 1)
+    legacy_key = re.compile(
+        r"^\s*(?:DOP_construction_(?:selected_numbers|funding_label|"
+        r"manpower_label|project_(?:name|desc|region)_\d+|catalog_\d+|"
+        r"region_\d+)):"
+    )
+    prefix = newline.join(
+        line.rstrip()
+        for line in prefix.splitlines()
+        if not legacy_key.match(line)
+    )
+    if prefix and not prefix.endswith(newline):
+        prefix += newline
+    localisation = prefix + LOC_BEGIN + generated
     localisation = replace_marked(
         localisation, LOC_BEGIN, LOC_END, render_localisation(), newline
     )
