@@ -1,0 +1,26 @@
+DOP_construction_economic_commitments = {
+	enable = { always = yes }
+	misc_costs_modifier = DOP_construction_total_misc_costs
+	free_production_units_modifier = DOP_construction_free_pu_modifier
+}
+
+DOP_construction_social_mobilisation = {
+	enable = { always = yes }
+	political_power_gain = DOP_construction_mobilisation_pp_gain
+	stability_weekly = DOP_construction_mobilisation_stability_weekly
+	industrial_expertise_monthly_rate = DOP_construction_mobilisation_expertise_monthly
+	poverty_monthly_rate = DOP_construction_mobilisation_poverty_monthly
+	admin_efficiency_monthly_rate = DOP_construction_mobilisation_admin_monthly
+	GNG_monthly_chinese_government_support = DOP_construction_mobilisation_chinese_monthly
+	GNG_monthly_zhujin_government_support = DOP_construction_mobilisation_zhujin_monthly
+	GNG_monthly_japanese_government_support = DOP_construction_mobilisation_japanese_monthly
+}
+
+DOP_construction_completed_assets = {
+	enable = { always = yes }
+	misc_income_modifier = DOP_construction_reward_misc_income
+	free_production_units_modifier = DOP_construction_reward_free_pu
+	research_speed_factor = DOP_construction_reward_research_speed
+	local_resources_factor = DOP_construction_reward_resource_factor
+	trade_opinion_factor = DOP_construction_reward_trade_opinion
+}

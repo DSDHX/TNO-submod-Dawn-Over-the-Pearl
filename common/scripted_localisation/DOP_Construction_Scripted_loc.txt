@@ -63,19 +63,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { check_variable = { DOP_construction_directory_item = 106 } }
-		localization_key = DOP_construction_region_yongning
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_directory_item = 107 } }
-		localization_key = DOP_construction_region_cangwu
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_directory_item = 108 } }
-		localization_key = DOP_construction_region_guiliu
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_directory_item = 109 } }
-		localization_key = DOP_construction_region_tiannan
+		localization_key = DOP_construction_region_guangxi
 	}
 }
 
@@ -103,19 +91,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { check_variable = { DOP_construction_selected_region = 6 } }
-		localization_key = DOP_construction_region_yongning
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_selected_region = 7 } }
-		localization_key = DOP_construction_region_cangwu
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_selected_region = 8 } }
-		localization_key = DOP_construction_region_guiliu
-	}
-	text = {
-		trigger = { check_variable = { DOP_construction_selected_region = 9 } }
-		localization_key = DOP_construction_region_tiannan
+		localization_key = DOP_construction_region_guangxi
 	}
 	text = { localization_key = DOP_construction_no_region }
 }
@@ -186,6 +162,22 @@ defined_text = {
 		trigger = { check_variable = { DOP_construction_target_project = 16 } }
 		localization_key = DOP_construction_honghe_fan_asia_friendship_pass
 	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 17 } }
+		localization_key = DOP_construction_prd_maglev
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 18 } }
+		localization_key = DOP_construction_shantou_chaozhou_jieyang_integration
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 19 } }
+		localization_key = DOP_construction_granite_uranium_mining
+	}
+	text = {
+		trigger = { check_variable = { DOP_construction_target_project = 20 } }
+		localization_key = DOP_construction_shale_oil_refineries
+	}
 	text = { localization_key = DOP_construction_no_project }
 }
 
@@ -230,27 +222,6 @@ defined_text = {
 		trigger = {
 			check_variable = { DOP_construction_directory_item = 106 }
 			has_country_flag = DOP_construction_region_6_expanded
-		}
-		localization_key = DOP_construction_directory_marker_open
-	}
-	text = {
-		trigger = {
-			check_variable = { DOP_construction_directory_item = 107 }
-			has_country_flag = DOP_construction_region_7_expanded
-		}
-		localization_key = DOP_construction_directory_marker_open
-	}
-	text = {
-		trigger = {
-			check_variable = { DOP_construction_directory_item = 108 }
-			has_country_flag = DOP_construction_region_8_expanded
-		}
-		localization_key = DOP_construction_directory_marker_open
-	}
-	text = {
-		trigger = {
-			check_variable = { DOP_construction_directory_item = 109 }
-			has_country_flag = DOP_construction_region_9_expanded
 		}
 		localization_key = DOP_construction_directory_marker_open
 	}

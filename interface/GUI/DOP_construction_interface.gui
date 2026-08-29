@@ -196,23 +196,54 @@ guiTypes = {
 			fixedsize = yes
 			alwaystransparent = yes
 		}
-		containerWindowType = {
-			name = construction_description_scroll
+		buttonType = {
+			name = construction_description_button
 			position = { x = 239 y = 210 }
-			size = { width = 280 height = 150 }
-			verticalScrollbar = right_vertical_slider
-			clipping = yes
-			instantTextBoxType = {
-				name = construction_description
-				position = { x = 0 y = 0 }
-				font = aldrich_16_outline
-				text = DOP_construction_selected_desc
-				maxWidth = 260
-				maxHeight = 500
-				format = left
-				fixedsize = yes
-				alwaystransparent = yes
-			}
+			size = { x = 280 y = 150 }
+			quadTextureSprite = GFX_tiled_window_transparent
+			pdx_tooltip = DOP_construction_description_click_tt
+			clicksound = click_default
+		}
+		instantTextBoxType = {
+			name = construction_description
+			position = { x = 239 y = 210 }
+			font = aldrich_16_outline
+			text = DOP_construction_selected_desc
+			maxWidth = 270
+			maxHeight = 145
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = construction_effect_overlay_button
+			position = { x = 239 y = 210 }
+			size = { x = 280 y = 150 }
+			quadTextureSprite = GFX_tiled_window_transparent
+			pdx_tooltip = DOP_construction_selected_effect_tt
+			clicksound = click_default
+		}
+		instantTextBoxType = {
+			name = construction_effect_overlay_heading
+			position = { x = 239 y = 228 }
+			font = aldrich_18_outline
+			text = DOP_construction_effect_overlay_heading
+			maxWidth = 280
+			maxHeight = 28
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = construction_effect_overlay_hint
+			position = { x = 249 y = 270 }
+			font = aldrich_16_outline
+			text = DOP_construction_effect_overlay_hint
+			maxWidth = 260
+			maxHeight = 72
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = construction_numbers
@@ -337,11 +368,33 @@ guiTypes = {
 				add_horizontal = yes
 			}
 		}
+		instantTextBoxType = {
+			name = construction_funding_effects
+			position = { x = 239 y = 370 }
+			font = aldrich_14_outline
+			text = DOP_construction_funding_effects
+			maxWidth = 270
+			maxHeight = 68
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = construction_manpower_effects
+			position = { x = 239 y = 444 }
+			font = aldrich_14_outline
+			text = DOP_construction_manpower_effects
+			maxWidth = 270
+			maxHeight = 145
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
 
 		iconType = {
 			name = construction_project_image
-			spriteType = GFX_GSA_kanton_shenkansen_research
-			position = { x = 766 y = -46 }
+			spriteType = GFX_DOP_construction_project_01
+			position = { x = 807 y = 139 }
 			alwaystransparent = yes
 		}
 	}

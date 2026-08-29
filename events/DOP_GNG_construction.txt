@@ -2,112 +2,260 @@ add_namespace = DOP_GNG_construction
 
 country_event = {
 	id = DOP_GNG_construction.1
-	hidden = yes
+	title = DOP_GNG_construction.1.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 1 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.2
-	hidden = yes
+	title = DOP_GNG_construction.2.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 2 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.3
-	hidden = yes
+	title = DOP_GNG_construction.3.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 3 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.4
-	hidden = yes
+	title = DOP_GNG_construction.4.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 4 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.5
-	hidden = yes
+	title = DOP_GNG_construction.5.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 5 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.6
-	hidden = yes
+	title = DOP_GNG_construction.6.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 6 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.7
-	hidden = yes
+	title = DOP_GNG_construction.7.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 7 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.8
-	hidden = yes
+	title = DOP_GNG_construction.8.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 8 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.9
-	hidden = yes
+	title = DOP_GNG_construction.9.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 9 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.10
-	hidden = yes
+	title = DOP_GNG_construction.10.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 10 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.11
-	hidden = yes
+	title = DOP_GNG_construction.11.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 11 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.12
-	hidden = yes
+	title = DOP_GNG_construction.12.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 12 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.13
-	hidden = yes
+	title = DOP_GNG_construction.13.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 13 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.14
-	hidden = yes
+	title = DOP_GNG_construction.14.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 14 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.15
-	hidden = yes
+	title = DOP_GNG_construction.15.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 15 }
+		DOP_construction_claim_project_reward = yes
+	}
 }
 
 country_event = {
 	id = DOP_GNG_construction.16
-	hidden = yes
+	title = DOP_GNG_construction.16.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
 	is_triggered_only = yes
-	immediate = { }
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 16 }
+		DOP_construction_claim_project_reward = yes
+	}
+}
+
+country_event = {
+	id = DOP_GNG_construction.17
+	title = DOP_GNG_construction.17.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
+	is_triggered_only = yes
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 17 }
+		DOP_construction_claim_project_reward = yes
+	}
+}
+
+country_event = {
+	id = DOP_GNG_construction.18
+	title = DOP_GNG_construction.18.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
+	is_triggered_only = yes
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 18 }
+		DOP_construction_claim_project_reward = yes
+	}
+}
+
+country_event = {
+	id = DOP_GNG_construction.19
+	title = DOP_GNG_construction.19.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
+	is_triggered_only = yes
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 19 }
+		DOP_construction_claim_project_reward = yes
+	}
+}
+
+country_event = {
+	id = DOP_GNG_construction.20
+	title = DOP_GNG_construction.20.t
+	desc = DOP_GNG_construction.completed.desc
+	picture = GFX_report_event_IBR_road_work_1
+	is_triggered_only = yes
+	option = {
+		name = DOP_GNG_construction.completed.a
+		set_temp_variable = { DOP_construction_target_project = 20 }
+		DOP_construction_claim_project_reward = yes
+	}
 }

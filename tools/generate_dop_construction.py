@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import re
 from dataclasses import dataclass
+from decimal import Decimal
 from pathlib import Path
 
 
@@ -12,6 +13,10 @@ EVENTS_PATH = ROOT / "events/DOP_GNG_construction.txt"
 LOC_PATH = ROOT / "localisation/simp_chinese/DOP_Construction_l_simp_chinese.yml"
 TOKENS_PATH = ROOT / "common/synchronized_dynamic_tokens/DOP_construction_tokens.txt"
 SCRIPTED_LOC_PATH = ROOT / "common/scripted_localisation/DOP_Construction_Scripted_loc.txt"
+REWARDS_PATH = ROOT / "common/scripted_effects/DOP_construction_rewards.txt"
+GFX_PATH = ROOT / "interface/GUI/DOP_construction.gfx"
+AUDIT_PATH = ROOT / "docs/DOP_construction_reward_and_slider_audit.md"
+IMAGE_MAP_PATH = ROOT / "docs/DOP_construction_image_map.md"
 
 REGISTRY_BEGIN = "# BEGIN GENERATED CONSTRUCTION REGISTRY"
 REGISTRY_END = "# END GENERATED CONSTRUCTION REGISTRY"
@@ -38,7 +43,11 @@ SELECT_FIRST_END = "# END GENERATED CONSTRUCTION SELECT FIRST SHOWN"
 SCRIPTED_LOC_BEGIN = "# BEGIN GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
 SCRIPTED_LOC_END = "# END GENERATED CONSTRUCTION DIRECTORY LOCALISATION"
 CALLBACK_END = "# END GENERATED COMPLETION CALLBACKS"
-PLACEHOLDER_IMAGE = "GSA_kanton_shenkansen_research"
+CALLBACK_BEGIN = "# BEGIN GENERATED COMPLETION CALLBACKS"
+SLIDER_RUNTIME_BEGIN = "# BEGIN GENERATED CONSTRUCTION SLIDER RUNTIME"
+SLIDER_RUNTIME_END = "# END GENERATED CONSTRUCTION SLIDER RUNTIME"
+GFX_BEGIN = "# BEGIN GENERATED CONSTRUCTION PROJECT SPRITES"
+GFX_END = "# END GENERATED CONSTRUCTION PROJECT SPRITES"
 
 
 @dataclass(frozen=True)
@@ -56,45 +65,742 @@ class Project:
     total: int
     name: str
     desc: str
-    image: str = PLACEHOLDER_IMAGE
+    source: str
     event_id: int | None = None
 
     @property
     def completion_event_id(self) -> int:
         return self.id if self.event_id is None else self.event_id
 
+    @property
+    def image(self) -> str:
+        return f"DOP_construction_project_{self.id:02d}"
+
 
 # IDs are save-game data. Append new IDs; never reuse or reorder released IDs.
 REGIONS = (
     Region(1, "prd", "珠三角"),
-    Region(2, "chaoshan", "潮汕"),
+    Region(2, "chaoshan", "粤东"),
     Region(3, "northern_guangdong", "粤北"),
     Region(4, "western_guangdong", "粤西"),
     Region(5, "jiaoyang", "交洋"),
-    Region(6, "yongning", "邕宁"),
-    Region(7, "cangwu", "苍梧"),
-    Region(8, "guiliu", "桂柳"),
-    Region(9, "tiannan", "田南"),
+    Region(6, "guangxi", "广西"),
 )
 
 PROJECTS = (
-    Project(1, "sky_tower", "prd", 150000, "白鹅新区晴空塔", "广佛同城之后的新核心区——这个世界的珠江新城与广州塔。"),
-    Project(2, "rose_garden", "prd", 100000, "玫瑰园计划", "香港超级城建计划，包含新机场、海底隧道与填海工程。"),
-    Project(3, "alice_dream_factory", "prd", 30000, "粤海爱丽丝梦工厂", "一座落在澳门的迪士尼式主题乐园。"),
-    Project(4, "daya_bay_nuclear_plant", "prd", 45000, "大亚湾核电站", "在大亚湾建设大型核能发电设施。"),
-    Project(5, "guangdong_shinkansen", "prd", 90000, "广东新干线", "澳湛高铁与港汕高铁组成的高速铁路骨架。"),
-    Project(6, "chaoshan_university", "chaoshan", 8000, "潮汕大学", "服务潮汕地区的综合性大学。"),
-    Project(7, "xinfengjiang_reservoir", "northern_guangdong", 20000, "新丰江水库", "新丰江流域的大型水利与供电工程。"),
-    Project(8, "luoding_granary", "western_guangdong", 4000, "罗定粮仓", "推动罗定盆地农业集中化与机械化。"),
-    Project(9, "pinglu_canal", "jiaoyang", 100000, "平陆运河", "贯通内河与北部湾航运体系的运河工程。"),
-    Project(10, "south_china_sea_drilling_platform", "jiaoyang", 4000, "南海深水钻井平台", "面向南海深水油气资源的海上开采平台。"),
-    Project(11, "wenchang_space_center", "jiaoyang", 12000, "文昌卫星发射中心", "面向未来航天计划的卫星发射场。"),
-    Project(12, "guangxi_industrial_institute", "yongning", 50000, "重整广西实业院", "将桂柳一带的工业资源与机构逐步迁往南宁。"),
-    Project(13, "guangxi_expressway_network", "yongning", 80000, "广西高速公路网新规划", "连接桂柳、南宁、钦廉与肇庆方向的高速公路网。"),
-    Project(14, "nanyue_folk_memorial_park", "cangwu", 1000, "南粤民俗纪念公园", "纪念南粤民俗与乡土文化，以安抚本土认同。"),
-    Project(15, "lijiang_waterway", "guiliu", 1000, "漓江航道开发工程", "加强桂柳同沿岸地区的交通、沟通与商贸。"),
-    Project(16, "honghe_fan_asia_friendship_pass", "tiannan", 1000, "红河泛亚友谊关", "加强友谊关沿红河—湄公河方向与印支半岛的交通和商贸。"),
+    Project(1, "sky_tower", "prd", 150000, "白鹅新区晴空塔", "广佛同城之后的新核心区——这个世界的珠江新城与广州塔。", "01_sky_tower.jpg"),
+    Project(2, "rose_garden", "prd", 100000, "玫瑰园计划", "香港超级城建计划，包含新机场、海底隧道与填海工程。", "02_rose_garden.jpg"),
+    Project(3, "alice_dream_factory", "prd", 30000, "粤海爱丽丝梦工厂", "一座落在澳门的迪士尼式主题乐园。", "03_alice_dream_factory.jpg"),
+    Project(4, "daya_bay_nuclear_plant", "prd", 45000, "大亚湾核电站", "在大亚湾建设大型核能发电设施。", "04_daya_bay_nuclear_plant.jpg"),
+    Project(5, "guangdong_shinkansen", "prd", 90000, "广东新干线计划", "以澳湛高铁与港汕高铁构成广东高速铁路骨架。", "05_guangdong_shinkansen.jpg"),
+    Project(6, "chaoshan_university", "chaoshan", 30000, "潮汕大学", "建设服务粤东地区的综合性大学。", "06_chaoshan_university.jpg"),
+    Project(7, "xinfengjiang_reservoir", "northern_guangdong", 60000, "山区水库开发计划", "统筹粤北山区的水库、水利与水力发电设施。", "07_mountain_reservoirs.jpg"),
+    Project(8, "luoding_granary", "western_guangdong", 40000, "粤西盆地储粮工程", "推动罗定盆地农业集中化、机械化与区域储粮体系建设。", "08_western_guangdong_granary.jpg"),
+    Project(9, "pinglu_canal", "jiaoyang", 100000, "平陆运河", "贯通内河与北部湾航运体系的运河工程。", "09_pinglu_canal.jpg"),
+    Project(10, "south_china_sea_drilling_platform", "jiaoyang", 30000, "南海油气开采", "建设面向南海油气资源的海上勘探与开采平台。", "10_south_china_sea_oil.jpg"),
+    Project(11, "wenchang_space_center", "jiaoyang", 50000, "文昌卫星发射中心", "在文昌建设卫星发射场及配套测控设施。", "11_wenchang_space_center.jpg"),
+    Project(12, "guangxi_industrial_institute", "guangxi", 60000, "重整广西实业院", "将桂柳一带的工业资源与机构逐步迁往南宁。", "12_guangxi_industrial_institute.jpg"),
+    Project(13, "guangxi_expressway_network", "guangxi", 90000, "广西高速公路网", "建设桂柳—南宁、南宁—钦廉及通往肇庆方向的高速公路网。", "13_guangxi_expressway.jpg"),
+    Project(14, "nanyue_folk_memorial_park", "guangxi", 30000, "“南粤之心”民俗纪念园", "以南粤共同传统为主题建设民俗纪念园，缓和地方认同矛盾。", "14_nanyue_folk_park.jpg"),
+    Project(15, "lijiang_waterway", "guangxi", 30000, "漓江航道开发工程", "改善漓江航道条件，加强桂柳与沿岸地区的沟通和商贸。", "15_lijiang_waterway.jpg"),
+    Project(16, "honghe_fan_asia_friendship_pass", "guangxi", 30000, "红河泛亚友谊关", "强化友谊关面向红河—湄公河与印支半岛的交通和边贸联系。", "16_friendship_pass.jpg"),
+    Project(17, "prd_maglev", "prd", 90000, "珠三角磁悬浮城轨", "以高速磁悬浮线路串联香港、广州与澳门三大城市。", "17_prd_maglev.jpg"),
+    Project(18, "shantou_chaozhou_jieyang_integration", "chaoshan", 60000, "汕潮揭一体化方案", "以机场扩建和城际铁路推动汕头、潮州、揭阳一体化。", "18_shantou_integration.jpg"),
+    Project(19, "granite_uranium_mining", "northern_guangdong", 60000, "开采花岗岩型铀矿", "勘探并开发粤北花岗岩型铀矿床。", "19_granite_uranium_mining.jpg"),
+    Project(20, "shale_oil_refineries", "western_guangdong", 30000, "拓展页岩油化工厂", "扩建粤西页岩油炼化设施与配套输送流水线。", "20_shale_oil_refineries.jpg"),
 )
+
+
+@dataclass(frozen=True)
+class Reward:
+    regional: str
+    social: str
+    gng: str
+    references: str
+    targets: str
+    strength: str
+    risk: str
+    effect: tuple[str, ...]
+
+    @property
+    def summary(self) -> str:
+        return f"§Y地区建设§!：{self.regional}\\n§Y社会发展§!：{self.social}\\n§YGNG特色§!：{self.gng}"
+
+
+NON_PP_REWARD_MULTIPLIER = Decimal("2")
+SOCIAL_DEVELOPMENT_EFFECT = re.compile(
+    r"^\s*TNO_improve_(?:academic_base|research_facilities|agriculture|"
+    r"admin_efficiency|industrial_equipment|industrial_expertise|poverty)_"
+    r"(?:really_low|low|med|high)\s*=\s*yes\s*$"
+)
+SCALED_TEMP_VALUE = re.compile(
+    r"(set_temp_variable\s*=\s*\{\s*(?:GNG_corruption_temp_var|"
+    r"chi_app_temp|zhu_app_temp|jap_app_temp)\s*=\s*)"
+    r"(-?\d+(?:\.\d+)?)(\s*\})"
+)
+SCALED_REWARD_VARIABLE = re.compile(
+    r"(add_to_variable\s*=\s*\{\s*(?:DOP_construction_reward_misc_income|"
+    r"DOP_construction_reward_free_pu|DOP_construction_reward_research_speed|"
+    r"DOP_construction_reward_trade_opinion|"
+    r"DOP_construction_reward_resource_factor)\s*=\s*)"
+    r"(-?\d+(?:\.\d+)?)(\s*\})"
+)
+SCALED_STATE_GDP = re.compile(
+    r"(set_temp_variable\s*=\s*\{\s*state_value_multiplier_temp\s*=\s*)"
+    r"(\d+(?:\.\d+)?)(\s*\})"
+)
+SCALED_RESOURCE = re.compile(
+    r"(add_resource\s*=\s*\{\s*type\s*=\s*\w+\s+amount\s*=\s*)"
+    r"(-?\d+(?:\.\d+)?)(\s*\})"
+)
+
+
+def scaled_number(raw: str) -> str:
+    value = Decimal(raw) * NON_PP_REWARD_MULTIPLIER
+    return format(value.normalize(), "f")
+
+
+def scaled_state_gdp(raw: str) -> str:
+    value = Decimal("1") + (
+        Decimal(raw) - Decimal("1")
+    ) * NON_PP_REWARD_MULTIPLIER
+    return format(value.normalize(), "f")
+
+
+def amplify_non_pp_reward_script(script: str) -> tuple[str, ...]:
+    """Double safe numeric completion rewards while leaving PP untouched."""
+    amplified: list[str] = []
+    for raw_line in script.strip().splitlines():
+        line = raw_line.rstrip()
+        line = SCALED_TEMP_VALUE.sub(
+            lambda match: match.group(1)
+            + scaled_number(match.group(2))
+            + match.group(3),
+            line,
+        )
+        line = SCALED_REWARD_VARIABLE.sub(
+            lambda match: match.group(1)
+            + scaled_number(match.group(2))
+            + match.group(3),
+            line,
+        )
+        line = SCALED_STATE_GDP.sub(
+            lambda match: match.group(1)
+            + scaled_state_gdp(match.group(2))
+            + match.group(3),
+            line,
+        )
+        line = SCALED_RESOURCE.sub(
+            lambda match: match.group(1)
+            + scaled_number(match.group(2))
+            + match.group(3),
+            line,
+        )
+        amplified.append(line)
+        if SOCIAL_DEVELOPMENT_EFFECT.fullmatch(line):
+            amplified.append(line)
+    return tuple(amplified)
+
+
+def reward(
+    regional: str,
+    social: str,
+    gng: str,
+    references: str,
+    targets: str,
+    strength: str,
+    risk: str,
+    script: str,
+) -> Reward:
+    return Reward(
+        regional,
+        social,
+        gng,
+        references,
+        targets,
+        strength,
+        risk,
+        amplify_non_pp_reward_script(script),
+    )
+
+
+# Reward data lives beside the project registry. Scripts below remain expressed
+# at TNO's native effect scale; reward() applies the explicit 2x non-PP policy
+# before rendering. Physical buildings/rail levels are not multiplied because
+# several already sit at engine caps. The displayed and paid effects still come
+# from this one structure, so they cannot drift.
+REWARDS: dict[int, Reward] = {}
+
+REWARDS.update({
+    1: reward(
+        "广州获得 2 级基础设施、3 个建筑槽位与 12% 州 GDP。",
+        "行政效率获得两次中等改善。",
+        "腐败降低 6；永久增加 2 个生产单位与 0.40B 杂项收入；广州华人/竹人满意度 +4/+2。",
+        "TNO_SocDev_scripted_effects；TNO_Guangdong_scripted_effects；中国州开发接口",
+        "广州（592）",
+        "150k 旗舰项目；州收益高，全国收益中等",
+        "生产单位与收入受全项目累计审计；腐败由 TNO clamp，好感由州级 helper 结算",
+        """TNO_improve_admin_efficiency_med = yes
+set_temp_variable = { GNG_corruption_temp_var = -3 }
+GNG_Corruption_Change = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.20 }
+add_to_variable = { DOP_construction_reward_free_pu = 1 }
+592 = {
+\tadd_extra_state_shared_building_slots = 3
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.06 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+    2: reward(
+        "香港基础设施至少 8 级、空军基地至少 9 级、指定港口 10 级；增加海军补给枢纽、3 个槽位与 10% 州 GDP。",
+        "行政效率获得两次小幅改善。",
+        "永久增加 0.30B 杂项收入；香港日本人/竹人/华人满意度 +4/+4/+2。",
+        "TNO_SocDev_scripted_effects；TNO_Guangdong_scripted_effects；TNO 建筑定义",
+        "香港（326），港口省份 10062",
+        "100k 大型综合交通项目",
+        "建筑使用至少值避免超限；好感由州级 helper 结算",
+        """TNO_improve_admin_efficiency_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.15 }
+326 = {
+\tadd_extra_state_shared_building_slots = 3
+\tif = { limit = { infrastructure < 8 } set_building_level = { type = infrastructure level = 8 instant_build = yes } }
+\tif = { limit = { air_base < 9 } set_building_level = { type = air_base level = 9 instant_build = yes } }
+\tif = { limit = { naval_base < 10 } set_building_level = { type = naval_base province = 10062 level = 10 instant_build = yes } }
+\tadd_building_construction = { type = naval_supply_hub province = 10062 level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.05 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+\tset_temp_variable = { chi_app_temp = 1 }
+\tGNG_chinese_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    3: reward(
+        "澳门获得 1 级空军基地、1 个建筑槽位与 6% 州 GDP。",
+        "贫困获得两次小幅改善。",
+        "永久增加 0.24B 杂项收入；澳门华人/竹人/日本人满意度 +6/+4/+2。",
+        "TNO_economy_frontend_scripted_effects；TNO_Guangdong_scripted_effects",
+        "澳门（729）",
+        "30k 文化消费项目；州收益与小额长期收入并重",
+        "好感限定单州并由 TNO helper 结算",
+        """TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.12 }
+729 = {
+\tadd_extra_state_shared_building_slots = 1
+\tadd_building_construction = { type = air_base level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.03 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+\tset_temp_variable = { jap_app_temp = 1 }
+\tGNG_japanese_app_change = yes
+}""",
+    ),
+    4: reward(
+        "惠州获得 1 座核反应堆与 1 级基础设施。",
+        "研究设施、工业设备各获得两次小幅改善。",
+        "惠州日本人/竹人满意度 +4/+2，体现技术资本与本地技术人员合作。",
+        "TNO_SocDev_scripted_effects；TNO 00_buildings；TNO_Guangdong_scripted_effects",
+        "惠州（959）",
+        "45k 特殊能源设施；实体建筑为主体",
+        "不额外堆全国 GDP；好感由州级 helper 结算",
+        """TNO_improve_research_facilities_low = yes
+TNO_improve_industrial_equipment_low = yes
+959 = {
+\tadd_building_construction = { type = nuclear_reactor level = 1 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    5: reward(
+        "建成 4 级港汕高铁与澳湛高铁；香港、潮州、澳门、茂名、湛江获得沿线基础设施与 4% 州 GDP 配套。",
+        "行政效率、工业设备各获得两次小幅改善。",
+        "香港日本人/竹人满意度 +2/+2，广州华人满意度 +4。",
+        "TNO 巴西/伊比利亚 build_railway；TNO_SocDev；TNO_Guangdong",
+        "326/592/593/729/1017/1464；铁路省份见三段 path",
+        "90k 跨区域骨干铁路；真实 4 级铁路为主体",
+        "三段路径须连续且不得跨越错误国家；社会发展按双倍 low 档结算",
+        """TNO_improve_admin_efficiency_low = yes
+TNO_improve_industrial_equipment_low = yes
+build_railway = {
+\tlevel = 4
+\tpath = { 10062 7108 19574 4050 7067 9978 9938 }
+\tstart_province = 10062
+\ttarget_province = 9938
+}
+build_railway = {
+\tlevel = 4
+\tpath = { 4189 8802 1047 7152 }
+\tstart_province = 4189
+\ttarget_province = 7152
+}
+build_railway = {
+\tlevel = 4
+\tpath = { 7152 11938 9963 7039 10105 11981 }
+\tstart_province = 7152
+\ttarget_province = 11981
+}
+326 = {
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 1 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}
+592 = {
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+}
+593 = {
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+}
+729 = { set_temp_variable = { state_value_multiplier_temp = 1.02 } econ_state_value_change_multiply_specified_state = yes }
+1017 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } set_temp_variable = { state_value_multiplier_temp = 1.02 } econ_state_value_change_multiply_specified_state = yes }
+1464 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } set_temp_variable = { state_value_multiplier_temp = 1.02 } econ_state_value_change_multiply_specified_state = yes }""",
+    ),
+    6: reward(
+        "潮州获得 2 所学校、1 座办公室与 4% 州 GDP。",
+        "学术基础获得两次大幅、研究设施获得两次中等、贫困获得两次小幅改善；永久研究速度 +3%。",
+        "潮州华人/竹人满意度 +8/+4。",
+        "TNO_SocDev；TNO_economy_frontend；TNO_Guangdong；TNO 学校/办公室",
+        "潮州（593）",
+        "30k 高教育密度项目；科研社会收益高于地区体量",
+        "办公室最终不超过 TNO 上限 3；研究速度计入累计 7% 审计",
+        """TNO_improve_academic_base_high = yes
+TNO_improve_research_facilities_med = yes
+TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_research_speed = 0.015 }
+593 = {
+\tadd_building_construction = { type = schools level = 2 instant_build = yes }
+\tadd_building_construction = { type = offices level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 4 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    7: reward(
+        "韶关与清远各获得 1 座水电站、1 级基础设施与 4% 州 GDP。",
+        "农业获得两次中等、贫困与行政效率各获得两次小幅改善。",
+        "韶关、清远华人满意度各 +6。",
+        "TNO 巴西 hydroelectric_plant；TNO_SocDev；TNO_economy_frontend；TNO_Guangdong",
+        "韶关（1439）、清远（614）",
+        "60k 双州水利项目；实体能源与民生并重",
+        "直接作用于指定州；好感在各州单独结算",
+        """TNO_improve_agriculture_med = yes
+TNO_improve_poverty_low = yes
+TNO_improve_admin_efficiency_really_low = yes
+1439 = {
+\tadd_building_construction = { type = hydroelectric_plant level = 1 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+}
+614 = {
+\tadd_building_construction = { type = hydroelectric_plant level = 1 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+}""",
+    ),
+    8: reward(
+        "肇庆获得 2 级基础设施、1 座补给节点与 8% 州 GDP。",
+        "农业获得两次大幅、工业设备获得两次中等、贫困获得两次小幅改善。",
+        "肇庆华人/竹人满意度 +6/+4。",
+        "TNO_SocDev；TNO_economy_frontend；TNO_Guangdong；补给建筑",
+        "肇庆（1438），补给省份 11941",
+        "40k 储粮与机械化项目；社会收益可感知",
+        "不使用军工厂；SocDev 合计纳入全项目累计审计",
+        """TNO_improve_agriculture_high = yes
+TNO_improve_industrial_equipment_med = yes
+TNO_improve_poverty_low = yes
+1438 = {
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tadd_building_construction = { type = supply_node province = 11941 level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.04 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    9: reward(
+        "南宁、钦州基础设施至少 5 级；钦州港至少 8 级并新增海军补给枢纽，南宁新增补给节点。",
+        "行政效率、工业专业知识与贫困各获得两次小幅改善。",
+        "永久增加 0.40B 杂项收入；钦州华人/竹人满意度 +4/+4。",
+        "TNO 伊比利亚交通；TNO_SocDev；TNO_economy_frontend；TNO_Guangdong",
+        "南宁（594）、钦州（2472），省份 7137/1018",
+        "100k 运河枢纽；实体物流与长期航运收入并重",
+        "基础设施和港口使用至少值，避免预建浪费或超限",
+        """TNO_improve_admin_efficiency_low = yes
+TNO_improve_industrial_expertise_low = yes
+TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.20 }
+594 = {
+\tif = { limit = { infrastructure < 5 } set_building_level = { type = infrastructure level = 5 instant_build = yes } }
+\tadd_building_construction = { type = supply_node province = 7137 level = 1 instant_build = yes }
+}
+2472 = {
+\tif = { limit = { infrastructure < 5 } set_building_level = { type = infrastructure level = 5 instant_build = yes } }
+\tif = { limit = { naval_base < 8 } set_building_level = { type = naval_base province = 1018 level = 8 instant_build = yes } }
+\tadd_building_construction = { type = naval_supply_hub province = 1018 level = 1 instant_build = yes }
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+    10: reward(
+        "儋州近海新增 24 单位石油与 10% 州 GDP。",
+        "工业专业知识获得两次中等、工业设备获得两次小幅改善。",
+        "永久增加 2 个生产单位与 0.50B 杂项收入；儋州日本人/竹人满意度 +4/+2。",
+        "TNO 资源开发；TNO_SocDev；TNO_Guangdong；经济动态修正",
+        "儋州（2475）",
+        "30k 高产资源项目；资源、PU、收入均可感知",
+        "PU 与收入纳入 20 项累计上限审计",
+        """TNO_improve_industrial_expertise_med = yes
+TNO_improve_industrial_equipment_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.25 }
+add_to_variable = { DOP_construction_reward_free_pu = 1 }
+2475 = {
+\tadd_resource = { type = oil amount = 12 }
+\tset_temp_variable = { state_value_multiplier_temp = 1.05 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    11: reward(
+        "琼东获得 1 座火箭基地、2 级空军基地、1 级基础设施与 6% 州 GDP。",
+        "研究设施获得两次大幅、学术基础与工业专业知识各获得两次小幅改善；永久研究速度 +4%。",
+        "琼东日本人/华人满意度 +4/+4。",
+        "TNO_SocDev；TNO rocket_site；TNO_Guangdong；经济动态修正",
+        "琼东（2474）",
+        "50k 航天科研项目；特殊建筑和科研能力并重",
+        "全国研究速度与大学合计 7%，未形成无限增长接口",
+        """TNO_improve_research_facilities_high = yes
+TNO_improve_academic_base_low = yes
+TNO_improve_industrial_expertise_low = yes
+add_to_variable = { DOP_construction_reward_research_speed = 0.02 }
+2474 = {
+\tadd_building_construction = { type = rocket_site level = 1 instant_build = yes }
+\tadd_building_construction = { type = air_base level = 2 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.03 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+}""",
+    ),
+    12: reward(
+        "南宁获得 2 座办公室、1 所学校与 10% 州 GDP。",
+        "工业专业知识获得两次大幅、行政效率获得两次中等改善。",
+        "腐败降低 8；永久增加 2 个生产单位；南宁华人/竹人/日本人满意度 +4/+6/+2。",
+        "TNO_SocDev；TNO_Guangdong corruption/app helper；经济动态修正",
+        "南宁（594）",
+        "60k 制度与产业组织项目；行政/GNG 收益突出",
+        "办公室达到但不越过上限 3；腐败由 helper clamp",
+        """TNO_improve_industrial_expertise_high = yes
+TNO_improve_admin_efficiency_med = yes
+set_temp_variable = { GNG_corruption_temp_var = -4 }
+GNG_Corruption_Change = yes
+add_to_variable = { DOP_construction_reward_free_pu = 1 }
+594 = {
+\tadd_building_construction = { type = offices level = 2 instant_build = yes }
+\tadd_building_construction = { type = schools level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.05 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 3 }
+\tGNG_zhujin_app_change = yes
+\tset_temp_variable = { jap_app_temp = 1 }
+\tGNG_japanese_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    13: reward(
+        "南宁、钦州各获得 2 级基础设施与 4% 州 GDP；桂林、柳江、苍梧、肇庆各获得 1 级基础设施。",
+        "行政效率获得两次中等、贫困获得两次小幅改善。",
+        "腐败降低 6；南宁华人/竹人满意度 +6/+4，钦州华人满意度 +4。",
+        "TNO 中国州开发；TNO_SocDev；TNO_Guangdong corruption/app helper",
+        "594/2472/599/2390/2391/1438",
+        "90k 六州高速网；地区整合和行政收益突出",
+        "非铁路项目不调用 build_railway；腐败由 TNO clamp，好感由州级 helper 结算",
+        """TNO_improve_admin_efficiency_med = yes
+TNO_improve_poverty_low = yes
+set_temp_variable = { GNG_corruption_temp_var = -3 }
+GNG_Corruption_Change = yes
+594 = {
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}
+2472 = {
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+}
+599 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+2390 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+2391 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+1438 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }""",
+    ),
+    14: reward(
+        "苍梧获得 1 所学校与 4% 州 GDP。",
+        "学术基础与贫困各获得两次小幅改善。",
+        "永久增加 0.16B 杂项收入；苍梧华人/竹人/日本人满意度 +8/+6/-2。",
+        "TNO_SocDev；TNO_economy_frontend；TNO_Guangdong app helper",
+        "苍梧（2391）",
+        "30k 文化认同项目；差异化政治结果明显",
+        "日本人 -2 是文化认同强化后的设计取舍；三群体均由州级 helper 结算",
+        """TNO_improve_academic_base_low = yes
+TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.08 }
+2391 = {
+\tadd_building_construction = { type = schools level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 4 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 3 }
+\tGNG_zhujin_app_change = yes
+\tset_temp_variable = { jap_app_temp = -1 }
+\tGNG_japanese_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    15: reward(
+        "桂林、柳江、苍梧各获得 1 级基础设施；桂林另获 4% 州 GDP。",
+        "农业、贫困各获得两次小幅改善；行政效率获得两次极小幅改善。",
+        "永久增加 0.20B 杂项收入；桂林华人/竹人满意度 +4/+2。",
+        "TNO 伊比利亚航运；TNO_SocDev；TNO_economy_frontend；TNO_Guangdong",
+        "桂林（599）、柳江（2390）、苍梧（2391）",
+        "30k 内河航道；地区物流、民生和收入均有体现",
+        "不误用海军基地；行政仅 really_low 档控制累计强度",
+        """TNO_improve_agriculture_low = yes
+TNO_improve_poverty_low = yes
+TNO_improve_admin_efficiency_really_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.10 }
+599 = {
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.02 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}
+2390 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }
+2391 = { add_building_construction = { type = infrastructure level = 1 instant_build = yes } }""",
+    ),
+    16: reward(
+        "龙津获得 2 级基础设施、1 座边境补给节点与 8% 州 GDP。",
+        "行政效率与贫困各获得两次小幅改善。",
+        "永久增加 0.20B 杂项收入与 10% 贸易关系评价；龙津华人/竹人满意度 +4/+4。",
+        "TNO 中国州开发/贸易修正；TNO_SocDev；TNO_Guangdong",
+        "龙津（2394），补给省份 4121",
+        "30k 边贸口岸；小幅长期外交和收入收益",
+        "贸易评价为 10%，仍不形成大额全国乘区",
+        """TNO_improve_admin_efficiency_low = yes
+TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.10 }
+add_to_variable = { DOP_construction_reward_trade_opinion = 0.05 }
+2394 = {
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tadd_building_construction = { type = supply_node province = 4121 level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.04 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    17: reward(
+        "建成香港—广州—澳门 5 级磁悬浮城轨；三州各获得 1 级基础设施与 6% 州 GDP。",
+        "行政效率获得两次小幅、工业设备获得两次中等改善。",
+        "永久增加 0.20B 杂项收入；香港日本人/竹人 +4/+4，广州华人 +4，澳门华人/竹人 +2/+2。",
+        "TNO 巴西/伊比利亚 build_railway；TNO_SocDev；TNO_Guangdong",
+        "香港（326）、广州（592）、澳门（729）；省份 10062…4189",
+        "90k 都市圈轨道；真实 5 级铁路和多州整合为主体",
+        "单条连续路径；满意度分州，避免全国无限溢出",
+        """TNO_improve_admin_efficiency_low = yes
+TNO_improve_industrial_equipment_med = yes
+add_to_variable = { DOP_construction_reward_misc_income = 0.10 }
+build_railway = {
+\tlevel = 5
+\tpath = { 10062 7108 1047 8802 4189 }
+\tstart_province = 10062
+\ttarget_province = 4189
+}
+326 = {
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.03 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}
+592 = {
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.03 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+}
+729 = {
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.03 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 1 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+    18: reward(
+        "建成汕头—揭阳—潮州 3 级城际铁路；潮州获得 2 级基础设施、2 级空军基地与 8% 州 GDP。",
+        "行政效率获得两次中等、学术基础与贫困各获得两次小幅改善。",
+        "腐败降低 4；潮州华人/竹人满意度 +6/+4。",
+        "TNO 伊比利亚 build_railway；TNO_SocDev；TNO_Guangdong corruption/app",
+        "潮州（593）；省份 9938…7182",
+        "60k 一体化工程；铁路、机场和行政整合同步生效",
+        "单条连续铁路；腐败由 TNO clamp，好感由州级 helper 结算",
+        """TNO_improve_admin_efficiency_med = yes
+TNO_improve_academic_base_low = yes
+TNO_improve_poverty_low = yes
+set_temp_variable = { GNG_corruption_temp_var = -2 }
+GNG_Corruption_Change = yes
+build_railway = {
+\tlevel = 3
+\tpath = { 9938 9978 7067 4050 4207 4165 7182 }
+\tstart_province = 9938
+\ttarget_province = 7182
+}
+593 = {
+\tadd_building_construction = { type = infrastructure level = 2 instant_build = yes }
+\tadd_building_construction = { type = air_base level = 2 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.04 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { chi_app_temp = 3 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+})
+
+REWARDS.update({
+    19: reward(
+        "韶关新增 10 单位铀、1 级基础设施与 10% 州 GDP。",
+        "工业专业知识获得两次中等、工业设备获得两次小幅改善。",
+        "永久资源开采效率 +6%；韶关日本人/竹人满意度 +4/+2。",
+        "TNO 伊比利亚资源开发；TNO_SocDev；TNO_Guangdong；资源动态修正",
+        "韶关（1439）",
+        "60k 战略资源项目；资源与产业能力并重",
+        "铀提高至 10 单位；资源效率与项目 20 合计 12%",
+        """TNO_improve_industrial_expertise_med = yes
+TNO_improve_industrial_equipment_low = yes
+add_to_variable = { DOP_construction_reward_resource_factor = 0.03 }
+1439 = {
+\tadd_resource = { type = uranium amount = 5 }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { state_value_multiplier_temp = 1.05 }
+\tecon_state_value_change_multiply_specified_state = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 1 }
+\tGNG_zhujin_app_change = yes
+}""",
+    ),
+    20: reward(
+        "茂名与肇庆各获得 1 座合成炼油厂与 1 级基础设施。",
+        "工业设备获得两次大幅、工业专业知识获得两次中等、贫困获得两次小幅改善。",
+        "永久增加 2 个生产单位、0.30B 杂项收入与 6% 资源效率；茂名华人/竹人/日本人 +4/+4/+4，肇庆华人 +2。",
+        "TNO synthetic_refinery；TNO_SocDev；TNO_economy_frontend；TNO_Guangdong",
+        "茂名（1017）、肇庆（1438）",
+        "30k 炼化扩建；实体工厂与 GNG 经济反馈明显",
+        "全项目 PU 合计 8、收入 2.90B、资源效率 12%，不无限增长",
+        """TNO_improve_industrial_equipment_high = yes
+TNO_improve_industrial_expertise_med = yes
+TNO_improve_poverty_low = yes
+add_to_variable = { DOP_construction_reward_free_pu = 1 }
+add_to_variable = { DOP_construction_reward_misc_income = 0.15 }
+add_to_variable = { DOP_construction_reward_resource_factor = 0.03 }
+1017 = {
+\tadd_building_construction = { type = synthetic_refinery level = 1 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { chi_app_temp = 2 }
+\tGNG_chinese_app_change = yes
+\tset_temp_variable = { zhu_app_temp = 2 }
+\tGNG_zhujin_app_change = yes
+\tset_temp_variable = { jap_app_temp = 2 }
+\tGNG_japanese_app_change = yes
+}
+1438 = {
+\tadd_building_construction = { type = synthetic_refinery level = 1 instant_build = yes }
+\tadd_building_construction = { type = infrastructure level = 1 instant_build = yes }
+\tset_temp_variable = { chi_app_temp = 1 }
+\tGNG_chinese_app_change = yes
+}""",
+    ),
+})
 
 
 def read_text(path: Path) -> tuple[str, str, bool]:
@@ -107,6 +813,7 @@ def read_text(path: Path) -> tuple[str, str, bool]:
 
 def write_text(path: Path, text: str, has_bom: bool) -> None:
     encoding = "utf-8-sig" if has_bom else "utf-8"
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding=encoding, newline="") as handle:
         handle.write(text)
 
@@ -131,6 +838,14 @@ def validate_data() -> None:
         raise ValueError("Completion event IDs must be unique.")
     if any(project.total <= 0 for project in PROJECTS):
         raise ValueError("Project totals must be positive.")
+    if len(REGIONS) != 6 or len(PROJECTS) != 20:
+        raise ValueError("Construction v8 requires exactly 6 regions and 20 projects.")
+    if set(REWARDS) != set(project_ids):
+        raise ValueError("Every project must have exactly one reward definition.")
+    if len({project.source for project in PROJECTS}) != len(PROJECTS):
+        raise ValueError("Project source image names must be unique.")
+    if len({project.image for project in PROJECTS}) != len(PROJECTS):
+        raise ValueError("Project image tokens must be unique.")
 
 
 def replace_marked(text: str, begin: str, end: str, body: list[str], newline: str) -> str:
@@ -146,7 +861,10 @@ def replace_marked(text: str, begin: str, end: str, body: list[str], newline: st
     indent = text[begin_line:begin_at]
     body_text = newline.join((indent + line) if line else "" for line in body)
     replacement = indent + begin + newline + body_text + newline + indent + end
-    if end_line_end <= len(text) and text[end_line_end - len(newline):end_line_end] == newline:
+    # apply_patch may leave a generated marker line with a different newline
+    # style from the surrounding file. Always separate a non-EOF marker from
+    # the following declaration so repeated generation cannot fuse both lines.
+    if end_line_end < len(text):
         replacement += newline
     return text[:begin_line] + replacement + text[end_line_end:]
 
@@ -205,8 +923,7 @@ def render_event_dispatch() -> list[str]:
                 "\tlimit = { check_variable = { "
                 f"DOP_construction_completed_event_id = {project.completion_event_id} }} }}",
                 f"\tset_country_flag = DOP_construction_{project.slug}_completed",
-                f"\tDOP_construction_{project.slug}_completion_effect = yes",
-                f"\tcountry_event = {{ id = DOP_GNG_construction.{project.completion_event_id} days = 1 }}",
+                f"\tset_variable = {{ DOP_construction_completion_queued^{project.id} = 1 }}",
                 "}",
             ]
         )
@@ -344,10 +1061,11 @@ def render_state_dispatch() -> list[str]:
 
 
 def render_clear_flags() -> list[str]:
-    return [
-        f"clr_country_flag = DOP_construction_{project.slug}_completed"
-        for project in PROJECTS
-    ]
+    lines: list[str] = []
+    for project in PROJECTS:
+        lines.append(f"clr_country_flag = DOP_construction_{project.slug}_completed")
+        lines.append(f"clr_country_flag = DOP_construction_{project.slug}_reward_claimed")
+    return lines
 
 
 def render_clear_expansion_flags() -> list[str]:
@@ -451,7 +1169,7 @@ def render_scripted_localisation() -> list[str]:
 
 def render_localisation() -> list[str]:
     lines = [
-        "# Dynamic directory and registry localisation.",
+        "# Dynamic construction registry, GUI and completion-event localisation.",
         'DOP_construction_no_region:0 "暂无地区"',
         'DOP_construction_no_project:0 "暂无建设项目"',
         'DOP_construction_no_project_desc:0 "建设项目尚未添加到岭南开发总署。"',
@@ -466,6 +1184,18 @@ def render_localisation() -> list[str]:
         'DOP_construction_show_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中。"',
         'DOP_construction_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将开始建设。"',
         'DOP_construction_show_and_start_project_tt:0 "§Y[DOP_construction_GetTargetProjectName]§!将被添加到£decision_icon_small §W岭南开发总署§! GUI中并开始建设。"',
+        'DOP_construction_selected_numbers:0 "目标工程量：[?DOP_construction_selected_total|0]\\n当前进度：[?DOP_construction_selected_progress|0]（[?DOP_construction_selected_percent|1]%）\\n基础速度：[?DOP_construction_base_speed|0]/周\\n实际速度：[?DOP_construction_selected_actual_speed|1]/周\\n资金倍率：[?DOP_construction_selected_funding_speed_factor|2]×\\n人力倍率：[?DOP_construction_selected_manpower_speed_factor|2]×\\n额外倍率：[?DOP_construction_selected_speed_factor|2]×"',
+        'DOP_construction_funding_label:0 "资金投入：[?DOP_construction_selected_funding|0]%"',
+        'DOP_construction_funding_effects:0 "本项目持续支出：[?DOP_construction_selected_misc_cost|3]B\\n本项目生产单位占用：[?DOP_construction_selected_pu_cost|2]\\n全部施工持续支出：[?DOP_construction_total_misc_costs|3]B\\n全部施工生产单位占用：[?DOP_construction_total_pu_occupied|0]"',
+        'DOP_construction_manpower_label:0 "人力组织：[?DOP_construction_selected_manpower|0]%"',
+        'DOP_construction_manpower_effects:0 "施工倍率：[?DOP_construction_selected_manpower_speed_factor|2]×\\n每日政治点数：[?DOP_construction_mobilisation_pp_gain|2]\\n每周稳定度：[?DOP_construction_mobilisation_stability_weekly_display|2]%\\n每月工业专业知识：[?DOP_construction_mobilisation_expertise_monthly|2]\\n每月贫困改善：[?DOP_construction_mobilisation_poverty_monthly|2]\\n每月行政效率：[?DOP_construction_mobilisation_admin_monthly|2]\\n每月华人/竹人/日本人支持：[?DOP_construction_mobilisation_chinese_monthly|2]/[?DOP_construction_mobilisation_zhujin_monthly|2]/[?DOP_construction_mobilisation_japanese_monthly|2]"',
+        'DOP_construction_description_click_tt:0 "§G点击§!项目简介以查看真实完工效果。"',
+        'DOP_construction_effect_overlay_heading:0 "§Y项目完工效果§!"',
+        'DOP_construction_effect_overlay_hint:0 "将光标停留在此页查看真实效果。\\n§G点击§!返回项目简介。"',
+        'DOP_construction_selected_effect_tt:0 "[!construction_effect_overlay_button_click]"',
+        'DOP_construction_preview_return_tt:0 "\\n§G点击§!返回项目简介。"',
+        'DOP_GNG_construction.completed.desc:0 "岭南开发总署确认工程已达到计划目标。项目的地区设施、社会发展与广东特色收益，将在本事件确认后一次性发放。"',
+        'DOP_GNG_construction.completed.a:0 "验收工程并落实全部收益"',
         "",
     ]
     for region in REGIONS:
@@ -474,47 +1204,357 @@ def render_localisation() -> list[str]:
     for project in PROJECTS:
         lines.append(f'DOP_construction_{project.slug}:0 "{loc_value(project.name)}"')
         lines.append(f'DOP_construction_{project.slug}_desc:0 "{loc_value(project.desc)}"')
+        lines.append(
+            f'DOP_construction_{project.slug}_effect_tt:0 "{loc_value(REWARDS[project.id].summary)}"'
+        )
+        lines.append(
+            f'DOP_GNG_construction.{project.completion_event_id}.t:0 "“{loc_value(project.name)}”建设完成"'
+        )
     return lines
 
 
-def ensure_callbacks(text: str, newline: str) -> str:
-    missing = []
+def render_rewards() -> str:
+    lines = [
+        "# Generated by tools/generate_dop_construction.py; do not edit by hand.",
+        "# The event payout and effect_tooltip preview share these callbacks.",
+        "",
+    ]
     for project in PROJECTS:
-        name = f"DOP_construction_{project.slug}_completion_effect"
-        if not re.search(rf"(?m)^\s*{re.escape(name)}\s*=", text):
-            missing.append(f"{name} = {{ }}")
-    if not missing:
-        return text
-    marker_at = text.index(CALLBACK_END)
-    line_at = text.rfind("\n", 0, marker_at) + 1
-    return text[:line_at] + newline.join(missing) + newline + text[line_at:]
-
-
-def ensure_events(text: str, newline: str) -> str:
-    existing = {
-        int(match)
-        for match in re.findall(r"(?m)^\s*id\s*=\s*DOP_GNG_construction\.(\d+)\s*$", text)
-    }
-    blocks = []
-    for project in PROJECTS:
-        event_id = project.completion_event_id
-        if event_id in existing:
-            continue
-        blocks.append(
-            newline.join(
-                [
-                    "country_event = {",
-                    f"\tid = DOP_GNG_construction.{event_id}",
-                    "\thidden = yes",
-                    "\tis_triggered_only = yes",
-                    "\timmediate = { }",
-                    "}",
-                ]
-            )
+        lines.extend(
+            [
+                f"DOP_construction_{project.slug}_completion_effect = {{",
+                f"\tcustom_effect_tooltip = DOP_construction_{project.slug}_effect_tt",
+                "\thidden_effect = {",
+            ]
         )
-    if not blocks:
-        return text
-    return text.rstrip("\r\n") + newline * 2 + (newline * 2).join(blocks) + newline
+        lines.extend("\t\t" + line if line else "" for line in REWARDS[project.id].effect)
+        lines.extend(["\t}", "}", ""])
+
+    lines.append("DOP_construction_dispatch_reward_callback = {")
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\tif = {",
+                f"\t\tlimit = {{ check_variable = {{ DOP_construction_target_project = {project.id} }} }}",
+                f"\t\tDOP_construction_{project.slug}_completion_effect = yes",
+                "\t}",
+            ]
+        )
+    lines.extend(
+        [
+            "}",
+            "",
+            "DOP_construction_preview_selected_reward = {",
+            "\tset_temp_variable = { DOP_construction_target_project = DOP_construction_selected }",
+            "\teffect_tooltip = { DOP_construction_dispatch_reward_callback = yes }",
+            "\tcustom_effect_tooltip = DOP_construction_preview_return_tt",
+            "}",
+            "",
+            "DOP_construction_claim_project_reward = {",
+            "\tif = {",
+            "\t\tlimit = {",
+            "\t\t\tcheck_variable = { DOP_construction_completed^DOP_construction_target_project > 0 }",
+            "\t\t\tcheck_variable = { DOP_construction_reward_claimed^DOP_construction_target_project < 1 }",
+            "\t\t}",
+            "\t\tset_variable = { DOP_construction_reward_claimed^DOP_construction_target_project = 1 }",
+            "\t\tDOP_construction_dispatch_reward_callback = yes",
+        ]
+    )
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\t\tif = {",
+                f"\t\t\tlimit = {{ check_variable = {{ DOP_construction_target_project = {project.id} }} }}",
+                f"\t\t\tset_country_flag = DOP_construction_{project.slug}_reward_claimed",
+                "\t\t}",
+            ]
+        )
+    lines.extend(
+        [
+            "\t\tforce_update_dynamic_modifier = yes",
+            "\t\tupdate_economy_tab = yes",
+            "\t\tDOP_construction_recalculate_all = yes",
+            "\t\tDOP_construction_sync_selected = yes",
+            "\t}",
+            "}",
+            "",
+            "DOP_construction_process_completion_queue = {",
+            "\tset_temp_variable = { DOP_construction_event_fired_today = 0 }",
+        ]
+    )
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "\tif = {",
+                "\t\tlimit = {",
+                "\t\t\tcheck_variable = { DOP_construction_event_fired_today = 0 }",
+                f"\t\t\tcheck_variable = {{ DOP_construction_completion_queued^{project.id} > 0 }}",
+                f"\t\t\tcheck_variable = {{ DOP_construction_reward_claimed^{project.id} < 1 }}",
+                "\t\t}",
+                f"\t\tset_variable = {{ DOP_construction_completion_queued^{project.id} = 0 }}",
+                "\t\tset_temp_variable = { DOP_construction_event_fired_today = 1 }",
+                f"\t\tcountry_event = {{ id = DOP_GNG_construction.{project.completion_event_id} hours = 1 }}",
+                "\t}",
+            ]
+        )
+    lines.extend(["}", ""])
+    return "\n".join(lines)
+
+
+def render_events() -> str:
+    lines = ["add_namespace = DOP_GNG_construction", ""]
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "country_event = {",
+                f"\tid = DOP_GNG_construction.{project.completion_event_id}",
+                f"\ttitle = DOP_GNG_construction.{project.completion_event_id}.t",
+                "\tdesc = DOP_GNG_construction.completed.desc",
+                "\tpicture = GFX_report_event_IBR_road_work_1",
+                "\tis_triggered_only = yes",
+                "\toption = {",
+                "\t\tname = DOP_GNG_construction.completed.a",
+                f"\t\tset_temp_variable = {{ DOP_construction_target_project = {project.id} }}",
+                "\t\tDOP_construction_claim_project_reward = yes",
+                "\t}",
+                "}",
+                "",
+            ]
+        )
+    return "\n".join(lines)
+
+
+def render_slider_runtime() -> list[str]:
+    return r"""
+DOP_construction_recalculate_project = {
+	set_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+	divide_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = 100 }
+	add_to_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = 0.5 }
+
+	set_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = DOP_construction_manpower^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = 0.006 }
+	add_to_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = 0.7 }
+
+	set_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_funding_speed_factor^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_manpower_speed_factor^DOP_construction_project_id }
+	set_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_base_speed }
+	add_to_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_speed_add^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_input_factor^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_speed_factor^DOP_construction_project_id }
+	clamp_variable = { var = DOP_construction_actual_speed^DOP_construction_project_id min = 0 }
+
+	set_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 0 }
+	set_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 0 }
+	if = {
+		limit = {
+			check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
+			check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
+		}
+		set_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 1000000 }
+		multiply_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 50 }
+		set_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 100000 }
+		multiply_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 50 }
+	}
+
+	set_variable = { DOP_construction_percent^DOP_construction_project_id = DOP_construction_progress^DOP_construction_project_id }
+	if = {
+		limit = { check_variable = { DOP_construction_total^DOP_construction_project_id > 0 } }
+		divide_variable = { DOP_construction_percent^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+		multiply_variable = { DOP_construction_percent^DOP_construction_project_id = 100 }
+	}
+	else = { set_variable = { DOP_construction_percent^DOP_construction_project_id = 0 } }
+	clamp_variable = { var = DOP_construction_percent^DOP_construction_project_id min = 0 max = 100 }
+}
+
+DOP_construction_recalculate_all = {
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_project_id = v }
+		DOP_construction_recalculate_project = yes
+	}
+	DOP_construction_recalculate_aggregate_burden = yes
+}
+
+DOP_construction_recalculate_aggregate_burden = {
+	set_variable = { DOP_construction_total_misc_costs = 0 }
+	set_variable = { DOP_construction_total_pu_raw = 0 }
+	set_variable = { DOP_construction_mobilisation_pp_gain = 0 }
+	set_variable = { DOP_construction_mobilisation_stability_weekly = 0 }
+	set_variable = { DOP_construction_mobilisation_expertise_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_poverty_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_admin_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_chinese_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_zhujin_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_japanese_monthly = 0 }
+
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_project_id = v }
+		if = {
+			limit = {
+				check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
+				check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
+			}
+			add_to_variable = { DOP_construction_total_misc_costs = DOP_construction_project_misc_cost^DOP_construction_project_id }
+			add_to_variable = { DOP_construction_total_pu_raw = DOP_construction_project_pu_cost^DOP_construction_project_id }
+			set_temp_variable = { DOP_construction_mobilisation_scale = DOP_construction_total^DOP_construction_project_id }
+			divide_temp_variable = { DOP_construction_mobilisation_scale = 100000 }
+			set_temp_variable = { DOP_construction_mobilisation_offset = DOP_construction_manpower^DOP_construction_project_id }
+			subtract_from_temp_variable = { DOP_construction_mobilisation_offset = 50 }
+			divide_temp_variable = { DOP_construction_mobilisation_offset = 50 }
+			clamp_temp_variable = { var = DOP_construction_mobilisation_offset min = -0.8 max = 1 }
+			set_temp_variable = { DOP_construction_mobilisation_scaled = DOP_construction_mobilisation_scale }
+			multiply_temp_variable = { DOP_construction_mobilisation_scaled = DOP_construction_mobilisation_offset }
+
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.04 }
+			add_to_variable = { DOP_construction_mobilisation_pp_gain = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.00016 }
+			add_to_variable = { DOP_construction_mobilisation_stability_weekly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = 0.08 }
+			add_to_variable = { DOP_construction_mobilisation_expertise_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.05 }
+			add_to_variable = { DOP_construction_mobilisation_poverty_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.04 }
+			add_to_variable = { DOP_construction_mobilisation_admin_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = 0.24 }
+			add_to_variable = { DOP_construction_mobilisation_chinese_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.06 }
+			add_to_variable = { DOP_construction_mobilisation_zhujin_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.20 }
+			add_to_variable = { DOP_construction_mobilisation_japanese_monthly = DOP_construction_contribution }
+		}
+	}
+
+	set_variable = { DOP_construction_total_pu_occupied = DOP_construction_total_pu_raw }
+	round_variable = DOP_construction_total_pu_occupied
+	set_variable = { DOP_construction_free_pu_modifier = DOP_construction_total_pu_occupied }
+	multiply_variable = { DOP_construction_free_pu_modifier = -1 }
+	clamp_variable = { var = DOP_construction_mobilisation_pp_gain min = -0.5 max = 0.2 }
+	clamp_variable = { var = DOP_construction_mobilisation_stability_weekly min = -0.003 max = 0.0008 }
+	clamp_variable = { var = DOP_construction_mobilisation_expertise_monthly min = -0.3 max = 0.8 }
+	clamp_variable = { var = DOP_construction_mobilisation_poverty_monthly min = -0.6 max = 0.4 }
+	clamp_variable = { var = DOP_construction_mobilisation_admin_monthly min = -0.5 max = 0.3 }
+	clamp_variable = { var = DOP_construction_mobilisation_chinese_monthly min = -3 max = 3 }
+	clamp_variable = { var = DOP_construction_mobilisation_zhujin_monthly min = -3 max = 3 }
+	clamp_variable = { var = DOP_construction_mobilisation_japanese_monthly min = -3 max = 3 }
+	set_variable = { DOP_construction_mobilisation_stability_weekly_display = DOP_construction_mobilisation_stability_weekly }
+	multiply_variable = { DOP_construction_mobilisation_stability_weekly_display = 100 }
+	force_update_dynamic_modifier = yes
+	update_economy_tab = yes
+}
+    """.strip().splitlines()
+
+
+def render_gfx() -> list[str]:
+    lines: list[str] = []
+    for project in PROJECTS:
+        lines.extend(
+            [
+                "spriteType = {",
+                f'\tname = "GFX_{project.image}"',
+                f'\ttextureFile = "gfx/interface/bop/{project.image}.dds"',
+                "}",
+                "",
+            ]
+        )
+    if lines and not lines[-1]:
+        lines.pop()
+    return lines
+
+
+def md_cell(value: str) -> str:
+    return value.replace("|", "\\|").replace("\n", "<br>")
+
+
+def render_audit() -> str:
+    lines = [
+        "# 南粤建设系统：奖励与滑杆审计",
+        "",
+        "本文件由 tools/generate_dop_construction.py 生成。预览、本体奖励和审计表均来自同一份 REWARDS 数据，避免 GUI 文案与实际效果漂移。",
+        "",
+        "## 20 项奖励逐项表",
+        "",
+        "| ID | 项目 | 地区建设 | 社会发展 | GNG 特色 | 参考接口 | 目标州/省 | 强度依据 | 风险与上限 |",
+        "|---:|---|---|---|---|---|---|---|---|",
+    ]
+    for project in PROJECTS:
+        item = REWARDS[project.id]
+        cells = (
+            str(project.id),
+            project.name,
+            item.regional,
+            item.social,
+            item.gng,
+            item.references,
+            item.targets,
+            item.strength,
+            item.risk,
+        )
+        lines.append("| " + " | ".join(md_cell(cell) for cell in cells) + " |")
+
+    lines.extend(
+        [
+            "",
+            "## 滑杆口径与极值",
+            "",
+            "- 工程总量：1,205,000；基础速度：1,000/周。",
+            "- 资金速度倍率 = 0.5 + 资金百分比 / 100；人力速度倍率 = 0.7 + 0.006 × 人力百分比；两者相乘后再乘项目额外倍率。",
+            "- 资金持续支出 = 项目工程量 / 1,000,000 × 资金百分比 / 50；生产单位占用 = 项目工程量 / 100,000 × 资金百分比 / 50，所有在建项目汇总后四舍五入。",
+            "- 全项目同时在建时：资金 10/50/100 分别为 0.241/1.205/2.410B 持续支出和约 2/12/24 个生产单位占用。",
+            "- 资金/人力均为 10、50、100 时，基础周进度分别为 456、1,000、1,950。",
+            "- 人力偏移 = (人力百分比 - 50) / 50，并按项目工程量 / 100,000 聚合。政治点维持原值，其余动员数值提高至 2 倍；最终修正有明确 clamp：每日政治点数 [-0.50, +0.20]；每周稳定度 [-0.30%, +0.08%]；每月工业专业知识 [-0.30, +0.80]；每月贫困改善 [-0.60, +0.40]；每月行政效率 [-0.50, +0.30]；三群体月度支持各 [-3.00, +3.00]。",
+            "- 20 项全开且人力 100 时，未 clamp 的聚合近似为每日政治点数 -0.482、每周稳定度 -0.193%、工业专业知识 +0.964、贫困 -0.603、行政 -0.482、华人 +2.892、竹人 -0.723、日本人 -2.410；超过上述边界的值由动态修正 clamp。",
+            "- 20 项全开且人力 10 时，未 clamp 的聚合近似为每日政治点数 +0.386、每周稳定度 +0.154%、工业专业知识 -0.771、贫困 +0.482、行政 +0.386、华人 -2.314、竹人 +0.578、日本人 +1.928；同样由边界 clamp。",
+            "- 滑杆只产生施工期间的聚合动态修正；项目完工、停工或尚未开工时不计入，不存在通过来回拖动获得永久收益的接口。",
+            "",
+            "## 完工累计上限",
+            "",
+            "- 永久全国经济修正：生产单位 +8、杂项收入 +2.90B、研究速度 +7%、资源开采效率 +12%、贸易关系评价 +10%。",
+            "- 社会发展点数合计：学术基础 12、研究设施 12、农业 12、行政效率 28、工业设备 22、工业专业知识 22；贫困改善月度点数合计 0.66。",
+            "- 腐败累计 -24；单一州单次最大满意度变化为华人 +8、竹人 +6、日本人 +4（民俗园日本人 -2）。相关 GNG helper 均在州作用域调用并由 TNO 接口结算。",
+            "- 领奖路径为一次性 reward_claimed 数组保护；完成事件队列每日最多弹出一个事件。无 pending 奖励、无控制权检查、无 on_state_control_changed 发奖。",
+            "",
+            "## TNO 接口依据",
+            "",
+            "- 社会发展：common/scripted_effects/TNO_SocDev_scripted_effects.txt。",
+            "- 贫困：common/scripted_effects/TNO_economy_frontend_scripted_effects.txt。",
+            "- 腐败及三群体满意度：common/scripted_effects/TNO_Guangdong_scripted_effects.txt。",
+            "- 永久全国经济收益只写入 DOP_construction_completed_assets 动态修正；施工负担只写入经济承诺和社会动员动态修正。",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_image_map() -> str:
+    lines = [
+        "# 南粤建设系统：项目图像映射",
+        "",
+        "所有成品均由对应原图重新裁切至 182×423，最终 DDS 一图一文件；未使用旧版 20 帧条带、旧边框或旧成品。",
+        "",
+        "| ID | 项目 | 原图 | 最终 DDS | 动态 token | GFX sprite |",
+        "|---:|---|---|---|---|---|",
+    ]
+    for project in PROJECTS:
+        lines.append(
+            f"| {project.id} | {project.name} | {project.source} | "
+            f"gfx/interface/bop/{project.image}.dds | {project.image} | "
+            f"GFX_{project.image} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
 
 
 def build_outputs() -> dict[Path, tuple[str, bool]]:
@@ -578,7 +1618,20 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
         render_select_first_shown(),
         newline,
     )
-    effects = ensure_callbacks(effects, newline)
+    effects = replace_marked(
+        effects,
+        SLIDER_RUNTIME_BEGIN,
+        SLIDER_RUNTIME_END,
+        render_slider_runtime(),
+        newline,
+    )
+    effects = replace_marked(
+        effects,
+        CALLBACK_BEGIN,
+        CALLBACK_END,
+        ["# Completion callbacks are generated in DOP_construction_rewards.txt."],
+        newline,
+    )
     outputs[EFFECTS_PATH] = (effects, bom)
 
     localisation, newline, bom = read_text(LOC_PATH)
@@ -587,8 +1640,9 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
     )
     outputs[LOC_PATH] = (localisation, bom)
 
-    events, newline, bom = read_text(EVENTS_PATH)
-    outputs[EVENTS_PATH] = (ensure_events(events, newline), bom)
+    _, _, bom = read_text(EVENTS_PATH)
+    outputs[EVENTS_PATH] = (render_events(), bom)
+    outputs[REWARDS_PATH] = (render_rewards(), False)
 
     tokens, newline, bom = read_text(TOKENS_PATH)
     tokens = replace_marked(tokens, TOKENS_BEGIN, TOKENS_END, render_tokens(), newline)
@@ -603,6 +1657,12 @@ def build_outputs() -> dict[Path, tuple[str, bool]]:
         newline,
     )
     outputs[SCRIPTED_LOC_PATH] = (scripted_loc, bom)
+
+    gfx, newline, bom = read_text(GFX_PATH)
+    gfx = replace_marked(gfx, GFX_BEGIN, GFX_END, render_gfx(), newline)
+    outputs[GFX_PATH] = (gfx, bom)
+    outputs[AUDIT_PATH] = (render_audit(), False)
+    outputs[IMAGE_MAP_PATH] = (render_image_map(), False)
     return outputs
 
 
@@ -621,7 +1681,7 @@ def main() -> int:
     outputs = build_outputs()
     changed = []
     for path, (new_text, has_bom) in outputs.items():
-        old_text, _, _ = read_text(path)
+        old_text = read_text(path)[0] if path.exists() else ""
         if old_text == new_text:
             continue
         changed.append(path.relative_to(ROOT))

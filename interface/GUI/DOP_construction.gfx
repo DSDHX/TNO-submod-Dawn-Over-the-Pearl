@@ -17,4 +17,105 @@ spriteTypes = {
 		textureFile2 = "gfx/interface/bop/GSA_research_prgbarempty.dds"
 		effectFile = "gfx/FX/progress.lua"
 	}
+	# BEGIN GENERATED CONSTRUCTION PROJECT SPRITES
+	spriteType = {
+		name = "GFX_DOP_construction_project_01"
+		textureFile = "gfx/interface/bop/DOP_construction_project_01.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_02"
+		textureFile = "gfx/interface/bop/DOP_construction_project_02.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_03"
+		textureFile = "gfx/interface/bop/DOP_construction_project_03.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_04"
+		textureFile = "gfx/interface/bop/DOP_construction_project_04.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_05"
+		textureFile = "gfx/interface/bop/DOP_construction_project_05.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_06"
+		textureFile = "gfx/interface/bop/DOP_construction_project_06.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_07"
+		textureFile = "gfx/interface/bop/DOP_construction_project_07.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_08"
+		textureFile = "gfx/interface/bop/DOP_construction_project_08.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_09"
+		textureFile = "gfx/interface/bop/DOP_construction_project_09.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_10"
+		textureFile = "gfx/interface/bop/DOP_construction_project_10.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_11"
+		textureFile = "gfx/interface/bop/DOP_construction_project_11.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_12"
+		textureFile = "gfx/interface/bop/DOP_construction_project_12.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_13"
+		textureFile = "gfx/interface/bop/DOP_construction_project_13.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_14"
+		textureFile = "gfx/interface/bop/DOP_construction_project_14.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_15"
+		textureFile = "gfx/interface/bop/DOP_construction_project_15.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_16"
+		textureFile = "gfx/interface/bop/DOP_construction_project_16.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_17"
+		textureFile = "gfx/interface/bop/DOP_construction_project_17.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_18"
+		textureFile = "gfx/interface/bop/DOP_construction_project_18.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_19"
+		textureFile = "gfx/interface/bop/DOP_construction_project_19.dds"
+	}
+
+	spriteType = {
+		name = "GFX_DOP_construction_project_20"
+		textureFile = "gfx/interface/bop/DOP_construction_project_20.dds"
+	}
+	# END GENERATED CONSTRUCTION PROJECT SPRITES
 }

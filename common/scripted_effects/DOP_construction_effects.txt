@@ -21,11 +21,17 @@ DOP_construction_register_project = {
 	add_to_array = { DOP_construction_speed_add = 0 }
 	add_to_array = { DOP_construction_speed_factor = 1 }
 	add_to_array = { DOP_construction_input_factor = 1 }
+	add_to_array = { DOP_construction_funding_speed_factor = 1 }
+	add_to_array = { DOP_construction_manpower_speed_factor = 1 }
+	add_to_array = { DOP_construction_project_misc_cost = 0 }
+	add_to_array = { DOP_construction_project_pu_cost = 0 }
 	add_to_array = { DOP_construction_percent = 0 }
 	add_to_array = { DOP_construction_actual_speed = DOP_construction_base_speed }
 	add_to_array = { DOP_construction_completed = 0 }
 	add_to_array = { DOP_construction_shown = 0 }
 	add_to_array = { DOP_construction_started = 0 }
+	add_to_array = { DOP_construction_completion_queued = 0 }
+	add_to_array = { DOP_construction_reward_claimed = 0 }
 }
 
 DOP_construction_prepare_slider_set_indices = {
@@ -39,11 +45,12 @@ DOP_construction_prepare_slider_set_indices = {
 }
 
 DOP_construction_register_all_projects = {
-	set_variable = { DOP_construction_base_speed = 250 }
+	set_variable = { DOP_construction_base_speed = 1000 }
 	set_variable = { DOP_construction_project_count = 0 }
 	set_variable = { DOP_construction_selected_region = 0 }
 	set_variable = { DOP_construction_selected = 0 }
 	set_variable = { DOP_construction_weekly_counter = 0 }
+	set_variable = { DOP_construction_show_effects = 0 }
 	DOP_construction_prepare_slider_set_indices = yes
 
 	clear_array = DOP_construction_region_ids
@@ -67,11 +74,17 @@ DOP_construction_register_all_projects = {
 	clear_array = DOP_construction_speed_add
 	clear_array = DOP_construction_speed_factor
 	clear_array = DOP_construction_input_factor
+	clear_array = DOP_construction_funding_speed_factor
+	clear_array = DOP_construction_manpower_speed_factor
+	clear_array = DOP_construction_project_misc_cost
+	clear_array = DOP_construction_project_pu_cost
 	clear_array = DOP_construction_percent
 	clear_array = DOP_construction_actual_speed
 	clear_array = DOP_construction_completed
 	clear_array = DOP_construction_shown
 	clear_array = DOP_construction_started
+	clear_array = DOP_construction_completion_queued
+	clear_array = DOP_construction_reward_claimed
 
 	# Index zero is the empty-GUI placeholder, so stable project IDs can still be
 	# used as direct array indexes without a generated resize count.
@@ -79,7 +92,7 @@ DOP_construction_register_all_projects = {
 	add_to_array = { DOP_construction_project_tokens = token:DOP_construction_no_project }
 	add_to_array = { DOP_construction_project_desc_tokens = token:DOP_construction_no_project_desc }
 	add_to_array = { DOP_construction_project_region = 0 }
-	add_to_array = { DOP_construction_project_images = token:GSA_kanton_shenkansen_research }
+	add_to_array = { DOP_construction_project_images = token:DOP_construction_project_01 }
 	add_to_array = { DOP_construction_event_ids = 0 }
 	add_to_array = { DOP_construction_total = 0 }
 	add_to_array = { DOP_construction_progress = 0 }
@@ -92,11 +105,17 @@ DOP_construction_register_all_projects = {
 	add_to_array = { DOP_construction_speed_add = 0 }
 	add_to_array = { DOP_construction_speed_factor = 0 }
 	add_to_array = { DOP_construction_input_factor = 0 }
+	add_to_array = { DOP_construction_funding_speed_factor = 0 }
+	add_to_array = { DOP_construction_manpower_speed_factor = 0 }
+	add_to_array = { DOP_construction_project_misc_cost = 0 }
+	add_to_array = { DOP_construction_project_pu_cost = 0 }
 	add_to_array = { DOP_construction_percent = 0 }
 	add_to_array = { DOP_construction_actual_speed = 0 }
 	add_to_array = { DOP_construction_completed = 0 }
 	add_to_array = { DOP_construction_shown = 0 }
 	add_to_array = { DOP_construction_started = 0 }
+	add_to_array = { DOP_construction_completion_queued = 0 }
+	add_to_array = { DOP_construction_reward_claimed = 0 }
 
 	# BEGIN GENERATED CONSTRUCTION REGISTRY
 	add_to_array = { DOP_construction_region_ids = 1 }
@@ -105,24 +124,18 @@ DOP_construction_register_all_projects = {
 	add_to_array = { DOP_construction_region_ids = 4 }
 	add_to_array = { DOP_construction_region_ids = 5 }
 	add_to_array = { DOP_construction_region_ids = 6 }
-	add_to_array = { DOP_construction_region_ids = 7 }
-	add_to_array = { DOP_construction_region_ids = 8 }
-	add_to_array = { DOP_construction_region_ids = 9 }
 	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_prd }
 	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_chaoshan }
 	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_northern_guangdong }
 	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_western_guangdong }
 	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_jiaoyang }
-	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_yongning }
-	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_cangwu }
-	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_guiliu }
-	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_tiannan }
+	add_to_array = { DOP_construction_region_tokens = token:DOP_construction_region_guangxi }
 
 	set_temp_variable = { DOP_construction_register_id = 1 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_sky_tower }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_sky_tower_desc }
 	set_temp_variable = { DOP_construction_register_region = 1 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_01 }
 	set_temp_variable = { DOP_construction_register_event = 1 }
 	set_temp_variable = { DOP_construction_register_total = 150000 }
 	DOP_construction_register_project = yes
@@ -131,7 +144,7 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_rose_garden }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_rose_garden_desc }
 	set_temp_variable = { DOP_construction_register_region = 1 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_02 }
 	set_temp_variable = { DOP_construction_register_event = 2 }
 	set_temp_variable = { DOP_construction_register_total = 100000 }
 	DOP_construction_register_project = yes
@@ -140,7 +153,7 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_alice_dream_factory }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_alice_dream_factory_desc }
 	set_temp_variable = { DOP_construction_register_region = 1 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_03 }
 	set_temp_variable = { DOP_construction_register_event = 3 }
 	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
@@ -149,7 +162,7 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_daya_bay_nuclear_plant }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_daya_bay_nuclear_plant_desc }
 	set_temp_variable = { DOP_construction_register_region = 1 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_04 }
 	set_temp_variable = { DOP_construction_register_event = 4 }
 	set_temp_variable = { DOP_construction_register_total = 45000 }
 	DOP_construction_register_project = yes
@@ -158,7 +171,7 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_guangdong_shinkansen }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_guangdong_shinkansen_desc }
 	set_temp_variable = { DOP_construction_register_region = 1 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_05 }
 	set_temp_variable = { DOP_construction_register_event = 5 }
 	set_temp_variable = { DOP_construction_register_total = 90000 }
 	DOP_construction_register_project = yes
@@ -167,34 +180,34 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_chaoshan_university }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_chaoshan_university_desc }
 	set_temp_variable = { DOP_construction_register_region = 2 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_06 }
 	set_temp_variable = { DOP_construction_register_event = 6 }
-	set_temp_variable = { DOP_construction_register_total = 8000 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 7 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_xinfengjiang_reservoir }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_xinfengjiang_reservoir_desc }
 	set_temp_variable = { DOP_construction_register_region = 3 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_07 }
 	set_temp_variable = { DOP_construction_register_event = 7 }
-	set_temp_variable = { DOP_construction_register_total = 20000 }
+	set_temp_variable = { DOP_construction_register_total = 60000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 8 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_luoding_granary }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_luoding_granary_desc }
 	set_temp_variable = { DOP_construction_register_region = 4 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_08 }
 	set_temp_variable = { DOP_construction_register_event = 8 }
-	set_temp_variable = { DOP_construction_register_total = 4000 }
+	set_temp_variable = { DOP_construction_register_total = 40000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 9 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_pinglu_canal }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_pinglu_canal_desc }
 	set_temp_variable = { DOP_construction_register_region = 5 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_09 }
 	set_temp_variable = { DOP_construction_register_event = 9 }
 	set_temp_variable = { DOP_construction_register_total = 100000 }
 	DOP_construction_register_project = yes
@@ -203,63 +216,99 @@ DOP_construction_register_all_projects = {
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_south_china_sea_drilling_platform }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_south_china_sea_drilling_platform_desc }
 	set_temp_variable = { DOP_construction_register_region = 5 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_10 }
 	set_temp_variable = { DOP_construction_register_event = 10 }
-	set_temp_variable = { DOP_construction_register_total = 4000 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 11 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_wenchang_space_center }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_wenchang_space_center_desc }
 	set_temp_variable = { DOP_construction_register_region = 5 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_11 }
 	set_temp_variable = { DOP_construction_register_event = 11 }
-	set_temp_variable = { DOP_construction_register_total = 12000 }
+	set_temp_variable = { DOP_construction_register_total = 50000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 12 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_guangxi_industrial_institute }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_guangxi_industrial_institute_desc }
 	set_temp_variable = { DOP_construction_register_region = 6 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_12 }
 	set_temp_variable = { DOP_construction_register_event = 12 }
-	set_temp_variable = { DOP_construction_register_total = 50000 }
+	set_temp_variable = { DOP_construction_register_total = 60000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 13 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_guangxi_expressway_network }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_guangxi_expressway_network_desc }
 	set_temp_variable = { DOP_construction_register_region = 6 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_13 }
 	set_temp_variable = { DOP_construction_register_event = 13 }
-	set_temp_variable = { DOP_construction_register_total = 80000 }
+	set_temp_variable = { DOP_construction_register_total = 90000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 14 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_nanyue_folk_memorial_park }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_nanyue_folk_memorial_park_desc }
-	set_temp_variable = { DOP_construction_register_region = 7 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_region = 6 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_14 }
 	set_temp_variable = { DOP_construction_register_event = 14 }
-	set_temp_variable = { DOP_construction_register_total = 1000 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 15 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_lijiang_waterway }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_lijiang_waterway_desc }
-	set_temp_variable = { DOP_construction_register_region = 8 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_region = 6 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_15 }
 	set_temp_variable = { DOP_construction_register_event = 15 }
-	set_temp_variable = { DOP_construction_register_total = 1000 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
 
 	set_temp_variable = { DOP_construction_register_id = 16 }
 	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_honghe_fan_asia_friendship_pass }
 	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_honghe_fan_asia_friendship_pass_desc }
-	set_temp_variable = { DOP_construction_register_region = 9 }
-	set_temp_variable = { DOP_construction_register_image = token:GSA_kanton_shenkansen_research }
+	set_temp_variable = { DOP_construction_register_region = 6 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_16 }
 	set_temp_variable = { DOP_construction_register_event = 16 }
-	set_temp_variable = { DOP_construction_register_total = 1000 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
+	DOP_construction_register_project = yes
+
+	set_temp_variable = { DOP_construction_register_id = 17 }
+	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_prd_maglev }
+	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_prd_maglev_desc }
+	set_temp_variable = { DOP_construction_register_region = 1 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_17 }
+	set_temp_variable = { DOP_construction_register_event = 17 }
+	set_temp_variable = { DOP_construction_register_total = 90000 }
+	DOP_construction_register_project = yes
+
+	set_temp_variable = { DOP_construction_register_id = 18 }
+	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_shantou_chaozhou_jieyang_integration }
+	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_shantou_chaozhou_jieyang_integration_desc }
+	set_temp_variable = { DOP_construction_register_region = 2 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_18 }
+	set_temp_variable = { DOP_construction_register_event = 18 }
+	set_temp_variable = { DOP_construction_register_total = 60000 }
+	DOP_construction_register_project = yes
+
+	set_temp_variable = { DOP_construction_register_id = 19 }
+	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_granite_uranium_mining }
+	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_granite_uranium_mining_desc }
+	set_temp_variable = { DOP_construction_register_region = 3 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_19 }
+	set_temp_variable = { DOP_construction_register_event = 19 }
+	set_temp_variable = { DOP_construction_register_total = 60000 }
+	DOP_construction_register_project = yes
+
+	set_temp_variable = { DOP_construction_register_id = 20 }
+	set_temp_variable = { DOP_construction_register_token = token:DOP_construction_shale_oil_refineries }
+	set_temp_variable = { DOP_construction_register_desc_token = token:DOP_construction_shale_oil_refineries_desc }
+	set_temp_variable = { DOP_construction_register_region = 4 }
+	set_temp_variable = { DOP_construction_register_image = token:DOP_construction_project_20 }
+	set_temp_variable = { DOP_construction_register_event = 20 }
+	set_temp_variable = { DOP_construction_register_total = 30000 }
 	DOP_construction_register_project = yes
 	# END GENERATED CONSTRUCTION REGISTRY
 }
@@ -267,21 +316,45 @@ DOP_construction_register_all_projects = {
 DOP_construction_clear_completion_flags = {
 	# BEGIN GENERATED CONSTRUCTION CLEAR FLAGS
 	clr_country_flag = DOP_construction_sky_tower_completed
+	clr_country_flag = DOP_construction_sky_tower_reward_claimed
 	clr_country_flag = DOP_construction_rose_garden_completed
+	clr_country_flag = DOP_construction_rose_garden_reward_claimed
 	clr_country_flag = DOP_construction_alice_dream_factory_completed
+	clr_country_flag = DOP_construction_alice_dream_factory_reward_claimed
 	clr_country_flag = DOP_construction_daya_bay_nuclear_plant_completed
+	clr_country_flag = DOP_construction_daya_bay_nuclear_plant_reward_claimed
 	clr_country_flag = DOP_construction_guangdong_shinkansen_completed
+	clr_country_flag = DOP_construction_guangdong_shinkansen_reward_claimed
 	clr_country_flag = DOP_construction_chaoshan_university_completed
+	clr_country_flag = DOP_construction_chaoshan_university_reward_claimed
 	clr_country_flag = DOP_construction_xinfengjiang_reservoir_completed
+	clr_country_flag = DOP_construction_xinfengjiang_reservoir_reward_claimed
 	clr_country_flag = DOP_construction_luoding_granary_completed
+	clr_country_flag = DOP_construction_luoding_granary_reward_claimed
 	clr_country_flag = DOP_construction_pinglu_canal_completed
+	clr_country_flag = DOP_construction_pinglu_canal_reward_claimed
 	clr_country_flag = DOP_construction_south_china_sea_drilling_platform_completed
+	clr_country_flag = DOP_construction_south_china_sea_drilling_platform_reward_claimed
 	clr_country_flag = DOP_construction_wenchang_space_center_completed
+	clr_country_flag = DOP_construction_wenchang_space_center_reward_claimed
 	clr_country_flag = DOP_construction_guangxi_industrial_institute_completed
+	clr_country_flag = DOP_construction_guangxi_industrial_institute_reward_claimed
 	clr_country_flag = DOP_construction_guangxi_expressway_network_completed
+	clr_country_flag = DOP_construction_guangxi_expressway_network_reward_claimed
 	clr_country_flag = DOP_construction_nanyue_folk_memorial_park_completed
+	clr_country_flag = DOP_construction_nanyue_folk_memorial_park_reward_claimed
 	clr_country_flag = DOP_construction_lijiang_waterway_completed
+	clr_country_flag = DOP_construction_lijiang_waterway_reward_claimed
 	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_completed
+	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_reward_claimed
+	clr_country_flag = DOP_construction_prd_maglev_completed
+	clr_country_flag = DOP_construction_prd_maglev_reward_claimed
+	clr_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_completed
+	clr_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_reward_claimed
+	clr_country_flag = DOP_construction_granite_uranium_mining_completed
+	clr_country_flag = DOP_construction_granite_uranium_mining_reward_claimed
+	clr_country_flag = DOP_construction_shale_oil_refineries_completed
+	clr_country_flag = DOP_construction_shale_oil_refineries_reward_claimed
 	# END GENERATED CONSTRUCTION CLEAR FLAGS
 }
 
@@ -293,9 +366,6 @@ DOP_construction_clear_expansion_flags = {
 	clr_country_flag = DOP_construction_region_4_expanded
 	clr_country_flag = DOP_construction_region_5_expanded
 	clr_country_flag = DOP_construction_region_6_expanded
-	clr_country_flag = DOP_construction_region_7_expanded
-	clr_country_flag = DOP_construction_region_8_expanded
-	clr_country_flag = DOP_construction_region_9_expanded
 	# END GENERATED CONSTRUCTION CLEAR EXPANSION FLAGS
 }
 
@@ -333,6 +403,14 @@ DOP_construction_clear_state_flags = {
 	clr_country_flag = DOP_construction_lijiang_waterway_started
 	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_shown
 	clr_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_started
+	clr_country_flag = DOP_construction_prd_maglev_shown
+	clr_country_flag = DOP_construction_prd_maglev_started
+	clr_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_shown
+	clr_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_started
+	clr_country_flag = DOP_construction_granite_uranium_mining_shown
+	clr_country_flag = DOP_construction_granite_uranium_mining_started
+	clr_country_flag = DOP_construction_shale_oil_refineries_shown
+	clr_country_flag = DOP_construction_shale_oil_refineries_started
 	# END GENERATED CONSTRUCTION CLEAR STATE FLAGS
 }
 
@@ -420,6 +498,26 @@ DOP_construction_mark_project_shown = {
 		set_variable = { DOP_construction_shown^16 = 1 }
 		set_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_shown
 	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 17 } }
+		set_variable = { DOP_construction_shown^17 = 1 }
+		set_country_flag = DOP_construction_prd_maglev_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 18 } }
+		set_variable = { DOP_construction_shown^18 = 1 }
+		set_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 19 } }
+		set_variable = { DOP_construction_shown^19 = 1 }
+		set_country_flag = DOP_construction_granite_uranium_mining_shown
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 20 } }
+		set_variable = { DOP_construction_shown^20 = 1 }
+		set_country_flag = DOP_construction_shale_oil_refineries_shown
+	}
 }
 
 DOP_construction_mark_project_started = {
@@ -503,12 +601,57 @@ DOP_construction_mark_project_started = {
 		set_variable = { DOP_construction_started^16 = 1 }
 		set_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_started
 	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 17 } }
+		set_variable = { DOP_construction_started^17 = 1 }
+		set_country_flag = DOP_construction_prd_maglev_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 18 } }
+		set_variable = { DOP_construction_started^18 = 1 }
+		set_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 19 } }
+		set_variable = { DOP_construction_started^19 = 1 }
+		set_country_flag = DOP_construction_granite_uranium_mining_started
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_target_project = 20 } }
+		set_variable = { DOP_construction_started^20 = 1 }
+		set_country_flag = DOP_construction_shale_oil_refineries_started
+	}
 }
 # END GENERATED CONSTRUCTION STATE DISPATCH
+
+DOP_construction_ensure_dynamic_modifiers = {
+	if = {
+		limit = { NOT = { has_dynamic_modifier = { modifier = DOP_construction_economic_commitments } } }
+		add_dynamic_modifier = { modifier = DOP_construction_economic_commitments }
+	}
+	if = {
+		limit = { NOT = { has_dynamic_modifier = { modifier = DOP_construction_social_mobilisation } } }
+		add_dynamic_modifier = { modifier = DOP_construction_social_mobilisation }
+	}
+	if = {
+		limit = { NOT = { has_dynamic_modifier = { modifier = DOP_construction_completed_assets } } }
+		add_dynamic_modifier = { modifier = DOP_construction_completed_assets }
+	}
+}
+
+DOP_construction_reset_reward_variables = {
+	set_variable = { DOP_construction_reward_misc_income = 0 }
+	set_variable = { DOP_construction_reward_free_pu = 0 }
+	set_variable = { DOP_construction_reward_research_speed = 0 }
+	set_variable = { DOP_construction_reward_resource_factor = 0 }
+	set_variable = { DOP_construction_reward_trade_opinion = 0 }
+}
 
 DOP_construction_initialize_variables = {
 	DOP_construction_register_all_projects = yes
 	DOP_construction_clear_completion_flags = yes
+	DOP_construction_reset_reward_variables = yes
+	DOP_construction_ensure_dynamic_modifiers = yes
 	set_country_flag = DOP_construction_initialized
 	set_country_flag = DOP_construction_dynamic_v2_initialized
 	set_country_flag = DOP_construction_dynamic_v3_initialized
@@ -516,6 +659,7 @@ DOP_construction_initialize_variables = {
 	set_country_flag = DOP_construction_dynamic_v5_initialized
 	set_country_flag = DOP_construction_dynamic_v6_initialized
 	set_country_flag = DOP_construction_dynamic_v7_initialized
+	set_country_flag = DOP_construction_dynamic_v8_initialized
 	DOP_construction_clear_expansion_flags = yes
 	DOP_construction_clear_state_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
@@ -701,6 +845,97 @@ DOP_construction_migrate_dynamic_v7 = {
 	DOP_construction_rebuild_visible_projects = yes
 }
 
+# v8 replaces the directory and project data while preserving released save
+# data. Increased totals keep incomplete progress; completed projects remain
+# complete and enter the visible one-event-per-day completion queue once.
+DOP_construction_migrate_dynamic_v8 = {
+	set_temp_variable = { DOP_construction_v8_saved_count = DOP_construction_project_count }
+	set_temp_variable = { DOP_construction_v8_saved_selected = DOP_construction_selected }
+	set_temp_variable = { DOP_construction_v8_saved_weekly_counter = DOP_construction_weekly_counter }
+	clear_temp_array = DOP_construction_v8_progress
+	clear_temp_array = DOP_construction_v8_funding
+	clear_temp_array = DOP_construction_v8_manpower
+	clear_temp_array = DOP_construction_v8_completed
+	clear_temp_array = DOP_construction_v8_shown
+	clear_temp_array = DOP_construction_v8_started
+	add_to_temp_array = { DOP_construction_v8_progress = 0 }
+	add_to_temp_array = { DOP_construction_v8_funding = 0 }
+	add_to_temp_array = { DOP_construction_v8_manpower = 0 }
+	add_to_temp_array = { DOP_construction_v8_completed = 0 }
+	add_to_temp_array = { DOP_construction_v8_shown = 0 }
+	add_to_temp_array = { DOP_construction_v8_started = 0 }
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_project_id = v }
+		add_to_temp_array = { DOP_construction_v8_progress = DOP_construction_progress^DOP_construction_project_id }
+		add_to_temp_array = { DOP_construction_v8_funding = DOP_construction_funding^DOP_construction_project_id }
+		add_to_temp_array = { DOP_construction_v8_manpower = DOP_construction_manpower^DOP_construction_project_id }
+		add_to_temp_array = { DOP_construction_v8_completed = DOP_construction_completed^DOP_construction_project_id }
+		add_to_temp_array = { DOP_construction_v8_shown = DOP_construction_shown^DOP_construction_project_id }
+		add_to_temp_array = { DOP_construction_v8_started = DOP_construction_started^DOP_construction_project_id }
+	}
+
+	DOP_construction_register_all_projects = yes
+	DOP_construction_reset_reward_variables = yes
+	DOP_construction_ensure_dynamic_modifiers = yes
+	set_variable = { DOP_construction_base_speed = 1000 }
+	set_variable = { DOP_construction_weekly_counter = DOP_construction_v8_saved_weekly_counter }
+	set_variable = { DOP_construction_selected = DOP_construction_v8_saved_selected }
+	clamp_variable = { var = DOP_construction_selected min = 0 max = DOP_construction_project_count }
+
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_project_id = v }
+		if = {
+			limit = {
+				check_variable = {
+					var = DOP_construction_project_id
+					value = DOP_construction_v8_saved_count
+					compare = less_than_or_equals
+				}
+			}
+			set_variable = { DOP_construction_progress^DOP_construction_project_id = DOP_construction_v8_progress^DOP_construction_project_id }
+			set_variable = { DOP_construction_funding^DOP_construction_project_id = DOP_construction_v8_funding^DOP_construction_project_id }
+			set_variable = { DOP_construction_manpower^DOP_construction_project_id = DOP_construction_v8_manpower^DOP_construction_project_id }
+			set_variable = { DOP_construction_completed^DOP_construction_project_id = DOP_construction_v8_completed^DOP_construction_project_id }
+			set_variable = { DOP_construction_shown^DOP_construction_project_id = DOP_construction_v8_shown^DOP_construction_project_id }
+			set_variable = { DOP_construction_started^DOP_construction_project_id = DOP_construction_v8_started^DOP_construction_project_id }
+			clamp_variable = { var = DOP_construction_funding^DOP_construction_project_id min = 10 max = 100 }
+			clamp_variable = { var = DOP_construction_manpower^DOP_construction_project_id min = 10 max = 100 }
+			if = {
+				limit = { check_variable = { DOP_construction_completed^DOP_construction_project_id > 0 } }
+				set_variable = { DOP_construction_progress^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+				set_temp_variable = { DOP_construction_completed_event_id = DOP_construction_event_ids^DOP_construction_project_id }
+				DOP_construction_fire_completion_event = yes
+			}
+			else = {
+				clamp_variable = { var = DOP_construction_progress^DOP_construction_project_id min = 0 max = DOP_construction_total^DOP_construction_project_id }
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = DOP_construction_region_7_expanded
+				has_country_flag = DOP_construction_region_8_expanded
+				has_country_flag = DOP_construction_region_9_expanded
+			}
+		}
+		set_country_flag = DOP_construction_region_6_expanded
+	}
+	clr_country_flag = DOP_construction_region_7_expanded
+	clr_country_flag = DOP_construction_region_8_expanded
+	clr_country_flag = DOP_construction_region_9_expanded
+	if = {
+		limit = { check_variable = { DOP_construction_selected > 0 } }
+		set_variable = { DOP_construction_selected_region = DOP_construction_project_region^DOP_construction_selected }
+	}
+	else = { set_variable = { DOP_construction_selected_region = 0 } }
+	set_country_flag = DOP_construction_dynamic_v8_initialized
+	DOP_construction_recalculate_all = yes
+	DOP_construction_rebuild_visible_projects = yes
+}
+
 GNG_BOP_Construction_Initialize = {
 	if = {
 		limit = { NOT = { has_country_flag = DOP_construction_tab_enabled } }
@@ -736,12 +971,19 @@ GNG_BOP_Construction_Initialize = {
 		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v7_initialized } }
 		DOP_construction_migrate_dynamic_v7 = yes
 	}
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v8_initialized } }
+		DOP_construction_migrate_dynamic_v8 = yes
+	}
+	DOP_construction_ensure_dynamic_modifiers = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
 
 DOP_construction_reset = {
 	DOP_construction_register_all_projects = yes
 	DOP_construction_clear_completion_flags = yes
+	DOP_construction_reset_reward_variables = yes
+	DOP_construction_ensure_dynamic_modifiers = yes
 	set_country_flag = DOP_construction_initialized
 	set_country_flag = DOP_construction_dynamic_v2_initialized
 	set_country_flag = DOP_construction_dynamic_v3_initialized
@@ -749,6 +991,7 @@ DOP_construction_reset = {
 	set_country_flag = DOP_construction_dynamic_v5_initialized
 	set_country_flag = DOP_construction_dynamic_v6_initialized
 	set_country_flag = DOP_construction_dynamic_v7_initialized
+	set_country_flag = DOP_construction_dynamic_v8_initialized
 	DOP_construction_clear_expansion_flags = yes
 	DOP_construction_clear_state_flags = yes
 	set_variable = { DOP_GNG_stage_integrity = 100 }
@@ -827,17 +1070,37 @@ DOP_construction_select_first_shown_project = {
 	else_if = {
 		limit = { check_variable = { DOP_construction_shown^14 > 0 } }
 		set_variable = { DOP_construction_selected = 14 }
-		set_variable = { DOP_construction_selected_region = 7 }
+		set_variable = { DOP_construction_selected_region = 6 }
 	}
 	else_if = {
 		limit = { check_variable = { DOP_construction_shown^15 > 0 } }
 		set_variable = { DOP_construction_selected = 15 }
-		set_variable = { DOP_construction_selected_region = 8 }
+		set_variable = { DOP_construction_selected_region = 6 }
 	}
 	else_if = {
 		limit = { check_variable = { DOP_construction_shown^16 > 0 } }
 		set_variable = { DOP_construction_selected = 16 }
-		set_variable = { DOP_construction_selected_region = 9 }
+		set_variable = { DOP_construction_selected_region = 6 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^17 > 0 } }
+		set_variable = { DOP_construction_selected = 17 }
+		set_variable = { DOP_construction_selected_region = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^18 > 0 } }
+		set_variable = { DOP_construction_selected = 18 }
+		set_variable = { DOP_construction_selected_region = 2 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^19 > 0 } }
+		set_variable = { DOP_construction_selected = 19 }
+		set_variable = { DOP_construction_selected_region = 3 }
+	}
+	else_if = {
+		limit = { check_variable = { DOP_construction_shown^20 > 0 } }
+		set_variable = { DOP_construction_selected = 20 }
+		set_variable = { DOP_construction_selected_region = 4 }
 	}
 	else = {
 		set_variable = { DOP_construction_selected = 0 }
@@ -857,6 +1120,7 @@ DOP_construction_rebuild_visible_projects = {
 				check_variable = { DOP_construction_shown^3 > 0 }
 				check_variable = { DOP_construction_shown^4 > 0 }
 				check_variable = { DOP_construction_shown^5 > 0 }
+				check_variable = { DOP_construction_shown^17 > 0 }
 			}
 		}
 		add_to_array = { DOP_construction_directory_items = 101 }
@@ -882,12 +1146,17 @@ DOP_construction_rebuild_visible_projects = {
 				limit = { check_variable = { DOP_construction_shown^5 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 5 }
 			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^17 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 17 }
+			}
 		}
 	}
 	if = {
 		limit = {
 			OR = {
 				check_variable = { DOP_construction_shown^6 > 0 }
+				check_variable = { DOP_construction_shown^18 > 0 }
 			}
 		}
 		add_to_array = { DOP_construction_directory_items = 102 }
@@ -897,12 +1166,17 @@ DOP_construction_rebuild_visible_projects = {
 				limit = { check_variable = { DOP_construction_shown^6 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 6 }
 			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^18 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 18 }
+			}
 		}
 	}
 	if = {
 		limit = {
 			OR = {
 				check_variable = { DOP_construction_shown^7 > 0 }
+				check_variable = { DOP_construction_shown^19 > 0 }
 			}
 		}
 		add_to_array = { DOP_construction_directory_items = 103 }
@@ -912,12 +1186,17 @@ DOP_construction_rebuild_visible_projects = {
 				limit = { check_variable = { DOP_construction_shown^7 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 7 }
 			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^19 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 19 }
+			}
 		}
 	}
 	if = {
 		limit = {
 			OR = {
 				check_variable = { DOP_construction_shown^8 > 0 }
+				check_variable = { DOP_construction_shown^20 > 0 }
 			}
 		}
 		add_to_array = { DOP_construction_directory_items = 104 }
@@ -926,6 +1205,10 @@ DOP_construction_rebuild_visible_projects = {
 			if = {
 				limit = { check_variable = { DOP_construction_shown^8 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 8 }
+			}
+			if = {
+				limit = { check_variable = { DOP_construction_shown^20 > 0 } }
+				add_to_array = { DOP_construction_directory_items = 20 }
 			}
 		}
 	}
@@ -959,6 +1242,9 @@ DOP_construction_rebuild_visible_projects = {
 			OR = {
 				check_variable = { DOP_construction_shown^12 > 0 }
 				check_variable = { DOP_construction_shown^13 > 0 }
+				check_variable = { DOP_construction_shown^14 > 0 }
+				check_variable = { DOP_construction_shown^15 > 0 }
+				check_variable = { DOP_construction_shown^16 > 0 }
 			}
 		}
 		add_to_array = { DOP_construction_directory_items = 106 }
@@ -972,47 +1258,14 @@ DOP_construction_rebuild_visible_projects = {
 				limit = { check_variable = { DOP_construction_shown^13 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 13 }
 			}
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { DOP_construction_shown^14 > 0 }
-			}
-		}
-		add_to_array = { DOP_construction_directory_items = 107 }
-		if = {
-			limit = { has_country_flag = DOP_construction_region_7_expanded }
 			if = {
 				limit = { check_variable = { DOP_construction_shown^14 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 14 }
 			}
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { DOP_construction_shown^15 > 0 }
-			}
-		}
-		add_to_array = { DOP_construction_directory_items = 108 }
-		if = {
-			limit = { has_country_flag = DOP_construction_region_8_expanded }
 			if = {
 				limit = { check_variable = { DOP_construction_shown^15 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 15 }
 			}
-		}
-	}
-	if = {
-		limit = {
-			OR = {
-				check_variable = { DOP_construction_shown^16 > 0 }
-			}
-		}
-		add_to_array = { DOP_construction_directory_items = 109 }
-		if = {
-			limit = { has_country_flag = DOP_construction_region_9_expanded }
 			if = {
 				limit = { check_variable = { DOP_construction_shown^16 > 0 } }
 				add_to_array = { DOP_construction_directory_items = 16 }
@@ -1062,6 +1315,10 @@ DOP_construction_toggle_directory_region = {
 			limit = { check_variable = { DOP_construction_shown^5 > 0 } }
 			set_variable = { DOP_construction_selected = 5 }
 		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^17 > 0 } }
+			set_variable = { DOP_construction_selected = 17 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_1_expanded }
 			clr_country_flag = DOP_construction_region_1_expanded
@@ -1074,6 +1331,10 @@ DOP_construction_toggle_directory_region = {
 		if = {
 			limit = { check_variable = { DOP_construction_shown^6 > 0 } }
 			set_variable = { DOP_construction_selected = 6 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^18 > 0 } }
+			set_variable = { DOP_construction_selected = 18 }
 		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_2_expanded }
@@ -1088,6 +1349,10 @@ DOP_construction_toggle_directory_region = {
 			limit = { check_variable = { DOP_construction_shown^7 > 0 } }
 			set_variable = { DOP_construction_selected = 7 }
 		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^19 > 0 } }
+			set_variable = { DOP_construction_selected = 19 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_3_expanded }
 			clr_country_flag = DOP_construction_region_3_expanded
@@ -1100,6 +1365,10 @@ DOP_construction_toggle_directory_region = {
 		if = {
 			limit = { check_variable = { DOP_construction_shown^8 > 0 } }
 			set_variable = { DOP_construction_selected = 8 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^20 > 0 } }
+			set_variable = { DOP_construction_selected = 20 }
 		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_4_expanded }
@@ -1139,66 +1408,63 @@ DOP_construction_toggle_directory_region = {
 			limit = { check_variable = { DOP_construction_shown^13 > 0 } }
 			set_variable = { DOP_construction_selected = 13 }
 		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^14 > 0 } }
+			set_variable = { DOP_construction_selected = 14 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^15 > 0 } }
+			set_variable = { DOP_construction_selected = 15 }
+		}
+		else_if = {
+			limit = { check_variable = { DOP_construction_shown^16 > 0 } }
+			set_variable = { DOP_construction_selected = 16 }
+		}
 		if = {
 			limit = { has_country_flag = DOP_construction_region_6_expanded }
 			clr_country_flag = DOP_construction_region_6_expanded
 		}
 		else = { set_country_flag = DOP_construction_region_6_expanded }
 	}
-	if = {
-		limit = { check_variable = { DOP_construction_directory_item = 107 } }
-		set_variable = { DOP_construction_selected_region = 7 }
-		if = {
-			limit = { check_variable = { DOP_construction_shown^14 > 0 } }
-			set_variable = { DOP_construction_selected = 14 }
-		}
-		if = {
-			limit = { has_country_flag = DOP_construction_region_7_expanded }
-			clr_country_flag = DOP_construction_region_7_expanded
-		}
-		else = { set_country_flag = DOP_construction_region_7_expanded }
-	}
-	if = {
-		limit = { check_variable = { DOP_construction_directory_item = 108 } }
-		set_variable = { DOP_construction_selected_region = 8 }
-		if = {
-			limit = { check_variable = { DOP_construction_shown^15 > 0 } }
-			set_variable = { DOP_construction_selected = 15 }
-		}
-		if = {
-			limit = { has_country_flag = DOP_construction_region_8_expanded }
-			clr_country_flag = DOP_construction_region_8_expanded
-		}
-		else = { set_country_flag = DOP_construction_region_8_expanded }
-	}
-	if = {
-		limit = { check_variable = { DOP_construction_directory_item = 109 } }
-		set_variable = { DOP_construction_selected_region = 9 }
-		if = {
-			limit = { check_variable = { DOP_construction_shown^16 > 0 } }
-			set_variable = { DOP_construction_selected = 16 }
-		}
-		if = {
-			limit = { has_country_flag = DOP_construction_region_9_expanded }
-			clr_country_flag = DOP_construction_region_9_expanded
-		}
-		else = { set_country_flag = DOP_construction_region_9_expanded }
-	}
 	# END GENERATED CONSTRUCTION DIRECTORY TOGGLES
 	DOP_construction_rebuild_visible_projects = yes
 	log = "[GetDateText]: [Root.GetName]: DOP construction region toggled [?DOP_construction_selected_region]; selected project [?DOP_construction_selected]"
 }
 
+# BEGIN GENERATED CONSTRUCTION SLIDER RUNTIME
 DOP_construction_recalculate_project = {
-	set_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
-	add_to_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_manpower^DOP_construction_project_id }
-	divide_variable = { DOP_construction_input_factor^DOP_construction_project_id = 100 }
+	set_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+	divide_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = 100 }
+	add_to_variable = { DOP_construction_funding_speed_factor^DOP_construction_project_id = 0.5 }
 
+	set_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = DOP_construction_manpower^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = 0.006 }
+	add_to_variable = { DOP_construction_manpower_speed_factor^DOP_construction_project_id = 0.7 }
+
+	set_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_funding_speed_factor^DOP_construction_project_id }
+	multiply_variable = { DOP_construction_input_factor^DOP_construction_project_id = DOP_construction_manpower_speed_factor^DOP_construction_project_id }
 	set_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_base_speed }
 	add_to_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_speed_add^DOP_construction_project_id }
 	multiply_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_input_factor^DOP_construction_project_id }
 	multiply_variable = { DOP_construction_actual_speed^DOP_construction_project_id = DOP_construction_speed_factor^DOP_construction_project_id }
 	clamp_variable = { var = DOP_construction_actual_speed^DOP_construction_project_id min = 0 }
+
+	set_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 0 }
+	set_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 0 }
+	if = {
+		limit = {
+			check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
+			check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
+		}
+		set_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 1000000 }
+		multiply_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_misc_cost^DOP_construction_project_id = 50 }
+		set_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = DOP_construction_total^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 100000 }
+		multiply_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = DOP_construction_funding^DOP_construction_project_id }
+		divide_variable = { DOP_construction_project_pu_cost^DOP_construction_project_id = 50 }
+	}
 
 	set_variable = { DOP_construction_percent^DOP_construction_project_id = DOP_construction_progress^DOP_construction_project_id }
 	if = {
@@ -1216,105 +1482,187 @@ DOP_construction_recalculate_all = {
 		set_temp_variable = { DOP_construction_project_id = v }
 		DOP_construction_recalculate_project = yes
 	}
+	DOP_construction_recalculate_aggregate_burden = yes
 }
+
+DOP_construction_recalculate_aggregate_burden = {
+	set_variable = { DOP_construction_total_misc_costs = 0 }
+	set_variable = { DOP_construction_total_pu_raw = 0 }
+	set_variable = { DOP_construction_mobilisation_pp_gain = 0 }
+	set_variable = { DOP_construction_mobilisation_stability_weekly = 0 }
+	set_variable = { DOP_construction_mobilisation_expertise_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_poverty_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_admin_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_chinese_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_zhujin_monthly = 0 }
+	set_variable = { DOP_construction_mobilisation_japanese_monthly = 0 }
+
+	for_each_loop = {
+		array = DOP_construction_project_ids
+		set_temp_variable = { DOP_construction_project_id = v }
+		if = {
+			limit = {
+				check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
+				check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
+			}
+			add_to_variable = { DOP_construction_total_misc_costs = DOP_construction_project_misc_cost^DOP_construction_project_id }
+			add_to_variable = { DOP_construction_total_pu_raw = DOP_construction_project_pu_cost^DOP_construction_project_id }
+			set_temp_variable = { DOP_construction_mobilisation_scale = DOP_construction_total^DOP_construction_project_id }
+			divide_temp_variable = { DOP_construction_mobilisation_scale = 100000 }
+			set_temp_variable = { DOP_construction_mobilisation_offset = DOP_construction_manpower^DOP_construction_project_id }
+			subtract_from_temp_variable = { DOP_construction_mobilisation_offset = 50 }
+			divide_temp_variable = { DOP_construction_mobilisation_offset = 50 }
+			clamp_temp_variable = { var = DOP_construction_mobilisation_offset min = -0.8 max = 1 }
+			set_temp_variable = { DOP_construction_mobilisation_scaled = DOP_construction_mobilisation_scale }
+			multiply_temp_variable = { DOP_construction_mobilisation_scaled = DOP_construction_mobilisation_offset }
+
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.04 }
+			add_to_variable = { DOP_construction_mobilisation_pp_gain = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.00016 }
+			add_to_variable = { DOP_construction_mobilisation_stability_weekly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = 0.08 }
+			add_to_variable = { DOP_construction_mobilisation_expertise_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.05 }
+			add_to_variable = { DOP_construction_mobilisation_poverty_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.04 }
+			add_to_variable = { DOP_construction_mobilisation_admin_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = 0.24 }
+			add_to_variable = { DOP_construction_mobilisation_chinese_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.06 }
+			add_to_variable = { DOP_construction_mobilisation_zhujin_monthly = DOP_construction_contribution }
+			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
+			multiply_temp_variable = { DOP_construction_contribution = -0.20 }
+			add_to_variable = { DOP_construction_mobilisation_japanese_monthly = DOP_construction_contribution }
+		}
+	}
+
+	set_variable = { DOP_construction_total_pu_occupied = DOP_construction_total_pu_raw }
+	round_variable = DOP_construction_total_pu_occupied
+	set_variable = { DOP_construction_free_pu_modifier = DOP_construction_total_pu_occupied }
+	multiply_variable = { DOP_construction_free_pu_modifier = -1 }
+	clamp_variable = { var = DOP_construction_mobilisation_pp_gain min = -0.5 max = 0.2 }
+	clamp_variable = { var = DOP_construction_mobilisation_stability_weekly min = -0.003 max = 0.0008 }
+	clamp_variable = { var = DOP_construction_mobilisation_expertise_monthly min = -0.3 max = 0.8 }
+	clamp_variable = { var = DOP_construction_mobilisation_poverty_monthly min = -0.6 max = 0.4 }
+	clamp_variable = { var = DOP_construction_mobilisation_admin_monthly min = -0.5 max = 0.3 }
+	clamp_variable = { var = DOP_construction_mobilisation_chinese_monthly min = -3 max = 3 }
+	clamp_variable = { var = DOP_construction_mobilisation_zhujin_monthly min = -3 max = 3 }
+	clamp_variable = { var = DOP_construction_mobilisation_japanese_monthly min = -3 max = 3 }
+	set_variable = { DOP_construction_mobilisation_stability_weekly_display = DOP_construction_mobilisation_stability_weekly }
+	multiply_variable = { DOP_construction_mobilisation_stability_weekly_display = 100 }
+	force_update_dynamic_modifier = yes
+	update_economy_tab = yes
+}
+# END GENERATED CONSTRUCTION SLIDER RUNTIME
 
 DOP_construction_fire_completion_event = {
 	# BEGIN GENERATED CONSTRUCTION EVENT DISPATCH
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 1 } }
 		set_country_flag = DOP_construction_sky_tower_completed
-		DOP_construction_sky_tower_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.1 days = 1 }
+		set_variable = { DOP_construction_completion_queued^1 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 2 } }
 		set_country_flag = DOP_construction_rose_garden_completed
-		DOP_construction_rose_garden_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.2 days = 1 }
+		set_variable = { DOP_construction_completion_queued^2 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 3 } }
 		set_country_flag = DOP_construction_alice_dream_factory_completed
-		DOP_construction_alice_dream_factory_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.3 days = 1 }
+		set_variable = { DOP_construction_completion_queued^3 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 4 } }
 		set_country_flag = DOP_construction_daya_bay_nuclear_plant_completed
-		DOP_construction_daya_bay_nuclear_plant_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.4 days = 1 }
+		set_variable = { DOP_construction_completion_queued^4 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 5 } }
 		set_country_flag = DOP_construction_guangdong_shinkansen_completed
-		DOP_construction_guangdong_shinkansen_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.5 days = 1 }
+		set_variable = { DOP_construction_completion_queued^5 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 6 } }
 		set_country_flag = DOP_construction_chaoshan_university_completed
-		DOP_construction_chaoshan_university_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.6 days = 1 }
+		set_variable = { DOP_construction_completion_queued^6 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 7 } }
 		set_country_flag = DOP_construction_xinfengjiang_reservoir_completed
-		DOP_construction_xinfengjiang_reservoir_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.7 days = 1 }
+		set_variable = { DOP_construction_completion_queued^7 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 8 } }
 		set_country_flag = DOP_construction_luoding_granary_completed
-		DOP_construction_luoding_granary_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.8 days = 1 }
+		set_variable = { DOP_construction_completion_queued^8 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 9 } }
 		set_country_flag = DOP_construction_pinglu_canal_completed
-		DOP_construction_pinglu_canal_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.9 days = 1 }
+		set_variable = { DOP_construction_completion_queued^9 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 10 } }
 		set_country_flag = DOP_construction_south_china_sea_drilling_platform_completed
-		DOP_construction_south_china_sea_drilling_platform_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.10 days = 1 }
+		set_variable = { DOP_construction_completion_queued^10 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 11 } }
 		set_country_flag = DOP_construction_wenchang_space_center_completed
-		DOP_construction_wenchang_space_center_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.11 days = 1 }
+		set_variable = { DOP_construction_completion_queued^11 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 12 } }
 		set_country_flag = DOP_construction_guangxi_industrial_institute_completed
-		DOP_construction_guangxi_industrial_institute_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.12 days = 1 }
+		set_variable = { DOP_construction_completion_queued^12 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 13 } }
 		set_country_flag = DOP_construction_guangxi_expressway_network_completed
-		DOP_construction_guangxi_expressway_network_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.13 days = 1 }
+		set_variable = { DOP_construction_completion_queued^13 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 14 } }
 		set_country_flag = DOP_construction_nanyue_folk_memorial_park_completed
-		DOP_construction_nanyue_folk_memorial_park_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.14 days = 1 }
+		set_variable = { DOP_construction_completion_queued^14 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 15 } }
 		set_country_flag = DOP_construction_lijiang_waterway_completed
-		DOP_construction_lijiang_waterway_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.15 days = 1 }
+		set_variable = { DOP_construction_completion_queued^15 = 1 }
 	}
 	if = {
 		limit = { check_variable = { DOP_construction_completed_event_id = 16 } }
 		set_country_flag = DOP_construction_honghe_fan_asia_friendship_pass_completed
-		DOP_construction_honghe_fan_asia_friendship_pass_completion_effect = yes
-		country_event = { id = DOP_GNG_construction.16 days = 1 }
+		set_variable = { DOP_construction_completion_queued^16 = 1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_completed_event_id = 17 } }
+		set_country_flag = DOP_construction_prd_maglev_completed
+		set_variable = { DOP_construction_completion_queued^17 = 1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_completed_event_id = 18 } }
+		set_country_flag = DOP_construction_shantou_chaozhou_jieyang_integration_completed
+		set_variable = { DOP_construction_completion_queued^18 = 1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_completed_event_id = 19 } }
+		set_country_flag = DOP_construction_granite_uranium_mining_completed
+		set_variable = { DOP_construction_completion_queued^19 = 1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_construction_completed_event_id = 20 } }
+		set_country_flag = DOP_construction_shale_oil_refineries_completed
+		set_variable = { DOP_construction_completion_queued^20 = 1 }
 	}
 	# END GENERATED CONSTRUCTION EVENT DISPATCH
 }
@@ -1339,6 +1687,7 @@ DOP_construction_complete_project_if_needed = {
 
 DOP_construction_weekly_tick = {
 	log = "[GetDateText]: [Root.GetName]: DOP construction weekly tick started"
+	DOP_construction_recalculate_all = yes
 	for_each_loop = {
 		array = DOP_construction_project_ids
 		set_temp_variable = { DOP_construction_project_id = v }
@@ -1347,12 +1696,12 @@ DOP_construction_weekly_tick = {
 				check_variable = { DOP_construction_completed^DOP_construction_project_id < 1 }
 				check_variable = { DOP_construction_started^DOP_construction_project_id > 0 }
 			}
-			DOP_construction_recalculate_project = yes
 			add_to_variable = { DOP_construction_progress^DOP_construction_project_id = DOP_construction_actual_speed^DOP_construction_project_id }
 			log = "[GetDateText]: [Root.GetName]: DOP construction project [?DOP_construction_project_id] advanced by [?DOP_construction_actual_speed^DOP_construction_project_id] to [?DOP_construction_progress^DOP_construction_project_id]"
 			DOP_construction_complete_project_if_needed = yes
 		}
 	}
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 	log = "[GetDateText]: [Root.GetName]: DOP construction weekly tick completed; selected progress [?DOP_construction_selected_progress]"
 }
@@ -1375,6 +1724,10 @@ DOP_construction_sync_selected = {
 	set_variable = { DOP_construction_selected_actual_speed = DOP_construction_actual_speed^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_speed_add = DOP_construction_speed_add^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_input_factor = DOP_construction_input_factor^DOP_construction_selected }
+	set_variable = { DOP_construction_selected_funding_speed_factor = DOP_construction_funding_speed_factor^DOP_construction_selected }
+	set_variable = { DOP_construction_selected_manpower_speed_factor = DOP_construction_manpower_speed_factor^DOP_construction_selected }
+	set_variable = { DOP_construction_selected_misc_cost = DOP_construction_project_misc_cost^DOP_construction_selected }
+	set_variable = { DOP_construction_selected_pu_cost = DOP_construction_project_pu_cost^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_speed_factor = DOP_construction_speed_factor^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_completed = DOP_construction_completed^DOP_construction_selected }
 	set_variable = { DOP_construction_selected_started = DOP_construction_started^DOP_construction_selected }
@@ -1407,7 +1760,7 @@ DOP_construction_selected_funding_increase = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	add_to_variable = { DOP_construction_funding^DOP_construction_project_id = 5 }
 	clamp_variable = { var = DOP_construction_funding^DOP_construction_project_id min = DOP_construction_funding_min^DOP_construction_project_id max = DOP_construction_funding_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1415,21 +1768,21 @@ DOP_construction_selected_funding_decrease = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	subtract_from_variable = { DOP_construction_funding^DOP_construction_project_id = 5 }
 	clamp_variable = { var = DOP_construction_funding^DOP_construction_project_id min = DOP_construction_funding_min^DOP_construction_project_id max = DOP_construction_funding_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
 DOP_construction_selected_funding_maximum = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	set_variable = { DOP_construction_funding^DOP_construction_project_id = DOP_construction_funding_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
 DOP_construction_selected_funding_minimum = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	set_variable = { DOP_construction_funding^DOP_construction_project_id = DOP_construction_funding_min^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1437,7 +1790,7 @@ DOP_construction_selected_manpower_increase = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	add_to_variable = { DOP_construction_manpower^DOP_construction_project_id = 5 }
 	clamp_variable = { var = DOP_construction_manpower^DOP_construction_project_id min = DOP_construction_manpower_min^DOP_construction_project_id max = DOP_construction_manpower_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1445,21 +1798,21 @@ DOP_construction_selected_manpower_decrease = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	subtract_from_variable = { DOP_construction_manpower^DOP_construction_project_id = 5 }
 	clamp_variable = { var = DOP_construction_manpower^DOP_construction_project_id min = DOP_construction_manpower_min^DOP_construction_project_id max = DOP_construction_manpower_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
 DOP_construction_selected_manpower_maximum = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	set_variable = { DOP_construction_manpower^DOP_construction_project_id = DOP_construction_manpower_max^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
 DOP_construction_selected_manpower_minimum = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_selected }
 	set_variable = { DOP_construction_manpower^DOP_construction_project_id = DOP_construction_manpower_min^DOP_construction_project_id }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1475,6 +1828,7 @@ DOP_construction_show_project = {
 DOP_construction_start_project = {
 	custom_effect_tooltip = DOP_construction_start_project_tt
 	DOP_construction_mark_project_started = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1482,6 +1836,7 @@ DOP_construction_show_and_start_project = {
 	custom_effect_tooltip = DOP_construction_show_and_start_project_tt
 	DOP_construction_mark_project_shown = yes
 	DOP_construction_mark_project_started = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
 
@@ -1502,6 +1857,7 @@ DOP_construction_start_all_projects = {
 		set_temp_variable = { DOP_construction_target_project = v }
 		DOP_construction_mark_project_started = yes
 	}
+	DOP_construction_recalculate_all = yes
 	DOP_construction_sync_selected = yes
 }
 
@@ -1512,6 +1868,7 @@ DOP_construction_show_and_start_all_projects = {
 		DOP_construction_mark_project_shown = yes
 		DOP_construction_mark_project_started = yes
 	}
+	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
 
@@ -1519,7 +1876,7 @@ DOP_construction_show_and_start_all_projects = {
 # value variable documented per effect.
 DOP_construction_finish_external_change = {
 	set_temp_variable = { DOP_construction_project_id = DOP_construction_target_project }
-	DOP_construction_recalculate_project = yes
+	DOP_construction_recalculate_all = yes
 	DOP_construction_complete_project_if_needed = yes
 	if = {
 		limit = { check_variable = { DOP_construction_selected = DOP_construction_target_project } }
@@ -1628,22 +1985,5 @@ DOP_construction_set_manpower_bounds = {
 }
 
 # BEGIN GENERATED COMPLETION CALLBACKS
-# These are deliberately empty extension points. Content designers may fill any
-# callback without touching the generic completion dispatcher.
-DOP_construction_sky_tower_completion_effect = { }
-DOP_construction_rose_garden_completion_effect = { }
-DOP_construction_alice_dream_factory_completion_effect = { }
-DOP_construction_daya_bay_nuclear_plant_completion_effect = { }
-DOP_construction_guangdong_shinkansen_completion_effect = { }
-DOP_construction_chaoshan_university_completion_effect = { }
-DOP_construction_xinfengjiang_reservoir_completion_effect = { }
-DOP_construction_luoding_granary_completion_effect = { }
-DOP_construction_pinglu_canal_completion_effect = { }
-DOP_construction_south_china_sea_drilling_platform_completion_effect = { }
-DOP_construction_wenchang_space_center_completion_effect = { }
-DOP_construction_guangxi_industrial_institute_completion_effect = { }
-DOP_construction_guangxi_expressway_network_completion_effect = { }
-DOP_construction_nanyue_folk_memorial_park_completion_effect = { }
-DOP_construction_lijiang_waterway_completion_effect = { }
-DOP_construction_honghe_fan_asia_friendship_pass_completion_effect = { }
+# Completion callbacks are generated in DOP_construction_rewards.txt.
 # END GENERATED COMPLETION CALLBACKS

@@ -34,11 +34,36 @@ scripted_gui = {
 			}
 		}
 
+		triggers = {
+			construction_description_button_visible = {
+				check_variable = { DOP_construction_selected > 0 }
+				check_variable = { DOP_construction_show_effects < 1 }
+			}
+			construction_description_visible = {
+				check_variable = { DOP_construction_selected > 0 }
+				check_variable = { DOP_construction_show_effects < 1 }
+			}
+			construction_effect_overlay_button_visible = {
+				check_variable = { DOP_construction_selected > 0 }
+				check_variable = { DOP_construction_show_effects > 0 }
+			}
+			construction_effect_overlay_heading_visible = {
+				check_variable = { DOP_construction_selected > 0 }
+				check_variable = { DOP_construction_show_effects > 0 }
+			}
+			construction_effect_overlay_hint_visible = {
+				check_variable = { DOP_construction_selected > 0 }
+				check_variable = { DOP_construction_show_effects > 0 }
+			}
+		}
+
 		effects = {
 			construction_region_entry_button_click = {
+				set_variable = { DOP_construction_show_effects = 0 }
 				DOP_construction_toggle_directory_region = yes
 			}
 			construction_project_entry_button_click = {
+				set_variable = { DOP_construction_show_effects = 0 }
 				set_variable = { DOP_construction_selected = DOP_construction_directory_item }
 				set_variable = { DOP_construction_selected_region = DOP_construction_project_region^DOP_construction_directory_item }
 				DOP_construction_sync_selected = yes
@@ -59,6 +84,13 @@ scripted_gui = {
 				multiply_temp_variable = { DOP_construction_value = 1.5 }
 				add_to_temp_variable = { DOP_construction_value = 10 }
 				DOP_construction_set_manpower = yes
+			}
+			construction_description_button_click = {
+				set_variable = { DOP_construction_show_effects = 1 }
+			}
+			construction_effect_overlay_button_click = {
+				DOP_construction_preview_selected_reward = yes
+				set_variable = { DOP_construction_show_effects = 0 }
 			}
 			construction_funding_decrease_click = { DOP_construction_selected_funding_decrease = yes }
 			construction_funding_increase_click = { DOP_construction_selected_funding_increase = yes }
