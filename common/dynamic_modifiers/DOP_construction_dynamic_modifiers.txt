@@ -1,7 +1,7 @@
 DOP_construction_economic_commitments = {
 	enable = { always = yes }
 	misc_costs_modifier = DOP_construction_total_misc_costs
-	free_production_units_modifier = DOP_construction_free_pu_modifier
+	production_units_use = DOP_construction_total_pu_occupied
 }
 
 DOP_construction_social_mobilisation = {

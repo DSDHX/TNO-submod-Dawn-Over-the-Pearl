@@ -440,9 +440,9 @@ def main() -> int:
     )
     for variable, coefficient, minimum, maximum in (
         ("stability_weekly", "-0.00016", "-0.003", "0.0008"),
-        ("expertise_monthly", "0.08", "-0.3", "0.8"),
-        ("poverty_monthly", "-0.05", "-0.6", "0.4"),
-        ("admin_monthly", "-0.04", "-0.5", "0.3"),
+        ("expertise_monthly", "1.6", "-6", "16"),
+        ("poverty_monthly", "-1", "-12", "8"),
+        ("admin_monthly", "-0.8", "-10", "6"),
         ("chinese_monthly", "0.24", "-3", "3"),
         ("zhujin_monthly", "-0.06", "-3", "3"),
         ("japanese_monthly", "-0.20", "-3", "3"),
@@ -455,7 +455,28 @@ def main() -> int:
                 f"min = {minimum} max = {maximum} }}"
             )
             in effects,
-            f"mobilisation {variable} value and clamp are doubled",
+            f"mobilisation {variable} coefficient and clamp match the current balance",
+        )
+
+    require(
+        "production_units_use = DOP_construction_total_pu_occupied" in modifiers
+        and "free_production_units_modifier = DOP_construction_free_pu_modifier"
+        not in modifiers
+        and "free_production_units_modifier = DOP_construction_reward_free_pu"
+        in modifiers
+        and "DOP_construction_special_pu_registered" in effects
+        and "recalculate_PUs_on_demand = yes" in effects,
+        "construction burden uses TNO special-project PUs and refreshes on change",
+    )
+    for widget in ("construction_funding_effects", "construction_manpower_effects"):
+        require(
+            re.search(
+                rf"name = {widget}\s+position = \{{[^}}]+\}}\s+"
+                r"font = aldrich_16_outline",
+                gui,
+            )
+            is not None,
+            f"{widget} uses the enlarged 16-point font",
         )
 
     require(
@@ -602,9 +623,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260829C"
+        "EARLY DEVELOPMENT BUILD 260829F"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260829C",
+        "user-facing build version is 260829F",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

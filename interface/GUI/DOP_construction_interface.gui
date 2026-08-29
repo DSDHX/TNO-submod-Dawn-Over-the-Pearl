@@ -371,7 +371,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = construction_funding_effects
 			position = { x = 239 y = 370 }
-			font = aldrich_14_outline
+			font = aldrich_16_outline
 			text = DOP_construction_funding_effects
 			maxWidth = 270
 			maxHeight = 68
@@ -382,7 +382,7 @@ guiTypes = {
 		instantTextBoxType = {
 			name = construction_manpower_effects
 			position = { x = 239 y = 444 }
-			font = aldrich_14_outline
+			font = aldrich_16_outline
 			text = DOP_construction_manpower_effects
 			maxWidth = 270
 			maxHeight = 145

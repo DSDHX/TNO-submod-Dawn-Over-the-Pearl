@@ -1502,6 +1502,7 @@ DOP_construction_recalculate_all = {
 }
 
 DOP_construction_recalculate_aggregate_burden = {
+	set_temp_variable = { DOP_construction_previous_pu_occupied = DOP_construction_total_pu_occupied }
 	set_variable = { DOP_construction_total_misc_costs = 0 }
 	set_variable = { DOP_construction_total_pu_raw = 0 }
 	set_variable = { DOP_construction_mobilisation_pp_gain = 0 }
@@ -1539,13 +1540,13 @@ DOP_construction_recalculate_aggregate_burden = {
 			multiply_temp_variable = { DOP_construction_contribution = -0.00016 }
 			add_to_variable = { DOP_construction_mobilisation_stability_weekly = DOP_construction_contribution }
 			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
-			multiply_temp_variable = { DOP_construction_contribution = 0.08 }
+			multiply_temp_variable = { DOP_construction_contribution = 1.6 }
 			add_to_variable = { DOP_construction_mobilisation_expertise_monthly = DOP_construction_contribution }
 			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
-			multiply_temp_variable = { DOP_construction_contribution = -0.05 }
+			multiply_temp_variable = { DOP_construction_contribution = -1 }
 			add_to_variable = { DOP_construction_mobilisation_poverty_monthly = DOP_construction_contribution }
 			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
-			multiply_temp_variable = { DOP_construction_contribution = -0.04 }
+			multiply_temp_variable = { DOP_construction_contribution = -0.8 }
 			add_to_variable = { DOP_construction_mobilisation_admin_monthly = DOP_construction_contribution }
 			set_temp_variable = { DOP_construction_contribution = DOP_construction_mobilisation_scaled }
 			multiply_temp_variable = { DOP_construction_contribution = 0.24 }
@@ -1561,19 +1562,31 @@ DOP_construction_recalculate_aggregate_burden = {
 
 	set_variable = { DOP_construction_total_pu_occupied = DOP_construction_total_pu_raw }
 	round_variable = DOP_construction_total_pu_occupied
-	set_variable = { DOP_construction_free_pu_modifier = DOP_construction_total_pu_occupied }
-	multiply_variable = { DOP_construction_free_pu_modifier = -1 }
 	clamp_variable = { var = DOP_construction_mobilisation_pp_gain min = -0.5 max = 0.2 }
 	clamp_variable = { var = DOP_construction_mobilisation_stability_weekly min = -0.003 max = 0.0008 }
-	clamp_variable = { var = DOP_construction_mobilisation_expertise_monthly min = -0.3 max = 0.8 }
-	clamp_variable = { var = DOP_construction_mobilisation_poverty_monthly min = -0.6 max = 0.4 }
-	clamp_variable = { var = DOP_construction_mobilisation_admin_monthly min = -0.5 max = 0.3 }
+	clamp_variable = { var = DOP_construction_mobilisation_expertise_monthly min = -6 max = 16 }
+	clamp_variable = { var = DOP_construction_mobilisation_poverty_monthly min = -12 max = 8 }
+	clamp_variable = { var = DOP_construction_mobilisation_admin_monthly min = -10 max = 6 }
 	clamp_variable = { var = DOP_construction_mobilisation_chinese_monthly min = -3 max = 3 }
 	clamp_variable = { var = DOP_construction_mobilisation_zhujin_monthly min = -3 max = 3 }
 	clamp_variable = { var = DOP_construction_mobilisation_japanese_monthly min = -3 max = 3 }
 	set_variable = { DOP_construction_mobilisation_stability_weekly_display = DOP_construction_mobilisation_stability_weekly }
 	multiply_variable = { DOP_construction_mobilisation_stability_weekly_display = 100 }
 	force_update_dynamic_modifier = yes
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_country_flag = DOP_construction_special_pu_registered }
+				check_variable = {
+					var = DOP_construction_total_pu_occupied
+					value = DOP_construction_previous_pu_occupied
+					compare = not_equals
+				}
+			}
+		}
+		set_country_flag = DOP_construction_special_pu_registered
+		recalculate_PUs_on_demand = yes
+	}
 	update_economy_tab = yes
 }
     """.strip().splitlines()
