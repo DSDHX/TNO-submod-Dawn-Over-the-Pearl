@@ -21,7 +21,7 @@ shared_focus = {
 	id = GNG_focus_temporary_relief
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -6
+	x = 0
 	y = 1
 	prerequisite = { focus = GNG_focus_everlasting_peace }
 	cost = 1
@@ -35,9 +35,9 @@ shared_focus = {
 	id = GNG_focus_foothold
 	icon = GFX_GNG_focus_foothold
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -4
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
+	x = 0
+	y = 2
+	prerequisite = { focus = GNG_focus_temporary_relief }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -50,8 +50,8 @@ shared_focus = {
 	icon = GFX_GNG_focus_retrieve_the_cable
 	relative_position_id = GNG_focus_everlasting_peace
 	x = -2
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
+	y = 3
+	prerequisite = { focus = GNG_focus_foothold }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -60,26 +60,12 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = GNG_focus_neon_signs_lit_up
-	icon = GFX_GNG_focus_neon_signs_lit_up
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 0
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.37 days = 0 }
-	}
-}
-
-shared_focus = {
 	id = GNG_focus_leave_ruins_behind
 	icon = GFX_GNG_focus_leave_ruins_behind
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 2
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
+	x = 0
+	y = 3
+	prerequisite = { focus = GNG_focus_foothold }
 	cost = 1
 	completion_reward = {
 		every_owned_state = {
@@ -107,26 +93,12 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = GNG_focus_fences_and_gate
-	icon = GFX_GNG_focus_fences_and_gate
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 4
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
-	cost = 1
-	completion_reward = {
-		custom_effect_tooltip = GNG_refugee_focustt
-		country_event = { id = DOP_GNG_event.188 days = 0 }
-	}
-}
-
-shared_focus = {
 	id = GNG_focus_in_the_warm_sun
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 6
-	y = 1
-	prerequisite = { focus = GNG_focus_everlasting_peace }
+	x = 2
+	y = 3
+	prerequisite = { focus = GNG_focus_foothold }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -135,12 +107,40 @@ shared_focus = {
 }
 
 shared_focus = {
+	id = GNG_focus_neon_signs_lit_up
+	icon = GFX_GNG_focus_neon_signs_lit_up
+	relative_position_id = GNG_focus_everlasting_peace
+	x = -2
+	y = 4
+	prerequisite = { focus = GNG_focus_retrieve_the_cable }
+	cost = 1
+	completion_reward = {
+		#uncompleted
+			country_event = { id = DOP_GNG_event.37 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = GNG_focus_fences_and_gate
+	icon = GFX_GNG_focus_fences_and_gate
+	relative_position_id = GNG_focus_everlasting_peace
+	x = 0
+	y = 4
+	prerequisite = { focus = GNG_focus_leave_ruins_behind }
+	cost = 1
+	completion_reward = {
+		custom_effect_tooltip = GNG_refugee_focustt
+		country_event = { id = DOP_GNG_event.188 days = 0 }
+	}
+}
+
+shared_focus = {
 	id = GNG_focus_gazing_into_abyss
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -6
-	y = 2
-	prerequisite = { focus = GNG_focus_temporary_relief }
+	x = 2
+	y = 4
+	prerequisite = { focus = GNG_focus_in_the_warm_sun }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -152,9 +152,11 @@ shared_focus = {
 	id = DOP_GNG_recon_economic_conference
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -4
-	y = 2
-	prerequisite = { focus = GNG_focus_foothold }
+	x = 0
+	y = 5
+	prerequisite = { focus = GNG_focus_neon_signs_lit_up }
+	prerequisite = { focus = GNG_focus_fences_and_gate }
+	prerequisite = { focus = GNG_focus_gazing_into_abyss }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_event.211 days = 1 }
@@ -166,9 +168,9 @@ shared_focus = {
 	id = DOP_GNG_recon_status_agreement
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -2
-	y = 2
-	prerequisite = { focus = GNG_focus_retrieve_the_cable }
+	x = 0
+	y = 6
+	prerequisite = { focus = DOP_GNG_recon_economic_conference }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_event.209 days = 1 }
@@ -180,8 +182,8 @@ shared_focus = {
 	icon = GFX_GNG_new_products_old_friends
 	relative_position_id = GNG_focus_everlasting_peace
 	x = 0
-	y = 2
-	prerequisite = { focus = GNG_focus_neon_signs_lit_up }
+	y = 7
+	prerequisite = { focus = DOP_GNG_recon_status_agreement }
 	cost = 1
 	completion_reward = {
 		custom_effect_tooltip = GNG_product_cycle_reactivation_focustt
@@ -192,9 +194,9 @@ shared_focus = {
 	id = DOP_GNG_recon_foundation
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 2
-	y = 2
-	prerequisite = { focus = GNG_focus_leave_ruins_behind }
+	x = -2
+	y = 8
+	prerequisite = { focus = GNG_focus_new_products_old_friends }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.6 days = 1 }
@@ -202,12 +204,25 @@ shared_focus = {
 }
 
 shared_focus = {
+	id = DOP_GNG_recon_backwardness_disaster
+	icon = GFX_GNG_focus_a_state_of_unstay
+	relative_position_id = GNG_focus_everlasting_peace
+	x = 2
+	y = 8
+	prerequisite = { focus = GNG_focus_new_products_old_friends }
+	cost = 1
+	completion_reward = {
+		country_event = { id = DOP_GNG_focus_stub.9 days = 1 }
+	}
+}
+
+shared_focus = {
 	id = DOP_GNG_recon_swarming_investors
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 4
-	y = 2
-	prerequisite = { focus = GNG_focus_fences_and_gate }
+	x = -3
+	y = 9
+	prerequisite = { focus = DOP_GNG_recon_foundation }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.7 days = 1 }
@@ -218,9 +233,9 @@ shared_focus = {
 	id = DOP_GNG_recon_leave_nothing_out
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 6
-	y = 2
-	prerequisite = { focus = GNG_focus_in_the_warm_sun }
+	x = -1
+	y = 9
+	prerequisite = { focus = DOP_GNG_recon_foundation }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.8 days = 1 }
@@ -228,25 +243,12 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = DOP_GNG_recon_backwardness_disaster
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = -6
-	y = 3
-	prerequisite = { focus = GNG_focus_gazing_into_abyss }
-	cost = 1
-	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.9 days = 1 }
-	}
-}
-
-shared_focus = {
 	id = DOP_GNG_recon_first_trial
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -4
-	y = 3
-	prerequisite = { focus = DOP_GNG_recon_economic_conference }
+	x = 2
+	y = 9
+	prerequisite = { focus = DOP_GNG_recon_backwardness_disaster }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.10 days = 1 }
@@ -257,9 +259,11 @@ shared_focus = {
 	id = DOP_GNG_recon_no_time_to_turn
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -2
-	y = 3
-	prerequisite = { focus = DOP_GNG_recon_status_agreement }
+	x = 0
+	y = 10
+	prerequisite = { focus = DOP_GNG_recon_swarming_investors }
+	prerequisite = { focus = DOP_GNG_recon_leave_nothing_out }
+	prerequisite = { focus = DOP_GNG_recon_first_trial }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.11 days = 1 }
@@ -271,8 +275,8 @@ shared_focus = {
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
 	x = 0
-	y = 3
-	prerequisite = { focus = GNG_focus_new_products_old_friends }
+	y = 11
+	prerequisite = { focus = DOP_GNG_recon_no_time_to_turn }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_focus_stub.12 days = 1 }
@@ -283,9 +287,9 @@ shared_focus = {
 	id = GNG_focus_corporate_voraciousness
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 2
-	y = 3
-	prerequisite = { focus = DOP_GNG_recon_foundation }
+	x = -1
+	y = 12
+	prerequisite = { focus = DOP_GNG_recon_grand_wall_weak_foundation }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -297,9 +301,9 @@ shared_focus = {
 	id = GNG_focus_trade_union_highly_vigilant
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 4
-	y = 3
-	prerequisite = { focus = DOP_GNG_recon_swarming_investors }
+	x = 1
+	y = 12
+	prerequisite = { focus = DOP_GNG_recon_grand_wall_weak_foundation }
 	cost = 1
 	completion_reward = {
 		#uncompleted
@@ -311,9 +315,10 @@ shared_focus = {
 	id = DOP_GNG_recon_civilian_officials
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = 6
-	y = 3
-	prerequisite = { focus = DOP_GNG_recon_leave_nothing_out }
+	x = 0
+	y = 13
+	prerequisite = { focus = GNG_focus_corporate_voraciousness }
+	prerequisite = { focus = GNG_focus_trade_union_highly_vigilant }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_event.213 days = 1 }
@@ -324,9 +329,9 @@ shared_focus = {
 	id = DOP_GNG_recon_flying_geese
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -6
-	y = 4
-	prerequisite = { focus = DOP_GNG_recon_backwardness_disaster }
+	x = 0
+	y = 14
+	prerequisite = { focus = DOP_GNG_recon_civilian_officials }
 	cost = 1
 	completion_reward = {
 		country_event = { id = DOP_GNG_event.210 days = 1 }
@@ -337,151 +342,11 @@ shared_focus = {
 	id = DOP_GNG_recon_opening_ceremony
 	icon = GFX_GNG_focus_a_state_of_unstay
 	relative_position_id = GNG_focus_everlasting_peace
-	x = -4
-	y = 4
-	prerequisite = { focus = DOP_GNG_recon_first_trial }
-	cost = 1
-	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.13 days = 1 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_get_to_work
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = -2
-	y = 4
-	prerequisite = { focus = DOP_GNG_recon_no_time_to_turn }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.123 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_return_to_Ordinary_daily_life
-	icon = GFX_GNG_focus_return_to_Ordinary_daily_life
-	relative_position_id = GNG_focus_everlasting_peace
 	x = 0
-	y = 4
-	prerequisite = { focus = DOP_GNG_recon_grand_wall_weak_foundation }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_decentralization_authority
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 2
-	y = 4
-	prerequisite = { focus = GNG_focus_corporate_voraciousness }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.32 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_go_west
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 4
-	y = 4
-	prerequisite = { focus = GNG_focus_trade_union_highly_vigilant }
-	cost = 1
-	completion_reward = {
-		#事件“布局”
-		country_event = {
-			id = leak_temp.10
-		}
-		country_event = { id = DOP_GNG_event.114 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_reinvestment_talents
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 6
-	y = 4
-	prerequisite = { focus = DOP_GNG_recon_civilian_officials }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.120 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_garrison_withdrew
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = -6
-	y = 5
+	y = 15
 	prerequisite = { focus = DOP_GNG_recon_flying_geese }
 	cost = 1
 	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.197 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_resource_export_plan
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = -4
-	y = 5
-	prerequisite = { focus = DOP_GNG_recon_opening_ceremony }
-	cost = 1
-	completion_reward = {
-		#uncompleted
-			country_event = { id = DOP_GNG_event.111 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_problem_is_economy
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = -2
-	y = 5
-	prerequisite = { focus = GNG_focus_get_to_work }
-	cost = 1
-	completion_reward = {
-		custom_effect_tooltip = GNG_resume_production_focustt
-		country_event = { id = DOP_GNG_event.181 days = 0 }
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_promote_local_efficacy
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 0
-	y = 5
-	prerequisite = { focus = GNG_focus_return_to_Ordinary_daily_life }
-	cost = 1
-	completion_reward = {
-		custom_effect_tooltip = GNG_administrative_reform_focustt
-	}
-}
-
-shared_focus = {
-	id = GNG_focus_daily_necessities_and_housing
-	icon = GFX_GNG_focus_a_state_of_unstay
-	relative_position_id = GNG_focus_everlasting_peace
-	x = 2
-	y = 5
-	prerequisite = { focus = GNG_focus_decentralization_authority }
-	cost = 1
-	completion_reward = {
-		custom_effect_tooltip = GNG_provide_relief_focustt
+		country_event = { id = DOP_GNG_focus_stub.13 days = 1 }
 	}
 }
