@@ -2,17 +2,20 @@ param(
     [Parameter(Mandatory = $true)][string]$TemplatePath,
     [Parameter(Mandatory = $true)][string]$PortraitDirectory,
     [Parameter(Mandatory = $true)][string]$OutputDirectory,
-    [int]$RedOffset = -12,
-    [int]$GreenOffset = 12,
-    [int]$BlueOffset = 12
+    [ValidateRange(0, 255)][int]$OverlayRed = 89,
+    [ValidateRange(0, 255)][int]$OverlayGreen = 199,
+    [ValidateRange(0, 255)][int]$OverlayBlue = 194,
+    [ValidateRange(0, 100)][int]$OverlayPercent = 20
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 
-function Limit-Byte([int]$value) {
-    [byte][Math]::Max(0, [Math]::Min(255, $value))
+function Blend-Byte([int]$source, [int]$overlay, [int]$overlayPercent) {
+    $sourcePercent = 100 - $overlayPercent
+    $numerator = ($source * $sourcePercent) + ($overlay * $overlayPercent)
+    [byte][Math]::Floor(($numerator / 100.0) + 0.5)
 }
 
 $template = [IO.File]::ReadAllBytes((Resolve-Path -LiteralPath $TemplatePath).Path)
@@ -52,9 +55,9 @@ $results = foreach ($entry in $assets.GetEnumerator()) {
         for ($y = 0; $y -lt 210; $y++) {
             for ($x = 0; $x -lt 156; $x++) {
                 $color = $bitmap.GetPixel($x, $y)
-                $filteredRed = Limit-Byte ($color.R + $RedOffset)
-                $filteredGreen = Limit-Byte ($color.G + $GreenOffset)
-                $filteredBlue = Limit-Byte ($color.B + $BlueOffset)
+                $filteredRed = Blend-Byte $color.R $OverlayRed $OverlayPercent
+                $filteredGreen = Blend-Byte $color.G $OverlayGreen $OverlayPercent
+                $filteredBlue = Blend-Byte $color.B $OverlayBlue $OverlayPercent
                 $destinationX = $x + 7
                 $destinationY = $y + 7
                 $offset = $ddsHeaderLength + (($destinationY * $canvasWidth + $destinationX) * 4)
@@ -70,7 +73,9 @@ $results = foreach ($entry in $assets.GetEnumerator()) {
         [pscustomobject]@{
             Portrait = $entry.Key
             Texticon = $entry.Value
-            FilterRgbOffset = @($RedOffset, $GreenOffset, $BlueOffset)
+            SourcePercent = 100 - $OverlayPercent
+            OverlayPercent = $OverlayPercent
+            OverlayRgb = @($OverlayRed, $OverlayGreen, $OverlayBlue)
             Width = $canvasWidth
             Height = $canvasHeight
             Bytes = $bytes.Length

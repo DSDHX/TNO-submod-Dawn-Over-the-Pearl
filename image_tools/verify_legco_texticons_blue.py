@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate blue-filtered DOP leader texticons against the source portraits and TNO template."""
+"""Validate TNO-style teal-filtered DOP texticons against their portraits and template."""
 
 from __future__ import annotations
 
@@ -11,7 +11,10 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-FILTER_RGB_OFFSET = np.asarray([-12, 12, 12], dtype=np.int16)
+TNO_OVERLAY_RGB = np.asarray([89, 199, 194], dtype=np.int32)
+SOURCE_WEIGHT = 4
+OVERLAY_WEIGHT = 1
+TOTAL_WEIGHT = SOURCE_WEIGHT + OVERLAY_WEIGHT
 HEADER_SIZE = 128
 CANVAS_WIDTH = 170
 CANVAS_HEIGHT = 224
@@ -53,11 +56,13 @@ def verify(template_path: Path, portrait_path: Path, texticon_path: Path, previe
         raise RuntimeError(f"Unexpected portrait shape for {portrait_path}: {portrait.shape}")
 
     expected = portrait.copy()
-    expected[..., :3] = np.clip(
-        portrait[..., :3].astype(np.int16) + FILTER_RGB_OFFSET,
-        0,
-        255,
-    ).astype(np.uint8)
+    # TNO's original Guangdong texticons use an exact 80/20 normal blend:
+    # source portrait + RGB(89, 199, 194), rounded to the nearest integer.
+    blended = (
+        portrait[..., :3].astype(np.int32) * SOURCE_WEIGHT
+        + TNO_OVERLAY_RGB * OVERLAY_WEIGHT
+    )
+    expected[..., :3] = ((blended + TOTAL_WEIGHT // 2) // TOTAL_WEIGHT).astype(np.uint8)
     inner = rgba[
         PORTRAIT_Y : PORTRAIT_Y + PORTRAIT_HEIGHT,
         PORTRAIT_X : PORTRAIT_X + PORTRAIT_WIDTH,
@@ -90,8 +95,10 @@ def verify(template_path: Path, portrait_path: Path, texticon_path: Path, previe
         "header": header,
         "header_matches_template": header_matches,
         "border_matches_template": border_matches,
-        "inner_matches_blue_filtered_portrait": inner_matches,
-        "requested_filter_rgb_offset": FILTER_RGB_OFFSET.tolist(),
+        "inner_matches_tno_teal_overlay_portrait": inner_matches,
+        "source_weight": SOURCE_WEIGHT,
+        "overlay_weight": OVERLAY_WEIGHT,
+        "overlay_rgb": TNO_OVERLAY_RGB.tolist(),
         "actual_mean_delta_rgb": np.round(actual_delta.mean(axis=(0, 1)), 3).tolist(),
         "alpha_min": int(rgba[..., 3].min()),
         "alpha_max": int(rgba[..., 3].max()),
