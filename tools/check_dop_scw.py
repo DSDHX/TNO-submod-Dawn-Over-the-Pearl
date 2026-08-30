@@ -4,7 +4,10 @@ import math
 import re
 import subprocess
 import sys
+from decimal import Decimal
 from pathlib import Path
+
+from generate_dop_scw_decisions import DECISIONS as DECISION_DATA
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +31,14 @@ GROUPS = ('race', 'materials', 'wafer', 'lithography', 'packaging', 'logistics')
 
 def read(path: Path, encoding: str = 'utf-8-sig') -> str:
     return path.read_text(encoding=encoding)
+
+
+def numeric_text(raw: str | Decimal) -> str:
+    """Render an exact Decimal without importing generator formatting logic."""
+    rendered = format(Decimal(raw), 'f')
+    if '.' in rendered:
+        rendered = rendered.rstrip('0').rstrip('.')
+    return rendered or '0'
 
 
 def decision_blocks(text: str) -> dict[str, str]:
@@ -166,7 +177,9 @@ def main() -> int:
 
     decisions_text = read(DECISIONS, 'utf-8')
     blocks = decision_blocks(decisions_text)
+    decision_data = {decision.key: decision for decision in DECISION_DATA}
     require(len(blocks) == 48, f'expected 48 decisions, found {len(blocks)}')
+    require(set(blocks) == set(decision_data), 'generated decision keys differ from generator source data')
     repeatable = {key: value for key, value in blocks.items() if 'days_remove = 30' in value}
     annual = {key: value for key, value in blocks.items() if 'days_remove = 365' in value}
     require(len(repeatable) == 24, f'expected 24 repeatable decisions, found {len(repeatable)}')
@@ -209,6 +222,10 @@ def main() -> int:
         )
         own_unlock = f'has_country_flag = {key}_unlocked'
         require(block.count(own_unlock) >= 2, f'{key}: individual unlock flag missing from visible/available')
+        require(
+            block.count('check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }') == 1,
+            f'{key}: SCW BoP-tab visibility gate missing or duplicated',
+        )
         require(not re.search(r'阶段[一二三四]：', block), f'{key}: stage prefix remains in decision title')
         require('date > 1977.1.1' in block, f'{key}: 1977 gate missing')
         require('custom_cost_text =' in block, f'{key}: custom cost localisation missing')
@@ -304,6 +321,72 @@ def main() -> int:
                 require(wrapper in visible_calls, f'{key}: {wrapper} cost is hidden from selection preview')
     require('SCW_production_scale_increase = yes' in decisions_text, 'direct SCW production template call missing')
     require('SCW_compatibility_increase = yes' in decisions_text, 'direct SCW competitiveness template call missing')
+
+    theater_effects = {
+        'stage': ('DOP_SCW_stage_integrity_change', 'GFX_DOP_SCW_stage_integrity_texticon', ''),
+        'supervisor': ('DOP_SCW_supervisor_attitude_change', 'GFX_DOP_SCW_supervisor_attitude_texticon', '%'),
+        'audience': ('DOP_SCW_audience_patience_change', 'GFX_DOP_SCW_audience_patience_texticon', '%'),
+    }
+    combined_keys: set[str] = set()
+    for key, decision in decision_data.items():
+        block = blocks.get(key, '')
+        for kind, (variable, _icon, _suffix) in theater_effects.items():
+            if raw_cost := decision.costs.get(kind):
+                expected = numeric_text(Decimal(raw_cost) * 2)
+                require(
+                    f'set_temp_variable = {{ {variable} = -{expected} }}' in block,
+                    f'{key}: {kind} cost is not exactly doubled to {expected}',
+                )
+            if raw_reward := decision.rewards.get(kind):
+                expected = numeric_text(Decimal(raw_reward) * 2)
+                require(
+                    f'set_temp_variable = {{ {variable} = {expected} }}' in block,
+                    f'{key}: {kind} reward is not exactly doubled to {expected}',
+                )
+
+        scale = decision.rewards.get('scale')
+        competition = decision.rewards.get('competition')
+        if scale and competition and Decimal(scale) and Decimal(competition):
+            combined_keys.add(key)
+            require(
+                f'set_temp_variable = {{ DOP_SCW_production_scale_change = {numeric_text(scale)} }}' in block,
+                f'{key}: combined production value is missing',
+            )
+            require(
+                f'set_temp_variable = {{ DOP_SCW_competition_change = {numeric_text(competition)} }}' in block,
+                f'{key}: combined competitiveness value is missing',
+            )
+            require(
+                block.count('DOP_SCW_change_production_and_competition = yes') == 1,
+                f'{key}: dedicated combined market tooltip wrapper missing or duplicated',
+            )
+            require('SCW_production_scale_increase = yes' not in block, f'{key}: production still emits a separate tooltip')
+            require('SCW_compatibility_increase = yes' not in block, f'{key}: competitiveness still emits a separate tooltip')
+        else:
+            require(
+                'DOP_SCW_change_production_and_competition = yes' not in block,
+                f'{key}: combined market wrapper used without both values',
+            )
+    require(bool(combined_keys), 'no decisions exercise the combined production/competitiveness tooltip')
+    require(
+        'DOP_SCW_change_production_and_competition = {' in effects_text,
+        'dedicated production/competitiveness wrapper definition missing',
+    )
+    require(
+        'custom_effect_tooltip = DOP_SCW_production_and_competition_increase_tt' in effects_text,
+        'combined production/competitiveness tooltip is not exposed',
+    )
+    combined_wrapper_match = re.search(
+        r'DOP_SCW_change_production_and_competition\s*=\s*\{(?P<body>.*?)\n\}',
+        effects_text,
+        re.DOTALL,
+    )
+    combined_wrapper = combined_wrapper_match.group('body') if combined_wrapper_match else ''
+    require('hidden_effect = {' in combined_wrapper, 'combined market implementation is not hidden')
+    require('set_temp_variable = { change_t = DOP_SCW_production_scale_change }' in combined_wrapper, 'combined production value is not copied into change_t')
+    require('set_temp_variable = { change_t = DOP_SCW_competition_change }' in combined_wrapper, 'combined competitiveness value is not copied into change_t')
+    require('SCW_production_scale_increase = yes' in combined_wrapper, 'combined wrapper does not apply production')
+    require('SCW_compatibility_increase = yes' in combined_wrapper, 'combined wrapper does not apply competitiveness')
 
     gdp_growth_values = [
         float(item)
@@ -417,6 +500,14 @@ def main() -> int:
     localisation_text = read(LOCALISATION)
     loc_keys = re.findall(r'^ ([A-Za-z0-9_]+):0 ', localisation_text, re.MULTILINE)
     require(len(loc_keys) == len(set(loc_keys)), 'generated localisation contains duplicate keys')
+    loc_lines = {
+        match.group('key'): match.group(0)
+        for match in re.finditer(
+            r'^ (?P<key>[A-Za-z0-9_]+):0 .*$',
+            localisation_text,
+            re.MULTILINE,
+        )
+    }
     for key in blocks:
         for suffix in ('', '_desc', '_cost', '_cost_blocked'):
             require(f' {key}{suffix}:0 ' in localisation_text, f'localisation missing: {key}{suffix}')
@@ -425,6 +516,73 @@ def main() -> int:
         unlock_line = next((line for line in localisation_text.splitlines() if line.startswith(f' {unlock_key}:0 ')), '')
         for fragment in ('£GFX_green_dollar_sign', '£GFX_decision_icon_small', '三微米冷战', '已经', '§G可用§!'):
             require(fragment in unlock_line, f'{unlock_key}: missing unlock formatting fragment {fragment}')
+        flag_line = loc_lines.get(f'{key}_unlocked', '')
+        for fragment in ('£GFX_decision_icon_small', f'${key}$', '§Y', '§G解锁§!'):
+            require(fragment in flag_line, f'{key}_unlocked: missing coloured flag fragment {fragment}')
+        if key in annual:
+            complete_line = loc_lines.get(f'{key}_complete', '')
+            for fragment in ('£GFX_decision_icon_small', f'${key}$', '§Y', '§G完成§!'):
+                require(fragment in complete_line, f'{key}_complete: missing coloured flag fragment {fragment}')
+
+        decision = decision_data.get(key)
+        if decision:
+            cost_line = loc_lines.get(f'{key}_cost', '')
+            blocked_line = loc_lines.get(f'{key}_cost_blocked', '')
+            for kind, (_variable, icon, suffix) in theater_effects.items():
+                raw_cost = decision.costs.get(kind)
+                if not raw_cost:
+                    continue
+                expected = numeric_text(Decimal(raw_cost) * 2)
+                require(
+                    f'£{icon} §Y{expected}{suffix}§!' in cost_line,
+                    f'{key}: {kind} cost icon/number is not doubled or correctly coloured',
+                )
+                require(
+                    f'£{icon} §R{expected}{suffix}§!' in blocked_line,
+                    f'{key}: blocked {kind} cost icon/number is not doubled or correctly coloured',
+                )
+            for label in ('舞台完整度', '监制的态度', '观众的耐心'):
+                require(label not in cost_line, f'{key}: theatre label remains in normal cost text: {label}')
+                require(label not in blocked_line, f'{key}: theatre label remains in blocked cost text: {label}')
+
+    combined_loc = loc_lines.get('DOP_SCW_production_and_competition_increase_tt', '')
+    for fragment in (
+        '§C产业规模§!',
+        '[?DOP_SCW_production_scale_change]',
+        '§m竞争力§!',
+        '[?DOP_SCW_competition_change|2%]',
+        '§G提升§!',
+    ):
+        require(fragment in combined_loc, f'combined market tooltip missing fragment: {fragment}')
+    global_flag_colours = {
+        'DOP_SCW_decisions_unlocked': '§G解锁§!',
+        'DOP_SCW_CCD_research_complete': '§G完成§!',
+        'DOP_SCW_enabled': '§G启用§!',
+        'DOP_SCW_off': '§R关闭§!',
+        'DOP_SCW_initialized': '§G初始化§!',
+    }
+    for flag, coloured_state in global_flag_colours.items():
+        flag_line = loc_lines.get(flag, '')
+        require(bool(flag_line), f'flag localisation missing: {flag}')
+        require(coloured_state in flag_line, f'{flag}: state text is not coloured as expected')
+    flag_source_text = '\n'.join((
+        decisions_text,
+        effects_text,
+        unlock_text,
+        growth_text,
+        on_actions_text,
+        debug_text,
+        gui_text,
+    ))
+    referenced_scw_flags = set(re.findall(
+        r'(?:has_country_flag|set_country_flag|clr_country_flag)\s*=\s*(DOP_SCW_[A-Za-z0-9_]+)',
+        flag_source_text,
+    ))
+    missing_flag_localisations = sorted(referenced_scw_flags - set(loc_lines))
+    require(
+        not missing_flag_localisations,
+        f'SCW country flags lack localisation: {missing_flag_localisations}',
+    )
     for phrase in ('流动准备金', '一次性支出'):
         require(phrase not in localisation_text, f'cost localisation still exposes implementation detail: {phrase}')
     base_loc = read(BASE_LOCALISATION)
@@ -478,7 +636,7 @@ def main() -> int:
         for error in errors:
             print(f'  - {error}', file=sys.stderr)
         return 1
-    print('SCW static audit passed: 48 decisions, six bindings, costs/rewards, growth, unlocks, and localisation.')
+    print('SCW static audit passed: 48 decisions, SCW-tab visibility, doubled theatre values, combined market tooltips, flags, and localisation.')
     return 0
 
 

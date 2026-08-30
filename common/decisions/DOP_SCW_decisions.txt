@@ -10,6 +10,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_commercial_attaches_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
@@ -37,7 +38,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 0.025 }
             SCW_compatibility_increase = yes
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 2 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         ai_will_do = { factor = 0 }
@@ -49,6 +50,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_tariff_lobby_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
@@ -62,7 +64,7 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_race_tariff_lobby_cost
         custom_cost_trigger = {
             has_political_power > 19.99
-            check_variable = { GNG_corruption_var < 98.51 }
+            check_variable = { GNG_corruption_var < 97.01 }
         }
         days_remove = 30
         days_re_enable = 90
@@ -70,7 +72,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 add_political_power = -20
             }
-            set_temp_variable = { DOP_SCW_stage_integrity_change = -1.5 }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -3 }
             DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
@@ -89,6 +91,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_court_dissidents_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
@@ -114,11 +117,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 4 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.03 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 4 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.03 }
+            DOP_SCW_change_production_and_competition = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -129,6 +130,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_friendly_expositions_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
@@ -154,11 +156,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 6 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.02 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 6 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.02 }
+            DOP_SCW_change_production_and_competition = yes
             add_stability = 0.005
         }
         ai_will_do = { factor = 0 }
@@ -170,6 +170,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_shell_companies_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
@@ -214,6 +215,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_smuggle_blueprints_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_shell_companies_complete
         }
@@ -241,11 +243,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 14 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.09 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 14 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.09 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_race_smuggle_blueprints_complete
@@ -261,6 +261,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_embargo_waivers_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_smuggle_blueprints_complete
         }
@@ -276,7 +277,7 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_race_embargo_waivers_cost
         custom_cost_trigger = {
             has_political_power > 44.99
-            check_variable = { GNG_corruption_var < 97.01 }
+            check_variable = { GNG_corruption_var < 94.01 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -284,7 +285,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 add_political_power = -45
             }
-            set_temp_variable = { DOP_SCW_stage_integrity_change = -3 }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -6 }
             DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
@@ -310,6 +311,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_public_diplomacy_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_embargo_waivers_complete
         }
@@ -340,7 +342,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { change_t = 0.1 }
             SCW_compatibility_increase = yes
             add_stability = 0.015
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 3 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 6 }
             DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_academic_base_med = yes
             TNO_improve_admin_efficiency_low = yes
@@ -359,6 +361,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
@@ -398,6 +401,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
@@ -411,7 +415,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_materials_smelter_overtime_cost
         custom_cost_trigger = {
-            check_variable = { GNG_China_Opinion > 1.99 }
+            check_variable = { GNG_China_Opinion > 3.99 }
             has_stability > 0.0049
         }
         days_remove = 30
@@ -420,7 +424,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 add_stability = -0.005
             }
-            set_temp_variable = { DOP_SCW_audience_patience_change = -2 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -4 }
             DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
@@ -439,6 +443,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_power_subsidy_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
@@ -479,6 +484,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
@@ -517,6 +523,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
@@ -562,6 +569,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_czochralski_growth_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_polysilicon_plant_complete
@@ -590,11 +598,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 15 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.08 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 15 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.08 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_materials_czochralski_growth_complete
@@ -610,6 +616,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_quartz_monopoly_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_czochralski_growth_complete
@@ -625,7 +632,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_materials_quartz_monopoly_cost
         custom_cost_trigger = {
-            check_variable = { GNG_Japan_Approval > 1.99 }
+            check_variable = { GNG_Japan_Approval > 3.99 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -634,7 +641,7 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.4 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -2 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -4 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
@@ -659,6 +666,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_four_inch_substrates_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_quartz_monopoly_complete
@@ -687,11 +695,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 30 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.1 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 30 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.1 }
+            DOP_SCW_change_production_and_competition = yes
             set_temp_variable = { money_reserves_temp = 0.18 }
             econ_money_reserves_change_raw_money = yes
             TNO_improve_industrial_equipment_high = yes
@@ -711,6 +717,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_replenish_consumables_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
@@ -738,7 +745,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 4 }
             SCW_production_scale_increase = yes
-            set_temp_variable = { DOP_SCW_audience_patience_change = 0.5 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = 1 }
             DOP_SCW_change_audience_patience = yes
         }
         ai_will_do = { factor = 0 }
@@ -750,6 +757,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_paramilitary_shifts_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
@@ -763,7 +771,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_paramilitary_shifts_cost
         custom_cost_trigger = {
-            check_variable = { GNG_China_Opinion > 2.99 }
+            check_variable = { GNG_China_Opinion > 5.99 }
             has_stability > 0.0099
         }
         days_remove = 30
@@ -772,16 +780,14 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 add_stability = -0.01
             }
-            set_temp_variable = { DOP_SCW_audience_patience_change = -3 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -6 }
             DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 6 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.025 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 6 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.025 }
+            DOP_SCW_change_production_and_competition = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -792,6 +798,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_spc_control_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
@@ -830,6 +837,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_japanese_military_orders_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
@@ -868,6 +876,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
@@ -894,11 +903,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 18 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.08 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 18 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.08 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_wafer_class_1000_cleanroom_complete
@@ -914,6 +921,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_complete
@@ -942,11 +950,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 28 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.1 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 28 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.1 }
+            DOP_SCW_change_production_and_competition = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_equipment_high = yes
@@ -964,6 +970,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_complete
@@ -991,12 +998,10 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 20 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.12 }
-            SCW_compatibility_increase = yes
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1.5 }
+            set_temp_variable = { DOP_SCW_production_scale_change = 20 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.12 }
+            DOP_SCW_change_production_and_competition = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 3 }
             DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_research_facilities_high = yes
             hidden_effect = {
@@ -1013,6 +1018,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_automated_handling_fa_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_complete
@@ -1028,7 +1034,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_automated_handling_fa_cost
         custom_cost_trigger = {
-            check_variable = { GNG_Japan_Approval > 2.99 }
+            check_variable = { GNG_Japan_Approval > 5.99 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -1037,16 +1043,14 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.65 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -3 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -6 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 25 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.14 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 25 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.14 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_industrial_expertise_high = yes
             TNO_improve_research_facilities_low = yes
             hidden_effect = {
@@ -1064,6 +1068,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_optical_calibration_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1091,11 +1096,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 3 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.03 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 3 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.03 }
+            DOP_SCW_change_production_and_competition = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1106,6 +1109,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_import_photoresist_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1148,6 +1152,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_buy_pellicles_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1177,7 +1182,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 0.02 }
             SCW_compatibility_increase = yes
-            set_temp_variable = { DOP_SCW_audience_patience_change = 0.5 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = 1 }
             DOP_SCW_change_audience_patience = yes
         }
         ai_will_do = { factor = 0 }
@@ -1189,6 +1194,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_expert_allowances_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1204,7 +1210,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_expert_allowances_cost
         custom_cost_trigger = {
-            check_variable = { GNG_corruption_var < 99.01 }
+            check_variable = { GNG_corruption_var < 98.01 }
         }
         days_remove = 30
         days_re_enable = 90
@@ -1213,14 +1219,14 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.1 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_stage_integrity_change = -1 }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -2 }
             DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 0.035 }
             SCW_compatibility_increase = yes
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 2 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         ai_will_do = { factor = 0 }
@@ -1232,6 +1238,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_ccd_scale_up_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1247,7 +1254,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_ccd_scale_up_cost
         custom_cost_trigger = {
-            check_variable = { GNG_Japan_Approval > 1.99 }
+            check_variable = { GNG_Japan_Approval > 3.99 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -1256,7 +1263,7 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.45 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -2 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -4 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
@@ -1282,6 +1289,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_g_line_stepper_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1312,11 +1320,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 20 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.15 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 20 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.15 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_industrial_expertise_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_lithography_g_line_stepper_complete
@@ -1332,6 +1338,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_chrome_quartz_masks_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1364,7 +1371,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 0.14 }
             SCW_compatibility_increase = yes
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 2 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 4 }
             DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_research_facilities_high = yes
             hidden_effect = {
@@ -1381,6 +1388,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_excimer_alignment_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1398,7 +1406,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_excimer_alignment_cost
         custom_cost_trigger = {
-            check_variable = { GNG_Japan_Approval > 3.99 }
+            check_variable = { GNG_Japan_Approval > 7.99 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -1407,16 +1415,14 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.8 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -4 }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -8 }
             DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 18 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.18 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 18 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.18 }
+            DOP_SCW_change_production_and_competition = yes
             set_temp_variable = { gdp_growth_temp = 0.6 }
             econ_gdp_growth_change = yes
             TNO_improve_research_facilities_high = yes
@@ -1436,6 +1442,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_recruit_assembly_labor_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
@@ -1477,6 +1484,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_lower_piece_rates_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
@@ -1490,7 +1498,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_lower_piece_rates_cost
         custom_cost_trigger = {
-            check_variable = { GNG_China_Opinion > 2.99 }
+            check_variable = { GNG_China_Opinion > 5.99 }
             has_stability > 0.0099
         }
         days_remove = 30
@@ -1499,7 +1507,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 add_stability = -0.01
             }
-            set_temp_variable = { DOP_SCW_audience_patience_change = -3 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -6 }
             DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
@@ -1518,6 +1526,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_consumer_oem_orders_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
@@ -1558,6 +1567,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_bonding_consumables_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
@@ -1583,11 +1593,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 4 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.02 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 4 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.02 }
+            DOP_SCW_change_production_and_competition = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1598,6 +1606,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_dip_expansion_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
@@ -1626,7 +1635,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { faction_id_t = 1 }
             set_temp_variable = { change_t = 26 }
             SCW_production_scale_increase = yes
-            set_temp_variable = { DOP_SCW_audience_patience_change = 1 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = 2 }
             DOP_SCW_change_audience_patience = yes
             TNO_improve_industrial_equipment_med = yes
             hidden_effect = {
@@ -1643,6 +1652,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_worker_housing_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_dip_expansion_complete
@@ -1674,7 +1684,7 @@ GNG_SiliconCW_category = {
             set_temp_variable = { change_t = 18 }
             SCW_production_scale_increase = yes
             add_stability = 0.015
-            set_temp_variable = { DOP_SCW_audience_patience_change = 3 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = 6 }
             DOP_SCW_change_audience_patience = yes
             TNO_improve_poverty_med = yes
             TNO_improve_admin_efficiency_low = yes
@@ -1692,6 +1702,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_smt_pilot_line_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_worker_housing_complete
@@ -1707,7 +1718,7 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_smt_pilot_line_cost
         custom_cost_trigger = {
-            check_variable = { GNG_China_Opinion > 1.99 }
+            check_variable = { GNG_China_Opinion > 3.99 }
         }
         days_remove = 365
         fire_only_once = yes
@@ -1716,16 +1727,14 @@ GNG_SiliconCW_category = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
             }
-            set_temp_variable = { DOP_SCW_audience_patience_change = -2 }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -4 }
             DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 22 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.1 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 22 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.1 }
+            DOP_SCW_change_production_and_competition = yes
             TNO_improve_industrial_equipment_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_packaging_smt_pilot_line_complete
@@ -1741,6 +1750,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_qfp_testing_center_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_smt_pilot_line_complete
@@ -1769,11 +1779,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 28 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.13 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 28 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.13 }
+            DOP_SCW_change_production_and_competition = yes
             set_temp_variable = { gdp_growth_temp = 0.5 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_expertise_high = yes
@@ -1793,6 +1801,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_liner_subsidies_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
@@ -1832,6 +1841,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_esd_packaging_standard_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
@@ -1856,11 +1866,9 @@ GNG_SiliconCW_category = {
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 4 }
-            SCW_production_scale_increase = yes
-            set_temp_variable = { faction_id_t = 1 }
-            set_temp_variable = { change_t = 0.025 }
-            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_production_scale_change = 4 }
+            set_temp_variable = { DOP_SCW_competition_change = 0.025 }
+            DOP_SCW_change_production_and_competition = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1871,6 +1879,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_overland_transshipment_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
@@ -1909,6 +1918,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_direct_distribution_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
@@ -1949,6 +1959,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_iso_container_coordination_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
@@ -1994,6 +2005,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_customs_fast_lane_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_iso_container_coordination_complete
@@ -2041,6 +2053,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_south_america_assembly_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_customs_fast_lane_complete
@@ -2087,6 +2100,7 @@ GNG_SiliconCW_category = {
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_strategic_component_buffer_unlocked
+            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_south_america_assembly_complete

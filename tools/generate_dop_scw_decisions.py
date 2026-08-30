@@ -302,6 +302,8 @@ COST_ORDER = (
     'pp', 'reserves', 'money', 'stage', 'supervisor', 'audience',
     'stability', 'war', 'command', 'manpower',
 )
+THEATER_EFFECT_KINDS = frozenset({'stage', 'supervisor', 'audience'})
+THEATER_EFFECT_MULTIPLIER = Decimal('2')
 EPS_HUNDREDTH = Decimal('0.01')
 EPS_TEN_THOUSANDTH = Decimal('0.0001')
 EPS_ONE = Decimal('1')
@@ -315,7 +317,14 @@ def number(raw: str | Decimal) -> str:
     return rendered or '0'
 
 
-def threshold(raw: str, epsilon: str | Decimal) -> str:
+def effective_value(kind: str, raw: str | Decimal) -> Decimal:
+    value = Decimal(raw)
+    if kind in THEATER_EFFECT_KINDS:
+        value *= THEATER_EFFECT_MULTIPLIER
+    return value
+
+
+def threshold(raw: str | Decimal, epsilon: str | Decimal) -> str:
     return number(Decimal(raw) - Decimal(epsilon))
 
 
@@ -343,7 +352,7 @@ def render_cost_trigger(decision: Decision) -> list[str]:
     for cost in COST_ORDER:
         if cost not in decision.costs:
             continue
-        value = decision.costs[cost]
+        value = effective_value(cost, decision.costs[cost])
         if cost == 'pp':
             checks.append(f'has_political_power > {threshold(value, EPS_HUNDREDTH)}')
         elif cost in {'reserves', 'money'}:
@@ -380,7 +389,7 @@ def render_cost_effects(decision: Decision) -> tuple[list[str], list[str]]:
     for cost in COST_ORDER:
         if cost not in decision.costs:
             continue
-        value = decision.costs[cost]
+        value = effective_value(cost, decision.costs[cost])
         if cost == 'pp':
             hidden.append(f'add_political_power = -{number(value)}')
         elif cost in {'reserves', 'money'}:
@@ -433,13 +442,20 @@ def render_reward_effects(decision: Decision) -> list[str]:
     effects: list[str] = []
     scale = decision.rewards.get('scale', '0')
     competition = decision.rewards.get('competition', '0')
-    if scale != '0':
+    if scale != '0' and competition != '0':
+        effects.extend([
+            'set_temp_variable = { faction_id_t = 1 }',
+            f'set_temp_variable = {{ DOP_SCW_production_scale_change = {number(scale)} }}',
+            f'set_temp_variable = {{ DOP_SCW_competition_change = {number(competition)} }}',
+            'DOP_SCW_change_production_and_competition = yes',
+        ])
+    elif scale != '0':
         effects.extend([
             'set_temp_variable = { faction_id_t = 1 }',
             f'set_temp_variable = {{ change_t = {number(scale)} }}',
             'SCW_production_scale_increase = yes',
         ])
-    if competition != '0':
+    elif competition != '0':
         effects.extend([
             'set_temp_variable = { faction_id_t = 1 }',
             f'set_temp_variable = {{ change_t = {number(competition)} }}',
@@ -463,14 +479,20 @@ def render_reward_effects(decision: Decision) -> list[str]:
     supervisor_reward = decision.rewards.get('supervisor')
     if supervisor_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = {number(supervisor_reward)} }}',
+            f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = {number(effective_value("supervisor", supervisor_reward))} }}',
             'DOP_SCW_change_supervisor_attitude = yes',
         ])
     audience_reward = decision.rewards.get('audience')
     if audience_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_audience_patience_change = {number(audience_reward)} }}',
+            f'set_temp_variable = {{ DOP_SCW_audience_patience_change = {number(effective_value("audience", audience_reward))} }}',
             'DOP_SCW_change_audience_patience = yes',
+        ])
+    stage_reward = decision.rewards.get('stage')
+    if stage_reward is not None:
+        effects.extend([
+            f'set_temp_variable = {{ DOP_SCW_stage_integrity_change = {number(effective_value("stage", stage_reward))} }}',
+            'DOP_SCW_change_stage_integrity = yes',
         ])
     for helper in decision.applied_socdev:
         effects.append(f'{helper} = yes')
@@ -496,6 +518,7 @@ def render_decision(decision: Decision) -> list[str]:
     visible = [
         'has_country_flag = DOP_SCW_decisions_unlocked',
         f'has_country_flag = {decision.unlock_flag}',
+        'check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }',
         f'check_variable = {{ selected_decision_tabs_id = {1 if decision.group == 0 else 2} }}',
     ]
     if decision.group:
@@ -630,17 +653,17 @@ def money_label(raw: str) -> str:
 def cost_component(kind: str, raw: str, blocked: bool) -> str:
     color = '§R' if blocked else '§Y'
     end = '§!'
-    value = number(raw)
+    value = number(effective_value(kind, raw))
     if kind == 'pp':
         return f'£political_power_texticon {color}{value}{end}'
     if kind in {'reserves', 'money'}:
         return f'£GFX_green_dollar_sign {color}{money_label(raw)}{end}'
     if kind == 'stage':
-        return f'£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§! {color}{value}{end}'
+        return f'£GFX_DOP_SCW_stage_integrity_texticon {color}{value}{end}'
     if kind == 'supervisor':
-        return f'£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§! {color}{value}%{end}'
+        return f'£GFX_DOP_SCW_supervisor_attitude_texticon {color}{value}%{end}'
     if kind == 'audience':
-        return f'£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§! {color}{value}%{end}'
+        return f'£GFX_DOP_SCW_audience_patience_texticon {color}{value}%{end}'
     if kind == 'stability':
         return f'£stability_texticon {color}{number(Decimal(raw) * 100)}%{end}'
     if kind == 'war':
@@ -690,6 +713,30 @@ def build_localisation() -> str:
             '£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§!将§R下降§!§Y[?DOP_SCW_stage_integrity_change_abs|1]§!。',
         ),
         loc_line(
+            'DOP_SCW_production_and_competition_increase_tt',
+            '§Y[GetChangedFactionNAME]§!的§C产业规模§!将§G提升§!§Y[?DOP_SCW_production_scale_change]§!，§m竞争力§!将§G提升§!§Y[?DOP_SCW_competition_change|2%]§!。',
+        ),
+        loc_line(
+            'DOP_SCW_decisions_unlocked',
+            '§W三微米冷战§!决议系统已经§G解锁§!。',
+        ),
+        loc_line(
+            'DOP_SCW_CCD_research_complete',
+            '§mCCD技术研发§!已经§G完成§!。',
+        ),
+        loc_line(
+            'DOP_SCW_enabled',
+            '§W三微米冷战§!界面已经§G启用§!。',
+        ),
+        loc_line(
+            'DOP_SCW_off',
+            '§W三微米冷战§!界面目前§R关闭§!。',
+        ),
+        loc_line(
+            'DOP_SCW_initialized',
+            '§W三微米冷战§!市场数据已经§G初始化§!。',
+        ),
+        loc_line(
             'GNG_dop_debug_unlock_SCW_decisions',
             '§MDOP调试§!：解锁三微米冷战决议',
         ),
@@ -717,10 +764,19 @@ def build_localisation() -> str:
                 loc_line(f'{decision.key}_cost', normal_cost),
                 loc_line(f'{decision.key}_cost_blocked', blocked_cost),
                 loc_line(
+                    decision.unlock_flag,
+                    f'£GFX_decision_icon_small §Y「${decision.key}$」§!决议已经§G解锁§!。',
+                ),
+                loc_line(
                     decision.unlock_tooltip,
                     f'§F£GFX_green_dollar_sign §W三微米冷战§!中的§Y「${decision.key}$」§!£GFX_decision_icon_small §D决议§!已经§G可用§!。§!',
                 ),
             ])
+            if decision.stage:
+                lines.append(loc_line(
+                    f'{decision.key}_complete',
+                    f'£GFX_decision_icon_small §Y「${decision.key}$」§!决议已经§G完成§!。',
+                ))
         lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 

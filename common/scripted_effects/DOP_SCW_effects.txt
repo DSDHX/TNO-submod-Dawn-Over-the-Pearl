@@ -187,6 +187,19 @@ DOP_SCW_change_stage_integrity = {
 	}
 }
 
+# Arguments: faction_id_t, DOP_SCW_production_scale_change,
+# DOP_SCW_competition_change. The existing SCW helpers still perform the
+# actual market updates; their shared change_t tooltips are hidden here.
+DOP_SCW_change_production_and_competition = {
+	custom_effect_tooltip = DOP_SCW_production_and_competition_increase_tt
+	hidden_effect = {
+		set_temp_variable = { change_t = DOP_SCW_production_scale_change }
+		SCW_production_scale_increase = yes
+		set_temp_variable = { change_t = DOP_SCW_competition_change }
+		SCW_compatibility_increase = yes
+	}
+}
+
 SCW_production_scale_increase = {
 	set_temp_variable = {
 		scw_GNG_production_value_t = scw_GNG_production_value
