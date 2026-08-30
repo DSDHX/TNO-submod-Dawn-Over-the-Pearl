@@ -1,15 +1,25 @@
 on_actions = {
-on_yearly = {
-effect = {
-if = {
-limit = {
-original_tag = GNG
-has_country_flag = DOP_SCW_initialized
-has_country_flag = DOP_SCW_decisions_unlocked
-date > 1977.1.1
-}
-hidden_effect = { DOP_SCW_apply_opponent_yearly_growth = yes }
-}
-}
-}
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = GNG
+					NOT = { has_country_flag = DOP_SCW_decisions_unlocked }
+				}
+				DOP_SCW_activate_decision_system = yes
+			}
+		}
+	}
+	on_yearly = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = GNG
+					has_country_flag = DOP_SCW_initialized
+					has_country_flag = DOP_SCW_decisions_unlocked
+				}
+				hidden_effect = { DOP_SCW_apply_opponent_yearly_growth = yes }
+			}
+		}
+	}
 }

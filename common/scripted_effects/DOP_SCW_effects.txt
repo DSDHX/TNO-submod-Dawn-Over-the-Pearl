@@ -83,7 +83,7 @@ GNG_BOP_GSA_Initialize = {
 }
 
 GNG_SCW_Initialize = {
-	# 1977 baseline. Reopening either SCW page must not reset progress.
+	# Initial baseline. Reopening either SCW page must not reset progress.
 	if = {
 		limit = { NOT = { has_country_flag = DOP_SCW_initialized } }
 		set_country_flag = DOP_SCW_initialized
@@ -198,6 +198,7 @@ DOP_SCW_change_production_and_competition = {
 		set_temp_variable = { change_t = DOP_SCW_competition_change }
 		SCW_compatibility_increase = yes
 	}
+	custom_effect_tooltip = new_chart_dis_tt
 }
 
 SCW_production_scale_increase = {

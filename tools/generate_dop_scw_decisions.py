@@ -393,9 +393,15 @@ def render_cost_effects(decision: Decision) -> tuple[list[str], list[str]]:
         if cost == 'pp':
             hidden.append(f'add_political_power = -{number(value)}')
         elif cost in {'reserves', 'money'}:
-            hidden.extend([
+            money_effects = [
                 f'set_temp_variable = {{ temp_econ_spending_amount = {number(value)} }}',
                 'econ_spend_money_once_effect_raw_money = yes',
+            ]
+            hidden.extend(money_effects)
+            visible.extend([
+                'effect_tooltip = {',
+                *indented(money_effects, 4),
+                '}',
             ])
         elif cost == 'stage':
             visible.extend([
@@ -413,13 +419,21 @@ def render_cost_effects(decision: Decision) -> tuple[list[str], list[str]]:
                 'DOP_SCW_change_audience_patience = yes',
             ])
         elif cost == 'stability':
-            hidden.append(f'add_stability = -{number(value)}')
+            effect = f'add_stability = -{number(value)}'
+            hidden.append(effect)
+            visible.extend(['effect_tooltip = {', f'    {effect}', '}'])
         elif cost == 'war':
-            hidden.append(f'add_war_support = -{number(value)}')
+            effect = f'add_war_support = -{number(value)}'
+            hidden.append(effect)
+            visible.extend(['effect_tooltip = {', f'    {effect}', '}'])
         elif cost == 'command':
-            hidden.append(f'add_command_power = -{number(value)}')
+            effect = f'add_command_power = -{number(value)}'
+            hidden.append(effect)
+            visible.extend(['effect_tooltip = {', f'    {effect}', '}'])
         elif cost == 'manpower':
-            hidden.append(f'add_manpower = -{number(value)}')
+            effect = f'add_manpower = -{number(value)}'
+            hidden.append(effect)
+            visible.extend(['effect_tooltip = {', f'    {effect}', '}'])
         else:
             raise ValueError(f'unsupported cost: {cost}')
     return hidden, visible
@@ -534,10 +548,6 @@ def render_decision(decision: Decision) -> list[str]:
     available = [
         'has_country_flag = DOP_SCW_decisions_unlocked',
         f'has_country_flag = {decision.unlock_flag}',
-        'OR = {',
-        '    date > 1977.1.1',
-        '    is_debug = yes',
-        '}',
     ]
     if decision.group == 3:
         available.append('has_country_flag = DOP_SCW_CCD_research_complete')
@@ -630,6 +640,32 @@ def build_unlock_effects() -> str:
             '}',
             '',
         ])
+    initial_decisions = [
+        decision for decision in DECISIONS
+        if decision.repeatable or decision.stage == 1
+    ]
+    lines.extend([
+        '# Normal activation opens both SCW pages and silently unlocks only',
+        '# repeatable decisions plus the first milestone of each annual chain.',
+        'DOP_SCW_activate_decision_system = {',
+        '    hidden_effect = {',
+        '        if = {',
+        '            limit = { NOT = { has_country_flag = DOP_SCW_enabled } }',
+        '            GNG_BOP_SCW_Initialize = yes',
+        '        }',
+        '        set_temp_variable = { decision_tabs_id = 1 }',
+        '        GNG_SCW_add_tab = yes',
+        '        set_temp_variable = { decision_tabs_id = 2 }',
+        '        GNG_SCW_add_tab = yes',
+        '        GNG_SCW_Initialize = yes',
+        '        set_country_flag = DOP_SCW_decisions_unlocked',
+    ])
+    lines.extend(f'        set_country_flag = {decision.unlock_flag}' for decision in initial_decisions)
+    lines.extend([
+        '    }',
+        '}',
+        '',
+    ])
     lines.extend([
         '# Debug-only bulk unlock: deliberately suppresses 48 tooltip lines.',
         'DOP_SCW_debug_unlock_all_decisions = {',

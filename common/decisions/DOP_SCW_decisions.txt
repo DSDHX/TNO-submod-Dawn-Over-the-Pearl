@@ -16,10 +16,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_commercial_attaches_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_race_commercial_attaches_cost
         custom_cost_trigger = {
@@ -30,6 +26,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -15
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.06 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -56,10 +56,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_tariff_lobby_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_race_tariff_lobby_cost
         custom_cost_trigger = {
@@ -97,10 +93,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_court_dissidents_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_race_court_dissidents_cost
         custom_cost_trigger = {
@@ -112,6 +104,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.08 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_stability = -0.01
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.08 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_stability = -0.01
             }
         }
@@ -136,10 +135,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_friendly_expositions_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_race_friendly_expositions_cost
         custom_cost_trigger = {
@@ -150,6 +145,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -15
+                set_temp_variable = { temp_econ_spending_amount = 0.1 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.1 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -176,10 +175,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_shell_companies_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_race_shell_companies_cost
         custom_cost_trigger = {
@@ -190,6 +185,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
+                set_temp_variable = { temp_econ_spending_amount = 0.25 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.25 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -222,10 +221,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_smuggle_blueprints_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_race_shell_companies_complete
         }
         custom_cost_text = DOP_SCW_race_smuggle_blueprints_cost
@@ -238,6 +233,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.3 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_command_power = -15
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_command_power = -15
             }
         }
@@ -268,10 +270,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_embargo_waivers_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_race_smuggle_blueprints_complete
         }
         custom_cost_text = DOP_SCW_race_embargo_waivers_cost
@@ -318,10 +316,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_race_public_diplomacy_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_race_embargo_waivers_complete
         }
         custom_cost_text = DOP_SCW_race_public_diplomacy_cost
@@ -333,6 +327,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -50
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.4 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -368,10 +366,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_materials_buy_crude_silicon_cost
         custom_cost_trigger = {
@@ -381,6 +375,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.05 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.05 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -408,10 +406,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_materials_smelter_overtime_cost
         custom_cost_trigger = {
@@ -426,6 +420,9 @@ GNG_SiliconCW_category = {
             }
             set_temp_variable = { DOP_SCW_audience_patience_change = -4 }
             DOP_SCW_change_audience_patience = yes
+            effect_tooltip = {
+                add_stability = -0.005
+            }
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
@@ -450,10 +447,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_power_subsidy_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_materials_power_subsidy_cost
         custom_cost_trigger = {
@@ -464,6 +457,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
+                set_temp_variable = { temp_econ_spending_amount = 0.09 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.09 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -491,10 +488,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_materials_export_low_grade_products_cost
         custom_cost_trigger = {
@@ -504,6 +497,9 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                add_manpower = -2500
+            }
+            effect_tooltip = {
                 add_manpower = -2500
             }
         }
@@ -530,10 +526,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_materials_polysilicon_plant_cost
         custom_cost_trigger = {
@@ -545,6 +537,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.35 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -12000
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.35 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -12000
             }
         }
@@ -577,10 +576,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_czochralski_growth_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_materials_polysilicon_plant_complete
         }
         custom_cost_text = DOP_SCW_materials_czochralski_growth_cost
@@ -592,6 +587,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.3 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -624,10 +623,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_quartz_monopoly_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_materials_czochralski_growth_complete
         }
         custom_cost_text = DOP_SCW_materials_quartz_monopoly_cost
@@ -638,6 +633,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.4 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -674,10 +673,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_four_inch_substrates_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_materials_quartz_monopoly_complete
         }
         custom_cost_text = DOP_SCW_materials_four_inch_substrates_cost
@@ -689,6 +684,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -724,10 +723,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_replenish_consumables_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_wafer_replenish_consumables_cost
         custom_cost_trigger = {
@@ -737,6 +732,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.06 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -764,10 +763,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_paramilitary_shifts_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_wafer_paramilitary_shifts_cost
         custom_cost_trigger = {
@@ -782,6 +777,9 @@ GNG_SiliconCW_category = {
             }
             set_temp_variable = { DOP_SCW_audience_patience_change = -6 }
             DOP_SCW_change_audience_patience = yes
+            effect_tooltip = {
+                add_stability = -0.01
+            }
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
@@ -805,10 +803,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_spc_control_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_wafer_spc_control_cost
         custom_cost_trigger = {
@@ -844,10 +838,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_japanese_military_orders_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_wafer_japanese_military_orders_cost
         custom_cost_trigger = {
@@ -857,6 +847,9 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                add_war_support = -0.01
+            }
+            effect_tooltip = {
                 add_war_support = -0.01
             }
         }
@@ -883,10 +876,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_wafer_class_1000_cleanroom_cost
         custom_cost_trigger = {
@@ -898,6 +887,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.4 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -15000
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -15000
             }
         }
@@ -929,10 +925,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_complete
         }
         custom_cost_text = DOP_SCW_wafer_four_inch_wafer_line_cost
@@ -944,6 +936,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -978,10 +974,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_complete
         }
         custom_cost_text = DOP_SCW_wafer_implantation_and_oxidation_cost
@@ -992,6 +984,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.45 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.45 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1026,10 +1022,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_wafer_automated_handling_fa_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_complete
         }
         custom_cost_text = DOP_SCW_wafer_automated_handling_fa_cost
@@ -1040,6 +1032,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.65 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1076,10 +1072,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_optical_calibration_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         custom_cost_text = DOP_SCW_lithography_optical_calibration_cost
@@ -1090,6 +1082,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.08 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.08 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1117,10 +1113,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_import_photoresist_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         custom_cost_text = DOP_SCW_lithography_import_photoresist_cost
@@ -1132,6 +1124,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
+                set_temp_variable = { temp_econ_spending_amount = 0.07 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.07 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1160,10 +1156,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_buy_pellicles_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         custom_cost_text = DOP_SCW_lithography_buy_pellicles_cost
@@ -1174,6 +1166,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.05 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.05 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1202,10 +1198,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_expert_allowances_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         custom_cost_text = DOP_SCW_lithography_expert_allowances_cost
@@ -1216,6 +1208,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.1 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.1 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1246,10 +1242,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_ccd_scale_up_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         custom_cost_text = DOP_SCW_lithography_ccd_scale_up_cost
@@ -1260,6 +1252,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.45 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.45 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1298,10 +1294,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_g_line_stepper_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
             has_country_flag = DOP_SCW_lithography_ccd_scale_up_complete
         }
@@ -1314,6 +1306,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -50
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.65 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1347,10 +1343,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_chrome_quartz_masks_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
             has_country_flag = DOP_SCW_lithography_g_line_stepper_complete
         }
@@ -1364,6 +1356,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -18000
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -18000
             }
         }
@@ -1397,10 +1396,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_lithography_excimer_alignment_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_CCD_research_complete
             has_country_flag = DOP_SCW_lithography_chrome_quartz_masks_complete
         }
@@ -1412,6 +1407,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.8 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.8 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1449,10 +1448,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_recruit_assembly_labor_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_packaging_recruit_assembly_labor_cost
         custom_cost_trigger = {
@@ -1464,6 +1459,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.04 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -3500
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.04 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -3500
             }
         }
@@ -1491,10 +1493,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_lower_piece_rates_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_packaging_lower_piece_rates_cost
         custom_cost_trigger = {
@@ -1509,6 +1507,9 @@ GNG_SiliconCW_category = {
             }
             set_temp_variable = { DOP_SCW_audience_patience_change = -6 }
             DOP_SCW_change_audience_patience = yes
+            effect_tooltip = {
+                add_stability = -0.01
+            }
         }
         remove_effect = {
             set_temp_variable = { faction_id_t = 1 }
@@ -1533,10 +1534,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_consumer_oem_orders_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_packaging_consumer_oem_orders_cost
         custom_cost_trigger = {
@@ -1546,6 +1543,9 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                add_manpower = -3000
+            }
+            effect_tooltip = {
                 add_manpower = -3000
             }
         }
@@ -1574,10 +1574,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_bonding_consumables_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_packaging_bonding_consumables_cost
         custom_cost_trigger = {
@@ -1587,6 +1583,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.06 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1613,10 +1613,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_dip_expansion_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_packaging_dip_expansion_cost
         custom_cost_trigger = {
@@ -1628,6 +1624,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.35 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -12000
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.35 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -12000
             }
         }
@@ -1660,10 +1663,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_worker_housing_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_packaging_dip_expansion_complete
         }
         custom_cost_text = DOP_SCW_packaging_worker_housing_cost
@@ -1675,6 +1674,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.4 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1710,10 +1713,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_smt_pilot_line_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_packaging_worker_housing_complete
         }
         custom_cost_text = DOP_SCW_packaging_smt_pilot_line_cost
@@ -1724,6 +1723,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1758,10 +1761,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_packaging_qfp_testing_center_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_packaging_smt_pilot_line_complete
         }
         custom_cost_text = DOP_SCW_packaging_qfp_testing_center_cost
@@ -1774,6 +1773,13 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_temp_variable = { temp_econ_spending_amount = 0.65 }
                 econ_spend_money_once_effect_raw_money = yes
+                add_manpower = -20000
+            }
+            effect_tooltip = {
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 add_manpower = -20000
             }
         }
@@ -1808,10 +1814,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_liner_subsidies_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_logistics_liner_subsidies_cost
         custom_cost_trigger = {
@@ -1821,6 +1823,10 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.07 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.07 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1848,10 +1854,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_esd_packaging_standard_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_logistics_esd_packaging_standard_cost
         custom_cost_trigger = {
@@ -1886,10 +1888,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_overland_transshipment_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_logistics_overland_transshipment_cost
         custom_cost_trigger = {
@@ -1925,10 +1923,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_direct_distribution_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_logistics_direct_distribution_cost
         custom_cost_trigger = {
@@ -1939,6 +1933,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
+                set_temp_variable = { temp_econ_spending_amount = 0.08 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.08 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -1966,10 +1964,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_iso_container_coordination_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
         }
         custom_cost_text = DOP_SCW_logistics_iso_container_coordination_cost
         custom_cost_trigger = {
@@ -2013,10 +2007,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_customs_fast_lane_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_logistics_iso_container_coordination_complete
         }
         custom_cost_text = DOP_SCW_logistics_customs_fast_lane_cost
@@ -2028,6 +2018,10 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.3 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -2061,10 +2055,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_south_america_assembly_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_logistics_customs_fast_lane_complete
         }
         custom_cost_text = DOP_SCW_logistics_south_america_assembly_cost
@@ -2075,6 +2065,10 @@ GNG_SiliconCW_category = {
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
+            }
+            effect_tooltip = {
                 set_temp_variable = { temp_econ_spending_amount = 0.55 }
                 econ_spend_money_once_effect_raw_money = yes
             }
@@ -2108,10 +2102,6 @@ GNG_SiliconCW_category = {
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_logistics_strategic_component_buffer_unlocked
-            OR = {
-                date > 1977.1.1
-                is_debug = yes
-            }
             has_country_flag = DOP_SCW_logistics_south_america_assembly_complete
         }
         custom_cost_text = DOP_SCW_logistics_strategic_component_buffer_cost
@@ -2124,6 +2114,9 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -50
+                add_war_support = -0.02
+            }
+            effect_tooltip = {
                 add_war_support = -0.02
             }
         }

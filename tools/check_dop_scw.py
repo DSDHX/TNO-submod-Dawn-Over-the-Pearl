@@ -227,7 +227,8 @@ def main() -> int:
             f'{key}: SCW BoP-tab visibility gate missing or duplicated',
         )
         require(not re.search(r'阶段[一二三四]：', block), f'{key}: stage prefix remains in decision title')
-        require('date > 1977.1.1' in block, f'{key}: 1977 gate missing')
+        require('date > 1977.1.1' not in block, f'{key}: obsolete 1977 gate remains')
+        require('is_debug = yes' not in block, f'{key}: decision availability is still debug-only')
         require('custom_cost_text =' in block, f'{key}: custom cost localisation missing')
         require('custom_cost_trigger = {' in block, f'{key}: custom cost trigger missing')
         require('complete_effect = {' in block, f'{key}: upfront cost effect missing')
@@ -387,6 +388,48 @@ def main() -> int:
     require('set_temp_variable = { change_t = DOP_SCW_competition_change }' in combined_wrapper, 'combined competitiveness value is not copied into change_t')
     require('SCW_production_scale_increase = yes' in combined_wrapper, 'combined wrapper does not apply production')
     require('SCW_compatibility_increase = yes' in combined_wrapper, 'combined wrapper does not apply competitiveness')
+    require(
+        combined_wrapper.count('custom_effect_tooltip = new_chart_dis_tt') == 1,
+        'combined wrapper must show the recalculated market state exactly once',
+    )
+
+    preview_effects = {
+        'stability': 'add_stability',
+        'war': 'add_war_support',
+        'command': 'add_command_power',
+        'manpower': 'add_manpower',
+    }
+    for key, decision in decision_data.items():
+        block = blocks.get(key, '')
+        for kind, raw in decision.costs.items():
+            value = Decimal(raw) * (2 if kind in theater_effects else 1)
+            rendered = numeric_text(value)
+            if kind == 'pp':
+                effect = f'add_political_power = -{rendered}'
+                require(block.count(effect) == 1, f'{key}: PP cost must execute once and stay out of the preview')
+            elif kind in {'reserves', 'money'}:
+                assignment = f'set_temp_variable = {{ temp_econ_spending_amount = {rendered} }}'
+                helper = 'econ_spend_money_once_effect_raw_money = yes'
+                preview = (
+                    'effect_tooltip = {\n'
+                    f'                {assignment}\n'
+                    f'                {helper}\n'
+                    '            }'
+                )
+                require(block.count(assignment) == 2, f'{key}: money cost must appear once in execution and once in preview')
+                require(block.count(helper) == 2, f'{key}: TNO money component must appear once in execution and once in preview')
+                require(preview in block, f'{key}: money cost is missing from the selection effect tooltip')
+            elif kind in preview_effects:
+                effect = f'{preview_effects[kind]} = -{rendered}'
+                preview = f'effect_tooltip = {{\n                {effect}\n            }}'
+                require(block.count(effect) == 2, f'{key}: {kind} cost must appear once in execution and once in preview')
+                require(preview in block, f'{key}: {kind} cost is missing from the selection effect tooltip')
+            elif kind in theater_effects:
+                # The theatre wrappers are already visible scripted effects;
+                # their exact doubled values and visible calls are checked above.
+                continue
+            else:
+                require(False, f'{key}: unchecked cost preview kind: {kind}')
 
     gdp_growth_values = [
         float(item)
@@ -417,6 +460,43 @@ def main() -> int:
         flag = f'{key}_unlocked'
         require(f'set_country_flag = {flag}' in unlock_text, f'{key}: unlock effect does not set its own flag')
         require(f'custom_effect_tooltip = {key}_unlock_tt' in unlock_text, f'{key}: unlock effect tooltip missing')
+    activation_match = re.search(
+        r'DOP_SCW_activate_decision_system\s*=\s*\{(?P<body>.*?)\n\}',
+        unlock_text,
+        re.DOTALL,
+    )
+    require(activation_match is not None, 'normal, non-debug SCW activation effect is missing')
+    activation_body = activation_match.group('body') if activation_match else ''
+    for snippet in (
+        'GNG_BOP_SCW_Initialize = yes',
+        'decision_tabs_id = 1',
+        'decision_tabs_id = 2',
+        'GNG_SCW_Initialize = yes',
+        'set_country_flag = DOP_SCW_decisions_unlocked',
+    ):
+        require(snippet in activation_body, f'normal SCW activation wiring missing: {snippet}')
+    initial_decisions = {
+        decision.key for decision in DECISION_DATA
+        if decision.repeatable or decision.stage == 1
+    }
+    later_milestones = {
+        decision.key for decision in DECISION_DATA
+        if decision.stage > 1
+    }
+    for key in initial_decisions:
+        require(
+            f'set_country_flag = {key}_unlocked' in activation_body,
+            f'normal SCW activation does not unlock initial decision: {key}',
+        )
+    for key in later_milestones:
+        require(
+            f'set_country_flag = {key}_unlocked' not in activation_body,
+            f'normal SCW activation bypasses annual chain: {key}',
+        )
+    require(
+        'set_country_flag = DOP_SCW_CCD_research_complete' not in activation_body,
+        'normal SCW activation bypasses the CCD research prerequisite',
+    )
     growth_text = read(GROWTH)
     random_factors = [float(item) for item in re.findall(r'DOP_SCW_growth_factor = ([0-9.]+)', growth_text)]
     require(bool(random_factors), 'opponent random growth factors missing')
@@ -448,13 +528,16 @@ def main() -> int:
 
     on_actions_text = read(ON_ACTIONS)
     for snippet in (
+        'on_daily = {',
+        'NOT = { has_country_flag = DOP_SCW_decisions_unlocked }',
+        'DOP_SCW_activate_decision_system = yes',
         'on_yearly = {',
         'original_tag = GNG',
         'has_country_flag = DOP_SCW_decisions_unlocked',
-        'date > 1977.1.1',
         'DOP_SCW_apply_opponent_yearly_growth = yes',
     ):
         require(snippet in on_actions_text, f'yearly growth wiring missing: {snippet}')
+    require('date > 1977.1.1' not in on_actions_text, 'SCW on_actions still contain a 1977 gate')
 
     debug_text = read(DEBUG)
     debug_match = re.search(
