@@ -225,21 +225,4 @@ GNG_SiliconCW_category = {
 			SCW_compatibility_increase = yes
 		}
 	}
-
-    #————————GCW————————
-    GNG_dop_show_chain_selected = {
-        allowed = {
-            original_tag = GNG
-        }
-        icon = GFX_decision_generic_document
-        visible = {
-            check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
-            check_variable = { selected_decision_tabs_id = 2 }
-        }
-        available = {
-            hidden_trigger = {
-                always = no
-            }
-        }
-    }
 }

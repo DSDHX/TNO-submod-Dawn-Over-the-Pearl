@@ -231,28 +231,28 @@ guiTypes = {
 			pdx_tooltip = "SCW_chain_btn_1_tt"
 			alwaystransparent = yes
 		}
-		buttonType = {
+		iconType = {
 			name = "chain_btn_2_on"
 			spriteType = "GFX_GCW_chain_btn2_selected"
 			position = { x = 50 y = 312 }
 			pdx_tooltip = "SCW_chain_btn_2_tt"
 			alwaystransparent = yes
 		}
-		buttonType = {
+		iconType = {
 			name = "chain_btn_3_on"
 			spriteType = "GFX_GCW_chain_btn3_selected"
 			position = { x = 199 y = 462 }
 			pdx_tooltip = "SCW_chain_btn_3_tt"
 			alwaystransparent = yes
 		}
-		buttonType = {
+		iconType = {
 			name = "chain_btn_4_on"
 			spriteType = "GFX_GCW_chain_btn4_selected"
 			position = { x = 350 y = 312 }
 			pdx_tooltip = "SCW_chain_btn_4_tt"
 			alwaystransparent = yes
 		}
-		buttonType = {
+		iconType = {
 			name = "chain_btn_5_on"
 			spriteType = "GFX_GCW_chain_btn5_selected"
 			position = { x = 349 y = 162 }

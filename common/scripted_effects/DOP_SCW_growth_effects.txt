@@ -1,0 +1,63 @@
+DOP_SCW_roll_growth_factor = {
+	set_temp_variable = { DOP_SCW_growth_factor = 1.00 }
+	random_list = {
+		17 = { set_temp_variable = { DOP_SCW_growth_factor = 1.00 } }
+		17 = { set_temp_variable = { DOP_SCW_growth_factor = 1.02 } }
+		17 = { set_temp_variable = { DOP_SCW_growth_factor = 1.04 } }
+		17 = { set_temp_variable = { DOP_SCW_growth_factor = 1.06 } }
+		16 = { set_temp_variable = { DOP_SCW_growth_factor = 1.08 } }
+		16 = { set_temp_variable = { DOP_SCW_growth_factor = 1.10 } }
+	}
+}
+
+# Production and competitiveness combine to approximate Moore's two-year
+# doubling cadence. Random variation is bounded to 1.00-1.10.
+DOP_SCW_apply_opponent_yearly_growth = {
+DOP_SCW_load_persistent_market_values = yes
+
+# United States: technology-led growth from the largest installed base.
+DOP_SCW_roll_growth_factor = yes
+set_temp_variable = { DOP_SCW_production_delta = scw_USA_production_value }
+multiply_temp_variable = { DOP_SCW_production_delta = 0.17 }
+multiply_temp_variable = { DOP_SCW_production_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_USA_production_value_t = DOP_SCW_production_delta }
+set_temp_variable = { DOP_SCW_compatibility_delta = scw_USA_compatibility_value }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = 0.18 }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_USA_compatibility_value_t = DOP_SCW_compatibility_delta }
+
+# Italy/SGS: a smaller European base, expanding more conservatively.
+DOP_SCW_roll_growth_factor = yes
+set_temp_variable = { DOP_SCW_production_delta = scw_ITA_production_value }
+multiply_temp_variable = { DOP_SCW_production_delta = 0.15 }
+multiply_temp_variable = { DOP_SCW_production_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_ITA_production_value_t = DOP_SCW_production_delta }
+set_temp_variable = { DOP_SCW_compatibility_delta = scw_ITA_compatibility_value }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = 0.16 }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_ITA_compatibility_value_t = DOP_SCW_compatibility_delta }
+
+# Germany/Siemens: strong scale, tempered by institutional drag.
+DOP_SCW_roll_growth_factor = yes
+set_temp_variable = { DOP_SCW_production_delta = scw_GER_production_value }
+multiply_temp_variable = { DOP_SCW_production_delta = 0.16 }
+multiply_temp_variable = { DOP_SCW_production_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_GER_production_value_t = DOP_SCW_production_delta }
+set_temp_variable = { DOP_SCW_compatibility_delta = scw_GER_compatibility_value }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = 0.17 }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_GER_compatibility_value_t = DOP_SCW_compatibility_delta }
+
+# Japan/VLSI: the fastest scale-up in the late-1970s field.
+DOP_SCW_roll_growth_factor = yes
+set_temp_variable = { DOP_SCW_production_delta = scw_JAP_production_value }
+multiply_temp_variable = { DOP_SCW_production_delta = 0.19 }
+multiply_temp_variable = { DOP_SCW_production_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_JAP_production_value_t = DOP_SCW_production_delta }
+set_temp_variable = { DOP_SCW_compatibility_delta = scw_JAP_compatibility_value }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = 0.19 }
+multiply_temp_variable = { DOP_SCW_compatibility_delta = DOP_SCW_growth_factor }
+add_to_temp_variable = { scw_JAP_compatibility_value_t = DOP_SCW_compatibility_delta }
+
+SCW_piechart_recalculate = yes
+}

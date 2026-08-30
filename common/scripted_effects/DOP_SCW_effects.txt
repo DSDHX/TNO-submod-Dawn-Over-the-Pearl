@@ -83,17 +83,62 @@ GNG_BOP_GSA_Initialize = {
 }
 
 GNG_SCW_Initialize = {
-	set_temp_variable = { scw_GNG_production_value_t = 150 }
-	set_temp_variable = { scw_GNG_compatibility_value_t = 1 }
-	set_temp_variable = { scw_USA_production_value_t = 300 }
-	set_temp_variable = { scw_USA_compatibility_value_t = 1 }
-	set_temp_variable = { scw_ITA_production_value_t = 100 }
-	set_temp_variable = { scw_ITA_compatibility_value_t = 1 }
-	set_temp_variable = { scw_GER_production_value_t = 250 }
-	set_temp_variable = { scw_GER_compatibility_value_t = 1 }
-	set_temp_variable = { scw_JAP_production_value_t = 200 }
-	set_temp_variable = { scw_JAP_compatibility_value_t = 1 }
-	SCW_piechart_recalculate = yes 
+	# 1977 baseline. Reopening either SCW page must not reset progress.
+	if = {
+		limit = { NOT = { has_country_flag = DOP_SCW_initialized } }
+		set_country_flag = DOP_SCW_initialized
+		set_temp_variable = { scw_GNG_production_value_t = 135 }
+		set_temp_variable = { scw_GNG_compatibility_value_t = 0.90 }
+		set_temp_variable = { scw_USA_production_value_t = 310 }
+		set_temp_variable = { scw_USA_compatibility_value_t = 1.15 }
+		set_temp_variable = { scw_ITA_production_value_t = 85 }
+		set_temp_variable = { scw_ITA_compatibility_value_t = 0.85 }
+		set_temp_variable = { scw_GER_production_value_t = 210 }
+		set_temp_variable = { scw_GER_compatibility_value_t = 1.00 }
+		set_temp_variable = { scw_JAP_production_value_t = 225 }
+		set_temp_variable = { scw_JAP_compatibility_value_t = 1.08 }
+	}
+	else = { DOP_SCW_load_persistent_market_values = yes }
+	SCW_piechart_recalculate = yes
+	DOP_SCW_sync_theater_stage_integrity = yes
+}
+
+DOP_SCW_load_persistent_market_values = {
+	set_temp_variable = { scw_GNG_production_value_t = scw_GNG_production_value }
+	set_temp_variable = { scw_GNG_compatibility_value_t = scw_GNG_compatibility_value }
+	set_temp_variable = { scw_USA_production_value_t = scw_USA_production_value }
+	set_temp_variable = { scw_USA_compatibility_value_t = scw_USA_compatibility_value }
+	set_temp_variable = { scw_ITA_production_value_t = scw_ITA_production_value }
+	set_temp_variable = { scw_ITA_compatibility_value_t = scw_ITA_compatibility_value }
+	set_temp_variable = { scw_GER_production_value_t = scw_GER_production_value }
+	set_temp_variable = { scw_GER_compatibility_value_t = scw_GER_compatibility_value }
+	set_temp_variable = { scw_JAP_production_value_t = scw_JAP_production_value }
+	set_temp_variable = { scw_JAP_compatibility_value_t = scw_JAP_compatibility_value }
+}
+
+DOP_SCW_sync_theater_stage_integrity = {
+	set_variable = { DOP_theater_stage_integrity_var = 100 }
+	subtract_from_variable = { DOP_theater_stage_integrity_var = GNG_corruption_var }
+	clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
+}
+
+# Arguments: DOP_SCW_player_production_gain and DOP_SCW_player_compatibility_gain.
+# Combined market rewards are applied atomically and trigger one chart refresh.
+DOP_SCW_apply_player_market_gain = {
+	if = {
+		limit = { check_variable = { DOP_SCW_player_production_gain > 0 } }
+		custom_effect_tooltip = DOP_SCW_player_production_gain_tt
+	}
+	if = {
+		limit = { check_variable = { DOP_SCW_player_compatibility_gain > 0 } }
+		custom_effect_tooltip = DOP_SCW_player_compatibility_gain_tt
+	}
+	hidden_effect = {
+		DOP_SCW_load_persistent_market_values = yes
+		add_to_temp_variable = { scw_GNG_production_value_t = DOP_SCW_player_production_gain }
+		add_to_temp_variable = { scw_GNG_compatibility_value_t = DOP_SCW_player_compatibility_gain }
+		SCW_piechart_recalculate = yes
+	}
 }
 
 SCW_production_scale_increase = {
