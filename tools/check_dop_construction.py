@@ -623,9 +623,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260829F"
+        "EARLY DEVELOPMENT BUILD 260829G"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260829F",
+        "user-facing build version is 260829G",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

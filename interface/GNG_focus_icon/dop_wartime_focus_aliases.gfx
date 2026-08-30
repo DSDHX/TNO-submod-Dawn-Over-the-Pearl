@@ -1,0 +1,31 @@
+spriteTypes = {
+	# Wartime focus icon aliases for the replacement tree.
+	SpriteType = {
+		name = "beating_drums_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_for_gng_future.dds"
+	}
+	SpriteType = {
+		name = "waiting_allies_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_strapped_for_cash.dds"
+	}
+	SpriteType = {
+		name = "in_the_chaotic_world_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_recruitment_military_police.dds"
+	}
+	SpriteType = {
+		name = "tokyo_express_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_tokyo_express.dds"
+	}
+	SpriteType = {
+		name = "enlarge_reserve_service_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_recruitment_military_police.dds"
+	}
+	SpriteType = {
+		name = "collaborate_in_shadow_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_recruitment_military_police.dds"
+	}
+	SpriteType = {
+		name = "defend_the_great_gwongdung_gfx"
+		texturefile = "gfx/interface/goal/sonyjapan_wartime/GFX_GNG_focus_for_gng_future.dds"
+	}
+}
