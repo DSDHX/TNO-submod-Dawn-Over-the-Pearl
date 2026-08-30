@@ -41,6 +41,33 @@ def numeric_text(raw: str | Decimal) -> str:
     return rendered or '0'
 
 
+def expected_cost_fragment(kind: str, raw: str, color: str) -> str:
+    """Independently render one generated custom-cost component."""
+    value = Decimal(raw)
+    effective = value * 2 if kind in {'stage', 'supervisor', 'audience'} else value
+    rendered = numeric_text(effective)
+    if kind == 'pp':
+        return f'£political_power_texticon §{color}{rendered}§!'
+    if kind in {'reserves', 'money'}:
+        money = f'{numeric_text(value * 1000)}M' if value < 1 else f'{numeric_text(value)}B'
+        return f'£GFX_green_dollar_sign §{color}{money}§!'
+    if kind == 'stage':
+        return f'£GFX_DOP_SCW_stage_integrity_texticon §{color}{rendered}§!'
+    if kind == 'supervisor':
+        return f'£GFX_DOP_SCW_supervisor_attitude_texticon §{color}{rendered}%§!'
+    if kind == 'audience':
+        return f'£GFX_DOP_SCW_audience_patience_texticon §{color}{rendered}%§!'
+    if kind == 'stability':
+        return f'£stability_texticon §{color}{numeric_text(value * 100)}%§!'
+    if kind == 'war':
+        return f'£war_support_texticon §{color}{numeric_text(value * 100)}%§!'
+    if kind == 'command':
+        return f'£command_power §{color}{rendered}§!'
+    if kind == 'manpower':
+        return f'£manpower_texticon §{color}{int(value):,}§!'
+    raise AssertionError(f'unchecked custom-cost kind: {kind}')
+
+
 def decision_blocks(text: str) -> dict[str, str]:
     blocks: dict[str, str] = {}
     pattern = re.compile(r'^    (DOP_SCW_[a-z0-9_]+) = \{', re.MULTILINE)
@@ -592,7 +619,7 @@ def main() -> int:
         )
     }
     for key in blocks:
-        for suffix in ('', '_desc', '_cost', '_cost_blocked'):
+        for suffix in ('', '_desc', '_cost', '_cost_blocked', '_cost_tooltip'):
             require(f' {key}{suffix}:0 ' in localisation_text, f'localisation missing: {key}{suffix}')
         unlock_key = f'{key}_unlock_tt'
         require(f' {unlock_key}:0 ' in localisation_text, f'localisation missing: {unlock_key}')
@@ -611,6 +638,36 @@ def main() -> int:
         if decision:
             cost_line = loc_lines.get(f'{key}_cost', '')
             blocked_line = loc_lines.get(f'{key}_cost_blocked', '')
+            tooltip_line = loc_lines.get(f'{key}_cost_tooltip', '')
+            ordered_costs = [
+                (kind, decision.costs[kind])
+                for kind in (
+                    'pp', 'reserves', 'money', 'stage', 'supervisor',
+                    'audience', 'stability', 'war', 'command', 'manpower',
+                )
+                if kind in decision.costs
+            ]
+            expected_tooltip = (
+                '§F执行该决议将花费'
+                + '和'.join(expected_cost_fragment(kind, raw, 'Y') for kind, raw in ordered_costs)
+                + '§!'
+            )
+            require(expected_tooltip in tooltip_line, f'{key}: custom-cost tooltip is incomplete or out of order')
+            for kind, raw_cost in decision.costs.items():
+                normal_fragment = expected_cost_fragment(kind, raw_cost, 'Y')
+                blocked_fragment = expected_cost_fragment(kind, raw_cost, 'R')
+                require(
+                    normal_fragment in cost_line,
+                    f'{key}: {kind} is missing from normal custom-cost text',
+                )
+                require(
+                    blocked_fragment in blocked_line,
+                    f'{key}: {kind} is missing from blocked custom-cost text',
+                )
+                require(
+                    normal_fragment in tooltip_line,
+                    f'{key}: {kind} is missing from custom-cost tooltip',
+                )
             for kind, (_variable, icon, suffix) in theater_effects.items():
                 raw_cost = decision.costs.get(kind)
                 if not raw_cost:

@@ -786,10 +786,11 @@ def build_localisation() -> str:
         lines.append(f' # {GROUP_KEYS[group]}')
         group_decisions = [item for item in DECISIONS if item.group == group]
         for decision in sorted(group_decisions, key=lambda item: (item.stage > 0, item.stage)):
-            normal_cost = '  '.join(
+            normal_components = [
                 cost_component(kind, decision.costs[kind], False)
                 for kind in COST_ORDER if kind in decision.costs
-            )
+            ]
+            normal_cost = '  '.join(normal_components)
             blocked_cost = '  '.join(
                 cost_component(kind, decision.costs[kind], True)
                 for kind in COST_ORDER if kind in decision.costs
@@ -799,6 +800,10 @@ def build_localisation() -> str:
                 loc_line(f'{decision.key}_desc', decision.desc),
                 loc_line(f'{decision.key}_cost', normal_cost),
                 loc_line(f'{decision.key}_cost_blocked', blocked_cost),
+                loc_line(
+                    f'{decision.key}_cost_tooltip',
+                    f'§F执行该决议将花费{"和".join(normal_components)}§!',
+                ),
                 loc_line(
                     decision.unlock_flag,
                     f'£GFX_decision_icon_small §Y「${decision.key}$」§!决议已经§G解锁§!。',
