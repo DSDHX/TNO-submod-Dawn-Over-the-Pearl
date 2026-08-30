@@ -377,7 +377,7 @@ def render_cost_trigger(decision: Decision) -> list[str]:
         elif cost == 'command':
             checks.append(f'command_power > {threshold(value, EPS_HUNDREDTH)}')
         elif cost == 'manpower':
-            checks.append(f'manpower > {threshold(value, EPS_ONE)}')
+            checks.append(f'has_manpower > {threshold(value, EPS_ONE)}')
         else:
             raise ValueError(f'unsupported cost: {cost}')
     return checks or ['always = yes']
@@ -564,6 +564,7 @@ def render_decision(decision: Decision) -> list[str]:
         '        available = {',
         *indented(available, 12),
         '        }',
+        '        cost = 0',
         f'        custom_cost_text = {decision.key}_cost',
         '        custom_cost_trigger = {',
         *indented(render_cost_trigger(decision), 12),

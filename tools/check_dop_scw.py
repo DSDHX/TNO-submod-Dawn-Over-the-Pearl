@@ -258,6 +258,10 @@ def main() -> int:
         require('is_debug = yes' not in block, f'{key}: decision availability is still debug-only')
         require('custom_cost_text =' in block, f'{key}: custom cost localisation missing')
         require('custom_cost_trigger = {' in block, f'{key}: custom cost trigger missing')
+        require(
+            re.search(r'^\s+cost = 0$', block, re.MULTILINE) is not None,
+            f'{key}: explicit zero base cost is missing, so the custom-cost container may not render',
+        )
         require('complete_effect = {' in block, f'{key}: upfront cost effect missing')
         require('remove_effect = {' in block, f'{key}: completion reward effect missing')
         require('ai_will_do = { factor = 0 }' in block, f'{key}: AI guard missing')
@@ -451,6 +455,13 @@ def main() -> int:
                 preview = f'effect_tooltip = {{\n                {effect}\n            }}'
                 require(block.count(effect) == 2, f'{key}: {kind} cost must appear once in execution and once in preview')
                 require(preview in block, f'{key}: {kind} cost is missing from the selection effect tooltip')
+                if kind == 'manpower':
+                    manpower_trigger = f'has_manpower > {numeric_text(value - 1)}'
+                    require(manpower_trigger in block, f'{key}: valid has_manpower custom-cost trigger is missing')
+                    require(
+                        re.search(r'(?<!has_)manpower\s*>', block) is None,
+                        f'{key}: invalid manpower trigger remains',
+                    )
             elif kind in theater_effects:
                 # The theatre wrappers are already visible scripted effects;
                 # their exact doubled values and visible calls are checked above.
