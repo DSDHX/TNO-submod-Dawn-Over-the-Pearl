@@ -160,7 +160,6 @@ GNG_debug_category = {
 		icon = GFX_decision_GNG_generic
 		visible = {
 			has_country_flag = GNG_show_debug_decisions
-			NOT = { has_country_flag = DOP_SCW_decisions_unlocked }
 		}
 		complete_effect = {
 			if = {
@@ -175,6 +174,7 @@ GNG_debug_category = {
 			GNG_SCW_add_tab = yes
 			GNG_SCW_Initialize = yes
 			set_country_flag = DOP_SCW_decisions_unlocked
+			DOP_SCW_debug_unlock_all_decisions = yes
 			set_country_flag = DOP_SCW_CCD_research_complete
 		}
 	}

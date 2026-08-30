@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DECISIONS_PATH = ROOT / 'common/decisions/DOP_SCW_decisions.txt'
 LOCALISATION_PATH = ROOT / 'localisation/simp_chinese/DOP_SCW_decisions_l_simp_chinese.yml'
+UNLOCK_EFFECTS_PATH = ROOT / 'common/scripted_effects/DOP_SCW_unlock_effects.txt'
 
 GROUP_KEYS = ('race', 'materials', 'wafer', 'lithography', 'packaging', 'logistics')
 SAFE_DECISION_ICONS = {
@@ -37,6 +38,18 @@ class Decision:
     @property
     def key(self) -> str:
         return f'DOP_SCW_{GROUP_KEYS[self.group]}_{self.slug}'
+
+    @property
+    def unlock_flag(self) -> str:
+        return f'{self.key}_unlocked'
+
+    @property
+    def unlock_effect(self) -> str:
+        return f'{self.key}_unlock'
+
+    @property
+    def unlock_tooltip(self) -> str:
+        return f'{self.key}_unlock_tt'
 
     @property
     def repeatable(self) -> bool:
@@ -83,19 +96,19 @@ DECISIONS.extend([
       '一座灯火通明的展馆可以把枯燥的晶圆参数包装成现代生活的许诺。让广东企业站在最显眼的位置，也让合作国的记者相信，他们亲眼见证的是未来，而不是一场精心核算过的推销。',
       {'money': '0.10', 'pp': '15'}, {'competition': '0.02', 'scale': '6', 'stability': '0.005'},
       ('TNO_improve_industrial_expertise_low',), icon='GFX_decision_generic_propaganda'),
-    E(0, 'shell_companies', '阶段一：设立海外皮包公司与技术转运前哨',
+    E(0, 'shell_companies', '设立海外皮包公司与技术转运前哨',
       '禁运制度依赖纸面上的终点，而纸面终点可以是一间只有信箱、电话和名义董事的公司。我们将沿几条彼此隔离的贸易路线布置前哨，让敏感设备在抵达珠江前先拥有一段体面的身世。',
       {'pp': '35', 'reserves': '0.25'}, {'scale': '18', 'gdp': '0.003'},
       ('TNO_improve_admin_efficiency_med',), stage=1, icon='GFX_decision_generic_business_deal'),
-    E(0, 'smuggle_blueprints', '阶段二：越境走私关键图纸',
+    E(0, 'smuggle_blueprints', '越境走私关键图纸',
       '机器可以被海关扣押，尺寸公差和工艺窗口却能藏在缩微胶片、维修手册与工程师的记忆里。专业人员将把这些图纸拆散、转译，再经数条互不相识的线路送回广东。',
       {'reserves': '0.30', 'command': '15'}, {'competition': '0.09', 'scale': '14'},
       ('TNO_improve_research_facilities_med',), stage=2, icon='GFX_decision_generic_intelligence_exchange'),
-    E(0, 'embargo_waivers', '阶段三：积极参与技术禁运豁免谈判',
+    E(0, 'embargo_waivers', '积极参与技术禁运豁免谈判',
       '走私能解决一台机器，却解决不了一整条产业链。广东必须以可靠供应商、低风险转口地和政治缓冲区的身份坐上谈判桌，把临时通融写成可重复使用的豁免条款。',
       {'pp': '45', 'stage': '3'}, {'competition': '0.07', 'gdp': '0.004', 'reserves': '0.12'},
       ('TNO_improve_admin_efficiency_med',), stage=3, icon='GFX_decision_generic_diplomatic_treaty'),
-    E(0, 'public_diplomacy', '阶段四：发起全球公共外交攻势',
+    E(0, 'public_diplomacy', '发起全球公共外交攻势',
       '当广东芯片出现在收音机、计算器与医院设备里，产地本身便应成为一种信誉。广告公司、商会和驻外机构将共同讲述一个无害而进步的广东，使监管者更难把封锁包装成道德义务。',
       {'pp': '50', 'reserves': '0.40'}, {'competition': '0.10', 'stability': '0.015', 'supervisor': '3'},
       ('TNO_improve_academic_base_med', 'TNO_improve_admin_efficiency_low'), stage=4,
@@ -119,20 +132,20 @@ DECISIONS.extend([
       '封装良率常常败在最不起眼的地方：一段不均匀的金丝、一块受潮的塑封料，或一枚磨损过度的劈刀。统一采购和批次检验能够让高速键合机少制造一些昂贵废品。',
       {'reserves': '0.06'}, {'scale': '4', 'competition': '0.02'},
       ('TNO_improve_industrial_expertise_low',), icon='GFX_decision_generic_industry'),
-    E(4, 'dip_expansion', '阶段一：规模化扩建DIP双列直插封装产线',
+    E(4, 'dip_expansion', '规模化扩建DIP双列直插封装产线',
       '双列直插封装仍是七十年代电子工业最通用的语言。扩大冲压、键合、塑封和终测产能，能让广东用可靠的大批量交付占住从计算器到工业控制器的每一块电路板。',
       {'reserves': '0.35', 'manpower': '12000'}, {'scale': '26', 'audience': '1'},
       ('TNO_improve_industrial_equipment_med',), stage=1, icon='GFX_decision_generic_construct_civilian'),
-    E(4, 'worker_housing', '阶段二：建设计件工人配套社区与宿舍',
+    E(4, 'worker_housing', '建设计件工人配套社区与宿舍',
       '流水线不能在工人睡在通铺、每天跨城通勤时保持稳定。成片宿舍、食堂、诊所和托儿所既是社会工程，也是把廉价劳动力固定在工厂门口的生产设施。',
       {'reserves': '0.40', 'pp': '35'}, {'scale': '18', 'audience': '3', 'stability': '0.015'},
       ('TNO_improve_poverty_med', 'TNO_improve_admin_efficiency_low'), stage=2,
       icon='GFX_decision_generic_construct_civilian'),
-    E(4, 'smt_pilot_line', '阶段三：引入表面贴装技术自动化试制线',
+    E(4, 'smt_pilot_line', '引入表面贴装技术自动化试制线',
       '表面贴装尚未取代通孔装配，却已经展示出更小、更快和更适合自动化的未来。我们将建立一条小批量试制线，在设备、焊膏和元件规格仍未统一时提前积累经验。',
       {'reserves': '0.55', 'audience': '2'}, {'scale': '22', 'competition': '0.10'},
       ('TNO_improve_industrial_equipment_high',), stage=3, icon='GFX_decision_generic_research'),
-    E(4, 'qfp_testing_center', '阶段四：升级四方扁平封装高针脚产线与测试中心',
+    E(4, 'qfp_testing_center', '升级四方扁平封装高针脚产线与测试中心',
       '日本企业已经开始用四方扁平封装容纳更多引脚，但高密度键合和终测仍会吞噬良率。广东将把精密冲压、视觉检查与自动测试集中起来，抢先把新封装变成可出口的常规产品。',
       {'reserves': '0.65', 'manpower': '20000'}, {'scale': '28', 'competition': '0.13', 'gdp': '0.005'},
       ('TNO_improve_industrial_expertise_high', 'TNO_improve_research_facilities_med'), stage=4,
@@ -156,19 +169,19 @@ DECISIONS.extend([
       '卖出芯片只是第一步，客户还需要样品、替换件和懂得回答工程问题的人。由广东企业直接经营海外仓与技术销售，可以少分一层利润，也少受一层政治风险。',
       {'reserves': '0.08', 'pp': '10'}, {'scale': '5', 'reserves': '0.09'},
       ('TNO_improve_admin_efficiency_low',), icon='GFX_decision_generic_business_deal'),
-    E(5, 'iso_container_coordination', '阶段一：与德国协调ISO标准集装箱规格',
+    E(5, 'iso_container_coordination', '与德国协调ISO标准集装箱规格',
       '国际集装箱规格早已存在，真正的问题是铁路限界、码头吊具和货运单据能否在不同阵营之间顺畅衔接。与德国协调既有ISO规格的执行细节，将为广东货物打开一条更可预测的西向通道。',
       {'pp': '35'}, {'scale': '18', 'gdp': '0.003', 'reserves': '0.10'},
       ('TNO_improve_admin_efficiency_med',), stage=1, icon='GFX_decision_generic_diplomatic_treaty'),
-    E(5, 'customs_fast_lane', '阶段二：与美国建立电子元器件海关快速验放通道',
+    E(5, 'customs_fast_lane', '与美国建立电子元器件海关快速验放通道',
       '所谓快速通道不会免除检查，只会让预申报、抽检和保税转运在同一套表格里完成。若美国海关愿意承认广东企业的合规记录，交货周期便能从政治风险变成可计算的商业成本。',
       {'pp': '45', 'reserves': '0.30'}, {'scale': '22', 'gdp': '0.004'},
       ('TNO_improve_admin_efficiency_high',), stage=2, icon='GFX_decision_generic_diplomatic_treaty'),
-    E(5, 'south_america_assembly', '阶段三：在南美洲租赁电子产品加工厂',
+    E(5, 'south_america_assembly', '在南美洲租赁电子产品加工厂',
       '当地装配可以绕过部分关税，也能让广东产品披上一层更容易进入美洲市场的产地。我们不会建设宏伟新城，只会租下现成厂房，把封装、终装和售后环节搬到消费者附近。',
       {'reserves': '0.55'}, {'scale': '28', 'gdp': '0.005'},
       ('TNO_improve_industrial_equipment_med',), stage=3, icon='GFX_decision_generic_construct_civilian'),
-    E(5, 'strategic_component_buffer', '阶段四：在共荣圈内建立战略元器件仓储缓冲网',
+    E(5, 'strategic_component_buffer', '在共荣圈内建立战略元器件仓储缓冲网',
       '供应链最快的时候几乎看不见，断裂时却会让整座工厂停摆。分散在共荣圈港口与工业区的保税仓，将储存关键芯片、材料和备件，为战争、制裁或航运危机争取数月时间。',
       {'pp': '50', 'war': '0.02'}, {'scale': '30', 'stability': '0.015', 'reserves': '0.20'},
       ('TNO_improve_admin_efficiency_high', 'TNO_improve_industrial_expertise_low'), stage=4,
@@ -192,20 +205,20 @@ DECISIONS.extend([
       '能同时理解光学、化学和机械对准的专家比设备更难进口。专项津贴、住房与不问出处的研究预算，可以让他们暂时忽略广东的粗糙，也让东京相信我们仍尊重真正的技术。',
       {'reserves': '0.10', 'stage': '1'}, {'competition': '0.035', 'supervisor': '1'},
       ('TNO_improve_academic_base_low',), icon='GFX_decision_generic_research'),
-    E(3, 'ccd_scale_up', '阶段一：CCD电荷耦合器件研发规模化',
+    E(3, 'ccd_scale_up', 'CCD电荷耦合器件研发规模化',
       '科学院已经证明电荷可以沿硅片受控转移，接下来必须证明这种器件能按批次生产。建立小规模成像阵列试制线，会把一项新奇发明变成广东在传感器领域的第一张名片。',
       {'reserves': '0.45', 'supervisor': '2'}, {'competition': '0.12', 'gdp': '0.004', 'stability': '0.01'},
       ('TNO_improve_research_facilities_high', 'TNO_improve_academic_base_med'), stage=1,
       icon='GFX_decision_generic_research'),
-    E(3, 'g_line_stepper', '阶段二：引进高数值孔径g线步进式光刻机',
+    E(3, 'g_line_stepper', '引进高数值孔径g线步进式光刻机',
       '接触式曝光的极限已经逼近，逐片步进曝光则代表另一种生产秩序。我们将争取购入七十年代末最先进的g线设备，并把相对更高的数值孔径驯服在本地洁净室里。',
       {'reserves': '0.65', 'pp': '50'}, {'competition': '0.15', 'scale': '20'},
       ('TNO_improve_industrial_expertise_high',), stage=2, icon='GFX_decision_generic_research'),
-    E(3, 'chrome_quartz_masks', '阶段三：建设超净铬版石英光罩自主制造线',
+    E(3, 'chrome_quartz_masks', '建设超净铬版石英光罩自主制造线',
       '只要关键光罩仍需进口，广东的每次设计修改就仍需获得他人许可。电子束制版、铬膜沉积与缺陷检查将被集中到一条超净制造线，使版图第一次真正留在我们手中。',
       {'reserves': '0.55', 'manpower': '18000'}, {'competition': '0.14', 'supervisor': '2'},
       ('TNO_improve_research_facilities_high',), stage=3, icon='GFX_decision_generic_industry'),
-    E(3, 'excimer_alignment', '阶段四：攻关准分子激光光源与亚微米级对准技术',
+    E(3, 'excimer_alignment', '攻关准分子激光光源与亚微米级对准技术',
       '准分子激光仍是昂贵而不稳定的实验方向，亚微米对准更远未成为量产常识。正因如此，广东才应在竞争者尚未完成下注前建立原型平台，把下一代光刻所需的光源、材料与计量经验提前收入囊中。',
       {'reserves': '0.80', 'supervisor': '4'}, {'competition': '0.18', 'scale': '18', 'gdp': '0.006'},
       ('TNO_improve_research_facilities_high', 'TNO_improve_academic_base_high'), stage=4,
@@ -229,19 +242,19 @@ DECISIONS.extend([
       '军方订单规格繁琐、审查严苛，却能为闲置产线提供稳定现金流。只要广东愿意让一部分民用产能服从东京的优先级，监制便会把那些不够先进但数量庞大的器件交给我们。',
       {'war': '0.01'}, {'scale': '7', 'reserves': '0.08'},
       ('TNO_improve_industrial_equipment_low',), icon='GFX_decision_generic_military_industry'),
-    E(2, 'class_1000_cleanroom', '阶段一：建造千级超净洁净室',
+    E(2, 'class_1000_cleanroom', '建造千级超净洁净室',
       '三微米工艺不容许普通厂房里的灰尘。新的千级洁净区将配备分区气流、过滤系统和严格的更衣程序，使污染控制从工人的经验变成建筑本身的功能。',
       {'reserves': '0.40', 'manpower': '15000'}, {'competition': '0.08', 'scale': '18'},
       ('TNO_improve_research_facilities_med',), stage=1, icon='GFX_decision_generic_construct_civilian'),
-    E(2, 'four_inch_wafer_line', '阶段二：引入四英寸晶圆标准化生产线',
+    E(2, 'four_inch_wafer_line', '引入四英寸晶圆标准化生产线',
       '八英寸晶圆仍属于未来，而四英寸已经足够迫使整座工厂重新学习搬运、曝光与炉管装载。标准化这条产线，将让广东比区域竞争者更早获得大直径晶圆的规模优势。',
       {'reserves': '0.55', 'pp': '45'}, {'scale': '28', 'competition': '0.10', 'gdp': '0.004'},
       ('TNO_improve_industrial_equipment_high',), stage=2, icon='GFX_decision_generic_industry'),
-    E(2, 'implantation_and_oxidation', '阶段三：攻关高能量离子注入与热氧化扩散',
+    E(2, 'implantation_and_oxidation', '攻关高能量离子注入与热氧化扩散',
       '离子注入不会立刻取代扩散炉，但能把掺杂剂送到更精确的位置。将注入、退火、热氧化与传统扩散编入同一套工艺窗口，才是把实验设备变成稳定生产能力的关键。',
       {'reserves': '0.45'}, {'competition': '0.12', 'scale': '20', 'supervisor': '1.5'},
       ('TNO_improve_research_facilities_high',), stage=3, icon='GFX_decision_generic_research'),
-    E(2, 'automated_handling_fa', '阶段四：部署自动晶圆传送与FA失效分析中心',
+    E(2, 'automated_handling_fa', '部署自动晶圆传送与FA失效分析中心',
       '完全无人化的工厂仍是宣传画，但局部自动传送、批次追踪和集中失效分析已经触手可及。机器负责减少人为污染，工程师负责把每一枚坏芯片变成下一批产品的教训。',
       {'reserves': '0.65', 'supervisor': '3'}, {'competition': '0.14', 'scale': '25'},
       ('TNO_improve_industrial_expertise_high', 'TNO_improve_research_facilities_low'), stage=4,
@@ -265,19 +278,19 @@ DECISIONS.extend([
       '并非每一炉产品都配得上进入集成电路。把不够纯的批次加工成合金、耐火材料和普通电子耗材，再装船销往价格敏感的市场，至少能让废品变成现金。',
       {'manpower': '2500'}, {'scale': '5', 'reserves': '0.05'},
       ('TNO_improve_admin_efficiency_low',), icon='GFX_decision_generic_trade'),
-    E(1, 'polysilicon_plant', '阶段一：扩建电子级多晶硅提纯厂',
+    E(1, 'polysilicon_plant', '扩建电子级多晶硅提纯厂',
       '实验室里的高纯样品无法喂饱工业体系。新的氯硅烷提纯与沉积车间将把电子级多晶硅变成连续产物，并以专门培训的工人维持那些容不得半点污染的管线。',
       {'reserves': '0.35', 'manpower': '12000'}, {'scale': '25', 'gdp': '0.004'},
       ('TNO_improve_industrial_equipment_med',), stage=1, icon='GFX_decision_generic_construct_civilian'),
-    E(1, 'czochralski_growth', '阶段二：引进直拉法单晶硅棒技术',
+    E(1, 'czochralski_growth', '引进直拉法单晶硅棒技术',
       '多晶硅只是原料，稳定的单晶才是工业能力。我们将购入直拉炉、籽晶控制和氧含量测定工艺，再让本地工程师把进口参数改造成广东能够重复执行的生产纪律。',
       {'reserves': '0.30', 'pp': '35'}, {'competition': '0.08', 'scale': '15'},
       ('TNO_improve_research_facilities_med',), stage=2, icon='GFX_decision_generic_research'),
-    E(1, 'quartz_monopoly', '阶段三：垄断高纯度石英矿源',
+    E(1, 'quartz_monopoly', '垄断高纯度石英矿源',
       '坩埚里的一点杂质足以毁掉整根晶棒。商社将以长期包销、设备换矿和政治担保锁住最可靠的高纯石英来源；监制或许不喜欢这种排他手段，但他们会喜欢稳定交付。',
       {'reserves': '0.40', 'supervisor': '2'}, {'scale': '24', 'gdp': '0.004', 'stability': '0.01'},
       ('TNO_improve_industrial_expertise_med',), stage=3, icon='GFX_decision_generic_mining'),
-    E(1, 'four_inch_substrates', '阶段四：构建四英寸硅单晶衬底标准化产线',
+    E(1, 'four_inch_substrates', '构建四英寸硅单晶衬底标准化产线',
       '三英寸晶圆仍能生产，但四英寸衬底可以在每次曝光中容纳更多芯片。切片、倒角、研磨与抛光设备将按统一规格重排，使广东在七十年代末真正拥有一条大直径晶圆材料线。',
       {'reserves': '0.55', 'pp': '45'}, {'competition': '0.10', 'scale': '30', 'reserves': '0.18'},
       ('TNO_improve_industrial_equipment_high', 'TNO_improve_research_facilities_low'), stage=4,
@@ -316,6 +329,15 @@ def previous_stage_flag(decision: Decision) -> str | None:
     return f'{previous.key}_complete'
 
 
+def next_stage_decision(decision: Decision) -> Decision | None:
+    if decision.stage <= 0 or decision.stage >= 4:
+        return None
+    return next(
+        item for item in DECISIONS
+        if item.group == decision.group and item.stage == decision.stage + 1
+    )
+
+
 def render_cost_trigger(decision: Decision) -> list[str]:
     checks: list[str] = []
     for cost in COST_ORDER:
@@ -324,11 +346,7 @@ def render_cost_trigger(decision: Decision) -> list[str]:
         value = decision.costs[cost]
         if cost == 'pp':
             checks.append(f'has_political_power > {threshold(value, EPS_HUNDREDTH)}')
-        elif cost == 'reserves':
-            checks.append(
-                f'check_variable = {{ money_reserves > {threshold(value, EPS_TEN_THOUSANDTH)} }}'
-            )
-        elif cost == 'money':
+        elif cost in {'reserves', 'money'}:
             continue
         elif cost == 'stage':
             maximum_corruption = number(Decimal('100.01') - Decimal(value))
@@ -356,62 +374,76 @@ def render_cost_trigger(decision: Decision) -> list[str]:
     return checks or ['always = yes']
 
 
-def render_cost_effects(decision: Decision) -> list[str]:
-    effects: list[str] = []
+def render_cost_effects(decision: Decision) -> tuple[list[str], list[str]]:
+    hidden: list[str] = []
+    visible: list[str] = []
     for cost in COST_ORDER:
         if cost not in decision.costs:
             continue
         value = decision.costs[cost]
         if cost == 'pp':
-            effects.append(f'add_political_power = -{number(value)}')
-        elif cost == 'reserves':
-            effects.extend([
-                f'set_temp_variable = {{ money_reserves_temp = -{number(value)} }}',
-                'econ_money_reserves_change_raw_money = yes',
-            ])
-        elif cost == 'money':
-            effects.extend([
+            hidden.append(f'add_political_power = -{number(value)}')
+        elif cost in {'reserves', 'money'}:
+            hidden.extend([
                 f'set_temp_variable = {{ temp_econ_spending_amount = {number(value)} }}',
                 'econ_spend_money_once_effect_raw_money = yes',
             ])
         elif cost == 'stage':
-            effects.extend([
-                f'set_temp_variable = {{ GNG_corruption_temp_var = {number(value)} }}',
-                'GNG_Corruption_Change = yes',
-                'DOP_SCW_sync_theater_stage_integrity = yes',
+            visible.extend([
+                f'set_temp_variable = {{ DOP_SCW_stage_integrity_change = -{number(value)} }}',
+                'DOP_SCW_change_stage_integrity = yes',
             ])
         elif cost == 'supervisor':
-            effects.extend([
-                f'set_temp_variable = {{ GNG_approval_temp_var = -{number(value)} }}',
-                'GNG_Japan_approval_change = yes',
+            visible.extend([
+                f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = -{number(value)} }}',
+                'DOP_SCW_change_supervisor_attitude = yes',
             ])
         elif cost == 'audience':
-            effects.extend([
-                f'set_temp_variable = {{ GNG_opinion_temp_var = -{number(value)} }}',
-                'GNG_China_opinion_change = yes',
+            visible.extend([
+                f'set_temp_variable = {{ DOP_SCW_audience_patience_change = -{number(value)} }}',
+                'DOP_SCW_change_audience_patience = yes',
             ])
         elif cost == 'stability':
-            effects.append(f'add_stability = -{number(value)}')
+            hidden.append(f'add_stability = -{number(value)}')
         elif cost == 'war':
-            effects.append(f'add_war_support = -{number(value)}')
+            hidden.append(f'add_war_support = -{number(value)}')
         elif cost == 'command':
-            effects.append(f'add_command_power = -{number(value)}')
+            hidden.append(f'add_command_power = -{number(value)}')
         elif cost == 'manpower':
-            effects.append(f'add_manpower = -{number(value)}')
+            hidden.append(f'add_manpower = -{number(value)}')
         else:
             raise ValueError(f'unsupported cost: {cost}')
-    return effects
+    return hidden, visible
+
+
+def render_complete_effect(decision: Decision) -> list[str]:
+    hidden, visible = render_cost_effects(decision)
+    lines: list[str] = []
+    if hidden:
+        lines.extend([
+            'hidden_effect = {',
+            *indented(hidden, 4),
+            '}',
+        ])
+    lines.extend(visible)
+    return lines
 
 
 def render_reward_effects(decision: Decision) -> list[str]:
     effects: list[str] = []
     scale = decision.rewards.get('scale', '0')
     competition = decision.rewards.get('competition', '0')
-    if scale != '0' or competition != '0':
+    if scale != '0':
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_player_production_gain = {number(scale)} }}',
-            f'set_temp_variable = {{ DOP_SCW_player_compatibility_gain = {number(competition)} }}',
-            'DOP_SCW_apply_player_market_gain = yes',
+            'set_temp_variable = { faction_id_t = 1 }',
+            f'set_temp_variable = {{ change_t = {number(scale)} }}',
+            'SCW_production_scale_increase = yes',
+        ])
+    if competition != '0':
+        effects.extend([
+            'set_temp_variable = { faction_id_t = 1 }',
+            f'set_temp_variable = {{ change_t = {number(competition)} }}',
+            'SCW_compatibility_increase = yes',
         ])
     gdp_reward = decision.rewards.get('gdp')
     if gdp_reward is not None:
@@ -431,14 +463,14 @@ def render_reward_effects(decision: Decision) -> list[str]:
     supervisor_reward = decision.rewards.get('supervisor')
     if supervisor_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ GNG_approval_temp_var = {number(supervisor_reward)} }}',
-            'GNG_Japan_approval_change = yes',
+            f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = {number(supervisor_reward)} }}',
+            'DOP_SCW_change_supervisor_attitude = yes',
         ])
     audience_reward = decision.rewards.get('audience')
     if audience_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ GNG_opinion_temp_var = {number(audience_reward)} }}',
-            'GNG_China_opinion_change = yes',
+            f'set_temp_variable = {{ DOP_SCW_audience_patience_change = {number(audience_reward)} }}',
+            'DOP_SCW_change_audience_patience = yes',
         ])
     for helper in decision.applied_socdev:
         effects.append(f'{helper} = yes')
@@ -448,6 +480,9 @@ def render_reward_effects(decision: Decision) -> list[str]:
             f'    set_country_flag = {decision.key}_complete',
             '}',
         ])
+        following = next_stage_decision(decision)
+        if following is not None:
+            effects.append(f'{following.unlock_effect} = yes')
     return effects
 
 
@@ -460,6 +495,7 @@ def render_decision(decision: Decision) -> list[str]:
     icon = decision.icon if decision.icon in SAFE_DECISION_ICONS else 'GFX_decision_GNG_generic'
     visible = [
         'has_country_flag = DOP_SCW_decisions_unlocked',
+        f'has_country_flag = {decision.unlock_flag}',
         f'check_variable = {{ selected_decision_tabs_id = {1 if decision.group == 0 else 2} }}',
     ]
     if decision.group:
@@ -474,6 +510,7 @@ def render_decision(decision: Decision) -> list[str]:
 
     available = [
         'has_country_flag = DOP_SCW_decisions_unlocked',
+        f'has_country_flag = {decision.unlock_flag}',
         'OR = {',
         '    date > 1977.1.1',
         '    is_debug = yes',
@@ -506,9 +543,7 @@ def render_decision(decision: Decision) -> list[str]:
         lines.append('        fire_only_once = yes')
     lines.extend([
         '        complete_effect = {',
-        '            hidden_effect = {',
-        *indented(render_cost_effects(decision), 16),
-        '            }',
+        *indented(render_complete_effect(decision), 12),
         '        }',
         '        remove_effect = {',
         *indented(render_reward_effects(decision), 12),
@@ -523,6 +558,7 @@ def validate_data() -> None:
     keys = [decision.key for decision in DECISIONS]
     assert len(DECISIONS) == 48
     assert len(keys) == len(set(keys))
+    assert all(not item.title.startswith(('阶段一：', '阶段二：', '阶段三：', '阶段四：')) for item in DECISIONS)
     for group in range(6):
         group_decisions = [item for item in DECISIONS if item.group == group]
         assert len(group_decisions) == 8
@@ -551,6 +587,39 @@ def build_decisions() -> str:
     return '\n'.join(lines).rstrip() + '\n'
 
 
+def build_unlock_effects() -> str:
+    validate_data()
+    lines = [
+        '# Generated by tools/generate_dop_scw_decisions.py. Do not edit by hand.',
+        '# Each SCW decision has an independent unlock flag and tooltip.',
+        '',
+    ]
+    for decision in DECISIONS:
+        lines.extend([
+            f'{decision.unlock_effect} = {{',
+            '    if = {',
+            f'        limit = {{ NOT = {{ has_country_flag = {decision.unlock_flag} }} }}',
+            f'        custom_effect_tooltip = {decision.unlock_tooltip}',
+            '        hidden_effect = {',
+            f'            set_country_flag = {decision.unlock_flag}',
+            '        }',
+            '    }',
+            '}',
+            '',
+        ])
+    lines.extend([
+        '# Debug-only bulk unlock: deliberately suppresses 48 tooltip lines.',
+        'DOP_SCW_debug_unlock_all_decisions = {',
+        '    hidden_effect = {',
+    ])
+    lines.extend(f'        set_country_flag = {decision.unlock_flag}' for decision in DECISIONS)
+    lines.extend([
+        '    }',
+        '}',
+    ])
+    return '\n'.join(lines).rstrip() + '\n'
+
+
 def money_label(raw: str) -> str:
     value = Decimal(raw)
     if value < 1:
@@ -564,16 +633,14 @@ def cost_component(kind: str, raw: str, blocked: bool) -> str:
     value = number(raw)
     if kind == 'pp':
         return f'£political_power_texticon {color}{value}{end}'
-    if kind == 'reserves':
-        return f'£dollar_sign {color}{money_label(raw)}{end} §m（流动准备金）§!'
-    if kind == 'money':
-        return f'£dollar_sign {color}{money_label(raw)}{end} §m（一次性支出）§!'
+    if kind in {'reserves', 'money'}:
+        return f'£GFX_green_dollar_sign {color}{money_label(raw)}{end}'
     if kind == 'stage':
-        return f'§W舞台完整度§! {color}{value}{end}'
+        return f'£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§! {color}{value}{end}'
     if kind == 'supervisor':
-        return f'£GNG_japanese_nation_texticon §W监制态度§! {color}{value}%{end}'
+        return f'£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§! {color}{value}%{end}'
     if kind == 'audience':
-        return f'£GNG_chinese_nation_texticon §W观众耐心§! {color}{value}%{end}'
+        return f'£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§! {color}{value}%{end}'
     if kind == 'stability':
         return f'£stability_texticon {color}{number(Decimal(raw) * 100)}%{end}'
     if kind == 'war':
@@ -599,12 +666,28 @@ def build_localisation() -> str:
     lines = [
         'l_simp_chinese:',
         loc_line(
-            'DOP_SCW_player_production_gain_tt',
-            '§C产业规模§!将§G提升§!§Y[?DOP_SCW_player_production_gain|1]§!。',
+            'DOP_SCW_audience_patience_change_positive_tt',
+            '£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§!将§G提升§!§Y[?DOP_SCW_audience_patience_change_abs|1]%§!。',
         ),
         loc_line(
-            'DOP_SCW_player_compatibility_gain_tt',
-            '§C竞争力§!将§G提升§!§Y[?DOP_SCW_player_compatibility_gain|1%]§!。',
+            'DOP_SCW_audience_patience_change_negative_tt',
+            '£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§!将§R下降§!§Y[?DOP_SCW_audience_patience_change_abs|1]%§!。',
+        ),
+        loc_line(
+            'DOP_SCW_supervisor_attitude_change_positive_tt',
+            '£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§!将§G提升§!§Y[?DOP_SCW_supervisor_attitude_change_abs|1]%§!。',
+        ),
+        loc_line(
+            'DOP_SCW_supervisor_attitude_change_negative_tt',
+            '£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§!将§R下降§!§Y[?DOP_SCW_supervisor_attitude_change_abs|1]%§!。',
+        ),
+        loc_line(
+            'DOP_SCW_stage_integrity_change_positive_tt',
+            '£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§!将§G提升§!§Y[?DOP_SCW_stage_integrity_change_abs|1]§!。',
+        ),
+        loc_line(
+            'DOP_SCW_stage_integrity_change_negative_tt',
+            '£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§!将§R下降§!§Y[?DOP_SCW_stage_integrity_change_abs|1]§!。',
         ),
         loc_line(
             'GNG_dop_debug_unlock_SCW_decisions',
@@ -612,7 +695,7 @@ def build_localisation() -> str:
         ),
         loc_line(
             'GNG_dop_debug_unlock_SCW_decisions_desc',
-            '初始化三微米冷战市场数据，开放竞速与产业链页面，并临时满足CCD研发前置条件。',
+            '初始化三微米冷战市场数据，开放竞速与产业链页面，解锁全部48项独立决议，并临时满足CCD研发前置条件。',
         ),
         '',
     ]
@@ -633,6 +716,10 @@ def build_localisation() -> str:
                 loc_line(f'{decision.key}_desc', decision.desc),
                 loc_line(f'{decision.key}_cost', normal_cost),
                 loc_line(f'{decision.key}_cost_blocked', blocked_cost),
+                loc_line(
+                    decision.unlock_tooltip,
+                    f'§F£GFX_green_dollar_sign §W三微米冷战§!中的§Y「${decision.key}$」§!£GFX_decision_icon_small §D决议§!已经§G可用§!。§!',
+                ),
             ])
         lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
@@ -658,6 +745,7 @@ def main() -> int:
     args = parser.parse_args()
     ok = emit(DECISIONS_PATH, build_decisions(), 'utf-8', args.check)
     ok &= emit(LOCALISATION_PATH, build_localisation(), 'utf-8-sig', args.check)
+    ok &= emit(UNLOCK_EFFECTS_PATH, build_unlock_effects(), 'utf-8', args.check)
     return 0 if ok else 1
 
 

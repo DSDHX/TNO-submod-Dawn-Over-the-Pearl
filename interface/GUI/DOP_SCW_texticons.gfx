@@ -1,0 +1,17 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_SCW_audience_patience_texticon"
+		texturefile = "gfx/texticons/scw/audience_patience_texticon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_supervisor_attitude_texticon"
+		texturefile = "gfx/texticons/scw/supervisor_attitude_texticon.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_stage_integrity_texticon"
+		texturefile = "gfx/texticons/scw/stage_integrity_texticon.dds"
+		legacy_lazy_load = no
+	}
+}

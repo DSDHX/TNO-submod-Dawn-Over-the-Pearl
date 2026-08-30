@@ -122,22 +122,68 @@ DOP_SCW_sync_theater_stage_integrity = {
 	clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
 }
 
-# Arguments: DOP_SCW_player_production_gain and DOP_SCW_player_compatibility_gain.
-# Combined market rewards are applied atomically and trigger one chart refresh.
-DOP_SCW_apply_player_market_gain = {
+# Arguments: DOP_SCW_audience_patience_change.
+DOP_SCW_change_audience_patience = {
+	set_temp_variable = { DOP_SCW_audience_patience_change_abs = DOP_SCW_audience_patience_change }
 	if = {
-		limit = { check_variable = { DOP_SCW_player_production_gain > 0 } }
-		custom_effect_tooltip = DOP_SCW_player_production_gain_tt
+		limit = { check_variable = { DOP_SCW_audience_patience_change < 0 } }
+		multiply_temp_variable = { DOP_SCW_audience_patience_change_abs = -1 }
 	}
 	if = {
-		limit = { check_variable = { DOP_SCW_player_compatibility_gain > 0 } }
-		custom_effect_tooltip = DOP_SCW_player_compatibility_gain_tt
+		limit = { check_variable = { DOP_SCW_audience_patience_change > 0 } }
+		custom_effect_tooltip = DOP_SCW_audience_patience_change_positive_tt
+	}
+	else_if = {
+		limit = { check_variable = { DOP_SCW_audience_patience_change < 0 } }
+		custom_effect_tooltip = DOP_SCW_audience_patience_change_negative_tt
 	}
 	hidden_effect = {
-		DOP_SCW_load_persistent_market_values = yes
-		add_to_temp_variable = { scw_GNG_production_value_t = DOP_SCW_player_production_gain }
-		add_to_temp_variable = { scw_GNG_compatibility_value_t = DOP_SCW_player_compatibility_gain }
-		SCW_piechart_recalculate = yes
+		set_temp_variable = { GNG_opinion_temp_var = DOP_SCW_audience_patience_change }
+		GNG_China_opinion_change = yes
+	}
+}
+
+# Arguments: DOP_SCW_supervisor_attitude_change.
+DOP_SCW_change_supervisor_attitude = {
+	set_temp_variable = { DOP_SCW_supervisor_attitude_change_abs = DOP_SCW_supervisor_attitude_change }
+	if = {
+		limit = { check_variable = { DOP_SCW_supervisor_attitude_change < 0 } }
+		multiply_temp_variable = { DOP_SCW_supervisor_attitude_change_abs = -1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_SCW_supervisor_attitude_change > 0 } }
+		custom_effect_tooltip = DOP_SCW_supervisor_attitude_change_positive_tt
+	}
+	else_if = {
+		limit = { check_variable = { DOP_SCW_supervisor_attitude_change < 0 } }
+		custom_effect_tooltip = DOP_SCW_supervisor_attitude_change_negative_tt
+	}
+	hidden_effect = {
+		set_temp_variable = { GNG_approval_temp_var = DOP_SCW_supervisor_attitude_change }
+		GNG_Japan_approval_change = yes
+	}
+}
+
+# Arguments: DOP_SCW_stage_integrity_change. The TNO corruption helper uses the inverse sign.
+DOP_SCW_change_stage_integrity = {
+	set_temp_variable = { DOP_SCW_stage_integrity_change_abs = DOP_SCW_stage_integrity_change }
+	if = {
+		limit = { check_variable = { DOP_SCW_stage_integrity_change < 0 } }
+		multiply_temp_variable = { DOP_SCW_stage_integrity_change_abs = -1 }
+	}
+	if = {
+		limit = { check_variable = { DOP_SCW_stage_integrity_change > 0 } }
+		custom_effect_tooltip = DOP_SCW_stage_integrity_change_positive_tt
+	}
+	else_if = {
+		limit = { check_variable = { DOP_SCW_stage_integrity_change < 0 } }
+		custom_effect_tooltip = DOP_SCW_stage_integrity_change_negative_tt
+	}
+	hidden_effect = {
+		set_temp_variable = { GNG_corruption_temp_var = DOP_SCW_stage_integrity_change }
+		multiply_temp_variable = { GNG_corruption_temp_var = -1 }
+		GNG_Corruption_Change = yes
+		DOP_SCW_sync_theater_stage_integrity = yes
 	}
 }
 

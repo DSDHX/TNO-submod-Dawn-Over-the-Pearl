@@ -9,10 +9,12 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_commercial_attaches_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_commercial_attaches_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -21,23 +23,22 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_race_commercial_attaches_cost
         custom_cost_trigger = {
             has_political_power > 14.99
-            check_variable = { money_reserves > 0.0599 }
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
                 add_political_power = -15
-                set_temp_variable = { money_reserves_temp = -0.06 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.025 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_approval_temp_var = 1 }
-            GNG_Japan_approval_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.025 }
+            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -47,10 +48,12 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_tariff_lobby_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_tariff_lobby_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -66,15 +69,14 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -20
-                set_temp_variable = { GNG_corruption_temp_var = 1.5 }
-                GNG_Corruption_Change = yes
-                DOP_SCW_sync_theater_stage_integrity = yes
             }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -1.5 }
+            DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 5 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 5 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.15 }
             econ_gdp_growth_change = yes
         }
@@ -86,10 +88,12 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_court_dissidents_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_court_dissidents_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -109,9 +113,12 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 4 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.03 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 4 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.03 }
+            SCW_compatibility_increase = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -121,10 +128,12 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_friendly_expositions_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_friendly_expositions_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -144,9 +153,12 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.02 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.02 }
+            SCW_compatibility_increase = yes
             add_stability = 0.005
         }
         ai_will_do = { factor = 0 }
@@ -157,10 +169,12 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_shell_companies_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_shell_companies_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -169,27 +183,27 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_race_shell_companies_cost
         custom_cost_trigger = {
             has_political_power > 34.99
-            check_variable = { money_reserves > 0.2499 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
-                set_temp_variable = { money_reserves_temp = -0.25 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.25 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 18 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 18 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.3 }
             econ_gdp_growth_change = yes
             TNO_improve_admin_efficiency_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_race_shell_companies_complete
             }
+            DOP_SCW_race_smuggle_blueprints_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -199,11 +213,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_smuggle_blueprints_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_shell_companies_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_smuggle_blueprints_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -212,26 +228,29 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_race_smuggle_blueprints_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.2999 }
             command_power > 14.99
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.3 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_command_power = -15
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 14 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.09 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 14 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.09 }
+            SCW_compatibility_increase = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_race_smuggle_blueprints_complete
             }
+            DOP_SCW_race_embargo_waivers_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -241,11 +260,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_embargo_waivers_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_smuggle_blueprints_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_embargo_waivers_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -262,15 +283,14 @@ GNG_SiliconCW_category = {
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
-                set_temp_variable = { GNG_corruption_temp_var = 3 }
-                GNG_Corruption_Change = yes
-                DOP_SCW_sync_theater_stage_integrity = yes
             }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -3 }
+            DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.07 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.07 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             set_temp_variable = { money_reserves_temp = 0.12 }
@@ -279,6 +299,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_country_flag = DOP_SCW_race_embargo_waivers_complete
             }
+            DOP_SCW_race_public_diplomacy_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -288,11 +309,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_public_diplomacy_unlocked
             check_variable = { selected_decision_tabs_id = 1 }
             has_country_flag = DOP_SCW_race_embargo_waivers_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_race_public_diplomacy_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -302,24 +325,23 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_race_public_diplomacy_cost
         custom_cost_trigger = {
             has_political_power > 49.99
-            check_variable = { money_reserves > 0.3999 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -50
-                set_temp_variable = { money_reserves_temp = -0.4 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.1 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.1 }
+            SCW_compatibility_increase = yes
             add_stability = 0.015
-            set_temp_variable = { GNG_approval_temp_var = 3 }
-            GNG_Japan_approval_change = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 3 }
+            DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_academic_base_med = yes
             TNO_improve_admin_efficiency_low = yes
             hidden_effect = {
@@ -336,11 +358,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -348,20 +372,20 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_materials_buy_crude_silicon_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0499 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.05 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.05 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 4 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 4 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.1 }
             econ_gdp_growth_change = yes
         }
@@ -373,11 +397,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -392,15 +418,15 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { GNG_opinion_temp_var = -2 }
-                GNG_China_opinion_change = yes
                 add_stability = -0.005
             }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -2 }
+            DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.04 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -412,11 +438,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_power_subsidy_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_power_subsidy_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -425,21 +453,20 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_materials_power_subsidy_cost
         custom_cost_trigger = {
             has_political_power > 9.99
-            check_variable = { money_reserves > 0.0899 }
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
-                set_temp_variable = { money_reserves_temp = -0.09 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.09 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 7 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 7 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.15 }
             econ_gdp_growth_change = yes
         }
@@ -451,11 +478,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -473,9 +502,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 5 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 5 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.05 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -487,11 +516,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -499,28 +530,28 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_materials_polysilicon_plant_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.3499 }
             manpower > 11999
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.35 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.35 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -12000
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 25 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 25 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_equipment_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_materials_polysilicon_plant_complete
             }
+            DOP_SCW_materials_czochralski_growth_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -530,12 +561,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_czochralski_growth_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_polysilicon_plant_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_czochralski_growth_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -545,25 +578,28 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_materials_czochralski_growth_cost
         custom_cost_trigger = {
             has_political_power > 34.99
-            check_variable = { money_reserves > 0.2999 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
-                set_temp_variable = { money_reserves_temp = -0.3 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 15 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.08 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 15 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.08 }
+            SCW_compatibility_increase = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_materials_czochralski_growth_complete
             }
+            DOP_SCW_materials_quartz_monopoly_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -573,12 +609,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_quartz_monopoly_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_czochralski_growth_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_quartz_monopoly_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -587,23 +625,22 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_materials_quartz_monopoly_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.3999 }
             check_variable = { GNG_Japan_Approval > 1.99 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.4 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_approval_temp_var = -2 }
-                GNG_Japan_approval_change = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -2 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 24 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 24 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             add_stability = 0.01
@@ -611,6 +648,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_country_flag = DOP_SCW_materials_quartz_monopoly_complete
             }
+            DOP_SCW_materials_four_inch_substrates_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -620,12 +658,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_four_inch_substrates_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 1 }
             has_country_flag = DOP_SCW_materials_quartz_monopoly_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_materials_four_inch_substrates_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -635,21 +675,23 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_materials_four_inch_substrates_cost
         custom_cost_trigger = {
             has_political_power > 44.99
-            check_variable = { money_reserves > 0.5499 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
-                set_temp_variable = { money_reserves_temp = -0.55 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 30 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.1 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 30 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.1 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { money_reserves_temp = 0.18 }
             econ_money_reserves_change_raw_money = yes
             TNO_improve_industrial_equipment_high = yes
@@ -668,11 +710,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_replenish_consumables_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_replenish_consumables_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -680,22 +724,22 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_replenish_consumables_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0599 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.06 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 4 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_opinion_temp_var = 0.5 }
-            GNG_China_opinion_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 4 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { DOP_SCW_audience_patience_change = 0.5 }
+            DOP_SCW_change_audience_patience = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -705,11 +749,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_paramilitary_shifts_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_paramilitary_shifts_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -724,15 +770,18 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { GNG_opinion_temp_var = -3 }
-                GNG_China_opinion_change = yes
                 add_stability = -0.01
             }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -3 }
+            DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.025 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.025 }
+            SCW_compatibility_increase = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -742,11 +791,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_spc_control_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_spc_control_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -764,9 +815,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.03 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.03 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { money_reserves_temp = 0.04 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -778,11 +829,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_japanese_military_orders_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_japanese_military_orders_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -800,9 +853,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 7 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 7 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.08 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -814,11 +867,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -826,26 +881,29 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_class_1000_cleanroom_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.3999 }
             manpower > 14999
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.4 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -15000
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 18 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.08 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 18 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.08 }
+            SCW_compatibility_increase = yes
             TNO_improve_research_facilities_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_wafer_class_1000_cleanroom_complete
             }
+            DOP_SCW_wafer_four_inch_wafer_line_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -855,12 +913,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_class_1000_cleanroom_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -870,27 +930,30 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_wafer_four_inch_wafer_line_cost
         custom_cost_trigger = {
             has_political_power > 44.99
-            check_variable = { money_reserves > 0.5499 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
-                set_temp_variable = { money_reserves_temp = -0.55 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 28 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.1 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 28 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.1 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_equipment_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_wafer_four_inch_wafer_line_complete
             }
+            DOP_SCW_wafer_implantation_and_oxidation_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -900,12 +963,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_four_inch_wafer_line_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -914,26 +979,30 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_implantation_and_oxidation_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.4499 }
+            always = yes
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.45 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.45 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 20 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.12 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_approval_temp_var = 1.5 }
-            GNG_Japan_approval_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 20 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.12 }
+            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1.5 }
+            DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_research_facilities_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_wafer_implantation_and_oxidation_complete
             }
+            DOP_SCW_wafer_automated_handling_fa_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -943,12 +1012,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_automated_handling_fa_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 2 }
             has_country_flag = DOP_SCW_wafer_implantation_and_oxidation_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_wafer_automated_handling_fa_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -957,23 +1028,25 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_wafer_automated_handling_fa_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.6499 }
             check_variable = { GNG_Japan_Approval > 2.99 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.65 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_approval_temp_var = -3 }
-                GNG_Japan_approval_change = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -3 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 25 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.14 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 25 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.14 }
+            SCW_compatibility_increase = yes
             TNO_improve_industrial_expertise_high = yes
             TNO_improve_research_facilities_low = yes
             hidden_effect = {
@@ -990,12 +1063,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_optical_calibration_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_optical_calibration_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1004,20 +1079,23 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_optical_calibration_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0799 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.08 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.08 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 3 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.03 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 3 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.03 }
+            SCW_compatibility_increase = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1027,12 +1105,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_import_photoresist_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_import_photoresist_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1042,21 +1122,20 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_lithography_import_photoresist_cost
         custom_cost_trigger = {
             has_political_power > 9.99
-            check_variable = { money_reserves > 0.0699 }
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
-                set_temp_variable = { money_reserves_temp = -0.07 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.07 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.025 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.025 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.1 }
             econ_gdp_growth_change = yes
         }
@@ -1068,12 +1147,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_buy_pellicles_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_buy_pellicles_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1082,22 +1163,22 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_buy_pellicles_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0499 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.05 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.05 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.02 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_opinion_temp_var = 0.5 }
-            GNG_China_opinion_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.02 }
+            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_audience_patience_change = 0.5 }
+            DOP_SCW_change_audience_patience = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1107,12 +1188,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_expert_allowances_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_expert_allowances_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1121,26 +1204,24 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_expert_allowances_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0999 }
             check_variable = { GNG_corruption_var < 99.01 }
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.1 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_corruption_temp_var = 1 }
-                GNG_Corruption_Change = yes
-                DOP_SCW_sync_theater_stage_integrity = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.1 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_stage_integrity_change = -1 }
+            DOP_SCW_change_stage_integrity = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.035 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_approval_temp_var = 1 }
-            GNG_Japan_approval_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.035 }
+            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 1 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1150,12 +1231,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_ccd_scale_up_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_ccd_scale_up_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1164,23 +1247,22 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_ccd_scale_up_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.4499 }
             check_variable = { GNG_Japan_Approval > 1.99 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.45 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_approval_temp_var = -2 }
-                GNG_Japan_approval_change = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.45 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -2 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.12 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.12 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             add_stability = 0.01
@@ -1189,6 +1271,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_country_flag = DOP_SCW_lithography_ccd_scale_up_complete
             }
+            DOP_SCW_lithography_g_line_stepper_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1198,6 +1281,7 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_g_line_stepper_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1205,6 +1289,7 @@ GNG_SiliconCW_category = {
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_g_line_stepper_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1215,25 +1300,28 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_lithography_g_line_stepper_cost
         custom_cost_trigger = {
             has_political_power > 49.99
-            check_variable = { money_reserves > 0.6499 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -50
-                set_temp_variable = { money_reserves_temp = -0.65 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 20 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.15 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 20 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.15 }
+            SCW_compatibility_increase = yes
             TNO_improve_industrial_expertise_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_lithography_g_line_stepper_complete
             }
+            DOP_SCW_lithography_chrome_quartz_masks_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1243,6 +1331,7 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_chrome_quartz_masks_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1250,6 +1339,7 @@ GNG_SiliconCW_category = {
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_chrome_quartz_masks_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1259,28 +1349,28 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_chrome_quartz_masks_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.5499 }
             manpower > 17999
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.55 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -18000
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 0 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.14 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_approval_temp_var = 2 }
-            GNG_Japan_approval_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.14 }
+            SCW_compatibility_increase = yes
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = 2 }
+            DOP_SCW_change_supervisor_attitude = yes
             TNO_improve_research_facilities_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_lithography_chrome_quartz_masks_complete
             }
+            DOP_SCW_lithography_excimer_alignment_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1290,6 +1380,7 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_excimer_alignment_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 3 }
             has_country_flag = DOP_SCW_CCD_research_complete
@@ -1297,6 +1388,7 @@ GNG_SiliconCW_category = {
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_lithography_excimer_alignment_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1306,23 +1398,25 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_lithography_excimer_alignment_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.7999 }
             check_variable = { GNG_Japan_Approval > 3.99 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.8 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_approval_temp_var = -4 }
-                GNG_Japan_approval_change = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.8 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_supervisor_attitude_change = -4 }
+            DOP_SCW_change_supervisor_attitude = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 18 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.18 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 18 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.18 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.6 }
             econ_gdp_growth_change = yes
             TNO_improve_research_facilities_high = yes
@@ -1341,11 +1435,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_recruit_assembly_labor_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_recruit_assembly_labor_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1353,22 +1449,21 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_recruit_assembly_labor_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0399 }
             manpower > 3499
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.04 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.04 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -3500
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.1 }
             econ_gdp_growth_change = yes
             add_stability = 0.005
@@ -1381,11 +1476,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_lower_piece_rates_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_lower_piece_rates_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1400,15 +1497,15 @@ GNG_SiliconCW_category = {
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { GNG_opinion_temp_var = -3 }
-                GNG_China_opinion_change = yes
                 add_stability = -0.01
             }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -3 }
+            DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 7 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 7 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.06 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -1420,11 +1517,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_consumer_oem_orders_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_consumer_oem_orders_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1442,9 +1541,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.1 }
             econ_gdp_growth_change = yes
             set_temp_variable = { money_reserves_temp = 0.07 }
@@ -1458,11 +1557,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_bonding_consumables_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_bonding_consumables_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1470,20 +1571,23 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_bonding_consumables_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0599 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.06 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.06 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 4 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.02 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 4 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.02 }
+            SCW_compatibility_increase = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1493,11 +1597,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_dip_expansion_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_dip_expansion_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1505,28 +1611,28 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_dip_expansion_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.3499 }
             manpower > 11999
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.35 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.35 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -12000
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 26 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
-            set_temp_variable = { GNG_opinion_temp_var = 1 }
-            GNG_China_opinion_change = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 26 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { DOP_SCW_audience_patience_change = 1 }
+            DOP_SCW_change_audience_patience = yes
             TNO_improve_industrial_equipment_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_packaging_dip_expansion_complete
             }
+            DOP_SCW_packaging_worker_housing_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1536,12 +1642,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_worker_housing_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_dip_expansion_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_worker_housing_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1551,29 +1659,29 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_packaging_worker_housing_cost
         custom_cost_trigger = {
             has_political_power > 34.99
-            check_variable = { money_reserves > 0.3999 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -35
-                set_temp_variable = { money_reserves_temp = -0.4 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.4 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 18 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 18 }
+            SCW_production_scale_increase = yes
             add_stability = 0.015
-            set_temp_variable = { GNG_opinion_temp_var = 3 }
-            GNG_China_opinion_change = yes
+            set_temp_variable = { DOP_SCW_audience_patience_change = 3 }
+            DOP_SCW_change_audience_patience = yes
             TNO_improve_poverty_med = yes
             TNO_improve_admin_efficiency_low = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_packaging_worker_housing_complete
             }
+            DOP_SCW_packaging_smt_pilot_line_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1583,12 +1691,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_smt_pilot_line_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_worker_housing_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_smt_pilot_line_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1597,27 +1707,30 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_smt_pilot_line_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.5499 }
             check_variable = { GNG_China_Opinion > 1.99 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.55 }
-                econ_money_reserves_change_raw_money = yes
-                set_temp_variable = { GNG_opinion_temp_var = -2 }
-                GNG_China_opinion_change = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
             }
+            set_temp_variable = { DOP_SCW_audience_patience_change = -2 }
+            DOP_SCW_change_audience_patience = yes
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 22 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.1 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 22 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.1 }
+            SCW_compatibility_increase = yes
             TNO_improve_industrial_equipment_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_packaging_smt_pilot_line_complete
             }
+            DOP_SCW_packaging_qfp_testing_center_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1627,12 +1740,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_qfp_testing_center_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 4 }
             has_country_flag = DOP_SCW_packaging_smt_pilot_line_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_packaging_qfp_testing_center_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1641,22 +1756,24 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_packaging_qfp_testing_center_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.6499 }
             manpower > 19999
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.65 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.65 }
+                econ_spend_money_once_effect_raw_money = yes
                 add_manpower = -20000
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 28 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.13 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 28 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.13 }
+            SCW_compatibility_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.5 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_expertise_high = yes
@@ -1675,11 +1792,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_liner_subsidies_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_liner_subsidies_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1687,20 +1806,20 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_logistics_liner_subsidies_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.0699 }
+            always = yes
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.07 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.07 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 5 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 5 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.15 }
             econ_gdp_growth_change = yes
         }
@@ -1712,11 +1831,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_esd_packaging_standard_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_esd_packaging_standard_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1734,9 +1855,12 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 4 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0.025 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 4 }
+            SCW_production_scale_increase = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 0.025 }
+            SCW_compatibility_increase = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1746,11 +1870,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_overland_transshipment_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_overland_transshipment_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1768,9 +1894,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 6 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 6 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.05 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -1782,11 +1908,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_direct_distribution_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_direct_distribution_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1795,21 +1923,20 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_logistics_direct_distribution_cost
         custom_cost_trigger = {
             has_political_power > 9.99
-            check_variable = { money_reserves > 0.0799 }
         }
         days_remove = 30
         days_re_enable = 90
         complete_effect = {
             hidden_effect = {
                 add_political_power = -10
-                set_temp_variable = { money_reserves_temp = -0.08 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.08 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 5 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 5 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.09 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -1821,11 +1948,13 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_iso_container_coordination_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_iso_container_coordination_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1843,9 +1972,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 18 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 18 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.3 }
             econ_gdp_growth_change = yes
             set_temp_variable = { money_reserves_temp = 0.1 }
@@ -1854,6 +1983,7 @@ GNG_SiliconCW_category = {
             hidden_effect = {
                 set_country_flag = DOP_SCW_logistics_iso_container_coordination_complete
             }
+            DOP_SCW_logistics_customs_fast_lane_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1863,12 +1993,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_customs_fast_lane_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_iso_container_coordination_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_customs_fast_lane_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1878,27 +2010,27 @@ GNG_SiliconCW_category = {
         custom_cost_text = DOP_SCW_logistics_customs_fast_lane_cost
         custom_cost_trigger = {
             has_political_power > 44.99
-            check_variable = { money_reserves > 0.2999 }
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
                 add_political_power = -45
-                set_temp_variable = { money_reserves_temp = -0.3 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.3 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 22 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 22 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.4 }
             econ_gdp_growth_change = yes
             TNO_improve_admin_efficiency_high = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_logistics_customs_fast_lane_complete
             }
+            DOP_SCW_logistics_south_america_assembly_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1908,12 +2040,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_south_america_assembly_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_customs_fast_lane_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_south_america_assembly_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1922,26 +2056,27 @@ GNG_SiliconCW_category = {
         }
         custom_cost_text = DOP_SCW_logistics_south_america_assembly_cost
         custom_cost_trigger = {
-            check_variable = { money_reserves > 0.5499 }
+            always = yes
         }
         days_remove = 365
         fire_only_once = yes
         complete_effect = {
             hidden_effect = {
-                set_temp_variable = { money_reserves_temp = -0.55 }
-                econ_money_reserves_change_raw_money = yes
+                set_temp_variable = { temp_econ_spending_amount = 0.55 }
+                econ_spend_money_once_effect_raw_money = yes
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 28 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 28 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { gdp_growth_temp = 0.5 }
             econ_gdp_growth_change = yes
             TNO_improve_industrial_equipment_med = yes
             hidden_effect = {
                 set_country_flag = DOP_SCW_logistics_south_america_assembly_complete
             }
+            DOP_SCW_logistics_strategic_component_buffer_unlock = yes
         }
         ai_will_do = { factor = 0 }
     }
@@ -1951,12 +2086,14 @@ GNG_SiliconCW_category = {
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_strategic_component_buffer_unlocked
             check_variable = { selected_decision_tabs_id = 2 }
             check_variable = { chain_part_selected = 5 }
             has_country_flag = DOP_SCW_logistics_south_america_assembly_complete
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
+            has_country_flag = DOP_SCW_logistics_strategic_component_buffer_unlocked
             OR = {
                 date > 1977.1.1
                 is_debug = yes
@@ -1977,9 +2114,9 @@ GNG_SiliconCW_category = {
             }
         }
         remove_effect = {
-            set_temp_variable = { DOP_SCW_player_production_gain = 30 }
-            set_temp_variable = { DOP_SCW_player_compatibility_gain = 0 }
-            DOP_SCW_apply_player_market_gain = yes
+            set_temp_variable = { faction_id_t = 1 }
+            set_temp_variable = { change_t = 30 }
+            SCW_production_scale_increase = yes
             set_temp_variable = { money_reserves_temp = 0.2 }
             econ_money_reserves_change_raw_money = yes
             add_stability = 0.015

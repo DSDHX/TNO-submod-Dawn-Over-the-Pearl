@@ -18,6 +18,10 @@ ON_ACTIONS = ROOT / 'common/on_actions/DOP_SCW_on_actions.txt'
 DEBUG = ROOT / 'common/decisions/DOP_debug_decision.txt'
 BOP_DECISIONS = ROOT / 'common/decisions/DOP_bop_decision.txt'
 GUI = ROOT / 'interface/GUI/DOP_silicon_CW_interface.gui'
+UNLOCK_EFFECTS = ROOT / 'common/scripted_effects/DOP_SCW_unlock_effects.txt'
+TEXTICON_GFX = ROOT / 'interface/GUI/DOP_SCW_texticons.gfx'
+TEXTICON_DIR = ROOT / 'gfx/texticons/scw'
+TEXTICON_BUILDER = ROOT / 'tools/build_dop_scw_texticons.py'
 
 GROUPS = ('race', 'materials', 'wafer', 'lithography', 'packaging', 'logistics')
 
@@ -93,6 +97,54 @@ def braces_balanced(path: Path) -> bool:
     return depth == 0 and not quote
 
 
+def texticon_dds_ok(path: Path) -> bool:
+    """Check the small BC3/ARGB texticon header used by the mod's DDS assets."""
+    if not path.exists() or path.stat().st_size < 128:
+        return False
+    header = path.read_bytes()[:128]
+    if header[:4] != b'DDS ':
+        return False
+    # DDS_HEADER fields: size, flags, height, width, pitch, depth, mipmapcount.
+    size, flags, height, width, _pitch, depth, mipmaps = __import__('struct').unpack_from('<7I', header, 4)
+    return (
+        size == 124 and width == 18 and height == 18 and depth == 1 and
+        mipmaps == 1 and flags == 0x2100F
+    )
+
+
+def visible_complete_calls(block: str, names: tuple[str, ...]) -> set[str]:
+    """Return wrapper calls directly in complete_effect, outside hidden_effect."""
+    lines = block.splitlines()
+    in_complete = False
+    complete_depth = 0
+    hidden_depth: int | None = None
+    found: set[str] = set()
+    for line in lines:
+        stripped = line.strip()
+        if not in_complete:
+            if stripped.startswith('complete_effect = {'):
+                in_complete = True
+                complete_depth = 1
+            continue
+        # The generated format keeps direct effect calls at 12 spaces and
+        # hidden calls at 16 spaces.  This also avoids mistaking a nested
+        # hidden helper for an effect shown in the selection preview.
+        if stripped.startswith('hidden_effect = {'):
+            hidden_depth = complete_depth
+        if hidden_depth is None and line.startswith('            '):
+            for name in names:
+                if re.search(rf'\b{re.escape(name)}\s*=\s*yes\b', stripped):
+                    found.add(name)
+        # Count braces conservatively; generated SCW blocks contain no quoted
+        # braces in this section.
+        complete_depth += line.count('{') - line.count('}')
+        if hidden_depth is not None and complete_depth <= hidden_depth:
+            hidden_depth = None
+        if complete_depth <= 0:
+            break
+    return found
+
+
 def main() -> int:
     errors: list[str] = []
 
@@ -144,12 +196,20 @@ def main() -> int:
                 previous_key = group_annual[position - 1][0]
                 previous_flag = f'has_country_flag = {previous_key}_complete'
                 require(block.count(previous_flag) >= 2, f'{key}: previous annual stage is not enforced')
+        for (key, block), (next_key, _next_block) in zip(group_annual, group_annual[1:]):
+            require(
+                f'{next_key}_unlock = yes' in block,
+                f'{key}: completion does not unlock next annual stage {next_key}',
+            )
 
     for key, block in blocks.items():
         require(
             block.count('has_country_flag = DOP_SCW_decisions_unlocked') >= 2,
             f'{key}: common unlock flag missing from visible/available',
         )
+        own_unlock = f'has_country_flag = {key}_unlocked'
+        require(block.count(own_unlock) >= 2, f'{key}: individual unlock flag missing from visible/available')
+        require(not re.search(r'阶段[一二三四]：', block), f'{key}: stage prefix remains in decision title')
         require('date > 1977.1.1' in block, f'{key}: 1977 gate missing')
         require('custom_cost_text =' in block, f'{key}: custom cost localisation missing')
         require('custom_cost_trigger = {' in block, f'{key}: custom cost trigger missing')
@@ -172,6 +232,15 @@ def main() -> int:
                 block.count('has_country_flag = DOP_SCW_CCD_research_complete') >= 2,
                 f'{key}: CCD prerequisite missing',
             )
+
+    # Monetary costs are deliberately fungible in TNO: reserves are spent
+    # first and any deficit becomes debt.  They must not be gated by the
+    # reserve variable or expose the implementation detail in localisation.
+    require('money_reserves >' not in decisions_text, 'money/reserves cost still uses a money_reserves trigger')
+    require(
+        decisions_text.count('econ_spend_money_once_effect_raw_money = yes') >= 1,
+        'no unified TNO money-spending effect found',
+    )
 
     require(decisions_text.count('days_remove = 30') == 24, '30-day duration count mismatch')
     require(decisions_text.count('days_re_enable = 90') == 24, '90-day cooldown count mismatch')
@@ -215,7 +284,26 @@ def main() -> int:
             f'{tag}: starting competitiveness value drifted',
         )
     require('has_country_flag = DOP_SCW_initialized' in effects_text, 'SCW initialization is not idempotent')
-    require('DOP_SCW_apply_player_market_gain = {' in effects_text, 'combined player market helper missing')
+    require('DOP_SCW_apply_player_market_gain = yes' not in decisions_text, 'decisions still use obsolete combined market helper')
+    for helper in ('DOP_SCW_change_audience_patience', 'DOP_SCW_change_supervisor_attitude', 'DOP_SCW_change_stage_integrity'):
+        require(f'{helper} = {{' in effects_text, f'{helper}: visible SCW wrapper missing')
+    wrapper_names = (
+        'DOP_SCW_change_audience_patience',
+        'DOP_SCW_change_supervisor_attitude',
+        'DOP_SCW_change_stage_integrity',
+    )
+    cost_variables = {
+        'DOP_SCW_change_audience_patience': 'DOP_SCW_audience_patience_change',
+        'DOP_SCW_change_supervisor_attitude': 'DOP_SCW_supervisor_attitude_change',
+        'DOP_SCW_change_stage_integrity': 'DOP_SCW_stage_integrity_change',
+    }
+    for key, block in blocks.items():
+        visible_calls = visible_complete_calls(block, wrapper_names)
+        for wrapper, variable in cost_variables.items():
+            if re.search(rf'{variable}\s*=\s*-', block):
+                require(wrapper in visible_calls, f'{key}: {wrapper} cost is hidden from selection preview')
+    require('SCW_production_scale_increase = yes' in decisions_text, 'direct SCW production template call missing')
+    require('SCW_compatibility_increase = yes' in decisions_text, 'direct SCW competitiveness template call missing')
 
     gdp_growth_values = [
         float(item)
@@ -235,9 +323,17 @@ def main() -> int:
         'GNG_Japan_approval_change = yes',
         'GNG_Corruption_Change = yes',
     ):
-        require(helper in decisions_text, f'exact TNO Guangdong helper missing: {helper}')
+        require(helper in effects_text, f'exact TNO Guangdong helper missing from SCW wrappers: {helper}')
     require('TNO_improve_poverty_rate_' not in decisions_text, 'invalid poverty SocDev helper remains')
 
+    unlock_text = read(UNLOCK_EFFECTS) if UNLOCK_EFFECTS.exists() else ''
+    require(UNLOCK_EFFECTS.exists(), 'individual SCW unlock scripted-effects file is missing')
+    unlock_effects = re.findall(r'^\s*(DOP_SCW_[a-z0-9_]+_unlock)\s*=\s*\{', unlock_text, re.MULTILINE)
+    require(len(unlock_effects) == 48, f'expected 48 individual unlock effects, found {len(unlock_effects)}')
+    for key in blocks:
+        flag = f'{key}_unlocked'
+        require(f'set_country_flag = {flag}' in unlock_text, f'{key}: unlock effect does not set its own flag')
+        require(f'custom_effect_tooltip = {key}_unlock_tt' in unlock_text, f'{key}: unlock effect tooltip missing')
     growth_text = read(GROWTH)
     random_factors = [float(item) for item in re.findall(r'DOP_SCW_growth_factor = ([0-9.]+)', growth_text)]
     require(bool(random_factors), 'opponent random growth factors missing')
@@ -301,6 +397,11 @@ def main() -> int:
         ) is not None,
         'standalone SCW page-2 debug decision does not initialize data',
     )
+    debug_unlock_count = len(re.findall(r'set_country_flag = DOP_SCW_[a-z0-9_]+_unlocked', debug_body))
+    require(
+        debug_unlock_count == 48 or 'DOP_SCW_debug_unlock_all_decisions = yes' in debug_body,
+        'debug unlock does not cover all 48 individual decision flags',
+    )
     require('GNG_dop_show_chain_selected' not in read(BOP_DECISIONS), 'obsolete placeholder decision remains')
 
     gui_text = read(GUI)
@@ -319,6 +420,13 @@ def main() -> int:
     for key in blocks:
         for suffix in ('', '_desc', '_cost', '_cost_blocked'):
             require(f' {key}{suffix}:0 ' in localisation_text, f'localisation missing: {key}{suffix}')
+        unlock_key = f'{key}_unlock_tt'
+        require(f' {unlock_key}:0 ' in localisation_text, f'localisation missing: {unlock_key}')
+        unlock_line = next((line for line in localisation_text.splitlines() if line.startswith(f' {unlock_key}:0 ')), '')
+        for fragment in ('£GFX_green_dollar_sign', '£GFX_decision_icon_small', '三微米冷战', '已经', '§G可用§!'):
+            require(fragment in unlock_line, f'{unlock_key}: missing unlock formatting fragment {fragment}')
+    for phrase in ('流动准备金', '一次性支出'):
+        require(phrase not in localisation_text, f'cost localisation still exposes implementation detail: {phrase}')
     base_loc = read(BASE_LOCALISATION)
     require('SCW_chain_part_5: "物流与管理"' in base_loc, 'fifth chain label was not corrected')
     require('CCD技术研发后解锁' in base_loc, 'lithography CCD prerequisite is not explained')
@@ -328,6 +436,29 @@ def main() -> int:
     for phrase in banned:
         require(phrase not in combined_text, f'anachronistic or stale text remains: {phrase}')
 
+    require(TEXTICON_GFX.exists(), 'SCW texticon GFX registration is missing')
+    gfx_text = read(TEXTICON_GFX)
+    require(TEXTICON_BUILDER.exists(), 'SCW texticon builder is missing')
+    builder_text = read(TEXTICON_BUILDER)
+    for fragment in (
+        'flag_root / "CHI.tga"',
+        'flag_root / "JAP.tga"',
+        'overlay_hourglass',
+        'overlay_approval_check',
+        'corruption_yen_icon()',
+    ):
+        require(fragment in builder_text, f'texticon builder lost required identity source: {fragment}')
+    texticon_payloads: list[bytes] = []
+    for stem in ('audience_patience', 'supervisor_attitude', 'stage_integrity'):
+        sprite = f'GFX_DOP_SCW_{stem}_texticon'
+        require(sprite in gfx_text, f'{sprite}: GFX registration missing')
+        asset = TEXTICON_DIR / f'{stem}_texticon.dds'
+        require(texticon_dds_ok(asset), f'{asset.relative_to(ROOT)}: invalid 18x18 DDS header')
+        texticon_payloads.append(asset.read_bytes()[128:])
+        png = TEXTICON_DIR / f'{stem}_texticon.png'
+        require(png.exists(), f'{png.relative_to(ROOT)}: source PNG missing')
+    require(len(set(texticon_payloads)) == 3, 'SCW texticons are not visually distinct at the pixel level')
+
     script_paths = (
         DECISIONS,
         EFFECTS,
@@ -336,6 +467,8 @@ def main() -> int:
         DEBUG,
         BOP_DECISIONS,
         GUI,
+        UNLOCK_EFFECTS,
+        TEXTICON_GFX,
     )
     for path in script_paths:
         require(braces_balanced(path), f'unbalanced braces/quotes: {path.relative_to(ROOT)}')
