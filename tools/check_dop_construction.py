@@ -19,10 +19,7 @@ DEFAULT_TNO_ROOT = Path(
 DEFAULT_TNO_CN_ROOT = Path(
     r"D:\Steam\steamapps\workshop\content\394360\2243912940"
 )
-DEFAULT_SOURCE_DIR = Path(
-    r"D:\Creations\DOP_pre_full_rollback_20260829_075704\workspace"
-    r"\output\imagegen\construction_previews\sources"
-)
+DEFAULT_SOURCE_DIR = ROOT / "output/imagegen/construction_previews/sources"
 ACADEMY_BORDER_COLOR = (89, 199, 194, 255)
 
 
@@ -140,8 +137,8 @@ def validate_dds(path: Path) -> None:
     depth = struct.unpack_from("<I", payload, 24)[0]
     mipmaps = struct.unpack_from("<I", payload, 28)[0]
     require(
-        (width, height, depth, mipmaps) == (182, 423, 0, 0),
-        f"{path.name} is 182x423 with Academy-style base surface metadata",
+        (width, height, depth, mipmaps) == (285, 551, 0, 0),
+        f"{path.name} is 285x551 with full-height right-panel metadata",
     )
     pixel_flags = struct.unpack_from("<I", payload, 80)[0]
     rgb_bits = struct.unpack_from("<I", payload, 88)[0]
@@ -285,6 +282,64 @@ def main() -> int:
     regions, projects, rewards = generated_data()
     require(len(regions) == 6, "registry contains exactly six regions")
     require(len(projects) == 20, "registry contains exactly twenty projects")
+    require(
+        tuple((region.id, region.slug, region.name) for region in regions)
+        == (
+            (1, "prd", "珠三角"),
+            (2, "chaoshan", "粤东"),
+            (3, "northern_guangdong", "粤北"),
+            (4, "western_guangdong", "粤西"),
+            (5, "jiaoyang", "交洋"),
+            (6, "guangxi", "广西"),
+        ),
+        "region IDs and names match the six-region specification",
+    )
+    expected_projects = {
+        1: ("sky_tower", "prd", 150000, "白鹅新区晴空塔"),
+        2: ("rose_garden", "prd", 100000, "玫瑰园计划"),
+        3: ("alice_dream_factory", "prd", 30000, "粤海爱丽丝梦工厂"),
+        4: ("daya_bay_nuclear_plant", "prd", 45000, "大亚湾核电站"),
+        5: ("guangdong_shinkansen", "prd", 90000, "广东新干线计划"),
+        6: ("chaoshan_university", "chaoshan", 30000, "潮汕大学"),
+        7: ("xinfengjiang_reservoir", "northern_guangdong", 60000, "山区水库开发计划"),
+        8: ("luoding_granary", "western_guangdong", 40000, "粤西盆地储粮工程"),
+        9: ("pinglu_canal", "jiaoyang", 100000, "平陆运河"),
+        10: ("south_china_sea_drilling_platform", "jiaoyang", 30000, "南海油气开采"),
+        11: ("wenchang_space_center", "jiaoyang", 50000, "文昌卫星发射中心"),
+        12: ("guangxi_industrial_institute", "guangxi", 60000, "重整广西实业院"),
+        13: ("guangxi_expressway_network", "guangxi", 90000, "广西高速公路网"),
+        14: ("nanyue_folk_memorial_park", "guangxi", 30000, "“南粤之心”民俗纪念园"),
+        15: ("lijiang_waterway", "guangxi", 30000, "漓江航道开发工程"),
+        16: ("honghe_fan_asia_friendship_pass", "guangxi", 30000, "红河泛亚友谊关"),
+        17: ("prd_maglev", "prd", 90000, "珠三角磁悬浮城轨"),
+        18: ("shantou_chaozhou_jieyang_integration", "chaoshan", 60000, "汕潮揭一体化方案"),
+        19: ("granite_uranium_mining", "northern_guangdong", 60000, "开采花岗岩型铀矿"),
+        20: ("shale_oil_refineries", "western_guangdong", 30000, "拓展页岩油化工厂"),
+    }
+    require(
+        {
+            project.id: (project.slug, project.region, project.total, project.name)
+            for project in projects
+        }
+        == expected_projects,
+        "all project IDs, regions, quantities and names match the specification",
+    )
+    description_fragments = {
+        1: "广州是一座老城",
+        2: "香港的旧机场建得实在太早",
+        3: "澳门，创收之地，梦之地",
+        4: "珠三角的繁荣需要燃料浇筑",
+        5: "广东新干线将主要分为两段修建",
+        13: "广西被民族主义军阀占据太久",
+        17: "随着珠三角三城及其中间地带的蓬勃发展",
+    }
+    require(
+        all(
+            fragment in next(project.desc for project in projects if project.id == project_id)
+            for project_id, fragment in description_fragments.items()
+        ),
+        "user-provided project descriptions stay attached to the intended IDs",
+    )
     require(set(rewards) == set(range(1, 21)), "every project has one reward")
     require(
         len({project.source for project in projects}) == 20,
@@ -424,6 +479,7 @@ def main() -> int:
     gfx = text(ROOT / "interface/GUI/DOP_construction.gfx")
     gui = text(ROOT / "interface/GUI/DOP_construction_interface.gui")
     scripted_gui = text(ROOT / "common/scripted_guis/DOP_Construction_GUI.txt")
+    preview_builder = text(ROOT / "tools/build_dop_construction_previews.py")
     modifiers = text(
         ROOT / "common/dynamic_modifiers/DOP_construction_dynamic_modifiers.txt"
     )
@@ -484,6 +540,10 @@ def main() -> int:
         "completion event file contains twenty visible triggered events",
     )
     require(
+        len(re.findall(r"^\toption\s*=\s*\{", events, re.MULTILINE)) == 20,
+        "each completion event has exactly one visible option",
+    )
+    require(
         len(
             re.findall(
                 r"^DOP_construction_\w+_completion_effect\s*=\s*\{",
@@ -504,9 +564,65 @@ def main() -> int:
         "project image is selected dynamically by token",
     )
     require(
+        re.search(
+            r"name = construction_project_image\s+"
+            r"spriteType = GFX_DOP_construction_project_01\s+"
+            r"position = \{ x = 755 y = 67 \}",
+            gui,
+        )
+        is not None
+        and "WIDTH = 285" in preview_builder
+        and "HEIGHT = 551" in preview_builder,
+        "project image occupies the full 285x551 right panel at native size",
+    )
+    require(
+        "name = construction_description_scroll" in gui
+        and 'verticalScrollbar = "right_vertical_slider"' in gui
+        and "name = DOP_construction_description_scroll_ensurer" in gui
+        and "maxHeight = 495" in gui,
+        "long project descriptions use a dedicated scrollable viewport",
+    )
+    require(
+        "name = construction_numbers" in gui
+        and "text = DOP_construction_selected_numbers" in gui,
+        "engineering quantities remain directly visible in the main GUI",
+    )
+    require(
+        "array = DOP_construction_directory_items" in scripted_gui
+        and "DOP_construction_toggle_directory_region = yes" in scripted_gui,
+        "construction directory remains dynamic and region folders remain collapsible",
+    )
+    require(
         gui.count("name = construction_description_button") == 1
         and gui.count("name = construction_effect_overlay_button") == 1,
         "GUI has one shared description/effect-preview area",
+    )
+    cleaned_sources = {
+        6: "06_chaoshan_university.png",
+        7: "07_mountain_reservoirs.png",
+        8: "08_western_guangdong_granary.png",
+        12: "12_guangxi_industrial_institute.png",
+        17: "17_prd_maglev.png",
+    }
+    require(
+        all(
+            (
+                ROOT
+                / "output/imagegen/construction_previews/cleaned"
+                / file_name
+            ).is_file()
+            for file_name in cleaned_sources.values()
+        )
+        and all(
+            f'{project_id}: "{file_name}"' in preview_builder
+            for project_id, file_name in cleaned_sources.items()
+        ),
+        "five text/logo-cleaned real-photo inputs exist and are wired to the builder",
+    )
+    require(
+        (ROOT / "docs/DOP_construction_image_cleanup_prompts.md").is_file()
+        and (ROOT / "docs/DOP_construction_image_sources.md").is_file(),
+        "image sources, licences, cleanup methods and prompts are documented",
     )
     require(
         "DOP_construction_preview_selected_reward = yes" in scripted_gui
@@ -563,6 +679,15 @@ def main() -> int:
     require(
         modifiers.count("enable = { always = yes }") == 3,
         "three scoped dynamic modifiers are defined",
+    )
+    require(
+        re.search(
+            r"\b(add_manpower|recruitable_population|conscription_factor|"
+            r"mobilization_laws_cost_factor)\b",
+            effects + "\n" + modifiers,
+        )
+        is None,
+        "manpower slider never modifies recruitable or conscription population",
     )
 
     forbidden = {
@@ -623,9 +748,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260829G"
+        "EARLY DEVELOPMENT BUILD 260828C"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260829G",
+        "user-facing build version is 260828C",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

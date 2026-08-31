@@ -1,0 +1,6 @@
+interface:
+  display_name: "TNO Portrait Artist"
+  short_description: "制作、修复、合成并严格验收 TNO 风格人物头像"
+  default_prompt: "Use $tno-portrait-artist to create and strictly validate a photographic 156×210 TNO leader portrait from a historical photo."
+policy:
+  allow_implicit_invocation: true

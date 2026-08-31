@@ -131,6 +131,7 @@ guiTypes = {
 			name = construction_directory_scroll
 			position = { x = 21 y = 104 }
 			size = { width = 190 height = 491 }
+			drag_scroll = { left middle }
 			verticalScrollbar = "right_vertical_slider"
 			vertical_scroll_step = 36
 			scroll_wheel_factor = 36
@@ -196,24 +197,32 @@ guiTypes = {
 			fixedsize = yes
 			alwaystransparent = yes
 		}
-		buttonType = {
-			name = construction_description_button
+		containerWindowType = {
+			name = construction_description_scroll
 			position = { x = 239 y = 210 }
-			size = { x = 280 y = 150 }
-			quadTextureSprite = GFX_tiled_window_transparent
-			pdx_tooltip = DOP_construction_description_click_tt
-			clicksound = click_default
-		}
-		instantTextBoxType = {
-			name = construction_description
-			position = { x = 239 y = 210 }
-			font = aldrich_16_outline
-			text = DOP_construction_selected_desc
-			maxWidth = 270
-			maxHeight = 145
-			format = left
-			fixedsize = yes
-			alwaystransparent = yes
+			size = { width = 280 height = 150 }
+			margin = { top = 0 bottom = 0 left = 0 right = 18 }
+			clipping = yes
+			buttonType = {
+				name = construction_description_button
+				position = { x = 0 y = 0 }
+				size = { x = 240 y = 160 }
+				quadTextureSprite = GFX_tiled_window_transparent
+				pdx_tooltip = DOP_construction_description_click_tt
+				clicksound = click_default
+			}
+			instantTextBoxType = {
+				name = construction_description
+				position = { x = 0 y = 0 }
+				font = aldrich_16_outline
+				text = DOP_construction_selected_desc
+				scrollbarType = standardtext_slider
+				maxWidth = 252
+				maxHeight = 500
+				format = left
+				fixedsize = yes
+				alwaystransparent = yes
+			}
 		}
 		buttonType = {
 			name = construction_effect_overlay_button
@@ -394,7 +403,7 @@ guiTypes = {
 		iconType = {
 			name = construction_project_image
 			spriteType = GFX_DOP_construction_project_01
-			position = { x = 807 y = 139 }
+			position = { x = 755 y = 67 }
 			alwaystransparent = yes
 		}
 	}

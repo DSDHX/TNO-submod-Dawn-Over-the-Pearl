@@ -9,14 +9,12 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFont, ImageOps
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_SOURCE_DIR = Path(
-    r"D:\Creations\DOP_pre_full_rollback_20260829_075704\workspace"
-    r"\output\imagegen\construction_previews\sources"
-)
+DEFAULT_SOURCE_DIR = ROOT / "output/imagegen/construction_previews/sources"
+CLEANED_SOURCE_DIR = ROOT / "output/imagegen/construction_previews/cleaned"
 OUTPUT_DIR = ROOT / "gfx/interface/bop"
 CONTACT_SHEET = ROOT / "docs/DOP_construction_contact_sheet.png"
-WIDTH = 182
-HEIGHT = 423
+WIDTH = 285
+HEIGHT = 551
 BORDER = 2
 ACADEMY_BORDER_COLOR = (89, 199, 194, 255)
 CONTENT_WIDTH = WIDTH - BORDER * 2
@@ -59,6 +57,20 @@ SOURCES = (
     Source(19, "19_granite_uranium_mining.jpg", 0.55, 0.52),
     Source(20, "20_shale_oil_refineries.jpg", 0.50, 0.48),
 )
+
+CLEANED_SOURCE_FILES = {
+    6: "06_chaoshan_university.png",
+    7: "07_mountain_reservoirs.png",
+    8: "08_western_guangdong_granary.png",
+    12: "12_guangxi_industrial_institute.png",
+    17: "17_prd_maglev.png",
+}
+
+
+def build_source_path(source: Source, source_dir: Path) -> Path:
+    if source.id in CLEANED_SOURCE_FILES:
+        return CLEANED_SOURCE_DIR / CLEANED_SOURCE_FILES[source.id]
+    return source_dir / source.file_name
 
 
 def focused_crop(image: Image.Image, focus_x: float, focus_y: float) -> Image.Image:
@@ -204,7 +216,7 @@ def main() -> int:
     missing = [
         source.file_name
         for source in SOURCES
-        if not (args.source_dir / source.file_name).is_file()
+        if not build_source_path(source, args.source_dir).is_file()
     ]
     if missing:
         raise FileNotFoundError("missing sources: " + ", ".join(missing))
@@ -212,7 +224,7 @@ def main() -> int:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     previews: list[tuple[Source, Image.Image]] = []
     for source in SOURCES:
-        with Image.open(args.source_dir / source.file_name) as original:
+        with Image.open(build_source_path(source, args.source_dir)) as original:
             preview = apply_tno_style(
                 focused_crop(original, source.focus_x, source.focus_y), source.id
             )
