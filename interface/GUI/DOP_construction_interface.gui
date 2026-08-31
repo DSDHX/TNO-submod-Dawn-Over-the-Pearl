@@ -138,23 +138,28 @@ guiTypes = {
 			smooth_scrolling = yes
 			margin = { top = 0 bottom = 0 left = 0 right = 18 }
 			clipping = yes
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
+				position = { x = 0 y = 0 }
+			}
 			gridboxtype = {
 				name = construction_directory_grid
-				position = { x = 2 y = 0 }
+				position = { x = -5 y = 0 }
 				# The viewport owns the fixed height; the scripted scroll ensurer below
 				# reports the dynamic list's real content extent to the parent.
-				size = { width = 160 height = 100% }
-				slotsize = { width = 160 height = 36 }
+				size = { width = 170 height = 100% }
+				slotsize = { width = 170 height = 36 }
 				max_slots_horizontal = 1
 				add_horizontal = no
 			}
 			# Scripted dynamic-list entries do not reliably expand a container's
 			# scroll bounds. TNO's economy GUI uses the same invisible-child fix.
-			containerWindowType = {
-				name = DOP_construction_directory_scroll_ensurer
-				position = { x = 0 y = 528 }
-				size = { width = 1 height = 1 }
-			}
+			# containerWindowType = {
+			# 	name = DOP_construction_directory_scroll_ensurer
+			# 	position = { x = 0 y = 528 }
+			# 	size = { width = 1 height = 1 }
+			# }
 		}
 
 		instantTextBoxType = {
@@ -202,26 +207,30 @@ guiTypes = {
 			position = { x = 239 y = 210 }
 			size = { width = 280 height = 150 }
 			margin = { top = 0 bottom = 0 left = 0 right = 18 }
+			verticalScrollbar = "right_vertical_slider"
 			clipping = yes
-			buttonType = {
-				name = construction_description_button
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_transparent"
 				position = { x = 0 y = 0 }
-				size = { x = 240 y = 160 }
-				quadTextureSprite = GFX_tiled_window_transparent
-				pdx_tooltip = DOP_construction_description_click_tt
-				clicksound = click_default
-			}
+			}	
 			instantTextBoxType = {
 				name = construction_description
 				position = { x = 0 y = 0 }
 				font = aldrich_16_outline
 				text = DOP_construction_selected_desc
-				scrollbarType = standardtext_slider
 				maxWidth = 252
-				maxHeight = 500
+				maxHeight = 10000
 				format = left
-				fixedsize = yes
 				alwaystransparent = yes
+			}
+			buttonType = {
+				name = construction_description_button
+				position = { x = 0 y = 0 }
+				size = { x = 240 y = 300 }
+				quadTextureSprite = GFX_tiled_window_transparent
+				pdx_tooltip = DOP_construction_description_click_tt
+				clicksound = click_default
 			}
 		}
 		buttonType = {
