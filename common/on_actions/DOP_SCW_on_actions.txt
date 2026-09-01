@@ -4,6 +4,7 @@ on_actions = {
 			if = {
 				limit = {
 					original_tag = GNG
+					has_country_flag = DOP_SCW_enabled
 					NOT = { has_country_flag = DOP_SCW_decisions_unlocked }
 				}
 				DOP_SCW_activate_decision_system = yes

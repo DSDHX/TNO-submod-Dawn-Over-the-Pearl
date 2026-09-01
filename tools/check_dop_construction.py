@@ -472,6 +472,10 @@ def main() -> int:
     )
 
     effects = text(ROOT / "common/scripted_effects/DOP_construction_effects.txt")
+    reconstruction_focus = text(
+        ROOT / "common/national_focus/dop_sony-japan_reconstruction.txt"
+    )
+    scw_on_actions = text(ROOT / "common/on_actions/DOP_SCW_on_actions.txt")
     reward_effects = text(
         ROOT / "common/scripted_effects/DOP_construction_rewards.txt"
     )
@@ -578,8 +582,8 @@ def main() -> int:
     require(
         "name = construction_description_scroll" in gui
         and 'verticalScrollbar = "right_vertical_slider"' in gui
-        and "name = DOP_construction_description_scroll_ensurer" in gui
-        and "maxHeight = 495" in gui,
+        and "maxHeight = 10000" in gui
+        and "name = construction_description_button" in gui,
         "long project descriptions use a dedicated scrollable viewport",
     )
     require(
@@ -591,6 +595,52 @@ def main() -> int:
         "array = DOP_construction_directory_items" in scripted_gui
         and "DOP_construction_toggle_directory_region = yes" in scripted_gui,
         "construction directory remains dynamic and region folders remain collapsible",
+    )
+    public_project_api = effects.split(
+        "# Public project-state API for focuses, decisions and events.", 1
+    )[1].split("# Bulk helpers deliberately omit", 1)[0]
+    require(
+        public_project_api.count("effect_tooltip = {") == 3
+        and public_project_api.count("hidden_effect = {") == 3
+        and all(
+            f"custom_effect_tooltip = {tooltip}" in public_project_api
+            for tooltip in (
+                "DOP_construction_show_project_tt",
+                "DOP_construction_start_project_tt",
+                "DOP_construction_show_and_start_project_tt",
+            )
+        ),
+        "three single-project APIs use LegCo-style effect tooltips and hidden execution",
+    )
+    construction_initializer = effects.split(
+        "GNG_BOP_Construction_Initialize = {", 1
+    )[1].split("DOP_construction_reset = {", 1)[0]
+    require(
+        "custom_effect_tooltip = TNO_BoP_AddTab_GNG_tt" in construction_initializer
+        and construction_initializer.count("effect_tooltip = {") == 1
+        and construction_initializer.count("hidden_effect = {") == 1
+        and "DOP_construction_ensure_dynamic_modifiers = yes" in construction_initializer
+        and "DOP_SCW" not in construction_initializer,
+        "construction initializer exposes only the existing unlock tooltip",
+    )
+    scw_daily = scw_on_actions.split("on_daily = {", 1)[1].split(
+        "on_yearly = {", 1
+    )[0]
+    require(
+        "has_country_flag = DOP_SCW_enabled" in scw_daily
+        and "DOP_SCW_activate_decision_system = yes" in scw_daily,
+        "SCW daily activation requires its own explicit enabled flag",
+    )
+    ruins_focus = reconstruction_focus.split(
+        "id = GNG_focus_leave_ruins_behind", 1
+    )[1].split("id = GNG_focus_in_the_warm_sun", 1)[0]
+    require(
+        "add_building_construction" not in ruins_focus
+        and "country_event = { id = DOP_GNG_event.152 days = 0 }" in ruins_focus
+        and "GNG_BOP_Construction_Initialize = yes" in ruins_focus
+        and "set_temp_variable = { DOP_construction_target_project = 13 }" in ruins_focus
+        and "DOP_construction_show_and_start_project = yes" in ruins_focus,
+        "leave-ruins focus fires its event, unlocks Construction and starts project 13",
     )
     require(
         gui.count("name = construction_description_button") == 1
@@ -734,6 +784,31 @@ def main() -> int:
         and "政府支持率" in localisation,
         "construction localisation uses TNO's 珠人/日侨/政府支持率 terminology",
     )
+    require(
+        all(
+            f"{key}:" in localisation
+            for key in (
+                "DOP_construction_economic_commitments",
+                "DOP_construction_economic_commitments_desc",
+                "DOP_construction_social_mobilisation",
+                "DOP_construction_social_mobilisation_desc",
+                "DOP_construction_completed_assets",
+                "DOP_construction_completed_assets_desc",
+            )
+        ),
+        "all three construction dynamic modifiers have Chinese names and descriptions",
+    )
+    project_api_tooltip_lines = "\n".join(
+        line
+        for line in localisation.splitlines()
+        if "DOP_construction_" in line and "_project_tt:" in line
+    )
+    require(
+        project_api_tooltip_lines.count("£GFX_infrastructure ") == 3
+        and "£GFX_infrastructure_texticon" not in project_api_tooltip_lines
+        and "£GFX_decision_icon_small" not in project_api_tooltip_lines,
+        "single-project tooltips use GFX_infrastructure instead of decision/texticon variants",
+    )
 
     for project in projects:
         for key in (
@@ -748,9 +823,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260828C"
+        "EARLY DEVELOPMENT BUILD 260901F"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260828C",
+        "user-facing build version is 260901F",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

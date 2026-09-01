@@ -1,0 +1,20 @@
+characters = {
+	DOP_GNG_ho_sin_hang = {
+		name = DOP_GNG_ho_sin_hang
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Ho_Sin_Hang.png" }
+		}
+	}
+	DOP_GNG_mita_katsushige = {
+		name = DOP_GNG_mita_katsushige
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Mita_Katsushige.png" }
+		}
+	}
+	DOP_GNG_idei_nobuyuki = {
+		name = DOP_GNG_idei_nobuyuki
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Idei_Nobuyuki.png" }
+		}
+	}
+}

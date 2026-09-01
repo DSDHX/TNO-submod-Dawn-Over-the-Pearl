@@ -937,46 +937,54 @@ DOP_construction_migrate_dynamic_v8 = {
 }
 
 GNG_BOP_Construction_Initialize = {
+	set_temp_variable = { TabName = token:BoP_Tab_DOPConstruction }
 	if = {
 		limit = { NOT = { has_country_flag = DOP_construction_tab_enabled } }
-		set_temp_variable = { TabName = token:BoP_Tab_DOPConstruction }
-		TNO_BoP_GNG_AddTab = yes
-		set_country_flag = DOP_construction_tab_enabled
-	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v2_initialized } }
-		if = {
-			limit = { has_country_flag = DOP_construction_initialized }
-			DOP_construction_migrate_legacy_variables = yes
+		effect_tooltip = {
+			custom_effect_tooltip = TNO_BoP_AddTab_GNG_tt
 		}
-		else = { DOP_construction_initialize_variables = yes }
 	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v3_initialized } }
-		DOP_construction_migrate_dynamic_v3 = yes
+	hidden_effect = {
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_tab_enabled } }
+			TNO_BoP_GNG_AddTab = yes
+			set_country_flag = DOP_construction_tab_enabled
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v2_initialized } }
+			if = {
+				limit = { has_country_flag = DOP_construction_initialized }
+				DOP_construction_migrate_legacy_variables = yes
+			}
+			else = { DOP_construction_initialize_variables = yes }
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v3_initialized } }
+			DOP_construction_migrate_dynamic_v3 = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v4_initialized } }
+			DOP_construction_migrate_dynamic_v4 = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v5_initialized } }
+			DOP_construction_migrate_dynamic_v5 = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v6_initialized } }
+			DOP_construction_migrate_dynamic_v6 = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v7_initialized } }
+			DOP_construction_migrate_dynamic_v7 = yes
+		}
+		if = {
+			limit = { NOT = { has_country_flag = DOP_construction_dynamic_v8_initialized } }
+			DOP_construction_migrate_dynamic_v8 = yes
+		}
+		DOP_construction_ensure_dynamic_modifiers = yes
+		DOP_construction_rebuild_visible_projects = yes
 	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v4_initialized } }
-		DOP_construction_migrate_dynamic_v4 = yes
-	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v5_initialized } }
-		DOP_construction_migrate_dynamic_v5 = yes
-	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v6_initialized } }
-		DOP_construction_migrate_dynamic_v6 = yes
-	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v7_initialized } }
-		DOP_construction_migrate_dynamic_v7 = yes
-	}
-	if = {
-		limit = { NOT = { has_country_flag = DOP_construction_dynamic_v8_initialized } }
-		DOP_construction_migrate_dynamic_v8 = yes
-	}
-	DOP_construction_ensure_dynamic_modifiers = yes
-	DOP_construction_rebuild_visible_projects = yes
 }
 
 DOP_construction_reset = {
@@ -1829,28 +1837,41 @@ DOP_construction_selected_manpower_minimum = {
 	DOP_construction_sync_selected = yes
 }
 
-# Public project-state API for focuses, decisions and events. Callers set
-# DOP_construction_target_project to the stable project ID before invoking one
-# of these three effects. The custom tooltips resolve the project name from it.
+# Public project-state API for focuses, decisions and events. Callers only set
+# the temporary DOP_construction_target_project to the stable project ID before
+# invoking one of these effects. LegCo-style effect_tooltip blocks expose the
+# coloured project message, while hidden_effect performs the real state change.
 DOP_construction_show_project = {
-	custom_effect_tooltip = DOP_construction_show_project_tt
-	DOP_construction_mark_project_shown = yes
-	DOP_construction_rebuild_visible_projects = yes
+	effect_tooltip = {
+		custom_effect_tooltip = DOP_construction_show_project_tt
+	}
+	hidden_effect = {
+		DOP_construction_mark_project_shown = yes
+		DOP_construction_rebuild_visible_projects = yes
+	}
 }
 
 DOP_construction_start_project = {
-	custom_effect_tooltip = DOP_construction_start_project_tt
-	DOP_construction_mark_project_started = yes
-	DOP_construction_recalculate_all = yes
-	DOP_construction_sync_selected = yes
+	effect_tooltip = {
+		custom_effect_tooltip = DOP_construction_start_project_tt
+	}
+	hidden_effect = {
+		DOP_construction_mark_project_started = yes
+		DOP_construction_recalculate_all = yes
+		DOP_construction_sync_selected = yes
+	}
 }
 
 DOP_construction_show_and_start_project = {
-	custom_effect_tooltip = DOP_construction_show_and_start_project_tt
-	DOP_construction_mark_project_shown = yes
-	DOP_construction_mark_project_started = yes
-	DOP_construction_recalculate_all = yes
-	DOP_construction_rebuild_visible_projects = yes
+	effect_tooltip = {
+		custom_effect_tooltip = DOP_construction_show_and_start_project_tt
+	}
+	hidden_effect = {
+		DOP_construction_mark_project_shown = yes
+		DOP_construction_mark_project_started = yes
+		DOP_construction_recalculate_all = yes
+		DOP_construction_rebuild_visible_projects = yes
+	}
 }
 
 # Bulk helpers deliberately omit per-project custom tooltips; they are intended

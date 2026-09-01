@@ -205,7 +205,7 @@ guiTypes = {
 		containerWindowType = {
 			name = construction_description_scroll
 			position = { x = 239 y = 210 }
-			size = { width = 280 height = 150 }
+			size = { width = 265 height = 150 }
 			margin = { top = 0 bottom = 0 left = 0 right = 18 }
 			verticalScrollbar = "right_vertical_slider"
 			clipping = yes
@@ -399,11 +399,11 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = construction_manpower_effects
-			position = { x = 239 y = 444 }
+			position = { x = 239 y = 420 }
 			font = aldrich_16_outline
 			text = DOP_construction_manpower_effects
 			maxWidth = 270
-			maxHeight = 145
+			maxHeight = 200
 			format = left
 			fixedsize = yes
 			alwaystransparent = yes
