@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
  BOP_BUTTON_GNG: "经济建设"
  BOP_BUTTON_GCG: "外交事务"
- BOP_TOOLTIP_GNG: "§F点击管理我国§Y世界贸易政策§!和§Y科研项目§!。§!"
+ BOP_TOOLTIP_GNG: "§F点击管理我国§Y世界贸易政策§!，§Y科研项目§!和§Y基建项目§!。§!"
  BOP_TOOLTIP_GCG: "§F点击管理§Y外交§!、§Y全球冲突§!和你的§Y情报机构§!。§!"
  TNO_SiliconCW_GUI_Title: "三微米冷战"
  TNO_BoP_AddTab_GNG_tt: "§B经济建设§!菜单中的§W[?TabName.GetTokenLocalizedKey]§!现已可用。\n"
