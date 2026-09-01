@@ -246,7 +246,8 @@ guiTypes = {
 		iconType = {
 			name ="frontend_tno_logo"
 			spriteType = "GFX_frontend_DOP_logo"
-			position = { x = -300 y = 20 }
+			position = { x = -326 y = -144 }
+			scale = 0.369
 			pdx_tooltip = TNO_dop_icon_tt
 			pdx_tooltip_delayed = TNO_dop_icon_tt_delayed
 		}

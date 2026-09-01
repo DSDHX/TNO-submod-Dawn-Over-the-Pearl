@@ -5,7 +5,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_frontend_DOP_logo"
-		texturefile = "gfx/interface/thumbnail.png"
+		texturefile = "gfx/interface/TNO-DOP_LOGO.png"
 	}
 	corneredTileSpriteType = {
 		name = "GFX_fronticons_dop"
