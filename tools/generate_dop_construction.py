@@ -286,6 +286,17 @@ def reward(
 # from this one structure, so they cannot drift.
 REWARDS: dict[int, Reward] = {}
 
+# Four author-specified projects each contribute one point to the late-game
+# Ibuka route score.  These flags are intentionally independent from the
+# generic reward_claimed array so save inspection and regression tests can
+# identify the exact source of every point.
+IBUKA_POINT_FLAGS = {
+    4: "DOP_construction_daya_bay_ibuka_scored",
+    11: "DOP_construction_wenchang_ibuka_scored",
+    17: "DOP_construction_prd_maglev_ibuka_scored",
+    19: "DOP_construction_granite_uranium_ibuka_scored",
+}
+
 REWARDS.update({
     1: reward(
         "广州获得 2 级基础设施、3 个建筑槽位与 12% 州 GDP。",
@@ -1356,6 +1367,18 @@ def render_rewards() -> str:
             "\t" + line if line else ""
             for line in render_componentised_reward(REWARDS[project.id].effect)
         )
+        if project.id in IBUKA_POINT_FLAGS:
+            flag = IBUKA_POINT_FLAGS[project.id]
+            lines.extend(
+                [
+                    "\t# DOP CONTENT FLOW 260902A Ibuka score",
+                    "\tif = {",
+                    f"\t\tlimit = {{ NOT = {{ has_country_flag = {flag} }} }}",
+                    f"\t\tset_country_flag = {flag}",
+                    "\t\tDOP_GNG_add_ibuka_point = yes",
+                    "\t}",
+                ]
+            )
         lines.extend(["}", ""])
 
     lines.append("DOP_construction_dispatch_reward_callback = {")

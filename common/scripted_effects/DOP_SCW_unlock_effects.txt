@@ -481,8 +481,8 @@ DOP_SCW_materials_four_inch_substrates_unlock = {
     }
 }
 
-# Normal activation opens both SCW pages and silently unlocks only
-# repeatable decisions plus the first milestone of each annual chain.
+# Normal activation initializes both SCW pages and market data.
+# Concrete decisions are exposed by relevant focuses, never here.
 DOP_SCW_activate_decision_system = {
     hidden_effect = {
         if = {
@@ -495,36 +495,6 @@ DOP_SCW_activate_decision_system = {
         GNG_SCW_add_tab = yes
         GNG_SCW_Initialize = yes
         set_country_flag = DOP_SCW_decisions_unlocked
-        set_country_flag = DOP_SCW_race_commercial_attaches_unlocked
-        set_country_flag = DOP_SCW_race_tariff_lobby_unlocked
-        set_country_flag = DOP_SCW_race_court_dissidents_unlocked
-        set_country_flag = DOP_SCW_race_friendly_expositions_unlocked
-        set_country_flag = DOP_SCW_race_shell_companies_unlocked
-        set_country_flag = DOP_SCW_packaging_recruit_assembly_labor_unlocked
-        set_country_flag = DOP_SCW_packaging_lower_piece_rates_unlocked
-        set_country_flag = DOP_SCW_packaging_consumer_oem_orders_unlocked
-        set_country_flag = DOP_SCW_packaging_bonding_consumables_unlocked
-        set_country_flag = DOP_SCW_packaging_dip_expansion_unlocked
-        set_country_flag = DOP_SCW_logistics_liner_subsidies_unlocked
-        set_country_flag = DOP_SCW_logistics_esd_packaging_standard_unlocked
-        set_country_flag = DOP_SCW_logistics_overland_transshipment_unlocked
-        set_country_flag = DOP_SCW_logistics_direct_distribution_unlocked
-        set_country_flag = DOP_SCW_logistics_iso_container_coordination_unlocked
-        set_country_flag = DOP_SCW_lithography_optical_calibration_unlocked
-        set_country_flag = DOP_SCW_lithography_import_photoresist_unlocked
-        set_country_flag = DOP_SCW_lithography_buy_pellicles_unlocked
-        set_country_flag = DOP_SCW_lithography_expert_allowances_unlocked
-        set_country_flag = DOP_SCW_lithography_ccd_scale_up_unlocked
-        set_country_flag = DOP_SCW_wafer_replenish_consumables_unlocked
-        set_country_flag = DOP_SCW_wafer_paramilitary_shifts_unlocked
-        set_country_flag = DOP_SCW_wafer_spc_control_unlocked
-        set_country_flag = DOP_SCW_wafer_japanese_military_orders_unlocked
-        set_country_flag = DOP_SCW_wafer_class_1000_cleanroom_unlocked
-        set_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
-        set_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
-        set_country_flag = DOP_SCW_materials_power_subsidy_unlocked
-        set_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
-        set_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
     }
 }
 

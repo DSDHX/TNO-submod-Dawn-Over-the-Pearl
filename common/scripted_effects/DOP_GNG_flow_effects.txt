@@ -1,0 +1,592 @@
+# Core stage flow for DOP's post-TNO Guangdong content.
+# Narrative events are deliberately kept in events/DOP_GNG_flow.txt as
+# conspicuous placeholders; this file owns mechanics and numerical state only.
+
+DOP_GNG_block_native_western_insurrection_responses = {
+	# Native GNG_Western_Insurrection.1/.8 originate in WI_Start/GAW effects;
+	# .7/.12 originate in peace on_actions gated by these global flags.
+	GNG = { set_country_flag = DOP_GNG_native_wi_responses_blocked }
+	YUN = { set_country_flag = DOP_YUN_native_wi_runtime_blocked }
+	clr_global_flag = CHI_Western_Insurrection_Crisis
+	clr_global_flag = CHI_Yunnan_War
+	clr_global_flag = YUN_NPA_GAW_Crisis
+	clr_global_flag = WI_Warlord_Struggle_begin
+	clr_global_flag = WI_Sichuan_Struggle_begin
+	clr_global_flag = JAP_Western_Insurrection_Intervention
+	clr_global_flag = CHI_Western_Insurection_RoC_defeated
+	clr_global_flag = YUN_WI_thx_paradox
+	log = "[GetDateText]: DOP blocked all native GNG Western Insurrection response entrypoints"
+}
+
+DOP_GNG_begin_post_tno_content = {
+	DOP_GNG_block_native_western_insurrection_responses = yes
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GNG_flow_intro_started } }
+		set_country_flag = DOP_GNG_flow_intro_started
+		set_country_flag = DOP_GNG_mita_hitachi_leader
+		set_variable = { DOP_GNG_content_stage = 1 }
+		set_variable = { DOP_GNG_ibuka_points = 0 }
+		load_focus_tree = DOP_GNG_opening_tree
+		log = "[GetDateText]: [Root.GetName]: DOP stage 1 opening tree loaded after GNG_the_coming_storm"
+	}
+}
+
+DOP_GNG_refresh_fiscal_from_debt = {
+	if = {
+		limit = { check_variable = { debt_to_GDP_ratio < 0.25 } }
+		set_temp_variable = { GNG_fiscal_status_var_temp = 0 }
+	}
+	else_if = {
+		limit = { check_variable = { debt_to_GDP_ratio < 0.50 } }
+		set_temp_variable = { GNG_fiscal_status_var_temp = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { debt_to_GDP_ratio < 0.75 } }
+		set_temp_variable = { GNG_fiscal_status_var_temp = 2 }
+	}
+	else_if = {
+		limit = { check_variable = { debt_to_GDP_ratio < 1.00 } }
+		set_temp_variable = { GNG_fiscal_status_var_temp = 3 }
+	}
+	else = {
+		set_temp_variable = { GNG_fiscal_status_var_temp = 4 }
+	}
+	GNG_update_fiscal = yes
+}
+
+DOP_GNG_lock_legco_gui = {
+	set_country_flag = GNG_IJA_Disable_LegCo
+	clr_country_flag = TNO_GNG_LegCo_GUI_Open
+	clr_country_flag = DOP_legco_archive_open
+}
+
+DOP_GNG_lock_map_gui = {
+	clr_country_flag = GNG_Google_Maps_Show
+	clr_country_flag = GNG_Map_GUI_Info_Window_Visible
+}
+
+DOP_GNG_lock_three_evils_gui = {
+	clr_country_flag = GNG_Three_Evils_Show
+}
+
+DOP_GNG_lock_research_gui = {
+	clr_country_flag = GNG_PTRG_deccat_visible
+}
+
+DOP_GNG_lock_product_gui = {
+	clr_country_flag = GNG_Product_Decisions_GUI_show
+}
+
+DOP_GNG_lock_economy_gui = {
+	clr_country_flag = GNG_Economic_Graphs_Show
+}
+
+DOP_GNG_apply_southwest_war_state_modifiers = {
+	DOP_GNG_remove_southwest_war_state_modifiers = yes
+	GNG = {
+		every_owned_state = {
+			set_state_flag = DOP_GNG_southwest_defence_modifier_state
+			if = {
+				limit = { GNG_is_pearl_river_delta_state = yes }
+				add_dynamic_modifier = { modifier = DOP_GNG_prd_wartime_defence }
+			}
+			else = {
+				add_dynamic_modifier = { modifier = DOP_GNG_outer_wartime_defence }
+			}
+		}
+	}
+
+	# Lock both sides of the real YUN-CHI land frontier. The GNG-YUN front is
+	# deliberately excluded so Long Shengwu's army can press into Guangdong.
+	every_state = {
+		limit = {
+			OR = {
+				AND = {
+					is_controlled_by = YUN
+					any_neighbor_state = { is_controlled_by = CHI }
+				}
+				AND = {
+					is_controlled_by = CHI
+					any_neighbor_state = { is_controlled_by = YUN }
+				}
+			}
+		}
+		set_state_flag = DOP_GNG_southwest_stalemate_state
+		add_dynamic_modifier = { modifier = DOP_GNG_southwest_stalemate }
+	}
+}
+
+DOP_GNG_remove_southwest_war_state_modifiers = {
+	every_state = {
+		if = {
+			limit = { has_dynamic_modifier = DOP_GNG_prd_wartime_defence }
+			remove_dynamic_modifier = { modifier = DOP_GNG_prd_wartime_defence }
+		}
+		if = {
+			limit = { has_dynamic_modifier = { modifier = DOP_GNG_prd_wartime_defence scope = GNG } }
+			remove_dynamic_modifier = { modifier = DOP_GNG_prd_wartime_defence scope = GNG }
+		}
+		if = {
+			limit = { has_dynamic_modifier = DOP_GNG_outer_wartime_defence }
+			remove_dynamic_modifier = { modifier = DOP_GNG_outer_wartime_defence }
+		}
+		if = {
+			limit = { has_dynamic_modifier = { modifier = DOP_GNG_outer_wartime_defence scope = GNG } }
+			remove_dynamic_modifier = { modifier = DOP_GNG_outer_wartime_defence scope = GNG }
+		}
+		if = {
+			limit = { has_dynamic_modifier = DOP_GNG_southwest_stalemate }
+			remove_dynamic_modifier = { modifier = DOP_GNG_southwest_stalemate }
+		}
+		clr_state_flag = DOP_GNG_southwest_defence_modifier_state
+		clr_state_flag = DOP_GNG_southwest_stalemate_state
+	}
+
+	# Migration cleanup for saves that received the old six-state hardcoding.
+	603 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+	2376 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+	2377 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+	2378 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+	2386 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+	2387 = { if = { limit = { has_dynamic_modifier = unplanned_offensive } remove_dynamic_modifier = { modifier = unplanned_offensive } } }
+}
+
+DOP_GNG_begin_southwest_crisis = {
+	DOP_GNG_block_native_western_insurrection_responses = yes
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_crisis_started } }
+		# DOP supplies its own date and declaration sequence. This only prepares
+		# the YUN government and reusable TNO mechanics before that sequence.
+		YUN = { DOP_YUN_prepare_southwest_war = yes }
+		set_country_flag = DOP_GNG_flow_southwest_crisis_started
+		set_variable = { DOP_GNG_content_stage = 2 }
+		load_focus_tree = beating_drums_tree
+
+		# Guangxi and all three Hainan states join the Yunnan revolt.
+		if = {
+			limit = { country_exists = GUX }
+			YUN = { annex_country = { target = GUX transfer_troops = yes } }
+		}
+		YUN = {
+			transfer_state = 591
+			transfer_state = 2474
+			transfer_state = 2475
+		}
+
+		# Yunnan begins as CHI's subject in TNO; the revolt must free it before
+		# either declaration of war can be legal.
+		CHI = {
+			set_autonomy = {
+				target = YUN
+				autonomy_state = autonomy_free
+			}
+		}
+
+		# Mirror the already tested DOP debug scope: Japan is the CPS leader.
+		JAP = {
+			remove_from_faction = CHI
+			remove_from_faction = GNG
+			remove_from_faction = YUN
+		}
+
+		DOP_GNG_apply_southwest_war_state_modifiers = yes
+		YUN = {
+			if = {
+				limit = { NOT = { has_war_with = CHI } }
+				declare_war_on = { target = CHI type = annex_everything }
+			}
+		}
+		country_event = { id = DOP_GNG_flow.10 hours = 1 }
+		country_event = { id = DOP_GNG_flow.2 days = 14 }
+		log = "[GetDateText]: [Root.GetName]: DOP southwest crisis started; YUN absorbed GUX and Hainan"
+	}
+}
+
+DOP_GNG_enter_southwest_war = {
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_war_active } }
+		set_country_flag = DOP_GNG_flow_southwest_war_active
+		set_variable = { DOP_GNG_content_stage = 2 }
+		YUN = {
+			if = {
+				limit = { NOT = { has_war_with = GNG } }
+				declare_war_on = { target = GNG type = annex_everything }
+			}
+		}
+
+		# The existing GNG 104th armoured formation is removed without refunding
+		# equipment. The later relief force uses JAP's own Sensha Shidan template.
+		delete_units = {
+			division_template = "Sensha Shidan - Armored Division"
+			disband = no
+		}
+
+		DOP_GNG_set_status_first_crisis = yes
+		DOP_GNG_set_security_war = yes
+		set_temp_variable = { GNG_corruption_status_var_temp = 3 }
+		GNG_update_corruption = yes
+		DOP_GNG_refresh_fiscal_from_debt = yes
+		add_ideas = DOP_GNG_wartime_triangle
+		add_war_support = 0.10
+		add_command_power = 25
+		log = "[GetDateText]: [Root.GetName]: DOP Guangdong entered the southwest war"
+	}
+}
+
+DOP_GNG_spawn_japanese_reinforcements = {
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived } }
+		set_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived
+		JAP = {
+			if = {
+				limit = { NOT = { is_in_faction_with = CHI } }
+				add_to_faction = CHI
+			}
+			if = {
+				limit = { NOT = { is_in_faction_with = GNG } }
+				add_to_faction = GNG
+			}
+			if = {
+				limit = { NOT = { has_war_with = YUN } }
+				add_to_war = {
+					targeted_alliance = GNG
+					enemy = YUN
+					hostility_reason = asked_to_join
+					single_target_only = yes
+				}
+			}
+			add_dynamic_modifier = { modifier = DOP_GNG_japanese_reinforcement_momentum days = 120 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 750 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+			add_war_support = 0.10
+			add_command_power = 50
+			country_event = { id = DOP_GNG_flow.16 hours = 12 }
+		}
+		log = "[GetDateText]: [Root.GetName]: CHI and GNG rejoined the CPS; JAP entered the southwest war and scheduled Guangzhou deployment in twelve hours"
+	}
+}
+
+DOP_GNG_complete_southwest_war = {
+	if = {
+		limit = { has_country_flag = DOP_GNG_flow_southwest_war_active }
+		GNG = { white_peace = { tag = YUN } }
+		CHI = { white_peace = { tag = YUN } }
+		JAP = {
+			if = {
+				limit = { has_country_flag = DOP_JAP_southwest_reinforcements_deployed }
+				delete_unit_template_and_units = {
+					division_template = "DOP Nanshin Sensha Shidan"
+					disband = no
+				}
+				clr_country_flag = DOP_JAP_southwest_reinforcements_deployed
+			}
+			if = {
+				limit = { has_war_with = YUN }
+				white_peace = { tag = YUN }
+			}
+		}
+		DOP_GNG_remove_southwest_war_state_modifiers = yes
+
+		# Long Shengwu dies at Kunming. Reuse TNO's reconstruction government,
+		# but never its differently timed Western Insurrection start effect.
+		YUN = {
+			if = {
+				limit = { has_country_flag = DOP_YUN_southwest_war_prepared }
+				retire_character = DOP_YUN_long_shengwu
+			}
+			clr_country_flag = YUN_long_yun_crusade
+			load_focus_tree = {
+				tree = YUN_post_xinan
+				keep_completed = yes
+			}
+			YUN_southwest_reconstruction_effects = yes
+			set_country_flag = DOP_YUN_southwest_reconstruction_installed
+		}
+
+		# Rebuild Guangxi as a Guangdong client, then retain the two coastal
+		# states explicitly assigned to Guangdong by the author design.
+		GNG = {
+			transfer_state = 594
+			transfer_state = 599
+			transfer_state = 1464
+			transfer_state = 2390
+			transfer_state = 2391
+			transfer_state = 2392
+			transfer_state = 2393
+			transfer_state = 2394
+			transfer_state = 2472
+			release_autonomy = {
+				target = GUX
+				autonomy_state = autonomy_reliant
+				freedom_level = 0
+			}
+			transfer_state = 1464
+			transfer_state = 2472
+			transfer_state = 591
+			transfer_state = 2474
+			transfer_state = 2475
+		}
+		if = {
+			limit = { country_exists = GUX }
+			GUX = {
+				load_focus_tree = {
+					tree = ZZZ_blank_focus
+					keep_completed = no
+				}
+			}
+		}
+
+		# Yunnan survives as the southwest reconstruction government under CHI.
+		CHI = {
+			set_autonomy = {
+				target = YUN
+				autonomy_state = autonomy_military_government
+				freedom_level = 0
+			}
+		}
+
+		clr_country_flag = DOP_GNG_flow_southwest_war_active
+		clr_country_flag = DOP_GNG_flow_maoming_countdown_started
+		clr_country_flag = DOP_GNG_flow_victory_event_pending
+		set_country_flag = DOP_GNG_flow_southwest_war_won
+		set_variable = { DOP_GNG_content_stage = 3 }
+		remove_ideas = DOP_GNG_wartime_triangle
+		remove_ideas = DOP_GNG_strangle_guerrillas
+		remove_ideas = DOP_GNG_civil_priority
+		remove_ideas = DOP_GNG_civil_priority_supply
+		remove_ideas = DOP_GNG_military_priority
+		remove_ideas = DOP_GNG_military_priority_industry
+		JAP = {
+			if = {
+				limit = { has_dynamic_modifier = DOP_GNG_japanese_reinforcement_momentum }
+				remove_dynamic_modifier = { modifier = DOP_GNG_japanese_reinforcement_momentum }
+			}
+		}
+		DOP_GNG_set_status_postwar = yes
+		DOP_GNG_set_security_postwar = yes
+		set_temp_variable = { GNG_corruption_status_var_temp = 3 }
+		GNG_update_corruption = yes
+		DOP_GNG_refresh_fiscal_from_debt = yes
+		add_stability = 0.08
+		load_focus_tree = dop_sonyjapan_reconsturuction_tree
+		log = "[GetDateText]: [Root.GetName]: DOP southwest war completed and reconstruction tree loaded"
+	}
+}
+
+DOP_GNG_restore_legco = {
+	custom_effect_tooltip = DOP_GNG_restore_legco_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: LegCo"
+		clr_country_flag = GNG_IJA_Disable_LegCo
+		clr_country_flag = GNG_disable_all_mechanics_IJA
+		add_to_variable = { GNG_dop_legco_skin_dirty = 1 }
+	}
+}
+
+DOP_GNG_unlock_extra_regions = {
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GNG_extra_regions_unlocked } }
+		set_country_flag = DOP_GNG_extra_regions_unlocked
+		add_to_array = { GNG_states_list = 591 }
+		add_to_array = { GNG_states_list = 1464 }
+		add_to_array = { GNG_states_list = 2472 }
+		add_to_array = { GNG_rural_states = 591 }
+		add_to_array = { GNG_rural_states = 1464 }
+		add_to_array = { GNG_rural_states = 2472 }
+
+		591 = {
+			set_variable = { sar_spt = 48 }
+			set_variable = { tri_spt = 14 }
+			set_variable = { yak_spt = 16 }
+			set_variable = { ken_spt = 22 }
+			set_variable = { jap_pop = 6 }
+			set_variable = { zhu_pop = 18 }
+			set_variable = { chi_pop = 76 }
+			set_variable = { jap_app = 58 }
+			set_variable = { zhu_app = 50 }
+			set_variable = { chi_app = 45 }
+		}
+		1464 = {
+			set_variable = { sar_spt = 12 }
+			set_variable = { tri_spt = 38 }
+			set_variable = { yak_spt = 28 }
+			set_variable = { ken_spt = 22 }
+			set_variable = { jap_pop = 4 }
+			set_variable = { zhu_pop = 16 }
+			set_variable = { chi_pop = 80 }
+			set_variable = { jap_app = 42 }
+			set_variable = { zhu_app = 44 }
+			set_variable = { chi_app = 55 }
+		}
+		2472 = {
+			set_variable = { sar_spt = 10 }
+			set_variable = { tri_spt = 42 }
+			set_variable = { yak_spt = 26 }
+			set_variable = { ken_spt = 22 }
+			set_variable = { jap_pop = 3 }
+			set_variable = { zhu_pop = 14 }
+			set_variable = { chi_pop = 83 }
+			set_variable = { jap_app = 38 }
+			set_variable = { zhu_app = 42 }
+			set_variable = { chi_app = 58 }
+		}
+		GNG_update_underworld_display = yes
+		GNG_update_demographic_display = yes
+		add_to_variable = { GNG_map_dirty_variable = 0.01 }
+		add_to_variable = { GNG_economy_dirty_variable = 0.01 }
+	}
+}
+
+DOP_GNG_restore_map_and_extra_regions = {
+	custom_effect_tooltip = DOP_GNG_restore_map_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: regional map and extra regions"
+		set_country_flag = GNG_Google_Maps_Show
+		DOP_GNG_unlock_extra_regions = yes
+	}
+}
+
+DOP_GNG_unlock_construction_stage = {
+	custom_effect_tooltip = DOP_GNG_unlock_construction_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: construction"
+		GNG_BOP_Construction_Initialize = yes
+	}
+	set_temp_variable = { DOP_construction_target_project = 12 }
+	DOP_construction_show_project = yes
+	set_temp_variable = { DOP_construction_target_project = 13 }
+	DOP_construction_show_project = yes
+}
+
+DOP_GNG_unlock_scw_stage = {
+	custom_effect_tooltip = DOP_GNG_unlock_scw_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: silicon cold war"
+		DOP_SCW_activate_decision_system = yes
+	}
+	# DOP INITIAL SCW DECISIONS 260902B
+	DOP_SCW_race_commercial_attaches_unlock = yes
+	DOP_SCW_materials_buy_crude_silicon_unlock = yes
+	DOP_SCW_wafer_replenish_consumables_unlock = yes
+	DOP_SCW_lithography_optical_calibration_unlock = yes
+}
+
+DOP_GNG_unlock_gsa_stage = {
+	custom_effect_tooltip = DOP_GNG_unlock_gsa_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: science academy"
+		GNG_BOP_GSA_Initialize = yes
+	}
+}
+
+DOP_GNG_restore_economy_compare = {
+	custom_effect_tooltip = DOP_GNG_restore_economy_compare_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: economy comparison"
+		set_country_flag = GNG_Economic_Graphs_Show
+		set_country_flag = DOP_GNG_econ_compare_unlocked
+		set_country_flag = DOP_GNG_econ_compare_chi
+		set_global_flag = DOP_GNG_econ_compare_chi
+		DOP_GNG_econ_compare_init = yes
+		DOP_GNG_econ_apply_compare = yes
+		add_to_variable = { GNG_economy_dirty_variable = 1 }
+	}
+}
+
+DOP_GNG_restore_product_cycle = {
+	custom_effect_tooltip = DOP_GNG_restore_product_cycle_tt
+	hidden_effect = {
+		log = "[GetDateText]: [Root.GetName]: DOP GUI unlock: product cycle"
+		set_country_flag = GNG_Product_Decisions_GUI_show
+		add_to_variable = { GNG_product_decisions_dirty_variable = 1 }
+	}
+}
+
+DOP_GNG_enter_core_stage = {
+	custom_effect_tooltip = DOP_GNG_enter_core_stage_tt
+	hidden_effect = {
+		if = {
+			limit = { NOT = { has_country_flag = DOP_GNG_flow_core_started } }
+			set_country_flag = DOP_GNG_flow_core_started
+			set_variable = { DOP_GNG_content_stage = 4 }
+			load_focus_tree = dop_sonyjapan_core_tree
+			log = "[GetDateText]: [Root.GetName]: DOP stage 4 core tree loaded"
+		}
+	}
+}
+
+DOP_GNG_add_ibuka_point = {
+	custom_effect_tooltip = DOP_GNG_ibuka_point_gain_tt
+	add_to_variable = { DOP_GNG_ibuka_points = 1 }
+	clamp_variable = { var = DOP_GNG_ibuka_points min = 0 max = 99 }
+	log = "[GetDateText]: [Root.GetName]: DOP Ibuka point added; total [?DOP_GNG_ibuka_points]"
+}
+
+DOP_GNG_score_scw_rank_once = {
+	if = {
+		limit = {
+			NOT = { has_country_flag = DOP_GNG_scw_rank_scored }
+			has_country_flag = DOP_SCW_initialized
+		}
+		set_country_flag = DOP_GNG_scw_rank_scored
+		SCW_piechart_recalculate = yes
+		set_temp_variable = { DOP_GNG_scw_opponents_ahead = 0 }
+		if = {
+			limit = { check_variable = { var = GNG_percentage_for_bar value = USA_percentage_for_bar compare = less_than } }
+			add_to_temp_variable = { DOP_GNG_scw_opponents_ahead = 1 }
+		}
+		if = {
+			limit = { check_variable = { var = GNG_percentage_for_bar value = ITA_percentage_for_bar compare = less_than } }
+			add_to_temp_variable = { DOP_GNG_scw_opponents_ahead = 1 }
+		}
+		if = {
+			limit = { check_variable = { var = GNG_percentage_for_bar value = GER_percentage_for_bar compare = less_than } }
+			add_to_temp_variable = { DOP_GNG_scw_opponents_ahead = 1 }
+		}
+		if = {
+			limit = { check_variable = { var = GNG_percentage_for_bar value = JAP_percentage_for_bar compare = less_than } }
+			add_to_temp_variable = { DOP_GNG_scw_opponents_ahead = 1 }
+		}
+		set_variable = { DOP_GNG_scw_rank_points_awarded = 4 }
+		subtract_from_variable = { DOP_GNG_scw_rank_points_awarded = DOP_GNG_scw_opponents_ahead }
+		clamp_variable = { var = DOP_GNG_scw_rank_points_awarded min = 0 max = 4 }
+		add_to_variable = { DOP_GNG_ibuka_points = DOP_GNG_scw_rank_points_awarded }
+		clamp_variable = { var = DOP_GNG_ibuka_points min = 0 max = 99 }
+		custom_effect_tooltip = DOP_GNG_scw_rank_scored_tt
+		log = "[GetDateText]: [Root.GetName]: DOP SCW rank awarded [?DOP_GNG_scw_rank_points_awarded] Ibuka points; total [?DOP_GNG_ibuka_points]"
+	}
+}
+
+DOP_GNG_resolve_tycoon_route = {
+	clr_country_flag = DOP_GNG_route_lee
+	clr_country_flag = DOP_GNG_route_ibuka
+	clr_country_flag = DOP_GNG_route_finance
+	clr_country_flag = DOP_GNG_route_unresolved
+	if = {
+		limit = { has_idea = DOP_GNG_identity_dual }
+		set_country_flag = DOP_GNG_route_lee
+		custom_effect_tooltip = DOP_GNG_route_lee_tt
+		log = "[GetDateText]: [Root.GetName]: DOP route resolved: Lee"
+	}
+	else_if = {
+		limit = { has_idea = DOP_GNG_identity_zhujin }
+		DOP_GNG_score_scw_rank_once = yes
+		if = {
+			limit = { check_variable = { var = DOP_GNG_ibuka_points value = 9 compare = greater_than_or_equals } }
+			set_country_flag = DOP_GNG_route_ibuka
+			custom_effect_tooltip = DOP_GNG_route_ibuka_tt
+			log = "[GetDateText]: [Root.GetName]: DOP route resolved: Ibuka with [?DOP_GNG_ibuka_points] points"
+		}
+		else = {
+			set_country_flag = DOP_GNG_route_finance
+			custom_effect_tooltip = DOP_GNG_route_finance_tt
+			log = "[GetDateText]: [Root.GetName]: DOP route resolved: Finance with [?DOP_GNG_ibuka_points] points"
+		}
+	}
+	else = {
+		set_country_flag = DOP_GNG_route_unresolved
+		custom_effect_tooltip = DOP_GNG_route_unresolved_tt
+		log = "[GetDateText]: [Root.GetName]: DOP route unresolved because identity law content is frozen"
+	}
+}

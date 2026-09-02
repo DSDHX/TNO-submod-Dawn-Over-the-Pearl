@@ -256,13 +256,17 @@ country_event = {
     option = {
         name = DOP_GNG_zip.16.a1
         custom_effect_tooltip = DOP_GNG_zip.16.a1.tt
-        for_each_loop = {
-            array = GNG_states_list
-            GNG_japanese_pop_change = -7.5
-            GNG_chinese_pop_change = -7.5
-            GNG_japanese_app_change = -2.5
-            GNG_zhujin_app_change = -2.5
-            GNG_chinese_app_change = -5
+        every_owned_state = {
+            set_temp_variable = { jap_pop_temp = -7.5 }
+            GNG_japanese_pop_change = yes
+            set_temp_variable = { chi_pop_temp = -7.5 }
+            GNG_chinese_pop_change = yes
+            set_temp_variable = { jap_app_temp = -2.5 }
+            GNG_japanese_app_change = yes
+            set_temp_variable = { zhu_app_temp = -2.5 }
+            GNG_zhujin_app_change = yes
+            set_temp_variable = { chi_app_temp = -5 }
+            GNG_chinese_app_change = yes
         }
         country_event = { id = DOP_GNG_zip.17 days = 2 }
         country_event = { id = DOP_GNG_zip.18 days = 4 }

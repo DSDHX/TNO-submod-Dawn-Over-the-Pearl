@@ -472,6 +472,7 @@ def main() -> int:
     )
 
     effects = text(ROOT / "common/scripted_effects/DOP_construction_effects.txt")
+    flow_effects = text(ROOT / "common/scripted_effects/DOP_GNG_flow_effects.txt")
     reconstruction_focus = text(
         ROOT / "common/national_focus/dop_sony-japan_reconstruction.txt"
     )
@@ -634,13 +635,35 @@ def main() -> int:
     ruins_focus = reconstruction_focus.split(
         "id = GNG_focus_leave_ruins_behind", 1
     )[1].split("id = GNG_focus_in_the_warm_sun", 1)[0]
+    construction_flow = flow_effects.split(
+        "DOP_GNG_unlock_construction_stage = {", 1
+    )[1].split("DOP_GNG_unlock_scw_stage = {", 1)[0]
     require(
         "add_building_construction" not in ruins_focus
         and "country_event = { id = DOP_GNG_event.152 days = 0 }" in ruins_focus
-        and "GNG_BOP_Construction_Initialize = yes" in ruins_focus
-        and "set_temp_variable = { DOP_construction_target_project = 13 }" in ruins_focus
-        and "DOP_construction_show_and_start_project = yes" in ruins_focus,
-        "leave-ruins focus fires its event, unlocks Construction and starts project 13",
+        and "DOP_GNG_unlock_construction_stage = yes" in ruins_focus
+        and "DOP_construction_show_and_start_project = yes" not in ruins_focus
+        and "GNG_BOP_Construction_Initialize = yes" in construction_flow
+        and "set_temp_variable = { DOP_construction_target_project = 12 }" in construction_flow
+        and "set_temp_variable = { DOP_construction_target_project = 13 }" in construction_flow
+        and construction_flow.count("DOP_construction_show_project = yes") == 2
+        and "DOP_construction_start_project = yes" not in construction_flow
+        and "DOP_construction_show_and_start_project = yes" not in construction_flow,
+        "leave-ruins focus fires its event, unlocks Construction, and only opens projects 12/13",
+    )
+    require(
+        reward_effects.count("# DOP CONTENT FLOW 260902A Ibuka score") == 4
+        and reward_effects.count("DOP_GNG_add_ibuka_point = yes") == 4
+        and all(
+            flag in reward_effects
+            for flag in (
+                "DOP_construction_daya_bay_ibuka_scored",
+                "DOP_construction_wenchang_ibuka_scored",
+                "DOP_construction_prd_maglev_ibuka_scored",
+                "DOP_construction_granite_uranium_ibuka_scored",
+            )
+        ),
+        "the four author-specified construction projects award one protected Ibuka point each",
     )
     require(
         gui.count("name = construction_description_button") == 1
@@ -823,9 +846,9 @@ def main() -> int:
 
     validate_railways(reward_effects, args.tno_root)
     require(
-        "EARLY DEVELOPMENT BUILD 260901F"
+        "EARLY DEVELOPMENT BUILD 260902I"
         in text(ROOT / "localisation/simp_chinese/DOP_version_l_simp_chinese.yml"),
-        "user-facing build version is 260901F",
+        "user-facing build version is 260902I",
     )
     print("STATIC ACCEPTANCE: PASS")
     return 0

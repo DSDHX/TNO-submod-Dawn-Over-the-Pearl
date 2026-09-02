@@ -80,6 +80,9 @@ DOP_GNG_set_security_war = {
 	remove_ideas = DOP_GNG_security_postwar
 	remove_ideas = DOP_GNG_security_reformed
 	add_ideas = DOP_GNG_security_southwest_war
+	# DOP CONTENT FLOW 260902A TNO security sync
+	set_temp_variable = { GNG_security_status_var_temp = 6 }
+	GNG_update_security = yes
 }
 
 DOP_GNG_set_security_postwar = {
@@ -87,6 +90,9 @@ DOP_GNG_set_security_postwar = {
 	remove_ideas = DOP_GNG_security_postwar
 	remove_ideas = DOP_GNG_security_reformed
 	add_ideas = DOP_GNG_security_postwar
+	# DOP CONTENT FLOW 260902A TNO security sync
+	set_temp_variable = { GNG_security_status_var_temp = 4 }
+	GNG_update_security = yes
 }
 
 DOP_GNG_set_security_reformed = {
@@ -94,6 +100,9 @@ DOP_GNG_set_security_reformed = {
 	remove_ideas = DOP_GNG_security_postwar
 	remove_ideas = DOP_GNG_security_reformed
 	add_ideas = DOP_GNG_security_reformed
+	# DOP CONTENT FLOW 260902A TNO security sync
+	set_temp_variable = { GNG_security_status_var_temp = 2 }
+	GNG_update_security = yes
 }
 
 DOP_GNG_set_identity_initial = {
@@ -115,26 +124,4 @@ DOP_GNG_set_identity_zhujin = {
 	remove_ideas = DOP_GNG_identity_dual
 	remove_ideas = DOP_GNG_identity_zhujin
 	add_ideas = DOP_GNG_identity_zhujin
-}
-
-DOP_GNG_update_stage_integrity = {
-	remove_ideas = DOP_GNG_integrity_waltz
-	remove_ideas = DOP_GNG_integrity_chorus
-	remove_ideas = DOP_GNG_integrity_dissonance
-	remove_ideas = DOP_GNG_integrity_chaos
-	if = {
-		limit = { check_variable = { DOP_GNG_stage_integrity >= 75 } }
-		add_ideas = DOP_GNG_integrity_waltz
-	}
-	else_if = {
-		limit = { check_variable = { DOP_GNG_stage_integrity >= 50 } }
-		add_ideas = DOP_GNG_integrity_chorus
-	}
-	else_if = {
-		limit = { check_variable = { DOP_GNG_stage_integrity >= 25 } }
-		add_ideas = DOP_GNG_integrity_dissonance
-	}
-	else = {
-		add_ideas = DOP_GNG_integrity_chaos
-	}
 }

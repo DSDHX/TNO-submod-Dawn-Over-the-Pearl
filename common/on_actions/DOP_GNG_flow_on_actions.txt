@@ -1,0 +1,65 @@
+on_actions = {
+	on_daily_GNG = {
+		effect = {
+			# Automatic handoff from the final focus of TNO's Morita ending.
+			if = {
+				limit = {
+					has_completed_focus = GNG_the_coming_storm
+					NOT = { has_country_flag = DOP_GNG_flow_intro_started }
+				}
+				DOP_GNG_begin_post_tno_content = yes
+			}
+
+			# Maoming's capture starts an irreversible fourteen-day survival clock.
+			if = {
+				limit = {
+					has_country_flag = DOP_GNG_flow_southwest_war_active
+					NOT = { has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived }
+					NOT = { has_country_flag = DOP_GNG_flow_maoming_countdown_started }
+					1017 = { is_controlled_by = YUN }
+				}
+				set_country_flag = DOP_GNG_flow_maoming_countdown_started
+				set_variable = { DOP_GNG_maoming_survival_days = 14 }
+				log = "[GetDateText]: [Root.GetName]: DOP Maoming lost; fourteen-day survival clock started"
+			}
+
+			else_if = {
+				limit = {
+					has_country_flag = DOP_GNG_flow_southwest_war_active
+					has_country_flag = DOP_GNG_flow_maoming_countdown_started
+					NOT = { has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived }
+					has_capitulated = no
+				}
+				subtract_from_variable = { DOP_GNG_maoming_survival_days = 1 }
+				if = {
+					limit = { check_variable = { var = DOP_GNG_maoming_survival_days value = 0 compare = less_than_or_equals } }
+					DOP_GNG_spawn_japanese_reinforcements = yes
+				}
+			}
+
+			# Occupying Kunming ends the war through an author-facing placeholder event.
+			if = {
+				limit = {
+					has_country_flag = DOP_GNG_flow_southwest_war_active
+					NOT = { has_country_flag = DOP_GNG_flow_victory_event_pending }
+					325 = {
+						OR = {
+							is_controlled_by = GNG
+							is_controlled_by = JAP
+							is_controlled_by = CHI
+						}
+					}
+					controls_state = 326
+					controls_state = 592
+					controls_state = 593
+					controls_state = 729
+					controls_state = 1017
+					controls_state = 1438
+					controls_state = 1439
+				}
+				set_country_flag = DOP_GNG_flow_victory_event_pending
+				country_event = { id = DOP_GNG_flow.3 hours = 1 }
+			}
+		}
+	}
+}

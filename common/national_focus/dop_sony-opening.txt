@@ -14,7 +14,13 @@ shared_focus = {
     prerequisite = { # 前置组 4
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.137 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_year_of_the_rain"
+		# DOP BESPOKE 260902B axes: 警觉 / 信心
+		# 风暴预警提高戒备，却令社会略感不安
+		add_war_support = 0.02
+		add_stability = -0.005
     }
 }
 
@@ -30,7 +36,14 @@ shared_focus = {
         focus = DOP_GNG_year_of_the_rain
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.138 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_res_from_oc"
+		# DOP BESPOKE 260902B axes: 行政 / 财政
+		# 恢复秩序需要一次性拨款并改善行政动员
+		TNO_improve_admin_efficiency_really_low = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.035 }
+		econ_spend_money_once_effect_raw_money = yes
     }
 }
 
@@ -46,7 +59,15 @@ shared_focus = {
         focus = DOP_GNG_res_from_oc
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.142 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_regen_econ"
+		# DOP BESPOKE 260902B axes: 增长 / 财政
+		# 重连商业网络直接带动增长与杂项收入
+		set_temp_variable = { gdp_growth_temp = 0.18 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_misc_income_temp = 0.025 }
+		GNG_misc_income_change = yes
     }
 }
 
@@ -62,7 +83,14 @@ shared_focus = {
         focus = DOP_GNG_res_from_oc
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.139 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_wrecking_world"
+		# DOP BESPOKE 260902B axes: 外贸 / 廉价商品
+		# 抢占危机后市场带来收入，也以低价商品缓解贫困
+		set_temp_variable = { GNG_misc_income_temp = 0.03 }
+		GNG_misc_income_change = yes
+		TNO_improve_poverty_low = yes
     }
 }
 
@@ -135,12 +163,12 @@ shared_focus = {
         focus = DOP_GNG_legal_compromise
     }
     completion_reward = {
+        country_event = { id = DOP_GNG_event.30 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_save_unemp"
     
 	
 	
 	
-		country_event = { id = DOP_GNG_event.30 days = 0 }
 	}
 }
 
@@ -156,12 +184,12 @@ shared_focus = {
         focus = DOP_GNG_more_jobs
     }
     completion_reward = {
+        country_event = { id = DOP_GNG_event.27 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_maoming_ins"
     
 	
 	
 	
-		country_event = { id = DOP_GNG_event.27 days = 0 }
 	}
 }
 
@@ -177,7 +205,17 @@ shared_focus = {
         focus = DOP_GNG_wrecking_world
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.140 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_pan_thai_bay"
+		# DOP BESPOKE 260902B axes: 增长 / 东京关系 / 投资
+		# 环泰国湾投资扩大市场并符合共荣圈利益
+		set_temp_variable = { gdp_growth_temp = 0.14 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_approval_temp_var = 1 }
+		GNG_Japan_approval_change = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.04 }
+		econ_spend_money_once_effect_raw_money = yes
     }
 }
 
@@ -193,7 +231,15 @@ shared_focus = {
         focus = DOP_GNG_wrecking_world
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.141 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_gd_mex_col"
+		# DOP BESPOKE 260902B axes: 外贸 / 东京关系
+		# 墨西哥渠道打开北美市场，却会引起东京疑虑
+		set_temp_variable = { GNG_misc_income_temp = 0.04 }
+		GNG_misc_income_change = yes
+		set_temp_variable = { GNG_approval_temp_var = -1 }
+		GNG_Japan_approval_change = yes
     }
 }
 
@@ -209,7 +255,14 @@ shared_focus = {
         focus = DOP_GNG_regen_econ
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.143 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_expand_d"
+		# DOP BESPOKE 260902B axes: 科研 / 财政
+		# 索尼以研发投入换取产品换代能力
+		TNO_improve_research_facilities_low = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.055 }
+		econ_spend_money_once_effect_raw_money = yes
     }
 }
 
@@ -225,7 +278,16 @@ shared_focus = {
         focus = DOP_GNG_regen_econ
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.144 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_lower_barrier"
+		# DOP BESPOKE 260902B axes: 增长 / 腐败 / 稳定
+		# 翻热股市刺激资本流入，也放大投机和寻租
+		set_temp_variable = { gdp_growth_temp = 0.10 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_corruption_temp_var = 0.5 }
+		GNG_Corruption_Change = yes
+		add_stability = -0.01
     }
 }
 
@@ -241,7 +303,13 @@ shared_focus = {
         focus = DOP_GNG_year_of_the_rain
     }
     completion_reward = {
+        # DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+        country_event = { id = DOP_GNG_event.65 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_rightous_def"
+		# DOP BESPOKE 260902B axes: 备战 / 社会
+		# 低调防卫提高战意，但战争传言侵蚀安定
+		add_war_support = 0.03
+		add_stability = -0.01
     }
 }
 
@@ -258,6 +326,11 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_rearm_pol"
+		# DOP BESPOKE 260902B axes: 警务专业化 / 军费
+		# 警务处重新武装并承担持续装备费用
+		TNO_improve_army_professionalism_low = yes
+		set_temp_variable = { GNG_military_costs_temp = 0.015 }
+		GNG_military_costs_change = yes
     }
 }
 
@@ -274,6 +347,12 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_cps_info_co"
+		# DOP BESPOKE 260902B axes: 情报 / 廉洁
+		# 情报协作强化东京关系，也扩大灰色操作空间
+		set_temp_variable = { GNG_corruption_temp_var = 0.35 }
+		GNG_Corruption_Change = yes
+		set_temp_variable = { GNG_approval_temp_var = 2 }
+		GNG_Japan_approval_change = yes
     }
 }
 
@@ -290,6 +369,13 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_fill_resp_troops"
+		# DOP BESPOKE 260902B axes: 训练 / 军费
+		# 对策部队在既有装备之外获得正规训练和预算
+		army_experience = 8
+		set_temp_variable = { GNG_military_costs_temp = 0.01 }
+		GNG_military_costs_change = yes
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1500 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 200 }
     }
 }
 
@@ -306,6 +392,13 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_reiterate_our_pos"
+		# DOP BESPOKE 260902B axes: 东京关系 / 南京关系
+		# 重申地位协定安抚日本，却令中国更加不满
+		set_temp_variable = { GNG_approval_temp_var = 2 }
+		GNG_Japan_approval_change = yes
+		set_temp_variable = { GNG_opinion_temp_var = -1 }
+		GNG_China_opinion_change = yes
+		add_war_support = 0.02
     }
 }
 
@@ -325,6 +418,10 @@ shared_focus = {
     }
     completion_reward = {
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_army_of_gadfly"
+		# DOP BESPOKE 260902B axes: 作战经验 / 动员
+		# 袭扰战术依赖小单位经验与临机指挥
+		army_experience = 18
+		add_command_power = 20
     }
 }
 
@@ -345,13 +442,21 @@ shared_focus = {
     prerequisite = { 
         focus = DOP_GNG_army_of_gadfly
     }
+	select_effect = {
+		if = {
+			limit = { NOT = { has_country_flag = DOP_GNG_flow_intro_final_focus_selected } }
+			country_event = { id = DOP_GNG_flow.1 hours = 1 }
+		}
+	}
     completion_reward = {
+        country_event = { id = DOP_GNG_event.104 days = 0 }
         log = "[GetDateText]: [Root.GetName]: Focus DOP_GNG_faux_opening"
     
 	
 	
 	
-		country_event = { id = DOP_GNG_event.104 days = 0 }
+		# DOP BESPOKE RETAINED 260902B: transition authority
+		add_political_power = 25
 	}
 }
 

@@ -1,0 +1,22 @@
+division_template = {
+	name = "DOP Nanshin Sensha Shidan"
+	priority = 2
+	is_locked = yes
+	division_names_group = JAP_ARM_01
+	regiments = {
+		MBT = { x = 0 y = 0 }
+		MBT = { x = 0 y = 1 }
+		MBT = { x = 0 y = 2 }
+		MBT = { x = 0 y = 3 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+	support = {
+		MBT_recon = { x = 0 y = 0 }
+		MBT_engineer = { x = 0 y = 1 }
+		signal_company = { x = 0 y = 2 }
+		logistics_company = { x = 0 y = 3 }
+	}
+}

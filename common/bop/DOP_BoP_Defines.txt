@@ -2,3 +2,4 @@
 ## Silicon CW Category ##
 BoP_Tab_DOPSiliconCW_GNG = { decision_category = GNG_SiliconCW_category }
 BoP_Tab_DOPConstruction_GNG = { decision_category = DOP_GNG_construction_category }
+BoP_Tab_DOPScienceAcademy_GNG = { decision_category = GNG_SiliconCW_category }

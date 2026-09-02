@@ -13,6 +13,11 @@ shared_focus = {
 	cost = 3.000
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus beating_drums"
+		add_war_support = 0.05
+		add_command_power = 10
+		# DOP BESPOKE 260902B axes: 军队专业化
+		# 战鼓渐响促成一次战前训练整顿
+		TNO_improve_army_professionalism_low = yes
 	}
 }
 
@@ -29,6 +34,11 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus waiting_allies"
+		# DOP BESPOKE RETAINED 260902B: allied equipment and command
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 2500 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 200 }
+		add_command_power = 10
 	}
 }
 
@@ -45,6 +55,11 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus in_the_chaotic_world"
+		# DOP BESPOKE RETAINED 260902B: harsh counter-guerrilla mobilisation
+		add_ideas = DOP_GNG_strangle_guerrillas
+		add_stability = -0.03
+		add_war_support = 0.05
+		army_experience = 10
 	}
 }
 
@@ -61,6 +76,12 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus tokyo_express"
+		# DOP BESPOKE RETAINED 260902B: Tokyo arms delivery
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 350 }
+		set_temp_variable = { GNG_approval_temp_var = 2 }
+		GNG_Japan_approval_change = yes
 	}
 }
 
@@ -77,6 +98,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus enlarge_reserve_service"
+		# DOP BESPOKE RETAINED 260902B: reserve mobilisation
+		add_manpower = 50000
+		add_war_support = 0.03
+		add_command_power = 15
 	}
 }
 
@@ -93,6 +118,12 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus collaborate_in_shadow"
+		# DOP BESPOKE 260902B axes: 治安 / 民意 / 腐败
+		# 警民合作改善秩序，但秘密协作留下寻租空间
+		add_stability = 0.02
+		set_temp_variable = { GNG_corruption_temp_var = 0.25 }
+		GNG_Corruption_Change = yes
+		add_political_power = 10
 	}
 }
 
@@ -110,5 +141,10 @@ shared_focus = {
 	}
 	completion_reward = {
 		log = "[GetDateText]: [Root.GetName]: Focus defend_the_great_gwongdung"
+		add_war_support = 0.05
+		army_experience = 20
+		add_command_power = 30
+		# DOP BESPOKE 260902B axes: 本土防卫
+		# 现有战意、经验与指挥力已完整体现守乡动员
 	}
 }

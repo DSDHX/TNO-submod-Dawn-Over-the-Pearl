@@ -302,8 +302,8 @@ COST_ORDER = (
     'pp', 'reserves', 'money', 'stage', 'supervisor', 'audience',
     'stability', 'war', 'command', 'manpower',
 )
-THEATER_EFFECT_KINDS = frozenset({'stage', 'supervisor', 'audience'})
-THEATER_EFFECT_MULTIPLIER = Decimal('2')
+CANONICAL_GNG_METRIC_KINDS = frozenset({'stage', 'supervisor', 'audience'})
+GNG_METRIC_MULTIPLIER = Decimal('2')
 EPS_HUNDREDTH = Decimal('0.01')
 EPS_TEN_THOUSANDTH = Decimal('0.0001')
 EPS_ONE = Decimal('1')
@@ -319,8 +319,8 @@ def number(raw: str | Decimal) -> str:
 
 def effective_value(kind: str, raw: str | Decimal) -> Decimal:
     value = Decimal(raw)
-    if kind in THEATER_EFFECT_KINDS:
-        value *= THEATER_EFFECT_MULTIPLIER
+    if kind in CANONICAL_GNG_METRIC_KINDS:
+        value *= GNG_METRIC_MULTIPLIER
     return value
 
 
@@ -405,18 +405,18 @@ def render_cost_effects(decision: Decision) -> tuple[list[str], list[str]]:
             ])
         elif cost == 'stage':
             visible.extend([
-                f'set_temp_variable = {{ DOP_SCW_stage_integrity_change = -{number(value)} }}',
-                'DOP_SCW_change_stage_integrity = yes',
+                f'set_temp_variable = {{ GNG_corruption_temp_var = {number(value)} }}',
+                'GNG_Corruption_Change = yes',
             ])
         elif cost == 'supervisor':
             visible.extend([
-                f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = -{number(value)} }}',
-                'DOP_SCW_change_supervisor_attitude = yes',
+                f'set_temp_variable = {{ GNG_approval_temp_var = -{number(value)} }}',
+                'GNG_Japan_approval_change = yes',
             ])
         elif cost == 'audience':
             visible.extend([
-                f'set_temp_variable = {{ DOP_SCW_audience_patience_change = -{number(value)} }}',
-                'DOP_SCW_change_audience_patience = yes',
+                f'set_temp_variable = {{ GNG_opinion_temp_var = -{number(value)} }}',
+                'GNG_China_opinion_change = yes',
             ])
         elif cost == 'stability':
             effect = f'add_stability = -{number(value)}'
@@ -493,20 +493,20 @@ def render_reward_effects(decision: Decision) -> list[str]:
     supervisor_reward = decision.rewards.get('supervisor')
     if supervisor_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_supervisor_attitude_change = {number(effective_value("supervisor", supervisor_reward))} }}',
-            'DOP_SCW_change_supervisor_attitude = yes',
+            f'set_temp_variable = {{ GNG_approval_temp_var = {number(effective_value("supervisor", supervisor_reward))} }}',
+            'GNG_Japan_approval_change = yes',
         ])
     audience_reward = decision.rewards.get('audience')
     if audience_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_audience_patience_change = {number(effective_value("audience", audience_reward))} }}',
-            'DOP_SCW_change_audience_patience = yes',
+            f'set_temp_variable = {{ GNG_opinion_temp_var = {number(effective_value("audience", audience_reward))} }}',
+            'GNG_China_opinion_change = yes',
         ])
     stage_reward = decision.rewards.get('stage')
     if stage_reward is not None:
         effects.extend([
-            f'set_temp_variable = {{ DOP_SCW_stage_integrity_change = {number(effective_value("stage", stage_reward))} }}',
-            'DOP_SCW_change_stage_integrity = yes',
+            f'set_temp_variable = {{ GNG_corruption_temp_var = -{number(effective_value("stage", stage_reward))} }}',
+            'GNG_Corruption_Change = yes',
         ])
     for helper in decision.applied_socdev:
         effects.append(f'{helper} = yes')
@@ -641,13 +641,9 @@ def build_unlock_effects() -> str:
             '}',
             '',
         ])
-    initial_decisions = [
-        decision for decision in DECISIONS
-        if decision.repeatable or decision.stage == 1
-    ]
     lines.extend([
-        '# Normal activation opens both SCW pages and silently unlocks only',
-        '# repeatable decisions plus the first milestone of each annual chain.',
+        '# Normal activation initializes both SCW pages and market data.',
+        '# Concrete decisions are exposed by relevant focuses, never here.',
         'DOP_SCW_activate_decision_system = {',
         '    hidden_effect = {',
         '        if = {',
@@ -660,9 +656,6 @@ def build_unlock_effects() -> str:
         '        GNG_SCW_add_tab = yes',
         '        GNG_SCW_Initialize = yes',
         '        set_country_flag = DOP_SCW_decisions_unlocked',
-    ])
-    lines.extend(f'        set_country_flag = {decision.unlock_flag}' for decision in initial_decisions)
-    lines.extend([
         '    }',
         '}',
         '',
@@ -696,11 +689,11 @@ def cost_component(kind: str, raw: str, blocked: bool) -> str:
     if kind in {'reserves', 'money'}:
         return f'£GFX_green_dollar_sign {color}{money_label(raw)}{end}'
     if kind == 'stage':
-        return f'£GFX_DOP_SCW_stage_integrity_texticon {color}{value}{end}'
+        return f'£GNG_corruption_yen_texticon {color}{value}{end}'
     if kind == 'supervisor':
-        return f'£GFX_DOP_SCW_supervisor_attitude_texticon {color}{value}%{end}'
+        return f'£GNG_japanese_nation_texticon {color}{value}%{end}'
     if kind == 'audience':
-        return f'£GFX_DOP_SCW_audience_patience_texticon {color}{value}%{end}'
+        return f'£GNG_chinese_nation_texticon {color}{value}%{end}'
     if kind == 'stability':
         return f'£stability_texticon {color}{number(Decimal(raw) * 100)}%{end}'
     if kind == 'war':
@@ -725,30 +718,6 @@ def build_localisation() -> str:
     validate_data()
     lines = [
         'l_simp_chinese:',
-        loc_line(
-            'DOP_SCW_audience_patience_change_positive_tt',
-            '£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§!将§G提升§!§Y[?DOP_SCW_audience_patience_change_abs|1]%§!。',
-        ),
-        loc_line(
-            'DOP_SCW_audience_patience_change_negative_tt',
-            '£GFX_DOP_SCW_audience_patience_texticon §M观众的耐心§!将§R下降§!§Y[?DOP_SCW_audience_patience_change_abs|1]%§!。',
-        ),
-        loc_line(
-            'DOP_SCW_supervisor_attitude_change_positive_tt',
-            '£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§!将§G提升§!§Y[?DOP_SCW_supervisor_attitude_change_abs|1]%§!。',
-        ),
-        loc_line(
-            'DOP_SCW_supervisor_attitude_change_negative_tt',
-            '£GFX_DOP_SCW_supervisor_attitude_texticon §j监制的态度§!将§R下降§!§Y[?DOP_SCW_supervisor_attitude_change_abs|1]%§!。',
-        ),
-        loc_line(
-            'DOP_SCW_stage_integrity_change_positive_tt',
-            '£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§!将§G提升§!§Y[?DOP_SCW_stage_integrity_change_abs|1]§!。',
-        ),
-        loc_line(
-            'DOP_SCW_stage_integrity_change_negative_tt',
-            '£GFX_DOP_SCW_stage_integrity_texticon §R舞台完整度§!将§R下降§!§Y[?DOP_SCW_stage_integrity_change_abs|1]§!。',
-        ),
         loc_line(
             'DOP_SCW_production_and_competition_increase_tt',
             '§Y[GetChangedFactionNAME]§!的§C产业规模§!将§G提升§!§Y[?DOP_SCW_production_scale_change]§!，§m竞争力§!将§G提升§!§Y[?DOP_SCW_competition_change|2%]§!。',

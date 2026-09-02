@@ -1,0 +1,15 @@
+characters = {
+	DOP_YUN_long_shengwu = {
+		name = DOP_YUN_long_shengwu
+		portraits = {
+			civilian = { large = "gfx/leaders/YUN/DOP_Long_Shengwu.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_DOP_YUN_LONG_SHENGWU_DESC"
+			ideology = ultranationalism_stratocracy_subtype
+			traits = { }
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+}

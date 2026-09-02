@@ -22,6 +22,13 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_tear_off_the_mask_focustt
+		# DOP BESPOKE 260902B axes: 增长 / 腐败 / 贫困
+		# 从繁荣幻梦醒来时，账面增长仍由腐败和贫困支撑
+		set_temp_variable = { gdp_growth_temp = 0.19 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_corruption_temp_var = 1 }
+		GNG_Corruption_Change = yes
+		TNO_worsen_poverty_low = yes
 	}
 }
 
@@ -40,6 +47,13 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_guangdong_turned_side_focustt
+		# DOP BESPOKE 260902B axes: 增长 / 稳定 / 政治资本
+		# 派系分裂中仍强撑增长，但政府威信迅速流失
+		set_temp_variable = { gdp_growth_temp = 0.09 }
+		econ_gdp_growth_change = yes
+		add_stability = -0.04
+		add_political_power = -25
+		add_stability = -0.02
 	}
 }
 
@@ -58,6 +72,13 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_never_ending_focustt
+		# DOP BESPOKE 260902B axes: 南京关系 / 财政收入 / 稳定
+		# 向长实和富士通让步略缓矛盾，却损失部分财政收益
+		set_temp_variable = { GNG_opinion_temp_var = 1 }
+		GNG_China_opinion_change = yes
+		set_temp_variable = { GNG_misc_income_temp = -0.018 }
+		GNG_misc_income_change = yes
+		add_stability = 0.012
 	}
 }
 
@@ -76,6 +97,12 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_sony_capitulate_focustt
+		# DOP BESPOKE 260902B axes: 稳定 / 贫困 / 腐败
+		# 劳资与族裔伤口重开，社会代价全面显现
+		add_stability = -0.035
+		TNO_worsen_poverty_med = yes
+		set_temp_variable = { GNG_corruption_temp_var = 0.5 }
+		GNG_Corruption_Change = yes
 	}
 }
 
@@ -94,6 +121,13 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_reach_the_end_focustt
+		# DOP BESPOKE 260902B axes: 财政收入 / 腐败 / 贫困
+		# 新朋友以利益换支持，国库受益而人民继续承压
+		set_temp_variable = { GNG_misc_income_temp = 0.05 }
+		GNG_misc_income_change = yes
+		set_temp_variable = { GNG_corruption_temp_var = 1.25 }
+		GNG_Corruption_Change = yes
+		TNO_worsen_poverty_low = yes
 	}
 }
 
@@ -118,6 +152,14 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_proud_of_us_focustt
+		# DOP BESPOKE 260902B axes: 增长 / 东京关系 / 南京关系
+		# 外交重审优先保住日本市场，并进一步疏远中国
+		set_temp_variable = { gdp_growth_temp = 0.10 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_approval_temp_var = 1 }
+		GNG_Japan_approval_change = yes
+		set_temp_variable = { GNG_opinion_temp_var = -2 }
+		GNG_China_opinion_change = yes
 	}
 }
 
@@ -137,6 +179,12 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_morita_akio_no_hope_focustt
 		#不信任动议
+		# DOP BESPOKE 260902B axes: 行政 / 廉洁 / 政治资本
+		# 监督部门恢复部分效率和廉洁，为盛田集中权力
+		TNO_improve_admin_efficiency_low = yes
+		set_temp_variable = { GNG_corruption_temp_var = -0.5 }
+		GNG_Corruption_Change = yes
+		add_political_power = 30
 	}
 }
 
@@ -155,6 +203,12 @@ shared_focus = {
 
 	completion_reward = {
 		custom_effect_tooltip = GNG_true_enemy_escaped_focustt
+		# DOP BESPOKE 260902B axes: 行政 / 腐败 / 政治资本
+		# 忠诚内环提高决策效率，也制度化裙带关系
+		TNO_improve_admin_efficiency_low = yes
+		set_temp_variable = { GNG_corruption_temp_var = 1 }
+		GNG_Corruption_Change = yes
+		add_political_power = 40
 	}
 }
 
@@ -177,6 +231,14 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_clearance_of_obstacles_focustt
 		#投票法令
+		# DOP BESPOKE 260902B axes: 税制 / 财政收入 / 腐败
+		# 向基本盘抛出减税胡萝卜，换取现金和依附
+		set_temp_variable = { business_tax_temp = -0.012 }
+		econ_business_tax_rate_change = yes
+		set_temp_variable = { GNG_misc_income_temp = 0.04 }
+		GNG_misc_income_change = yes
+		set_temp_variable = { GNG_corruption_temp_var = 0.75 }
+		GNG_Corruption_Change = yes
 	}
 }
 
@@ -195,6 +257,13 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_hopless_focustt
+		# DOP BESPOKE 260902B axes: 增长 / 财政收入 / 贫困
+		# 保障投资者信用维持高增长，代价继续落在底层
+		set_temp_variable = { gdp_growth_temp = 0.30 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_misc_income_temp = 0.055 }
+		GNG_misc_income_change = yes
+		TNO_worsen_poverty_low = yes
 	}
 }
 
@@ -214,6 +283,13 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GNG_no_one_immune_focustt
 		#法令投票
+		# DOP BESPOKE 260902B axes: 稳定 / 南京关系 / 腐败
+		# 挥舞大棒暂时压住反对派，却恶化华人关系和法外寻租
+		add_stability = 0.02
+		set_temp_variable = { GNG_opinion_temp_var = -3 }
+		GNG_China_opinion_change = yes
+		set_temp_variable = { GNG_corruption_temp_var = 1.5 }
+		GNG_Corruption_Change = yes
 	}
 }
 
@@ -235,5 +311,13 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = GNG_everything_done_focustt
+		# DOP BESPOKE 260902B axes: 增长 / 稳定 / 腐败
+		# 角斗场仍能榨出利润，但国家陷入不稳和寡头黑箱
+		DOP_GNG_set_status_finance = yes
+		set_temp_variable = { gdp_growth_temp = 0.22 }
+		econ_gdp_growth_change = yes
+		add_stability = -0.06
+		set_temp_variable = { GNG_corruption_temp_var = 2 }
+		GNG_Corruption_Change = yes
 	}
 }

@@ -21,11 +21,18 @@ shared_focus = {
 	cost = 1
 	
     completion_reward = {
+		country_event = { id = DOP_GNG_event.33 days = 0 }
 		custom_effect_tooltip = GNG_detoxification_focustt
 	
 	
 	
-		country_event = { id = DOP_GNG_event.33 days = 0 }
+		# DOP BESPOKE 260902B axes: 科研 / 增长 / 东京关系
+		# 以日本为最终标杆推动科研和增长，也公开挑战宗主
+		TNO_improve_research_facilities_med = yes
+		set_temp_variable = { gdp_growth_temp = 0.15 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { GNG_approval_temp_var = -2 }
+		GNG_Japan_approval_change = yes
 	}
 }
 
@@ -43,12 +50,18 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		country_event = { id = DOP_GNG_event.149 days = 0 }
 		custom_effect_tooltip = GNG_mistake_not_again_focustt
 	
 	
 	
 	
-		country_event = { id = DOP_GNG_event.149 days = 0 }
+		# DOP BESPOKE 260902B axes: 行政 / 廉洁 / 政治资本
+		# 风险复盘清理低效环节并集中改革授权
+		TNO_improve_admin_efficiency_med = yes
+		set_temp_variable = { GNG_corruption_temp_var = -0.75 }
+		GNG_Corruption_Change = yes
+		add_political_power = 25
 	}
 }
 
@@ -66,7 +79,16 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.4 days = 0 }
 		custom_effect_tooltip = GNG_remove_destabilization_focustt
+		# DOP BESPOKE 260902B axes: 廉洁 / 财政收入 / 稳定
+		# 金融风险出清增强稳定，却压低一部分投机收入
+		set_temp_variable = { GNG_corruption_temp_var = -1.25 }
+		GNG_Corruption_Change = yes
+		set_temp_variable = { GNG_misc_income_temp = -0.018 }
+		GNG_misc_income_change = yes
+		add_stability = 0.025
 	}
 }
 
@@ -84,7 +106,15 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.7 days = 0 }
 		custom_effect_tooltip = GNG_real_industrial_focustt
+		# DOP BESPOKE 260902B axes: 工业设备 / 工业专长 / 增长
+		# 实业之国同时更新设备、知识与实体产出
+		TNO_improve_industrial_equipment_high = yes
+		TNO_improve_industrial_expertise_med = yes
+		set_temp_variable = { gdp_growth_temp = 0.20 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -102,7 +132,15 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.6 days = 0 }
 		custom_effect_tooltip = GNG_prudence_and_efficiency_focustt
+		# DOP BESPOKE 260902B axes: 行政 / 行政支出 / 稳定
+		# 全面电子政务显著提高效率并削减经常支出
+		TNO_improve_admin_efficiency_high = yes
+		set_temp_variable = { GNG_admin_costs_temp = -0.03 }
+		GNG_admin_costs_change = yes
+		add_stability = 0.015
 	}
 }
 
@@ -120,12 +158,19 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		country_event = { id = DOP_GNG_event.201 days = 0 }
 		custom_effect_tooltip = GNG_won_t_forget_guangdong_people_focustt
 	
 	
 	
 	
-		country_event = { id = DOP_GNG_event.201 days = 0 }
+		# DOP BESPOKE 260902B axes: 贫困 / 社会预算 / 增长
+		# 最低生活保障强力减贫，成本由繁荣经济承担
+		TNO_improve_poverty_high = yes
+		set_temp_variable = { GNG_social_costs_temp = 0.04 }
+		GNG_social_costs_change = yes
+		set_temp_variable = { gdp_growth_temp = 0.06 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -143,7 +188,15 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.9 days = 0 }
 		custom_effect_tooltip = GNG_future_belongs_to_young_focustt
+		# DOP BESPOKE 260902B axes: 教育 / 科研 / 财政
+		# 永不停歇的创新需要最好的学术基础和持续投入
+		TNO_improve_academic_base_med = yes
+		TNO_improve_research_facilities_high = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.11 }
+		econ_spend_money_once_effect_raw_money = yes
 	}
 }
 
@@ -161,7 +214,18 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.10 days = 0 }
 		custom_effect_tooltip = GNG_to_the_beyond_focustt
+		# DOP BESPOKE 260902B axes: 芯片竞赛 / 工业专长 / 增长
+		# 硅市成为广东高科技增长的核心发动机
+		set_temp_variable = { faction_id_t = 1 }
+		set_temp_variable = { DOP_SCW_production_scale_change = 10 }
+		set_temp_variable = { DOP_SCW_competition_change = 0.035 }
+		DOP_SCW_change_production_and_competition = yes
+		TNO_improve_industrial_expertise_med = yes
+		set_temp_variable = { gdp_growth_temp = 0.21 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -180,7 +244,15 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.5 days = 0 }
 		custom_effect_tooltip = GNG_power_of_machine_focustt
+		# DOP BESPOKE 260902B axes: 科研 / 行政 / 财政
+		# 超级电脑同时服务科研与危机治理，建设代价高昂
+		TNO_improve_research_facilities_high = yes
+		TNO_improve_admin_efficiency_med = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.14 }
+		econ_spend_money_once_effect_raw_money = yes
 	}
 }
 
@@ -198,7 +270,15 @@ shared_focus = {
 	cost = 2
 	
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.11 days = 0 }
 		custom_effect_tooltip = GNG_geniuse_focustt
+		# DOP BESPOKE 260902B axes: 教育 / 科研 / 财政
+		# 学术黄金时代以高等教育和研究经费共同维系
+		TNO_improve_academic_base_high = yes
+		TNO_improve_research_facilities_med = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.095 }
+		econ_spend_money_once_effect_raw_money = yes
 	}
 }
 
@@ -216,7 +296,15 @@ shared_focus = {
 	cost = 2
 
 	completion_reward = {
+		# DOP MANUALLY VERIFIED EVENT ATTACHMENT 260902B
+		country_event = { id = DOP_GNG_event.12 days = 0 }
 		custom_effect_tooltip = GNG_leading_future_focustt
+		# DOP BESPOKE 260902B axes: 科研 / 行政 / 增长
+		# 网络番组链接科研、政府与企业通信
+		TNO_improve_research_facilities_med = yes
+		TNO_improve_admin_efficiency_low = yes
+		set_temp_variable = { gdp_growth_temp = 0.11 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -243,13 +331,19 @@ shared_focus = {
 	cost = 2
 
 	completion_reward = {
+		country_event = { id = DOP_GNG_event.88 days = 0 }
 		custom_effect_tooltip = GNG_reach_the_future_focustt
 	
 	
 	
 	
-		country_event = { id = DOP_GNG_event.88 days = 0 }
 
 		DOP_GNG_set_status_ibuka = yes
+		# DOP BESPOKE 260902B axes: 稳定 / 增长 / 贫困
+		# 致明日以科技繁荣、社会信心和共享成果收束结局
+		add_stability = 0.065
+		set_temp_variable = { gdp_growth_temp = 0.25 }
+		econ_gdp_growth_change = yes
+		TNO_improve_poverty_med = yes
 	}
 }

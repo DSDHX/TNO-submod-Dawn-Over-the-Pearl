@@ -107,6 +107,12 @@ DOP_construction_daya_bay_nuclear_plant_completion_effect = {
 		set_temp_variable = { zhu_app_temp = 2 }
 		GNG_zhujin_app_change = yes
 	}
+	# DOP CONTENT FLOW 260902A Ibuka score
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_daya_bay_ibuka_scored } }
+		set_country_flag = DOP_construction_daya_bay_ibuka_scored
+		DOP_GNG_add_ibuka_point = yes
+	}
 }
 
 DOP_construction_guangdong_shinkansen_completion_effect = {
@@ -271,6 +277,12 @@ DOP_construction_wenchang_space_center_completion_effect = {
 		set_temp_variable = { chi_app_temp = 4 }
 		GNG_chinese_app_change = yes
 	}
+	# DOP CONTENT FLOW 260902A Ibuka score
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_wenchang_ibuka_scored } }
+		set_country_flag = DOP_construction_wenchang_ibuka_scored
+		DOP_GNG_add_ibuka_point = yes
+	}
 }
 
 DOP_construction_guangxi_industrial_institute_completion_effect = {
@@ -417,6 +429,12 @@ DOP_construction_prd_maglev_completion_effect = {
 		set_temp_variable = { zhu_app_temp = 2 }
 		GNG_zhujin_app_change = yes
 	}
+	# DOP CONTENT FLOW 260902A Ibuka score
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_prd_maglev_ibuka_scored } }
+		set_country_flag = DOP_construction_prd_maglev_ibuka_scored
+		DOP_GNG_add_ibuka_point = yes
+	}
 }
 
 DOP_construction_shantou_chaozhou_jieyang_integration_completion_effect = {
@@ -459,6 +477,12 @@ DOP_construction_granite_uranium_mining_completion_effect = {
 		GNG_japanese_app_change = yes
 		set_temp_variable = { zhu_app_temp = 2 }
 		GNG_zhujin_app_change = yes
+	}
+	# DOP CONTENT FLOW 260902A Ibuka score
+	if = {
+		limit = { NOT = { has_country_flag = DOP_construction_granite_uranium_ibuka_scored } }
+		set_country_flag = DOP_construction_granite_uranium_ibuka_scored
+		DOP_GNG_add_ibuka_point = yes
 	}
 }
 

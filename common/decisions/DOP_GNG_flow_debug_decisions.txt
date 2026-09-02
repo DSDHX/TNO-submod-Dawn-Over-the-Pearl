@@ -1,0 +1,299 @@
+GNG_debug_category = {
+	# DOP post-TNO flow debug sequence. These decisions deliberately call the
+	# production flow effects/events instead of duplicating their mechanics.
+	DOP_GNG_debug_flow_01_opening = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			clr_country_flag = DOP_GNG_flow_intro_started
+			DOP_GNG_begin_post_tno_content = yes
+		}
+	}
+
+	DOP_GNG_debug_flow_02a_yunnan_prewar = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		available = {
+			country_exists = YUN
+			YUN = { NOT = { has_country_flag = DOP_YUN_southwest_war_prepared } }
+		}
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			YUN = { DOP_YUN_prepare_southwest_war = yes }
+		}
+	}
+
+	DOP_GNG_debug_flow_02_southwest_crisis = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			country_event = { id = DOP_GNG_flow.1 hours = 1 }
+		}
+	}
+
+	DOP_GNG_debug_flow_03_enter_war = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_crisis_started } }
+				DOP_GNG_begin_southwest_crisis = yes
+			}
+			country_event = { id = DOP_GNG_flow.2 hours = 1 }
+		}
+	}
+
+	DOP_GNG_debug_flow_04_maoming_countdown = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_crisis_started } }
+				DOP_GNG_begin_southwest_crisis = yes
+			}
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_war_active } }
+				DOP_GNG_enter_southwest_war = yes
+			}
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived } }
+				set_country_flag = DOP_GNG_flow_maoming_countdown_started
+				set_variable = { DOP_GNG_maoming_survival_days = 14 }
+				log = "[GetDateText]: [Root.GetName]: DOP debug started Maoming fourteen-day countdown"
+			}
+		}
+	}
+
+	DOP_GNG_debug_flow_05_japanese_reinforcements = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_crisis_started } }
+				DOP_GNG_begin_southwest_crisis = yes
+			}
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_war_active } }
+				DOP_GNG_enter_southwest_war = yes
+			}
+			DOP_GNG_spawn_japanese_reinforcements = yes
+		}
+	}
+
+	DOP_GNG_debug_flow_06_postwar_settlement = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_crisis_started } }
+				DOP_GNG_begin_southwest_crisis = yes
+			}
+			if = {
+				limit = { NOT = { has_country_flag = DOP_GNG_flow_southwest_war_active } }
+				DOP_GNG_enter_southwest_war = yes
+			}
+			set_country_flag = DOP_GNG_flow_victory_event_pending
+			country_event = { id = DOP_GNG_flow.3 hours = 1 }
+		}
+	}
+
+	DOP_GNG_debug_flow_07_restore_legco = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_restore_legco = yes }
+	}
+
+	DOP_GNG_debug_flow_08_restore_map = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_restore_map_and_extra_regions = yes }
+	}
+
+	DOP_GNG_debug_flow_09_unlock_construction = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_unlock_construction_stage = yes }
+	}
+
+	DOP_GNG_debug_flow_10_restore_product_cycle = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_restore_product_cycle = yes }
+	}
+
+	DOP_GNG_debug_flow_11_unlock_scw = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_unlock_scw_stage = yes }
+	}
+
+	DOP_GNG_debug_flow_12_unlock_gsa = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_unlock_gsa_stage = yes }
+	}
+
+	DOP_GNG_debug_flow_13_restore_economy_compare = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = { DOP_GNG_restore_economy_compare = yes }
+	}
+
+	DOP_GNG_debug_flow_14_enter_core = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			clr_country_flag = DOP_GNG_flow_core_started
+			DOP_GNG_enter_core_stage = yes
+		}
+	}
+
+	DOP_GNG_debug_flow_15_lee_ending = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			clr_country_flag = DOP_GNG_route_ibuka
+			clr_country_flag = DOP_GNG_route_finance
+			clr_country_flag = DOP_GNG_route_unresolved
+			set_country_flag = DOP_GNG_route_lee
+			set_variable = { DOP_GNG_content_stage = 6 }
+			load_focus_tree = dop_sonyjapan_ending1_lee_tree
+		}
+	}
+
+	DOP_GNG_debug_flow_16_ibuka_ending = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			clr_country_flag = DOP_GNG_route_lee
+			clr_country_flag = DOP_GNG_route_finance
+			clr_country_flag = DOP_GNG_route_unresolved
+			set_country_flag = DOP_GNG_route_ibuka
+			set_variable = { DOP_GNG_ibuka_points = 9 }
+			set_variable = { DOP_GNG_content_stage = 6 }
+			load_focus_tree = dop_sonyjapan_ending2_ibuka_tree
+		}
+	}
+
+	DOP_GNG_debug_flow_17_finance_ending = {
+		allowed = { original_tag = GNG }
+		icon = GFX_decision_GNG_generic
+		visible = {
+			has_country_flag = GNG_show_debug_decisions
+			is_debug = yes
+		}
+		cost = 0
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			clr_country_flag = DOP_GNG_route_lee
+			clr_country_flag = DOP_GNG_route_ibuka
+			clr_country_flag = DOP_GNG_route_unresolved
+			set_country_flag = DOP_GNG_route_finance
+			set_variable = { DOP_GNG_ibuka_points = 0 }
+			set_variable = { DOP_GNG_content_stage = 6 }
+			load_focus_tree = dop_sonyjapan_ending3_hitachi_tree
+		}
+	}
+}

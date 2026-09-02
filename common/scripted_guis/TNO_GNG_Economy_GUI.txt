@@ -258,14 +258,23 @@ scripted_gui = {
 				has_global_flag = DOP_GNG_econ_compare_chi
 			}
 			DOP_econ_compare_button_visible = {
-				has_country_flag = GNG_debug_tools
+				OR = {
+					has_country_flag = DOP_GNG_econ_compare_unlocked
+					has_country_flag = GNG_debug_tools
+				}
 			}
 			DOP_econ_compare_man_icon_visible = {
-				has_country_flag = GNG_debug_tools
+				OR = {
+					has_country_flag = DOP_GNG_econ_compare_unlocked
+					has_country_flag = GNG_debug_tools
+				}
 				NOT = { has_global_flag = DOP_GNG_econ_compare_chi }
 			}
 			DOP_econ_compare_chi_icon_visible = {
-				has_country_flag = GNG_debug_tools
+				OR = {
+					has_country_flag = DOP_GNG_econ_compare_unlocked
+					has_country_flag = GNG_debug_tools
+				}
 				has_global_flag = DOP_GNG_econ_compare_chi
 			}
 		}

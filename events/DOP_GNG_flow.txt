@@ -1,0 +1,177 @@
+add_namespace = DOP_GNG_flow
+
+# 【Placeholder】作者事件：大西南起事与开局树切换。
+country_event = {
+	id = DOP_GNG_flow.1
+	title = DOP_GNG_flow.1.t
+	desc = DOP_GNG_flow.1.desc
+	picture = GFX_report_event_IBR_meeting_small
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		set_country_flag = DOP_GNG_flow_intro_final_focus_selected
+		log = "[GetDateText]: [Root.GetName]: event DOP_GNG_flow.1"
+	}
+	option = {
+		name = DOP_GNG_flow.1.a
+		DOP_GNG_begin_southwest_crisis = yes
+	}
+}
+
+# 【Placeholder】作者事件：广东正式卷入西南战争。
+country_event = {
+	id = DOP_GNG_flow.2
+	title = DOP_GNG_flow.2.t
+	desc = DOP_GNG_flow.2.desc
+	picture = GFX_report_event_IBR_meeting_small
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event DOP_GNG_flow.2" }
+	option = {
+		name = DOP_GNG_flow.2.a
+		DOP_GNG_enter_southwest_war = yes
+	}
+}
+
+# 【Placeholder】作者事件：昆明失守与战后安排。
+country_event = {
+	id = DOP_GNG_flow.3
+	title = DOP_GNG_flow.3.t
+	desc = DOP_GNG_flow.3.desc
+	picture = GFX_report_event_IBR_meeting_small
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event DOP_GNG_flow.3" }
+	option = {
+		name = DOP_GNG_flow.3.a
+		DOP_GNG_complete_southwest_war = yes
+	}
+}
+
+# 【Placeholder】作者事件：茂名失守十四日后的日本参战与援军。
+country_event = {
+	id = DOP_GNG_flow.4
+	title = DOP_GNG_flow.4.t
+	desc = DOP_GNG_flow.4.desc
+	picture = GFX_report_event_IBR_meeting_small
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName]: event DOP_GNG_flow.4" }
+	option = { name = DOP_GNG_flow.4.a }
+}
+
+# Hidden deployment event: wait for CPS/war access to refresh, then create the
+# temporary JAP expeditionary force in Guangzhou. Retry only while the war lasts.
+country_event = {
+	id = DOP_GNG_flow.16
+	hidden = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = DOP_JAP_southwest_reinforcements_deployed }
+		GNG = {
+			has_country_flag = DOP_GNG_flow_southwest_war_active
+			has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived
+			has_capitulated = no
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_war_with = YUN
+				592 = {
+					OR = {
+						is_controlled_by = GNG
+						is_controlled_by = JAP
+					}
+				}
+			}
+			load_oob = "DOP_JAP_southwest_reinforcements"
+			592 = {
+				create_unit = {
+					division = "division_template = \"DOP Nanshin Sensha Shidan\" start_experience_factor = 0.85 start_equipment_factor = 1.0"
+					owner = JAP
+					count = 12
+				}
+			}
+			set_country_flag = DOP_JAP_southwest_reinforcements_deployed
+			GNG = { country_event = { id = DOP_GNG_flow.4 hours = 1 } }
+			log = "[GetDateText]: [Root.GetName]: deployed twelve DOP JAP armoured divisions in Guangzhou"
+		}
+		else_if = {
+			limit = {
+				GNG = {
+					has_country_flag = DOP_GNG_flow_southwest_war_active
+					has_capitulated = no
+				}
+			}
+			country_event = { id = DOP_GNG_flow.16 hours = 12 }
+			log = "[GetDateText]: [Root.GetName]: Guangzhou unavailable; retrying DOP JAP deployment in twelve hours"
+		}
+	}
+}
+
+# Hidden mechanical event chain: disable the first-decade GUIs one by one.
+country_event = {
+	id = DOP_GNG_flow.10
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_legco_gui = yes
+		country_event = { id = DOP_GNG_flow.11 days = 1 }
+		log = "[GetDateText]: [Root.GetName]: DOP locked LegCo GUI"
+	}
+}
+
+country_event = {
+	id = DOP_GNG_flow.11
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_map_gui = yes
+		country_event = { id = DOP_GNG_flow.12 days = 1 }
+		log = "[GetDateText]: [Root.GetName]: DOP locked regional map GUI"
+	}
+}
+
+country_event = {
+	id = DOP_GNG_flow.12
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_three_evils_gui = yes
+		country_event = { id = DOP_GNG_flow.13 days = 1 }
+		log = "[GetDateText]: [Root.GetName]: DOP locked Three Evils GUI"
+	}
+}
+
+country_event = {
+	id = DOP_GNG_flow.13
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_research_gui = yes
+		country_event = { id = DOP_GNG_flow.14 days = 1 }
+		log = "[GetDateText]: [Root.GetName]: DOP locked original research GUI"
+	}
+}
+
+country_event = {
+	id = DOP_GNG_flow.14
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_product_gui = yes
+		country_event = { id = DOP_GNG_flow.15 days = 1 }
+		log = "[GetDateText]: [Root.GetName]: DOP locked product-cycle GUI"
+	}
+}
+
+country_event = {
+	id = DOP_GNG_flow.15
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		DOP_GNG_lock_economy_gui = yes
+		log = "[GetDateText]: [Root.GetName]: DOP locked Pearl River Miracle GUI"
+	}
+}

@@ -662,8 +662,6 @@ DOP_construction_initialize_variables = {
 	set_country_flag = DOP_construction_dynamic_v8_initialized
 	DOP_construction_clear_expansion_flags = yes
 	DOP_construction_clear_state_flags = yes
-	set_variable = { DOP_GNG_stage_integrity = 100 }
-	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }
@@ -1002,8 +1000,6 @@ DOP_construction_reset = {
 	set_country_flag = DOP_construction_dynamic_v8_initialized
 	DOP_construction_clear_expansion_flags = yes
 	DOP_construction_clear_state_flags = yes
-	set_variable = { DOP_GNG_stage_integrity = 100 }
-	DOP_GNG_update_stage_integrity = yes
 	DOP_construction_recalculate_all = yes
 	DOP_construction_rebuild_visible_projects = yes
 }

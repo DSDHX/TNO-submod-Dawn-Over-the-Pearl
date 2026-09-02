@@ -6,9 +6,7 @@ GNG_SCW_add_tab = {
 		set_variable = { selected_decision_tabs_id = decision_tabs_id }
 	}
 	if = {
-		limit = {
-			decision_tabs_id = 1
-		}
+		limit = { check_variable = { decision_tabs_id = 1 } }
 		clr_country_flag = DOP_SCW_off
 	}
 }
@@ -24,9 +22,7 @@ GNG_SCW_remove_tab = {
 		limit = { check_variable = { selected_decision_tabs_id = decision_tabs_id } }
 		set_variable = { selected_conflict_id = -1 }
 		if = {
-			limit = {
-				decision_tabs_id = 1
-			}
+			limit = { check_variable = { decision_tabs_id = 1 } }
 			set_country_flag = DOP_SCW_off
 		}
 	}
@@ -74,12 +70,16 @@ GNG_BOP_SCW_Initialize = {
 }
 
 GNG_BOP_GSA_Initialize = {
-	set_temp_variable = { TabName = token:BoP_Tab_DOPScienceAcademy }
-	TNO_BoP_GNG_AddTab = yes
-	set_variable = { GNG_GSA_research_on_now = 0 }
-	set_variable = { GNG_GSA_research_progress = 0 }
-	set_variable = { research_speed_value = 60 }
-	set_variable = { research_ability_factor = 0.8 }
+	if = {
+		limit = { NOT = { has_country_flag = DOP_GSA_enabled } }
+		set_temp_variable = { TabName = token:BoP_Tab_DOPScienceAcademy }
+		TNO_BoP_GNG_AddTab = yes
+		set_country_flag = DOP_GSA_enabled
+		set_variable = { GNG_GSA_research_on_now = 0 }
+		set_variable = { GNG_GSA_research_progress = 0 }
+		set_variable = { research_speed_value = 60 }
+		set_variable = { research_ability_factor = 0.8 }
+	}
 }
 
 GNG_SCW_Initialize = {
@@ -100,7 +100,6 @@ GNG_SCW_Initialize = {
 	}
 	else = { DOP_SCW_load_persistent_market_values = yes }
 	SCW_piechart_recalculate = yes
-	DOP_SCW_sync_theater_stage_integrity = yes
 }
 
 DOP_SCW_load_persistent_market_values = {
@@ -114,77 +113,6 @@ DOP_SCW_load_persistent_market_values = {
 	set_temp_variable = { scw_GER_compatibility_value_t = scw_GER_compatibility_value }
 	set_temp_variable = { scw_JAP_production_value_t = scw_JAP_production_value }
 	set_temp_variable = { scw_JAP_compatibility_value_t = scw_JAP_compatibility_value }
-}
-
-DOP_SCW_sync_theater_stage_integrity = {
-	set_variable = { DOP_theater_stage_integrity_var = 100 }
-	subtract_from_variable = { DOP_theater_stage_integrity_var = GNG_corruption_var }
-	clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
-}
-
-# Arguments: DOP_SCW_audience_patience_change.
-DOP_SCW_change_audience_patience = {
-	set_temp_variable = { DOP_SCW_audience_patience_change_abs = DOP_SCW_audience_patience_change }
-	if = {
-		limit = { check_variable = { DOP_SCW_audience_patience_change < 0 } }
-		multiply_temp_variable = { DOP_SCW_audience_patience_change_abs = -1 }
-	}
-	if = {
-		limit = { check_variable = { DOP_SCW_audience_patience_change > 0 } }
-		custom_effect_tooltip = DOP_SCW_audience_patience_change_positive_tt
-	}
-	else_if = {
-		limit = { check_variable = { DOP_SCW_audience_patience_change < 0 } }
-		custom_effect_tooltip = DOP_SCW_audience_patience_change_negative_tt
-	}
-	hidden_effect = {
-		set_temp_variable = { GNG_opinion_temp_var = DOP_SCW_audience_patience_change }
-		GNG_China_opinion_change = yes
-	}
-}
-
-# Arguments: DOP_SCW_supervisor_attitude_change.
-DOP_SCW_change_supervisor_attitude = {
-	set_temp_variable = { DOP_SCW_supervisor_attitude_change_abs = DOP_SCW_supervisor_attitude_change }
-	if = {
-		limit = { check_variable = { DOP_SCW_supervisor_attitude_change < 0 } }
-		multiply_temp_variable = { DOP_SCW_supervisor_attitude_change_abs = -1 }
-	}
-	if = {
-		limit = { check_variable = { DOP_SCW_supervisor_attitude_change > 0 } }
-		custom_effect_tooltip = DOP_SCW_supervisor_attitude_change_positive_tt
-	}
-	else_if = {
-		limit = { check_variable = { DOP_SCW_supervisor_attitude_change < 0 } }
-		custom_effect_tooltip = DOP_SCW_supervisor_attitude_change_negative_tt
-	}
-	hidden_effect = {
-		set_temp_variable = { GNG_approval_temp_var = DOP_SCW_supervisor_attitude_change }
-		GNG_Japan_approval_change = yes
-	}
-}
-
-# Arguments: DOP_SCW_stage_integrity_change. The TNO corruption helper uses the inverse sign.
-DOP_SCW_change_stage_integrity = {
-	set_temp_variable = { DOP_SCW_stage_integrity_change_abs = DOP_SCW_stage_integrity_change }
-	if = {
-		limit = { check_variable = { DOP_SCW_stage_integrity_change < 0 } }
-		multiply_temp_variable = { DOP_SCW_stage_integrity_change_abs = -1 }
-	}
-	if = {
-		limit = { check_variable = { DOP_SCW_stage_integrity_change > 0 } }
-		custom_effect_tooltip = DOP_SCW_stage_integrity_change_positive_tt
-	}
-	else_if = {
-		limit = { check_variable = { DOP_SCW_stage_integrity_change < 0 } }
-		custom_effect_tooltip = DOP_SCW_stage_integrity_change_negative_tt
-	}
-	hidden_effect = {
-		set_temp_variable = { GNG_corruption_temp_var = DOP_SCW_stage_integrity_change }
-		multiply_temp_variable = { GNG_corruption_temp_var = -1 }
-		GNG_Corruption_Change = yes
-		DOP_SCW_sync_theater_stage_integrity = yes
-	}
 }
 
 # Arguments: faction_id_t, DOP_SCW_production_scale_change,
@@ -802,6 +730,11 @@ GSA_research_complete_effects = {
 		}
 		country_event = { id = GNG_GSA_research_complete.1 }
 		set_country_flag = GNG_GSA_research_1_complete
+		if = {
+			limit = { NOT = { has_country_flag = DOP_GSA_research_1_ibuka_scored } }
+			set_country_flag = DOP_GSA_research_1_ibuka_scored
+			DOP_GNG_add_ibuka_point = yes
+		}
 	}
 	else = {
 		log = "ERROR: Research complete effect called with unknown research id"

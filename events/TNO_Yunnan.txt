@@ -1982,6 +1982,9 @@ country_event = { #Rise from your shackles, brave sons of China!
 
 	is_triggered_only = yes
 	fire_only_once = yes
+	trigger = {
+		NOT = { has_country_flag = DOP_YUN_native_wi_runtime_blocked }
+	}
 
 	option = {
 		name = yun_wi.15.a

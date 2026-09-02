@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ DOP_GNG_restore_legco_tt:0 "§F£GNG_legco_texticon §S广东国立法会§!现已§G恢复运作§!；既有席位、派系与表决界面重新可用。§!"
+ DOP_GNG_restore_map_tt:0 "§F£GFX_GNG_Guangdong_texticon §B区域治理地图§!现已§G恢复运作§!；§Y海口§!、§Y湛江§!与§Y钦州§!已纳入人口、派系与治安数据。§!"
+ DOP_GNG_unlock_construction_tt:0 "§F§B经济建设§!菜单中的£decision_icon_small §Y岭南建设总署§!现已§G可用§!；§Y重整广西实业院§!与§Y广西高速公路网§!已加入建设项目。§!"
+ DOP_GNG_unlock_scw_tt:0 "§F§B经济建设§!菜单中的£GNG_computational_power_texticon §m三微米冷战§!现已§G可用§!。§!"
+ DOP_GNG_unlock_gsa_tt:0 "§F§B经济建设§!菜单中的£GNG_research_texticon §m广东科学院§!现已§G可用§!；研究计划与科研进度将开始运作。§!"
+ DOP_GNG_restore_economy_compare_tt:0 "§F§B经济建设§!菜单中的£GNG_actual_gdp_texticon §SGDP比较§!现已§G恢复运作§!；£GFX_DOP_GNG_econ_compare_chi_texticon §M中华民国§!将加入比较图表。§!"
+ DOP_GNG_restore_product_cycle_tt:0 "§F§m产品周期§!现已§G恢复运作§!。§!"
+

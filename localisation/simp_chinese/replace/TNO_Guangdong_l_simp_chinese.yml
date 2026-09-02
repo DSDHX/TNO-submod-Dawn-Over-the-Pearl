@@ -3,3 +3,4 @@
    GNG_econ_graph_tt_inner_GDP: "[Get_DOP_GNG_econ_graph_tt_GDP]"
  GNG_econ_graph_tt_inner_GDP_Growth: "[Get_DOP_GNG_econ_graph_tt_GDP_Growth]"
  GNG_econ_graph_tt_inner_debt_to_GDP: "[Get_DOP_GNG_econ_graph_tt_debt_to_GDP]"
+ GNG_legco_hitachi_leader_70s: "\n\n\n\n\n\n【Placeholder：三田胜茂文本头像】\n\n\n\n\n\n\n\n[GNG_legco_current_faction_color_dynamic]总裁 三田胜茂§!\n\n"

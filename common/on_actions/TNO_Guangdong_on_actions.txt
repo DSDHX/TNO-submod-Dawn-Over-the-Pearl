@@ -86,9 +86,6 @@ on_actions = {
 				}
 
 				GNG_3E_startup = yes
-				set_variable = { DOP_theater_stage_integrity_var = 100 }
-				subtract_from_variable = { DOP_theater_stage_integrity_var = GNG_corruption_var }
-				clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
 
 				add_to_array = { GNG_ARR_research_bars = -1 } #Guangdong Research Mechanic
 				add_to_array = { GNG_ARR_research_bars = 6 }
@@ -186,9 +183,6 @@ on_actions = {
 				}
 				GNG_calculate_rGDP = yes
 				GNG_corruption_tick = yes
-				set_variable = { DOP_theater_stage_integrity_var = 100 }
-				subtract_from_variable = { DOP_theater_stage_integrity_var = GNG_corruption_var }
-				clamp_variable = { var = DOP_theater_stage_integrity_var min = 0 max = 100 }
 				DOP_GNG_econ_graph_monthly_tick = yes
 				GNG_monthly_demographics_pulse = yes
 				GNG_research_monthly_calc = yes

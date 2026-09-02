@@ -4,51 +4,132 @@ ideas = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_state_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = 0.10
+				political_power_gain = -0.10
+				production_speed_buildings_factor = -0.20
+				industrial_capacity_factory = -0.15
+				gdp_growth_modifier = -2.00
+				GNG_rGDP_modifier = -1.50
+			}
 		}
 		DOP_GNG_lingnan_spring = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_silicon_years
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.05
+				gdp_growth_modifier = 0.50
+			}
 		}
 		DOP_GNG_status_lee = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_state_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				production_speed_buildings_factor = 0.10
+				industrial_capacity_factory = 0.10
+				gdp_growth_modifier = 0.50
+			}
 		}
 		DOP_GNG_status_ibuka = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_ibuka_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				industrial_capacity_factory = 0.15
+				research_speed_factor = 0.10
+				GNG_rnd_modifier = 0.10
+			}
 		}
 		DOP_GNG_status_finance = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_hitachi_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = 0.10
+				industrial_capacity_factory = 0.15
+				gdp_growth_modifier = 0.75
+				misc_income_modifier = 0.10
+			}
 		}
 		DOP_GNG_status_1962 = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_martial_law
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = 0.10
+				political_power_gain = -0.15
+				production_speed_buildings_factor = -0.15
+				industrial_capacity_factory = -0.10
+			}
 		}
 		DOP_GNG_status_second_riot = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_the_guangdong_riots
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.35
+				war_support_factor = 0.15
+				political_power_gain = -0.20
+				production_speed_buildings_factor = -0.25
+				industrial_capacity_factory = -0.25
+				attrition = 0.10
+			}
 		}
 		DOP_GNG_security_southwest_war = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_security_the_militarized_state
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.05
+				war_support_factor = 0.10
+				army_defence_factor = 0.10
+				recruitable_population_factor = 0.02
+			}
 		}
 		DOP_GNG_security_postwar = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_security_transitional_security_apparatus
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.02
+				political_power_gain = -0.03
+				resistance_damage_to_garrison = -0.10
+				army_defence_factor = 0.05
+			}
 		}
 		DOP_GNG_security_reformed = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_security_the_guangdong_network
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.07
+				political_power_gain = 0.05
+				resistance_damage_to_garrison = -0.20
+				army_defence_factor = 0.05
+			}
 		}
 		DOP_GNG_integrity_waltz = {
 			allowed = { original_tag = GNG }
@@ -74,21 +155,52 @@ ideas = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_between_two_worlds
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.03
+				political_power_gain = -0.03
+				GNG_republic_of_china_opinion_cap = -5
+				GNG_japanese_empire_opinion_cap = -5
+			}
 		}
 		DOP_GNG_identity_dual = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_state_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.08
+				political_power_gain = 0.05
+				GNG_monthly_chinese_government_support = 0.20
+				GNG_monthly_zhujin_government_support = 0.20
+			}
 		}
 		DOP_GNG_identity_zhujin = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_state_path
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				GNG_chinese_to_zhujin_conversion = 0.05
+				GNG_republic_of_china_opinion_cap = -10
+				GNG_japanese_empire_opinion_cap = 5
+			}
 		}
 		DOP_GNG_wartime_triangle = {
 			allowed = { original_tag = GNG }
 			removal_cost = -1
 			picture = GNG_yasuda_crisis
+	# DOP CONTENT FLOW 260902A modifier
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = 0.15
+				political_power_gain = -0.10
+				production_speed_buildings_factor = -0.30
+				industrial_capacity_factory = -0.20
+				attrition = 0.05
+			}
 		}
 		DOP_GNG_strangle_guerrillas = {
 			allowed = { original_tag = GNG }
@@ -119,7 +231,7 @@ ideas = {
 				stability_factor = 0.05
 				war_support_factor = 0.05
 				attrition = -0.05
-				max_organisation_factor = 0.10
+				army_org_factor = 0.10
 				production_factory_efficiency_gain_factor = 0.10
 				production_factory_start_efficiency_factor = 0.10
 				industrial_capacity_factory = 0.10

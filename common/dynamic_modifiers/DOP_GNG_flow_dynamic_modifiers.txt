@@ -1,0 +1,33 @@
+DOP_GNG_prd_wartime_defence = {
+	icon = GFX_unplanned_offensive
+	enable = { always = yes }
+	army_defence_factor = 0.35
+	local_org_regain = 0.15
+	attrition = -0.05
+}
+
+DOP_GNG_outer_wartime_defence = {
+	icon = GFX_unplanned_offensive
+	enable = { always = yes }
+	army_defence_factor = -0.25
+	local_org_regain = -0.15
+	attrition = 0.10
+}
+
+DOP_GNG_southwest_stalemate = {
+	icon = GFX_unplanned_offensive
+	enable = { always = yes }
+	attacker_modifier = yes
+	army_speed_factor = -0.75
+	army_attack_factor = -0.90
+	local_org_regain = -0.50
+}
+
+DOP_GNG_japanese_reinforcement_momentum = {
+	icon = GFX_unplanned_offensive
+	enable = { always = yes }
+	army_attack_factor = 0.20
+	army_defence_factor = 0.10
+	army_org_factor = 0.10
+	attrition = -0.10
+}

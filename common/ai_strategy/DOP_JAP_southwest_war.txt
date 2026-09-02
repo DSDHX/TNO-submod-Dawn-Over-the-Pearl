@@ -1,0 +1,40 @@
+DOP_JAP_southwest_war_attack_YUN = {
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		has_war_with = YUN
+		GNG = {
+			has_country_flag = DOP_GNG_flow_japanese_reinforcements_arrived
+			NOT = { has_country_flag = DOP_GNG_flow_southwest_war_won }
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = YUN
+		value = 1000
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = YUN
+		value = 300
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = YUN
+		value = 1000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = YUN
+		execution_type = rush
+		execute_order = yes
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = -100
+	}
+}

@@ -1,0 +1,38 @@
+DOP_YUN_southwest_war_attack_GNG = {
+	allowed = {
+		original_tag = YUN
+	}
+	enable = {
+		has_country_flag = DOP_YUN_southwest_war_prepared
+		NOT = { has_country_flag = DOP_YUN_southwest_reconstruction_installed }
+		has_war_with = GNG
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = GNG
+		value = 1000
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = GNG
+		value = 250
+	}
+	ai_strategy = {
+		type = front_unit_request
+		tag = GNG
+		value = 1000
+	}
+	ai_strategy = {
+		type = front_control
+		tag = GNG
+		execution_type = rush
+		execute_order = yes
+		manual_attack = no
+	}
+	ai_strategy = {
+		type = naval_invasion_focus
+		value = -100
+	}
+}

@@ -52,11 +52,11 @@ def expected_cost_fragment(kind: str, raw: str, color: str) -> str:
         money = f'{numeric_text(value * 1000)}M' if value < 1 else f'{numeric_text(value)}B'
         return f'£GFX_green_dollar_sign §{color}{money}§!'
     if kind == 'stage':
-        return f'£GFX_DOP_SCW_stage_integrity_texticon §{color}{rendered}§!'
+        return f'£GNG_corruption_yen_texticon §{color}{rendered}§!'
     if kind == 'supervisor':
-        return f'£GFX_DOP_SCW_supervisor_attitude_texticon §{color}{rendered}%§!'
+        return f'£GNG_japanese_nation_texticon §{color}{rendered}%§!'
     if kind == 'audience':
-        return f'£GFX_DOP_SCW_audience_patience_texticon §{color}{rendered}%§!'
+        return f'£GNG_chinese_nation_texticon §{color}{rendered}%§!'
     if kind == 'stability':
         return f'£stability_texticon §{color}{numeric_text(value * 100)}%§!'
     if kind == 'war':
@@ -334,47 +334,42 @@ def main() -> int:
         )
     require('has_country_flag = DOP_SCW_initialized' in effects_text, 'SCW initialization is not idempotent')
     require('DOP_SCW_apply_player_market_gain = yes' not in decisions_text, 'decisions still use obsolete combined market helper')
-    for helper in ('DOP_SCW_change_audience_patience', 'DOP_SCW_change_supervisor_attitude', 'DOP_SCW_change_stage_integrity'):
-        require(f'{helper} = {{' in effects_text, f'{helper}: visible SCW wrapper missing')
-    wrapper_names = (
+    for legacy_wrapper in (
         'DOP_SCW_change_audience_patience',
         'DOP_SCW_change_supervisor_attitude',
         'DOP_SCW_change_stage_integrity',
-    )
-    cost_variables = {
-        'DOP_SCW_change_audience_patience': 'DOP_SCW_audience_patience_change',
-        'DOP_SCW_change_supervisor_attitude': 'DOP_SCW_supervisor_attitude_change',
-        'DOP_SCW_change_stage_integrity': 'DOP_SCW_stage_integrity_change',
-    }
-    for key, block in blocks.items():
-        visible_calls = visible_complete_calls(block, wrapper_names)
-        for wrapper, variable in cost_variables.items():
-            if re.search(rf'{variable}\s*=\s*-', block):
-                require(wrapper in visible_calls, f'{key}: {wrapper} cost is hidden from selection preview')
+        'DOP_SCW_sync_theater_stage_integrity',
+    ):
+        require(legacy_wrapper not in decisions_text, f'{legacy_wrapper}: legacy theatre call remains in decisions')
+        require(f'{legacy_wrapper} = {{' not in effects_text, f'{legacy_wrapper}: legacy theatre helper remains loaded')
     require('SCW_production_scale_increase = yes' in decisions_text, 'direct SCW production template call missing')
     require('SCW_compatibility_increase = yes' in decisions_text, 'direct SCW competitiveness template call missing')
 
-    theater_effects = {
-        'stage': ('DOP_SCW_stage_integrity_change', 'GFX_DOP_SCW_stage_integrity_texticon', ''),
-        'supervisor': ('DOP_SCW_supervisor_attitude_change', 'GFX_DOP_SCW_supervisor_attitude_texticon', '%'),
-        'audience': ('DOP_SCW_audience_patience_change', 'GFX_DOP_SCW_audience_patience_texticon', '%'),
+    canonical_metrics = {
+        'stage': ('GNG_corruption_temp_var', 'GNG_corruption_yen_texticon', '', 'GNG_Corruption_Change = yes'),
+        'supervisor': ('GNG_approval_temp_var', 'GNG_japanese_nation_texticon', '%', 'GNG_Japan_approval_change = yes'),
+        'audience': ('GNG_opinion_temp_var', 'GNG_chinese_nation_texticon', '%', 'GNG_China_opinion_change = yes'),
     }
+    cost_sign = {'stage': '', 'supervisor': '-', 'audience': '-'}
+    reward_sign = {'stage': '-', 'supervisor': '', 'audience': ''}
     combined_keys: set[str] = set()
     for key, decision in decision_data.items():
         block = blocks.get(key, '')
-        for kind, (variable, _icon, _suffix) in theater_effects.items():
+        for kind, (variable, _icon, _suffix, helper) in canonical_metrics.items():
             if raw_cost := decision.costs.get(kind):
                 expected = numeric_text(Decimal(raw_cost) * 2)
                 require(
-                    f'set_temp_variable = {{ {variable} = -{expected} }}' in block,
-                    f'{key}: {kind} cost is not exactly doubled to {expected}',
+                    f'set_temp_variable = {{ {variable} = {cost_sign[kind]}{expected} }}' in block,
+                    f'{key}: canonical {kind} cost is not exactly doubled to {expected}',
                 )
+                require(helper in block, f'{key}: canonical {kind} cost helper is missing')
             if raw_reward := decision.rewards.get(kind):
                 expected = numeric_text(Decimal(raw_reward) * 2)
                 require(
-                    f'set_temp_variable = {{ {variable} = {expected} }}' in block,
-                    f'{key}: {kind} reward is not exactly doubled to {expected}',
+                    f'set_temp_variable = {{ {variable} = {reward_sign[kind]}{expected} }}' in block,
+                    f'{key}: canonical {kind} reward is not exactly doubled to {expected}',
                 )
+                require(helper in block, f'{key}: canonical {kind} reward helper is missing')
 
         scale = decision.rewards.get('scale')
         competition = decision.rewards.get('competition')
@@ -433,7 +428,7 @@ def main() -> int:
     for key, decision in decision_data.items():
         block = blocks.get(key, '')
         for kind, raw in decision.costs.items():
-            value = Decimal(raw) * (2 if kind in theater_effects else 1)
+            value = Decimal(raw) * (2 if kind in canonical_metrics else 1)
             rendered = numeric_text(value)
             if kind == 'pp':
                 effect = f'add_political_power = -{rendered}'
@@ -462,8 +457,8 @@ def main() -> int:
                         re.search(r'(?<!has_)manpower\s*>', block) is None,
                         f'{key}: invalid manpower trigger remains',
                     )
-            elif kind in theater_effects:
-                # The theatre wrappers are already visible scripted effects;
+            elif kind in canonical_metrics:
+                # The canonical Guangdong helpers are already visible scripted effects;
                 # their exact doubled values and visible calls are checked above.
                 continue
             else:
@@ -487,7 +482,7 @@ def main() -> int:
         'GNG_Japan_approval_change = yes',
         'GNG_Corruption_Change = yes',
     ):
-        require(helper in effects_text, f'exact TNO Guangdong helper missing from SCW wrappers: {helper}')
+        require(helper in decisions_text, f'exact TNO Guangdong helper missing from generated SCW decisions: {helper}')
     require('TNO_improve_poverty_rate_' not in decisions_text, 'invalid poverty SocDev helper remains')
 
     unlock_text = read(UNLOCK_EFFECTS) if UNLOCK_EFFECTS.exists() else ''
@@ -513,24 +508,13 @@ def main() -> int:
         'set_country_flag = DOP_SCW_decisions_unlocked',
     ):
         require(snippet in activation_body, f'normal SCW activation wiring missing: {snippet}')
-    initial_decisions = {
-        decision.key for decision in DECISION_DATA
-        if decision.repeatable or decision.stage == 1
-    }
-    later_milestones = {
-        decision.key for decision in DECISION_DATA
-        if decision.stage > 1
-    }
-    for key in initial_decisions:
-        require(
-            f'set_country_flag = {key}_unlocked' in activation_body,
-            f'normal SCW activation does not unlock initial decision: {key}',
-        )
-    for key in later_milestones:
-        require(
-            f'set_country_flag = {key}_unlocked' not in activation_body,
-            f'normal SCW activation bypasses annual chain: {key}',
-        )
+    activation_unlock_flags = re.findall(
+        r'set_country_flag = (DOP_SCW_[a-z0-9_]+_unlocked)', activation_body
+    )
+    require(
+        activation_unlock_flags == ['DOP_SCW_decisions_unlocked'],
+        f'normal SCW activation must not unlock concrete decisions: {activation_unlock_flags}',
+    )
     require(
         'set_country_flag = DOP_SCW_CCD_research_complete' not in activation_body,
         'normal SCW activation bypasses the CCD research prerequisite',
@@ -619,6 +603,24 @@ def main() -> int:
     loc_bytes = LOCALISATION.read_bytes()
     require(loc_bytes.startswith(b'\xef\xbb\xbf'), 'generated Simplified Chinese localisation lacks UTF-8 BOM')
     localisation_text = read(LOCALISATION)
+    forbidden_theatre_runtime = (
+        'DOP_SCW_stage_integrity_change',
+        'DOP_SCW_supervisor_attitude_change',
+        'DOP_SCW_audience_patience_change',
+        'DOP_SCW_sync_theater_stage_integrity',
+        'GFX_DOP_SCW_stage_integrity_texticon',
+        'GFX_DOP_SCW_supervisor_attitude_texticon',
+        'GFX_DOP_SCW_audience_patience_texticon',
+        '舞台完整度',
+        '监制的态度',
+        '观众的耐心',
+    )
+    runtime_text = decisions_text + localisation_text + effects_text
+    require(
+        all(token not in runtime_text for token in forbidden_theatre_runtime),
+        'unfinished Guangdong-theatre runtime tokens are absent',
+    )
+
     loc_keys = re.findall(r'^ ([A-Za-z0-9_]+):0 ', localisation_text, re.MULTILINE)
     require(len(loc_keys) == len(set(loc_keys)), 'generated localisation contains duplicate keys')
     loc_lines = {
@@ -679,7 +681,7 @@ def main() -> int:
                     normal_fragment in tooltip_line,
                     f'{key}: {kind} is missing from custom-cost tooltip',
                 )
-            for kind, (_variable, icon, suffix) in theater_effects.items():
+            for kind, (_variable, icon, suffix, _helper) in canonical_metrics.items():
                 raw_cost = decision.costs.get(kind)
                 if not raw_cost:
                     continue
@@ -693,8 +695,8 @@ def main() -> int:
                     f'{key}: blocked {kind} cost icon/number is not doubled or correctly coloured',
                 )
             for label in ('舞台完整度', '监制的态度', '观众的耐心'):
-                require(label not in cost_line, f'{key}: theatre label remains in normal cost text: {label}')
-                require(label not in blocked_line, f'{key}: theatre label remains in blocked cost text: {label}')
+                require(label not in cost_line, f'{key}: unfinished-theatre label remains in normal cost text: {label}')
+                require(label not in blocked_line, f'{key}: unfinished-theatre label remains in blocked cost text: {label}')
 
     combined_loc = loc_lines.get('DOP_SCW_production_and_competition_increase_tt', '')
     for fragment in (
@@ -787,7 +789,7 @@ def main() -> int:
         for error in errors:
             print(f'  - {error}', file=sys.stderr)
         return 1
-    print('SCW static audit passed: 48 decisions, SCW-tab visibility, doubled theatre values, combined market tooltips, flags, and localisation.')
+    print('SCW static audit passed: 48 decisions, SCW-tab visibility, canonical doubled GNG metrics, combined market tooltips, flags, and localisation.')
     return 0
 
 
