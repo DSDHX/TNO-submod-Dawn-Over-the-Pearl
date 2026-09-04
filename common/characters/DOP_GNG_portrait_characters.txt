@@ -17,4 +17,17 @@ characters = {
 			civilian = { large = "gfx/leaders/GNG/DOP_Idei_Nobuyuki.png" }
 		}
 	}
+	DOP_GNG_inaba_hidezo = {
+		name = DOP_GNG_inaba_hidezo
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Inaba_Hidezo.png" }
+		}
+	}
+	DOP_GNG_tamura_hideaki = {
+		name = DOP_GNG_tamura_hideaki
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Tamura_Hideaki.png" }
+			army = { large = "gfx/leaders/GNG/DOP_Tamura_Hideaki.png" }
+		}
+	}
 }
