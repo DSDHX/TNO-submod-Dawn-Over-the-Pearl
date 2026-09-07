@@ -1,0 +1,42 @@
+spriteTypes = {
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_SCW_loading_market"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_market_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 12
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_scw_window_loading.shader"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_SCW_loading_chain"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_chain_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 12
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_scw_chain_loading.shader"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_SCW_loading_market_fan"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_fan_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 12
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_scw_market_fan.shader"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_SCW_loading_empty"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_chain_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 12
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_scw_window_loading.shader"
+	}
+}

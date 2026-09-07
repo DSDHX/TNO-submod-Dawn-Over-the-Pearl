@@ -1,5 +1,8 @@
-
-## Silicon CW Category ##
+## All DOP tabs share one active BoP; TNO_BoP_SelectedTab selects the page. ##
+# A decision category must belong to only one BoP, or its decisions are disabled
+# while another BoP is active even when all visible requirements are satisfied.
 BoP_Tab_DOPSiliconCW_GNG = { decision_category = GNG_SiliconCW_category }
-BoP_Tab_DOPConstruction_GNG = { decision_category = DOP_GNG_construction_category }
-BoP_Tab_DOPScienceAcademy_GNG = { decision_category = GNG_SiliconCW_category }
+
+# Keep legacy IDs loadable for saved games. DOP_BoP_ensure_shared_host migrates them.
+BoP_Tab_DOPConstruction_GNG = { }
+BoP_Tab_DOPScienceAcademy_GNG = { }

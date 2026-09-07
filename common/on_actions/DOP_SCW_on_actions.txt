@@ -1,6 +1,14 @@
 on_actions = {
 	on_daily = {
 		effect = {
+			# Persist the display fallback for old saves without resetting valid selections.
+			if = {
+				limit = {
+					has_country_flag = DOP_SCW_enabled
+					NOT = { DOP_SCW_chain_selection_valid = yes }
+				}
+				DOP_SCW_ensure_chain_selection = yes
+			}
 			if = {
 				limit = {
 					original_tag = GNG

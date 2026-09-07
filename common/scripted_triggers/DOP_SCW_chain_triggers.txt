@@ -1,0 +1,22 @@
+# One effective selection across visuals, titles and decision filters.
+DOP_SCW_chain_selection_valid = {
+	OR = {
+		check_variable = { chain_part_selected = 1 }
+		check_variable = { chain_part_selected = 2 }
+		check_variable = { chain_part_selected = 3 }
+		check_variable = { chain_part_selected = 4 }
+		check_variable = { chain_part_selected = 5 }
+	}
+}
+
+# A missing/invalid legacy value is immediately displayed as materials, even paused.
+DOP_SCW_chain_materials_selected = {
+	NOT = {
+		OR = {
+			check_variable = { chain_part_selected = 2 }
+			check_variable = { chain_part_selected = 3 }
+			check_variable = { chain_part_selected = 4 }
+			check_variable = { chain_part_selected = 5 }
+		}
+	}
+}

@@ -1,0 +1,39 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_network"
+		# Reuse the opaque white 90x90 carrier; the shader draws a 450x450 local network.
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_fan_canvas.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_network.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_frames_1"
+		textureFile = "gfx/interface/bop/DOP_SCW_chain_frame_state_1.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_frames.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_frames_2"
+		textureFile = "gfx/interface/bop/DOP_SCW_chain_frame_state_2.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_frames.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_frames_3"
+		textureFile = "gfx/interface/bop/DOP_SCW_chain_frame_state_3.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_frames.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_frames_4"
+		textureFile = "gfx/interface/bop/DOP_SCW_chain_frame_state_4.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_frames.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_chain_frames_5"
+		textureFile = "gfx/interface/bop/DOP_SCW_chain_frame_state_5.dds"
+		effectFile = "gfx/FX/DOP_scw_chain_frames.shader"
+		legacy_lazy_load = no
+	}
+}

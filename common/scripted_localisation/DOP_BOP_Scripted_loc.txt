@@ -227,7 +227,7 @@ defined_text = {
 	name = Get_SCW_chain_selected_name
 	text = {
 		trigger = {
-			check_variable = { chain_part_selected = 1 }
+			DOP_SCW_chain_materials_selected = yes
 		}
 		localization_key = "SCW_chain_part_1"
 	}

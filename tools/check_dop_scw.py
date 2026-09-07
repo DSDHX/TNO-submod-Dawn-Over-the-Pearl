@@ -190,6 +190,20 @@ def main() -> int:
         if not condition:
             errors.append(message)
 
+    # Native decisions cannot belong to multiple BoPs: a later binding can
+    # silently disable the whole category while a different host is active.
+    bop_categories: dict[str, list[str]] = {}
+    for path in sorted((ROOT / 'common/bop').glob('*.txt')):
+        script = re.sub(r'#[^\n]*', '', read(path))
+        for category in re.findall(r'\bdecision_category\s*=\s*(\w+)', script):
+            bop_categories.setdefault(category, []).append(path.name)
+    for category, owners in bop_categories.items():
+        require(len(owners) == 1, f'{category}: duplicate BoP category bindings: {owners}')
+    require(
+        len(bop_categories.get('GNG_SiliconCW_category', [])) == 1,
+        'SCW/GSA decisions need exactly one native BoP host',
+    )
+
     generated = subprocess.run(
         [sys.executable, str(GENERATOR), '--check'],
         cwd=ROOT,
@@ -227,8 +241,12 @@ def main() -> int:
                 f'{key}: wrong SCW page binding',
             )
             if group_index:
+                expected_selection = (
+                    'DOP_SCW_chain_materials_selected = yes'
+                    if group_index == 1 else f'chain_part_selected = {group_index}'
+                )
                 require(
-                    f'chain_part_selected = {group_index}' in block,
+                    expected_selection in block,
                     f'{key}: wrong industry-chain button binding',
                 )
         for position, (key, block) in enumerate(group_annual):
@@ -305,15 +323,44 @@ def main() -> int:
     )
     emitted_icons = set(re.findall(r'^        icon = (GFX_[A-Za-z0-9_]+)$', decisions_text, re.MULTILINE))
     safe_icons = {
-        'GFX_decision_GNG_generic',
+        'GFX_decision_generic_atom',
+        'GFX_decision_generic_building',
+        'GFX_decision_generic_building_offices',
+        'GFX_decision_generic_checkpoints',
+        'GFX_decision_generic_clock',
+        'GFX_decision_generic_consumer_goods',
+        'GFX_decision_generic_decrease',
+        'GFX_decision_generic_diamond',
         'GFX_decision_generic_document',
-        'GFX_decision_generic_industry',
+        'GFX_decision_generic_document_concessions',
+        'GFX_decision_generic_economy_graph',
+        'GFX_decision_generic_electronics',
+        'GFX_decision_generic_factory_blue',
+        'GFX_decision_generic_factory_inspection',
+        'GFX_decision_generic_handshake',
+        'GFX_decision_generic_investigate',
+        'GFX_decision_generic_investors_yen',
+        'GFX_decision_generic_invitation',
+        'GFX_decision_generic_military_hat',
+        'GFX_decision_generic_military_parade',
         'GFX_decision_generic_mining',
-        'GFX_decision_generic_prepare_civil_war',
+        'GFX_decision_generic_motorized',
+        'GFX_decision_generic_phone_call',
+        'GFX_decision_generic_power',
         'GFX_decision_generic_propaganda',
         'GFX_decision_generic_research',
+        'GFX_decision_generic_shipyard',
+        'GFX_decision_generic_supply',
+        'GFX_decision_generic_tools',
+        'GFX_decision_generic_workers',
     }
     require(emitted_icons <= safe_icons, f'undefined or unsafe decision icons emitted: {sorted(emitted_icons - safe_icons)}')
+    for group in GROUPS:
+        page_icons = re.findall(
+            rf'    DOP_SCW_{group}_\w+ = \{{\s+icon = (GFX_\w+)', decisions_text
+        )
+        require(len(page_icons) == 8 and len(set(page_icons)) == 8,
+                f'{group}: expected eight distinct decision icons')
 
     effects_text = read(EFFECTS)
     baselines = {
@@ -741,6 +788,38 @@ def main() -> int:
     base_loc = read(BASE_LOCALISATION)
     require('SCW_chain_part_5: "物流与管理"' in base_loc, 'fifth chain label was not corrected')
     require('CCD技术研发后解锁' in base_loc, 'lithography CCD prerequisite is not explained')
+
+    # The default selection must agree across GUI, title, and generated decision filters.
+    chain_trigger_path = ROOT / 'common/scripted_triggers/DOP_SCW_chain_triggers.txt'
+    chain_effect_path = ROOT / 'common/scripted_effects/DOP_SCW_chain_effects.txt'
+    chain_gui_path = ROOT / 'common/scripted_guis/DOP_SCW_GUI.txt'
+    chain_trigger_text = read(chain_trigger_path)
+    chain_effect_text = read(chain_effect_path)
+    chain_gui_text = read(chain_gui_path)
+    chain_loc_text = read(ROOT / 'common/scripted_localisation/DOP_BOP_Scripted_loc.txt')
+    require('DOP_SCW_chain_materials_selected = yes' in chain_gui_text,
+            'chain visual default is missing')
+    require('DOP_SCW_chain_materials_selected = yes' in chain_loc_text,
+            'chain title default is missing')
+    require('NOT = { DOP_SCW_chain_selection_valid = yes }' in chain_effect_text,
+            'chain repair must not reset valid selections')
+    for selected_id in range(1, 6):
+        click_match = re.search(
+            rf'chain_btn_{selected_id}_click\s*=\s*\{{\s*set_variable\s*=\s*'
+            rf'\{{\s*chain_part_selected\s*=\s*{selected_id}\s*\}}\s*\}}',
+            chain_gui_text,
+        )
+        require(bool(click_match), f'chain node {selected_id} can no longer be a direct persistent selection')
+        require(f'chain_part_selected = {selected_id}' in chain_trigger_text,
+                f'valid chain selection {selected_id} was lost')
+    require('chain_part_selected = 0' not in chain_gui_text,
+            'clicking a selected chain node must not clear it')
+    require('DOP_SCW_ensure_chain_selection = yes' in effects_text,
+            'SCW initialization lost the default selection')
+    require('DOP_SCW_ensure_chain_selection = yes' in on_actions_text,
+            'old-save selection repair is missing')
+    for selection_path in (chain_trigger_path, chain_effect_path, chain_gui_path):
+        require(braces_balanced(selection_path), f'unbalanced chain selection source: {selection_path}')
 
     banned = ('8英寸', '全自动晶圆传送', '原材料与销售', '海关免检绿色通道', '谈判统一ISO')
     combined_text = decisions_text + localisation_text + base_loc

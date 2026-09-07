@@ -8,6 +8,16 @@ spriteTypes = {
 		textureFile = "gfx/interface/bop/GFX_BoP_Tab_GSA_Icon.dds"
 	}
 	spriteType = {
+		name = "GFX_DOP_SCW_wafer_monitor"
+		textureFile = "gfx/interface/bop/DOP_SCW_wafer_canvas.tga"
+		effectFile = "gfx/FX/DOP_scw_wafer_monitor.shader"
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_empty_panel_monitor"
+		textureFile = "gfx/interface/proxy_wars/fopo_gui/empty_fopo_block.dds"
+		effectFile = "gfx/FX/DOP_scw_panel_monitor.shader"
+	}
+	spriteType = {
 		name = "GFX_Fujitsutemp_JAP"
 		textureFile = "gfx/interface/bop/VLSI_logo.png"
 		legacy_lazy_load = no 
@@ -110,7 +120,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GCW_speedrun_pie_overlay"
-		textureFile = "gfx/interface/bop/GCW_pie_cover.dds"
+		textureFile = "gfx/interface/bop/DOP_SCW_market_frame.dds"
 	}
 	spriteType = {
 		name = "GFX_GCW_SEMATECH_logo"
@@ -134,51 +144,56 @@ spriteTypes = {
 	}
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_GNG_chart"
-		textureFile1 = "gfx/interface/bop/GCW_pie_GNG_sony.dds"
-		textureFile2 = "gfx/interface/bop/GCW_pie_GNG_sony_image.dds"
+		textureFile1 = "gfx/interface/bop/DOP_SCW_market_GNG.dds"
+		textureFile2 = "gfx/interface/bop/DOP_SCW_pie_faction_GNG.png"
 		color = { 0.0 0.0 0.0 0.0 }
+		colortwo = { 0.416666667 0.415989160 0.501924263 0.499784111 }
 		size = { x = 360 y = 360 }
-		effectFile = "gfx/FX/progress_radial_img.lua"
+		effectFile = "gfx/FX/DOP_scw_faction_pie.shader"
 		steps = 100001
 	}
 
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_USA_chart"
-		textureFile1 = "gfx/interface/bop/GCW_pie_USA_sematech.dds"
-		textureFile2 = "gfx/interface/bop/GCW_pie_USA_sematech_image.dds"
+		textureFile1 = "gfx/interface/bop/DOP_SCW_market_USA.dds"
+		textureFile2 = "gfx/interface/bop/DOP_SCW_pie_faction_USA.png"
 		color = { 0.0 0.0 0.0 0.0 }
+		colortwo = { 0.415783898 0.416666667 0.475653628 0.519785533 }
 		size = { x = 360 y = 360 }
-		effectFile = "gfx/FX/progress_radial_img.lua"
+		effectFile = "gfx/FX/DOP_scw_faction_pie.shader"
 		steps = 100001
 	}
 
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_ITA_chart"
-		textureFile1 = "gfx/interface/bop/GCW_pie_ITA_sgs.dds"
-		textureFile2 = "gfx/interface/bop/GCW_pie_ITA_sgs_image.dds"
+		textureFile1 = "gfx/interface/bop/DOP_SCW_market_ITA.dds"
+		textureFile2 = "gfx/interface/bop/DOP_SCW_pie_faction_ITA.png"
 		color = { 0.0 0.0 0.0 0.0 }
+		colortwo = { 0.387731481 0.416666667 0.500055297 0.471182397 }
 		size = { x = 360 y = 360 }
-		effectFile = "gfx/FX/progress_radial_img.lua"
+		effectFile = "gfx/FX/DOP_scw_faction_pie.shader"
 		steps = 100001
 	}
 
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_GER_chart"
-		textureFile1 = "gfx/interface/bop/GCW_pie_GER_siemens.dds"
-		textureFile2 = "gfx/interface/bop/GCW_pie_GER_siemens_image.dds"
+		textureFile1 = "gfx/interface/bop/DOP_SCW_market_GER.dds"
+		textureFile2 = "gfx/interface/bop/DOP_SCW_pie_faction_GER.png"
 		color = { 0.0 0.0 0.0 0.0 }
+		colortwo = { 0.416666667 0.416666667 0.500000000 0.500000000 }
 		size = { x = 360 y = 360 }
-		effectFile = "gfx/FX/progress_radial_img.lua"
+		effectFile = "gfx/FX/DOP_scw_faction_pie.shader"
 		steps = 100001
 	}
 
 	progressbartype = {
 		name = "GFX_GCW_speedrun_pie_JAP_chart"
-		textureFile1 = "gfx/interface/bop/GCW_pie_JAP_vlsi.dds"
-		textureFile2 = "gfx/interface/bop/GCW_pie_JAP_vlsi_image.dds"
+		textureFile1 = "gfx/interface/bop/DOP_SCW_market_JAP.dds"
+		textureFile2 = "gfx/interface/bop/DOP_SCW_pie_faction_JAP.png"
 		color = { 0.0 0.0 0.0 0.0 }
+		colortwo = { 0.415479582 0.416666667 0.499986762 0.500031454 }
 		size = { x = 360 y = 360 }
-		effectFile = "gfx/FX/progress_radial_img.lua"
+		effectFile = "gfx/FX/DOP_scw_faction_pie.shader"
 		steps = 100001
 	}
 

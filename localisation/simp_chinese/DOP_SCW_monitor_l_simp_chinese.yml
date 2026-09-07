@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ DOP_SCW_market_monitor_title: "GLOBAL SEMICONDUCTOR MARKET SHARE"
+ DOP_SCW_market_monitor_process: "3 µm"
+ DOP_SCW_monitor_share_GNG: "[?GNG_percentage_for_bar|1%%]"
+ DOP_SCW_monitor_share_USA: "[?USA_percentage_for_bar|1%%]"
+ DOP_SCW_monitor_share_ITA: "[?ITA_percentage_for_bar|1%%]"
+ DOP_SCW_monitor_share_GER: "[?GER_percentage_for_bar|1%%]"
+ DOP_SCW_monitor_share_JAP: "[?JAP_percentage_for_bar|1%%]"

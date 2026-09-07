@@ -1,0 +1,41 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_logo_GNG"
+		textureFile = "gfx/interface/bop/SONY_logo.png"
+		effectFile = "gfx/FX/DOP_scw_monitor_logo.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_logo_USA"
+		textureFile = "gfx/interface/bop/SEMATECH_logo.png"
+		effectFile = "gfx/FX/DOP_scw_monitor_logo.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_logo_ITA"
+		textureFile = "gfx/interface/bop/SGS_logo.png"
+		effectFile = "gfx/FX/DOP_scw_monitor_logo.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_logo_GER"
+		textureFile = "gfx/interface/bop/Siemens_logo.png"
+		effectFile = "gfx/FX/DOP_scw_monitor_logo.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_logo_JAP"
+		textureFile = "gfx/interface/bop/VLSI_logo.png"
+		effectFile = "gfx/FX/DOP_scw_monitor_logo.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_legend"
+		textureFile = "gfx/interface/bop/DOP_SCW_monitor_legend.dds"
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_monitor_activity"
+		textureFile = "gfx/interface/bop/DOP_SCW_monitor_activity.dds"
+		effectFile = "gfx/FX/DOP_scw_monitor_activity.shader"
+	}
+}

@@ -1,0 +1,81 @@
+defined_text = {
+	name = DOP_GSA_GetTitle
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now = 1 } }
+		localization_key = "GSA_research_name_1"
+	}
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now > 0 } }
+		localization_key = "DOP_GSA_generic_project"
+	}
+	text = {
+		localization_key = "DOP_GSA_standby_title"
+	}
+}
+
+defined_text = {
+	name = DOP_GSA_GetStatus
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now = 0 } }
+		localization_key = "DOP_GSA_status_idle"
+	}
+	text = {
+		trigger = { DOP_GSA_research_working = yes }
+		localization_key = "DOP_GSA_status_working"
+	}
+	text = {
+		localization_key = "DOP_GSA_status_stalled"
+	}
+}
+
+defined_text = {
+	name = DOP_GSA_GetProgress
+	text = {
+		trigger = { DOP_GSA_prepare_display = yes check_variable = { GNG_GSA_research_on_now > 0 } }
+		localization_key = "DOP_GSA_progress_numeric"
+	}
+	text = {
+		localization_key = "DOP_GSA_dash"
+	}
+}
+
+defined_text = {
+	name = DOP_GSA_GetDaily
+	text = {
+		trigger = { DOP_GSA_prepare_display = yes check_variable = { GNG_GSA_research_on_now > 0 } }
+		localization_key = "DOP_GSA_daily_numeric"
+	}
+	text = {
+		localization_key = "DOP_GSA_dash"
+	}
+}
+
+defined_text = {
+	name = DOP_GSA_GetEta
+	text = {
+		trigger = { DOP_GSA_research_working = yes }
+		localization_key = "DOP_GSA_eta_numeric"
+	}
+	text = {
+		localization_key = "DOP_GSA_dash"
+	}
+}
+
+defined_text = {
+	name = DOP_GSA_GetSummary
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now = 1 } }
+		localization_key = "GSA_research_desc_1"
+	}
+	text = {
+		trigger = { check_variable = { GNG_GSA_research_on_now > 0 } }
+		localization_key = "DOP_GSA_generic_summary"
+	}
+	text = {
+		trigger = { has_country_flag = GNG_GSA_research_1_complete }
+		localization_key = "DOP_GSA_completed_summary"
+	}
+	text = {
+		localization_key = "DOP_GSA_idle_summary"
+	}
+}

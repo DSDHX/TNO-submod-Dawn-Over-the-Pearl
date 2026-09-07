@@ -27,74 +27,26 @@ scripted_gui = {
 		effects = {
 			decision_tab_icon_click = {
 				set_variable = { selected_decision_tabs_id = bop_decision_tab_id }
+				DOP_SCW_ensure_chain_selection = yes
 			}
 			tab_click = {
 				set_variable = { selected_decision_tabs_id = bop_decision_tab_id }
+				DOP_SCW_ensure_chain_selection = yes
 			}
 			chain_btn_1_click = {
-				if = {
-					limit = {
-						check_variable = {
-							chain_part_selected = 1
-						}
-					}
-					set_variable = { chain_part_selected = 0 }
-				}
-				else = {
-					set_variable = { chain_part_selected = 1 }
-				}
+				set_variable = { chain_part_selected = 1 }
 			}
 			chain_btn_2_click = {
-				if = {
-					limit = {
-						check_variable = {
-							chain_part_selected = 2
-						}
-					}
-					set_variable = { chain_part_selected = 0 }
-				}
-				else = {
-					set_variable = { chain_part_selected = 2 }
-				}
+				set_variable = { chain_part_selected = 2 }
 			}
 			chain_btn_3_click = {
-				if = {
-					limit = {
-						check_variable = {
-							chain_part_selected = 3
-						}
-					}
-					set_variable = { chain_part_selected = 0 }
-				}
-				else = {
-					set_variable = { chain_part_selected = 3 }
-				}
+				set_variable = { chain_part_selected = 3 }
 			}
 			chain_btn_4_click = {
-				if = {
-					limit = {
-						check_variable = {
-							chain_part_selected = 4
-						}
-					}
-					set_variable = { chain_part_selected = 0 }
-				}
-				else = {
-					set_variable = { chain_part_selected = 4 }
-				}
+				set_variable = { chain_part_selected = 4 }
 			}
 			chain_btn_5_click = {
-				if = {
-					limit = {
-						check_variable = {
-							chain_part_selected = 5
-						}
-					}
-					set_variable = { chain_part_selected = 0 }
-				}
-				else = {
-					set_variable = { chain_part_selected = 5 }
-				}
+				set_variable = { chain_part_selected = 5 }
 			}
 		}
 
@@ -122,6 +74,9 @@ scripted_gui = {
 			chain_bg_visible = {
 				check_variable = { selected_decision_tabs_id = 2 }
 			}
+			DOP_SCW_chain_frames_visible = {
+				check_variable = { selected_decision_tabs_id = 2 }
+			}
 			speedrun_bg_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
 			}
@@ -141,7 +96,7 @@ scripted_gui = {
 				check_variable = { selected_decision_tabs_id = 2 }
 			}
 			chain_btn_1_on_visible = {
-				check_variable = { chain_part_selected = 1 }
+				DOP_SCW_chain_materials_selected = yes
 				check_variable = { selected_decision_tabs_id = 2 }
 			}
 			chain_btn_2_on_visible = {
@@ -178,6 +133,33 @@ scripted_gui = {
 			GCW_speedrun_pie_overlay_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
 			}
+			DOP_SCW_market_monitor_title_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_market_monitor_process_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_activity_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_legend_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_share_GNG_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_share_USA_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_share_ITA_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_share_GER_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
+			DOP_SCW_monitor_share_JAP_visible = {
+				check_variable = { selected_decision_tabs_id = 1 }
+			}
 			Part_Info_SEMATECH_visible = {
 				check_variable = { selected_decision_tabs_id = 1 }
 			}
@@ -196,6 +178,9 @@ scripted_gui = {
 		}
 
 		properties = {
+			DOP_SCW_chain_frames = {
+				image = "[DOP_SCW_chain_frame_sprite]"
+			}
 			tab_bg = {
 				frame = fopo_button_tab_frame
 			}
@@ -269,17 +254,25 @@ scripted_gui = {
 		context_type = player_context
 		parent_window_name = powerbalanceview
 
-		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } }
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy }
+			DOP_GSA_prepare_display = yes
+		}
 		ai_enabled = { always = no }
 
 		triggers = {
 			GSA_bg_off_visible = {
-				check_variable = { GNG_GSA_research_on_now = 0 }
+				NOT = { check_variable = { GNG_GSA_research_on_now = 1 } }
 			}
 			GSA_research_icon_visible = {
-				NOT = {
-					check_variable = { GNG_GSA_research_on_now = 0 }
-				}
+				check_variable = { GNG_GSA_research_on_now = 1 }
+			}
+			DOP_GSA_idle_heading_visible = { check_variable = { GNG_GSA_research_on_now = 0 } }
+			DOP_GSA_idle_hint_visible = { check_variable = { GNG_GSA_research_on_now = 0 } }
+			DOP_GSA_progress_cursor_visible = {
+				DOP_GSA_research_working = yes
+				check_variable = { DOP_GSA_ui_progress > 0 }
+				check_variable = { DOP_GSA_ui_progress < 100 }
 			}
 			GSA_research_progress_visible = {
 				NOT = {
@@ -289,12 +282,10 @@ scripted_gui = {
 		}
 
 		properties = {
-			GSA_research_icon = {
-				image = "[Get_GSA_research_icon]"
-			}
 			GSA_research_progress = {
-				frame = var:GNG_GSA_research_progress
+				frame = DOP_GSA_ui_progress_frame
 			}
+			DOP_GSA_progress_cursor = { x = DOP_GSA_ui_marker_x }
 		}
 		
 	}

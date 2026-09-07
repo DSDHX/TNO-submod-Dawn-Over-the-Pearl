@@ -1,0 +1,35 @@
+# Read-only UI calculations; do not advance research or write persistent game state.
+DOP_GSA_prepare_display = {
+	set_temp_variable = { DOP_GSA_ui_progress = GNG_GSA_research_progress }
+	clamp_temp_variable = { var = DOP_GSA_ui_progress min = 0 max = 100 }
+	set_temp_variable = { DOP_GSA_ui_progress_frame = DOP_GSA_ui_progress }
+	multiply_temp_variable = { DOP_GSA_ui_progress_frame = 100 }
+	set_temp_variable = { DOP_GSA_ui_marker_x = DOP_GSA_ui_progress }
+	multiply_temp_variable = { DOP_GSA_ui_marker_x = 4.2 }
+	add_to_temp_variable = { DOP_GSA_ui_marker_x = 36 }
+	set_temp_variable = { DOP_GSA_ui_speed = research_speed_value }
+	multiply_temp_variable = { DOP_GSA_ui_speed = research_ability_factor }
+	clamp_temp_variable = { var = DOP_GSA_ui_speed min = 0 max = 100000000 }
+	set_temp_variable = { DOP_GSA_ui_daily = 0 }
+	set_temp_variable = { DOP_GSA_ui_days = 0 }
+	if = {
+		limit = {
+			check_variable = { GNG_GSA_research_on_now > 0 }
+			check_variable = { GNG_GSA_research_count > 0 }
+			check_variable = { DOP_GSA_ui_speed > 0 }
+		}
+		set_temp_variable = { DOP_GSA_ui_daily = DOP_GSA_ui_speed }
+		divide_temp_variable = { DOP_GSA_ui_daily = GNG_GSA_research_count }
+		multiply_temp_variable = { DOP_GSA_ui_daily = 100 }
+		set_temp_variable = { DOP_GSA_ui_days = 100 }
+		subtract_from_temp_variable = { DOP_GSA_ui_days = DOP_GSA_ui_progress }
+		divide_temp_variable = { DOP_GSA_ui_days = DOP_GSA_ui_daily }
+		round_temp_variable = DOP_GSA_ui_days
+	}
+	always = yes
+}
+DOP_GSA_research_working = {
+	DOP_GSA_prepare_display = yes
+	check_variable = { GNG_GSA_research_on_now > 0 }
+	check_variable = { DOP_GSA_ui_daily > 0 }
+}

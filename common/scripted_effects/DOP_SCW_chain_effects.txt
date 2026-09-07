@@ -1,0 +1,7 @@
+# Preserve a valid selection; initialize or repair only an empty/invalid one.
+DOP_SCW_ensure_chain_selection = {
+	if = {
+		limit = { NOT = { DOP_SCW_chain_selection_valid = yes } }
+		set_variable = { chain_part_selected = 1 }
+	}
+}

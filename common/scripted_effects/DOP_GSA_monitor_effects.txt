@@ -1,0 +1,17 @@
+# Refresh before each daily tick so changes in efficiency affect actual research.
+DOP_GSA_refresh_research_rate = {
+	set_variable = { DOP_GSA_effective_speed = research_speed_value }
+	multiply_variable = { DOP_GSA_effective_speed = research_ability_factor }
+	clamp_variable = { var = DOP_GSA_effective_speed min = 0 }
+	set_variable = { GNG_GSA_research_speed_percent = 0 }
+	if = {
+		limit = {
+			check_variable = { GNG_GSA_research_on_now > 0 }
+			check_variable = { GNG_GSA_research_count > 0 }
+			check_variable = { DOP_GSA_effective_speed > 0 }
+		}
+		set_variable = { GNG_GSA_research_speed_percent = DOP_GSA_effective_speed }
+		divide_variable = { GNG_GSA_research_speed_percent = GNG_GSA_research_count }
+		multiply_variable = { GNG_GSA_research_speed_percent = 100 }
+	}
+}

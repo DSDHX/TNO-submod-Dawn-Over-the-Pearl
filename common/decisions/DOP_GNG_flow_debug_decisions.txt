@@ -1,6 +1,4 @@
 GNG_debug_category = {
-	# DOP post-TNO flow debug sequence. These decisions deliberately call the
-	# production flow effects/events instead of duplicating their mechanics.
 	DOP_GNG_debug_flow_01_opening = {
 		allowed = { original_tag = GNG }
 		icon = GFX_decision_GNG_generic

@@ -5,7 +5,7 @@ GNG_SiliconCW_category = {
 
     # race
     DOP_SCW_race_commercial_attaches = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_investigate
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -46,7 +46,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_tariff_lobby = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_document_concessions
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -84,7 +84,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_court_dissidents = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_phone_call
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -127,7 +127,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_friendly_expositions = {
-        icon = GFX_decision_generic_propaganda
+        icon = GFX_decision_generic_invitation
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -168,7 +168,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_shell_companies = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_building_offices
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -214,7 +214,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_smuggle_blueprints = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_document
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -264,7 +264,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_race_embargo_waivers = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_handshake
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -369,7 +369,7 @@ GNG_SiliconCW_category = {
             has_country_flag = DOP_SCW_materials_buy_crude_silicon_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -403,14 +403,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_smelter_overtime = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_clock
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_smelter_overtime_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -445,14 +445,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_power_subsidy = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_power
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_power_subsidy_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -487,14 +487,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_export_low_grade_products = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_supply
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_export_low_grade_products_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -526,14 +526,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_polysilicon_plant = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_building
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_polysilicon_plant_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
         }
         available = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -583,7 +583,7 @@ GNG_SiliconCW_category = {
             has_country_flag = DOP_SCW_materials_czochralski_growth_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
             has_country_flag = DOP_SCW_materials_polysilicon_plant_complete
         }
         available = {
@@ -624,14 +624,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_quartz_monopoly = {
-        icon = GFX_decision_generic_mining
+        icon = GFX_decision_generic_diamond
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_quartz_monopoly_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
             has_country_flag = DOP_SCW_materials_czochralski_growth_complete
         }
         available = {
@@ -675,14 +675,14 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_materials_four_inch_substrates = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_factory_blue
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
             has_country_flag = DOP_SCW_materials_four_inch_substrates_unlocked
             check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
             check_variable = { selected_decision_tabs_id = 2 }
-            check_variable = { chain_part_selected = 1 }
+            DOP_SCW_chain_materials_selected = yes
             has_country_flag = DOP_SCW_materials_quartz_monopoly_complete
         }
         available = {
@@ -727,7 +727,7 @@ GNG_SiliconCW_category = {
 
     # wafer
     DOP_SCW_wafer_replenish_consumables = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_research
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -768,7 +768,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_paramilitary_shifts = {
-        icon = GFX_decision_generic_prepare_civil_war
+        icon = GFX_decision_generic_military_parade
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -809,7 +809,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_spc_control = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_economy_graph
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -845,7 +845,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_japanese_military_orders = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_military_hat
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -884,7 +884,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_class_1000_cleanroom = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_building
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -933,7 +933,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_four_inch_wafer_line = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_factory_blue
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -983,7 +983,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_implantation_and_oxidation = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_atom
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1032,7 +1032,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_wafer_automated_handling_fa = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_factory_inspection
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1083,7 +1083,7 @@ GNG_SiliconCW_category = {
 
     # lithography
     DOP_SCW_lithography_optical_calibration = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_tools
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1125,7 +1125,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_import_photoresist = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_research
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1169,7 +1169,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_buy_pellicles = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_supply
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1212,7 +1212,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_expert_allowances = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_investors_yen
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1257,7 +1257,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_ccd_scale_up = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_electronics
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1309,7 +1309,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_g_line_stepper = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_investigate
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1359,7 +1359,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_chrome_quartz_masks = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_factory_blue
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1413,7 +1413,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_lithography_excimer_alignment = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_atom
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1468,7 +1468,7 @@ GNG_SiliconCW_category = {
 
     # packaging
     DOP_SCW_packaging_recruit_assembly_labor = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_workers
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1514,7 +1514,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_lower_piece_rates = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_decrease
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1556,7 +1556,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_consumer_oem_orders = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_consumer_goods
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1597,7 +1597,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_bonding_consumables = {
-        icon = GFX_decision_generic_industry
+        icon = GFX_decision_generic_supply
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1637,7 +1637,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_dip_expansion = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_factory_blue
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1687,7 +1687,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_worker_housing = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_building_offices
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1738,7 +1738,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_smt_pilot_line = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_electronics
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1787,7 +1787,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_packaging_qfp_testing_center = {
-        icon = GFX_decision_generic_research
+        icon = GFX_decision_generic_factory_inspection
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1842,7 +1842,7 @@ GNG_SiliconCW_category = {
 
     # logistics
     DOP_SCW_logistics_liner_subsidies = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_shipyard
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1918,7 +1918,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_overland_transshipment = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_motorized
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1954,7 +1954,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_direct_distribution = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_phone_call
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -1996,7 +1996,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_iso_container_coordination = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_handshake
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -2039,7 +2039,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_customs_fast_lane = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_checkpoints
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -2088,7 +2088,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_south_america_assembly = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_factory_blue
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked
@@ -2136,7 +2136,7 @@ GNG_SiliconCW_category = {
     }
 
     DOP_SCW_logistics_strategic_component_buffer = {
-        icon = GFX_decision_GNG_generic
+        icon = GFX_decision_generic_supply
         allowed = { original_tag = GNG }
         visible = {
             has_country_flag = DOP_SCW_decisions_unlocked

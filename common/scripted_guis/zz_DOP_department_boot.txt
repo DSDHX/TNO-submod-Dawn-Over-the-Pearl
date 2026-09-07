@@ -1,0 +1,18 @@
+# First-show overlays only; native window reopening is not a reset hook.
+scripted_gui = {
+	DOP_GSA_boot = {
+		window_name = "DOP_GSA_boot"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		ai_enabled = { always = no }
+		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPScienceAcademy } }
+	}
+	DOP_construction_boot = {
+		window_name = "DOP_construction_boot"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		ai_enabled = { always = no }
+		visible = { check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPConstruction } }
+	}
+}
+

@@ -1,0 +1,61 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_GSA_panel"
+		textureFile = "gfx/interface/bop/DOP_GSA_panel_canvas.dds"
+		effectFile = "gfx/FX/DOP_gsa_panel.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_GSA_idle"
+		textureFile = "gfx/interface/bop/DOP_GSA_idle_canvas.dds"
+		effectFile = "gfx/FX/DOP_gsa_idle.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_GSA_activity"
+		textureFile = "gfx/interface/bop/DOP_GSA_activity_canvas.dds"
+		effectFile = "gfx/FX/DOP_gsa_activity.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_GSA_progress_cursor"
+		textureFile = "gfx/interface/bop/DOP_GSA_cursor_canvas.dds"
+		effectFile = "gfx/FX/DOP_gsa_cursor.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_GSA_project_photo"
+		textureFile = "gfx/interface/bop/DOP_GSA_project_1.png"
+		effectFile = "gfx/FX/DOP_gsa_photo.shader"
+		legacy_lazy_load = no
+	}
+	progressbartype = {
+		name = "GFX_DOP_GSA_research_progress"
+		color = { 0.50 0.82 0.87 1.0 }
+		colortwo = { 0.06 0.12 0.16 1.0 }
+		size = { x = 420 y = 12 }
+		steps = 10000
+		effectFile = "gfx/FX/progress.lua"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_GSA_boot"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_market_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 24
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_gsa_boot.shader"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_DOP_construction_boot"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_market_clock.dds"
+		noOfFrames = 32
+		animation_rate_fps = 40
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+		effectFile = "gfx/FX/DOP_construction_boot.shader"
+	}
+}
+

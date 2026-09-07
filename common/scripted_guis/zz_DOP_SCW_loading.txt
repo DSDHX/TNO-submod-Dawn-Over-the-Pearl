@@ -1,0 +1,46 @@
+# Separate top-level siblings attach after the content, including the native decisions grid.
+scripted_gui = {
+	DOP_SCW_loading_market = {
+		window_name = "DOP_SCW_loading_market"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		ai_enabled = { always = no }
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			check_variable = { selected_decision_tabs_id = 1 }
+			check_variable = { SCW_enabled_tabs^num > 0 }
+			NOT = { has_country_flag = DOP_SCW_off }
+		}
+	}
+	DOP_SCW_loading_chain = {
+		window_name = "DOP_SCW_loading_chain"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		ai_enabled = { always = no }
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			check_variable = { selected_decision_tabs_id = 2 }
+			check_variable = { SCW_enabled_tabs^num > 0 }
+			NOT = { has_country_flag = DOP_SCW_off }
+		}
+	}
+	DOP_SCW_loading_empty = {
+		window_name = "DOP_SCW_loading_empty"
+		context_type = player_context
+		parent_window_name = powerbalanceview
+		ai_enabled = { always = no }
+		visible = {
+			check_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_DOPSiliconCW }
+			OR = {
+				has_country_flag = DOP_SCW_off
+				check_variable = { SCW_enabled_tabs^num = 0 }
+				NOT = {
+					OR = {
+						check_variable = { selected_decision_tabs_id = 1 }
+						check_variable = { selected_decision_tabs_id = 2 }
+					}
+				}
+			}
+		}
+	}
+}

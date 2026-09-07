@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_SCW_loading_market_state"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_window_canvas.dds"
+		effectFile = "gfx/FX/DOP_scw_window_loading_state.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_loading_chain_state"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_window_canvas.dds"
+		effectFile = "gfx/FX/DOP_scw_window_loading_state.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_loading_empty_state"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_window_canvas.dds"
+		effectFile = "gfx/FX/DOP_scw_window_loading_state.shader"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_DOP_SCW_loading_market_fan_state"
+		textureFile = "gfx/interface/bop/DOP_SCW_loading_fan_canvas.dds"
+		effectFile = "gfx/FX/DOP_scw_market_fan_state.shader"
+		legacy_lazy_load = no
+	}
+}

@@ -1,0 +1,22 @@
+# Raw sprite IDs, following the existing Get_fopo_seal pattern.
+# The final branch matches the material-stage fallback for missing/invalid values.
+defined_text = {
+	name = DOP_SCW_chain_frame_sprite
+	text = {
+		trigger = { check_variable = { chain_part_selected = 2 } }
+		localization_key = "GFX_DOP_SCW_chain_frames_2"
+	}
+	text = {
+		trigger = { check_variable = { chain_part_selected = 3 } }
+		localization_key = "GFX_DOP_SCW_chain_frames_3"
+	}
+	text = {
+		trigger = { check_variable = { chain_part_selected = 4 } }
+		localization_key = "GFX_DOP_SCW_chain_frames_4"
+	}
+	text = {
+		trigger = { check_variable = { chain_part_selected = 5 } }
+		localization_key = "GFX_DOP_SCW_chain_frames_5"
+	}
+	text = { localization_key = "GFX_DOP_SCW_chain_frames_1" }
+}

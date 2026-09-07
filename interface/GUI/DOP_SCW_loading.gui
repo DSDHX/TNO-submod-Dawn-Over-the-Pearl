@@ -1,0 +1,50 @@
+guiTypes = {
+	containerWindowType = {
+		name = "DOP_SCW_loading_market"
+		position = { x = 18 y = 22 }
+		size = { width = 1056 height = 636 }
+		clipping = no
+		# First-show frame animations; reopening the native parent is not a replay trigger.
+		# Keep the pie mask below the full-window curtain.
+		iconType = {
+			name = "DOP_SCW_loading_market_fan"
+			position = { x = 82 y = 151 }
+			spriteType = "GFX_DOP_SCW_loading_market_fan"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "DOP_SCW_loading_market_visual"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_DOP_SCW_loading_market"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "DOP_SCW_loading_chain"
+		position = { x = 18 y = 22 }
+		size = { width = 1056 height = 636 }
+		clipping = no
+		iconType = {
+			name = "DOP_SCW_loading_chain_visual"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_DOP_SCW_loading_chain"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "DOP_SCW_loading_empty"
+		position = { x = 18 y = 22 }
+		size = { width = 1056 height = 636 }
+		clipping = no
+		iconType = {
+			name = "DOP_SCW_loading_empty_visual"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_DOP_SCW_loading_empty"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+	}
+}

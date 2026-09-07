@@ -1,6 +1,20 @@
 on_actions = {
     on_daily = {
 		effect = {
+			# Existing saves may have activated the construction/GSA host first.
+			# Repair on the next daily tick without resetting tabs or SCW progress.
+			if = {
+				limit = {
+					original_tag = GNG
+					check_variable = { TNO_BoP_Tabs^num > 0 }
+					OR = {
+						NOT = { has_power_balance = { id = BoP_Tab_DOPSiliconCW_GNG } }
+						has_power_balance = { id = BoP_Tab_DOPConstruction_GNG }
+						has_power_balance = { id = BoP_Tab_DOPScienceAcademy_GNG }
+					}
+				}
+				DOP_BoP_ensure_shared_host = yes
+			}
 			if = {
 				limit = {
 					has_country_flag = DOP_construction_initialized
@@ -63,7 +77,8 @@ on_actions = {
 				limit = {
 					check_variable = { GNG_GSA_research_on_now > 0 }
 				}
-                add_to_variable = { GNG_GSA_research_progress = GNG_GSA_research_speed_percent }
+				DOP_GSA_refresh_research_rate = yes
+				add_to_variable = { GNG_GSA_research_progress = GNG_GSA_research_speed_percent }
 				if = {
 					limit = {
 						check_variable = {
@@ -73,9 +88,10 @@ on_actions = {
 						}
 					}
 					GSA_research_complete_effects = yes
+					log = "GNG:Research complete for [?GNG_GSA_research_on_now]"
 					set_variable = { GNG_GSA_research_on_now = 0 }
 					set_variable = { GNG_GSA_research_progress = 0 }
-					log = "GNG:Research complete for [?GNG_GSA_research_on_now]"
+					DOP_GSA_refresh_research_rate = yes
 				}
 			}
 		}

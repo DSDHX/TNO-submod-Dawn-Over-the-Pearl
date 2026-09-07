@@ -1,0 +1,29 @@
+guiTypes = {
+	containerWindowType = {
+		name = "DOP_GSA_boot"
+		position = { x = 18 y = 22 }
+		size = { width = 1056 height = 636 }
+		clipping = no
+		iconType = {
+			name = "DOP_GSA_boot_visual"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_DOP_GSA_boot"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "DOP_construction_boot"
+		position = { x = 18 y = 22 }
+		size = { width = 1056 height = 636 }
+		clipping = no
+		iconType = {
+			name = "DOP_construction_boot_visual"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_DOP_construction_boot"
+			scale = 4.0
+			alwaystransparent = yes
+		}
+	}
+}
+

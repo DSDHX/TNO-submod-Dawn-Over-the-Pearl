@@ -118,14 +118,15 @@ guiTypes = {
 
 		iconType = {
 			name = "chain_bg"
-			spriteType = "GFX_GCW_chain_bg"
-			position = { x = -20 y = -20 }
+			spriteType = "GFX_DOP_SCW_chain_network"
+			position = { x = 30 y = 150 }
+			scale = 5.0
 			alwaystransparent = yes
 		}
 
 		containerWindowType = {
 			name = "GCW_speedrun_pie"
-			position = { x = 75 y = 160 }
+			position = { x = 75 y = 154 }
 
 			iconType = {
 				name = "GCW_speedrun_pie_GNG"
@@ -158,41 +159,130 @@ guiTypes = {
 				position = { x = -36 y = -36 }
 				alwaystransparent = yes
 			}
+			instantTextBoxType = {
+				name = "DOP_SCW_market_monitor_title"
+				position = { x = -16 y = -20 }
+				text = DOP_SCW_market_monitor_title
+				font = "aldrich_12_outline"
+				maxWidth = 320
+				maxHeight = 18
+				format = left
+				text_color_code = M
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "DOP_SCW_market_monitor_process"
+				position = { x = 306 y = -20 }
+				text = DOP_SCW_market_monitor_process
+				font = "aldrich_12_outline"
+				maxWidth = 70
+				maxHeight = 18
+				format = right
+				text_color_code = M
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "DOP_SCW_monitor_activity"
+				position = { x = -16 y = 364 }
+				spriteType = "GFX_DOP_SCW_monitor_activity"
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "DOP_SCW_monitor_legend"
+			spriteType = "GFX_DOP_SCW_monitor_legend"
+			position = { x = 39 y = 554 }
+			alwaystransparent = yes
 		}
 		iconType = {
 			name = "Part_Info_SEMATECH"
-			spriteType = "GFX_GCW_SEMATECH_logo"
-			position = { x = 125 y = 555 }
-			scale = 0.08
+			spriteType = "GFX_DOP_SCW_monitor_logo_USA"
+			position = { x = 142 y = 563 }
+			scale = 0.058036
 			pdx_tooltip = SCW_usa_per_bar_tt
 		}
 		iconType = {
 			name = "Part_Info_SONY"
-			spriteType = "GFX_GCW_SONY_logo"
-			position = { x = 50 y = 550 }
-			scale = 0.03
+			spriteType = "GFX_DOP_SCW_monitor_logo_GNG"
+			position = { x = 65 y = 563 }
+			scale = 0.016828
 			pdx_tooltip = SCW_gng_per_bar_tt
 		}
 		iconType = {
 			name = "Part_Info_Siemens"
-			spriteType = "GFX_GCW_Siemens_logo"
-			position = { x = 330 y = 550 }
-			scale = 0.125
+			spriteType = "GFX_DOP_SCW_monitor_logo_GER"
+			position = { x = 330 y = 563 }
+			scale = 0.060748
 			pdx_tooltip = SCW_ger_per_bar_tt
 		}
 		iconType = {
 			name = "Part_Info_VLSI"
-			spriteType = "GFX_GCW_VLSI_logo"
-			position = { x = 390 y = 560 }
-			scale = 0.5
+			spriteType = "GFX_DOP_SCW_monitor_logo_JAP"
+			position = { x = 394 y = 565 }
+			scale = 0.402597
 			pdx_tooltip = SCW_jap_per_bar_tt
 		}
 		iconType = {
 			name = "Part_Info_SGS"
-			spriteType = "GFX_GCW_SGS_logo"
-			position = { x = 220 y = 560 }
-			scale = 0.25
+			spriteType = "GFX_DOP_SCW_monitor_logo_ITA"
+			position = { x = 222 y = 566 }
+			scale = 0.193750
 			pdx_tooltip = SCW_ita_per_bar_tt
+		}
+		instantTextBoxType = {
+			name = "DOP_SCW_monitor_share_GNG"
+			position = { x = 40 y = 595 }
+			text = DOP_SCW_monitor_share_GNG
+			font = "aldrich_12_outline"
+			maxWidth = 82
+			maxHeight = 16
+			format = center
+			text_color_code = M
+			pdx_tooltip = SCW_gng_per_bar_tt
+		}
+		instantTextBoxType = {
+			name = "DOP_SCW_monitor_share_USA"
+			position = { x = 126 y = 595 }
+			text = DOP_SCW_monitor_share_USA
+			font = "aldrich_12_outline"
+			maxWidth = 82
+			maxHeight = 16
+			format = center
+			text_color_code = M
+			pdx_tooltip = SCW_usa_per_bar_tt
+		}
+		instantTextBoxType = {
+			name = "DOP_SCW_monitor_share_ITA"
+			position = { x = 212 y = 595 }
+			text = DOP_SCW_monitor_share_ITA
+			font = "aldrich_12_outline"
+			maxWidth = 82
+			maxHeight = 16
+			format = center
+			text_color_code = M
+			pdx_tooltip = SCW_ita_per_bar_tt
+		}
+		instantTextBoxType = {
+			name = "DOP_SCW_monitor_share_GER"
+			position = { x = 298 y = 595 }
+			text = DOP_SCW_monitor_share_GER
+			font = "aldrich_12_outline"
+			maxWidth = 82
+			maxHeight = 16
+			format = center
+			text_color_code = M
+			pdx_tooltip = SCW_ger_per_bar_tt
+		}
+		instantTextBoxType = {
+			name = "DOP_SCW_monitor_share_JAP"
+			position = { x = 384 y = 595 }
+			text = DOP_SCW_monitor_share_JAP
+			font = "aldrich_12_outline"
+			maxWidth = 82
+			maxHeight = 16
+			format = center
+			text_color_code = M
+			pdx_tooltip = SCW_jap_per_bar_tt
 		}
 		buttonType = {
 			name = "chain_btn_1"
@@ -260,6 +350,13 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		iconType = {
+			name = "DOP_SCW_chain_frames"
+			position = { x = 30 y = 150 }
+			spriteType = "GFX_DOP_SCW_chain_frames_1"
+			scale = 5.0
+			alwaystransparent = yes
+		}
+		iconType = {
 			name = "conflict_status"
 			spriteType = "GFX_fopo_conflict_status"
 			position = { x = 12 y = 82 }
@@ -309,9 +406,10 @@ guiTypes = {
 		position = { x = 29 y = 131 }
 		
 		iconType = {
-			name = "globe_animation"
+			name = "DOP_SCW_wafer_monitor"
 			position = { x = 69 y = 23 }
-			spriteType = "GFX_fopo_globe_animation"
+			spriteType = "GFX_DOP_SCW_wafer_monitor"
+			alwaystransparent = yes
 		}
 		
 		instantTextBoxType = {
@@ -340,6 +438,12 @@ guiTypes = {
 			name = "empty_fopo_block"
 			spriteType = "GFX_fopo_empty_fopo_block"
 			position = { x = 525 y = 44 }
+		}
+		iconType = {
+			name = "DOP_SCW_empty_panel_monitor"
+			spriteType = "GFX_DOP_SCW_empty_panel_monitor"
+			position = { x = 525 y = 44 }
+			alwaystransparent = yes
 		}
 		
 		instantTextBoxType = {
@@ -405,72 +509,247 @@ guiTypes = {
 		}		
 
 		iconType = {
-			name = "GSA_research_icon"
-			spriteType = "GFX_GSA_kanton_shenkansen_research"
-			position = { x = -15 y = -15 }
-			alwaystransparent = yes
-		}
-
-
-		iconType = {
-			name = "GSA_research_progress"
-			spriteType = "GFX_GSA_research_progress_bar"
-			position = { x = 231 y = 168 }
-			pdx_tooltip = "GSA_research_progress_tt"
-			# alwaystransparent = yes
-		}
-
-		iconType = {
 			name = "tabs"
 			spriteType = "GFX_fopo_crisis_box"
 			position = { x = 2 y = 72 }
 			alwaystransparent = yes
 		}
-
 		iconType = {
-			name = "GSA_bg"
-			spriteType = "GFX_GSA_bg_on"
-			position = { x = -15 y = -15 }
+			name = "DOP_GSA_panel"
+			spriteType = "GFX_DOP_GSA_panel"
+			position = { x = 24 y = 91 }
+			scale = 4.0
 			alwaystransparent = yes
 		}
-
+		instantTextBoxType = {
+			name = "research_name"
+			text = DOP_GSA_project_title
+			position = { x = 38 y = 101 }
+			font = "aldrich_24_outline"
+			maxWidth = 420
+			maxHeight = 32
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_status"
+			text = DOP_GSA_status_text
+			position = { x = 38 y = 135 }
+			font = "aldrich_14_outline"
+			maxWidth = 420
+			maxHeight = 22
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "DOP_GSA_photo_viewport"
+			position = { x = 38 y = 160 }
+			size = { width = 420 height = 168 }
+			clipping = yes
+			iconType = {
+				name = "GSA_research_icon"
+				spriteType = "GFX_DOP_GSA_project_photo"
+				position = { x = 0 y = -55 }
+				scale = 0.411764706
+				alwaystransparent = yes
+			}
+		}
+		iconType = {
+			name = "GSA_bg_off"
+			spriteType = "GFX_DOP_GSA_idle"
+			position = { x = 38 y = 160 }
+			scale = 4.0
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_idle_heading"
+			text = DOP_GSA_idle_heading
+			position = { x = 170 y = 211 }
+			font = "aldrich_20_outline"
+			maxWidth = 270
+			maxHeight = 30
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_idle_hint"
+			text = DOP_GSA_idle_hint
+			position = { x = 170 y = 251 }
+			font = "aldrich_14_outline"
+			maxWidth = 265
+			maxHeight = 65
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_progress_label"
+			text = DOP_GSA_progress_label
+			position = { x = 38 y = 342 }
+			font = "aldrich_16_outline"
+			maxWidth = 200
+			maxHeight = 25
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_progress_value"
+			text = DOP_GSA_progress_text
+			position = { x = 300 y = 340 }
+			font = "aldrich_20_outline"
+			maxWidth = 158
+			maxHeight = 26
+			format = right
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "GSA_research_progress"
+			spriteType = "GFX_DOP_GSA_research_progress"
+			position = { x = 38 y = 368 }
+			pdx_tooltip = "GSA_research_progress_tt"
+		}
+		iconType = {
+			name = "DOP_GSA_progress_cursor"
+			spriteType = "GFX_DOP_GSA_progress_cursor"
+			position = { x = 36 y = 366 }
+			scale = 2.0
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_base_label"
+			text = DOP_GSA_base_label
+			position = { x = 38 y = 395 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_base_value"
+			text = DOP_GSA_base_text
+			position = { x = 38 y = 422 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_efficiency_label"
+			text = DOP_GSA_efficiency_label
+			position = { x = 145 y = 395 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_efficiency_value"
+			text = DOP_GSA_efficiency_text
+			position = { x = 145 y = 422 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_daily_label"
+			text = DOP_GSA_daily_label
+			position = { x = 252 y = 395 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_daily_value"
+			text = DOP_GSA_daily_text
+			position = { x = 252 y = 422 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_eta_label"
+			text = DOP_GSA_eta_label
+			position = { x = 359 y = 395 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 24
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_eta_value"
+			text = DOP_GSA_eta_text
+			position = { x = 359 y = 422 }
+			font = "aldrich_18_outline"
+			maxWidth = 99
+			maxHeight = 26
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "DOP_GSA_summary_label"
+			text = DOP_GSA_summary_label
+			position = { x = 38 y = 461 }
+			font = "aldrich_16_outline"
+			maxWidth = 420
+			maxHeight = 25
+			format = left
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+		containerWindowType = {
+			name = "DOP_GSA_archive_scroll"
+			position = { x = 38 y = 491 }
+			size = { width = 420 height = 95 }
+			margin = { top = 0 bottom = 0 left = 0 right = 18 }
+			verticalScrollbar = "right_vertical_slider"
+			vertical_scroll_step = 18
+			scroll_wheel_factor = 24
+			smooth_scrolling = yes
+			clipping = yes
+			background = {
+				name = "Background"
+				quadTextureSprite = "GFX_tiled_window_transparent"
+				position = { x = 0 y = 0 }
+			}
+			instantTextBoxType = {
+				name = "research_description"
+				text = DOP_GSA_summary_text
+				position = { x = 0 y = 0 }
+				font = "aldrich_16_outline"
+				maxWidth = 396
+				maxHeight = 10000
+				format = left
+				alwaystransparent = yes
+			}
+		}
 		iconType = {
 			name = "GSA_manage_research"
 			spriteType = "GFX_GSA_manage_research"
 			position = { x = 520 y = 70 }
 			alwaystransparent = yes
 		}
-
-		iconType = {
-			name = "GSA_bg_off"
-			spriteType = "GFX_GSA_bg_off"
-			position = { x = -15 y = -15 }
-			alwaystransparent = yes
-		}
-
-		instantTextBoxType = {
-			name = "research_name"
-			position = { x = 105 y = 105 }
-			text = GSA_research_name
-			font = "aldrich_48_outline"
-			maxWidth = 300
-			maxHeight = 48
-			alwaystransparent = yes
-			format = center
-			fixedsize = yes
-		}
-
-		instantTextBoxType = {
-			name = "research_description"
-			position = { x = 240 y = 240 }
-			text = GSA_research_description
-			font = "aldrich_18_outline"
-			maxWidth = 230
-			maxHeight = 600
-			alwaystransparent = yes
-			format = left
-			fixedsize = yes
-		}
-		
 	}
 }

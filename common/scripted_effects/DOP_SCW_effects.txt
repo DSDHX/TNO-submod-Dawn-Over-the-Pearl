@@ -1,6 +1,10 @@
 GNG_SCW_add_tab = {
 	custom_effect_tooltip = DOP_SCW_add_tab_tt
 	if = {
+		limit = { check_variable = { decision_tabs_id = 2 } }
+		DOP_SCW_ensure_chain_selection = yes
+	}
+	if = {
 		limit = { NOT = { is_in_array = { SCW_enabled_tabs = decision_tabs_id } } }
 		add_to_array = { SCW_enabled_tabs = decision_tabs_id }
 		set_variable = { selected_decision_tabs_id = decision_tabs_id }
@@ -28,23 +32,37 @@ GNG_SCW_remove_tab = {
 	}
 }
 
-## Enables a tag in the BoP GNGver GUI
+# The SCW and GSA pages use the same native decision category. Construction uses
+# scripted GUI buttons. Keep one host active regardless of which tab opens first.
+DOP_BoP_ensure_shared_host = {
+	if = {
+		limit = { has_power_balance = { id = BoP_Tab_DOPConstruction_GNG } }
+		remove_power_balance = { id = BoP_Tab_DOPConstruction_GNG }
+	}
+	if = {
+		limit = { has_power_balance = { id = BoP_Tab_DOPScienceAcademy_GNG } }
+		remove_power_balance = { id = BoP_Tab_DOPScienceAcademy_GNG }
+	}
+	if = {
+		limit = { NOT = { has_power_balance = { id = BoP_Tab_DOPSiliconCW_GNG } } }
+		set_power_balance = { id = BoP_Tab_DOPSiliconCW_GNG }
+	}
+}
+
+## Enables a tab in the BoP GNGver GUI
 # Arguments: TabName (token)
 TNO_BoP_GNG_AddTab = {
 	custom_effect_tooltip = TNO_BoP_AddTab_GNG_tt
-	add_to_array = { TNO_BoP_Tabs = TabName }
+	hidden_effect = { DOP_BoP_ensure_shared_host = yes }
+	if = {
+		limit = { NOT = { is_in_array = { TNO_BoP_Tabs = TabName } } }
+		add_to_array = { TNO_BoP_Tabs = TabName }
+	}
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
 	if = {
 		limit = { check_variable = { TNO_BoP_Tabs^num = 1 } }
 		set_variable = { TNO_BoP_Tabs_Frames^0 = 2 }
 		set_variable = { TNO_BoP_SelectedTab = TNO_BoP_Tabs^0 }
-		hidden_effect = {
-			meta_effect = {
-				text = { set_power_balance = { id = [TAB_TYPE]_[TAG] } }
-				TAG = "[THIS.GetTag]"
-				TAB_TYPE = "[?TNO_BoP_Tabs^0.GetTokenKey]"
-			}
-		}
 	}
 }
 
@@ -54,11 +72,18 @@ TNO_BoP_GNG_RemoveTab = {
 	resize_array = { TNO_BoP_Tabs_Frames = TNO_BoP_Tabs^num }
 	if = {
 		limit = { check_variable = { TNO_BoP_SelectedTab = TabName } }
-		meta_effect = {
-			text = { remove_power_balance = { id = [TAB_TYPE]_[TAG] } }
-			TAG = "[THIS.GetTag]"
-			TAB_TYPE = "[?TabName.GetTokenKey]"
+		if = {
+			limit = { check_variable = { TNO_BoP_Tabs^num > 0 } }
+			set_variable = { TNO_BoP_Tabs_Frames^0 = 2 }
+			set_variable = { TNO_BoP_SelectedTab = TNO_BoP_Tabs^0 }
 		}
+		else = {
+			set_variable = { TNO_BoP_SelectedTab = 0 }
+		}
+	}
+	if = {
+		limit = { check_variable = { TNO_BoP_Tabs^num = 0 } }
+		remove_power_balance = { id = BoP_Tab_DOPSiliconCW_GNG }
 	}
 }
 
@@ -83,6 +108,7 @@ GNG_BOP_GSA_Initialize = {
 }
 
 GNG_SCW_Initialize = {
+	DOP_SCW_ensure_chain_selection = yes
 	# Initial baseline. Reopening either SCW page must not reset progress.
 	if = {
 		limit = { NOT = { has_country_flag = DOP_SCW_initialized } }
@@ -696,24 +722,10 @@ GSA_research_init_effects = {
 	set_variable = {
 		GNG_GSA_research_count = research_count
 	}
-	set_temp_variable = {
-		research_speed_value_t = research_speed_value
-	}
-	multiply_temp_variable = {
-		research_speed_value_t = research_ability_factor
-	}
-	set_temp_variable = {
-		research_speed_p = research_speed_value
-	}
-	divide_temp_variable = {
-		research_speed_p = research_count
-	}
-	multiply_temp_variable = {
-		research_speed_p = 100
-	}
-	set_variable = {
-		GNG_GSA_research_speed_percent = research_speed_p
-	}
+	set_variable = { GNG_GSA_research_progress = 0 }
+	DOP_GSA_refresh_research_rate = yes
+	set_temp_variable = { research_speed_value_t = DOP_GSA_effective_speed }
+	set_temp_variable = { research_speed_p = GNG_GSA_research_speed_percent }
 	custom_effect_tooltip = GSA_research_init_effects_tt
 }
 
