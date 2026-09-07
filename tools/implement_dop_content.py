@@ -275,7 +275,6 @@ def main(root,kdocs):
     old=focusblocks(root/"common"/"national_focus"/"dop_sony-japan_prewar.txt")
     icons=[iconof(old.get(fid,"")) for fid in WARTIME_IDS]
     rewards={n:[] for n in WARTIME_NAMES}
-    for n,stub in zip(["固守待援","乱世需用重典","扩大适役人口范围","警民合作","何惜百死卫吾乡"],range(1,6)):rewards[n]=event_reward(f"DOP_GNG_focus_stub.{stub}")
     rewards["战鼓渐响"]=["DOP_GNG_set_status_first_crisis = yes","DOP_GNG_set_security_war = yes","add_ideas = DOP_GNG_wartime_triangle"]
     rewards["东京速递"]=["set_temp_variable = { money_reserves_temp = 0.5 }","econ_money_reserves_change_raw_money = yes","add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 2000 producer = JAP }"]
     rewards["来自盟友的援助"]=["add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 5000 producer = JAP }","add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 2500 producer = JAP }","add_equipment_to_stockpile = { type = anti_air_equipment_2 amount = 2500 producer = JAP }","add_command_power = 100"]
@@ -300,7 +299,6 @@ def main(root,kdocs):
     byname={loc.get(fid,""):fid for fid in rblocks};bynorm={norm(n):fid for n,fid in byname.items() if n}
     shared=sectiondoc(kdocs/"重建国策.txt",["地位协定重议定","广东的雁行经济","官僚登台亮相","共荣圈经济会议"])
     ritems=[]
-    stub=6
     for n in RECON_NAMES:
         if n in RECON_NEW:
             fid=RECON_NEW[n];reward=[]
@@ -308,7 +306,6 @@ def main(root,kdocs):
             elif n=="广东的雁式经济":reward=event_reward("DOP_GNG_event.210")
             elif n=="（年份）年共荣圈经济大会":reward=["country_event = { id = DOP_GNG_event.211 days = 1 }","country_event = { id = DOP_GNG_event.212 days = 5 }"]
             elif n=="文官登台亮相":reward=event_reward("DOP_GNG_event.213")
-            else:reward=event_reward(f"DOP_GNG_focus_stub.{stub}");stub+=1
             d={"地位协定重议定":shared.get("地位协定重议定",""),"广东的雁式经济":shared.get("广东的雁行经济",""),"文官登台亮相":shared.get("官僚登台亮相",""),"（年份）年共荣圈经济大会":shared.get("共荣圈经济会议","")}.get(n,"")
             ritems.append({"id":fid,"name":n,"desc":d,"icon":"GFX_GNG_focus_a_state_of_unstay","reward":reward});continue
         fid=RECON_ALIAS.get(n) or byname.get(n) or bynorm.get(norm(n))
@@ -322,15 +319,11 @@ def main(root,kdocs):
     fpath=root/"common"/"national_focus"/"dop_sony-japan_ending3_hitachi.txt";fblocks=focusblocks(fpath);oldids=list(fblocks);fdoc=sectiondoc(kdocs/"新财界国策.txt",FINANCE_NAMES)
     fitems=[]
     for i,(n,fid) in enumerate(zip(FINANCE_NAMES,oldids)):
-        reward=event_reward(f"DOP_GNG_zip.{23+i}") if i<9 else event_reward(f"DOP_GNG_focus_stub.{14+i-9}")
+        reward=event_reward(f"DOP_GNG_zip.{23+i}") if i<9 else []
         if i==11:reward.append("DOP_GNG_set_status_finance = yes")
         fitems.append({"id":fid,"name":n,"desc":fdoc.get(n,""),"icon":iconof(fblocks[fid]),"reward":reward})
     write_tree(root,fpath,root/"localisation"/"simp_chinese"/"dop_sony-japan_ending3_hitachi_focus-tree_l_simp_chinese.yml","dop_sonyjapan_ending3_hitachi_tree","盛田与§L财界迷局§!",fitems,3)
 
-    # Empty events requested for new focuses whose event text is not supplied.
-    stub_lines=["add_namespace = DOP_GNG_focus_stub",""]
-    for i in range(1,17):stub_lines += ["country_event = {",f"\tid = DOP_GNG_focus_stub.{i}","\thidden = yes","\tis_triggered_only = yes","\timmediate = { }","}",""]
-    (root/"events"/"DOP_GNG_focus_stubs.txt").write_text("\n".join(stub_lines),encoding="utf-8")
 
     (root/"common"/"ideas"/"DOP_GNG_postwar_ideas.txt").write_text(ideas_text(),encoding="utf-8")
     (root/"common"/"scripted_effects"/"DOP_GNG_postwar_effects.txt").write_text(effects_text(),encoding="utf-8")
@@ -372,7 +365,7 @@ shared_focus = {
     if "DOP_GNG_focus_exquisite_equipment:" not in core_loc_text:
         core_loc_text += ' DOP_GNG_focus_exquisite_equipment:0 "精湛装备"\n DOP_GNG_focus_exquisite_equipment_desc:0 ""\n'
         core_loc.write_text(core_loc_text,encoding="utf-8-sig")
-    print("wartime=21 reconstruction=34 finance=12 spirits=23 focus_stubs=16")
+    print("wartime=21 reconstruction=34 finance=12 spirits=23")
 
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("--root",type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument("--kdocs-dir",type=Path,required=True);a=p.parse_args();main(a.root.resolve(),a.kdocs_dir.resolve())

@@ -244,7 +244,6 @@ shared_focus = {
 	prerequisite = { focus = GNG_focus_new_products_old_friends }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.6 days = 1 }
 		# DOP BESPOKE 260902B axes: 芯片研发 / 财政
 		# 芯片冷战开局必须用真实研发投入换取能力
 		TNO_improve_research_facilities_low = yes
@@ -263,7 +262,6 @@ shared_focus = {
 	prerequisite = { focus = GNG_focus_new_products_old_friends }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.9 days = 1 }
 		# DOP BESPOKE 260902B axes: 教育 / 科研 / 财政
 		# 科学院以教育与研究设施的双重投入起步
 		TNO_improve_academic_base_low = yes
@@ -283,7 +281,6 @@ shared_focus = {
 	prerequisite = { focus = DOP_GNG_recon_foundation }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.7 days = 1 }
 		# DOP BESPOKE 260902B axes: 资本流入 / 腐败
 		# 蜂拥而至的投资者提高收入，也助长寻租
 		set_temp_variable = { GNG_misc_income_temp = 0.04 }
@@ -307,7 +304,6 @@ shared_focus = {
 	prerequisite = { focus = DOP_GNG_recon_foundation }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.8 days = 1 }
 		# DOP BESPOKE 260902B axes: 工业专长 / 科研
 		# 细大无遗的产业盘点同时积累工艺与研究经验
 		TNO_improve_industrial_expertise_low = yes
@@ -329,7 +325,6 @@ shared_focus = {
 	prerequisite = { focus = DOP_GNG_recon_backwardness_disaster }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.10 days = 1 }
 		# DOP BESPOKE 260902B axes: 芯片竞赛 / 增长
 		# 首轮产业试验形成可量化的芯片进展和新订单
 		set_temp_variable = { faction_id_t = 1 }
@@ -357,7 +352,6 @@ shared_focus = {
 	prerequisite = { focus = DOP_GNG_recon_first_trial }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.11 days = 1 }
 		# DOP BESPOKE 260902B axes: 经济治理 / 增长
 		# 面对中国经济比较，行政体系开始按数据调度增长
 		TNO_improve_admin_efficiency_low = yes
@@ -472,7 +466,6 @@ shared_focus = {
 	prerequisite = { focus = DOP_GNG_recon_flying_geese }
 	cost = 1
 	completion_reward = {
-		country_event = { id = DOP_GNG_focus_stub.13 days = 1 }
 		# DOP BESPOKE 260902B axes: 稳定 / 收入 / 行政
 		# 揭幕式宣布重建收官并恢复政府与投资者信心
 		add_stability = 0.03

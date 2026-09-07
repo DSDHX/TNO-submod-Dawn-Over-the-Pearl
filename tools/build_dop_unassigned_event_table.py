@@ -53,10 +53,6 @@ def classify(row: dict[str, object]) -> tuple[str, str]:
         return "冻结阶段", "属于结局或人质危机过渡，当前阶段明确不实施"
     if file == "events/TNO_Yunnan.txt":
         return "云南战争系统", "云南/西南战争既有系统事件；由触发、决议或事件链管理，不属于广东国策奖励"
-    if file == "events/DOP_GNG_focus_stubs.txt":
-        if event_id == "DOP_GNG_focus_stub.12":
-            return "冻结内容", "对应明确排除的广东大剧院国策"
-        return "无可判定内容", "占位事件没有题名和正文，无法判定唯一国策归属"
     if file == "events/DOP_GNG_zip.txt":
         if number is not None and 1 <= number <= 4:
             return "待作者整合", "战后领土外交备选链，与当前确定性战后结算并存，不能直接叠加"
