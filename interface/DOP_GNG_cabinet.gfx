@@ -1,0 +1,18 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_DOP_GNG_minister_Yamashita_Toshihiko"
+		texturefile = "gfx/interface/ideas/ministers/GNG/DOP_Yamashita_Toshihiko.dds"
+	}
+	spriteType = {
+		name = "GFX_DOP_GNG_minister_Mita_Katsushige"
+		texturefile = "gfx/interface/ideas/ministers/GNG/DOP_Mita_Katsushige.dds"
+	}
+	spriteType = {
+		name = "GFX_DOP_GNG_minister_Ho_Sin_Hang"
+		texturefile = "gfx/interface/ideas/ministers/GNG/DOP_Ho_Sin_Hang.dds"
+	}
+	spriteType = {
+		name = "GFX_DOP_GNG_minister_Idei_Nobuyuki"
+		texturefile = "gfx/interface/ideas/ministers/GNG/DOP_Idei_Nobuyuki.dds"
+	}
+}

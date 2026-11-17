@@ -22,12 +22,30 @@ characters = {
 		portraits = {
 			civilian = { large = "gfx/leaders/GNG/DOP_Inaba_Hidezo.png" }
 		}
+		country_leader = {
+			desc = DOP_GNG_cabinet_1962_leader_desc
+			expire = "2000.1.1"
+			ideology = despotism_colonial_government_subtype
+			traits = {}
+		}
 	}
 	DOP_GNG_tamura_hideaki = {
 		name = DOP_GNG_tamura_hideaki
 		portraits = {
 			civilian = { large = "gfx/leaders/GNG/DOP_Tamura_Hideaki.png" }
 			army = { large = "gfx/leaders/GNG/DOP_Tamura_Hideaki.png" }
+		}
+		country_leader = {
+			desc = DOP_GNG_cabinet_military_leader_desc
+			expire = "2000.1.1"
+			ideology = despotism_military_junta_subtype
+			traits = {}
+		}
+	}
+	DOP_GNG_yamashita_toshihiko = {
+		name = DOP_GNG_yamashita_toshihiko
+		portraits = {
+			civilian = { large = "gfx/leaders/GNG/DOP_Yamashita_Toshihiko.png" }
 		}
 	}
 }

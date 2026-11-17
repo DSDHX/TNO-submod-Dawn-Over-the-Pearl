@@ -236,7 +236,11 @@ def effects_text():
     security=["DOP_GNG_security_southwest_war","DOP_GNG_security_postwar","DOP_GNG_security_reformed"]
     identity=["DOP_GNG_identity_initial","DOP_GNG_identity_dual","DOP_GNG_identity_zhujin"]
     def swap(name,pool,target):
-        a=[f"{name} = {{"]+[f"\tremove_ideas = {x}" for x in pool]+[f"\tadd_ideas = {target}","}",""]
+        a=[f"{name} = {{"]+[f"\tremove_ideas = {x}" for x in pool]+[f"\tadd_ideas = {target}"]
+        cabinet_routes = {"DOP_GNG_status_lee": "lee", "DOP_GNG_status_ibuka": "ibuka", "DOP_GNG_status_finance": "finance", "DOP_GNG_status_1962": "1962", "DOP_GNG_status_second_riot": "military"}
+        if target in cabinet_routes:
+            a.append(f"\tDOP_GNG_apply_cabinet_{cabinet_routes[target]} = yes")
+        a += ["}", ""]
         return a
     out=[]
     for name,target in [("DOP_GNG_set_status_first_crisis",statuses[0]),("DOP_GNG_set_status_postwar",statuses[1]),("DOP_GNG_set_status_lee",statuses[2]),("DOP_GNG_set_status_ibuka",statuses[3]),("DOP_GNG_set_status_finance",statuses[4]),("DOP_GNG_set_status_1962",statuses[5]),("DOP_GNG_set_status_second_riot",statuses[6])]:out+=swap(name,statuses,target)

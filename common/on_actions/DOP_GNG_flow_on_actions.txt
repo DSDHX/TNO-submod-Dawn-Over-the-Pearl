@@ -1,6 +1,9 @@
 on_actions = {
 	on_daily_GNG = {
 		effect = {
+			# Sync the active ending cabinet once, including existing saves.
+			DOP_GNG_sync_cabinet = yes
+
 			# Automatic handoff from the final focus of TNO's Morita ending.
 			if = {
 				limit = {
